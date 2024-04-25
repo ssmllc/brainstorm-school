@@ -3,16 +3,20 @@
 import { useContext } from "react";
 import { BrainstormContext } from "@/app/context/context-provider";
 
-const RenderCourses = ({ data = [] }: any) => {
-  const ctx = useContext(BrainstormContext);
-  console.log('BrainstormContext', ctx);
-
+const RenderCourses = () => {
+  const {courses, error}:any = useContext(BrainstormContext);
+  console.log('course', courses)
   return (
     <div>
       <h1>Current Courses</h1>
-      {data && data.result.map((course:any, index:number) => (
-        <p key={index}>{ course.title }</p>
-      ))}
+      {error ? (
+          <p>{error} : Error Loading Courses</p>
+        ) : (
+          courses.length > 0 && courses.map((course:any, index:number) => (
+            <p key={index}>{ course.title }</p>
+          ))
+        )
+      }
     </div>
   )
 }
