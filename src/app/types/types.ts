@@ -1,8 +1,9 @@
 export type Course = {
-  body: any,
-  courses: { description: string, title: string },
-  instructor: string,
-  mainImage: any,
-  start: string,
   title: string,
+  slug: any,
+  body: any,
+  instructor: string,
+  start: string,
+  mainImage: any,
+  courses: { description: string, title: string },
 }

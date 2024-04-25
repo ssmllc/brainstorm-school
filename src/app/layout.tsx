@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import { BrainstormProvider } from "./context/context-provider";
+import StyledComponentsRegistry from "../../lib/registry";
+import Navigation from "./components/navigation/navigation.component";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,23 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className} style={{ padding: "20px 20px" }}>
-          <ul style={{display: "flex", listStyle: "none", gap: "10px", margin: "20px 0"}}>
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/courses">Courses</Link>
-            </li>
-            <li>
-              <Link href="/about">About Us</Link>
-            </li>
-            <li>
-              <Link href="/courses/concept-art">Concept Art</Link>
-            </li>
-        </ul>
+      <body className={inter.className}>
         <BrainstormProvider>
-          {children}
+          <StyledComponentsRegistry>
+            <Navigation />
+            {children}
+          </StyledComponentsRegistry>
         </BrainstormProvider>
       </body>
     </html>
