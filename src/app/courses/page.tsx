@@ -6,13 +6,11 @@ export const metadata: Metadata = {
   description: "Courses for brainstorm school",
 };
 
-const Courses = async () => {
-  return(
+export default async function Courses() {
+  return (
     <div>
       <h1>Courses</h1>
       <RenderCourses />
     </div>
-  )
+  );
 }
-
-export default Courses;
