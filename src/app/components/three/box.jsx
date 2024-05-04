@@ -100,7 +100,7 @@ const RenderThree = () => {
   }, []);
 
   return (
-    <div id="renderer" style={{width: '100vw', height: '100vh', background: 'transparent'}}></div>
+    <div id="renderer" style={{ width: '100vw', height: '100vh', background: 'transparent', position: "absolute",  left: 0, top: 0}}></div>
   )
 }
 
