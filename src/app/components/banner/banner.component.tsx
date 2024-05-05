@@ -1,6 +1,7 @@
 "use client";
 
 import styled from "styled-components";
+import RenderThreeDModel from "../three/model.component";
 
 const BannerWrapper = styled.div`
   align-items: center;
@@ -16,7 +17,8 @@ const BannerWrapper = styled.div`
 const Banner = () => {
   return (
     <BannerWrapper>
-      <h1>Brainstorm</h1>
+      {/* <h1>Brainstorm</h1> */}
+      <RenderThreeDModel />
     </BannerWrapper>
   );
 };
