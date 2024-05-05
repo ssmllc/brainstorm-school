@@ -75,6 +75,7 @@ const RenderThreeDModel = () => {
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.minDistance = 2;
       controls.maxDistance = 5;
+      controls.enableZoom = false;
 
       window.addEventListener("resize", onWindowResize);
     }

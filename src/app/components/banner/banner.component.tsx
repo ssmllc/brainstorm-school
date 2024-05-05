@@ -17,7 +17,6 @@ const BannerWrapper = styled.div`
 const Banner = () => {
   return (
     <BannerWrapper>
-      {/* <h1>Brainstorm</h1> */}
       <RenderThreeDModel />
     </BannerWrapper>
   );
