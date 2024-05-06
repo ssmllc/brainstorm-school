@@ -157,9 +157,10 @@ const MenuItem = styled(Link)`
 `;
 
 const CallToAction = styled(Link)`
-  background: #fff;
+  background: transparent;
+  border: 3px solid #fff;
   border-radius: 20px;
-  color: #000;
+  color: #fff;
   font-weight: bold;
   padding: 10px 25px;
   text-decoration: none;

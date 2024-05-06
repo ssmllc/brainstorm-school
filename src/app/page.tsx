@@ -3,15 +3,16 @@ import RegistrationBlock from "./components/registration/registration-block.comp
 
 const Home = () => {
   return (
-    <>
-      <main>
-        <Banner />
-        <RegistrationBlock
-          primary={true}
-          heading="Lorem ipsum dolor sit amet"
-        />
-      </main>
-    </>
+    <main>
+      <Banner />
+      <RegistrationBlock
+        primary={true}
+        heading="Learn from industry professionals and become a master of your craft today."
+        text="Students from around the world gather to learn and develop in our friendly online community."
+        cta="View Courses"
+        faq={true}
+      />
+    </main>
   );
 };
 
