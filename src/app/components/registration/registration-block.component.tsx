@@ -97,7 +97,7 @@ const RegistrationBlock = ({
   primary: boolean;
   heading: string;
   text?: string;
-  cta: string;
+  cta?: string;
   faq?: boolean;
 }) => {
   return (
