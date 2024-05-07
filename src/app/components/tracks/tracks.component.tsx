@@ -11,11 +11,17 @@ const TracksContainer = styled.div`
 const Tracks = styled.div`
   /* border: thin solid red; */
   display: flex;
+  flex-direction: column;
   gap: 20px;
   justify-content: space-between;
   position: relative;
   margin: 0 auto;
-  width: 60%;
+  width: 80%;
+
+  @media (min-width: 800px) {
+    flex-direction: row;
+    width: 65%;
+  }
 `;
 
 interface trackProps {
@@ -104,7 +110,7 @@ const TracksGroup = () => {
           </Icon>
           <Name>Character Design</Name>
         </Track>
-        <Track poster="cards/character-design.jpg">
+        <Track poster="cards/environmental-design.jpg">
           <Icon>
             <svg
               style={{ width: "25px", height: "25px" }}
@@ -147,7 +153,7 @@ const TracksGroup = () => {
           </Icon>
           <Name>Environmental Design</Name>
         </Track>
-        <Track poster="cards/character-design.jpg">
+        <Track poster="cards/3d-concept.jpg">
           <Icon>
             <svg
               style={{ width: "25px", height: "25px" }}
@@ -190,7 +196,7 @@ const TracksGroup = () => {
           </Icon>
           <Name>3D Concept Design</Name>
         </Track>
-        <Track poster="cards/character-design.jpg">
+        <Track poster="cards/storyboarding.jpg">
           <Icon>
             <svg
               style={{ width: "25px", height: "25px" }}
