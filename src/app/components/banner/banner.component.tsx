@@ -5,7 +5,7 @@ import RenderThreeDModel from "../three/model.component";
 
 const BannerWrapper = styled.div`
   align-items: center;
-  background: url(/banner/banner-background.jpeg);
+  background: url(/backgrounds/sci-fi-city.jpg);
   background-size: cover;
   display: flex;
   height: 100vh;
@@ -15,11 +15,7 @@ const BannerWrapper = styled.div`
 `;
 
 const Banner = () => {
-  return (
-    <BannerWrapper>
-      <RenderThreeDModel />
-    </BannerWrapper>
-  );
+  return <BannerWrapper>{/* <RenderThreeDModel /> */}</BannerWrapper>;
 };
 
 export default Banner;

@@ -15,7 +15,7 @@ const Content = styled.div`
   h1,
   h2,
   p {
-    color: #fff;
+    color: var(--white);
   }
 
   .heading {
@@ -41,10 +41,10 @@ const Content = styled.div`
 `;
 
 const CallToAction = styled.button`
-  background: #0091ff;
+  background: var(--blue);
   border-radius: 35px;
   border: 0;
-  color: #fff;
+  color: var(--white);
   font-size: 12px;
   letter-spacing: 2px;
   margin: 35px 0 0;
@@ -68,7 +68,7 @@ const RegistrationFAQ = styled.div`
   }
 
   a {
-    color: #0091ff;
+    color: var(--blue);
   }
 
   p {

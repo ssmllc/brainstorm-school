@@ -15,7 +15,7 @@ const BrainstormLogo = styled.div`
 `;
 
 const Brainstorm = styled.span`
-  color: #fff;
+  color: var(--white);
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 2px;
@@ -24,7 +24,7 @@ const Brainstorm = styled.span`
 `;
 
 const NavigationBar = styled.div`
-  background: #000;
+  background: var(--black);
   display: flex;
   justify-content: space-between;
   padding: 0 0px;
@@ -36,7 +36,7 @@ const NavigationBar = styled.div`
 `;
 
 const NavigationMenu = styled.nav`
-  background: #000;
+  background: var(--black);
   row-gap: 25px;
   align-items: center;
   display: flex;
@@ -78,7 +78,7 @@ const Dropdown = styled.li`
   &::after {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 7px solid #fff;
+    border-top: 7px solid var(--white);
     content: "";
     display: block;
     height: 0;
@@ -98,7 +98,7 @@ const Dropdown = styled.li`
 
 const DropdownButton = styled.div`
   align-self: center;
-  background: #000;
+  background: var(--black);
   // border: thin solid red;
   display: flex;
   height: 25px;
@@ -112,7 +112,7 @@ const DropdownButton = styled.div`
 `;
 
 const DropdownButtonBar = styled.div`
-  background: #fff;
+  background: var(--white);
   height: 3px;
   position: absolute;
   width: 100%;
@@ -132,7 +132,7 @@ const DropdownButtonBar = styled.div`
 `;
 
 const DropdownMenu = styled.ul`
-  background: #000;
+  background: var(--black);
   display: none;
   left: 0;
   min-width: 250px;
@@ -146,7 +146,7 @@ const DropdownMenuItem = styled.li`
 `;
 
 const MenuItem = styled(Link)`
-  color: #fff;
+  color: var(--white);
   padding: 10px 10px;
   text-decoration: none;
   text-transform: uppercase;
@@ -158,9 +158,9 @@ const MenuItem = styled(Link)`
 
 const CallToAction = styled(Link)`
   background: transparent;
-  border: 3px solid #fff;
+  border: 3px solid var(--white);
   border-radius: 20px;
-  color: #fff;
+  color: var(--white);
   font-weight: bold;
   padding: 10px 25px;
   text-decoration: none;

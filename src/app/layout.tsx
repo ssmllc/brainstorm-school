@@ -1,9 +1,10 @@
+import "./globals.scss";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import { BrainstormProvider } from "./context/context-provider";
 import StyledComponentsRegistry from "../../lib/registry";
 import Navigation from "./components/navigation/navigation.component";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

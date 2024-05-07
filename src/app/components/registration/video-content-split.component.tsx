@@ -28,7 +28,7 @@ const ContentWrapper = styled.div`
 
 const Media = styled.div`
   /* border: thin solid red; */
-  background: #000;
+  background: var(--black);
   border-radius: 20px;
   width: 100%;
 
@@ -39,7 +39,7 @@ const Media = styled.div`
 
 const VideoPlayer = styled.div`
   /* border: thin solid blue; */
-  background: #000;
+  background: var(--black);
   border-radius: 20px;
   overflow: hidden;
   height: 250px;
@@ -52,7 +52,7 @@ const VideoPlayer = styled.div`
 `;
 
 const ContentBlock = styled.div`
-  color: #fff;
+  color: var(--white);
   padding: 30px 0;
   width: 100%;
 
@@ -82,10 +82,10 @@ const ContentBlock = styled.div`
 `;
 
 const CallToAction = styled.button`
-  background: #fff;
+  background: var(--white);
   border-radius: 35px;
   border: 0;
-  color: #000;
+  color: var(--black);
   font-size: 12px;
   letter-spacing: 2px;
   margin: 35px 0 0;
