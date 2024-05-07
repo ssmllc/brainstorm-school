@@ -24,7 +24,7 @@ const Brainstorm = styled.span`
 `;
 
 const NavigationBar = styled.div`
-  background: var(--black);
+  background: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: space-between;
   padding: 0 0px;
@@ -58,6 +58,7 @@ const NavigationMenu = styled.nav`
   }
 
   @media (min-width: 800px) {
+    background: transparent;
     column-gap: 25px;
     flex-direction: row;
     left: unset;
