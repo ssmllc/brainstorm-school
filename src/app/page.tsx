@@ -2,7 +2,7 @@ import Banner from "./components/banner/banner.component";
 import Content from "./components/content/content.component";
 import RegistrationBlock from "./components/registration/registration-block.component";
 import VideoContentSplit from "./components/registration/video-content-split.component";
-import Tracks from "./components/tracks/tracks.component";
+import TracksGroup from "./components/tracks/tracks.component";
 
 const Home = () => {
   return (
@@ -22,7 +22,7 @@ const Home = () => {
           text="Brainstorm is an online concept art, design and illustration program focused on artistic development. Students from around the world gather to learn & develop in our friendly online community."
           cta="View Courses"
         />
-        <Tracks />
+        <TracksGroup />
       </Content>
     </main>
   );
