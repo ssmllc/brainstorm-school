@@ -15,6 +15,7 @@ const ContentWrapper = styled.div`
     position: absolute;
     height: 100%;
     filter: grayscale(1);
+    pointer-events: none;
     opacity: 0.15;
     left: 0;
     top: 50%;
