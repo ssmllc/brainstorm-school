@@ -8,20 +8,23 @@ const ContentWrapper = styled.div`
   position: relative;
   width: 100vw;
 
-  /* &::before {
+  &::before {
     content: "";
-    background: url("/backgrounds/sci-fi-city.jpg") center center no-repeat;
-    background-size: cover;
+    background: url("/backgrounds/lightning/Lightning-36.jpg") -250px -250px
+      no-repeat;
+    background-size: 75%;
     position: absolute;
+    rotate: -15deg;
+    transform-origin: top left;
     height: 100%;
-    filter: grayscale(1);
+    filter: grayscale(0.5);
     pointer-events: none;
-    opacity: 0.15;
+    opacity: 1;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
-  } */
+  }
 `;
 
 type Props = {
