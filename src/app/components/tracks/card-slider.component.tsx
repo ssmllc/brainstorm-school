@@ -72,14 +72,31 @@ const Card = styled.div`
 
 interface cardProps {
   image: string;
+  tag: string;
 }
 
 const Poster = styled.div<cardProps>`
-  background: url(${(props) => props.image}) top center no-repeat;
+  background: url(${({ image }) => image}) top center no-repeat;
   background-size: cover;
   height: 100px;
   padding: 185px 20px 0 20px;
   position: relative;
+
+  &:before {
+    background: var(--black);
+    border-radius: 50px;
+    content: ${({ tag }) => `"${tag}"`};
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 500;
+    left: 15px;
+    letter-spacing: 1px;
+    padding: 12px 15px;
+    position: absolute;
+    top: 15px;
+    text-transform: uppercase;
+    z-index: 5;
+  }
 `;
 
 const Details = styled.div`
@@ -242,7 +259,10 @@ const CardSlider = () => {
         <CardSliderCards>
           <CardWrapper className="course-slider" width={`${coursesTotal}px`}>
             <Card className="course-card">
-              <Poster image="/cards/environmental-design.jpg" />
+              <Poster
+                image="/cards/3d-concept.jpg"
+                tag="Concept Art & Design"
+              />
               <Details>
                 <CourseName>Rhythm & Structure</CourseName>
                 <CourseDetails>
@@ -254,7 +274,10 @@ const CardSlider = () => {
             </Card>
 
             <Card className="course-card">
-              <Poster image="/cards/environmental-design.jpg" />
+              <Poster
+                image="/cards/character-design.jpg"
+                tag="Concept Art & Design"
+              />
               <Details>
                 <CourseName>Rhythm & Structure</CourseName>
                 <CourseDetails>
@@ -266,7 +289,10 @@ const CardSlider = () => {
             </Card>
 
             <Card className="course-card">
-              <Poster image="/cards/environmental-design.jpg" />
+              <Poster
+                image="/cards/environmental-design.jpg"
+                tag="Concept Art & Design"
+              />
               <Details>
                 <CourseName>Rhythm & Structure</CourseName>
                 <CourseDetails>
@@ -278,7 +304,10 @@ const CardSlider = () => {
             </Card>
 
             <Card className="course-card">
-              <Poster image="/cards/environmental-design.jpg" />
+              <Poster
+                image="/cards/storyboarding.jpg"
+                tag="Concept Art & Design"
+              />
               <Details>
                 <CourseName>Rhythm & Structure</CourseName>
                 <CourseDetails>
@@ -290,7 +319,10 @@ const CardSlider = () => {
             </Card>
 
             <Card className="course-card">
-              <Poster image="/cards/environmental-design.jpg" />
+              <Poster
+                image="/cards/environmental-design.jpg"
+                tag="Concept Art & Design"
+              />
               <Details>
                 <CourseName>Rhythm & Structure</CourseName>
                 <CourseDetails>

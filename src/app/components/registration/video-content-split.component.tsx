@@ -115,14 +115,14 @@ const VideoContentSplit = ({
               <object width="100%" height="100%">
                 <param
                   name="movie"
-                  value="https://www.youtube.com/embed/cidlS92hRTQ?si=ulzIjzSESEv7r7Nt&amp;controls=0"
+                  value="https://www.youtube.com/embed/cidlS92hRTQ?si=ulzIjzSESEv7r7Nt&amp;controls=0&rel=0"
                 />
                 <param name="allow-FullScreen" value="true" />
                 <param name="allow-script-access" value="always" />
                 <embed
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/cidlS92hRTQ?si=ulzIjzSESEv7r7Nt&amp;controls=0"
+                  src="https://www.youtube.com/embed/cidlS92hRTQ?si=ulzIjzSESEv7r7Nt&amp;controls=0&rel=0"
                   className="youtube-player"
                   type="text/html"
                   allow-script-access="always"
