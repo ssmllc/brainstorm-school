@@ -162,15 +162,19 @@ const CardSlider = () => {
   const delta: number = 10;
 
   let currentSlider = 0;
+  const minCardsShown = 3;
 
   const handleCardSliderMove = (direction: string) => {
     const courseSlider = document.querySelector(".course-slider");
     let moveAmount = 0;
 
     if (direction === "next") {
-      if (currentSlider >= coursesLength - 1) {
-        moveAmount = -(courseCardWidth * (coursesLength - 1) - delta);
-        currentSlider = coursesLength - 1;
+      if (currentSlider >= coursesLength - minCardsShown) {
+        moveAmount = -(
+          courseCardWidth * (coursesLength - minCardsShown) -
+          delta
+        );
+        currentSlider = coursesLength - minCardsShown;
       } else {
         currentSlider++;
         moveAmount = -(courseCardWidth * currentSlider - delta);
@@ -213,9 +217,6 @@ const CardSlider = () => {
               onClick={() => handleCardSliderMove("prev")}
             >
               <svg
-                id="Layer_1"
-                data-name="Layer 1"
-                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 48 48"
                 fill="#fff"
                 style={{ width: "28px", height: "28px" }}
@@ -228,9 +229,6 @@ const CardSlider = () => {
               onClick={() => handleCardSliderMove("next")}
             >
               <svg
-                id="Layer_1"
-                data-name="Layer 1"
-                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 48 48"
                 fill="#fff"
                 style={{ width: "28px", height: "28px" }}
@@ -243,6 +241,18 @@ const CardSlider = () => {
 
         <CardSliderCards>
           <CardWrapper className="course-slider" width={`${coursesTotal}px`}>
+            <Card className="course-card">
+              <Poster image="/cards/environmental-design.jpg" />
+              <Details>
+                <CourseName>Rhythm & Structure</CourseName>
+                <CourseDetails>
+                  <li>Fig RS</li>
+                  <li>Fri 10am - 1pm (PST)</li>
+                  <li>10 Week Course</li>
+                </CourseDetails>
+              </Details>
+            </Card>
+
             <Card className="course-card">
               <Poster image="/cards/environmental-design.jpg" />
               <Details>
