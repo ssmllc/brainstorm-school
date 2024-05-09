@@ -2,60 +2,56 @@
 
 import styled from "styled-components";
 import RenderThreeDModel from "../three/model.component";
-import ActionButton from "../buttons/action-button.component";
+import RegistrationBlock from "../registration/registration-block.component";
 
 const BannerWrapper = styled.div`
   align-items: center;
-  background: url(/banner/banner-background.jpg);
-  background-size: cover;
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
+  padding-top: 20%;
   position: relative;
   width: 100vw;
 `;
 
-const Heading = styled.p`
-  color: var(--white);
-  font-size: 48px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-align: center;
-
-  @media (min-width: 800px) {
-    font-size: 96px;
-  }
-`;
-
-const SubHeading = styled.p`
-  color: var(--white);
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  line-height: 1.5;
-  padding: 20px 0;
-  text-align: center;
-  width: 80%;
-
-  @media (min-width: 800px) {
-    padding: 10px 0;
-    width: 50%;
-  }
+const Overlay = styled.div`
+  background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0.15) 85%);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  padding-top: 20%;
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  width: 100vw;
+  z-index: 15;
 `;
 
 const Banner = () => {
   return (
     <BannerWrapper>
-      {/* <RenderThreeDModel /> */}
-      <Heading>Brainstorm School</Heading>
-      <SubHeading>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis amet
-        ratione velit eaque sunt, voluptatibus ad harum? Dignissimos facilis
-        veritatis accusantium, perspiciatis ullam cupiditate nesciunt voluptas
-        aliquam a deserunt. Non.
-      </SubHeading>
-      <ActionButton type="primary" label="View Courses"></ActionButton>
+      <RegistrationBlock
+        primary={true}
+        heading="Learn from industry professionals and become a master of your craft today."
+        scale="xl"
+        cta="Register Today"
+      />
+      <RenderThreeDModel />
+      <video
+        style={{ position: "absolute", left: 0, top: 0 }}
+        muted
+        loop
+        width="100%"
+        height="100%"
+        autoPlay={true}
+      >
+        <source src="/video/lightning.mp4" type="video/mp4" />
+      </video>
+      <Overlay />
     </BannerWrapper>
   );
 };

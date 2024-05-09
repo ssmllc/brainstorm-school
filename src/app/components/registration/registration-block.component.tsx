@@ -3,27 +3,15 @@ import React from "react";
 import styled from "styled-components";
 
 const Content = styled.div`
-  /* border: thin solid red; */
-  /* height: 100vh; */
   padding: 75px 0;
+  position: relative;
   width: 100vw;
-
-  @media (min-width: 800px) {
-    /* height: 50vh; */
-  }
+  z-index: 20;
 
   h1,
   h2,
   p {
     color: var(--white);
-  }
-
-  .heading {
-    font-size: 28px;
-
-    @media (min-width: 800px) {
-      font-size: 36px;
-    }
   }
 
   .sub-heading {
@@ -50,6 +38,12 @@ const CallToAction = styled.button`
   margin: 35px 0 0;
   padding: 15px 20px;
   text-transform: uppercase;
+  transition: all 0.25s ease-out;
+
+  &:hover {
+    background: #0059ff;
+    cursor: pointer;
+  }
 `;
 
 const RegistrationFAQ = styled.div`
@@ -83,19 +77,29 @@ const ContentBlock = styled.div`
   text-align: center;
 
   @media (min-width: 800px) {
-    width: 40%;
+    width: 50%;
   }
+`;
+
+interface headingProps {
+  scale: string;
+}
+
+const Heading = styled.h1<headingProps>`
+  font-size: ${(props) => (props.scale === "xl" ? "42px" : "28px")};
 `;
 
 const RegistrationBlock = ({
   primary = false,
   heading,
+  scale,
   text,
   cta,
   faq,
 }: {
   primary: boolean;
   heading: string;
+  scale: string;
   text?: string;
   cta?: string;
   faq?: boolean;
@@ -103,7 +107,13 @@ const RegistrationBlock = ({
   return (
     <Content>
       <ContentBlock>
-        {primary ? <h1 className="heading">{heading}</h1> : <h2>{heading}</h2>}
+        {primary ? (
+          <Heading scale={scale} className="heading">
+            {heading}
+          </Heading>
+        ) : (
+          <Heading scale={scale}>{heading}</Heading>
+        )}
         {text && <p className="sub-heading">{text}</p>}
         {cta && <CallToAction>{cta}</CallToAction>}
         {faq && (

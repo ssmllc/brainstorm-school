@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import { BrainstormProvider } from "./context/context-provider";
 import StyledComponentsRegistry from "../../lib/registry";
 import Navigation from "./components/navigation/navigation.component";
-
+import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

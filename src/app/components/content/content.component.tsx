@@ -8,7 +8,7 @@ const ContentWrapper = styled.div`
   position: relative;
   width: 100vw;
 
-  &::before {
+  /* &::before {
     content: "";
     background: url("/backgrounds/sci-fi-city.jpg") center center no-repeat;
     background-size: cover;
@@ -21,7 +21,7 @@ const ContentWrapper = styled.div`
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
-  }
+  } */
 `;
 
 type Props = {

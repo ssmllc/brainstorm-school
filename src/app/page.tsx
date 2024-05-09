@@ -1,7 +1,7 @@
 import Banner from "./components/banner/banner.component";
 import Content from "./components/content/content.component";
-import RegistrationBlock from "./components/registration/registration-block.component";
 import VideoContentSplit from "./components/registration/video-content-split.component";
+import CardSlider from "./components/tracks/card-slider.component";
 import TracksGroup from "./components/tracks/tracks.component";
 
 const Home = () => {
@@ -9,13 +9,6 @@ const Home = () => {
     <main>
       <Banner />
       <Content>
-        <RegistrationBlock
-          primary={true}
-          heading="Learn from industry professionals and become a master of your craft today."
-          text="Students from around the world gather to learn and develop in our friendly online community."
-          cta="View Courses"
-          faq={true}
-        />
         <VideoContentSplit
           video="https://youtu.be/cidlS92hRTQ?si=pWk-plQpUEOP_jt8"
           heading="Who we are"
@@ -23,6 +16,7 @@ const Home = () => {
           cta="View Courses"
         />
         <TracksGroup />
+        <CardSlider />
       </Content>
     </main>
   );

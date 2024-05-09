@@ -70,6 +70,7 @@ const TracksGroup = () => {
       <RegistrationBlock
         primary={false}
         heading="Learn courses relevant to todays market. Our course guides will keep you on track."
+        scale="xl"
       />
       <Tracks>
         <Track poster="cards/character-design.jpg">
