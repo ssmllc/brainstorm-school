@@ -85,8 +85,13 @@ interface headingProps {
   scale: string;
 }
 
-const Heading = styled.h1<headingProps>`
+const BigHeading = styled.h1<headingProps>`
   font-size: ${(props) => (props.scale === "xl" ? "42px" : "28px")};
+`;
+
+const Heading = styled.p<headingProps>`
+  font-size: ${(props) => (props.scale === "xl" ? "42px" : "28px")};
+  font-weight: bold;
 `;
 
 const RegistrationBlock = ({
@@ -108,9 +113,9 @@ const RegistrationBlock = ({
     <Content>
       <ContentBlock>
         {primary ? (
-          <Heading scale={scale} className="heading">
+          <BigHeading scale={scale} className="heading">
             {heading}
-          </Heading>
+          </BigHeading>
         ) : (
           <Heading scale={scale}>{heading}</Heading>
         )}

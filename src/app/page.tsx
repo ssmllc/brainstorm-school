@@ -1,5 +1,6 @@
 import Banner from "./components/banner/banner.component";
 import Content from "./components/content/content.component";
+import ImageGallery from "./components/gallery/image-gallery.component";
 import VideoContentSplit from "./components/registration/video-content-split.component";
 import CardSlider from "./components/tracks/card-slider.component";
 import TracksGroup from "./components/tracks/tracks.component";
@@ -17,6 +18,7 @@ const Home = () => {
         />
         <TracksGroup />
         <CardSlider />
+        <ImageGallery />
       </Content>
     </main>
   );
