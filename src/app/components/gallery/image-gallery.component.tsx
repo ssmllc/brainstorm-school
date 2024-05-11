@@ -51,22 +51,25 @@ const Card = styled.div<cardProps>`
   background-size: cover;
   border-radius: 25px;
   box-shadow: 0 0 15px #222;
-  height: 300px;
-  width: 350px;
+  /* max-width: 350px; */
+  width: 25%;
 
   &[data-position="1"] {
-    height: 500px;
+    height: 100%;
     left: 50%;
+    max-height: 500px;
+    max-width: 850px;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 850px;
+    width: 62%;
     z-index: 10;
   }
 
   &[data-position="2"] {
-    height: 450px;
-    left: 780px;
+    /* max-height: 450px; */
+    height: 90%;
+    left: 61%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -74,8 +77,9 @@ const Card = styled.div<cardProps>`
   }
 
   &[data-position="3"] {
-    height: 400px;
-    left: 835px;
+    /* max-height: 400px; */
+    height: 80%;
+    left: 65.75%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -83,8 +87,9 @@ const Card = styled.div<cardProps>`
   }
 
   &[data-position="4"] {
-    height: 350px;
-    left: 890px;
+    /* max-height: 350px; */
+    height: 70%;
+    left: 70.25%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -92,8 +97,9 @@ const Card = styled.div<cardProps>`
   }
 
   &[data-position="5"] {
-    height: 300px;
-    left: 940px;
+    /* max-height: 300px; */
+    height: 60%;
+    left: 73.5%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -126,20 +132,21 @@ const ImageGallery = () => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "450px",
-                left: "340px",
+                left: "27.5%",
                 width: "350px",
                 zIndex: "9",
               });
             }
 
+            // Current
             if (slide.dataset.position === "2") {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "500px",
+                height: "100%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                width: "850px",
+                width: "62%",
                 zIndex: "10",
               });
             }
@@ -147,7 +154,7 @@ const ImageGallery = () => {
             if (slide.dataset.position === "3") {
               gsap.to(slide, {
                 height: "450px",
-                left: "775px",
+                left: "61%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -158,7 +165,7 @@ const ImageGallery = () => {
             if (slide.dataset.position === "4") {
               gsap.to(slide, {
                 height: "400px",
-                left: "825px",
+                left: "66%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -169,7 +176,7 @@ const ImageGallery = () => {
             if (slide.dataset.position === "5") {
               gsap.to(slide, {
                 height: "350px",
-                left: "875px",
+                left: "70%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -187,7 +194,7 @@ const ImageGallery = () => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "400px",
-                left: "275px",
+                left: "23%",
                 width: "350px",
                 zIndex: "9",
               });
@@ -198,28 +205,29 @@ const ImageGallery = () => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "450px",
-                left: "335px",
+                left: "27.5%",
                 width: "350px",
                 zIndex: "9",
               });
             }
 
+            // Current
             if (slide.dataset.position === "3") {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "500px",
+                height: "100%",
                 left: "50%",
-                width: "850px",
-                zIndex: "10",
                 transform: "translate(-50%, -50%)",
+                width: "62%",
+                zIndex: "10",
               });
             }
 
             if (slide.dataset.position === "4") {
               gsap.to(slide, {
                 height: "450px",
-                left: "780px",
+                left: "61.25%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -230,7 +238,7 @@ const ImageGallery = () => {
             if (slide.dataset.position === "5") {
               gsap.to(slide, {
                 height: "400px",
-                left: "840px",
+                left: "66%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -248,7 +256,7 @@ const ImageGallery = () => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "350px",
-                left: "220px",
+                left: "18.5%",
                 width: "350px",
                 zIndex: "7",
               });
@@ -259,7 +267,7 @@ const ImageGallery = () => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "400px",
-                left: "275px",
+                left: "23%",
                 width: "350px",
                 zIndex: "8",
               });
@@ -270,28 +278,29 @@ const ImageGallery = () => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "450px",
-                left: "335px",
+                left: "27.5%",
                 width: "350px",
                 zIndex: "9",
               });
             }
 
+            // Current
             if (slide.dataset.position === "4") {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "500px",
+                height: "100%",
                 left: "50%",
-                width: "850px",
-                zIndex: "10",
                 transform: "translate(-50%, -50%)",
+                width: "62%",
+                zIndex: "10",
               });
             }
 
             if (slide.dataset.position === "5") {
               gsap.to(slide, {
                 height: "450px",
-                left: "780px",
+                left: "61%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -309,7 +318,7 @@ const ImageGallery = () => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "300px",
-                left: "175px",
+                left: "15%",
                 width: "350px",
                 zIndex: "6",
               });
@@ -320,7 +329,7 @@ const ImageGallery = () => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "350px",
-                left: "225px",
+                left: "18.5%",
                 width: "350px",
                 zIndex: "7",
               });
@@ -331,7 +340,7 @@ const ImageGallery = () => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "400px",
-                left: "280px",
+                left: "23%",
                 width: "350px",
                 zIndex: "8",
               });
@@ -342,21 +351,22 @@ const ImageGallery = () => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "450px",
-                left: "335px",
+                left: "27.5%",
                 width: "350px",
                 zIndex: "9",
               });
             }
 
+            // Current
             if (slide.dataset.position === "5") {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "500px",
+                height: "100%",
                 left: "50%",
-                width: "850px",
-                zIndex: "10",
                 transform: "translate(-50%, -50%)",
+                width: "62%",
+                zIndex: "10",
               });
             }
           });
