@@ -42,7 +42,7 @@ const Banner = () => {
       />
       <RenderThreeDModel />
       <video
-        style={{ position: "absolute", left: 0, top: 0 }}
+        style={{ position: "absolute", left: 0, top: 0, objectFit: "cover" }}
         muted
         loop
         width="100%"

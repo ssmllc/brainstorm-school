@@ -15,31 +15,50 @@ const Button = styled.button`
 
   &.prev {
     position: absolute;
-    left: -100px;
+    left: 25px;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 20;
+
+    @media (min-width: 800px) {
+      left: -75px;
+    }
   }
 
   &.next {
     position: absolute;
-    right: -100px;
+    right: 25px;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 20;
+
+    @media (min-width: 800px) {
+      right: -75px;
+    }
   }
 `;
 
 const Gallery = styled.div`
   /* border: thin dashed cyan; */
+  margin: 75px 0;
   width: 100vw;
+
+  @media (min-width: 800px) {
+    margin: 50px 0;
+  }
 `;
 
 const Carousel = styled.div`
   /* border: thin dashed red; */
   display: flex;
-  height: 500px;
+  height: 400px;
   margin: 0 auto;
   position: relative;
   width: 100%;
+
+  @media (min-width: 800px) {
+    height: 500px;
+  }
 `;
 
 interface cardProps {
@@ -47,7 +66,7 @@ interface cardProps {
 }
 
 const Card = styled.div<cardProps>`
-  background: ${({ image }) => `url(${image}) top center no-repeat`};
+  background: ${({ image }) => `url(${image}) center center no-repeat`};
   background-size: cover;
   border-radius: 25px;
   box-shadow: 0 0 15px #222;
@@ -107,6 +126,17 @@ const Card = styled.div<cardProps>`
   }
 `;
 
+const CarouselWrapper = styled.div`
+  /* border: thin dashed purple; */
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+
+  @media (min-width: 800px) {
+    width: 75%;
+  }
+`;
+
 const ImageGallery = () => {
   let currentPosition: number = 1;
 
@@ -131,9 +161,9 @@ const ImageGallery = () => {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "450px",
-                left: "27.5%",
-                width: "350px",
+                height: "90%",
+                left: "26.5%",
+                width: "25%",
                 zIndex: "9",
               });
             }
@@ -153,18 +183,19 @@ const ImageGallery = () => {
 
             if (slide.dataset.position === "3") {
               gsap.to(slide, {
-                height: "450px",
+                height: "90%",
                 left: "61%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
+                width: "25%",
                 zIndex: "9",
               });
             }
 
             if (slide.dataset.position === "4") {
               gsap.to(slide, {
-                height: "400px",
+                height: "80%",
                 left: "66%",
                 position: "absolute",
                 top: "50%",
@@ -175,7 +206,7 @@ const ImageGallery = () => {
 
             if (slide.dataset.position === "5") {
               gsap.to(slide, {
-                height: "350px",
+                height: "70%",
                 left: "70%",
                 position: "absolute",
                 top: "50%",
@@ -193,9 +224,9 @@ const ImageGallery = () => {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "400px",
-                left: "23%",
-                width: "350px",
+                height: "80%",
+                left: "22%",
+                width: "25%",
                 zIndex: "9",
               });
             }
@@ -204,9 +235,9 @@ const ImageGallery = () => {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "450px",
-                left: "27.5%",
-                width: "350px",
+                height: "90%",
+                left: "26.5%",
+                width: "25%",
                 zIndex: "9",
               });
             }
@@ -226,7 +257,7 @@ const ImageGallery = () => {
 
             if (slide.dataset.position === "4") {
               gsap.to(slide, {
-                height: "450px",
+                height: "90%",
                 left: "61.25%",
                 position: "absolute",
                 top: "50%",
@@ -237,7 +268,7 @@ const ImageGallery = () => {
 
             if (slide.dataset.position === "5") {
               gsap.to(slide, {
-                height: "400px",
+                height: "80%",
                 left: "66%",
                 position: "absolute",
                 top: "50%",
@@ -255,9 +286,9 @@ const ImageGallery = () => {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "350px",
-                left: "18.5%",
-                width: "350px",
+                height: "70%",
+                left: "18%",
+                width: "25%",
                 zIndex: "7",
               });
             }
@@ -266,9 +297,9 @@ const ImageGallery = () => {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "400px",
-                left: "23%",
-                width: "350px",
+                height: "80%",
+                left: "22%",
+                width: "25%",
                 zIndex: "8",
               });
             }
@@ -277,9 +308,9 @@ const ImageGallery = () => {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "450px",
-                left: "27.5%",
-                width: "350px",
+                height: "90%",
+                left: "26.5%",
+                width: "25%",
                 zIndex: "9",
               });
             }
@@ -299,11 +330,12 @@ const ImageGallery = () => {
 
             if (slide.dataset.position === "5") {
               gsap.to(slide, {
-                height: "450px",
+                height: "90%",
                 left: "61%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
+                width: "25%",
                 zIndex: "9",
               });
             }
@@ -317,9 +349,9 @@ const ImageGallery = () => {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "300px",
-                left: "15%",
-                width: "350px",
+                height: "60%",
+                left: "14.5%",
+                width: "25%",
                 zIndex: "6",
               });
             }
@@ -328,9 +360,9 @@ const ImageGallery = () => {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "350px",
-                left: "18.5%",
-                width: "350px",
+                height: "70%",
+                left: "18%",
+                width: "25%",
                 zIndex: "7",
               });
             }
@@ -339,9 +371,9 @@ const ImageGallery = () => {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "400px",
-                left: "23%",
-                width: "350px",
+                height: "80%",
+                left: "22%",
+                width: "25%",
                 zIndex: "8",
               });
             }
@@ -350,9 +382,9 @@ const ImageGallery = () => {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "450px",
-                left: "27.5%",
-                width: "350px",
+                height: "90%",
+                left: "26.5%",
+                width: "25%",
                 zIndex: "9",
               });
             }
@@ -373,7 +405,7 @@ const ImageGallery = () => {
         }
       } else if (direction === "prev") {
         if (currentPosition <= 0) {
-          currentPosition = 0;
+          currentPosition = 1;
         } else {
           currentPosition--;
         }
@@ -386,12 +418,12 @@ const ImageGallery = () => {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "500px",
+                height: "100%",
                 left: "50%",
                 position: "absolute",
                 top: "50%",
                 transform: "translate(-50%, -50%)",
-                width: "850px",
+                width: "62%",
                 zIndex: "10",
               });
             }
@@ -400,42 +432,44 @@ const ImageGallery = () => {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "450px",
-                left: "780px",
+                height: "90%",
+                left: "61%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
-                width: "350px",
+                width: "25%",
                 zIndex: "9",
               });
             }
 
             if (slide.dataset.position === "3") {
               gsap.to(slide, {
-                height: "400px",
-                left: "835px",
+                height: "80%",
+                left: "65.75%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
+                width: "25%",
                 zIndex: "8",
               });
             }
 
             if (slide.dataset.position === "4") {
               gsap.to(slide, {
-                height: "350px",
-                left: "890px",
+                height: "70%",
+                left: "70.25%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
+                width: "25%",
                 zIndex: "7",
               });
             }
 
             if (slide.dataset.position === "5") {
               gsap.to(slide, {
-                height: "300px",
-                left: "940px",
+                height: "60%",
+                left: "73.5%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -452,41 +486,42 @@ const ImageGallery = () => {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "450px",
-                left: "340px",
-                width: "350px",
+                height: "90%",
+                left: "27.5%",
+                width: "25%",
                 zIndex: "9",
               });
             }
 
+            // Current
             if (slide.dataset.position === "2") {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "500px",
+                height: "100%",
                 left: "50%",
-                width: "850px",
-                zIndex: "10",
                 transform: "translate(-50%, -50%)",
+                width: "62%",
+                zIndex: "10",
               });
             }
 
             if (slide.dataset.position === "3") {
               gsap.to(slide, {
-                height: "450px",
-                left: "775px",
+                height: "90%",
+                left: "61%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
-                width: "350px",
+                width: "25%",
                 zIndex: "9",
               });
             }
 
             if (slide.dataset.position === "4") {
               gsap.to(slide, {
-                height: "400px",
-                left: "825px",
+                height: "80%",
+                left: "66%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -496,8 +531,8 @@ const ImageGallery = () => {
 
             if (slide.dataset.position === "5") {
               gsap.to(slide, {
-                height: "350px",
-                left: "875px",
+                height: "70%",
+                left: "70%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -514,9 +549,9 @@ const ImageGallery = () => {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "400px",
-                left: "275px",
-                width: "350px",
+                height: "80%",
+                left: "23%",
+                width: "25%",
                 zIndex: "9",
               });
             }
@@ -525,41 +560,42 @@ const ImageGallery = () => {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "450px",
-                left: "335px",
-                width: "350px",
+                height: "90%",
+                left: "27.5%",
+                width: "25%",
                 zIndex: "9",
               });
             }
 
+            // Current
             if (slide.dataset.position === "3") {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "500px",
+                height: "100%",
                 left: "50%",
-                width: "850px",
-                zIndex: "10",
                 transform: "translate(-50%, -50%)",
+                width: "62%",
+                zIndex: "10",
               });
             }
 
             if (slide.dataset.position === "4") {
               gsap.to(slide, {
-                height: "450px",
-                left: "780px",
+                height: "90%",
+                left: "61.25%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
-                width: "350px",
+                width: "25%",
                 zIndex: "8",
               });
             }
 
             if (slide.dataset.position === "5") {
               gsap.to(slide, {
-                height: "400px",
-                left: "835px",
+                height: "80%",
+                left: "66%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -576,9 +612,9 @@ const ImageGallery = () => {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "350px",
-                left: "220px",
-                width: "350px",
+                height: "70%",
+                left: "18%",
+                width: "25%",
                 zIndex: "7",
               });
             }
@@ -587,9 +623,9 @@ const ImageGallery = () => {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "400px",
-                left: "275px",
-                width: "350px",
+                height: "80%",
+                left: "23%",
+                width: "25%",
                 zIndex: "8",
               });
             }
@@ -598,33 +634,34 @@ const ImageGallery = () => {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "450px",
-                left: "335px",
-                width: "350px",
+                height: "90%",
+                left: "27.5%",
+                width: "25%",
                 zIndex: "9",
               });
             }
 
+            // Current
             if (slide.dataset.position === "4") {
               gsap.to(slide, {
                 duration: 0.5,
                 ease: "power1.out",
-                height: "500px",
+                height: "100%",
                 left: "50%",
-                width: "850px",
-                zIndex: "10",
                 transform: "translate(-50%, -50%)",
+                width: "62%",
+                zIndex: "10",
               });
             }
 
             if (slide.dataset.position === "5") {
               gsap.to(slide, {
-                height: "450px",
-                left: "780px",
+                height: "90%",
+                left: "61%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
-                width: "350px",
+                width: "25%",
                 zIndex: "9",
               });
             }
@@ -637,19 +674,12 @@ const ImageGallery = () => {
   return (
     <Gallery>
       <RegistrationBlock
-        heading="Work from our students"
+        heading="Students' Gallery"
         primary={false}
         scale="xl"
       />
 
-      <div
-        style={{
-          border: "thin dashed purple",
-          width: "75%",
-          margin: "0 auto",
-          position: "relative",
-        }}
-      >
+      <CarouselWrapper>
         <Button className="prev" onClick={() => handleCardSliderMove("prev")}>
           <svg
             viewBox="0 0 48 48"
@@ -700,7 +730,7 @@ const ImageGallery = () => {
             <path d="M16.625,42a1,1,0,0,1-.6416-1.76807L33.249,25.84375a2.39879,2.39879,0,0,0,0-3.6875L15.9834,7.76807a1.00017,1.00017,0,1,1,1.28125-1.53614L34.53027,20.62012a4.39969,4.39969,0,0,1,0,6.75976L17.26465,41.76807A.99756.99756,0,0,1,16.625,42Z" />
           </svg>
         </Button>
-      </div>
+      </CarouselWrapper>
     </Gallery>
   );
 };

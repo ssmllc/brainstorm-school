@@ -14,7 +14,8 @@ const ContentWrapper = styled.div`
       no-repeat;
     background-size: 75%;
     position: absolute;
-    rotate: -15deg;
+    rotate: 0;
+    /* rotate: -15deg; */
     transform-origin: top left;
     height: 100%;
     filter: grayscale(0.5);
