@@ -86,12 +86,21 @@ interface headingProps {
 }
 
 const BigHeading = styled.h1<headingProps>`
-  font-size: ${(props) => (props.scale === "xl" ? "42px" : "28px")};
+  font-size: 36px;
+
+  @media (min-width: 800px) {
+    font-size: ${(props) => (props.scale === "xl" ? "42px" : "28px")};
+  }
 `;
 
 const Heading = styled.p<headingProps>`
-  font-size: ${(props) => (props.scale === "xl" ? "42px" : "28px")};
+  font-size: 36px;
   font-weight: bold;
+
+  @media (min-width: 800px) {
+    font-size: ${(props) => (props.scale === "xl" ? "42px" : "28px")};
+    font-weight: bold;
+  }
 `;
 
 const RegistrationBlock = ({

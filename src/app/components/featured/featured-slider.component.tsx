@@ -5,6 +5,7 @@ import styled from "styled-components";
 import RegistrationBlock from "../registration/registration-block.component";
 import ImageDetailCard from "../card/card.component";
 import gsap from "gsap";
+import ActionButton from "../buttons/action-button.component";
 
 const Content = styled.div`
   margin: 50px 0;
@@ -18,7 +19,11 @@ const Featured = styled.div`
   flex-direction: row;
   margin: 0 auto;
   position: relative;
-  width: 65%;
+  width: 85%;
+
+  @media (min-width: 800px) {
+    width: 65%;
+  }
 `;
 
 const SliderWrapper = styled.div`
@@ -35,7 +40,20 @@ const Slider = styled.div`
 
 const Slide = styled.div`
   /* border: thin solid green; */
-  width: 1125px;
+  width: 320px;
+
+  @media (min-width: 800px) {
+    width: 1125px;
+  }
+`;
+
+const ReadMore = styled.div`
+  padding: 0;
+  text-align: center;
+
+  @media (min-width: 800px) {
+    padding: 25px 0;
+  }
 `;
 
 const Button = styled.button`
@@ -43,14 +61,52 @@ const Button = styled.button`
   border-radius: 100%;
   border: 0;
   color: #fff;
-  height: 65px;
-  width: 65px;
+  height: 50px;
+  width: 50px;
+
+  @media (min-width: 800px) {
+    height: 65px;
+    width: 65px;
+  }
+
+  &.prev {
+    position: absolute;
+    left: -20px;
+    top: 75px;
+    z-index: 10;
+  }
+
+  &.next {
+    position: absolute;
+    right: -20px;
+    top: 75px;
+    z-index: 10;
+  }
+
+  @media (min-width: 800px) {
+    &.prev {
+      position: absolute;
+      left: -100px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    &.next {
+      position: absolute;
+      right: -100px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+  }
 `;
 
 const FeaturedSlider = () => {
   const [slideWidth, setSlideWidth] = useState<number>(0);
   const [slideCardWidth, setSlideCardWidth] = useState<number>(0);
   const [slidesTotal, setSlidesTotal] = useState<number>(0);
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
   let currentSlide: number = 0;
 
@@ -94,7 +150,11 @@ const FeaturedSlider = () => {
       const slideTotalWidth = slides[0].offsetWidth * slides.length;
       setSlideWidth(slideTotalWidth);
     }
-  }, []);
+
+    window.addEventListener("resize", () => {
+      setWindowWidth(window.innerWidth);
+    });
+  }, [windowWidth]);
 
   return (
     <Content>
@@ -105,17 +165,7 @@ const FeaturedSlider = () => {
       />
 
       <Featured>
-        <Button
-          style={{
-            position: "absolute",
-            left: "-100px",
-            top: "50%",
-            transform: "translateY(-50%)",
-            zIndex: 10,
-          }}
-          className="prev"
-          onClick={() => handleCardSliderMove("prev")}
-        >
+        <Button className="prev" onClick={() => handleCardSliderMove("prev")}>
           <svg
             viewBox="0 0 48 48"
             fill="#bababa"
@@ -128,7 +178,7 @@ const FeaturedSlider = () => {
           <Slider className="slider-wrapper">
             <Slide className="slide">
               <ImageDetailCard
-                variant="lg"
+                variant={windowWidth < 800 ? "sm" : "lg"}
                 superHeading="Featured Blog"
                 info="Lorem ipsum dolor sit amet, Optio pariatur blanditiis accusantium placeat."
               />
@@ -136,7 +186,15 @@ const FeaturedSlider = () => {
 
             <Slide className="slide">
               <ImageDetailCard
-                variant="lg"
+                variant={windowWidth < 800 ? "sm" : "lg"}
+                superHeading="Featured Blog"
+                info="Lorem ipsum dolor sit amet, Optio pariatur blanditiis accusantium placeat."
+              />
+            </Slide>
+
+            <Slide className="slide">
+              <ImageDetailCard
+                variant={windowWidth < 800 ? "sm" : "lg"}
                 superHeading="Featured Blog"
                 info="Lorem ipsum dolor sit amet, Optio pariatur blanditiis accusantium placeat."
               />
@@ -144,17 +202,7 @@ const FeaturedSlider = () => {
           </Slider>
         </SliderWrapper>
 
-        <Button
-          style={{
-            position: "absolute",
-            right: "-100px",
-            top: "50%",
-            transform: "translateY(-50%)",
-            zIndex: 10,
-          }}
-          className="next"
-          onClick={() => handleCardSliderMove("next")}
-        >
+        <Button className="next" onClick={() => handleCardSliderMove("next")}>
           <svg
             viewBox="0 0 48 48"
             fill="#bababa"
@@ -164,6 +212,10 @@ const FeaturedSlider = () => {
           </svg>
         </Button>
       </Featured>
+
+      <ReadMore>
+        <ActionButton type="tertiary" label="Read More" />
+      </ReadMore>
     </Content>
   );
 };

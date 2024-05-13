@@ -17,9 +17,13 @@ const Card = styled.div<cardProps>`
   flex-direction: ${({ variant }) => (variant === "sm" ? "column" : "row")};
   height: ${({ variant }) => (variant === "sm" ? "auto" : "325px")};
   overflow: hidden;
-  max-width: ${({ variant }) => (variant === "sm" ? "320px" : "100%")};
-  width: ${({ variant }) => (variant === "sm" ? "25%" : "100%")};
+  width: 100%;
   position: relative;
+
+  @media (min-width: 800px) {
+    max-width: ${({ variant }) => (variant === "sm" ? "320px" : "100%")};
+    width: ${({ variant }) => (variant === "sm" ? "25%" : "100%")};
+  }
 `;
 
 const Poster = styled.div<cardProps>`
