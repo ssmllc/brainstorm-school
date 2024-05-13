@@ -3,6 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 import RegistrationBlock from "../registration/registration-block.component";
+import ImageDetailCard from "../card/card.component";
 
 const Content = styled.div`
   margin: 50px 0;
@@ -10,43 +11,21 @@ const Content = styled.div`
 `;
 
 const Featured = styled.div`
+  border: thin solid blue;
   border-radius: 20px;
   box-shadow: 0 0 15px #222;
   display: flex;
   flex-direction: row;
   margin: 0 auto;
-  overflow: hidden;
+  padding: 50px 0;
+  /* overflow: hidden; */
   width: 65%;
 `;
 
 const Slider = styled.div`
+  /* border: thin dashed red; */
   display: flex;
   flex-direction: row;
-  width: 100%;
-`;
-
-const Post = styled.div`
-  display: flex;
-  flex-direction: row;
-  height: 350px;
-  width: 100%;
-`;
-
-interface posterProps {
-  image: string;
-}
-
-const Poster = styled.div<posterProps>`
-  background: ${({ image }) => `url(${image}) top center no-repeat`};
-  background-size: cover;
-  height: 100%;
-  width: 45%;
-`;
-
-const Details = styled.div`
-  background: var(--off-black);
-  height: 100%;
-  width: 55%;
 `;
 
 const FeaturedSlider = () => {
@@ -60,10 +39,31 @@ const FeaturedSlider = () => {
 
       <Featured>
         <Slider>
-          <Post>
-            <Poster image="/backgrounds/sci-fi-city.jpg"></Poster>
-            <Details></Details>
-          </Post>
+          <div
+            style={{
+              border: "thin solid green",
+              width: "1200px",
+            }}
+          >
+            <ImageDetailCard
+              variant="lg"
+              superHeading="Featured Blog"
+              info="Lorem ipsum dolor sit amet, Optio pariatur blanditiis accusantium placeat."
+            />
+          </div>
+
+          <div
+            style={{
+              border: "thin solid green",
+              width: "1200px",
+            }}
+          >
+            <ImageDetailCard
+              variant="lg"
+              superHeading="Featured Blog"
+              info="Lorem ipsum dolor sit amet, Optio pariatur blanditiis accusantium placeat."
+            />
+          </div>
         </Slider>
       </Featured>
     </Content>

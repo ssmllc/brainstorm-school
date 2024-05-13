@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Children, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import styled from "styled-components";
 

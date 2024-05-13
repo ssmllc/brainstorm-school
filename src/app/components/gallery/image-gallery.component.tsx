@@ -487,7 +487,7 @@ const ImageGallery = () => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "90%",
-                left: "27.5%",
+                left: "26.5%",
                 width: "25%",
                 zIndex: "9",
               });
@@ -550,7 +550,7 @@ const ImageGallery = () => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "80%",
-                left: "23%",
+                left: "22%",
                 width: "25%",
                 zIndex: "9",
               });
@@ -561,7 +561,7 @@ const ImageGallery = () => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "90%",
-                left: "27.5%",
+                left: "26.5%",
                 width: "25%",
                 zIndex: "9",
               });
@@ -624,7 +624,7 @@ const ImageGallery = () => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "80%",
-                left: "23%",
+                left: "22%",
                 width: "25%",
                 zIndex: "8",
               });
@@ -635,7 +635,7 @@ const ImageGallery = () => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "90%",
-                left: "27.5%",
+                left: "26.5%",
                 width: "25%",
                 zIndex: "9",
               });
