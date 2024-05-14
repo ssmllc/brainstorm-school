@@ -106,7 +106,7 @@ const FeaturedSlider = () => {
   const [slideWidth, setSlideWidth] = useState<number>(0);
   const [slideCardWidth, setSlideCardWidth] = useState<number>(0);
   const [slidesTotal, setSlidesTotal] = useState<number>(0);
-  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState<number>(0);
 
   let currentSlide: number = 0;
 
@@ -151,7 +151,7 @@ const FeaturedSlider = () => {
       setSlideWidth(slideTotalWidth);
     }
 
-    if (typeof window !== undefined) {
+    if (typeof window !== "undefined") {
       window.addEventListener("resize", () => {
         setWindowWidth(window.innerWidth);
       });
