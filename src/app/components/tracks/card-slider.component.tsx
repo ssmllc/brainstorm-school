@@ -69,6 +69,11 @@ const Card = styled.div`
   max-width: 320px;
   width: 25%;
   position: relative;
+  transition: all 0.15s ease-out;
+
+  &:hover {
+    outline: thin solid var(--blue);
+  }
 `;
 
 interface cardProps {
