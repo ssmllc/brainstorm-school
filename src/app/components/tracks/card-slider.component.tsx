@@ -14,6 +14,7 @@ const CardSliderContainer = styled.div`
 
   @media (min-width: 800px) {
     height: 500px;
+    margin: 60px 0;
   }
 `;
 

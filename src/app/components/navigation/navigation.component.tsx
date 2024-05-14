@@ -1,27 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 import styled from "styled-components";
 import { BrainstormContext } from "@/app/context/context-provider";
 import { useContext } from "react";
 import { Course } from "@/app/types/types";
-
-const BrainstormLogo = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  padding: 20px 20px;
-`;
-
-const Brainstorm = styled.span`
-  color: var(--white);
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  margin: 0 20px;
-  text-transform: uppercase;
-`;
+import BrainstormLogo from "../Logo/logo.component";
 
 const NavigationBar = styled.div`
   background: rgba(0, 0, 0, 0.9);
@@ -173,15 +158,7 @@ const Navigation = () => {
 
   return (
     <NavigationBar>
-      <BrainstormLogo>
-        <Image
-          src="/logo/brainstorm-logo.png"
-          width={42}
-          height={42}
-          alt="Brainstorm School Logo"
-        />
-        <Brainstorm>Brainstorm</Brainstorm>
-      </BrainstormLogo>
+      <BrainstormLogo justify="center" />
       <DropdownButton>
         <DropdownButtonBar />
         <DropdownButtonBar />

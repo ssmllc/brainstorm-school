@@ -28,22 +28,49 @@ const Content = styled.div`
   }
 `;
 
-const CallToAction = styled.button`
-  background: var(--blue);
+// const CallToAction = styled.button`
+//   background: var(--blue);
+//   border-radius: 35px;
+//   border: 0;
+//   color: var(--white);
+//   font-size: 12px;
+//   letter-spacing: 2px;
+//   margin: 35px 0 0;
+//   padding: 15px 20px;
+//   text-transform: uppercase;
+//   transition: all 0.25s ease-out;
+
+//   &:hover {
+//     background: #0059ff;
+//     cursor: pointer;
+//   }
+// `;
+
+interface buttonProps {
+  type?: string;
+}
+
+const CallToAction = styled.button<buttonProps>`
+  background: ${(props) =>
+    props.type === "primary"
+      ? "#0091ff"
+      : props.type === "tertiary"
+      ? "transparent"
+      : "#fff"};
   border-radius: 35px;
-  border: 0;
-  color: var(--white);
+  border: ${(props) => (props.type === "tertiary" ? "3px solid #fff" : 0)};
+  color: ${(props) =>
+    props.type === "primary"
+      ? "#fff"
+      : props.type === "tertiary"
+      ? "#fff"
+      : "#000"};
   font-size: 12px;
+  font-weight: bold;
   letter-spacing: 2px;
   margin: 35px 0 0;
   padding: 15px 20px;
   text-transform: uppercase;
-  transition: all 0.25s ease-out;
-
-  &:hover {
-    background: #0059ff;
-    cursor: pointer;
-  }
 `;
 
 const RegistrationFAQ = styled.div`
@@ -109,6 +136,7 @@ const RegistrationBlock = ({
   scale,
   text,
   cta,
+  ctaType,
   faq,
 }: {
   primary: boolean;
@@ -116,6 +144,7 @@ const RegistrationBlock = ({
   scale: string;
   text?: string;
   cta?: string;
+  ctaType?: string;
   faq?: boolean;
 }) => {
   return (
@@ -129,7 +158,7 @@ const RegistrationBlock = ({
           <Heading scale={scale}>{heading}</Heading>
         )}
         {text && <p className="sub-heading">{text}</p>}
-        {cta && <CallToAction>{cta}</CallToAction>}
+        {cta && <CallToAction type={ctaType}>{cta}</CallToAction>}
         {faq && (
           <RegistrationFAQ>
             <p className="faq-text">
