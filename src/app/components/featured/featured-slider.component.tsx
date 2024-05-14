@@ -151,9 +151,11 @@ const FeaturedSlider = () => {
       setSlideWidth(slideTotalWidth);
     }
 
-    window.addEventListener("resize", () => {
-      setWindowWidth(window.innerWidth);
-    });
+    if (typeof window !== undefined) {
+      window.addEventListener("resize", () => {
+        setWindowWidth(window.innerWidth);
+      });
+    }
   }, [windowWidth]);
 
   return (
