@@ -103,10 +103,13 @@ const Button = styled.button`
 `;
 
 const FeaturedSlider = () => {
+  const [variantType, setVariantType] = useState<string>("lg");
   const [slideWidth, setSlideWidth] = useState<number>(0);
   const [slideCardWidth, setSlideCardWidth] = useState<number>(0);
   const [slidesTotal, setSlidesTotal] = useState<number>(0);
-  const [windowWidth, setWindowWidth] = useState<number>(0);
+  const [windowWidth, setWindowWidth] = useState<number>(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
 
   let currentSlide: number = 0;
 
@@ -154,6 +157,10 @@ const FeaturedSlider = () => {
     if (typeof window !== "undefined") {
       window.addEventListener("resize", () => {
         setWindowWidth(window.innerWidth);
+        const variant = window.innerWidth < 800 ? "sm" : "lg";
+        console.log("variant", variant);
+        console.log("windowWidth", window.innerWidth);
+        setVariantType(variant);
       });
     }
   }, [windowWidth]);
@@ -180,7 +187,7 @@ const FeaturedSlider = () => {
           <Slider className="slider-wrapper">
             <Slide className="slide">
               <ImageDetailCard
-                variant={windowWidth < 800 ? "sm" : "lg"}
+                variant={variantType}
                 superHeading="Featured Blog"
                 info="Lorem ipsum dolor sit amet, Optio pariatur blanditiis accusantium placeat."
               />
@@ -188,7 +195,7 @@ const FeaturedSlider = () => {
 
             <Slide className="slide">
               <ImageDetailCard
-                variant={windowWidth < 800 ? "sm" : "lg"}
+                variant={variantType}
                 superHeading="Featured Blog"
                 info="Lorem ipsum dolor sit amet, Optio pariatur blanditiis accusantium placeat."
               />
@@ -196,7 +203,15 @@ const FeaturedSlider = () => {
 
             <Slide className="slide">
               <ImageDetailCard
-                variant={windowWidth < 800 ? "sm" : "lg"}
+                variant={variantType}
+                superHeading="Featured Blog"
+                info="Lorem ipsum dolor sit amet, Optio pariatur blanditiis accusantium placeat."
+              />
+            </Slide>
+
+            <Slide className="slide">
+              <ImageDetailCard
+                variant={variantType}
                 superHeading="Featured Blog"
                 info="Lorem ipsum dolor sit amet, Optio pariatur blanditiis accusantium placeat."
               />
