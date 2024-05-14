@@ -49,7 +49,7 @@ const Banner = () => {
         height="100%"
         autoPlay={true}
       >
-        <source src="/video/lightning.mp4" type="video/mp4" />
+        <source src="/video/lightning2.mp4" type="video/mp4" />
       </video>
       <Overlay />
     </BannerWrapper>

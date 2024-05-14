@@ -28,14 +28,10 @@ const ContentBlock = styled.div`
 `;
 
 const Block = styled.div`
-  box-shadow: inset 0 0 0 1px #3f3f3f;
-  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
-
-  transition: all 0.25s ease-out;
 
   &.no-hot-spot {
     padding: 30px 20px;
@@ -47,14 +43,6 @@ const Block = styled.div`
 
   @media (min-width: 800px) {
     width: 33.33%;
-  }
-
-  &:hover {
-    box-shadow: inset 0 0 0 1px var(--blue);
-
-    .contact-info {
-      color: var(--blue);
-    }
   }
 `;
 
@@ -78,8 +66,19 @@ const Information = styled.div`
 `;
 
 const HotSpot = styled.a`
+  box-shadow: inset 0 0 0 1px #3f3f3f;
+  border-radius: 20px;
   display: flex;
   padding: 75px 50px;
+  transition: all 0.25s ease-out;
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px var(--blue);
+
+    .contact-info {
+      color: var(--blue);
+    }
+  }
 `;
 
 const Heading = styled.p`

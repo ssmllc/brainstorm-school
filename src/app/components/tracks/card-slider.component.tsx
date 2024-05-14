@@ -72,7 +72,20 @@ const Card = styled.div`
   transition: all 0.15s ease-out;
 
   &:hover {
-    outline: thin solid var(--blue);
+    outline: 2px solid var(--blue);
+
+    &::after {
+      background: var(--blue) url("/icons/placeholder.svg") top center no-repeat;
+      background-size: 50%;
+      background-position: center center;
+      border-radius: 100%;
+      bottom: 10px;
+      content: "";
+      height: 50px;
+      right: 10px;
+      position: absolute;
+      width: 50px;
+    }
   }
 `;
 
