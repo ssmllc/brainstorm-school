@@ -75,7 +75,7 @@ const Card = styled.div`
     outline: 2px solid var(--blue);
 
     &::after {
-      background: var(--blue) url("/icons/placeholder.svg") top center no-repeat;
+      background: var(--blue) url("/icons/ico-eye.png") top center no-repeat;
       background-size: 50%;
       background-position: center center;
       border-radius: 100%;
@@ -193,7 +193,14 @@ const Button = styled.button`
 
 const CourseDetail = ({ children }: any) => {
   return (
-    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+    <li
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "10px",
+        color: "var(--white-50)",
+      }}
+    >
       {children}
     </li>
   );

@@ -39,6 +39,7 @@ const Banner = () => {
         heading="Learn from industry professionals and become a master of your craft today."
         scale="xl"
         cta="Register Today"
+        ctaType="primary"
       />
       <RenderThreeDModel />
       <video

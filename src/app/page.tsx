@@ -8,6 +8,7 @@ import TracksGroup from "./components/tracks/tracks.component";
 import ContactBlock from "./components/contact/contact-block.component";
 import RegistrationBlock from "./components/registration/registration-block.component";
 import Footer from "./components/footer/footer.component";
+import CardGroup from "./components/card/card-group.component";
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
         <CardSlider />
         <ImageGallery />
         <FeaturedSlider />
+        <CardGroup />
         <ContactBlock />
         <RegistrationBlock
           primary={false}
