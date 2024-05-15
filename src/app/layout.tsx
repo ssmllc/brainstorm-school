@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import { BrainstormProvider } from "./context/context-provider";
 import StyledComponentsRegistry from "../../lib/registry";
 import Navigation from "./components/navigation/navigation.component";
-import Head from "next/head";
+import Footer from "./components/footer/footer.component";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -24,6 +24,7 @@ export default function RootLayout({
           <StyledComponentsRegistry>
             <Navigation />
             {children}
+            <Footer />
           </StyledComponentsRegistry>
         </BrainstormProvider>
       </body>

@@ -5,11 +5,15 @@ import styled from "styled-components";
 
 interface buttonProps {
   type?: string;
+  offsetMargin?: string;
+  offsetPadding?: string;
 }
 
 type Action = {
   type: string;
   label: string;
+  offsetMargin?: string;
+  offsetPadding?: string;
 };
 
 const CallToAction = styled.button<buttonProps>`
@@ -30,13 +34,23 @@ const CallToAction = styled.button<buttonProps>`
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 2px;
-  margin: 35px 0 0;
-  padding: 15px 20px;
+  margin: ${({ offsetMargin }) =>
+    offsetMargin ? `${offsetMargin}` : "35px 0 0"};
+  padding: ${({ offsetPadding }) =>
+    offsetPadding ? `${offsetPadding}` : "15px 20px"};
   text-transform: uppercase;
 `;
 
-const ActionButton = ({ type, label }: Action) => {
-  return <CallToAction type={type}>{label}</CallToAction>;
+const ActionButton = ({ type, label, offsetMargin, offsetPadding }: Action) => {
+  return (
+    <CallToAction
+      type={type}
+      offsetMargin={offsetMargin}
+      offsetPadding={offsetPadding}
+    >
+      {label}
+    </CallToAction>
+  );
 };
 
 export default ActionButton;

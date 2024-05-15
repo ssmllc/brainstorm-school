@@ -33,7 +33,6 @@ const Home = () => {
           scale="xl"
           cta="Register"
         />
-        <Footer />
       </Content>
     </main>
   );
