@@ -22,6 +22,7 @@ const Featured = styled.div`
   width: 85%;
 
   @media (min-width: 800px) {
+    max-width: 1125px;
     width: 65%;
   }
 `;
@@ -66,7 +67,6 @@ const Button = styled.button`
 
   @media (min-width: 800px) {
     height: 65px;
-    max-width: 1125px;
     width: 65px;
   }
 
