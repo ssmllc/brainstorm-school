@@ -37,7 +37,7 @@ const CallToAction = styled.button<buttonProps>`
   margin: ${({ offsetMargin }) =>
     offsetMargin ? `${offsetMargin}` : "35px 0 0"};
   padding: ${({ offsetPadding }) =>
-    offsetPadding ? `${offsetPadding}` : "15px 20px"};
+    offsetPadding ? `${offsetPadding}` : "15px 30px"};
   text-transform: uppercase;
 `;
 

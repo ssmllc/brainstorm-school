@@ -10,9 +10,16 @@ export const metadata: Metadata = {
 export default async function Courses() {
   return (
     <div>
-      <MediaBanner hero="true" background="/backgrounds/sci-fi-city.jpg" />
-      <h1>Courses</h1>
-      <RenderCourses />
+      <MediaBanner
+        hero={false}
+        background="/backgrounds/sci-fi-city.jpg"
+        image="/backgrounds/sci-fi-city.jpg"
+        media="/video/brainstorm-design-solve-learn.mp4"
+      />
+      <div style={{ height: "100vh" }}>
+        <h1>Courses</h1>
+        <RenderCourses />
+      </div>
     </div>
   );
 }
