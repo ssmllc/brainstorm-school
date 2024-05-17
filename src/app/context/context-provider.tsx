@@ -1,20 +1,26 @@
-'use client'
+"use client";
 
-import { createContext, useEffect, useState } from 'react'
-import { Course } from '../types/types';
+import { createContext, useEffect, useState } from "react";
+import { Course } from "../types/types";
 
 export const BrainstormContext = createContext({});
 
-export const BrainstormProvider = ({ children }: { children: React.ReactNode }) => {
+export const BrainstormProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   const [courses, setCourses] = useState<Course[]>([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const query = encodeURI('https://y8rjsgga.api.sanity.io/v2024-04-09/data/query/production?query=*[_type=="courses"] {title, slug, start, instructor, mainImage {asset -> {url}}, courses[] -> {title, description}, body[0] { children[0] {text}}}');
-        const response = await fetch(query, { cache: 'no-store' });
-          
+        const query = encodeURI(
+          'https://y8rjsgga.api.sanity.io/v2024-04-09/data/query/production?query=*[_type=="courses"] {track, category, title, slug, code, time, term, start, instructor, bio, preview {asset -> {url}}, tags[] -> {title, description}, details[0] { children[0] {text}}}'
+        );
+        const response = await fetch(query, { cache: "no-store" });
+
         if (!response.ok) {
           throw new Error(`HTTP error: Status ${response.status}`);
         }
@@ -24,39 +30,46 @@ export const BrainstormProvider = ({ children }: { children: React.ReactNode }) 
       } catch (error: any) {
         setError(error);
       }
-    }
+    };
 
     fetchData();
 
     const remapCourses = (result: Course[]) => {
       if (result) {
         let sanitizedData: Course[] = [];
-        result.map((course:Course) => {
+        result.map((course: Course) => {
           sanitizedData = [
             ...sanitizedData,
             {
+              track: course.track,
+              category: course.category,
               title: course.title,
               slug: course.slug?.current,
-              body: course.body?.children?.text,
-              instructor: course.instructor,
+              code: course.code,
+              time: course.time,
+              term: course.term,
               start: course.start,
-              mainImage: course?.mainImage?.asset,
-              courses: course.courses,
-            }
-          ]
+              instructor: course.instructor,
+              bio: course.bio,
+              preview: course?.preview?.asset,
+              tags: course.tags,
+              details: course.details?.children?.text,
+            },
+          ];
         });
         setCourses(sanitizedData);
       }
-    }
+    };
   }, []);
-  
+
   return (
     <BrainstormContext.Provider
       value={{
         courses,
-        error
-    }}>
-      { children }
+        error,
+      }}
+    >
+      {children}
     </BrainstormContext.Provider>
-  )
-}
+  );
+};

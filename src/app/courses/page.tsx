@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import RenderCourses from "./components/render-courses.component";
 import MediaBanner from "../components/banner/media-banner.component";
 import TextBlock from "../components/text-block/text-block.component";
-import FeaturedSlider from "../components/featured/featured-slider.component";
 import CardImageDetail from "../components/card/card-image-detail.component";
 import Heading from "../components/heading/heading.component";
 import RegistrationBlock from "../components/registration/registration-block.component";
@@ -40,8 +39,6 @@ export default async function Courses() {
           </TextBlock>
         </Container>
       </Container>
-
-      {/* <FeaturedSlider /> */}
 
       <Container>
         <Container gap="10px" width="75%" margin="50px auto">
