@@ -6,28 +6,50 @@ const Content = styled.div`
   margin: 10px 0;
 `;
 
+const SuperHeader = styled.h1`
+  color: var(--white);
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: 800px) {
+    font-size: 32px;
+  }
+`;
+
 const Header = styled.p`
   color: var(--white);
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
   padding: 15px 0;
+
+  @media (min-width: 800px) {
+    font-size: 32px;
+  }
 `;
 
 const SubHeader = styled.p`
   color: var(--white);
-  font-size: 18px;
+  font-size: 16px;
+
+  @media (min-width: 800px) {
+    font-size: 18px;
+  }
 `;
 
 interface HeadingProps {
   header: string;
-  subHeader: string;
+  subHeader?: string;
+  superHeader?: boolean;
 }
 
-const Heading = ({ header, subHeader }: HeadingProps) => {
+const Heading = ({ header, subHeader, superHeader = false }: HeadingProps) => {
   return (
     <Content>
-      <Header>{header}</Header>
-      <SubHeader>{subHeader}</SubHeader>
+      {superHeader && <SuperHeader>{header}</SuperHeader>}
+      {!superHeader && <Header>{header}</Header>}
+      {SubHeader && <SubHeader>{subHeader}</SubHeader>}
     </Content>
   );
 };

@@ -212,8 +212,23 @@ const Navigation = () => {
               ))}
           </DropdownMenu>
         </Dropdown>
+        <Dropdown>
+          <MenuItem href="/courses/gallery">Gallery</MenuItem>
+          <DropdownMenu>
+            <DropdownMenuItem>
+              <MenuItem href="/students">students</MenuItem>
+            </DropdownMenuItem>
+
+            <DropdownMenuItem>
+              <MenuItem href="/instructors">instructors</MenuItem>
+            </DropdownMenuItem>
+          </DropdownMenu>
+        </Dropdown>
         <li>
-          <MenuItem href="/courses/concept-art">News</MenuItem>
+          <MenuItem href="/courses/concept-art">Instructors</MenuItem>
+        </li>
+        <li>
+          <MenuItem href="/courses/concept-art">Blog</MenuItem>
         </li>
         <li>
           <CallToAction href="/courses/concept-art">Register</CallToAction>

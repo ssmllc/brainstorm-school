@@ -28,24 +28,6 @@ const Content = styled.div`
   }
 `;
 
-// const CallToAction = styled.button`
-//   background: var(--blue);
-//   border-radius: 35px;
-//   border: 0;
-//   color: var(--white);
-//   font-size: 12px;
-//   letter-spacing: 2px;
-//   margin: 35px 0 0;
-//   padding: 15px 20px;
-//   text-transform: uppercase;
-//   transition: all 0.25s ease-out;
-
-//   &:hover {
-//     background: #0059ff;
-//     cursor: pointer;
-//   }
-// `;
-
 interface buttonProps {
   type?: string;
 }

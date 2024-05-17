@@ -4,20 +4,27 @@ import styled from "styled-components";
 import ActionButton from "../buttons/action-button.component";
 import Pill from "../pill/pill.component";
 import Heading from "../heading/heading.component";
+import CourseDetail from "../course-detail/course-detail.component";
 
 interface bannerProps {
+  theme: string;
   hero: boolean;
   background: string;
 }
 
 const Banner = styled.div<bannerProps>`
-  background: var(--black);
+  background: ${({ theme }) =>
+    theme === "light" ? "var(--white)" : "var(--black)"};
   display: flex;
   height: ${({ hero }) => (hero === true ? "100vh" : "50vh")};
   flex-direction: column;
-  padding: 150px 0 0 0;
+  padding: 100px 0 0 0;
   position: relative;
   width: 100vw;
+
+  @media (min-width: 800px) {
+    padding: 150px 0 0 0;
+  }
 
   &::before {
     background: ${({ background }) =>
@@ -38,13 +45,17 @@ const Banner = styled.div<bannerProps>`
 
 const Content = styled.div`
   /* border: thin dashed red; */
-  flex-direction: row;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin: 0 auto;
   position: relative;
   width: 75%;
   z-index: 2;
+
+  @media (min-width: 800px) {
+    flex-direction: row;
+  }
 `;
 
 const Column = styled.div`
@@ -52,12 +63,16 @@ const Column = styled.div`
 `;
 
 const ActionWrapper = styled.div`
-  align-items: center;
   /* border: thin dashed blue; */
   display: flex;
+  flex-direction: column;
   height: 100%;
-  flex-direction: row;
-  gap: 20px;
+  gap: 50px;
+
+  @media (min-width: 800px) {
+    align-items: center;
+    flex-direction: row;
+  }
 `;
 
 interface mediaProps {
@@ -70,12 +85,18 @@ const Media = styled.div<mediaProps>`
     image ? `url(${image}) top center no-repeat` : "#222"};
   border-radius: 20px;
   overflow: hidden;
-  height: 500px;
-  margin: 75px auto;
+  height: 250px;
+  margin: 25px auto;
   max-width: 800px;
   position: relative;
-  width: 50%;
+  width: 80%;
   z-index: 50;
+
+  @media (min-width: 800px) {
+    height: 500px;
+    margin: 75px auto;
+    width: 50%;
+  }
 `;
 
 const StartDate = styled.p`
@@ -85,31 +106,16 @@ const StartDate = styled.p`
 `;
 
 interface Props {
+  theme: string;
   hero: boolean;
   background: string;
   image?: string;
   media?: string;
 }
 
-const CourseDetail = ({ children }: any) => {
+const MediaBanner = ({ theme, hero, background, image, media }: Props) => {
   return (
-    <li
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "10px",
-        color: "var(--white-50)",
-        padding: "10px 0",
-      }}
-    >
-      {children}
-    </li>
-  );
-};
-
-const MediaBanner = ({ hero, background, image, media }: Props) => {
-  return (
-    <Banner hero={hero} background={background}>
+    <Banner theme={theme} hero={hero} background={background}>
       <Content>
         <Column>
           {hero && <Pill label="Figure Drawing & Anatomy" />}
@@ -121,7 +127,7 @@ const MediaBanner = ({ hero, background, image, media }: Props) => {
             {!hero && <StartDate>Courses begin: May 20, 2024</StartDate>}
             {hero && (
               <>
-                <CourseDetail>
+                <CourseDetail color="var(--white)">
                   <span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -154,7 +160,7 @@ const MediaBanner = ({ hero, background, image, media }: Props) => {
                   Fri 10am - 1pm (PST)
                 </CourseDetail>
 
-                <CourseDetail>
+                <CourseDetail color="var(--white)">
                   <span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

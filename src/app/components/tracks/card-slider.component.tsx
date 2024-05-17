@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import styled from "styled-components";
+import CourseDetail from "../course-detail/course-detail.component";
 
 const CardSliderContainer = styled.div`
   /* border: thin solid red; */
@@ -190,21 +191,6 @@ const Button = styled.button`
   border: 0;
   color: #fff;
 `;
-
-const CourseDetail = ({ children }: any) => {
-  return (
-    <li
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "10px",
-        color: "var(--white-50)",
-      }}
-    >
-      {children}
-    </li>
-  );
-};
 
 const CardSlider = () => {
   const [courseCardWidth, setCourseCardWidth] = useState<number>(320);
