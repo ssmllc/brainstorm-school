@@ -119,7 +119,7 @@ const MediaBanner = ({ theme, hero, background, image, media }: Props) => {
       <Content>
         <Column>
           {hero && <Pill label="Figure Drawing & Anatomy" />}
-          <Heading header="Rhythm & Structure" subHeader="FIG RS" />
+          <Heading header="All Courses" subHeader="Browse All Courses" />
         </Column>
 
         <ActionWrapper>

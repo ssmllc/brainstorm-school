@@ -20,7 +20,7 @@ const Section = styled.div<sectionProps>`
   gap: ${({ gap }) => (gap ? gap : 0)};
   height: ${({ height }) => (height ? height : "auto")};
   justify-content: ${({ justifyContent }) =>
-    justifyContent ? justifyContent : "space-evenly"};
+    justifyContent ? justifyContent : "start"};
   margin: ${({ margin }) => (margin ? margin : "0")};
   padding: ${({ padding }) => (padding ? padding : "0")};
   width: ${({ width }) => (width ? width : "100vw")};

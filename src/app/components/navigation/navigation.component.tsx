@@ -5,7 +5,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { BrainstormContext } from "@/app/context/context-provider";
 import { useContext } from "react";
-import { Course } from "@/app/types/types";
+import { Sections } from "@/app/types/types";
 import BrainstormLogo from "../Logo/logo.component";
 
 const NavigationBar = styled.div`
@@ -121,7 +121,7 @@ const DropdownMenu = styled.ul`
   background: var(--black);
   display: none;
   left: 0;
-  min-width: 250px;
+  min-width: 350px;
   padding: 15px 25px;
   position: absolute;
   top: 35px;
@@ -172,9 +172,9 @@ const Navigation = () => {
           <MenuItem href="/courses">Courses</MenuItem>
           <DropdownMenu>
             {courses.length > 0 &&
-              courses.map((course: Course) => (
-                <DropdownMenuItem key={course.slug}>
-                  <MenuItem href="/courses">{course.title}</MenuItem>
+              courses.map((course: Sections) => (
+                <DropdownMenuItem key={course.slug.current}>
+                  <MenuItem href="/courses">{course.category}</MenuItem>
                 </DropdownMenuItem>
               ))}
           </DropdownMenu>
@@ -183,9 +183,9 @@ const Navigation = () => {
           <MenuItem href="/courses/concept-art">Workshops</MenuItem>
           <DropdownMenu>
             {courses.length > 0 &&
-              courses.map((course: Course) => (
-                <DropdownMenuItem key={course.slug}>
-                  <MenuItem href="/courses">{course.title}</MenuItem>
+              courses.map((course: Sections) => (
+                <DropdownMenuItem key={course.slug.current}>
+                  <MenuItem href="/courses">{course.category}</MenuItem>
                 </DropdownMenuItem>
               ))}
           </DropdownMenu>
@@ -194,9 +194,9 @@ const Navigation = () => {
           <MenuItem href="/courses/concept-art">Programs</MenuItem>
           <DropdownMenu>
             {courses.length > 0 &&
-              courses.map((course: Course) => (
-                <DropdownMenuItem key={course.slug}>
-                  <MenuItem href="/courses">{course.title}</MenuItem>
+              courses.map((course: Sections) => (
+                <DropdownMenuItem key={course.slug.current}>
+                  <MenuItem href="/courses">{course.category}</MenuItem>
                 </DropdownMenuItem>
               ))}
           </DropdownMenu>
@@ -205,9 +205,9 @@ const Navigation = () => {
           <MenuItem href="/courses/concept-art">About</MenuItem>
           <DropdownMenu>
             {courses.length > 0 &&
-              courses.map((course: Course) => (
-                <DropdownMenuItem key={course.slug}>
-                  <MenuItem href="/courses">{course.title}</MenuItem>
+              courses.map((course: Sections) => (
+                <DropdownMenuItem key={course.slug.current}>
+                  <MenuItem href="/courses">{course.category}</MenuItem>
                 </DropdownMenuItem>
               ))}
           </DropdownMenu>

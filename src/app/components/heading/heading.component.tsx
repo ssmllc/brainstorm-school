@@ -12,6 +12,7 @@ const SuperHeader = styled.h1`
   font-weight: bold;
   margin: 0;
   padding: 0;
+  text-transform: capitalize;
 
   @media (min-width: 800px) {
     font-size: 32px;
@@ -22,7 +23,9 @@ const Header = styled.p`
   color: var(--white);
   font-size: 28px;
   font-weight: bold;
-  padding: 15px 0;
+  letter-spacing: 2px;
+  padding: 20px 0;
+  text-transform: capitalize;
 
   @media (min-width: 800px) {
     font-size: 32px;

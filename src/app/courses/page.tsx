@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import RenderCourses from "./components/render-courses.component";
 import MediaBanner from "../components/banner/media-banner.component";
 import TextBlock from "../components/text-block/text-block.component";
-import CardImageDetail from "../components/card/card-image-detail.component";
 import Heading from "../components/heading/heading.component";
 import RegistrationBlock from "../components/registration/registration-block.component";
 import Container from "../components/layout/container.component";
@@ -16,7 +15,7 @@ export default async function Courses() {
   return (
     <div>
       <MediaBanner
-        hero={true}
+        hero={false}
         theme="dark"
         background="/backgrounds/sci-fi-city.jpg"
         image="/banner/media-banner.png"
@@ -41,37 +40,7 @@ export default async function Courses() {
       </Container>
 
       <Container>
-        <Container gap="10px" width="75%" margin="50px auto">
-          <Heading header="Figure Drawings & Anatomy" />
-          <Container
-            display="flex"
-            gap="10px"
-            justifyContent="space-evenly"
-            width="100%"
-            margin="0 auto"
-          >
-            <CardImageDetail />
-            <CardImageDetail />
-            <CardImageDetail />
-            <CardImageDetail />
-          </Container>
-        </Container>
-
-        <Container gap="10px" width="75%" margin="50px auto">
-          <Heading header="Concept Art & Design Foundation Courses" />
-          <Container
-            display="flex"
-            gap="10px"
-            justifyContent="space-evenly"
-            width="100%"
-            margin="0 auto"
-          >
-            <CardImageDetail />
-            <CardImageDetail />
-            <CardImageDetail />
-            <CardImageDetail />
-          </Container>
-        </Container>
+        <RenderCourses />
       </Container>
 
       <RegistrationBlock
@@ -80,8 +49,6 @@ export default async function Courses() {
         scale="xl"
         cta="View All Courses"
       />
-
-      <RenderCourses />
     </div>
   );
 }

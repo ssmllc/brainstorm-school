@@ -17,7 +17,7 @@ const Text = styled.div<textProps>`
   gap: 10px;
   line-height: 1.5;
   padding: ${({ padding }) => (padding ? padding : "25px 0")};
-  width: 50%;
+  width: 60%;
 `;
 
 interface Props {

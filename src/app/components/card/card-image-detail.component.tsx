@@ -6,9 +6,11 @@ import styled from "styled-components";
 import CourseDetail from "../course-detail/course-detail.component";
 
 const Card = styled.div`
+  background: var(--off-black);
   border-radius: 20px;
   box-shadow: 0 0 15px #222;
   overflow: hidden;
+  min-height: 400px;
   max-width: 320px;
   width: 25%;
   position: relative;
@@ -37,7 +39,7 @@ interface cardProps {
   tag: string;
 }
 
-const Poster = styled.div<cardProps>`
+const Preview = styled.div<cardProps>`
   background: url(${({ image }) => image}) top center no-repeat;
   background-size: cover;
   height: 100px;
@@ -70,26 +72,39 @@ const Details = styled.div`
 
 const CourseName = styled.p`
   color: var(--white);
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
 `;
 
 const CourseDetails = styled.ul`
   color: #ccc;
   font-size: 12px;
-
-  li {
-    padding: 20px 0 0 0;
-    text-transform: uppercase;
-  }
+  padding: 15px 0 0 0;
+  text-transform: uppercase;
 `;
 
-const CardImageDetail = () => {
+interface Props {
+  preview: string;
+  courseTrack: string;
+  courseName: string;
+  courseCode: string;
+  courseTime: string;
+  courseDuration: string;
+}
+
+const CardImageDetail = ({
+  preview,
+  courseTrack,
+  courseName,
+  courseCode,
+  courseTime,
+  courseDuration,
+}: Props) => {
   return (
     <Card className="course-card">
-      <Poster image="/cards/character-design.jpg" tag="Concept Art & Design" />
+      <Preview image={preview} tag={courseTrack} />
       <Details>
-        <CourseName>Rhythm & Structure</CourseName>
+        <CourseName>{courseName}</CourseName>
         <CourseDetails>
           <CourseDetail>
             <span>
@@ -118,7 +133,7 @@ const CardImageDetail = () => {
                 </g>
               </svg>
             </span>
-            FIG RS
+            {courseCode}
           </CourseDetail>
 
           <CourseDetail>
@@ -151,7 +166,7 @@ const CardImageDetail = () => {
                 </g>
               </svg>
             </span>
-            Fri 10am - 1pm (PST)
+            {courseTime}
           </CourseDetail>
 
           <CourseDetail>
@@ -177,7 +192,7 @@ const CardImageDetail = () => {
                 </g>
               </svg>
             </span>
-            10 Week Course
+            {courseDuration}
           </CourseDetail>
         </CourseDetails>
       </Details>

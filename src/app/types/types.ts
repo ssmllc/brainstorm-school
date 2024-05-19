@@ -1,15 +1,38 @@
-export type Course = {
-  track: string,
+export type Sections = {
   category: string,
-  title: string,
-  slug: any,
-  code: string,
-  time: string,
-  term: string,
-  start: string,
-  instructor: string,
-  bio: string,
-  preview: any,
-  tags: { description: string, title: string },
-  details: any,
+  slug: {
+    current: string, 
+    _type: 'slug'
+  },
+  sections: [
+    section: string,
+    category: string,
+    courses: Course,
+  ],
+  details: {
+    children: {
+      text: any,
+    }
+    _type: 'block'
+  }
 }
+
+export type Course = {
+  name: string;
+  code: string;
+  time: string;
+  duration: string;
+  preview: any;
+  schedule: Schedule,
+};
+
+export type Schedule = {
+  title: string;
+  profession: string;
+  bio: string;
+  registration: string;
+  term: string;
+  time: string;
+  duration: string;
+  start: string;
+};

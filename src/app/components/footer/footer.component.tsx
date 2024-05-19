@@ -3,7 +3,7 @@
 import React from "react";
 import { BrainstormContext } from "@/app/context/context-provider";
 import { useContext } from "react";
-import { Course } from "@/app/types/types";
+import { Sections } from "@/app/types/types";
 import styled from "styled-components";
 import BrainstormLogo from "../Logo/logo.component";
 import Link from "next/link";
@@ -35,6 +35,7 @@ const MenuContainer = styled.div`
   /* border: thin dashed magenta; */
   display: flex;
   margin: 0 auto;
+  max-width: 1400px;
   width: 80%;
 `;
 
@@ -183,9 +184,9 @@ const Footer = () => {
             </MenuItem>
             <DropdownMenu>
               {courses.length > 0 &&
-                courses.map((course: Course) => (
-                  <DropdownMenuItem key={course.slug}>
-                    <MenuItem href="/courses">{course.title}</MenuItem>
+                courses.map((course: Sections) => (
+                  <DropdownMenuItem key={course.slug.current}>
+                    <MenuItem href="/courses">{course.category}</MenuItem>
                   </DropdownMenuItem>
                 ))}
             </DropdownMenu>
@@ -197,9 +198,9 @@ const Footer = () => {
 
             <DropdownMenu>
               {courses.length > 0 &&
-                courses.map((course: Course) => (
-                  <DropdownMenuItem key={course.slug}>
-                    <MenuItem href="/courses">{course.title}</MenuItem>
+                courses.map((course: Sections) => (
+                  <DropdownMenuItem key={course.slug.current}>
+                    <MenuItem href="/courses">{course.category}</MenuItem>
                   </DropdownMenuItem>
                 ))}
             </DropdownMenu>
@@ -211,9 +212,9 @@ const Footer = () => {
 
             <DropdownMenu>
               {courses.length > 0 &&
-                courses.map((course: Course) => (
-                  <DropdownMenuItem key={course.slug}>
-                    <MenuItem href="/courses">{course.title}</MenuItem>
+                courses.map((course: Sections) => (
+                  <DropdownMenuItem key={course.slug.current}>
+                    <MenuItem href="/courses">{course.category}</MenuItem>
                   </DropdownMenuItem>
                 ))}
             </DropdownMenu>
@@ -225,9 +226,9 @@ const Footer = () => {
 
             <DropdownMenu>
               {courses.length > 0 &&
-                courses.map((course: Course) => (
-                  <DropdownMenuItem key={course.slug}>
-                    <MenuItem href="/courses">{course.title}</MenuItem>
+                courses.map((course: Sections) => (
+                  <DropdownMenuItem key={course.slug.current}>
+                    <MenuItem href="/courses">{course.category}</MenuItem>
                   </DropdownMenuItem>
                 ))}
             </DropdownMenu>
