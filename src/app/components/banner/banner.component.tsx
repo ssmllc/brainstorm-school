@@ -41,7 +41,7 @@ const Banner = () => {
         cta="Register Today"
         ctaType="primary"
       />
-      <RenderThreeDModel />
+      {/* <RenderThreeDModel /> */}
       <video
         style={{ position: "absolute", left: 0, top: 0, objectFit: "cover" }}
         muted
