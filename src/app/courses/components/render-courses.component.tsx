@@ -5,21 +5,26 @@ import { BrainstormContext } from "@/app/context/context-provider";
 import CardImageDetail from "@/app/components/card/card-image-detail.component";
 import Container from "@/app/components/layout/container.component";
 import Heading from "@/app/components/heading/heading.component";
-import { Course } from "@/app/types/types";
+import { Course, Sections } from "@/app/types/types";
 
-const RenderCourses = () => {
+interface Props {
+  selectedCourses?: Sections[];
+}
+
+const RenderCourses = ({ selectedCourses }: Props) => {
   const { courses, error }: any = useContext(BrainstormContext);
-  console.log("of course", courses);
+  const courseList =
+    selectedCourses && selectedCourses.length > 0 ? selectedCourses : courses;
+
   return (
     <>
       {error ? (
         <p>{error} : Error Loading Courses</p>
       ) : (
-        courses.length > 0 &&
-        courses.map((course: any, index: number) => {
+        courseList.map(({ sections, slug }: any, index: number) => {
           return (
             <>
-              {course?.sections?.map(
+              {sections?.map(
                 ({
                   category,
                   section,
@@ -43,11 +48,11 @@ const RenderCourses = () => {
                       margin="0 auto"
                     >
                       {courses?.map((course: any) => {
-                        console.log("course", course);
                         return (
                           <CardImageDetail
                             key={course.code}
                             preview={course.preview.asset.url}
+                            slug={slug}
                             courseTrack={category}
                             courseName={course.name}
                             courseCode={course.code}

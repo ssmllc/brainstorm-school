@@ -159,8 +159,8 @@ const FeaturedSlider = () => {
       window.addEventListener("resize", () => {
         setWindowWidth(window.innerWidth);
         const variant = window.innerWidth < 800 ? "sm" : "lg";
-        console.log("variant", variant);
-        console.log("windowWidth", window.innerWidth);
+        // console.log("variant", variant);
+        // console.log("windowWidth", window.innerWidth);
         setVariantType(variant);
       });
     }

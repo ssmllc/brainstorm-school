@@ -106,6 +106,8 @@ const StartDate = styled.p`
 `;
 
 interface Props {
+  header: string;
+  subHeader?: string;
   theme: string;
   hero: boolean;
   background: string;
@@ -113,13 +115,21 @@ interface Props {
   media?: string;
 }
 
-const MediaBanner = ({ theme, hero, background, image, media }: Props) => {
+const MediaBanner = ({
+  header,
+  subHeader,
+  theme,
+  hero,
+  background,
+  image,
+  media,
+}: Props) => {
   return (
     <Banner theme={theme} hero={hero} background={background}>
       <Content>
         <Column>
           {hero && <Pill label="Figure Drawing & Anatomy" />}
-          <Heading header="All Courses" subHeader="Browse All Courses" />
+          <Heading header={header} subHeader={subHeader ? subHeader : ""} />
         </Column>
 
         <ActionWrapper>

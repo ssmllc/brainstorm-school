@@ -15,6 +15,7 @@ export default async function Courses() {
   return (
     <div>
       <MediaBanner
+        header="All Courses"
         hero={false}
         theme="dark"
         background="/backgrounds/sci-fi-city.jpg"
@@ -42,13 +43,6 @@ export default async function Courses() {
       <Container>
         <RenderCourses />
       </Container>
-
-      <RegistrationBlock
-        primary={false}
-        heading="Not what you are looking for?"
-        scale="xl"
-        cta="View All Courses"
-      />
     </div>
   );
 }

@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import gsap from "gsap";
 import styled from "styled-components";
 import CourseDetail from "../course-detail/course-detail.component";
+import Link from "next/link";
 
-const Card = styled.div`
+const Card = styled(Link)`
   background: var(--off-black);
   border-radius: 20px;
   box-shadow: 0 0 15px #222;
@@ -84,6 +85,7 @@ const CourseDetails = styled.ul`
 `;
 
 interface Props {
+  slug: any;
   preview: string;
   courseTrack: string;
   courseName: string;
@@ -93,6 +95,7 @@ interface Props {
 }
 
 const CardImageDetail = ({
+  slug,
   preview,
   courseTrack,
   courseName,
@@ -100,8 +103,19 @@ const CardImageDetail = ({
   courseTime,
   courseDuration,
 }: Props) => {
+  console.log(
+    courseCode,
+    `courses/${slug.current}/${courseName
+      .toLocaleLowerCase()
+      .replaceAll(" ", "-")}`
+  );
   return (
-    <Card className="course-card">
+    <Card
+      href={`courses/${slug.current}/${courseName
+        .toLocaleLowerCase()
+        .replaceAll(" ", "-")}`}
+      className="course-card"
+    >
       <Preview image={preview} tag={courseTrack} />
       <Details>
         <CourseName>{courseName}</CourseName>

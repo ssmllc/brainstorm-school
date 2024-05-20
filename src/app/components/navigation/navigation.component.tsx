@@ -174,7 +174,9 @@ const Navigation = () => {
             {courses.length > 0 &&
               courses.map((course: Sections) => (
                 <DropdownMenuItem key={course.slug.current}>
-                  <MenuItem href="/courses">{course.category}</MenuItem>
+                  <MenuItem href={`/courses/${course.slug.current}`}>
+                    {course.category}
+                  </MenuItem>
                 </DropdownMenuItem>
               ))}
           </DropdownMenu>
