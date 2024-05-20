@@ -103,15 +103,9 @@ const CardImageDetail = ({
   courseTime,
   courseDuration,
 }: Props) => {
-  console.log(
-    courseCode,
-    `courses/${slug.current}/${courseName
-      .toLocaleLowerCase()
-      .replaceAll(" ", "-")}`
-  );
   return (
     <Card
-      href={`courses/${slug.current}/${courseName
+      href={`${slug.current}/${courseName
         .toLocaleLowerCase()
         .replaceAll(" ", "-")}`}
       className="course-card"
