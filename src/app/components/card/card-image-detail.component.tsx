@@ -86,6 +86,7 @@ const CourseDetails = styled.ul`
 
 interface Props {
   slug: any;
+  path: string;
   preview: string;
   courseTrack: string;
   courseName: string;
@@ -96,6 +97,7 @@ interface Props {
 
 const CardImageDetail = ({
   slug,
+  path,
   preview,
   courseTrack,
   courseName,
@@ -104,12 +106,7 @@ const CardImageDetail = ({
   courseDuration,
 }: Props) => {
   return (
-    <Card
-      href={`${slug.current}/${courseName
-        .toLocaleLowerCase()
-        .replaceAll(" ", "-")}`}
-      className="course-card"
-    >
+    <Card href={`${slug}/${path}`} className="course-card">
       <Preview image={preview} tag={courseTrack} />
       <Details>
         <CourseName>{courseName}</CourseName>

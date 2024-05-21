@@ -48,11 +48,13 @@ const RenderCourses = ({ selectedCourses }: Props) => {
                       margin="0 auto"
                     >
                       {courses?.map((course: any) => {
+                        console.log("course", course);
                         return (
                           <CardImageDetail
                             key={course.code}
                             preview={course.preview.asset.url}
-                            slug={slug}
+                            slug={slug.current}
+                            path={course.slug.current}
                             courseTrack={category}
                             courseName={course.name}
                             courseCode={course.code}
