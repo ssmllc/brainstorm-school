@@ -6,6 +6,7 @@ import Heading from "@/app/components/heading/heading.component";
 import TextBlock from "@/app/components/text-block/text-block.component";
 import RegistrationBlock from "@/app/components/registration/registration-block.component";
 import RenderCourses from "../../components/render-courses.component";
+import CardLayout from "@/app/components/card/simple-card.component";
 
 const fetchData = async () => {
   const query =
@@ -21,11 +22,15 @@ const fetchData = async () => {
   return result;
 };
 
-export default async function Page({ params }: { params: { baseId: string } }) {
+export default async function Page({
+  params,
+}: {
+  params: { courseId: string };
+}) {
   const result = await fetchData();
 
   const header = result.filter((course: any) => {
-    return course.slug.current === params.baseId[0];
+    return course.slug.current === params.courseId[0];
   })[0]["name"];
 
   console.log("header", header);
@@ -44,24 +49,8 @@ export default async function Page({ params }: { params: { baseId: string } }) {
         image="/banner/media-banner.png"
         media="/video/brainstorm-design-solve-learn.mp4"
       />
-      <Container margin="0 auto" width="100vw" padding="75px 0 0">
-        <Container margin="0 auto" width="75%">
-          <Heading
-            superHeader={true}
-            header="Unlock your creativity with our expert-led online courses"
-          />
-
-          <TextBlock>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias porro
-            nihil ex nemo quibusdam, autem quidem, officia maxime qui voluptate
-            quia ipsam, ab at assumenda itaque sed! Nam, aliquam deleniti. Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Alias porro nihil
-            ex nemo quibusdam, autem quidem, officia maxime qui voluptate quia
-            ipsam, ab at assumenda itaque sed! Nam, aliquam deleniti.
-          </TextBlock>
-        </Container>
-      </Container>
-      Hello I am dynamic {params.baseId}
+      {/* Hello I am dynamic {params.courseId} */}
+      <CardLayout />
       <RegistrationBlock
         primary={true}
         heading="Register for this course"
