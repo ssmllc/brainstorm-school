@@ -21,15 +21,11 @@ const fetchData = async () => {
   return result;
 };
 
-export default async function Page({
-  params,
-}: {
-  params: { courseId: string };
-}) {
+export default async function Page({ params }: { params: { baseId: string } }) {
   const result = await fetchData();
 
   const header = result.filter((course: any) => {
-    return course.slug.current === params.courseId[0];
+    return course.slug.current === params.baseId[0];
   })[0]["name"];
 
   console.log("header", header);
@@ -65,7 +61,7 @@ export default async function Page({
           </TextBlock>
         </Container>
       </Container>
-      Hello I am dynamic {params.courseId}
+      Hello I am dynamic {params.baseId}
       <RegistrationBlock
         primary={true}
         heading="Register for this course"
