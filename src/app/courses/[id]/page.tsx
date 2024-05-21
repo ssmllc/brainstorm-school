@@ -21,23 +21,19 @@ const fetchData = async () => {
   return result;
 };
 
-export default async function Page({
-  params,
-}: {
-  params: { courseId: string };
-}) {
+export default async function Page({ params }: { params: { id: string } }) {
   const result = await fetchData();
-  // console.log("result", result);
+  console.log("params", params);
   // console.log("data", result[0].slug);
   // console.log("data", result[0].category);
 
   const selectedCourses = result.filter(
-    (res: any) => res.slug.current === params.courseId
+    (res: any) => res.slug.current === params.id
   );
   // console.log("selectedCourses", selectedCourses);
 
   const header = result.filter((category: any) => {
-    return category.slug.current === params.courseId;
+    return category.slug.current === params.id;
   })[0]["category"];
 
   return (
@@ -71,7 +67,7 @@ export default async function Page({
           </TextBlock>
         </Container>
       </Container>
-      {/* Hello I am dynamic {params.courseId} */}
+      {/* Hello I am dynamic {params.id} */}
 
       <FeaturedSlider />
 
