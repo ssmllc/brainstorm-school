@@ -7,6 +7,7 @@ const PillContainer = styled.span`
   border-radius: 25px;
   color: var(--white);
   font-size: 12px;
+  display: inline-block;
   padding: 10px 15px;
 `;
 

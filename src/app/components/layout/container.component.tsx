@@ -9,6 +9,7 @@ interface sectionProps {
   gap?: string;
   height?: string;
   justifyContent?: string;
+  flexwrap?: string;
   margin?: string;
   padding?: string;
   width?: string;
@@ -19,6 +20,7 @@ const Section = styled.div<sectionProps>`
   display: ${({ display }) => (display ? display : "block")};
   gap: ${({ gap }) => (gap ? gap : 0)};
   height: ${({ height }) => (height ? height : "auto")};
+  flex-wrap: ${({ flexwrap }) => (flexwrap ? flexwrap : "no-wrap")};
   justify-content: ${({ justifyContent }) =>
     justifyContent ? justifyContent : "start"};
   margin: ${({ margin }) => (margin ? margin : "0")};
@@ -33,6 +35,7 @@ interface Props {
   height?: string;
   justifyContent?: string;
   margin?: string;
+  flexwrap?: string;
   padding?: string;
   width?: string;
 }
@@ -43,6 +46,7 @@ const Container = ({
   gap,
   height,
   justifyContent,
+  flexwrap,
   margin,
   padding,
   width,
@@ -54,6 +58,7 @@ const Container = ({
       height={height}
       justifyContent={justifyContent}
       margin={margin}
+      flexwrap={flexwrap}
       padding={padding}
       width={width}
     >

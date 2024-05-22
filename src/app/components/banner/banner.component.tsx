@@ -3,20 +3,34 @@
 import styled from "styled-components";
 import RenderThreeDModel from "../three/model.component";
 import RegistrationBlock from "../registration/registration-block.component";
+import { useEffect, useState } from "react";
+import gsap from "gsap";
 
-const BannerWrapper = styled.div`
+interface bannerProps {
+  background: string;
+}
+
+const BannerWrapper = styled("div")<bannerProps>`
+  background: var(--dark-grey)
+    ${({ background }) => `url(${background}) center center no-repeat`};
+  background-size: cover;
   align-items: center;
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
-  padding-top: 20%;
+  opacity: 0.5;
+  padding-top: 25%;
   position: relative;
   width: 100vw;
 `;
 
 const Overlay = styled.div`
-  background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0.15) 85%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 25%,
+    var(--off-black) 90%
+  );
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -32,8 +46,27 @@ const Overlay = styled.div`
 `;
 
 const Banner = () => {
+  const [randomBanner, setRandomBanner] = useState<string>("");
+
+  useEffect(() => {
+    const randomBannerImage = (min: number, max: number) => {
+      // min and max included
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    };
+
+    const randomBanner = `/banner/banner-${randomBannerImage(1, 15)}.jpg`;
+    setRandomBanner(randomBanner);
+
+    gsap.to(".banner-wrapper", {
+      ease: "power1.out",
+      delay: 0.1,
+      duration: 1,
+      opacity: 1,
+    });
+  }, []);
+
   return (
-    <BannerWrapper>
+    <BannerWrapper className="banner-wrapper" background={randomBanner}>
       <RegistrationBlock
         primary={true}
         heading="Learn from industry professionals and become a master of your craft today."
@@ -42,7 +75,7 @@ const Banner = () => {
         ctaType="primary"
       />
       {/* <RenderThreeDModel /> */}
-      <video
+      {/* <video
         style={{ position: "absolute", left: 0, top: 0, objectFit: "cover" }}
         muted
         loop
@@ -51,7 +84,7 @@ const Banner = () => {
         autoPlay={true}
       >
         <source src="/video/lightning2.mp4" type="video/mp4" />
-      </video>
+      </video> */}
       <Overlay />
     </BannerWrapper>
   );

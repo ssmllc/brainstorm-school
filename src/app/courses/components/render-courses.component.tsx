@@ -43,7 +43,8 @@ const RenderCourses = ({ selectedCourses }: Props) => {
                     <Heading header={section} />
                     <Container
                       display="flex"
-                      gap="10px"
+                      gap="5px"
+                      flexwrap="wrap"
                       width="100%"
                       margin="0 auto"
                     >
@@ -58,8 +59,8 @@ const RenderCourses = ({ selectedCourses }: Props) => {
                             courseTrack={category}
                             courseName={course.name}
                             courseCode={course.code}
-                            courseTime={course.time}
-                            courseDuration={course.duration}
+                            courseTime={course.schedule[0].time}
+                            courseDuration={course.schedule[0].duration}
                           />
                         );
                       })}
