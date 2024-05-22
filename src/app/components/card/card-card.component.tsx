@@ -18,7 +18,7 @@ type containerProps = {
 };
 
 const Container = styled.div<containerProps>`
-  box-shadow: 0 0 15px #222;
+  box-shadow: 0 0 15px #000;
   background: var(--off-black);
   border-radius: 20px;
   display: flex;

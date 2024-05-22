@@ -43,10 +43,10 @@ const CardSliderCards = styled.div`
   &::after {
     background: linear-gradient(
       to left,
-      #000 0,
+      #151515 0,
       rgba(0, 0, 0, 0) 10%,
       rgba(0, 0, 0, 0) 98%,
-      #000 100%
+      #151515 100%
     );
     content: "";
     height: 100%;
@@ -65,7 +65,7 @@ const CardSliderCards = styled.div`
 
 const Card = styled.div`
   border-radius: 20px;
-  box-shadow: 0 0 15px #222;
+  box-shadow: 0 0 15px #000;
   overflow: hidden;
   max-width: 320px;
   width: 25%;

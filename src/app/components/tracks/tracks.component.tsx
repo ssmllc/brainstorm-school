@@ -32,6 +32,7 @@ const Track = styled.div<trackProps>`
   background: var(--black) url(${(props) => props.poster}) top center no-repeat;
   background-size: cover;
   border-radius: 20px;
+  box-shadow: 0 0 15px #000;
   filter: grayscale(0.5);
   flex-grow: 1;
   flex-basis: 25%;

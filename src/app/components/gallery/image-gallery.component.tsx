@@ -69,7 +69,7 @@ const Card = styled.div<cardProps>`
   background: ${({ image }) => `url(${image}) center center no-repeat`};
   background-size: cover;
   border-radius: 25px;
-  box-shadow: 0 0 15px #222;
+  box-shadow: 0 0 15px #000;
   /* max-width: 350px; */
   width: 25%;
 
