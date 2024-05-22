@@ -118,7 +118,7 @@ const Footer = () => {
       <MenuContainer>
         <Menu>
           <Column>
-            <BrainstormLogo justify="left" paddingTop={false} />
+            <BrainstormLogo justify="left" padding={false} />
 
             <Social>
               <Channel>

@@ -52,31 +52,31 @@ const CardTags = ({ tags }: { tags?: string[] }) => (
         background="rgba(255, 255, 255, .10)"
         label="Understanding Proportions"
         padding="20px 20px"
-        boxShadow="0 0 7px var(--black)"
+        boxshadow="0 0 7px var(--black)"
       />
       <Pill
         background="rgba(255, 255, 255, .10)"
         label="Basic Anatomy"
         padding="20px 20px"
-        boxShadow="0 0 7px var(--black)"
+        boxshadow="0 0 7px var(--black)"
       />
       <Pill
         background="rgba(255, 255, 255, .10)"
         label="Gesture & Rhythm"
         padding="20px 20px"
-        boxShadow="0 0 7px var(--black)"
+        boxshadow="0 0 7px var(--black)"
       />
       <Pill
         background="rgba(255, 255, 255, .10)"
         label="Intro to construction"
         padding="20px 20px"
-        boxShadow="0 0 7px var(--black)"
+        boxshadow="0 0 7px var(--black)"
       />
       <Pill
         background="rgba(255, 255, 255, .10)"
         label="Anatomical Focus"
         padding="20px 20px"
-        boxShadow="0 0 7px var(--black)"
+        boxshadow="0 0 7px var(--black)"
       />
     </TagsGroup>
   </Tags>

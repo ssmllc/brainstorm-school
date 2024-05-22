@@ -2,6 +2,8 @@ import React from "react";
 import MediaBanner from "@/app/components/banner/media-banner.component";
 import RegistrationBlock from "@/app/components/registration/registration-block.component";
 import CardLayout from "@/app/components/card/simple-card.component";
+import TextBlock from "@/app/components/text-block/text-block.component";
+import Container from "@/app/components/layout/container.component";
 
 const fetchData = async () => {
   const query =
@@ -46,6 +48,10 @@ export default async function Page({
       />
 
       <CardLayout />
+
+      <Container>
+        <TextBlock>Gallery</TextBlock>
+      </Container>
 
       <RegistrationBlock
         primary={true}
