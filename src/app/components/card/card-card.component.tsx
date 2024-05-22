@@ -11,10 +11,12 @@ type Props = {
   heading: string;
   subHeading?: string;
   text?: string;
+  width?: string;
 };
 
 type containerProps = {
   stacked: boolean;
+  width?: string;
 };
 
 const Container = styled.div<containerProps>`
@@ -25,7 +27,7 @@ const Container = styled.div<containerProps>`
   flex-direction: ${({ stacked }) => (stacked ? "column" : "row")};
   padding: 25px 25px;
   gap: 20px;
-  width: 33.33%;
+  width: ${({ width }) => (width ? width : "33.33%")};
 `;
 
 const Text = styled.p`
@@ -33,9 +35,16 @@ const Text = styled.p`
   font-size: 12px;
 `;
 
-export const Card = ({ stacked, icon, heading, subHeading, text }: Props) => {
+export const Card = ({
+  stacked,
+  icon,
+  heading,
+  subHeading,
+  text,
+  width,
+}: Props) => {
   return (
-    <Container stacked={stacked}>
+    <Container stacked={stacked} width={width}>
       {icon && <CardIcon image={icon} />}
       {heading && <CardDetails heading={heading} subHeading={subHeading} />}
       {text && <Text>{text}</Text>}

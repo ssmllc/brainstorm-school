@@ -34,16 +34,11 @@ const RenderCourses = ({ selectedCourses }: Props) => {
                   section: string;
                   courses: Course[];
                 }) => (
-                  <Container
-                    key={index}
-                    gap="10px"
-                    margin="50px auto"
-                    width="75%"
-                  >
+                  <Container key={index} margin="50px auto" width="80%">
                     <Heading header={section} />
                     <Container
                       display="flex"
-                      gap="5px"
+                      gap="20px 10px"
                       flexwrap="wrap"
                       width="100%"
                       margin="0 auto"
@@ -57,10 +52,14 @@ const RenderCourses = ({ selectedCourses }: Props) => {
                             slug={slug.current}
                             path={course.slug.current}
                             courseTrack={category}
-                            courseName={course.name}
-                            courseCode={course.code}
-                            courseTime={course.schedule[0].time}
-                            courseDuration={course.schedule[0].duration}
+                            courseName={course.name && course.name}
+                            courseCode={course.code && course.code}
+                            courseTime={
+                              course?.schedule && course?.schedule[0]?.time
+                            }
+                            courseDuration={
+                              course?.schedule && course?.schedule[0]?.duration
+                            }
                           />
                         );
                       })}
