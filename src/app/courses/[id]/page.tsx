@@ -42,7 +42,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     >
       <MediaBanner
         header={header}
-        hero={false}
+        hero="false"
         theme="dark"
         background="/backgrounds/sci-fi-city.jpg"
         image="/banner/media-banner.png"

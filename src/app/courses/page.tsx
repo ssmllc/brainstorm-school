@@ -16,7 +16,7 @@ export default async function Courses() {
     <div>
       <MediaBanner
         header="All Courses"
-        hero={false}
+        hero="false"
         theme="dark"
         background="/backgrounds/sci-fi-city.jpg"
         image="/banner/media-banner.png"

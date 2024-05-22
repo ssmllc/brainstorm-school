@@ -47,19 +47,19 @@ const CardGroup = () => {
       <Group>
         <Row>
           <Card
-            stacked={false}
+            stacked="false"
             icon="/instructors/ico-image.png"
             heading="Christian Nacordia"
             subHeading="Concept Artist & Instructor"
           />
           <Card
-            stacked={false}
+            stacked="false"
             icon="/instructors/ico-image.png"
             heading="Christian Nacordia"
             subHeading="Concept Artist & Instructor"
           />
           <Card
-            stacked={false}
+            stacked="false"
             icon="/instructors/ico-image.png"
             heading="Christian Nacordia"
             subHeading="Concept Artist & Instructor"
@@ -68,19 +68,19 @@ const CardGroup = () => {
 
         <Row>
           <Card
-            stacked={false}
+            stacked="false"
             icon="/instructors/ico-image.png"
             heading="Christian Nacordia"
             subHeading="Concept Artist & Instructor"
           />
           <Card
-            stacked={false}
+            stacked="false"
             icon="/instructors/ico-image.png"
             heading="Christian Nacordia"
             subHeading="Concept Artist & Instructor"
           />
           <Card
-            stacked={false}
+            stacked="false"
             icon="/instructors/ico-image.png"
             heading="Christian Nacordia"
             subHeading="Concept Artist & Instructor"

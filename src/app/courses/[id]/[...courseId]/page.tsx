@@ -38,7 +38,7 @@ export default async function Page({
     >
       <MediaBanner
         header={header}
-        hero={true}
+        hero="true"
         theme="dark"
         background="/backgrounds/sci-fi-city.jpg"
         image="/banner/media-banner.png"

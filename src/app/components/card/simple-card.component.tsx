@@ -27,7 +27,7 @@ const CardImage = ({ preview }: { preview: string }) => (
 );
 
 const CardDetails = ({ text }: { text: string }) => (
-  <TextBlock fontsize="14px" padding="0" width="100%">
+  <TextBlock fontSize="14px" padding="0" width="100%">
     {text}
   </TextBlock>
 );
@@ -36,18 +36,49 @@ const Tags = styled("div")`
   padding: 50px 0;
 `;
 
+const TagsGroup = styled("div")`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+`;
+
 const CardTags = ({ tags }: { tags?: string[] }) => (
   <Tags>
-    <TextBlock fontsize="28px" width="100%">
-      What you'll learn
+    <TextBlock fontSize="28px" width="100%">
+      What you&apos;ll learn
     </TextBlock>
-    <div>
-      <Pill label="Understanding Proportions" />
-      <Pill label="Basic Anatomy" />
-      <Pill label="Gesture & Rhythm" />
-      <Pill label="Intro to construction" />
-      <Pill label="Anatomical Focus" />
-    </div>
+    <TagsGroup>
+      <Pill
+        background="rgba(255, 255, 255, .10)"
+        label="Understanding Proportions"
+        padding="20px 20px"
+        boxShadow="0 0 7px var(--black)"
+      />
+      <Pill
+        background="rgba(255, 255, 255, .10)"
+        label="Basic Anatomy"
+        padding="20px 20px"
+        boxShadow="0 0 7px var(--black)"
+      />
+      <Pill
+        background="rgba(255, 255, 255, .10)"
+        label="Gesture & Rhythm"
+        padding="20px 20px"
+        boxShadow="0 0 7px var(--black)"
+      />
+      <Pill
+        background="rgba(255, 255, 255, .10)"
+        label="Intro to construction"
+        padding="20px 20px"
+        boxShadow="0 0 7px var(--black)"
+      />
+      <Pill
+        background="rgba(255, 255, 255, .10)"
+        label="Anatomical Focus"
+        padding="20px 20px"
+        boxShadow="0 0 7px var(--black)"
+      />
+    </TagsGroup>
   </Tags>
 );
 
@@ -83,7 +114,7 @@ const CardLayout = () => {
               <Container width="50%" display="flex" justifycontent="right">
                 <TextBlock
                   padding="0"
-                  fontsize="12px"
+                  fontSize="12px"
                   width="auto"
                   color="var(--blue)"
                   texttransform="uppercase"
@@ -122,7 +153,7 @@ const CardLayout = () => {
             </Container>
 
             <Card
-              stacked={false}
+              stacked="false"
               icon="/instructors/ico-image.png"
               heading="Christian Nacordia"
               subHeading="Concept Artist & Instructor"
@@ -138,13 +169,13 @@ const CardLayout = () => {
             >
               <Container display="flex" width="100%">
                 <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontweight="bold" fontsize="14px" padding="0">
+                  <TextBlock fontWeight="bold" fontSize="14px" padding="0">
                     Format
                   </TextBlock>
                 </Container>
 
                 <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontsize="14px" padding="0">
+                  <TextBlock fontSize="14px" padding="0">
                     Live (Recorded)
                   </TextBlock>
                 </Container>
@@ -152,13 +183,13 @@ const CardLayout = () => {
 
               <Container display="flex" width="100%">
                 <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontweight="bold" fontsize="14px" padding="0">
+                  <TextBlock fontWeight="bold" fontSize="14px" padding="0">
                     Price
                   </TextBlock>
                 </Container>
 
                 <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontsize="14px" padding="0">
+                  <TextBlock fontSize="14px" padding="0">
                     $100.00 USD
                   </TextBlock>
                 </Container>
@@ -166,13 +197,13 @@ const CardLayout = () => {
 
               <Container display="flex" width="100%">
                 <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontweight="bold" fontsize="14px" padding="0">
+                  <TextBlock fontWeight="bold" fontSize="14px" padding="0">
                     Location
                   </TextBlock>
                 </Container>
 
                 <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontsize="14px" padding="0">
+                  <TextBlock fontSize="14px" padding="0">
                     Online Course
                   </TextBlock>
                 </Container>
@@ -180,13 +211,13 @@ const CardLayout = () => {
 
               <Container display="flex" width="100%">
                 <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontweight="bold" fontsize="14px" padding="0">
+                  <TextBlock fontWeight="bold" fontSize="14px" padding="0">
                     Duration
                   </TextBlock>
                 </Container>
 
                 <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontsize="14px" padding="0">
+                  <TextBlock fontSize="14px" padding="0">
                     10 Weeks
                   </TextBlock>
                 </Container>
@@ -201,8 +232,8 @@ const CardLayout = () => {
             >
               <TextBlock
                 padding="10px 0"
-                fontsize="18px"
-                fontweight="bold"
+                fontSize="18px"
+                fontWeight="bold"
                 width="auto"
               >
                 Suggested Materials
@@ -223,8 +254,8 @@ const CardLayout = () => {
             >
               <TextBlock
                 padding="10px 0"
-                fontsize="18px"
-                fontweight="bold"
+                fontSize="18px"
+                fontWeight="bold"
                 width="auto"
               >
                 Requirements

@@ -6,14 +6,14 @@ import styled from "styled-components";
 
 interface logoProps {
   justify: string;
-  paddingTop?: boolean;
+  padding?: boolean;
 }
 
 const Logo = styled.div<logoProps>`
   align-items: center;
   display: flex;
   justify-content: ${({ justify }) => justify};
-  padding: ${({ paddingTop }) => (paddingTop ? "20px 20px" : "0 20px")};
+  padding: ${({ padding }) => (padding ? "20px 20px" : "0 20px")};
 `;
 
 const Company = styled.span`
@@ -27,12 +27,12 @@ const Company = styled.span`
 
 interface Props {
   justify: string;
-  paddingTop?: boolean;
+  padding?: boolean;
 }
 
-const BrainstormLogo = ({ justify, paddingTop }: Props) => {
+const BrainstormLogo = ({ justify, padding }: Props) => {
   return (
-    <Logo justify={justify} paddingTop={paddingTop}>
+    <Logo justify={justify} padding={padding}>
       <Image
         src="/logo/brainstorm-logo.png"
         width={42}

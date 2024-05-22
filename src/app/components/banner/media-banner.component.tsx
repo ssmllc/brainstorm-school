@@ -8,7 +8,7 @@ import CourseDetail from "../course-detail/course-detail.component";
 
 interface bannerProps {
   theme: string;
-  hero: boolean;
+  hero: string;
   background: string;
 }
 
@@ -16,7 +16,7 @@ const Banner = styled.div<bannerProps>`
   background: ${({ theme }) =>
     theme === "light" ? "var(--white)" : "var(--black)"};
   display: flex;
-  height: ${({ hero }) => (hero === true ? "100vh" : "50vh")};
+  height: ${({ hero }) => (hero === "true" ? "100vh" : "50vh")};
   flex-direction: column;
   padding: 100px 0 0 0;
   position: relative;
@@ -33,8 +33,7 @@ const Banner = styled.div<bannerProps>`
     content: "";
     display: block;
     height: 100%;
-    opacity: 0.5;
-    filter: ${({ hero }) => (hero === true ? "blur(5px)" : "blur(0)")};
+    filter: ${({ hero }) => (hero === "true" ? "blur(5px)" : "blur(0)")};
     left: 0;
     position: absolute;
     top: 0;
@@ -109,7 +108,7 @@ interface Props {
   header: string;
   subHeader?: string;
   theme: string;
-  hero: boolean;
+  hero: string;
   background: string;
   image?: string;
   media?: string;
@@ -135,7 +134,7 @@ const MediaBanner = ({
         <ActionWrapper>
           <Column>
             {!hero && <StartDate>Courses begin: May 20, 2024</StartDate>}
-            {hero && (
+            {hero === "true" && (
               <>
                 <CourseDetail color="var(--white)">
                   <span>
@@ -198,17 +197,17 @@ const MediaBanner = ({
               </>
             )}
           </Column>
-          {hero && (
+          {hero === "true" && (
             <Column>
-              <ActionButton type="primary" label="Register" offsetMargin="0" />
+              <ActionButton type="primary" label="Register" margin="0" />
             </Column>
           )}
         </ActionWrapper>
       </Content>
 
-      {hero && image && !media && <Media image={image} />}
+      {hero === "true" && image && !media && <Media image={image} />}
 
-      {hero && media && (
+      {hero === "true" && media && (
         <Media>
           <video
             style={{

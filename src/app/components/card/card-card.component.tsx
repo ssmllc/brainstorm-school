@@ -6,7 +6,7 @@ import { CardIcon } from "./card-icon.component";
 import { CardDetails } from "./card-details.component";
 
 type Props = {
-  stacked: boolean;
+  stacked: string;
   icon: string;
   heading: string;
   subHeading?: string;
@@ -15,7 +15,7 @@ type Props = {
 };
 
 type containerProps = {
-  stacked: boolean;
+  stacked: string;
   width?: string;
 };
 
@@ -24,7 +24,7 @@ const Container = styled.div<containerProps>`
   background: var(--off-black);
   border-radius: 20px;
   display: flex;
-  flex-direction: ${({ stacked }) => (stacked ? "column" : "row")};
+  flex-direction: ${({ stacked }) => (stacked === "true" ? "column" : "row")};
   padding: 25px 25px;
   gap: 20px;
   width: ${({ width }) => (width ? width : "33.33%")};
