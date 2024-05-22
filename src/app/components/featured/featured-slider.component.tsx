@@ -15,7 +15,7 @@ const Content = styled.div`
 const Featured = styled.div`
   /* border: thin solid blue; */
   border-radius: 20px;
-  box-shadow: 0 0 15px #000;
+  box-shadow: 0 0 10px var(--black);
   display: flex;
   flex-direction: row;
   margin: 0 auto;
@@ -35,7 +35,7 @@ const SliderWrapper = styled.div`
 `;
 
 const Slider = styled.div`
-  box-shadow: 0 0 15px #222;
+  box-shadow: 0 0 10px var(--black);
   display: flex;
   flex-direction: row;
 `;

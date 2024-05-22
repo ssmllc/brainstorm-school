@@ -30,6 +30,7 @@ const Media = styled.div`
   /* border: thin solid red; */
   background: var(--black);
   border-radius: 20px;
+  box-shadow: 0 0 10px var(--black);
   width: 100%;
 
   @media (min-width: 800px) {

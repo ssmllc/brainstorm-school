@@ -9,7 +9,7 @@ import Link from "next/link";
 const Card = styled(Link)`
   background: var(--off-black);
   border-radius: 20px;
-  box-shadow: 0 0 15px #222;
+  box-shadow: 0 0 10px var(--black);
   flex-wrap: wrap;
   overflow: hidden;
   min-height: 400px;

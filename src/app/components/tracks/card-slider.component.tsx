@@ -65,7 +65,7 @@ const CardSliderCards = styled.div`
 
 const Card = styled.div`
   border-radius: 20px;
-  box-shadow: 0 0 15px #000;
+  box-shadow: 0 0 10px var(--black);
   overflow: hidden;
   max-width: 320px;
   width: 25%;
