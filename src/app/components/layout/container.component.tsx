@@ -4,6 +4,7 @@ import React, { ReactNode } from "react";
 import styled from "styled-components";
 
 interface sectionProps {
+  alignitems?: string;
   background?: string;
   border?: boolean;
   borderradius?: string;
@@ -15,10 +16,13 @@ interface sectionProps {
   flexwrap?: string;
   margin?: string;
   padding?: string;
+  overflow?: string;
+  position?: string;
   width?: string;
 }
 
 const Section = styled.div<sectionProps>`
+  align-items: ${({ alignitems }) => alignitems};
   background: ${({ background }) => (background ? background : "0")};
   border: ${({ border }) => (border ? "thin dashed blue" : 0)};
   border-radius: ${({ borderradius }) => (borderradius ? borderradius : 0)};
@@ -31,15 +35,19 @@ const Section = styled.div<sectionProps>`
   justify-content: ${({ justifycontent }) =>
     justifycontent ? justifycontent : "start"};
   margin: ${({ margin }) => (margin ? margin : "0")};
+  overflow: ${({ overflow }) => overflow};
   padding: ${({ padding }) => (padding ? padding : "0")};
+  position: ${({ position }) => (position ? position : "relative")};
   width: ${({ width }) => (width ? width : "100vw")};
 `;
 
 interface Props {
+  alignitems?: string;
   background?: string;
   border?: boolean;
   borderradius?: string;
   children: string | ReactNode | JSX.Element | JSX.Element[];
+  className?: string;
   display?: string;
   flexdirection?: string;
   flexwrap?: string;
@@ -47,15 +55,19 @@ interface Props {
   height?: string;
   justifycontent?: string;
   margin?: string;
+  overflow?: string;
   padding?: string;
+  position?: string;
   width?: string;
 }
 
 const Container = ({
+  alignitems,
   background,
   border,
   borderradius,
   children,
+  className,
   display,
   flexdirection,
   flexwrap,
@@ -63,22 +75,28 @@ const Container = ({
   height,
   justifycontent,
   margin,
+  overflow,
   padding,
+  position,
   width,
 }: Props) => {
   return (
     <Section
+      alignitems={alignitems}
       background={background}
       border={border}
       borderradius={borderradius}
+      className={className}
       display={display}
-      gap={gap}
-      height={height}
       justifycontent={justifycontent}
-      margin={margin}
       flexdirection={flexdirection}
       flexwrap={flexwrap}
+      gap={gap}
+      height={height}
+      margin={margin}
+      overflow={overflow}
       padding={padding}
+      position={position}
       width={width}
     >
       {children}

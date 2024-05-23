@@ -18,13 +18,22 @@ const Group = styled.div`
   gap: 20px;
   margin: 0 auto;
   padding: 0 0 50px 0;
-  width: 60%;
+  width: 80%;
+
+  @media (min-width: 800px) {
+    width: 60%;
+  }
 `;
 
 const Row = styled.div`
   /* border: thin dashed cyan; */
   display: flex;
+  flex-direction: column;
   gap: 20px;
+
+  @media (min-width: 800px) {
+    flex-direction: row;
+  }
 `;
 
 const ReadMore = styled.div`

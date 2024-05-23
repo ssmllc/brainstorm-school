@@ -11,18 +11,18 @@ interface cardProps {
 }
 
 const Card = styled.div<cardProps>`
+  /* border: thin solid red; */
   border-radius: 20px;
-  box-shadow: 0 0 15px #222;
   display: flex;
-  flex-direction: ${({ variant }) => (variant === "sm" ? "column" : "row")};
-  height: ${({ variant }) => (variant === "sm" ? "auto" : "325px")};
+  flex-direction: column;
+  height: 100%;
   overflow: hidden;
   width: 100%;
   position: relative;
 
   @media (min-width: 800px) {
-    max-width: ${({ variant }) => (variant === "sm" ? "320px" : "100%")};
-    width: ${({ variant }) => (variant === "sm" ? "25%" : "100%")};
+    flex-direction: row;
+    height: 325px;
   }
 `;
 
@@ -30,9 +30,14 @@ const Poster = styled.div<cardProps>`
   background: url(${({ image }) => image}) top center no-repeat;
   background-size: cover;
   height: ${({ variant }) => (variant === "sm" ? "100px" : "100%")};
-  padding: 185px 20px 0 20px;
+  padding: 185px 20px 20px 20px;
   position: relative;
-  width: ${({ variant }) => (variant === "sm" ? "auto" : "45%")};
+  width: 100%;
+
+  @media (min-width: 800px) {
+    padding: 185px 20px 0 20px;
+    width: ${({ variant }) => (variant === "sm" ? "auto" : "45%")};
+  }
 
   &:before {
     background: var(--black);
@@ -56,7 +61,11 @@ const Content = styled.div<cardProps>`
   min-height: ${({ variant }) => (variant === "sm" ? "100px;" : "100%")};
   padding: ${({ variant }) => (variant === "sm" ? "40px 20px;" : "40px 40px;")};
   position: relative;
-  width: ${({ variant }) => (variant === "sm" ? "auto" : "55%")};
+  width: 100%;
+
+  @media (min-width: 800px) {
+    width: ${({ variant }) => (variant === "sm" ? "auto" : "55%")};
+  }
 `;
 
 const SuperHeading = styled.p`

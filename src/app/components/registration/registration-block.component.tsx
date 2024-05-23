@@ -95,7 +95,7 @@ interface headingProps {
 }
 
 const BigHeading = styled.h1<headingProps>`
-  font-size: 36px;
+  font-size: 32px;
 
   @media (min-width: 800px) {
     font-size: ${(props) => (props.scale === "xl" ? "42px" : "28px")};
@@ -103,7 +103,7 @@ const BigHeading = styled.h1<headingProps>`
 `;
 
 const Heading = styled.p<headingProps>`
-  font-size: 36px;
+  font-size: 32px;
   font-weight: bold;
 
   @media (min-width: 800px) {

@@ -11,19 +11,37 @@ const CardHeader = ({ text }: { text: string }) => <h2>{text}</h2>;
 
 interface previewProps {
   image: string;
+  boxshadow?: string;
+  width?: string;
 }
 const Preview = styled("div")<previewProps>`
   background: ${({ image }) => `url(${image}) top center no-repeat`};
   background-size: cover;
   border-radius: 20px;
+  box-shadow: ${({ boxshadow }) => boxshadow};
   height: 400px;
   overflow: hidden;
   margin: 25px 0;
-  width: 100%;
+  width: ${({ width }) => (width ? width : "100%")};
 `;
 
-const CardImage = ({ preview }: { preview: string }) => (
-  <Preview image={preview} />
+export const CardImage = ({
+  className,
+  boxshadow,
+  preview,
+  width,
+}: {
+  className?: string;
+  preview: string;
+  boxshadow?: string;
+  width?: string;
+}) => (
+  <Preview
+    className={className}
+    boxshadow={boxshadow}
+    image={preview}
+    width={width}
+  />
 );
 
 const CardDetails = ({ text }: { text: string }) => (
@@ -82,26 +100,65 @@ const CardTags = ({ tags }: { tags?: string[] }) => (
   </Tags>
 );
 
+const Wrapper = styled("div")`
+  /* border: thin solid red; */
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+
+  @media (min-width: 800px) {
+    flex-direction: row;
+    padding: 40px 40px;
+    width: 80%;
+  }
+`;
+
+const CardWrapper = styled("div")`
+  padding: 25px 5px;
+  width: 100%;
+
+  @media (min-width: 800px) {
+    padding: 25px 25px;
+    width: 60%;
+  }
+`;
+
+const InstructorWrapper = styled("div")`
+  width: 100%;
+
+  @media (min-width: 800px) {
+    width: 40%;
+  }
+`;
+
+const CourseDetails = styled("div")`
+  background: var(--dark-grey);
+  border-radius: 20px;
+  height: 100%;
+  padding: 20px 20px;
+  margin: 0 auto;
+  width: 100%;
+
+  @media (min-width: 800px) {
+    width: 80%;
+  }
+`;
+
 const CardLayout = () => {
   return (
-    <Container width="100vw" padding="50px">
-      <Container margin="0 auto" width="80%" display="flex">
-        <Container width="60%" padding="50px">
+    <Container width="100vw" padding="25px 25px">
+      <Wrapper>
+        <CardWrapper>
           <CardHeader text="Gain understanding of the rhythm and structure for anatomical background" />
           <CardImage preview="/cards/character-design.jpg" />
           <CardDetails text="An 8 week introduction to figure drawing and the basic skills of gesture drawing, construction, and basic anatomy. This course focuses on building a process from gesture to form, construction and surface anatomy. It is a perfect class for a beginner artist looking for the proper starting point." />
           <CardTags />
-        </Container>
+        </CardWrapper>
 
-        <Container width="40%">
-          <Container
-            background="var(--dark-grey)"
-            borderradius="20px"
-            height="100%"
-            padding="20px 20px"
-            margin="0 auto"
-            width="80%"
-          >
+        <InstructorWrapper>
+          <CourseDetails>
             <Container
               // border={true}
               display="flex"
@@ -153,6 +210,8 @@ const CardLayout = () => {
             </Container>
 
             <Card
+              background="0"
+              boxshadow="none"
               stacked="false"
               icon="/instructors/ico-image.png"
               heading="Christian Nacordia"
@@ -265,9 +324,9 @@ const CardLayout = () => {
                 recommended) and camera (optional).
               </p>
             </Container>
-          </Container>
-        </Container>
-      </Container>
+          </CourseDetails>
+        </InstructorWrapper>
+      </Wrapper>
     </Container>
   );
 };
