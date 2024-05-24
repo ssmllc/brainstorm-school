@@ -16,6 +16,8 @@ const RenderCourses = ({ selectedCourses }: Props) => {
   const courseList =
     selectedCourses && selectedCourses.length > 0 ? selectedCourses : courses;
 
+  const base = selectedCourses && selectedCourses.length > 0 ? "" : "courses";
+
   return (
     <>
       {error ? (
@@ -23,20 +25,23 @@ const RenderCourses = ({ selectedCourses }: Props) => {
       ) : (
         courseList.map(({ sections, slug }: any, index: number) => {
           return (
-            <>
+            <div key={index}>
               {sections?.map(
                 ({
                   category,
                   section,
                   courses,
+                  _id,
                 }: {
                   category: string;
                   section: string;
+                  _id: any;
                   courses: Course[];
                 }) => (
-                  <Container key={index} margin="50px auto" width="80%">
-                    <Heading header={section} />
+                  <Container key={_id} margin="50px auto" width="80%">
+                    <Heading key={index} header={section} />
                     <Container
+                      key={_id}
                       display="flex"
                       gap="20px 10px"
                       flexwrap="wrap"
@@ -47,7 +52,8 @@ const RenderCourses = ({ selectedCourses }: Props) => {
                         console.log("course", course);
                         return (
                           <CardImageDetail
-                            key={course.code}
+                            base={base}
+                            key={course._id}
                             preview={course.preview.asset.url}
                             slug={slug.current}
                             path={course.slug.current}
@@ -67,7 +73,7 @@ const RenderCourses = ({ selectedCourses }: Props) => {
                   </Container>
                 )
               )}
-            </>
+            </div>
           );
         })
       )}

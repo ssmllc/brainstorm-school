@@ -126,7 +126,7 @@ const RegistrationBlock = ({
   scale: string;
   text?: string;
   cta?: string;
-  ctaType?: string;
+  ctaType?: "primary" | "secondary" | "tertiary";
   faq?: boolean;
 }) => {
   return (

@@ -8,7 +8,6 @@ interface textProps {
   color?: string;
   fontSize?: string;
   padding?: string;
-  justifycontent?: string;
   texttransform?: string;
   width?: string;
 }
@@ -19,12 +18,21 @@ const Text = styled.div<textProps>`
   display: flex;
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "18px")};
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "normal")};
-  gap: 10px;
+  gap: 20px;
   line-height: 1.5;
   padding: ${({ padding }) => (padding ? padding : "25px 0")};
-  justify-content: ${({ justifycontent }) => justifycontent};
-  text-transform: ${({ texttransform }) => texttransform};
+  text-transform: ${({ texttransform }) =>
+    texttransform ? texttransform : "none"};
   width: ${({ width }) => (width ? width : "100%")};
+
+  &::after {
+    background: var(--medium-grey);
+    display: flex;
+    flex-grow: 1;
+    content: "";
+    height: 2px;
+    width: 50%;
+  }
 `;
 
 interface Props {
@@ -32,19 +40,17 @@ interface Props {
   fontSize?: string;
   fontWeight?: string;
   padding?: string;
-  justifycontent?: string;
   texttransform?: string;
   width?: string;
   children: string | ReactNode | JSX.Element | JSX.Element[];
 }
 
-const TextBlock = ({
+const TextHeaderBlock = ({
   children,
   color,
   fontSize,
   fontWeight,
   padding,
-  justifycontent,
   texttransform,
   width,
 }: Props) => {
@@ -54,7 +60,6 @@ const TextBlock = ({
       fontSize={fontSize}
       fontWeight={fontWeight}
       padding={padding}
-      justifycontent={justifycontent}
       texttransform={texttransform}
       width={width}
     >
@@ -63,4 +68,4 @@ const TextBlock = ({
   );
 };
 
-export default TextBlock;
+export default TextHeaderBlock;

@@ -86,6 +86,7 @@ const CourseDetails = styled.ul`
 `;
 
 interface Props {
+  base: string;
   slug: any;
   path: string;
   preview: string;
@@ -97,6 +98,7 @@ interface Props {
 }
 
 const CardImageDetail = ({
+  base,
   slug,
   path,
   preview,
@@ -107,7 +109,10 @@ const CardImageDetail = ({
   courseDuration,
 }: Props) => {
   return (
-    <Card href={`${slug}/${path}`} className="course-card">
+    <Card
+      href={base ? `${base}/${slug}/${path}` : `${slug}/${path}`}
+      className="course-card"
+    >
       <Preview image={preview} tag={courseTrack} />
       <Details>
         <CourseName>{courseName}</CourseName>

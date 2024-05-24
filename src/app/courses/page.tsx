@@ -3,7 +3,6 @@ import RenderCourses from "./components/render-courses.component";
 import MediaBanner from "../components/banner/media-banner.component";
 import TextBlock from "../components/text-block/text-block.component";
 import Heading from "../components/heading/heading.component";
-import RegistrationBlock from "../components/registration/registration-block.component";
 import Container from "../components/layout/container.component";
 
 export const metadata: Metadata = {
