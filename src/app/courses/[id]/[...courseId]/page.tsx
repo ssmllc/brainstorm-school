@@ -158,7 +158,7 @@ export default async function Page({
           }}
         >
           <TextHeaderBlock fontSize="36px" fontWeight="bold">
-            Course FAQ's
+            Course FAQ&apos;s
           </TextHeaderBlock>
 
           <FAQs results={selectedResults} />
@@ -172,7 +172,7 @@ export default async function Page({
         ctaType="primary"
       />
 
-      <Container>
+      <Container padding="0 0 75px 0">
         <Container margin="0 auto" width="70%">
           <TextBlock
             fontSize="36px"

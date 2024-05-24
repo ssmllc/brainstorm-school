@@ -10,8 +10,7 @@ const ContentWrapper = styled.div`
 
   &::before {
     content: "";
-    /* background: url("/backgrounds/lightning/Lightning-36.jpg") -250px -250px
-      no-repeat; */
+    background: url("/backgrounds/lightning/lightning.png") 0 0 no-repeat;
     background-size: 75%;
     position: absolute;
     rotate: 0;

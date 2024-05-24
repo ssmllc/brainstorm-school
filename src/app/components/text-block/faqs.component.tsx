@@ -50,49 +50,53 @@ const FAQs = ({ results }: any) => {
 
   return (
     <>
-      {faqs.map(
-        (
-          {
-            question,
-            answer,
-            _id,
-          }: {
-            question: string;
-            answer: string;
-            _id: number;
-          },
-          index: number
-        ) => (
-          <Container
-            key={_id}
-            className="faq-container"
-            width="100%"
-            background="var(--dark-grey)"
-            padding="0 20px"
-          >
-            <Question className="faq-question" onClick={() => toggleFAQ(index)}>
-              <span>{question}</span>
-              <span>
-                <img
-                  src={` ${
-                    selected === index
-                      ? "/icons/ico-x.png"
-                      : "/icons/ico-expand.png"
-                  }`}
-                  height="20px"
-                  width="20px"
-                />
-              </span>
-            </Question>
-
-            <Answer
-              className={`faq-answer ${selected === index ? "active" : ""}`}
+      {faqs.length > 0 &&
+        faqs.map(
+          (
+            {
+              question,
+              answer,
+              _id,
+            }: {
+              question: string;
+              answer: string;
+              _id: number;
+            },
+            index: number
+          ) => (
+            <Container
+              key={_id}
+              className="faq-container"
+              width="100%"
+              background="var(--dark-grey)"
+              padding="0 20px"
             >
-              {answer}
-            </Answer>
-          </Container>
-        )
-      )}
+              <Question
+                className="faq-question"
+                onClick={() => toggleFAQ(index)}
+              >
+                <span>{question}</span>
+                <span>
+                  <img
+                    src={` ${
+                      selected === index
+                        ? "/icons/ico-x.png"
+                        : "/icons/ico-expand.png"
+                    }`}
+                    height="20px"
+                    width="20px"
+                  />
+                </span>
+              </Question>
+
+              <Answer
+                className={`faq-answer ${selected === index ? "active" : ""}`}
+              >
+                {answer}
+              </Answer>
+            </Container>
+          )
+        )}
     </>
   );
 };
