@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import styled from "styled-components";
 import Container from "../layout/container.component";
+import TextHeaderBlock from "./text-header-block.component";
 
 const Question = styled("button")`
   align-items: center;
@@ -47,56 +48,75 @@ const FAQs = ({ results }: any) => {
 
     setSelected(selectedIndex);
   };
-
   return (
     <>
-      {faqs.length > 0 &&
-        faqs.map(
-          (
-            {
-              question,
-              answer,
-              _id,
-            }: {
-              question: string;
-              answer: string;
-              _id: number;
-            },
-            index: number
-          ) => (
-            <Container
-              key={_id}
-              className="faq-container"
-              width="100%"
-              background="var(--dark-grey)"
-              padding="0 20px"
-            >
-              <Question
-                className="faq-question"
-                onClick={() => toggleFAQ(index)}
-              >
-                <span>{question}</span>
-                <span>
-                  <img
-                    src={` ${
-                      selected === index
-                        ? "/icons/ico-x.png"
-                        : "/icons/ico-expand.png"
-                    }`}
-                    height="20px"
-                    width="20px"
-                  />
-                </span>
-              </Question>
+      {faqs?.length > 0 && (
+        <Container width="100%">
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "70%",
+              position: "relative",
+              margin: "75px auto",
+              padding: "0",
+            }}
+          >
+            <TextHeaderBlock fontSize="36px" fontWeight="bold">
+              Course FAQ&apos;s
+            </TextHeaderBlock>
 
-              <Answer
-                className={`faq-answer ${selected === index ? "active" : ""}`}
-              >
-                {answer}
-              </Answer>
-            </Container>
-          )
-        )}
+            {faqs.map(
+              (
+                {
+                  question,
+                  answer,
+                  _id,
+                }: {
+                  question: string;
+                  answer: string;
+                  _id: number;
+                },
+                index: number
+              ) => (
+                <Container
+                  key={_id}
+                  className="faq-container"
+                  width="100%"
+                  background="var(--dark-grey)"
+                  padding="0 20px"
+                >
+                  <Question
+                    className="faq-question"
+                    onClick={() => toggleFAQ(index)}
+                  >
+                    <span>{question}</span>
+                    <span>
+                      <img
+                        src={` ${
+                          selected === index
+                            ? "/icons/ico-x.png"
+                            : "/icons/ico-expand.png"
+                        }`}
+                        height="20px"
+                        width="20px"
+                      />
+                    </span>
+                  </Question>
+
+                  <Answer
+                    className={`faq-answer ${
+                      selected === index ? "active" : ""
+                    }`}
+                  >
+                    {answer}
+                  </Answer>
+                </Container>
+              )
+            )}
+          </div>
+        </Container>
+      )}
     </>
   );
 };

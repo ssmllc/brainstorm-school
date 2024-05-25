@@ -121,7 +121,7 @@ const DropdownMenu = styled.ul`
   background: var(--black);
   display: none;
   left: 0;
-  min-width: 350px;
+  min-width: 400px;
   padding: 15px 25px;
   position: absolute;
   top: 35px;
@@ -155,7 +155,6 @@ const CallToAction = styled(Link)`
 
 const Navigation = () => {
   const { courses }: any = useContext(BrainstormContext);
-
   return (
     <NavigationBar>
       <BrainstormLogo justify="center" />
@@ -182,7 +181,7 @@ const Navigation = () => {
           </DropdownMenu>
         </Dropdown>
         <Dropdown>
-          <MenuItem href="/courses/concept-art">Workshops</MenuItem>
+          <MenuItem href="/workshops">Workshops</MenuItem>
           <DropdownMenu>
             {courses.length > 0 &&
               courses.map((course: Sections) => (
@@ -193,7 +192,7 @@ const Navigation = () => {
           </DropdownMenu>
         </Dropdown>
         <Dropdown>
-          <MenuItem href="/courses/concept-art">Programs</MenuItem>
+          <MenuItem href="/programs">Programs</MenuItem>
           <DropdownMenu>
             {courses.length > 0 &&
               courses.map((course: Sections) => (
@@ -204,7 +203,7 @@ const Navigation = () => {
           </DropdownMenu>
         </Dropdown>
         <Dropdown>
-          <MenuItem href="/courses/concept-art">About</MenuItem>
+          <MenuItem href="/about">About</MenuItem>
           <DropdownMenu>
             {courses.length > 0 &&
               courses.map((course: Sections) => (
@@ -215,7 +214,7 @@ const Navigation = () => {
           </DropdownMenu>
         </Dropdown>
         <Dropdown>
-          <MenuItem href="/courses/gallery">Gallery</MenuItem>
+          <MenuItem href="/gallery">Gallery</MenuItem>
           <DropdownMenu>
             <DropdownMenuItem>
               <MenuItem href="/students">students</MenuItem>

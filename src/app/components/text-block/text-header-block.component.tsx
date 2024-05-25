@@ -16,8 +16,9 @@ const Text = styled.div<textProps>`
   align-items: center;
   color: ${({ color }) => (color ? color : "var(--white)")};
   display: flex;
-  font-size: ${({ fontSize }) => (fontSize ? fontSize : "18px")};
+  font-size: 24px;
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "normal")};
+  flex-direction: column;
   gap: 20px;
   line-height: 1.5;
   padding: ${({ padding }) => (padding ? padding : "25px 0")};
@@ -25,13 +26,22 @@ const Text = styled.div<textProps>`
     texttransform ? texttransform : "none"};
   width: ${({ width }) => (width ? width : "100%")};
 
+  @media (min-width: 800px) {
+    font-size: ${({ fontSize }) => (fontSize ? fontSize : "18px")};
+    flex-direction: row;
+  }
+
   &::after {
     background: var(--medium-grey);
     display: flex;
     flex-grow: 1;
     content: "";
     height: 2px;
-    width: 50%;
+    width: 100%;
+
+    @media (min-width: 800px) {
+      width: 50%;
+    }
   }
 `;
 

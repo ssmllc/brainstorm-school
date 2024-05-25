@@ -14,9 +14,13 @@ const Card = styled(Link)`
   overflow: hidden;
   min-height: 400px;
   max-width: 320px;
-  width: 25%;
   position: relative;
   transition: all 0.15s ease-out;
+  width: 100%;
+
+  @media (min-width: 800px) {
+    width: 25%;
+  }
 
   &:hover {
     outline: 2px solid var(--blue);

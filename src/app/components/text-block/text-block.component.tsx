@@ -21,10 +21,14 @@ const Text = styled.div<textProps>`
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "normal")};
   gap: 10px;
   line-height: 1.5;
-  padding: ${({ padding }) => (padding ? padding : "25px 0")};
+  padding: 20px 0;
   justify-content: ${({ justifycontent }) => justifycontent};
   text-transform: ${({ texttransform }) => texttransform};
   width: ${({ width }) => (width ? width : "100%")};
+
+  @media (min-width: 800px) {
+    padding: ${({ padding }) => (padding ? padding : "25px 0")};
+  }
 `;
 
 interface Props {

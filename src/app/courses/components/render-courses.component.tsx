@@ -38,7 +38,7 @@ const RenderCourses = ({ selectedCourses }: Props) => {
                   _id: any;
                   courses: Course[];
                 }) => (
-                  <Container key={_id} margin="50px auto" width="80%">
+                  <Container key={_id} margin="50px auto" width="75%">
                     <Heading key={index} header={section} />
                     <Container
                       key={_id}
@@ -49,7 +49,7 @@ const RenderCourses = ({ selectedCourses }: Props) => {
                       margin="0 auto"
                     >
                       {courses?.map((course: any) => {
-                        console.log("course", course);
+                        // console.log("course", course);
                         return (
                           <CardImageDetail
                             base={base}

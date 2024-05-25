@@ -1,5 +1,9 @@
 export type Sections = {
   category: string,
+  faqs: [
+    question: string,
+    answer: string,
+  ],
   slug: {
     current: string, 
     _type: 'slug'

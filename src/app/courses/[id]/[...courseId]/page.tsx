@@ -5,16 +5,17 @@ import CardLayout, {
   CardImage,
 } from "@/app/components/card/simple-card.component";
 import TextBlock from "@/app/components/text-block/text-block.component";
-import Container from "@/app/components/layout/container.component";
+import Container, {
+  FlexContainer,
+} from "@/app/components/layout/container.component";
 import Carousel from "@/app/components/carousel/carousel.component";
 import { Card } from "@/app/components/card/card-card.component";
 import TextHeaderBlock from "@/app/components/text-block/text-header-block.component";
-import FAQs from "@/app/components/text-block/faqs.component";
 import CardImageDetail from "@/app/components/card/card-image-detail.component";
 
 const fetchData = async () => {
   const query =
-    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27course%27%5D+%7B%0A++_id%2C%0A++name%2C%0A++category%2C%0A++section%2C%0A++slug%2C%0A++code%2C%0A++duration%2C%0A++time%2C%0A++faqs%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++answer%2C%0A++++question%2C%0A++%7D%2C%0A++instructors%5B%5D+-%3E+%7B%0A++++title%2C%0A++++profession%2C%0A++++bio%2C%0A++%7D%2C%0A++schedule%5B%5D+-%3E+%7B%0A++++instructor%5B0%5D+-%3E+%7B%0A++++++title%2C%0A++++%7D%2C%0A++++registration%2C%0A++++term%2C%0A++++time%2C%0A++++duration%2C%0A++++start%2C%0A++%7D%2C%0A++preview+%7B%0A++++asset+-%3E+%7B%0A++++++url%0A++++%7D%2C%0A++%7D%2C%0A++description%0A%7D";
+    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27course%27%5D+%7B%0A++_id%2C%0A++name%2C%0A++category%2C%0A++section%2C%0A++slug%2C%0A++code%2C%0A++duration%2C%0A++time%2C%0A++instructors%5B%5D+-%3E+%7B%0A++++title%2C%0A++++profession%2C%0A++++bio%2C%0A++%7D%2C%0A++schedule%5B%5D+-%3E+%7B%0A++++instructor%5B0%5D+-%3E+%7B%0A++++++title%2C%0A++++%7D%2C%0A++++registration%2C%0A++++term%2C%0A++++time%2C%0A++++duration%2C%0A++++start%2C%0A++%7D%2C%0A++preview+%7B%0A++++asset+-%3E+%7B%0A++++++url%0A++++%7D%2C%0A++%7D%2C%0A++description%0A%7D";
   const response = await fetch(query, { cache: "no-store" });
 
   if (!response.ok) {
@@ -36,10 +37,6 @@ export default async function Page({
   const header = result.filter((course: any) => {
     return course.slug.current === params.courseId[0];
   })[0]["name"];
-
-  const selectedResults = result.filter((course: any) => {
-    return course.slug.current === params.courseId[0];
-  })[0];
 
   return (
     <div
@@ -110,7 +107,7 @@ export default async function Page({
             />
           </Carousel>
 
-          <Container
+          <FlexContainer
             alignitems="center"
             display="flex"
             justifycontent="end"
@@ -120,9 +117,9 @@ export default async function Page({
             <TextHeaderBlock fontSize="36px" fontWeight="bold">
               Meet your instructor
             </TextHeaderBlock>
-          </Container>
+          </FlexContainer>
 
-          <Container
+          <FlexContainer
             margin="0 auto"
             width="100%"
             position="relative"
@@ -142,28 +139,10 @@ export default async function Page({
               adipisci recusandae ea impedit dolorem assumenda at earum. Ex nisi
               quia iste vitae!
             </TextBlock>
-          </Container>
+          </FlexContainer>
         </Container>
       </Container>
 
-      <Container width="100%">
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            width: "70%",
-            position: "relative",
-            margin: "75px auto",
-            padding: "0",
-          }}
-        >
-          <TextHeaderBlock fontSize="36px" fontWeight="bold">
-            Course FAQ&apos;s
-          </TextHeaderBlock>
-
-          <FAQs results={selectedResults} />
-        </div>
-      </Container>
       <RegistrationBlock
         primary={true}
         heading="Register for this course"
@@ -182,10 +161,10 @@ export default async function Page({
           >
             More courses like this one
           </TextBlock>
-          <Container
+          <FlexContainer
             width="100%"
             display="flex"
-            gap="10px"
+            gap="15px"
             justifycontent="space-between"
           >
             <CardImageDetail
@@ -232,7 +211,7 @@ export default async function Page({
               courseTime="Fri 10am-1pm (PST)"
               courseDuration="10-week Course"
             />
-          </Container>
+          </FlexContainer>
         </Container>
       </Container>
     </div>

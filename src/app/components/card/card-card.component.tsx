@@ -24,6 +24,7 @@ type containerProps = {
 };
 
 const Container = styled.div<containerProps>`
+  align-items: center;
   background: ${({ background }) =>
     background ? background : "var(--off-black)"};
   box-shadow: ${({ boxshadow }) =>
@@ -31,11 +32,12 @@ const Container = styled.div<containerProps>`
   border-radius: 20px;
   display: flex;
   flex-direction: ${({ stacked }) => (stacked === "true" ? "column" : "row")};
-  padding: 25px 25px;
+  padding: 25px 10px;
   gap: 20px;
   width: ${({ width }) => (width ? width : "100%")};
 
   @media (min-width: 800px) {
+    padding: 25px 25px;
     width: ${({ width }) => (width ? width : "33.33%")};
   }
 `;
