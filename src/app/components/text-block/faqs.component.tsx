@@ -87,6 +87,7 @@ const FAQs = ({ results }: any) => {
                   padding="0 20px"
                 >
                   <Question
+                    key={_id}
                     className="faq-question"
                     onClick={() => toggleFAQ(index)}
                   >

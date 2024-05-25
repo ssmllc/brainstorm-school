@@ -121,7 +121,7 @@ const DropdownMenu = styled.ul`
   background: var(--black);
   display: none;
   left: 0;
-  min-width: 400px;
+  min-width: 375px;
   padding: 15px 25px;
   position: absolute;
   top: 35px;
@@ -183,56 +183,59 @@ const Navigation = () => {
         <Dropdown>
           <MenuItem href="/workshops">Workshops</MenuItem>
           <DropdownMenu>
-            {courses.length > 0 &&
-              courses.map((course: Sections) => (
-                <DropdownMenuItem key={course.slug.current}>
-                  <MenuItem href="/courses">{course.category}</MenuItem>
-                </DropdownMenuItem>
-              ))}
+            <DropdownMenuItem>
+              <MenuItem href="/workshops/open-canvas">Open Canvas</MenuItem>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <MenuItem href="/workshops/brainstorm-connection">
+                Brainstorm Connection
+              </MenuItem>
+            </DropdownMenuItem>
           </DropdownMenu>
         </Dropdown>
         <Dropdown>
           <MenuItem href="/programs">Programs</MenuItem>
           <DropdownMenu>
-            {courses.length > 0 &&
-              courses.map((course: Sections) => (
-                <DropdownMenuItem key={course.slug.current}>
-                  <MenuItem href="/courses">{course.category}</MenuItem>
-                </DropdownMenuItem>
-              ))}
+            <DropdownMenuItem>
+              <MenuItem href="/programs/mentorship">Mentorship</MenuItem>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <MenuItem href="/programs/scholarship">Scholarship</MenuItem>
+            </DropdownMenuItem>
           </DropdownMenu>
         </Dropdown>
         <Dropdown>
           <MenuItem href="/about">About</MenuItem>
           <DropdownMenu>
-            {courses.length > 0 &&
-              courses.map((course: Sections) => (
-                <DropdownMenuItem key={course.slug.current}>
-                  <MenuItem href="/courses">{course.category}</MenuItem>
-                </DropdownMenuItem>
-              ))}
+            <DropdownMenuItem>
+              <MenuItem href="/about/compliance-line">Compliance Line</MenuItem>
+            </DropdownMenuItem>
+
+            <DropdownMenuItem>
+              <MenuItem href="/about/faqs">FAQs</MenuItem>
+            </DropdownMenuItem>
           </DropdownMenu>
         </Dropdown>
         <Dropdown>
           <MenuItem href="/gallery">Gallery</MenuItem>
           <DropdownMenu>
             <DropdownMenuItem>
-              <MenuItem href="/students">students</MenuItem>
+              <MenuItem href="/gallery/students">Students</MenuItem>
             </DropdownMenuItem>
 
             <DropdownMenuItem>
-              <MenuItem href="/instructors">instructors</MenuItem>
+              <MenuItem href="/gallery/instructors">instructors</MenuItem>
             </DropdownMenuItem>
           </DropdownMenu>
         </Dropdown>
         <li>
-          <MenuItem href="/courses/concept-art">Instructors</MenuItem>
+          <MenuItem href="/instructors">Instructors</MenuItem>
         </li>
         <li>
-          <MenuItem href="/courses/concept-art">Blog</MenuItem>
+          <MenuItem href="/blog">Blog</MenuItem>
         </li>
         <li>
-          <CallToAction href="/courses/concept-art">Register</CallToAction>
+          <CallToAction href="/register">Register</CallToAction>
         </li>
       </NavigationMenu>
     </NavigationBar>

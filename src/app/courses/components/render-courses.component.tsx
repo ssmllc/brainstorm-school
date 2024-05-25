@@ -38,22 +38,22 @@ const RenderCourses = ({ selectedCourses }: Props) => {
                   _id: any;
                   courses: Course[];
                 }) => (
-                  <Container key={_id} margin="50px auto" width="75%">
+                  <Container key={_id} margin="50px auto" width="77%">
                     <Heading key={index} header={section} />
                     <Container
                       key={_id}
                       display="flex"
-                      gap="20px 10px"
+                      gap="20px 15px"
                       flexwrap="wrap"
                       width="100%"
                       margin="0 auto"
                     >
-                      {courses?.map((course: any) => {
-                        // console.log("course", course);
+                      {courses?.map((course: Course) => {
+                        console.log("course", course.schedule);
                         return (
                           <CardImageDetail
-                            base={base}
                             key={course._id}
+                            base={base}
                             preview={course.preview.asset.url}
                             slug={slug.current}
                             path={course.slug.current}

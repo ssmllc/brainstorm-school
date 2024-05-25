@@ -22,12 +22,21 @@ export type Sections = {
 }
 
 export type Course = {
+  _id: string;
   name: string;
   code: string;
+  category: string;
+  description: any;
+  instructors: any;
+  slug: {
+    current: string, 
+    _type: 'slug'
+  },
+  preview: any;
+  schedule: Schedule[],
+  section: string;
   time: string;
   duration: string;
-  preview: any;
-  schedule: Schedule,
 };
 
 export type Schedule = {
