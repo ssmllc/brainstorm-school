@@ -4,11 +4,14 @@ import React from "react";
 import styled from "styled-components";
 import { CardIcon } from "./card-icon.component";
 import { CardDetails } from "./card-details.component";
+import Link from "next/link";
 
 type Props = {
   stacked: string;
   icon: string;
   heading: string;
+  href?: string;
+  alignitems?: string;
   background?: string;
   boxshadow?: string;
   subHeading?: string;
@@ -18,13 +21,14 @@ type Props = {
 
 type containerProps = {
   stacked: string;
+  alignitems?: string;
   background?: string;
   boxshadow?: string;
   width?: string;
 };
 
 const Container = styled.div<containerProps>`
-  align-items: center;
+  align-items: ${({ alignitems }) => (alignitems ? alignitems : "center")};
   background: ${({ background }) =>
     background ? background : "var(--off-black)"};
   box-shadow: ${({ boxshadow }) =>
@@ -33,6 +37,7 @@ const Container = styled.div<containerProps>`
   display: flex;
   flex-direction: ${({ stacked }) => (stacked === "true" ? "column" : "row")};
   padding: 25px 10px;
+  min-height: ${({ stacked }) => (stacked === "true" ? "300px" : "auto")};
   position: relative;
   gap: 20px;
   width: ${({ width }) => (width ? width : "100%")};
@@ -46,9 +51,12 @@ const Container = styled.div<containerProps>`
 const Text = styled.p`
   color: var(--white);
   font-size: 12px;
+  line-height: 1.5;
 `;
 
 export const Card = ({
+  href,
+  alignitems,
   background,
   boxshadow,
   stacked,
@@ -59,15 +67,36 @@ export const Card = ({
   width,
 }: Props) => {
   return (
-    <Container
-      background={background}
-      boxshadow={boxshadow}
-      stacked={stacked}
-      width={width}
-    >
-      {icon && <CardIcon image={icon} />}
-      {heading && <CardDetails heading={heading} subHeading={subHeading} />}
-      {text && <Text>{text}</Text>}
-    </Container>
+    <>
+      {href ? (
+        <Link href={href}>
+          <Container
+            alignitems={alignitems}
+            background={background}
+            boxshadow={boxshadow}
+            stacked={stacked}
+            width={width}
+          >
+            {icon && <CardIcon image={icon} />}
+            {heading && (
+              <CardDetails heading={heading} subHeading={subHeading} />
+            )}
+            {text && <Text>{text}</Text>}
+          </Container>
+        </Link>
+      ) : (
+        <Container
+          alignitems={alignitems}
+          background={background}
+          boxshadow={boxshadow}
+          stacked={stacked}
+          width={width}
+        >
+          {icon && <CardIcon image={icon} />}
+          {heading && <CardDetails heading={heading} subHeading={subHeading} />}
+          {text && <Text>{text}</Text>}
+        </Container>
+      )}
+    </>
   );
 };

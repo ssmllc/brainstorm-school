@@ -48,8 +48,8 @@ const Banner = styled.div<bannerProps>`
   &::after {
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0) 35%,
-      var(--off-black) 90%
+      rgba(0, 0, 0, 0) 25%,
+      var(--off-black) 100%
     );
     content: "";
     display: block;

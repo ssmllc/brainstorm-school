@@ -12,7 +12,7 @@ interface bannerProps {
 
 const BannerWrapper = styled("div")<bannerProps>`
   background: var(--dark-grey)
-    ${({ background }) => `url(${background}) center center no-repeat`};
+    ${({ background }) => `url(${background}) top left no-repeat`};
   background-size: cover;
   align-items: center;
   display: flex;

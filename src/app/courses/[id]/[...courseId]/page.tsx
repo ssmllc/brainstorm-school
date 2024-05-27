@@ -49,6 +49,7 @@ export default async function Page({
     >
       <MediaBanner
         header={header}
+        subHeader="2024"
         hero="true"
         theme="dark"
         background="/backgrounds/sci-fi-city.jpg"

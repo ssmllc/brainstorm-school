@@ -13,7 +13,11 @@ const Content = styled.div`
   }
 `;
 
-const ContentWrapper = styled.div`
+interface contentProps {
+  flexdirection?: string;
+}
+
+const ContentWrapper = styled.div<contentProps>`
   /* border: thin solid red; */
   display: flex;
   flex-direction: column;
@@ -21,7 +25,8 @@ const ContentWrapper = styled.div`
   width: 80%;
 
   @media (min-width: 800px) {
-    flex-direction: row;
+    flex-direction: ${({ flexdirection }) =>
+      flexdirection ? flexdirection : "row"};
     width: 70%;
   }
 `;
@@ -95,12 +100,14 @@ const CallToAction = styled.button`
 `;
 
 const VideoContentSplit = ({
+  flexdirection,
   video,
   image,
   heading,
   text,
   cta,
 }: {
+  flexdirection?: string;
   video?: string;
   image?: string;
   heading: string;
@@ -109,7 +116,7 @@ const VideoContentSplit = ({
 }) => {
   return (
     <Content>
-      <ContentWrapper>
+      <ContentWrapper flexdirection={flexdirection}>
         <Media>
           {video && (
             <VideoPlayer>

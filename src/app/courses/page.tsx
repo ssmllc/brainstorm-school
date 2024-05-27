@@ -15,6 +15,7 @@ export default async function Courses() {
     <div>
       <MediaBanner
         header="All Courses"
+        subHeader="2024"
         hero="false"
         theme="dark"
         background="/banner/banner-19.jpg"

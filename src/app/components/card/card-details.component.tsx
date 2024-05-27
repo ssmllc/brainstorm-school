@@ -11,11 +11,13 @@ const Heading = styled.div<Props>`
   color: var(--white);
   font-size: 18px;
   font-weight: bold;
+  line-height: 1.5;
 `;
 
 const SubHeading = styled.div<Props>`
   color: var(--white);
   font-size: 12px;
+  line-height: 1.5;
 `;
 
 interface Props {

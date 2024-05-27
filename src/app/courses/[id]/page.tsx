@@ -48,6 +48,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     >
       <MediaBanner
         header={header}
+        subHeader="2024"
         hero="false"
         theme="dark"
         background="/banner/banner-39.jpg"

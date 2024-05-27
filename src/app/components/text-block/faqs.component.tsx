@@ -5,6 +5,7 @@ import gsap from "gsap";
 import styled from "styled-components";
 import Container from "../layout/container.component";
 import TextHeaderBlock from "./text-header-block.component";
+import Image from "next/image";
 
 const Question = styled("button")`
   align-items: center;
@@ -93,14 +94,15 @@ const FAQs = ({ results }: any) => {
                   >
                     <span>{question}</span>
                     <span>
-                      <img
-                        src={` ${
+                      <Image
+                        src={`${
                           selected === index
                             ? "/icons/ico-x.png"
                             : "/icons/ico-expand.png"
                         }`}
-                        height="20px"
-                        width="20px"
+                        width={20}
+                        height={20}
+                        alt="Expand collapse icon"
                       />
                     </span>
                   </Question>
