@@ -28,11 +28,12 @@ const Container = styled.div<containerProps>`
   background: ${({ background }) =>
     background ? background : "var(--off-black)"};
   box-shadow: ${({ boxshadow }) =>
-    boxshadow ? boxshadow : "0 0 10px var(--black)"};
+    boxshadow ? boxshadow : "0 0 15px rgba(0, 0, 0, 0.5)"};
   border-radius: 20px;
   display: flex;
   flex-direction: ${({ stacked }) => (stacked === "true" ? "column" : "row")};
   padding: 25px 10px;
+  position: relative;
   gap: 20px;
   width: ${({ width }) => (width ? width : "100%")};
 

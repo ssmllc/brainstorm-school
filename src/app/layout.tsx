@@ -5,6 +5,7 @@ import { BrainstormProvider } from "./context/context-provider";
 import StyledComponentsRegistry from "../../lib/registry";
 import Navigation from "./components/navigation/navigation.component";
 import Footer from "./components/footer/footer.component";
+import { TracksProvider } from "./context/tracks-context-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export default function RootLayout({
         <BrainstormProvider>
           <StyledComponentsRegistry>
             <Navigation />
-            {children}
+            <TracksProvider>{children}</TracksProvider>
             <Footer />
           </StyledComponentsRegistry>
         </BrainstormProvider>

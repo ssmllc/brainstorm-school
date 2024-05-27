@@ -1,11 +1,23 @@
 "use client";
 
+import { useEffect, useState, useContext } from "react";
+import { useSearchParams } from "next/navigation";
 import styled from "styled-components";
 import RegistrationBlock from "../registration/registration-block.component";
+
+import Link from "next/link";
+import Container, { FlexContainer } from "../layout/container.component";
+import TextBlock from "../text-block/text-block.component";
+import { Card } from "../card/card-card.component";
+import { TracksContext } from "@/app/context/tracks-context-provider";
 
 const TracksContainer = styled.div`
   /* border: thin solid red; */
   padding: 0 0 75px 0;
+`;
+
+const Anchor = styled(Link)`
+  width: 25%;
 `;
 
 const Tracks = styled.div`
@@ -32,14 +44,34 @@ const Track = styled.div<trackProps>`
   background: var(--black) url(${(props) => props.poster}) top center no-repeat;
   background-size: cover;
   border-radius: 20px;
-  box-shadow: 0 0 10px var(--black);
-  filter: grayscale(0.5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  filter: grayscale(0.25);
   flex-grow: 1;
   flex-basis: 25%;
   min-height: 350px;
   padding: 185px 20px 0 20px;
   position: relative;
   transition: all 0.35s ease-out;
+
+  &[data-track="active"] {
+    filter: grayscale(0);
+  }
+
+  &::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 25%,
+      var(--off-black) 100%
+    );
+    content: "";
+    border-radius: 20px;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
 
   &:hover {
     filter: grayscale(0);
@@ -56,6 +88,7 @@ const Icon = styled.div`
   justify-content: center;
   position: relative;
   width: 50px;
+  z-index: 2;
 `;
 
 const Name = styled.p`
@@ -63,231 +96,366 @@ const Name = styled.p`
   font-weight: bold;
   font-size: 28px;
   padding: 20px 0;
+  position: relative;
+  z-index: 2;
 `;
 
-const TracksGroup = () => {
+interface Props {
+  results?: any;
+}
+
+const TracksGroup = ({ results }: Props) => {
+  const { selectedContextTrack, setSelectedContextTrack }: any =
+    useContext(TracksContext);
+  const [currentTrack, setCurrentTrack] = useState([]);
+  const [heading, setHeading] = useState(null);
+
+  useEffect(() => {
+    if (results) {
+      const currentTrack = results.filter(
+        (track: any) => track.slug.current === selectedContextTrack
+      );
+
+      const heading = results.filter((track: any) => {
+        if (track.slug.current === selectedContextTrack) {
+          return track.name;
+        }
+      })[0]["name"];
+
+      setHeading(heading);
+      setCurrentTrack(currentTrack);
+    }
+  }, [selectedContextTrack]);
+
   return (
     <TracksContainer>
       <RegistrationBlock
         primary={false}
-        heading="Learn courses relevant to todays market. Our course guides will keep you on track."
+        heading="Learn courses relevant to todays market. Our course guide will keep you on track."
         scale="xl"
       />
       <Tracks>
-        <Track poster="cards/character-design.jpg">
-          <Icon>
-            <svg
-              style={{ width: "25px", height: "25px" }}
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
+        {results && results.length ? (
+          results.map((track: any) => (
+            <Track
+              poster={track.imageUrl}
+              data-track={
+                selectedContextTrack === track.slug.current ? "active" : null
+              }
+              onClick={() => {
+                setSelectedContextTrack(`${track.slug.current}`);
+              }}
             >
-              <g style={{ fill: "#fff" }}>
-                <g id="Layer_1" data-name="Layer 1">
-                  <path
-                    className="cls-1"
-                    d="M12,9.7a.68.68,0,0,1-.34-.08L3.49,5.54a.78.78,0,0,1-.43-.69.76.76,0,0,1,.43-.68L11.66.08a.74.74,0,0,1,.68,0l8.17,4.09a.76.76,0,0,1,.43.68.78.78,0,0,1-.43.69L12.34,9.62A.68.68,0,0,1,12,9.7ZM5.54,4.85,12,8.08l6.46-3.23L12,1.62Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M12,17.87a.68.68,0,0,1-.34-.08L3.49,13.71A.78.78,0,0,1,3.06,13V4.85a.77.77,0,0,1,1.54,0v7.7l7.4,3.7,7.4-3.7V4.85a.77.77,0,0,1,1.54,0V13a.78.78,0,0,1-.43.69l-8.17,4.08A.68.68,0,0,1,12,17.87Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M12,17.87a.77.77,0,0,1-.77-.76V8.94a.77.77,0,1,1,1.54,0v8.17A.77.77,0,0,1,12,17.87Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M12,24C6.18,24,0,22.3,0,19.15a.77.77,0,0,1,.77-.77.77.77,0,0,1,.76.77c0,1.2,3,2.82,8.05,3.22L7.46,20.78a.77.77,0,0,1-.16-1.07.76.76,0,0,1,1.07-.15l4.09,3.06a.78.78,0,0,1,.27.86A.78.78,0,0,1,12,24Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M.77,19.92A.77.77,0,0,1,0,19.15c0-1.6,1.63-3,4.6-3.88a.78.78,0,0,1,1,.51.77.77,0,0,1-.52,1c-2.13.64-3.51,1.59-3.51,2.41A.77.77,0,0,1,.77,19.92Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M23.23,19.92a.77.77,0,0,1-.76-.77c0-.82-1.38-1.77-3.51-2.41a.77.77,0,1,1,.44-1.47c3,.9,4.6,2.28,4.6,3.88A.77.77,0,0,1,23.23,19.92Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M15.08,23.84A.76.76,0,0,1,15,22.32c4.67-.49,7.47-2,7.47-3.17a.77.77,0,1,1,1.53,0c0,2.29-3.47,4.13-8.84,4.69Z"
-                  />
-                </g>
-              </g>
-            </svg>
-          </Icon>
-          <Name>Character Design</Name>
-        </Track>
-        <Track poster="cards/environmental-design.jpg">
-          <Icon>
-            <svg
-              style={{ width: "25px", height: "25px" }}
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <g style={{ fill: "#fff" }}>
-                <g id="Layer_1" data-name="Layer 1">
-                  <path
-                    className="cls-1"
-                    d="M23,15.16l-.16,0a.76.76,0,0,1-.59-.91A10.47,10.47,0,0,0,14.67,1.88a.77.77,0,0,1-.55-.94.78.78,0,0,1,.94-.55,12,12,0,0,1,8.67,14.16A.78.78,0,0,1,23,15.16Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M3.66,20.29A.75.75,0,0,1,3.09,20,12,12,0,0,1,8.94.39a.78.78,0,0,1,.94.55.78.78,0,0,1-.55.94A10.47,10.47,0,0,0,4.23,19a.77.77,0,0,1-.05,1.08A.8.8,0,0,1,3.66,20.29Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M12,24a11.88,11.88,0,0,1-3.93-.66.76.76,0,0,1-.47-1,.77.77,0,0,1,1-.48,10.45,10.45,0,0,0,11.36-3.06.77.77,0,0,1,1.16,1A12,12,0,0,1,12,24Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M5,11.17a.5.5,0,0,1-.17,0,.77.77,0,0,1-.58-.91A7.91,7.91,0,0,1,15,4.66a.77.77,0,0,1,.42,1,.75.75,0,0,1-1,.42,6.4,6.4,0,0,0-8.62,4.5A.77.77,0,0,1,5,11.17Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M10.31,19.71a.55.55,0,0,1-.18,0,8,8,0,0,1-5-3.76.77.77,0,1,1,1.33-.76,6.4,6.4,0,0,0,4,3,.76.76,0,0,1-.18,1.51Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M15.61,18.94a.79.79,0,0,1-.67-.38.77.77,0,0,1,.28-1A6.4,6.4,0,0,0,18.38,12a6.28,6.28,0,0,0-.46-2.39A.77.77,0,0,1,19.34,9a7.87,7.87,0,0,1,.57,3A8,8,0,0,1,16,18.84.75.75,0,0,1,15.61,18.94Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M17.87,6.89a.77.77,0,1,1-.76-.76A.76.76,0,0,1,17.87,6.89Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M13.79,19.15a.78.78,0,0,1-.77.77.77.77,0,0,1,0-1.54A.78.78,0,0,1,13.79,19.15Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M5.62,13a.78.78,0,0,1-.77.77.77.77,0,0,1,0-1.54A.78.78,0,0,1,5.62,13Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M6.64,21.19a.77.77,0,1,1-1.53,0,.77.77,0,0,1,1.53,0Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M12.77.77a.77.77,0,0,1-1.54,0,.77.77,0,1,1,1.54,0Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M23,17.11a.77.77,0,1,1-.77-.77A.76.76,0,0,1,23,17.11Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M12,16.85a.77.77,0,0,1-.77-.77,3.31,3.31,0,0,0-3.32-3.31.77.77,0,0,1,0-1.54,3.31,3.31,0,0,0,3.32-3.31.77.77,0,0,1,1.54,0,3.31,3.31,0,0,0,3.32,3.31.77.77,0,0,1,0,1.54,3.31,3.31,0,0,0-3.32,3.31A.77.77,0,0,1,12,16.85ZM10.53,12A4.91,4.91,0,0,1,12,13.47,4.91,4.91,0,0,1,13.47,12,4.91,4.91,0,0,1,12,10.53,4.91,4.91,0,0,1,10.53,12Z"
-                  />
-                </g>
-              </g>
-            </svg>
-          </Icon>
-          <Name>Environmental Design</Name>
-        </Track>
-        <Track poster="cards/3d-concept.jpg">
-          <Icon>
-            <svg
-              style={{ width: "25px", height: "25px" }}
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <g style={{ fill: "#fff" }}>
-                <g id="Layer_1" data-name="Layer 1">
-                  <path
-                    className="cls-1"
-                    d="M14.42,13.51a.77.77,0,1,1-.76-.77A.76.76,0,0,1,14.42,13.51Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M10.34,20.66a.77.77,0,1,1-.77-.77A.77.77,0,0,1,10.34,20.66Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M3.19,7.38a.78.78,0,0,1-.77.77.77.77,0,0,1,0-1.54A.78.78,0,0,1,3.19,7.38Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M7.27,1.25A.77.77,0,1,1,6.51.49.76.76,0,0,1,7.27,1.25Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M23.61,10.44a.77.77,0,1,1-.76-.76A.76.76,0,0,1,23.61,10.44Z"
-                  />
-                  <circle className="cls-1" cx="19.78" cy="3.29" r="0.77" />
-                  <path
-                    className="cls-1"
-                    d="M4.85,20.94a.77.77,0,0,1-.76-.77A3.32,3.32,0,0,0,.77,16.85a.77.77,0,1,1,0-1.53A3.32,3.32,0,0,0,4.09,12a.77.77,0,0,1,.76-.77.78.78,0,0,1,.77.77,3.32,3.32,0,0,0,3.32,3.32.77.77,0,0,1,0,1.53,3.32,3.32,0,0,0-3.32,3.32A.78.78,0,0,1,4.85,20.94ZM3.38,16.09a4.79,4.79,0,0,1,1.47,1.47,4.79,4.79,0,0,1,1.47-1.47,4.94,4.94,0,0,1-1.47-1.48A4.94,4.94,0,0,1,3.38,16.09Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M18.13,24a.76.76,0,0,1-.77-.77A4.35,4.35,0,0,0,13,18.89a.77.77,0,0,1,0-1.53A4.35,4.35,0,0,0,17.36,13a.77.77,0,0,1,1.53,0,4.35,4.35,0,0,0,4.34,4.34.77.77,0,1,1,0,1.53,4.35,4.35,0,0,0-4.34,4.34A.76.76,0,0,1,18.13,24Zm-2.21-5.87a5.93,5.93,0,0,1,2.21,2.21,5.86,5.86,0,0,1,2.21-2.21,5.93,5.93,0,0,1-2.21-2.21A6,6,0,0,1,15.92,18.13Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M12,11.74a.77.77,0,0,1-.77-.76A4.34,4.34,0,0,0,6.89,6.64a.77.77,0,0,1,0-1.53A4.34,4.34,0,0,0,11.23.77a.77.77,0,1,1,1.54,0,4.34,4.34,0,0,0,4.34,4.34.77.77,0,0,1,0,1.53A4.34,4.34,0,0,0,12.77,11,.77.77,0,0,1,12,11.74ZM9.79,5.87A5.93,5.93,0,0,1,12,8.08a5.93,5.93,0,0,1,2.21-2.21A5.86,5.86,0,0,1,12,3.66,5.86,5.86,0,0,1,9.79,5.87Z"
-                  />
-                </g>
-              </g>
-            </svg>
-          </Icon>
-          <Name>3D Concept Design</Name>
-        </Track>
-        <Track poster="cards/storyboarding.jpg">
-          <Icon>
-            <svg
-              style={{ width: "25px", height: "25px" }}
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <g style={{ fill: "#fff" }}>
-                <g id="Layer_1" data-name="Layer 1">
-                  <path
-                    className="cls-1"
-                    d="M4.85,5.62a.77.77,0,0,1-.42-1.41l3.06-2a.77.77,0,0,1,.85,1.28l-3.06,2A.75.75,0,0,1,4.85,5.62Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M7.91,3.57a.81.81,0,0,1-.42-.12L4.43,1.4A.76.76,0,0,1,4.21.34.77.77,0,0,1,5.28.13l3.06,2a.76.76,0,0,1,.21,1.06A.75.75,0,0,1,7.91,3.57Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M.77,10.72A.76.76,0,0,1,0,10V3.83A1.79,1.79,0,0,1,1.79,2H7.91a.77.77,0,0,1,.77.77.76.76,0,0,1-.77.76H1.79a.26.26,0,0,0-.26.26V10A.76.76,0,0,1,.77,10.72Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M16.09,22a.77.77,0,0,1-.43-1.41l3.06-2a.78.78,0,0,1,1.07.21.77.77,0,0,1-.22,1.07l-3.06,2A.74.74,0,0,1,16.09,22Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M19.15,24a.75.75,0,0,1-.43-.13l-3.06-2a.77.77,0,0,1,.85-1.28l3.06,2.05a.76.76,0,0,1,.22,1.06A.77.77,0,0,1,19.15,24Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M22.21,22H16.09a.77.77,0,0,1-.77-.77.76.76,0,0,1,.77-.76h6.12a.26.26,0,0,0,.26-.26V14A.77.77,0,0,1,24,14v6.13A1.79,1.79,0,0,1,22.21,22Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M10,24H1.79A1.79,1.79,0,0,1,0,22.21V14a1.79,1.79,0,0,1,1.79-1.78H10A1.78,1.78,0,0,1,11.74,14v8.17A1.79,1.79,0,0,1,10,24ZM1.79,13.79a.26.26,0,0,0-.26.25v8.17a.26.26,0,0,0,.26.26H10a.26.26,0,0,0,.25-.26V14a.25.25,0,0,0-.25-.25Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M22.21,11.75H14A1.79,1.79,0,0,1,12.26,10V1.79A1.79,1.79,0,0,1,14,0h8.17A1.79,1.79,0,0,1,24,1.79V10A1.79,1.79,0,0,1,22.21,11.75ZM14,1.53a.26.26,0,0,0-.25.26V10a.25.25,0,0,0,.25.25h8.17a.26.26,0,0,0,.26-.25V1.79a.26.26,0,0,0-.26-.26Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M5.87,20.94h-2a.77.77,0,0,1,0-1.54h2a.77.77,0,0,1,0,1.54Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M18.13,8.68h-2a.77.77,0,1,1,0-1.53h2a.77.77,0,0,1,0,1.53Z"
-                  />
-                </g>
-              </g>
-            </svg>
-          </Icon>
-          <Name>Storyboarding</Name>
-        </Track>
+              <Icon>
+                <svg
+                  style={{ width: "25px", height: "25px" }}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <g style={{ fill: "#fff" }}>
+                    <g id="Layer_1" data-name="Layer 1">
+                      <path
+                        className="cls-1"
+                        d="M12,9.7a.68.68,0,0,1-.34-.08L3.49,5.54a.78.78,0,0,1-.43-.69.76.76,0,0,1,.43-.68L11.66.08a.74.74,0,0,1,.68,0l8.17,4.09a.76.76,0,0,1,.43.68.78.78,0,0,1-.43.69L12.34,9.62A.68.68,0,0,1,12,9.7ZM5.54,4.85,12,8.08l6.46-3.23L12,1.62Z"
+                      />
+                      <path
+                        className="cls-1"
+                        d="M12,17.87a.68.68,0,0,1-.34-.08L3.49,13.71A.78.78,0,0,1,3.06,13V4.85a.77.77,0,0,1,1.54,0v7.7l7.4,3.7,7.4-3.7V4.85a.77.77,0,0,1,1.54,0V13a.78.78,0,0,1-.43.69l-8.17,4.08A.68.68,0,0,1,12,17.87Z"
+                      />
+                      <path
+                        className="cls-1"
+                        d="M12,17.87a.77.77,0,0,1-.77-.76V8.94a.77.77,0,1,1,1.54,0v8.17A.77.77,0,0,1,12,17.87Z"
+                      />
+                      <path
+                        className="cls-1"
+                        d="M12,24C6.18,24,0,22.3,0,19.15a.77.77,0,0,1,.77-.77.77.77,0,0,1,.76.77c0,1.2,3,2.82,8.05,3.22L7.46,20.78a.77.77,0,0,1-.16-1.07.76.76,0,0,1,1.07-.15l4.09,3.06a.78.78,0,0,1,.27.86A.78.78,0,0,1,12,24Z"
+                      />
+                      <path
+                        className="cls-1"
+                        d="M.77,19.92A.77.77,0,0,1,0,19.15c0-1.6,1.63-3,4.6-3.88a.78.78,0,0,1,1,.51.77.77,0,0,1-.52,1c-2.13.64-3.51,1.59-3.51,2.41A.77.77,0,0,1,.77,19.92Z"
+                      />
+                      <path
+                        className="cls-1"
+                        d="M23.23,19.92a.77.77,0,0,1-.76-.77c0-.82-1.38-1.77-3.51-2.41a.77.77,0,1,1,.44-1.47c3,.9,4.6,2.28,4.6,3.88A.77.77,0,0,1,23.23,19.92Z"
+                      />
+                      <path
+                        className="cls-1"
+                        d="M15.08,23.84A.76.76,0,0,1,15,22.32c4.67-.49,7.47-2,7.47-3.17a.77.77,0,1,1,1.53,0c0,2.29-3.47,4.13-8.84,4.69Z"
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </Icon>
+              <Name>{track.name}</Name>
+            </Track>
+          ))
+        ) : (
+          <>
+            <Anchor href="/course-guide">
+              <Track
+                onClick={() => setSelectedContextTrack("3d-concept")}
+                poster="https://cdn.sanity.io/images/y8rjsgga/production/563c05443ddf6be2eda4363579a77c4787e059a6-1920x2663.jpg"
+              >
+                <Icon>
+                  <svg
+                    style={{ width: "25px", height: "25px" }}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <g style={{ fill: "#fff" }}>
+                      <g id="Layer_1" data-name="Layer 1">
+                        <path
+                          className="cls-1"
+                          d="M12,9.7a.68.68,0,0,1-.34-.08L3.49,5.54a.78.78,0,0,1-.43-.69.76.76,0,0,1,.43-.68L11.66.08a.74.74,0,0,1,.68,0l8.17,4.09a.76.76,0,0,1,.43.68.78.78,0,0,1-.43.69L12.34,9.62A.68.68,0,0,1,12,9.7ZM5.54,4.85,12,8.08l6.46-3.23L12,1.62Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M12,17.87a.68.68,0,0,1-.34-.08L3.49,13.71A.78.78,0,0,1,3.06,13V4.85a.77.77,0,0,1,1.54,0v7.7l7.4,3.7,7.4-3.7V4.85a.77.77,0,0,1,1.54,0V13a.78.78,0,0,1-.43.69l-8.17,4.08A.68.68,0,0,1,12,17.87Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M12,17.87a.77.77,0,0,1-.77-.76V8.94a.77.77,0,1,1,1.54,0v8.17A.77.77,0,0,1,12,17.87Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M12,24C6.18,24,0,22.3,0,19.15a.77.77,0,0,1,.77-.77.77.77,0,0,1,.76.77c0,1.2,3,2.82,8.05,3.22L7.46,20.78a.77.77,0,0,1-.16-1.07.76.76,0,0,1,1.07-.15l4.09,3.06a.78.78,0,0,1,.27.86A.78.78,0,0,1,12,24Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M.77,19.92A.77.77,0,0,1,0,19.15c0-1.6,1.63-3,4.6-3.88a.78.78,0,0,1,1,.51.77.77,0,0,1-.52,1c-2.13.64-3.51,1.59-3.51,2.41A.77.77,0,0,1,.77,19.92Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M23.23,19.92a.77.77,0,0,1-.76-.77c0-.82-1.38-1.77-3.51-2.41a.77.77,0,1,1,.44-1.47c3,.9,4.6,2.28,4.6,3.88A.77.77,0,0,1,23.23,19.92Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M15.08,23.84A.76.76,0,0,1,15,22.32c4.67-.49,7.47-2,7.47-3.17a.77.77,0,1,1,1.53,0c0,2.29-3.47,4.13-8.84,4.69Z"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </Icon>
+                <Name>3D Concept</Name>
+              </Track>
+            </Anchor>
+
+            <Anchor href="/course-guide">
+              <Track
+                onClick={() => setSelectedContextTrack("environmental-design")}
+                poster="https://cdn.sanity.io/images/y8rjsgga/production/8edfdcd9b145736ec094171b5a2b29b36cbbbae8-2528x1235.jpg"
+              >
+                <Icon>
+                  <svg
+                    style={{ width: "25px", height: "25px" }}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <g style={{ fill: "#fff" }}>
+                      <g id="Layer_1" data-name="Layer 1">
+                        <path
+                          className="cls-1"
+                          d="M12,9.7a.68.68,0,0,1-.34-.08L3.49,5.54a.78.78,0,0,1-.43-.69.76.76,0,0,1,.43-.68L11.66.08a.74.74,0,0,1,.68,0l8.17,4.09a.76.76,0,0,1,.43.68.78.78,0,0,1-.43.69L12.34,9.62A.68.68,0,0,1,12,9.7ZM5.54,4.85,12,8.08l6.46-3.23L12,1.62Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M12,17.87a.68.68,0,0,1-.34-.08L3.49,13.71A.78.78,0,0,1,3.06,13V4.85a.77.77,0,0,1,1.54,0v7.7l7.4,3.7,7.4-3.7V4.85a.77.77,0,0,1,1.54,0V13a.78.78,0,0,1-.43.69l-8.17,4.08A.68.68,0,0,1,12,17.87Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M12,17.87a.77.77,0,0,1-.77-.76V8.94a.77.77,0,1,1,1.54,0v8.17A.77.77,0,0,1,12,17.87Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M12,24C6.18,24,0,22.3,0,19.15a.77.77,0,0,1,.77-.77.77.77,0,0,1,.76.77c0,1.2,3,2.82,8.05,3.22L7.46,20.78a.77.77,0,0,1-.16-1.07.76.76,0,0,1,1.07-.15l4.09,3.06a.78.78,0,0,1,.27.86A.78.78,0,0,1,12,24Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M.77,19.92A.77.77,0,0,1,0,19.15c0-1.6,1.63-3,4.6-3.88a.78.78,0,0,1,1,.51.77.77,0,0,1-.52,1c-2.13.64-3.51,1.59-3.51,2.41A.77.77,0,0,1,.77,19.92Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M23.23,19.92a.77.77,0,0,1-.76-.77c0-.82-1.38-1.77-3.51-2.41a.77.77,0,1,1,.44-1.47c3,.9,4.6,2.28,4.6,3.88A.77.77,0,0,1,23.23,19.92Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M15.08,23.84A.76.76,0,0,1,15,22.32c4.67-.49,7.47-2,7.47-3.17a.77.77,0,1,1,1.53,0c0,2.29-3.47,4.13-8.84,4.69Z"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </Icon>
+                <Name>Environmental Design</Name>
+              </Track>
+            </Anchor>
+
+            <Anchor href="/course-guide">
+              <Track
+                onClick={() => setSelectedContextTrack("character-design")}
+                poster="https://cdn.sanity.io/images/y8rjsgga/production/d6fa5a3d458c160180fa48e6d4708e6c5efb45a4-1920x1823.jpg"
+              >
+                <Icon>
+                  <svg
+                    style={{ width: "25px", height: "25px" }}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <g style={{ fill: "#fff" }}>
+                      <g id="Layer_1" data-name="Layer 1">
+                        <path
+                          className="cls-1"
+                          d="M12,9.7a.68.68,0,0,1-.34-.08L3.49,5.54a.78.78,0,0,1-.43-.69.76.76,0,0,1,.43-.68L11.66.08a.74.74,0,0,1,.68,0l8.17,4.09a.76.76,0,0,1,.43.68.78.78,0,0,1-.43.69L12.34,9.62A.68.68,0,0,1,12,9.7ZM5.54,4.85,12,8.08l6.46-3.23L12,1.62Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M12,17.87a.68.68,0,0,1-.34-.08L3.49,13.71A.78.78,0,0,1,3.06,13V4.85a.77.77,0,0,1,1.54,0v7.7l7.4,3.7,7.4-3.7V4.85a.77.77,0,0,1,1.54,0V13a.78.78,0,0,1-.43.69l-8.17,4.08A.68.68,0,0,1,12,17.87Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M12,17.87a.77.77,0,0,1-.77-.76V8.94a.77.77,0,1,1,1.54,0v8.17A.77.77,0,0,1,12,17.87Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M12,24C6.18,24,0,22.3,0,19.15a.77.77,0,0,1,.77-.77.77.77,0,0,1,.76.77c0,1.2,3,2.82,8.05,3.22L7.46,20.78a.77.77,0,0,1-.16-1.07.76.76,0,0,1,1.07-.15l4.09,3.06a.78.78,0,0,1,.27.86A.78.78,0,0,1,12,24Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M.77,19.92A.77.77,0,0,1,0,19.15c0-1.6,1.63-3,4.6-3.88a.78.78,0,0,1,1,.51.77.77,0,0,1-.52,1c-2.13.64-3.51,1.59-3.51,2.41A.77.77,0,0,1,.77,19.92Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M23.23,19.92a.77.77,0,0,1-.76-.77c0-.82-1.38-1.77-3.51-2.41a.77.77,0,1,1,.44-1.47c3,.9,4.6,2.28,4.6,3.88A.77.77,0,0,1,23.23,19.92Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M15.08,23.84A.76.76,0,0,1,15,22.32c4.67-.49,7.47-2,7.47-3.17a.77.77,0,1,1,1.53,0c0,2.29-3.47,4.13-8.84,4.69Z"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </Icon>
+                <Name>Character Design</Name>
+              </Track>
+            </Anchor>
+
+            <Anchor href="/course-guide">
+              <Track
+                onClick={() => setSelectedContextTrack("storyboarding")}
+                poster="https://cdn.sanity.io/images/y8rjsgga/production/3de4aafc719133ed0d7a44b67f32550005c607ed-1920x1920.jpg"
+              >
+                <Icon>
+                  <svg
+                    style={{ width: "25px", height: "25px" }}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <g style={{ fill: "#fff" }}>
+                      <g id="Layer_1" data-name="Layer 1">
+                        <path
+                          className="cls-1"
+                          d="M12,9.7a.68.68,0,0,1-.34-.08L3.49,5.54a.78.78,0,0,1-.43-.69.76.76,0,0,1,.43-.68L11.66.08a.74.74,0,0,1,.68,0l8.17,4.09a.76.76,0,0,1,.43.68.78.78,0,0,1-.43.69L12.34,9.62A.68.68,0,0,1,12,9.7ZM5.54,4.85,12,8.08l6.46-3.23L12,1.62Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M12,17.87a.68.68,0,0,1-.34-.08L3.49,13.71A.78.78,0,0,1,3.06,13V4.85a.77.77,0,0,1,1.54,0v7.7l7.4,3.7,7.4-3.7V4.85a.77.77,0,0,1,1.54,0V13a.78.78,0,0,1-.43.69l-8.17,4.08A.68.68,0,0,1,12,17.87Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M12,17.87a.77.77,0,0,1-.77-.76V8.94a.77.77,0,1,1,1.54,0v8.17A.77.77,0,0,1,12,17.87Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M12,24C6.18,24,0,22.3,0,19.15a.77.77,0,0,1,.77-.77.77.77,0,0,1,.76.77c0,1.2,3,2.82,8.05,3.22L7.46,20.78a.77.77,0,0,1-.16-1.07.76.76,0,0,1,1.07-.15l4.09,3.06a.78.78,0,0,1,.27.86A.78.78,0,0,1,12,24Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M.77,19.92A.77.77,0,0,1,0,19.15c0-1.6,1.63-3,4.6-3.88a.78.78,0,0,1,1,.51.77.77,0,0,1-.52,1c-2.13.64-3.51,1.59-3.51,2.41A.77.77,0,0,1,.77,19.92Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M23.23,19.92a.77.77,0,0,1-.76-.77c0-.82-1.38-1.77-3.51-2.41a.77.77,0,1,1,.44-1.47c3,.9,4.6,2.28,4.6,3.88A.77.77,0,0,1,23.23,19.92Z"
+                        />
+                        <path
+                          className="cls-1"
+                          d="M15.08,23.84A.76.76,0,0,1,15,22.32c4.67-.49,7.47-2,7.47-3.17a.77.77,0,1,1,1.53,0c0,2.29-3.47,4.13-8.84,4.69Z"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </Icon>
+                <Name>Storyboarding</Name>
+              </Track>
+            </Anchor>
+          </>
+        )}
       </Tracks>
+
+      <Container>
+        {currentTrack.length > 0 && (
+          <TextBlock justifycontent="center" fontSize="24px">
+            Roadmap for{" "}
+            <span style={{ color: "var(--blue)", fontWeight: "bold" }}>
+              {heading}
+            </span>
+          </TextBlock>
+        )}
+
+        <FlexContainer
+          display="flex"
+          flexwrap="wrap"
+          gap="10px"
+          margin="0 auto"
+          width="70%"
+          justifycontent="space-between"
+        >
+          {currentTrack.length > 0 &&
+            currentTrack?.map((track: any) =>
+              track?.tracks.map((courses: any) => (
+                <Container
+                  background="var(--black)"
+                  border="thin solid var(--darker-grey)"
+                  borderradius="20px"
+                  display="flex"
+                  gap="15px 0"
+                  flexdirection="column"
+                  flexgrow="1"
+                  margin="0 auto"
+                  padding="25px 25px"
+                  maxwidth="33%"
+                  width="auto"
+                >
+                  <TextBlock
+                    justifycontent="left"
+                    fontSize="24px"
+                    fontWeight="bold"
+                  >
+                    {courses.term}
+                  </TextBlock>
+
+                  {courses.courses.map((course: any) => {
+                    console.log("looking for name", course);
+                    return (
+                      <Link
+                        href={`courses/${course.category
+                          .toLocaleLowerCase()
+                          .replaceAll(" ", "-")}/${course.slug.current}`}
+                      >
+                        <Card
+                          stacked="false"
+                          boxshadow="0"
+                          icon={track.imageUrl}
+                          heading={course.name}
+                          subHeading={course.code}
+                          width="100%"
+                        />
+                      </Link>
+                    );
+                  })}
+                </Container>
+              ))
+            )}
+        </FlexContainer>
+      </Container>
     </TracksContainer>
   );
 };

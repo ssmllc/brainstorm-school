@@ -1,10 +1,12 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import ActionButton from "../buttons/action-button.component";
 import Pill from "../pill/pill.component";
 import Heading from "../heading/heading.component";
 import CourseDetail from "../course-detail/course-detail.component";
+import gsap from "gsap";
 
 interface bannerProps {
   theme: string;
@@ -28,12 +30,30 @@ const Banner = styled.div<bannerProps>`
 
   &::before {
     background: ${({ background }) =>
-      background ? `url(${background}) top center no-repeat` : "var(--black)"};
+      background
+        ? `url(${background}) center center no-repeat`
+        : "var(--black)"};
     background-size: cover;
     content: "";
     display: block;
     height: 100%;
     filter: ${({ hero }) => (hero === "true" ? "blur(5px)" : "blur(0)")};
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 35%,
+      var(--off-black) 90%
+    );
+    content: "";
+    display: block;
+    height: 100%;
     left: 0;
     position: absolute;
     top: 0;
@@ -81,7 +101,7 @@ interface mediaProps {
 
 const Media = styled.div<mediaProps>`
   background: ${({ image }) =>
-    image ? `url(${image}) top center no-repeat` : "#222"};
+    image ? `url(${image}) center center no-repeat` : "var(--black)"};
   border-radius: 20px;
   overflow: hidden;
   height: 250px;
@@ -105,11 +125,12 @@ const StartDate = styled.p`
 `;
 
 interface Props {
-  header: string;
+  header?: string;
   subHeader?: string;
   theme: string;
   hero: string;
   background: string;
+  label?: string;
   image?: string;
   media?: string;
 }
@@ -117,18 +138,39 @@ interface Props {
 const MediaBanner = ({
   header,
   subHeader,
+  label,
   theme,
   hero,
-  background,
   image,
   media,
 }: Props) => {
+  const [randomBanner, setRandomBanner] = useState<string>("");
+
+  useEffect(() => {
+    const randomBannerImage = (min: number, max: number) => {
+      // min and max included
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    };
+
+    const randomBanner = `/banner/banner-${randomBannerImage(1, 20)}.jpg`;
+    setRandomBanner(randomBanner);
+
+    gsap.to(".banner-wrapper", {
+      ease: "power1.out",
+      delay: 0.1,
+      duration: 1,
+      opacity: 1,
+    });
+  }, []);
+
   return (
-    <Banner theme={theme} hero={hero} background={background}>
+    <Banner theme={theme} hero={hero} background={randomBanner}>
       <Content>
         <Column>
-          {hero && <Pill label="Figure Drawing & Anatomy" />}
-          <Heading header={header} subHeader={subHeader ? subHeader : ""} />
+          {hero === "true" && <Pill label={label ? label : "no label added"} />}
+          {header && (
+            <Heading header={header} subHeader={subHeader ? subHeader : ""} />
+          )}
         </Column>
 
         <ActionWrapper>

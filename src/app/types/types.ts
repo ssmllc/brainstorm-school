@@ -15,7 +15,7 @@ export type Sections = {
   ],
   details: {
     children: {
-      text: any,
+      text: string,
     }
     _type: 'block'
   }
@@ -27,7 +27,7 @@ export type Course = {
   code: string;
   category: string;
   description: any;
-  instructors: any;
+  instructor: any;
   slug: {
     current: string, 
     _type: 'slug'

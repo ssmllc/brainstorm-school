@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-// import Image from "next/image";
 import styled from "styled-components";
 import { BrainstormContext } from "@/app/context/context-provider";
 import { useContext } from "react";
@@ -180,6 +179,9 @@ const Navigation = () => {
               ))}
           </DropdownMenu>
         </Dropdown>
+        <li>
+          <MenuItem href="/course-guide">Course Guide</MenuItem>
+        </li>
         <Dropdown>
           <MenuItem href="/workshops">Workshops</MenuItem>
           <DropdownMenu>

@@ -15,7 +15,7 @@ const Content = styled.div`
 const Featured = styled.div`
   /* border: thin solid blue; */
   border-radius: 20px;
-  box-shadow: 0 0 10px var(--black);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: row;
   margin: 0 auto;

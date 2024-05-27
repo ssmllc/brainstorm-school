@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import RegistrationBlock from "../registration/registration-block.component";
 import gsap from "gsap";
@@ -69,7 +69,7 @@ const Card = styled.div<cardProps>`
   background: ${({ image }) => `url(${image}) center center no-repeat`};
   background-size: cover;
   border-radius: 25px;
-  box-shadow: 0 0 10px var(--black);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   /* max-width: 350px; */
   width: 25%;
 
@@ -138,6 +138,7 @@ const CarouselWrapper = styled.div`
 `;
 
 const ImageGallery = () => {
+  const [current, setCurrent] = useState(1);
   let currentPosition: number = 1;
 
   const handleCardSliderMove = (direction: "next" | "prev") => {

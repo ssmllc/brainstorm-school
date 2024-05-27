@@ -20,10 +20,10 @@ const Content = styled.div`
     line-height: 1.5;
     margin: 0 auto;
     padding: 25px 0 0;
-    width: 85%;
+    width: 80%;
 
     @media (min-width: 800px) {
-      width: 75%;
+      width: 60%;
     }
   }
 `;

@@ -11,6 +11,7 @@ const CardSliderContainer = styled.div`
   height: 100vh;
   justify-content: end;
   padding: 0;
+  position: relative;
   width: 100vw;
 
   @media (min-width: 800px) {
@@ -65,7 +66,7 @@ const CardSliderCards = styled.div`
 
 const Card = styled.div`
   border-radius: 20px;
-  box-shadow: 0 0 10px var(--black);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   max-width: 320px;
   width: 25%;
@@ -234,8 +235,10 @@ const CardSlider = () => {
   };
 
   useEffect(() => {
-    const card = document.querySelector(".course-card");
-    const cardsTotal = [].slice.call(document.querySelectorAll(".course-card"));
+    const card = document.querySelector(".slider-course-card");
+    const cardsTotal = [].slice.call(
+      document.querySelectorAll(".slider-course-card")
+    );
 
     if (card) {
       setCoursesTotal(cardsTotal.length * courseCardWidth);
@@ -278,7 +281,7 @@ const CardSlider = () => {
 
         <CardSliderCards>
           <CardWrapper className="course-slider" width={`${coursesTotal}px`}>
-            <Card className="course-card">
+            <Card className="slider-course-card">
               <Poster
                 image="/cards/3d-concept.jpg"
                 tag="Concept Art & Design"
@@ -378,7 +381,7 @@ const CardSlider = () => {
               </Details>
             </Card>
 
-            <Card className="course-card">
+            <Card className="slider-course-card">
               <Poster
                 image="/cards/character-design.jpg"
                 tag="Concept Art & Design"
@@ -478,7 +481,7 @@ const CardSlider = () => {
               </Details>
             </Card>
 
-            <Card className="course-card">
+            <Card className="slider-course-card">
               <Poster
                 image="/cards/environmental-design.jpg"
                 tag="Concept Art & Design"
@@ -578,7 +581,7 @@ const CardSlider = () => {
               </Details>
             </Card>
 
-            <Card className="course-card">
+            <Card className="slider-course-card">
               <Poster
                 image="/cards/storyboarding.jpg"
                 tag="Concept Art & Design"
@@ -678,7 +681,7 @@ const CardSlider = () => {
               </Details>
             </Card>
 
-            <Card className="course-card">
+            <Card className="slider-course-card">
               <Poster
                 image="/cards/environmental-design.jpg"
                 tag="Concept Art & Design"

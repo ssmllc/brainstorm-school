@@ -7,10 +7,15 @@ import CardSlider from "./components/tracks/card-slider.component";
 import TracksGroup from "./components/tracks/tracks.component";
 import ContactBlock from "./components/contact/contact-block.component";
 import RegistrationBlock from "./components/registration/registration-block.component";
-import Footer from "./components/footer/footer.component";
 import CardGroup from "./components/card/card-group.component";
+import { Metadata } from "next";
 
-const Home = () => {
+export const metadata: Metadata = {
+  title: "Brainstorm Courses - Brainstorm School",
+  description: "Brainstorm School",
+};
+
+const Home = async () => {
   return (
     <main>
       <Banner />

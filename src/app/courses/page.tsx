@@ -17,7 +17,7 @@ export default async function Courses() {
         header="All Courses"
         hero="false"
         theme="dark"
-        background="/backgrounds/sci-fi-city.jpg"
+        background="/banner/banner-19.jpg"
         image="/banner/media-banner.png"
         media="/video/brainstorm-design-solve-learn.mp4"
       />

@@ -36,7 +36,7 @@ const MenuContainer = styled.div`
   display: flex;
   margin: 0 auto;
   max-width: 1400px;
-  width: 80%;
+  width: 85%;
 `;
 
 const Menu = styled.menu`
@@ -197,12 +197,14 @@ const Footer = () => {
             </MenuItem>
 
             <DropdownMenu>
-              {courses.length > 0 &&
-                courses.map((course: Sections) => (
-                  <DropdownMenuItem key={course.slug.current}>
-                    <MenuItem href="/courses">{course.category}</MenuItem>
-                  </DropdownMenuItem>
-                ))}
+              <li>
+                <MenuItem href="/workshops/open-canvas">Open Canvas</MenuItem>
+              </li>
+              <li>
+                <MenuItem href="/workshops/brainstorm-connection">
+                  Brainstorm Connection
+                </MenuItem>
+              </li>
             </DropdownMenu>
           </Column>
           <Column>

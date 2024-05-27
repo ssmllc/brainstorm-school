@@ -10,11 +10,15 @@ const ContentWrapper = styled.div`
 
   &::before {
     content: "";
-    background: url("/backgrounds/lightning/lightning.png") 0 0 no-repeat;
-    background-size: 75%;
+    background-image: url("/backgrounds/lightning/lightning.png"),
+      url("/backgrounds/clouds/cloud-2.png"),
+      url("/backgrounds/lightning/lightning-2.png"),
+      url("/backgrounds/clouds/cloud-2.png");
+    background-size: 75%, 100%, 75%, 100%;
+    background-position: top left, top center, center right, bottom center;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
     position: absolute;
     rotate: 0;
-    /* rotate: -15deg; */
     transform-origin: top left;
     height: 100%;
     filter: grayscale(0.5);
@@ -25,21 +29,6 @@ const ContentWrapper = styled.div`
     transform: translateY(-50%);
     width: 100%;
   }
-
-  /* &::after {
-    content: "";
-    background: url("/backgrounds/clouds/clouds-right-1.jpg") 0 0 no-repeat;
-    background-size: 75%;
-    position: absolute;
-    height: 100%;
-    filter: grayscale(0.5);
-    pointer-events: none;
-    opacity: 1;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-  } */
 `;
 
 type Props = {

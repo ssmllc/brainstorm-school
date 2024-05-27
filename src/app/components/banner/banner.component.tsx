@@ -29,7 +29,7 @@ const Overlay = styled.div`
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0) 25%,
-    var(--off-black) 90%
+    var(--off-black) 100%
   );
   align-items: center;
   display: flex;
@@ -54,7 +54,7 @@ const Banner = () => {
       return Math.floor(Math.random() * (max - min + 1) + min);
     };
 
-    const randomBanner = `/banner/banner-${randomBannerImage(1, 15)}.jpg`;
+    const randomBanner = `/banner/banner-${randomBannerImage(1, 41)}.jpg`;
     setRandomBanner(randomBanner);
 
     gsap.to(".banner-wrapper", {
