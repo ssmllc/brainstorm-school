@@ -125,7 +125,7 @@ const TracksGroup = ({ results }: Props) => {
       setHeading(heading);
       setCurrentTrack(currentTrack);
     }
-  }, [selectedContextTrack]);
+  }, [results, selectedContextTrack]);
 
   return (
     <TracksContainer>
@@ -136,8 +136,9 @@ const TracksGroup = ({ results }: Props) => {
       />
       <Tracks>
         {results && results.length ? (
-          results.map((track: any) => (
+          results.map((track: any, index: number) => (
             <Track
+              key={index}
               poster={track.imageUrl}
               data-track={
                 selectedContextTrack === track.slug.current ? "active" : null
@@ -392,7 +393,11 @@ const TracksGroup = ({ results }: Props) => {
 
       <Container>
         {currentTrack.length > 0 && (
-          <TextBlock justifycontent="center" fontSize="24px">
+          <TextBlock
+            justifycontent="center"
+            fontSize="28px"
+            padding="100px 0 50px"
+          >
             Roadmap for{" "}
             <span style={{ color: "var(--blue)", fontWeight: "bold" }}>
               {heading}
@@ -410,8 +415,9 @@ const TracksGroup = ({ results }: Props) => {
         >
           {currentTrack.length > 0 &&
             currentTrack?.map((track: any) =>
-              track?.tracks.map((courses: any) => (
+              track?.tracks.map((courses: any, index: number) => (
                 <Container
+                  key={index}
                   background="var(--black)"
                   border="thin solid var(--darker-grey)"
                   borderradius="20px"
@@ -432,10 +438,11 @@ const TracksGroup = ({ results }: Props) => {
                     {courses.term}
                   </TextBlock>
 
-                  {courses.courses.map((course: any) => {
+                  {courses.courses.map((course: any, index: number) => {
                     console.log("looking for name", course);
                     return (
                       <Link
+                        key={index}
                         href={`courses/${course.category
                           .toLocaleLowerCase()
                           .replaceAll(" ", "-")}/${course.slug.current}`}
