@@ -31,14 +31,14 @@ export default async function Page() {
   const result = await fetchData();
 
   return (
-    <Container>
-      <MediaBanner
+    <Container margin="100px 0 0 0">
+      {/* <MediaBanner
         hero="false"
         theme="dark"
         background="/backgrounds/sci-fi-city.jpg"
         image="/banner/media-banner.png"
         media="/video/brainstorm-design-solve-learn.mp4"
-      />
+      /> */}
 
       <Container margin="0">
         <RegistrationBlock

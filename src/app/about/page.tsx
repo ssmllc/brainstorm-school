@@ -10,6 +10,9 @@ import TextHeaderBlock from "../components/text-block/text-header-block.componen
 import ImageGallery from "../components/gallery/image-gallery.component";
 import FAQs from "../components/text-block/faqs.component";
 import { MiniCards } from "../components/card/mini-card.component";
+import CardImageDetail from "../components/card/card-image-detail.component";
+import TextBlock from "../components/text-block/text-block.component";
+import SimilarCourses from "../components/similar-courses/similar-courses.component";
 
 export const metadata: Metadata = {
   title: "Brainstorm Courses - Brainstorm School",
@@ -145,6 +148,8 @@ export default async function About() {
         cta="Sign Me Up"
         ctaType="primary"
       />
+
+      <SimilarCourses />
 
       {/* <FAQs results={selectedResults} /> */}
     </Container>

@@ -4,6 +4,7 @@ import MediaBanner from "../components/banner/media-banner.component";
 import TextBlock from "../components/text-block/text-block.component";
 import Heading from "../components/heading/heading.component";
 import Container from "../components/layout/container.component";
+import FAQsV2 from "../components/text-block/faqs-v2.component";
 
 export const metadata: Metadata = {
   title: "Brainstorm Courses - Brainstorm School",
@@ -43,6 +44,8 @@ export default async function Courses() {
       <Container>
         <RenderCourses />
       </Container>
+
+      <FAQsV2 />
     </div>
   );
 }

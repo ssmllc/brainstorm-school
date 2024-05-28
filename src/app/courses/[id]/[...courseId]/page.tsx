@@ -12,6 +12,7 @@ import Carousel from "@/app/components/carousel/carousel.component";
 import { Card } from "@/app/components/card/card-card.component";
 import TextHeaderBlock from "@/app/components/text-block/text-header-block.component";
 import CardImageDetail from "@/app/components/card/card-image-detail.component";
+import SimilarCourses from "@/app/components/similar-courses/similar-courses.component";
 
 const fetchData = async () => {
   const query =
@@ -155,69 +156,7 @@ export default async function Page({
         ctaType="primary"
       />
 
-      <Container padding="0 0 75px 0">
-        <Container margin="0 auto" width="70%">
-          <TextBlock
-            fontSize="36px"
-            fontWeight="bold"
-            justifycontent="center"
-            padding="50px 0"
-          >
-            More courses like this one
-          </TextBlock>
-          <FlexContainer
-            width="100%"
-            display="flex"
-            gap="15px"
-            justifycontent="space-between"
-          >
-            <CardImageDetail
-              base="courses"
-              slug="flash"
-              path="creature-anatomy"
-              preview="/cards/3d-concept.jpg"
-              courseTrack="Concept Art & Design"
-              courseName="Rhythm & Structure"
-              courseCode="FIG RS"
-              courseTime="Fri 10am-1pm (PST)"
-              courseDuration="10-week Course"
-            />
-            <CardImageDetail
-              base="courses"
-              slug="flash"
-              path="creature-anatomy"
-              preview="/cards/3d-concept.jpg"
-              courseTrack="Concept Art & Design"
-              courseName="Rhythm & Structure"
-              courseCode="FIG RS"
-              courseTime="Fri 10am-1pm (PST)"
-              courseDuration="10-week Course"
-            />
-            <CardImageDetail
-              base="courses"
-              slug="flash"
-              path="creature-anatomy"
-              preview="/cards/3d-concept.jpg"
-              courseTrack="Concept Art & Design"
-              courseName="Rhythm & Structure"
-              courseCode="FIG RS"
-              courseTime="Fri 10am-1pm (PST)"
-              courseDuration="10-week Course"
-            />
-            <CardImageDetail
-              base="courses"
-              slug="flash"
-              path="creature-anatomy"
-              preview="/cards/3d-concept.jpg"
-              courseTrack="Concept Art & Design"
-              courseName="Rhythm & Structure"
-              courseCode="FIG RS"
-              courseTime="Fri 10am-1pm (PST)"
-              courseDuration="10-week Course"
-            />
-          </FlexContainer>
-        </Container>
-      </Container>
+      <SimilarCourses />
     </div>
   );
 }
