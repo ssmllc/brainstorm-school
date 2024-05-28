@@ -138,7 +138,6 @@ const CarouselWrapper = styled.div`
 `;
 
 const ImageGallery = () => {
-  const [current, setCurrent] = useState(1);
   let currentPosition: number = 1;
 
   const handleCardSliderMove = (direction: "next" | "prev") => {

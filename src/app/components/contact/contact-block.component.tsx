@@ -108,13 +108,18 @@ const Label = styled.p`
   transition: all 0.25s ease-out;
 `;
 
-const ContactBlock = () => {
+interface Props {
+  heading: string;
+  subheading?: string;
+}
+
+const ContactBlock = ({ heading, subheading }: Props) => {
   return (
     <Content>
       <ContentBlock>
         <Block className="no-hot-spot">
-          <Heading>Not sure where to start?</Heading>
-          <SubHeading>Contact us today.</SubHeading>
+          <Heading>{heading}</Heading>
+          <SubHeading>{subheading ? subheading : null}</SubHeading>
         </Block>
         <Block>
           <HotSpot href="tel:999-9999">

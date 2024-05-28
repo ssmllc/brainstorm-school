@@ -132,7 +132,7 @@ export const MiniCards = ({ width }: Props) => {
         <Row>
           <Col>
             <Label>Next up!</Label>
-            <Header>Spring 2024</Header>
+            <Header>Summer 2024</Header>
           </Col>
           <Icon>
             <IconSchedule height="48" width="48" />
@@ -155,7 +155,7 @@ export const MiniCards = ({ width }: Props) => {
         <Row>
           <Col>
             <Label>Next up!</Label>
-            <Header>Spring 2024</Header>
+            <Header>Fall 2024</Header>
           </Col>
           <Icon>
             <IconSchedule height="48" width="48" />
@@ -178,7 +178,7 @@ export const MiniCards = ({ width }: Props) => {
         <Row>
           <Col>
             <Label>Next up!</Label>
-            <Header>Spring 2024</Header>
+            <Header>Winter 2024</Header>
           </Col>
           <Icon>
             <IconSchedule height="48" width="48" />

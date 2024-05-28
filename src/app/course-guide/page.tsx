@@ -5,6 +5,7 @@ import RegistrationBlock from "../components/registration/registration-block.com
 import Heading from "../components/heading/heading.component";
 import TracksGroup from "../components/tracks/tracks.component";
 import MediaBanner from "../components/banner/media-banner.component";
+import MoreTracks from "../components/contact/more-tracks.component";
 
 export const metadata: Metadata = {
   title: "Brainstorm Courses - Brainstorm School",
@@ -51,12 +52,34 @@ export default async function Page() {
           margin="0 auto"
           width="80%"
           display="flex"
-          justifycontent="center"
+          flexdirection="column"
+          alignitems="center"
         >
-          <Heading superHeader={false} header="Select Your Track" />
+          <Heading
+            superHeader={false}
+            header="1. Select your experience level?"
+          />
+
+          <select
+            style={{
+              background: "var(--medium-grey)",
+              color: "var(--white)",
+              fontWeight: "bold",
+              fontSize: "16px",
+              width: "500px",
+              padding: "15px 15px",
+            }}
+          >
+            <option defaultChecked>Beginner</option>
+            <option>Intermediate</option>
+            <option>Advanced</option>
+          </select>
         </Container>
       </Container>
+
       <TracksGroup results={result} />
+
+      <MoreTracks />
     </Container>
   );
 }

@@ -138,6 +138,14 @@ export default async function About() {
 
       <ImageGallery />
 
+      <RegistrationBlock
+        primary={false}
+        heading="Get updates to your inbox"
+        scale="xl"
+        cta="Sign Me Up"
+        ctaType="primary"
+      />
+
       {/* <FAQs results={selectedResults} /> */}
     </Container>
   );

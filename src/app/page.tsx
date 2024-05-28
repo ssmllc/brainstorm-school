@@ -31,7 +31,10 @@ const Home = async () => {
         <ImageGallery />
         <FeaturedSlider />
         <CardGroup />
-        <ContactBlock />
+        <ContactBlock
+          heading="Not sure where to start?"
+          subheading="Contact us today"
+        />
         <RegistrationBlock
           primary={false}
           heading="Ready to start your journey?"

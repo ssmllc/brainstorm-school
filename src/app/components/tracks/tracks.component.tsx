@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useContext } from "react";
-import { useSearchParams } from "next/navigation";
 import styled from "styled-components";
 import RegistrationBlock from "../registration/registration-block.component";
 
@@ -131,7 +130,7 @@ const TracksGroup = ({ results }: Props) => {
     <TracksContainer>
       <RegistrationBlock
         primary={false}
-        heading="Learn courses relevant to todays market. Our course guide will keep you on track."
+        heading="2. Select your desired track"
         scale="xl"
       />
       <Tracks>
