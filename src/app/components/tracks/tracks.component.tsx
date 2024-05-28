@@ -409,7 +409,7 @@ const TracksGroup = ({ results }: Props) => {
         <FlexContainer
           display="flex"
           flexwrap="wrap"
-          gap="10px"
+          gap="20px 10px"
           margin="0 auto"
           width="70%"
           justifycontent="space-between"
@@ -428,7 +428,7 @@ const TracksGroup = ({ results }: Props) => {
                   flexgrow="1"
                   margin="0 auto"
                   padding="25px 25px"
-                  maxwidth="33%"
+                  maxwidth="32%"
                   width="auto"
                 >
                   <TextBlock
@@ -449,6 +449,7 @@ const TracksGroup = ({ results }: Props) => {
                           .replaceAll(" ", "-")}/${course.slug.current}`}
                       >
                         <Card
+                          borderradius="10px"
                           stacked="false"
                           boxshadow="0"
                           icon={course.imageUrl}

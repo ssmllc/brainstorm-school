@@ -6,19 +6,6 @@ import { CardIcon } from "./card-icon.component";
 import { CardDetails } from "./card-details.component";
 import Link from "next/link";
 
-type Props = {
-  stacked: string;
-  icon: string;
-  heading: string;
-  href?: string;
-  alignitems?: string;
-  background?: string;
-  boxshadow?: string;
-  subHeading?: string;
-  text?: string;
-  width?: string;
-};
-
 type containerProps = {
   stacked: string;
   alignitems?: string;
@@ -54,11 +41,25 @@ const Text = styled.p`
   line-height: 1.5;
 `;
 
+type Props = {
+  stacked: string;
+  icon: string;
+  heading: string;
+  href?: string;
+  alignitems?: string;
+  background?: string;
+  boxshadow?: string;
+  borderradius?: string;
+  subHeading?: string;
+  text?: string;
+  width?: string;
+};
 export const Card = ({
   href,
   alignitems,
   background,
   boxshadow,
+  borderradius,
   stacked,
   icon,
   heading,
@@ -77,7 +78,7 @@ export const Card = ({
             stacked={stacked}
             width={width}
           >
-            {icon && <CardIcon image={icon} />}
+            {icon && <CardIcon image={icon} borderradius={borderradius} />}
             {heading && (
               <CardDetails heading={heading} subHeading={subHeading} />
             )}
@@ -92,7 +93,7 @@ export const Card = ({
           stacked={stacked}
           width={width}
         >
-          {icon && <CardIcon image={icon} />}
+          {icon && <CardIcon image={icon} borderradius={borderradius} />}
           {heading && <CardDetails heading={heading} subHeading={subHeading} />}
           {text && <Text>{text}</Text>}
         </Container>

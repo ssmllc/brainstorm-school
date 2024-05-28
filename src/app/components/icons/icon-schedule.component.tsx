@@ -16,7 +16,7 @@ export const IconSchedule = ({ height, width }: Props) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_41_1792)">
+      <g clipPath="url(#clip0_41_1792)">
         <path
           d="M32.609 0H32.6084C31.7538 0 31.061 0.692798 31.061 1.54741V9.6399C31.061 10.4945 31.7538 11.1873 32.6084 11.1873H32.609C33.4636 11.1873 34.1564 10.4945 34.1564 9.6399V1.54741C34.1564 0.692798 33.4636 0 32.609 0Z"
           fill="white"

@@ -30,9 +30,7 @@ const Banner = styled.div<bannerProps>`
 
   &::before {
     background: ${({ background }) =>
-      background
-        ? `url(${background}) center center no-repeat`
-        : "var(--black)"};
+      background ? `url(${background}) top left no-repeat` : "var(--black)"};
     background-size: cover;
     content: "";
     display: block;
@@ -101,7 +99,7 @@ interface mediaProps {
 
 const Media = styled.div<mediaProps>`
   background: ${({ image }) =>
-    image ? `url(${image}) center center no-repeat` : "var(--black)"};
+    image ? `url(${image}) top left no-repeat` : "var(--black)"};
   border-radius: 20px;
   overflow: hidden;
   height: 250px;
