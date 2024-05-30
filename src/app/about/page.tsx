@@ -39,16 +39,6 @@ export default async function About() {
 
   return (
     <div style={{ marginTop: "100px" }}>
-      {/* <MediaBanner
-        header="About Us"
-        subHeader="2024"
-        hero="false"
-        theme="dark"
-        background="/banner/banner-19.jpg"
-        image="/banner/media-banner.png"
-        media="/video/brainstorm-design-solve-learn.mp4"
-      /> */}
-
       <RegistrationBlock
         primary={true}
         heading="We are Brainstorm Online!"
