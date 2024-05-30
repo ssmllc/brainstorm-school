@@ -148,7 +148,7 @@ const TracksGroup = ({ results }: Props) => {
     <TracksContainer>
       <RegistrationBlock
         primary={false}
-        heading="2. Select your desired track"
+        heading="Select your desired track"
         scale="xl"
       />
       <Tracks>

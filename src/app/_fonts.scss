@@ -1,0 +1,17 @@
+@mixin CalibriLight {
+  font-family: "calibri", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@mixin CalibriNormal {
+  font-family: "calibri", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin CalibriBold {
+  font-family: "calibri", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}

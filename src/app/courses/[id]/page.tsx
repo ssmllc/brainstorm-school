@@ -7,6 +7,7 @@ import TextBlock from "@/app/components/text-block/text-block.component";
 import RenderCourses from "../components/render-courses.component";
 import RegistrationBlock from "@/app/components/registration/registration-block.component";
 import FAQs from "@/app/components/text-block/faqs.component";
+import Slide from "@/app/components/featured/slide.component";
 
 const fetchData = async () => {
   const query =
@@ -75,7 +76,12 @@ export default async function Page({ params }: { params: { id: string } }) {
         </Container>
       </Container>
 
-      <FeaturedSlider />
+      <FeaturedSlider>
+        <Slide variantType="lg" />
+        <Slide variantType="lg" />
+        <Slide variantType="lg" />
+        <Slide variantType="lg" />
+      </FeaturedSlider>
 
       <RenderCourses selectedCourses={selectedCourses} noheading={true} />
 

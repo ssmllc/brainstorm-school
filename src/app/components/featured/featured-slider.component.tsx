@@ -1,14 +1,17 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import styled from "styled-components";
 import RegistrationBlock from "../registration/registration-block.component";
 import ImageDetailCard from "../card/card.component";
 import gsap from "gsap";
 import ActionButton from "../buttons/action-button.component";
+import { IconNext, IconPrevious } from "../icons/icon-arrow.component";
+import Header from "../text-block/header.component";
 
 const Content = styled.div`
   margin: 50px 0;
+  position: relative;
   width: 100vw;
 `;
 
@@ -104,7 +107,13 @@ const Button = styled.button`
   }
 `;
 
-const FeaturedSlider = () => {
+interface Props {
+  heading?: string;
+  textalign?: string;
+  children: string | ReactNode | JSX.Element | JSX.Element[];
+}
+
+const FeaturedSlider = ({ children, heading, textalign }: Props) => {
   const [variantType, setVariantType] = useState<string>("lg");
   const [slideWidth, setSlideWidth] = useState<number>(0);
   const [slideCardWidth, setSlideCardWidth] = useState<number>(0);
@@ -169,66 +178,25 @@ const FeaturedSlider = () => {
 
   return (
     <Content>
-      <RegistrationBlock
-        primary={false}
-        heading="Latest news from Brainstorm"
-        scale="xl"
-      />
+      {heading && (
+        <Header
+          level="2"
+          text={heading}
+          textalign={textalign}
+          margin="50px 0"
+        />
+      )}
 
       <Featured>
         <Button className="prev" onClick={() => handleCardSliderMove("prev")}>
-          <svg
-            viewBox="0 0 48 48"
-            fill="#bababa"
-            style={{ width: "28px", height: "28px" }}
-          >
-            <path d="M30.1123,42a.99756.99756,0,0,1-.63964-.23193L12.207,27.37988a4.39934,4.39934,0,0,1,.001-6.76025L29.47266,6.23193a1.00017,1.00017,0,1,1,1.28125,1.53614L13.48828,22.15625a2.39914,2.39914,0,0,0-.001,3.687L30.75391,40.23193A1,1,0,0,1,30.1123,42Z" />
-          </svg>
+          <IconPrevious width="28px" height="28px" />
         </Button>
         <SliderWrapper style={{ width: `${slideWidth}px` }}>
-          <Slider className="slider-wrapper">
-            <Slide className="slide">
-              <ImageDetailCard
-                variant={variantType}
-                superHeading="Featured Blog"
-                info="Lorem ipsum dolor sit amet, Optio pariatur blanditiis accusantium placeat."
-              />
-            </Slide>
-
-            <Slide className="slide">
-              <ImageDetailCard
-                variant={variantType}
-                superHeading="Featured Blog"
-                info="Lorem ipsum dolor sit amet, Optio pariatur blanditiis accusantium placeat."
-              />
-            </Slide>
-
-            <Slide className="slide">
-              <ImageDetailCard
-                variant={variantType}
-                superHeading="Featured Blog"
-                info="Lorem ipsum dolor sit amet, Optio pariatur blanditiis accusantium placeat."
-              />
-            </Slide>
-
-            <Slide className="slide">
-              <ImageDetailCard
-                variant={variantType}
-                superHeading="Featured Blog"
-                info="Lorem ipsum dolor sit amet, Optio pariatur blanditiis accusantium placeat."
-              />
-            </Slide>
-          </Slider>
+          <Slider className="slider-wrapper">{children}</Slider>
         </SliderWrapper>
 
         <Button className="next" onClick={() => handleCardSliderMove("next")}>
-          <svg
-            viewBox="0 0 48 48"
-            fill="#bababa"
-            style={{ width: "28px", height: "28px" }}
-          >
-            <path d="M16.625,42a1,1,0,0,1-.6416-1.76807L33.249,25.84375a2.39879,2.39879,0,0,0,0-3.6875L15.9834,7.76807a1.00017,1.00017,0,1,1,1.28125-1.53614L34.53027,20.62012a4.39969,4.39969,0,0,1,0,6.75976L17.26465,41.76807A.99756.99756,0,0,1,16.625,42Z" />
-          </svg>
+          <IconNext width="28px" height="28px" />
         </Button>
       </Featured>
 

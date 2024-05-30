@@ -1,3 +1,4 @@
+@import "fonts";
 @import "colors";
 
 * {
@@ -18,6 +19,7 @@ ul {
 
 html,
 body {
+  @include CalibriNormal;
   background: var(--off-black);
   height: 100%;
   max-width: 100vw;

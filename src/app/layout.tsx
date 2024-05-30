@@ -6,6 +6,7 @@ import StyledComponentsRegistry from "../../lib/registry";
 import Navigation from "./components/navigation/navigation.component";
 import Footer from "./components/footer/footer.component";
 import { TracksProvider } from "./context/tracks-context-provider";
+import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,7 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <Head>
+        <link rel="stylesheet" href="https://use.typekit.net/fkd7pzs.css" />
+      </Head>
+      <body>
         <BrainstormProvider>
           <StyledComponentsRegistry>
             <Navigation />

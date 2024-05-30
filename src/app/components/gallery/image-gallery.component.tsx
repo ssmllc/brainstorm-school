@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import RegistrationBlock from "../registration/registration-block.component";
 import gsap from "gsap";
+import { IconNext, IconPrevious } from "../icons/icon-arrow.component";
 
 const Button = styled.button`
   height: 65px;
@@ -678,54 +679,42 @@ const ImageGallery = () => {
 
       <CarouselWrapper>
         <Button className="prev" onClick={() => handleCardSliderMove("prev")}>
-          <svg
-            viewBox="0 0 48 48"
-            fill="#bababa"
-            style={{ width: "28px", height: "28px" }}
-          >
-            <path d="M30.1123,42a.99756.99756,0,0,1-.63964-.23193L12.207,27.37988a4.39934,4.39934,0,0,1,.001-6.76025L29.47266,6.23193a1.00017,1.00017,0,1,1,1.28125,1.53614L13.48828,22.15625a2.39914,2.39914,0,0,0-.001,3.687L30.75391,40.23193A1,1,0,0,1,30.1123,42Z" />
-          </svg>
+          <IconPrevious width="28px" height="28px" />
         </Button>
         <Carousel>
           <Card
-            image="/cards/3d-concept.jpg"
+            image="/banner/banner-1.jpg"
             data-position="1"
             data-active="true"
             className="gallery-card"
           />
           <Card
-            image="/cards/character-design.jpg"
+            image="/banner/banner-15.jpg"
             data-position="2"
             data-active="false"
             className="gallery-card"
           />
           <Card
-            image="/cards/environmental-design.jpg"
+            image="/banner/banner-2.jpg"
             data-position="3"
             data-active="false"
             className="gallery-card"
           />
           <Card
-            image="/cards/storyboarding.jpg"
+            image="/banner/banner-24.jpg"
             data-position="4"
             data-active="false"
             className="gallery-card"
           />
           <Card
-            image="/cards/3d-concept.jpg"
+            image="/banner/banner-10.jpg"
             data-position="5"
             data-active="false"
             className="gallery-card"
           />
         </Carousel>
         <Button className="next" onClick={() => handleCardSliderMove("next")}>
-          <svg
-            viewBox="0 0 48 48"
-            fill="#bababa"
-            style={{ width: "28px", height: "28px" }}
-          >
-            <path d="M16.625,42a1,1,0,0,1-.6416-1.76807L33.249,25.84375a2.39879,2.39879,0,0,0,0-3.6875L15.9834,7.76807a1.00017,1.00017,0,1,1,1.28125-1.53614L34.53027,20.62012a4.39969,4.39969,0,0,1,0,6.75976L17.26465,41.76807A.99756.99756,0,0,1,16.625,42Z" />
-          </svg>
+          <IconNext width="28px" height="28px" />
         </Button>
       </CarouselWrapper>
     </Gallery>

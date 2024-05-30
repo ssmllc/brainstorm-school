@@ -4,7 +4,6 @@ import Container from "../components/layout/container.component";
 import RegistrationBlock from "../components/registration/registration-block.component";
 import Heading from "../components/heading/heading.component";
 import TracksGroup from "../components/tracks/tracks.component";
-import MediaBanner from "../components/banner/media-banner.component";
 import MoreTracks from "../components/contact/more-tracks.component";
 
 export const metadata: Metadata = {
@@ -32,14 +31,6 @@ export default async function Page() {
 
   return (
     <Container margin="100px auto">
-      {/* <MediaBanner
-        hero="false"
-        theme="dark"
-        background="/backgrounds/sci-fi-city.jpg"
-        image="/banner/media-banner.png"
-        media="/video/brainstorm-design-solve-learn.mp4"
-      /> */}
-
       <RegistrationBlock
         primary={false}
         heading="Course Guide"
@@ -54,14 +45,16 @@ export default async function Page() {
         justifycontent="center"
         width="100%"
       >
-        <Heading
-          superHeader={false}
-          header="1. Select your experience level?"
-        />
+        <Heading superHeader={false} header="Select your experience level?" />
 
         <select
           style={{
-            background: "var(--medium-grey)",
+            appearance: "none",
+            background: "var(--dark-grey)",
+            backgroundImage: `url("data:image/svg+xml;charset=utf-8,<svg width='10' height='6' fill='none' xmlns='http:%2F%2Fwww.w3.org/2000/svg'><path d='M1 1l4 4 4-4' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>")`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "97% 50%",
+            borderRadius: "10px",
             color: "var(--white)",
             fontWeight: "bold",
             fontSize: "16px",

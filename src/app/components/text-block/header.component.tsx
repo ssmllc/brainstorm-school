@@ -7,6 +7,7 @@ interface textProps {
   fontsize?: string;
   fontweight?: string;
   margin?: string;
+  textalign?: string;
 }
 
 const Header1 = styled.h1<textProps>`
@@ -15,28 +16,34 @@ const Header1 = styled.h1<textProps>`
   font-weight: bold;
   line-height: 1.25;
   margin: ${({ margin }) => margin};
+  text-align: ${({ textalign }) => textalign};
 `;
 
 const Header2 = styled.h2<textProps>`
   color: var(--white);
   font-size: 32px;
+  font-weight: bold;
   line-height: 1.25;
   margin: ${({ margin }) => margin};
+  text-align: ${({ textalign }) => textalign};
 `;
 
 const Header3 = styled.h3<textProps>`
   color: var(--white);
   font-size: 28px;
+  font-weight: bold;
   line-height: 1.25;
   margin: ${({ margin }) => margin};
+  text-align: ${({ textalign }) => textalign};
 `;
 
 const Header4 = styled.p<textProps>`
   color: var(--white);
   font-size: ${({ fontsize }) => (fontsize ? fontsize : "24px")};
-  font-size: ${({ fontweight }) => (fontweight ? fontweight : "normal")};
+  font-weight: ${({ fontweight }) => (fontweight ? fontweight : "normal")};
   margin: ${({ margin }) => margin};
-  line-height: 1.25;
+  text-align: ${({ textalign }) => textalign};
+  line-height: 1.5;
 `;
 
 interface Props {
@@ -46,6 +53,7 @@ interface Props {
   fontsize?: string;
   fontweight?: string;
   margin?: string;
+  textalign?: string;
 }
 
 const Header = ({
@@ -55,21 +63,22 @@ const Header = ({
   fontsize,
   fontweight,
   margin,
+  textalign,
 }: Props) => {
   return (
     <>
       {level === "1" && (
-        <Header1 color={color} margin={margin}>
+        <Header1 color={color} margin={margin} textalign={textalign}>
           {text}
         </Header1>
       )}
       {level === "2" && (
-        <Header2 color={color} margin={margin}>
+        <Header2 color={color} margin={margin} textalign={textalign}>
           {text}
         </Header2>
       )}
       {level === "3" && (
-        <Header3 color={color} margin={margin}>
+        <Header3 color={color} margin={margin} textalign={textalign}>
           {text}
         </Header3>
       )}

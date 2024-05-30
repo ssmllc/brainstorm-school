@@ -198,7 +198,7 @@ const Navigation = () => {
           </DropdownMenu>
         </Dropdown>
         <Dropdown>
-          <MenuItem href="/programs">Programs</MenuItem>
+          <MenuItem href="">Programs</MenuItem>
           <DropdownMenu>
             <DropdownMenuItem>
               <MenuItem href="/programs/mentorship">Mentorship</MenuItem>
