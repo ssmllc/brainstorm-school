@@ -11,6 +11,7 @@ const CardHeader = ({ text }: { text: string }) => <h2>{text}</h2>;
 
 interface previewProps {
   image: string;
+  height?: string;
   boxshadow?: string;
   width?: string;
 }
@@ -19,26 +20,33 @@ const Preview = styled("div")<previewProps>`
   background-size: cover;
   border-radius: 20px;
   box-shadow: ${({ boxshadow }) => boxshadow};
-  height: 400px;
+  height: ${({ height }) => (height ? height : "400px")};
   overflow: hidden;
-  margin: 25px 0;
+  margin: 5px 0;
   width: ${({ width }) => (width ? width : "100%")};
+
+  @media (min-width: 768px) {
+    margin: 25px 0;
+  }
 `;
 
 export const CardImage = ({
   className,
   boxshadow,
+  height,
   preview,
   width,
 }: {
   className?: string;
   preview: string;
+  height?: string;
   boxshadow?: string;
   width?: string;
 }) => (
   <Preview
     className={className}
     boxshadow={boxshadow}
+    height={height}
     image={preview}
     width={width}
   />
@@ -111,7 +119,7 @@ const Wrapper = styled("div")`
   @media (min-width: 800px) {
     flex-direction: row;
     padding: 40px 40px;
-    width: 80%;
+    width: 100%;
   }
 `;
 
@@ -148,7 +156,7 @@ const CourseDetails = styled("div")`
 
 const CardLayout = () => {
   return (
-    <Container width="100vw" padding="25px 25px">
+    <Container margin="0 auto" padding="25px 25px">
       <Wrapper>
         <CardWrapper>
           <CardHeader text="Gain understanding of the rhythm and structure for anatomical background" />

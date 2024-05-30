@@ -9,9 +9,10 @@ import { Course, Sections } from "@/app/types/types";
 
 interface Props {
   selectedCourses?: Sections[];
+  noheading?: boolean;
 }
 
-const RenderCourses = ({ selectedCourses }: Props) => {
+const RenderCourses = ({ selectedCourses, noheading }: Props) => {
   const { courses, error }: any = useContext(BrainstormContext);
   const courseList =
     selectedCourses && selectedCourses.length > 0 ? selectedCourses : courses;
@@ -38,8 +39,12 @@ const RenderCourses = ({ selectedCourses }: Props) => {
                   _id: any;
                   courses: Course[];
                 }) => (
-                  <Container key={_id} margin="50px auto" width="77%">
-                    <Heading key={index} header={section} />
+                  <Container key={_id} margin="50px auto" width="100%">
+                    {noheading ? (
+                      <div style={{ margin: "50px 0" }}></div>
+                    ) : (
+                      <Heading key={index} header={section} />
+                    )}
                     <Container
                       key={_id}
                       display="flex"

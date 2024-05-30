@@ -38,7 +38,7 @@ export default async function About() {
   const result = await fetchData();
 
   return (
-    <Container margin="100px 0 0 0">
+    <div style={{ marginTop: "100px" }}>
       {/* <MediaBanner
         header="About Us"
         subHeader="2024"
@@ -73,8 +73,8 @@ export default async function About() {
         flexdirection="row-reverse"
       />
 
-      <FlexContainer display="flex">
-        <FlexContainer display="flex" gap="10px" width="70%" margin="0 auto">
+      <FlexContainer display="flex" margin="0 auto">
+        <FlexContainer display="flex" gap="10px" width="80%" margin="0 auto">
           <Card
             href="/courses"
             background="var(--black-60)"
@@ -122,24 +122,13 @@ export default async function About() {
         </FlexContainer>
       </FlexContainer>
 
-      <FlexContainer margin="50px auto">
-        <FlexContainer width="70%" margin="0 auto">
-          <TextHeaderBlock fontSize="36px" fontWeight="bold">
-            Schedule
-          </TextHeaderBlock>
-        </FlexContainer>
+      <FlexContainer width="100%" margin="0 auto">
+        <MiniCards header="Spring 2024" width="100%" />
       </FlexContainer>
 
-      <FlexContainer margin="0 auto">
-        <Container>
-          <div></div>
-          <div></div>
-        </Container>
+      <FlexContainer>
+        <ImageGallery />
       </FlexContainer>
-
-      <MiniCards header="Spring 2024" width="70%" />
-
-      <ImageGallery />
 
       <RegistrationBlock
         primary={false}
@@ -152,6 +141,6 @@ export default async function About() {
       <SimilarCourses />
 
       {/* <FAQs results={selectedResults} /> */}
-    </Container>
+    </div>
   );
 }

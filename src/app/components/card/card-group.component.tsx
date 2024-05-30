@@ -21,6 +21,7 @@ const Group = styled.div`
   width: 80%;
 
   @media (min-width: 800px) {
+    max-width: 1250px;
     width: 60%;
   }
 `;

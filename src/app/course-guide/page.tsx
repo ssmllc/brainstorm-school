@@ -31,7 +31,7 @@ export default async function Page() {
   const result = await fetchData();
 
   return (
-    <Container margin="100px 0 0 0">
+    <Container margin="100px auto">
       {/* <MediaBanner
         hero="false"
         theme="dark"
@@ -40,41 +40,39 @@ export default async function Page() {
         media="/video/brainstorm-design-solve-learn.mp4"
       /> */}
 
-      <Container margin="0">
-        <RegistrationBlock
-          primary={false}
-          heading="Course Guide"
-          text="Our course guide is here to show a general roadmap for artist who are trying to get and idea of where to start."
-          scale="xl"
+      <RegistrationBlock
+        primary={false}
+        heading="Course Guide"
+        text="Our course guide is here to show a general roadmap for artist who are trying to get and idea of where to start."
+        scale="xl"
+      />
+
+      <Container
+        alignitems="center"
+        display="flex"
+        flexdirection="column"
+        justifycontent="center"
+        width="100%"
+      >
+        <Heading
+          superHeader={false}
+          header="1. Select your experience level?"
         />
 
-        <Container
-          margin="0 auto"
-          width="80%"
-          display="flex"
-          flexdirection="column"
-          alignitems="center"
+        <select
+          style={{
+            background: "var(--medium-grey)",
+            color: "var(--white)",
+            fontWeight: "bold",
+            fontSize: "16px",
+            width: "500px",
+            padding: "15px 15px",
+          }}
         >
-          <Heading
-            superHeader={false}
-            header="1. Select your experience level?"
-          />
-
-          <select
-            style={{
-              background: "var(--medium-grey)",
-              color: "var(--white)",
-              fontWeight: "bold",
-              fontSize: "16px",
-              width: "500px",
-              padding: "15px 15px",
-            }}
-          >
-            <option defaultChecked>Beginner</option>
-            <option>Intermediate</option>
-            <option>Advanced</option>
-          </select>
-        </Container>
+          <option defaultChecked>Beginner</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+        </select>
       </Container>
 
       <TracksGroup results={result} />

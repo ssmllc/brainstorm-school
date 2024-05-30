@@ -118,6 +118,8 @@ const DropdownButtonBar = styled.div`
 
 const DropdownMenu = styled.ul`
   background: var(--black);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   display: none;
   left: 0;
   min-width: 375px;

@@ -24,6 +24,7 @@ const ContentBlock = styled.div`
 
   @media (min-width: 800px) {
     flex-direction: row;
+    max-width: 1280px;
     width: 70%;
   }
 `;

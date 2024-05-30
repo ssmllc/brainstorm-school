@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default async function Courses() {
   return (
-    <div>
+    <>
       <MediaBanner
         header="All Courses"
         subHeader="2024"
@@ -24,7 +24,7 @@ export default async function Courses() {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
       <Container margin="0 auto" width="100vw" padding="75px 0 0">
-        <Container margin="0 auto" width="75%">
+        <Container margin="0 auto" width="100%">
           <Heading
             superHeader={true}
             header="Unlock your creativity with our expert-led online courses"
@@ -41,11 +41,11 @@ export default async function Courses() {
         </Container>
       </Container>
 
-      <Container>
+      <Container margin="0 auto">
         <RenderCourses />
       </Container>
 
       <FAQsV2 />
-    </div>
+    </>
   );
 }

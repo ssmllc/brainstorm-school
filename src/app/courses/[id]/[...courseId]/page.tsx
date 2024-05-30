@@ -60,8 +60,8 @@ export default async function Page({
 
       <CardLayout />
 
-      <Container>
-        <Container margin="0 auto" width="70%" position="relative">
+      <Container margin="0 auto">
+        <Container margin="0 auto" width="80%" position="relative">
           <Container
             alignitems="center"
             display="flex"
@@ -78,37 +78,37 @@ export default async function Page({
               boxshadow="0 0 10px var(--black)"
               className="slide"
               preview="/cards/character-design.jpg"
-              width="320px"
+              width="350px"
             />
             <CardImage
               boxshadow="0 0 10px var(--black)"
               className="slide"
               preview="/cards/character-design.jpg"
-              width="320px"
+              width="350px"
             />
             <CardImage
               boxshadow="0 0 10px var(--black)"
               className="slide"
               preview="/cards/character-design.jpg"
-              width="320px"
+              width="350px"
             />
             <CardImage
               boxshadow="0 0 10px var(--black)"
               className="slide"
               preview="/cards/character-design.jpg"
-              width="320px"
+              width="350px"
             />
             <CardImage
               boxshadow="0 0 10px var(--black)"
               className="slide"
               preview="/cards/character-design.jpg"
-              width="320px"
+              width="350px"
             />
             <CardImage
               boxshadow="0 0 10px var(--black)"
               className="slide"
               preview="/cards/character-design.jpg"
-              width="320px"
+              width="350px"
             />
           </Carousel>
 

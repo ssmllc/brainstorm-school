@@ -27,6 +27,7 @@ const ContentWrapper = styled.div<contentProps>`
   @media (min-width: 800px) {
     flex-direction: ${({ flexdirection }) =>
       flexdirection ? flexdirection : "row"};
+    max-width: 1280px;
     width: 70%;
   }
 `;

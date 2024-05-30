@@ -24,6 +24,7 @@ const Question = styled("button")`
 
 const Answer = styled("div")`
   background: var(--dark-grey);
+  color: var(--white);
   height: 0;
   overflow: hidden;
   opacity: 0;
@@ -42,6 +43,8 @@ const FAQs = ({ results }: any) => {
   const [selected, setSelected] = useState<number | null>(null);
   const { faqs } = results;
 
+  console.log("client", faqs);
+
   const toggleFAQ = (selectedIndex: number) => {
     if (selected === selectedIndex) {
       return setSelected(null);
@@ -52,12 +55,12 @@ const FAQs = ({ results }: any) => {
   return (
     <>
       {faqs?.length > 0 && (
-        <Container width="100%">
+        <Container width="100%" margin="0 auto">
           <div
             style={{
               display: "flex",
               flexDirection: "column",
-              width: "70%",
+              width: "100%",
               position: "relative",
               margin: "75px auto",
               padding: "0",

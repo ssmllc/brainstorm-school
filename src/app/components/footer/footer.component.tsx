@@ -36,7 +36,11 @@ const MenuContainer = styled.div`
   display: flex;
   margin: 0 auto;
   max-width: 1400px;
-  width: 85%;
+  width: 90%;
+
+  @media (min-width: 768px) {
+    width: 85%;
+  }
 `;
 
 const Menu = styled.menu`
@@ -71,11 +75,11 @@ const MenuItem = styled(Link)<menuItemProps>`
 
 const Column = styled.menu`
   /* border: thin dashed white; */
-  margin: 20px 0;
+  margin: 20px 0 0;
   text-align: left;
   flex-grow: 1;
 
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
     margin: 50px auto;
   }
 `;

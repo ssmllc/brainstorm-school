@@ -20,7 +20,7 @@ const Anchor = styled(Link)`
 `;
 
 const Tracks = styled.div`
-  /* border: thin solid red; */
+  //border: thin solid red;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -31,7 +31,8 @@ const Tracks = styled.div`
 
   @media (min-width: 800px) {
     flex-direction: row;
-    width: 65%;
+    max-width: 1280px;
+    width: 100%;
   }
 `;
 
@@ -97,6 +98,23 @@ const Name = styled.p`
   padding: 20px 0;
   position: relative;
   z-index: 2;
+`;
+
+const Terms = styled.div`
+  background: var(--black);
+  border: thin solid var(--darker-grey);
+  border-radius: 20px;
+  display: flex;
+  gap: 15px 0;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 0 auto;
+  padding: 25px 25px;
+  width: 80%;
+
+  @media (min-width: 800px) {
+    width: 32%;
+  }
 `;
 
 interface Props {
@@ -411,26 +429,13 @@ const TracksGroup = ({ results }: Props) => {
           flexwrap="wrap"
           gap="20px 10px"
           margin="0 auto"
-          width="70%"
+          width="100%"
           justifycontent="space-between"
         >
           {currentTrack.length > 0 &&
             currentTrack?.map((track: any) =>
               track?.tracks.map((courses: any, index: number) => (
-                <Container
-                  key={index}
-                  background="var(--black)"
-                  border="thin solid var(--darker-grey)"
-                  borderradius="20px"
-                  display="flex"
-                  gap="15px 0"
-                  flexdirection="column"
-                  flexgrow="1"
-                  margin="0 auto"
-                  padding="25px 25px"
-                  maxwidth="32%"
-                  width="auto"
-                >
+                <Terms key={index}>
                   <TextBlock
                     justifycontent="left"
                     fontSize="24px"
@@ -460,7 +465,7 @@ const TracksGroup = ({ results }: Props) => {
                       </Link>
                     );
                   })}
-                </Container>
+                </Terms>
               ))
             )}
         </FlexContainer>

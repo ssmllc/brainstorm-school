@@ -6,7 +6,11 @@ import styled from "styled-components";
 import CourseDetail from "../course-detail/course-detail.component";
 import Link from "next/link";
 
-const Card = styled(Link)`
+interface cardProps {
+  width?: string;
+}
+
+const Card = styled(Link)<cardProps>`
   background: var(--off-black);
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -19,7 +23,7 @@ const Card = styled(Link)`
   width: 100%;
 
   @media (min-width: 800px) {
-    width: 25%;
+    width: ${({ width }) => (width ? width : "25%")};
   }
 
   &:hover {
@@ -40,12 +44,12 @@ const Card = styled(Link)`
   }
 `;
 
-interface cardProps {
+interface previewProps {
   image: string;
   tag: string;
 }
 
-const Preview = styled.div<cardProps>`
+const Preview = styled.div<previewProps>`
   background: url(${({ image }) => image}) top center no-repeat;
   background-size: cover;
   height: 100px;
@@ -90,7 +94,7 @@ const CourseDetails = styled.ul`
 `;
 
 interface Props {
-  base: string;
+  base?: string;
   slug: any;
   path: string;
   preview: string;
@@ -99,6 +103,7 @@ interface Props {
   courseCode: string;
   courseTime: string;
   courseDuration: string;
+  width?: string;
 }
 
 const CardImageDetail = ({
@@ -111,11 +116,13 @@ const CardImageDetail = ({
   courseCode,
   courseTime,
   courseDuration,
+  width,
 }: Props) => {
   return (
     <Card
       href={base ? `${base}/${slug}/${path}` : `${slug}/${path}`}
       className="course-card"
+      width={width}
     >
       <Preview image={preview} tag={courseTrack} />
       <Details>

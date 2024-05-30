@@ -133,6 +133,7 @@ const CarouselWrapper = styled.div`
   width: 100%;
 
   @media (min-width: 800px) {
+    max-width: 1200px;
     width: 75%;
   }
 `;
@@ -673,11 +674,7 @@ const ImageGallery = () => {
 
   return (
     <Gallery>
-      <RegistrationBlock
-        heading="Students' Gallery"
-        primary={false}
-        scale="xl"
-      />
+      <RegistrationBlock heading="Student Gallery" primary={false} scale="xl" />
 
       <CarouselWrapper>
         <Button className="prev" onClick={() => handleCardSliderMove("prev")}>

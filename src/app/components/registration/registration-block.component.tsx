@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Content = styled.div`
   padding: 75px 0;
   position: relative;
-  width: 100vw;
+  width: 100%;
   z-index: 20;
 
   h1,
@@ -80,13 +80,13 @@ const RegistrationFAQ = styled.div`
 `;
 
 const ContentBlock = styled.div`
-  // border: "thin solid red";
   width: 80%;
   margin: 0 auto;
   text-align: center;
 
   @media (min-width: 800px) {
-    width: 50%;
+    max-width: 900px;
+    width: 100%;
   }
 `;
 

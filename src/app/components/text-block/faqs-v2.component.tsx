@@ -49,12 +49,12 @@ const FAQsV2 = () => {
     setSelected(selectedIndex);
   };
   return (
-    <Container width="100%">
+    <Container width="100%" margin="0 auto">
       <div
         style={{
           display: "flex",
           flexDirection: "column",
-          width: "70%",
+          width: "100%",
           position: "relative",
           margin: "75px auto",
           padding: "0",

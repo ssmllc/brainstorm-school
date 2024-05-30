@@ -18,6 +18,7 @@ const Content = styled.div`
   /* border: thin dashed red; */
   padding: 35px 0 25px;
   position: relative;
+  max-width: 1400px;
   width: 100vw;
 
   @media (min-width: 800px) {
@@ -35,7 +36,7 @@ const ContentBlock = styled.div`
 
   @media (min-width: 800px) {
     flex-direction: row;
-    width: 70%;
+    width: 100%;
   }
 `;
 

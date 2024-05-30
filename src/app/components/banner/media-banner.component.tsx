@@ -20,6 +20,7 @@ const Banner = styled.div<bannerProps>`
   display: flex;
   height: ${({ hero }) => (hero === "true" ? "100vh" : "50vh")};
   flex-direction: column;
+  overflow: hidden;
   padding: 100px 0 0 0;
   position: relative;
   width: 100vw;
@@ -46,6 +47,7 @@ const Banner = styled.div<bannerProps>`
   &::after {
     background: linear-gradient(
       to bottom,
+      var(--black) 0%,
       rgba(0, 0, 0, 0) 25%,
       var(--off-black) 100%
     );

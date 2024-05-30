@@ -128,15 +128,17 @@ const Carousel = ({ children }: Props) => {
         </svg>
       </Button>
       <Container overflow="hidden" width="100%">
-        <Container
+        <div
           className="slider-wrapper"
-          display="flex"
-          width={`2000px`}
-          position="absolute"
-          gap="20px"
+          style={{
+            display: "flex",
+            width: "2200px",
+            position: "absolute",
+            gap: "20px",
+          }}
         >
           {children}
-        </Container>
+        </div>
       </Container>
       <Button className="next" onClick={() => handleCardSliderMove("next")}>
         <svg

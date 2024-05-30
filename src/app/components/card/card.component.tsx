@@ -124,7 +124,11 @@ const ImageDetailCard = ({ variant = "sm", superHeading, info }: Props) => {
         tag="Concept Art & Design"
       />
       <Content variant={variant}>
-        {superHeading && <SuperHeading>Featured Blog</SuperHeading>}
+        {superHeading && (
+          <SuperHeading>
+            {superHeading ? superHeading : "Featured Blog"}
+          </SuperHeading>
+        )}
         <Heading>Rhythm & Structure</Heading>
         <Details variant={variant}>
           <Tag>
@@ -216,7 +220,7 @@ const ImageDetailCard = ({ variant = "sm", superHeading, info }: Props) => {
             10 Week Course
           </Tag>
         </Details>
-        {info && <Info>{info} lorem</Info>}
+        {info ? <Info>{info}</Info> : <Info>lorem</Info>}
       </Content>
     </Card>
   );

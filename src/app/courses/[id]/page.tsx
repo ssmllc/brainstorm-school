@@ -57,26 +57,27 @@ export default async function Page({ params }: { params: { id: string } }) {
       />
 
       <Container margin="0 auto" width="100vw" padding="75px 0 0">
-        <Container margin="0 auto" width="75%">
+        <Container margin="0 auto" width="100%">
           <Heading
             superHeader={true}
             header="Unlock your creativity with our expert-led online courses"
           />
 
           <TextBlock>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias porro
-            nihil ex nemo quibusdam, autem quidem, officia maxime qui voluptate
-            quia ipsam, ab at assumenda itaque sed! Nam, aliquam deleniti. Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Alias porro nihil
-            ex nemo quibusdam, autem quidem, officia maxime qui voluptate quia
-            ipsam, ab at assumenda itaque sed! Nam, aliquam deleniti.
+            Concept art is an essential step for many creative projects,
+            including video game design, animation, and special effects. Whether
+            you&apos;re building worlds in 3D or sketching characters in 2D,
+            achieving the right skills in these areas can open doors to some
+            exciting career opportunities. Learn all about 2D and 3D concept
+            courses with Brainstorm School, and find a course that will help you
+            take your skills to the next level.
           </TextBlock>
         </Container>
       </Container>
 
       <FeaturedSlider />
 
-      <RenderCourses selectedCourses={selectedCourses} />
+      <RenderCourses selectedCourses={selectedCourses} noheading={true} />
 
       <FAQs results={selectedResults} />
 

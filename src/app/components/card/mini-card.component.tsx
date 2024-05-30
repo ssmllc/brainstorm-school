@@ -6,6 +6,8 @@ import { CardIcon } from "./card-icon.component";
 import { CardDetails } from "./card-details.component";
 import Link from "next/link";
 import { IconSchedule } from "../icons/icon-schedule.component";
+import { FlexContainer } from "../layout/container.component";
+import TextHeaderBlock from "../text-block/text-header-block.component";
 
 type Props = {
   header: string;
@@ -31,6 +33,7 @@ const Container = styled.div<containerProps>`
 
   @media (min-width: 800px) {
     flex-direction: row;
+    width: 80%;
   }
 `;
 
@@ -104,98 +107,105 @@ const Icon = styled.div`
 
 export const MiniCards = ({ width }: Props) => {
   return (
-    <Container width={width}>
-      <MiniCard>
-        <Row>
-          <Col>
-            <Label>Next up!</Label>
-            <Header>Spring 2024</Header>
-          </Col>
-          <Icon>
-            <IconSchedule height="48" width="48" />
-          </Icon>
-        </Row>
+    <FlexContainer>
+      <FlexContainer width="80%" margin="50px auto">
+        <TextHeaderBlock fontSize="36px" fontWeight="bold">
+          Schedule
+        </TextHeaderBlock>
+      </FlexContainer>
+      <Container width={width}>
+        <MiniCard>
+          <Row>
+            <Col>
+              <Label>Next up!</Label>
+              <Header>Spring 2024</Header>
+            </Col>
+            <Icon>
+              <IconSchedule height="48" width="48" />
+            </Icon>
+          </Row>
 
-        <Row background="var(--medium-grey)">
-          <Col width="100%">
-            <Text>
-              <BoldText>Opens</BoldText>: November 6, 2023
-            </Text>
-            <Text>
-              <BoldText>Starts</BoldText>: January 22, 2024
-            </Text>
-          </Col>
-        </Row>
-      </MiniCard>
+          <Row background="var(--medium-grey)">
+            <Col width="100%">
+              <Text>
+                <BoldText>Opens</BoldText>: November 6, 2023
+              </Text>
+              <Text>
+                <BoldText>Starts</BoldText>: January 22, 2024
+              </Text>
+            </Col>
+          </Row>
+        </MiniCard>
 
-      <MiniCard>
-        <Row>
-          <Col>
-            <Label>Next up!</Label>
-            <Header>Summer 2024</Header>
-          </Col>
-          <Icon>
-            <IconSchedule height="48" width="48" />
-          </Icon>
-        </Row>
+        <MiniCard>
+          <Row>
+            <Col>
+              <Label>Next up!</Label>
+              <Header>Summer 2024</Header>
+            </Col>
+            <Icon>
+              <IconSchedule height="48" width="48" />
+            </Icon>
+          </Row>
 
-        <Row background="var(--medium-grey)">
-          <Col width="100%">
-            <Text>
-              <BoldText>Opens</BoldText>: November 6, 2023
-            </Text>
-            <Text>
-              <BoldText>Starts</BoldText>: January 22, 2024
-            </Text>
-          </Col>
-        </Row>
-      </MiniCard>
+          <Row background="var(--medium-grey)">
+            <Col width="100%">
+              <Text>
+                <BoldText>Opens</BoldText>: November 6, 2023
+              </Text>
+              <Text>
+                <BoldText>Starts</BoldText>: January 22, 2024
+              </Text>
+            </Col>
+          </Row>
+        </MiniCard>
 
-      <MiniCard>
-        <Row>
-          <Col>
-            <Label>Next up!</Label>
-            <Header>Fall 2024</Header>
-          </Col>
-          <Icon>
-            <IconSchedule height="48" width="48" />
-          </Icon>
-        </Row>
+        <MiniCard>
+          <Row>
+            <Col>
+              <Label>Next up!</Label>
+              <Header>Fall 2024</Header>
+            </Col>
+            <Icon>
+              <IconSchedule height="48" width="48" />
+            </Icon>
+          </Row>
 
-        <Row background="var(--medium-grey)">
-          <Col width="100%">
-            <Text>
-              <BoldText>Opens</BoldText>: November 6, 2023
-            </Text>
-            <Text>
-              <BoldText>Starts</BoldText>: January 22, 2024
-            </Text>
-          </Col>
-        </Row>
-      </MiniCard>
+          <Row background="var(--medium-grey)">
+            <Col width="100%">
+              <Text>
+                <BoldText>Opens</BoldText>: November 6, 2023
+              </Text>
+              <Text>
+                <BoldText>Starts</BoldText>: January 22, 2024
+              </Text>
+            </Col>
+          </Row>
+        </MiniCard>
 
-      <MiniCard>
-        <Row>
-          <Col>
-            <Label>Next up!</Label>
-            <Header>Winter 2024</Header>
-          </Col>
-          <Icon>
-            <IconSchedule height="48" width="48" />
-          </Icon>
-        </Row>
+        <MiniCard>
+          <Row>
+            <Col>
+              <Label>Next up!</Label>
+              <Header>Winter 2024</Header>
+            </Col>
+            <Icon>
+              <IconSchedule height="48" width="48" />
+            </Icon>
+          </Row>
 
-        <Row background="var(--medium-grey)">
-          <Col width="100%">
-            <Text>
-              <BoldText>Opens</BoldText>: November 6, 2023
-            </Text>
-            <Text>
-              <BoldText>Starts</BoldText>: January 22, 2024
-            </Text>
-          </Col>
-        </Row>
-      </MiniCard>
-    </Container>
+          <Row background="var(--medium-grey)">
+            <Col width="100%">
+              <Text>
+                <BoldText>Opens</BoldText>: November 6, 2023
+              </Text>
+              <Text>
+                <BoldText>Starts</BoldText>: January 22, 2024
+              </Text>
+            </Col>
+          </Row>
+        </MiniCard>
+      </Container>
+    </FlexContainer>
   );
 };

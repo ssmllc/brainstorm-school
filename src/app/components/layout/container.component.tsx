@@ -43,7 +43,11 @@ const FlexSection = styled.div<sectionProps>`
   width: ${({ width }) => (width ? width : "100vw")};
 
   @media (min-width: 800px) {
-    flex-direction: row;
+    flex-direction: ${({ flexdirection }) =>
+      flexdirection ? flexdirection : "row"};
+    max-width: ${({ maxwidth }) => (maxwidth ? maxwidth : "1440px")};
+    margin: ${({ margin }) => (margin ? margin : "0")};
+    width: ${({ width }) => (width ? width : "100vw")};
   }
 `;
 
@@ -67,6 +71,14 @@ const Section = styled.div<sectionProps>`
   position: ${({ position }) => (position ? position : "relative")};
   width: ${({ width }) => (width ? width : "100vw")};
   flex-grow: ${({ flexgrow }) => flexgrow};
+
+  @media (min-width: 800px) {
+    flex-direction: ${({ flexdirection }) =>
+      flexdirection ? flexdirection : "row"};
+    max-width: ${({ maxwidth }) => (maxwidth ? maxwidth : "1440px")};
+    margin: ${({ margin }) => (margin ? margin : "0")};
+    width: ${({ width }) => (width ? width : "100vw")};
+  }
 `;
 
 interface Props {
