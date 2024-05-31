@@ -24,6 +24,10 @@ const Track = styled.div<trackProps>`
   position: relative;
   transition: all 0.35s ease-out;
 
+  @media (min-width: 768px) {
+    min-height: 300px;
+  }
+
   &[data-track="active"] {
     filter: grayscale(0);
   }

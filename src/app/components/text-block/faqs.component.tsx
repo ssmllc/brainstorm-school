@@ -66,7 +66,7 @@ const FAQs = ({ results }: any) => {
               padding: "0",
             }}
           >
-            <TextHeaderBlock fontSize="36px" fontWeight="bold">
+            <TextHeaderBlock fontSize="28px" fontWeight="bold">
               Course FAQ&apos;s
             </TextHeaderBlock>
 
