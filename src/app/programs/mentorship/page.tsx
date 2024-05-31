@@ -30,7 +30,7 @@ const fetchData = async () => {
   return result;
 };
 
-export default async function Programs() {
+export default async function Mentorship() {
   const result = await fetchData();
 
   // console.log("workshops", result[0].faqs);
@@ -59,7 +59,7 @@ export default async function Programs() {
           <Header
             level="4"
             text="Brainstorm Online Mentorship programs are a true mentorship experience.  Our line up of core mentors will guide you along a full 12 week intensive program that will be 100% personalized to you!  A plan around goals, expectations and results will be the core focus for the 3 months.  You will meet with your mentor weekly to have private learning time specific to you, the goals and the results!"
-            fontsize="15px"
+            fontSize="15px"
           />
 
           <p style={{ fontSize: "15px", color: "var(--white)" }}>

@@ -59,7 +59,6 @@ const Banner = () => {
 
     gsap.to(".banner-wrapper", {
       ease: "power1.out",
-      delay: 0.1,
       duration: 1,
       opacity: 1,
     });
@@ -69,7 +68,7 @@ const Banner = () => {
     <BannerWrapper className="banner-wrapper" background={randomBanner}>
       <RegistrationBlock
         primary={true}
-        heading="Learn from industry professionals and become a master of your craft today."
+        heading="Learn from Industry-Leading Professionals in Various Creative Fields!"
         scale="xl"
         cta="Register Today"
         ctaType="primary"

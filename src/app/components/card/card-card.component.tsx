@@ -21,6 +21,7 @@ const Container = styled.div<containerProps>`
   box-shadow: ${({ boxshadow }) =>
     boxshadow ? boxshadow : "0 0 15px rgba(0, 0, 0, 0.5)"};
   border-radius: 20px;
+  border: thin solid var(--medium-grey);
   display: flex;
   flex-direction: ${({ stacked }) => (stacked === "true" ? "column" : "row")};
   padding: 25px 10px;
@@ -53,6 +54,8 @@ type Props = {
   subHeading?: string;
   text?: string;
   width?: string;
+  icon_width?: string;
+  icon_height?: string;
 };
 export const Card = ({
   href,
@@ -66,6 +69,8 @@ export const Card = ({
   subHeading,
   text,
   width,
+  icon_width,
+  icon_height,
 }: Props) => {
   return (
     <>
@@ -78,7 +83,14 @@ export const Card = ({
             stacked={stacked}
             width={width}
           >
-            {icon && <CardIcon image={icon} borderradius={borderradius} />}
+            {icon && (
+              <CardIcon
+                image={icon}
+                borderradius={borderradius}
+                width={icon_width}
+                height={icon_height}
+              />
+            )}
             {heading && (
               <CardDetails heading={heading} subHeading={subHeading} />
             )}
@@ -93,7 +105,14 @@ export const Card = ({
           stacked={stacked}
           width={width}
         >
-          {icon && <CardIcon image={icon} borderradius={borderradius} />}
+          {icon && (
+            <CardIcon
+              image={icon}
+              borderradius={borderradius}
+              width={icon_width}
+              height={icon_height}
+            />
+          )}
           {heading && <CardDetails heading={heading} subHeading={subHeading} />}
           {text && <Text>{text}</Text>}
         </Container>

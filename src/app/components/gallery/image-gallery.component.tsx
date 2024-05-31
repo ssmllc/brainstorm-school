@@ -675,7 +675,11 @@ const ImageGallery = () => {
 
   return (
     <Gallery>
-      <RegistrationBlock heading="Student Gallery" primary={false} scale="xl" />
+      <RegistrationBlock
+        heading="Gallery of Students' Work"
+        primary={false}
+        scale="xl"
+      />
 
       <CarouselWrapper>
         <Button className="prev" onClick={() => handleCardSliderMove("prev")}>

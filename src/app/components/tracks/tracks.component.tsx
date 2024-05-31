@@ -9,10 +9,12 @@ import Container, { FlexContainer } from "../layout/container.component";
 import TextBlock from "../text-block/text-block.component";
 import { Card } from "../card/card-card.component";
 import { TracksContext } from "@/app/context/tracks-context-provider";
+import Header from "../text-block/header.component";
 
 const TracksContainer = styled.div`
   /* border: thin solid red; */
   padding: 0 0 75px 0;
+  text-align: center;
 `;
 
 const Anchor = styled(Link)`
@@ -101,7 +103,7 @@ const Name = styled.p`
 `;
 
 const Terms = styled.div`
-  background: var(--black);
+  background: var(--off-black);
   border: thin solid var(--darker-grey);
   border-radius: 20px;
   display: flex;
@@ -146,10 +148,11 @@ const TracksGroup = ({ results }: Props) => {
 
   return (
     <TracksContainer>
-      <RegistrationBlock
-        primary={false}
-        heading="Select your desired track"
-        scale="xl"
+      <Header
+        level="2"
+        text="Course Guide - Tracks"
+        color="white"
+        margin="50px 0"
       />
       <Tracks>
         {results && results.length ? (
@@ -454,6 +457,7 @@ const TracksGroup = ({ results }: Props) => {
                           .replaceAll(" ", "-")}/${course.slug.current}`}
                       >
                         <Card
+                          background="var(--black)"
                           borderradius="10px"
                           stacked="false"
                           boxshadow="0"
@@ -461,6 +465,8 @@ const TracksGroup = ({ results }: Props) => {
                           heading={course.name}
                           subHeading={course.code}
                           width="100%"
+                          icon_width="75px"
+                          icon_height="75px"
                         />
                       </Link>
                     );

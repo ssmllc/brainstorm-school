@@ -250,7 +250,7 @@ const CardSlider = () => {
     <CardSliderContainer>
       <CardsCarousel>
         <CardSliderControls>
-          <Heading>Popular courses from our school</Heading>
+          <Heading>Explore Our Popular Courses</Heading>
           <ButtonsWrapper>
             <Button
               className="prev"

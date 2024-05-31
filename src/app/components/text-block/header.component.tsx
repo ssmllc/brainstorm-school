@@ -16,6 +16,7 @@ const Header1 = styled.h1<textProps>`
   font-weight: bold;
   line-height: 1.25;
   margin: ${({ margin }) => margin};
+  position: relative;
   text-align: ${({ textalign }) => textalign};
 `;
 
@@ -25,6 +26,7 @@ const Header2 = styled.h2<textProps>`
   font-weight: bold;
   line-height: 1.25;
   margin: ${({ margin }) => margin};
+  position: relative;
   text-align: ${({ textalign }) => textalign};
 `;
 
@@ -34,6 +36,7 @@ const Header3 = styled.h3<textProps>`
   font-weight: bold;
   line-height: 1.25;
   margin: ${({ margin }) => margin};
+  position: relative;
   text-align: ${({ textalign }) => textalign};
 `;
 
@@ -42,15 +45,16 @@ const Header4 = styled.p<textProps>`
   font-size: ${({ fontsize }) => (fontsize ? fontsize : "24px")};
   font-weight: ${({ fontweight }) => (fontweight ? fontweight : "normal")};
   margin: ${({ margin }) => margin};
+  position: relative;
   text-align: ${({ textalign }) => textalign};
-  line-height: 1.5;
+  line-height: 1.25;
 `;
 
 interface Props {
   level: string;
   text: string;
   color?: string;
-  fontsize?: string;
+  fontSize?: string;
   fontweight?: string;
   margin?: string;
   textalign?: string;
@@ -60,7 +64,7 @@ const Header = ({
   level,
   text,
   color,
-  fontsize,
+  fontSize,
   fontweight,
   margin,
   textalign,
@@ -85,7 +89,7 @@ const Header = ({
       {level === "4" && (
         <Header4
           color={color}
-          fontsize={fontsize}
+          fontsize={fontSize}
           fontweight={fontweight}
           margin={margin}
         >

@@ -13,8 +13,10 @@ import Slide from "./components/featured/slide.component";
 import Header from "./components/text-block/header.component";
 
 export const metadata: Metadata = {
-  title: "Brainstorm Courses - Brainstorm School",
-  description: "Brainstorm School",
+  title:
+    "Animation, 3D, Online Game Concept Design, and Digital Art Courses | Brainstorm School",
+  description:
+    "Our courses cover a wide range of creative fields, including animation, 3D modeling, concept, online game design, and digital art. Register Today!",
 };
 
 const Home = async () => {
@@ -25,8 +27,8 @@ const Home = async () => {
       <Content>
         <VideoContentSplit
           video="https://youtu.be/cidlS92hRTQ?si=pWk-plQpUEOP_jt8"
-          heading="Who we are"
-          text="Brainstorm is an online concept art, design and illustration program focused on artistic development. Students from around the world gather to learn & develop in our friendly online community."
+          heading="Online education tailored for creatives at every stage"
+          text="From those eager to kickstart their careers to seasoned professionals seeking to refine their skills and stay ahead in the industry. Brainstorm School provides online classes for concept art, design, and illustration. Our program is dedicated to artistic development, bringing together students from around the globe to learn and grow in a supportive online community. Our courses, led by professionals in the field, teach the most recent techniques utilized in today's entertainment industry, including concept art for games and films, visual development, and more."
           cta="View Courses"
         />
 
@@ -39,7 +41,7 @@ const Home = async () => {
         <CardGroup />
 
         <FeaturedSlider
-          heading="News to keep you up to date with the latest from Brainstorm"
+          heading="The Latest Industry Blogs, News and Insights"
           textalign="center"
         >
           <Slide variantType="lg" />

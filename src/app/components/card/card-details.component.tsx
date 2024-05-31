@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 const Details = styled.div<Props>`
   /* border: thin dashed blue; */
+  text-align: left;
 `;
 
 const Heading = styled.div<Props>`

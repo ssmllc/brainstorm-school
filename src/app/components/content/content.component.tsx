@@ -14,7 +14,7 @@ const ContentWrapper = styled.div`
       url("/backgrounds/clouds/cloud-2.png"),
       url("/backgrounds/lightning/lightning-2.png"),
       url("/backgrounds/clouds/cloud-2.png");
-    background-size: 75%, 100%, 75%, 100%;
+    background-size: 50%, 100%, 50%, 100%;
     background-position: top left, top center, center right, bottom center;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
     position: absolute;
@@ -28,6 +28,14 @@ const ContentWrapper = styled.div`
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
+
+    @media (min-width: 768px) {
+      background-size: 50%, 100%, 50%, 100%;
+    }
+
+    @media (min-width: 1900px) {
+      background-size: 40%, 100%, 40%, 100%;
+    }
   }
 `;
 
