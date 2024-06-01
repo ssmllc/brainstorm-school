@@ -77,10 +77,10 @@ export default async function Page({ params }: { params: { id: string } }) {
       </Container>
 
       <FeaturedSlider>
-        <Slide variantType="lg" />
-        <Slide variantType="lg" />
-        <Slide variantType="lg" />
-        <Slide variantType="lg" />
+        <Slide heading="Lorem ipsum dolor" variantType="lg" />
+        <Slide heading="Lorem ipsum dolor" variantType="lg" />
+        <Slide heading="Lorem ipsum dolor" variantType="lg" />
+        <Slide heading="Lorem ipsum dolor" variantType="lg" />
       </FeaturedSlider>
 
       <RenderCourses selectedCourses={selectedCourses} noheading={true} />

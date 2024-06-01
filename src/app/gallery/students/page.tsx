@@ -1,4 +1,5 @@
 import MediaBanner from "@/app/components/banner/media-banner.component";
+import { Card } from "@/app/components/card/card-card.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
 import FAQs from "@/app/components/text-block/faqs.component";
 import Header from "@/app/components/text-block/header.component";

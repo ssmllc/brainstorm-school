@@ -99,6 +99,7 @@ const Name = styled.p`
   font-size: 28px;
   padding: 20px 0;
   position: relative;
+  text-align: left;
   z-index: 2;
 `;
 
