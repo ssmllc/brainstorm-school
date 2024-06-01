@@ -99,7 +99,8 @@ interface Props {
   base?: string;
   path?: string;
   poster: string;
-  label: string;
+  label?: string;
+  icon?: string;
   photo?: string;
   name?: string;
   sm_width?: string;
@@ -113,6 +114,7 @@ const AnchorCard = ({
   poster,
   label,
   children,
+  icon,
   photo,
   name,
   sm_width,
@@ -129,22 +131,26 @@ const AnchorCard = ({
       width={width}
     >
       <Track poster={poster}>
-        {children ? (
-          children
-        ) : (
+        {children && children}
+
+        {photo && (
           <Icon>
-            {photo ? (
-              <Image
-                src={photo}
-                width={42}
-                height={42}
-                alt="Brainstorm School Logo"
-              />
-            ) : (
-              <Icon3D height="48px" width="48px" />
-            )}
+            <Image
+              src={photo}
+              width={42}
+              height={42}
+              alt="Brainstorm School Logo"
+            />
           </Icon>
         )}
+
+        {icon && (
+          <Icon>
+            {" "}
+            <Icon3D height="48px" width="48px" />
+          </Icon>
+        )}
+
         <Label>{label}</Label>
         <Name>{name}</Name>
       </Track>

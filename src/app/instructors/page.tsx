@@ -32,8 +32,6 @@ const fetchData = async () => {
 export default async function Instructors() {
   const result = await fetchData();
 
-  console.log("Instructors", result);
-
   return (
     <>
       <MediaBanner

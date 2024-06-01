@@ -29,8 +29,6 @@ const fetchData = async () => {
 export default async function Gallery() {
   const result = await fetchData();
 
-  console.log("workshops", result[0].faqs);
-
   return (
     <>
       <MediaBanner
@@ -76,13 +74,8 @@ export default async function Gallery() {
             {result &&
               result.map((instructor: any) => (
                 <AnchorCard
-                  base="instructors"
-                  path={instructor?.slug?.current || ""}
                   key={instructor._id}
-                  label={instructor.title}
-                  name={instructor.profession}
                   poster={instructor.imageUrl}
-                  photo="/instructors/ico-image.png"
                   width="100%"
                 />
               ))}
