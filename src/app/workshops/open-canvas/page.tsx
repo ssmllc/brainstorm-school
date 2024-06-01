@@ -134,11 +134,7 @@ export default async function Workshops() {
           />
         </FlexBox>
 
-        <FlexBox flexdirection="column">
-          <FlexBox flexdirection="column" sm_width="80%" margin="25px 0">
-            <Header level="3" text="Free Courses" />
-          </FlexBox>
-
+        <FlexBox flexdirection="column" margin="75px 0 0">
           <FlexBox>
             <AnchorCard
               label="Mentorship Online"

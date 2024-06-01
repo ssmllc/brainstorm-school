@@ -111,11 +111,17 @@ const Tag = ({ children }: any) => {
 
 interface Props {
   variant: string;
+  heading: string;
   superHeading?: string;
   info?: string;
 }
 
-const ImageDetailCard = ({ variant = "sm", superHeading, info }: Props) => {
+const ImageDetailCard = ({
+  variant = "sm",
+  superHeading,
+  heading,
+  info,
+}: Props) => {
   return (
     <Card className="course-card" variant={variant}>
       <Poster
@@ -129,7 +135,7 @@ const ImageDetailCard = ({ variant = "sm", superHeading, info }: Props) => {
             {superHeading ? superHeading : "Featured Blog"}
           </SuperHeading>
         )}
-        <Heading>Rhythm & Structure</Heading>
+        <Heading>{heading}</Heading>
         <Details variant={variant}>
           <Tag>
             <span>

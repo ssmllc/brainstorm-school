@@ -10,7 +10,6 @@ import RegistrationBlock from "./components/registration/registration-block.comp
 import CardGroup from "./components/card/card-group.component";
 import { Metadata } from "next";
 import Slide from "./components/featured/slide.component";
-import Header from "./components/text-block/header.component";
 
 export const metadata: Metadata = {
   title:
@@ -60,6 +59,7 @@ const Home = async () => {
           heading="Ready to start your journey?"
           scale="xl"
           cta="Register"
+          ctaType="primary"
         />
       </Content>
     </main>

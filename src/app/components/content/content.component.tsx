@@ -11,12 +11,10 @@ const ContentWrapper = styled.div`
   &::before {
     content: "";
     background-image: url("/backgrounds/lightning/lightning.png"),
-      url("/backgrounds/clouds/cloud-2.png"),
-      url("/backgrounds/lightning/lightning-2.png"),
-      url("/backgrounds/clouds/cloud-2.png");
-    background-size: 50%, 100%, 50%, 100%;
-    background-position: top left, top center, center right, bottom center;
-    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+      url("/backgrounds/lightning/lightning-2.png");
+    background-size: 50%, 50%;
+    background-position: top left, center right;
+    background-repeat: no-repeat, no-repeat;
     position: absolute;
     rotate: 0;
     transform-origin: top left;

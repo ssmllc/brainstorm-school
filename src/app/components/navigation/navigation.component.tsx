@@ -8,7 +8,7 @@ import { Sections } from "@/app/types/types";
 import BrainstormLogo from "../Logo/logo.component";
 
 const NavigationBar = styled.div`
-  background: rgba(0, 0, 0, 0.9);
+  background: var(--off-black-90);
   display: flex;
   justify-content: space-between;
   padding: 0 0px;
@@ -20,7 +20,7 @@ const NavigationBar = styled.div`
 `;
 
 const NavigationMenu = styled.nav`
-  background: var(--black);
+  background: var(--off-black-90);
   row-gap: 25px;
   align-items: center;
   display: flex;
@@ -47,7 +47,7 @@ const NavigationMenu = styled.nav`
     flex-direction: row;
     left: unset;
     overflow: unset;
-    padding: 25px 25px;
+    padding: 0 25px;
     position: relative;
     top: unset;
     height: auto;
@@ -83,7 +83,7 @@ const Dropdown = styled.li`
 
 const DropdownButton = styled.div`
   align-self: center;
-  background: var(--black);
+  background: var(--off-black-90);
   // border: thin solid red;
   display: flex;
   height: 25px;
@@ -117,7 +117,7 @@ const DropdownButtonBar = styled.div`
 `;
 
 const DropdownMenu = styled.ul`
-  background: var(--black);
+  background: var(--off-black-90);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   display: none;
@@ -125,7 +125,7 @@ const DropdownMenu = styled.ul`
   min-width: 375px;
   padding: 15px 25px;
   position: absolute;
-  top: 35px;
+  top: 70px;
 `;
 
 const DropdownMenuItem = styled.li`
@@ -134,7 +134,7 @@ const DropdownMenuItem = styled.li`
 
 const MenuItem = styled(Link)`
   color: var(--white);
-  padding: 10px 10px;
+  padding: 30px 10px;
   text-decoration: none;
   text-transform: uppercase;
 

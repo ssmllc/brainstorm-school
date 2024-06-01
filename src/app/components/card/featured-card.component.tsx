@@ -15,19 +15,25 @@ const Featured = styled.div`
 
   @media (min-width: 800px) {
     max-width: 1125px;
-    width: 65%;
+    width: 70%;
   }
 `;
 
 interface Props {
+  heading: string;
   superheading?: string;
   info?: string;
 }
 
-const FeaturedCard = ({ superheading, info }: Props) => {
+const FeaturedCard = ({ superheading, heading, info }: Props) => {
   return (
     <Featured>
-      <ImageDetailCard variant="lg" superHeading={superheading} info={info} />
+      <ImageDetailCard
+        variant="lg"
+        superHeading={superheading}
+        heading={heading}
+        info={info}
+      />
     </Featured>
   );
 };

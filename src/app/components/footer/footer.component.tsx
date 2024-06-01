@@ -240,8 +240,8 @@ const Footer = () => {
             </DropdownMenu>
           </Column>
           <Column>
-            <MenuItem href="/news" weight="bold">
-              News
+            <MenuItem href="/blog" weight="bold">
+              Blog
             </MenuItem>
           </Column>
         </Menu>
