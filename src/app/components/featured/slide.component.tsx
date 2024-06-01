@@ -14,13 +14,15 @@ const Card = styled.div`
 `;
 
 interface Props {
+  heading: string;
   variantType: string;
 }
 
-const Slide = ({ variantType }: Props) => {
+const Slide = ({ variantType, heading }: Props) => {
   return (
     <Card className="slide">
       <ImageDetailCard
+        heading={heading}
         variant={variantType}
         superHeading="Featured Blog"
         info="Lorem ipsum dolor sit amet, Optio pariatur blanditiis accusantium placeat."

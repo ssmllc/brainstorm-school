@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const fetchData = async () => {
   const query =
-    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27workshops%27%5D+%7B%0A++workshoptitle%2C%0A++content%2C%0A++future%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++workshopname%2C%0A++++slug%2C%0A++++instructor%2C%0A++++description%5B%5D-%3E%2C%0A++++date%2C%0A++++time%2C%0A++++location%2C%0A++++price%2C%0A++++registration%2C%0A++++%22imageUrl%22%3A+preview.asset-%3Eurl%2C%0A++++workexamples%5B%5D+-%3E%2C%0A++%7D%2C%0A++previous%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++workshopname%2C%0A++++slug%2C%0A++++instructor%2C%0A++++description%5B%5D-%3E%2C%0A++++date%2C%0A++++time%2C%0A++++location%2C%0A++++price%2C%0A++++registration%2C%0A++++%22imageUrl%22%3A+preview.asset-%3Eurl%2C%0A++++workexamples%5B%5D+-%3E%2C%0A++%7D%2C%0A++content%2C%0A++faqs%5B%5D-%3E+%7B%0A++++_id%2C%0A++++question%2C%0A++++answer%0A++%7D%0A%7D";
+    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27instructors%27%5D+%7B%0A++_id%2C%0A++title%2C%0A++slug%2C%0A++profession%2C%0A++%22imageUrl%22%3A+poster.asset-%3Eurl%2C%0A++bio%0A%7D";
   // const response = await fetch(query);
   const response = await fetch(query, { cache: "no-store" });
 
@@ -59,52 +59,34 @@ export default async function Gallery() {
           />
         </FlexBox>
 
-        <FlexBox flexdirection="column" margin="75px 0 0">
-          <FlexBox>
-            <AnchorCard
-              label="Mentorship Online"
-              name="Oliver Beck"
-              poster="https://cdn.sanity.io/images/y8rjsgga/production/dbe0f90d49ecc458b97ab1efcea97632eae87bf7-1866x1126.jpg"
-            />
-            <AnchorCard
-              label="Character Design"
-              name="Gue Yang"
-              poster="https://cdn.sanity.io/images/y8rjsgga/production/edafb39d7261d2f9492ac1728b2bd7a4c4725086-3885x1959.jpg"
-            />
-            <AnchorCard
-              label="Mentorship Online"
-              name="Oliver Beck"
-              poster="https://cdn.sanity.io/images/y8rjsgga/production/dbe0f90d49ecc458b97ab1efcea97632eae87bf7-1866x1126.jpg"
-            />
-            <AnchorCard
-              label="Character Design"
-              name="Gue Yang"
-              poster="https://cdn.sanity.io/images/y8rjsgga/production/edafb39d7261d2f9492ac1728b2bd7a4c4725086-3885x1959.jpg"
-            />
-          </FlexBox>
-
-          <FlexBox>
-            <AnchorCard
-              label="Mentorship Online"
-              name="Oliver Beck"
-              poster="https://cdn.sanity.io/images/y8rjsgga/production/dbe0f90d49ecc458b97ab1efcea97632eae87bf7-1866x1126.jpg"
-            />
-            <AnchorCard
-              label="Character Design"
-              name="Gue Yang"
-              poster="https://cdn.sanity.io/images/y8rjsgga/production/edafb39d7261d2f9492ac1728b2bd7a4c4725086-3885x1959.jpg"
-            />
-            <AnchorCard
-              label="Mentorship Online"
-              name="Oliver Beck"
-              poster="https://cdn.sanity.io/images/y8rjsgga/production/dbe0f90d49ecc458b97ab1efcea97632eae87bf7-1866x1126.jpg"
-            />
-            <AnchorCard
-              label="Character Design"
-              name="Gue Yang"
-              poster="https://cdn.sanity.io/images/y8rjsgga/production/edafb39d7261d2f9492ac1728b2bd7a4c4725086-3885x1959.jpg"
-            />
-          </FlexBox>
+        <FlexBox
+          margin="20px 60px 0"
+          sm_margin="20px 25px"
+          sm_width="85%"
+          width="70%"
+        >
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(4, 1fr)",
+              gap: "20px 20px",
+              width: "100%",
+            }}
+          >
+            {result &&
+              result.map((instructor: any) => (
+                <AnchorCard
+                  base="instructors"
+                  path={instructor?.slug?.current || ""}
+                  key={instructor._id}
+                  label={instructor.title}
+                  name={instructor.profession}
+                  poster={instructor.imageUrl}
+                  photo="/instructors/ico-image.png"
+                  width="100%"
+                />
+              ))}
+          </div>
         </FlexBox>
       </FlexBox>
     </>
