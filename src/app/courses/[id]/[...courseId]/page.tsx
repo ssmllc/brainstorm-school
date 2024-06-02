@@ -53,7 +53,7 @@ export default async function Page({
         subHeader="2024"
         hero="true"
         theme="dark"
-        background="/backgrounds/sci-fi-city.jpg"
+        background="/banner/banner-3.jpg"
         image="/banner/media-banner.png"
         media="/video/brainstorm-design-solve-learn.mp4"
       />
