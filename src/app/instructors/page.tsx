@@ -76,7 +76,7 @@ export default async function Instructors() {
         </FlexBox>
 
         <FlexBox
-          margin="20px 60px 0"
+          margin="25px 60px 0"
           sm_width="85%"
           width="70%"
           flexdirection="column"
@@ -85,9 +85,11 @@ export default async function Instructors() {
         </FlexBox>
 
         <FeaturedCard
+          poster="banner/banner-5.jpg"
           superheading="Rhythm & Structure"
           info="Lorem ipsum dolor sit amet"
           heading="James Paick"
+          margin="25px 0"
         />
 
         <FlexBox

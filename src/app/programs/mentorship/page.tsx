@@ -33,8 +33,6 @@ const fetchData = async () => {
 export default async function Mentorship() {
   const result = await fetchData();
 
-  // console.log("workshops", result[0].faqs);
-
   return (
     <>
       <MediaBanner
@@ -54,11 +52,26 @@ export default async function Mentorship() {
           width="70%"
           flexdirection="column"
         >
-          <Header level="1" text="Mentorship" />
+          <Header
+            level="1"
+            text="Brainstorm School Online Mentorship Program"
+          />
 
           <Header
             level="4"
-            text="Brainstorm Online Mentorship programs are a true mentorship experience.  Our line up of core mentors will guide you along a full 12 week intensive program that will be 100% personalized to you!  A plan around goals, expectations and results will be the core focus for the 3 months.  You will meet with your mentor weekly to have private learning time specific to you, the goals and the results!"
+            text="Our online mentorships are not one-size-fits-all. They are meticulously designed to help students develop their skills and equip them with everything they need to succeed as artists. Whether you need to learn the basics or want to expand into different skill sets, our mentors are there to provide personalized guidance and support, tailoring their approach to your unique needs. This not only enhances your career prospects and creativity but also makes you feel valued and catered to. Our line up of core mentors will guide you through a full 12 week intensive program that will be 100% personalized to you!"
+            fontSize="15px"
+          />
+
+          <Header
+            level="4"
+            text="At Brainstorm School, our mentors are professionals with years of experience in the industry. Their experience and expertise make our mentors well-equipped to guide students and mentees in honing their craft and exploring the scope of their talents. Working closely with mentors, participants in the mentorship program can benefit from their guidance and experience, inspiring confidence and equipping them with the valuable skills they need to succeed."
+            fontSize="15px"
+          />
+
+          <Header
+            level="4"
+            text="Our online mentorships can assist you in advancing your career goals in animation, gaming, computer-generated art, and digital art. For three months, the main focus will be on a strategy centered on objectives, expectations, and outcomes. Weekly private learning sessions tailored to your needs, objectives, and desired outcomes will be held with your mentor!"
             fontSize="15px"
           />
 
@@ -81,13 +94,39 @@ export default async function Mentorship() {
           margin="20px 60px"
           sm_width="90%"
           width="70%"
-          alignitems="center"
         >
           <Header
-            level="4"
-            text="Enroll for 2024 now!"
+            level="2"
+            text="There are three opportunities to begin a mentorship during the calendar year:"
             margin="20px 0"
-            fontweight="bold"
+            fontSize="15px"
+          />
+        </FlexBox>
+
+        <FlexBox
+          justifycontent="center"
+          sm_margin="40px 60px 20px"
+          margin="0 60px"
+          sm_width="90%"
+          width="70%"
+        >
+          <Pill
+            background="rgba(255, 255, 255, .10)"
+            label="Summer"
+            padding="12px 35px"
+            boxshadow="0 0 7px var(--black)"
+          />
+          <Pill
+            background="rgba(255, 255, 255, .10)"
+            label="Spring"
+            padding="12px 35px"
+            boxshadow="0 0 7px var(--black)"
+          />
+          <Pill
+            background="rgba(255, 255, 255, .10)"
+            label="Fall"
+            padding="12px 35px"
+            boxshadow="0 0 7px var(--black)"
           />
         </FlexBox>
 
@@ -165,7 +204,7 @@ export default async function Mentorship() {
           />
         </FlexBox>
 
-        <FlexBox
+        {/* <FlexBox
           alignitems="center"
           flexdirection="column"
           margin="100px 60px 0"
@@ -224,7 +263,7 @@ export default async function Mentorship() {
               courseDuration="10-week Course"
             />
           </FlexBox>
-        </FlexBox>
+        </FlexBox> */}
       </FlexBox>
     </>
   );

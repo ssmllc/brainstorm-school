@@ -151,18 +151,18 @@ export default async function Workshops() {
 
         <RegistrationBlock
           primary={false}
-          heading="View All Courses"
+          heading="Are you ready to take the next step?"
           scale="xl"
-          cta="Register"
+          cta="Register Today"
           ctaType="primary"
         />
 
-        <FlexBox flexdirection="column">
+        <FlexBox flexdirection="column" width="70%">
           <FlexBox flexdirection="column" sm_width="80%" margin="25px 0">
-            <Header level="3" text="Free Courses" />
+            <Header level="3" text="Free Workshops" />
           </FlexBox>
 
-          <FlexBox>
+          <FlexBox width="100%">
             <AnchorCard
               label="Mentorship Online"
               name="Oliver Beck"
@@ -186,7 +186,7 @@ export default async function Workshops() {
           </FlexBox>
         </FlexBox>
 
-        <FlexBox sm_width="80%">
+        <FlexBox sm_width="80%" width="70%">
           <FAQs results={result[0]} />
         </FlexBox>
       </FlexBox>

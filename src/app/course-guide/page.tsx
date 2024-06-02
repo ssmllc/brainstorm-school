@@ -5,6 +5,7 @@ import RegistrationBlock from "../components/registration/registration-block.com
 import Heading from "../components/heading/heading.component";
 import TracksGroup from "../components/tracks/tracks.component";
 import MoreTracks from "../components/contact/more-tracks.component";
+import MediaBanner from "../components/banner/media-banner.component";
 
 export const metadata: Metadata = {
   title: "Brainstorm Courses - Brainstorm School",
@@ -30,47 +31,59 @@ export default async function Page() {
   const result = await fetchData();
 
   return (
-    <Container margin="100px auto">
-      <RegistrationBlock
-        primary={false}
-        heading="Course Guide"
-        text="Our course guide is here to show a general roadmap for artist who are trying to get and idea of where to start."
-        scale="xl"
+    <>
+      <MediaBanner
+        header=""
+        subHeader=""
+        hero="false"
+        theme="dark"
+        background="/banner/banner-10.jpg"
+        image="/banner/media-banner.png"
+        media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <Container
-        alignitems="center"
-        display="flex"
-        flexdirection="column"
-        justifycontent="center"
-        width="100%"
-      >
-        <Heading superHeader={false} header="Select your experience level?" />
+      <Container margin="100px auto">
+        <RegistrationBlock
+          primary={false}
+          heading="Course Guide"
+          text="Our course guide is here to show a general roadmap for artist who are trying to get and idea of where to start."
+          scale="xl"
+        />
 
-        <select
-          style={{
-            appearance: "none",
-            background: "var(--dark-grey)",
-            backgroundImage: `url("data:image/svg+xml;charset=utf-8,<svg width='10' height='6' fill='none' xmlns='http:%2F%2Fwww.w3.org/2000/svg'><path d='M1 1l4 4 4-4' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>")`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "97% 50%",
-            borderRadius: "10px",
-            color: "var(--white)",
-            fontWeight: "bold",
-            fontSize: "16px",
-            width: "500px",
-            padding: "15px 15px",
-          }}
+        <Container
+          alignitems="center"
+          display="flex"
+          flexdirection="column"
+          justifycontent="center"
+          width="100%"
         >
-          <option defaultChecked>Beginner</option>
-          <option>Intermediate</option>
-          <option>Advanced</option>
-        </select>
+          <Heading superHeader={false} header="Select your experience level?" />
+
+          <select
+            style={{
+              appearance: "none",
+              background: "var(--dark-grey)",
+              backgroundImage: `url("data:image/svg+xml;charset=utf-8,<svg width='10' height='6' fill='none' xmlns='http:%2F%2Fwww.w3.org/2000/svg'><path d='M1 1l4 4 4-4' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>")`,
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "97% 50%",
+              borderRadius: "10px",
+              color: "var(--white)",
+              fontWeight: "bold",
+              fontSize: "16px",
+              width: "500px",
+              padding: "15px 15px",
+            }}
+          >
+            <option defaultChecked>Beginner</option>
+            <option>Intermediate</option>
+            <option>Advanced</option>
+          </select>
+        </Container>
+
+        <TracksGroup results={result} />
+
+        <MoreTracks />
       </Container>
-
-      <TracksGroup results={result} />
-
-      <MoreTracks />
-    </Container>
+    </>
   );
 }

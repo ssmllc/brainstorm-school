@@ -10,9 +10,10 @@ import { Course, Sections } from "@/app/types/types";
 interface Props {
   selectedCourses?: Sections[];
   noheading?: boolean;
+  width?: string;
 }
 
-const RenderCourses = ({ selectedCourses, noheading }: Props) => {
+const RenderCourses = ({ selectedCourses, noheading, width }: Props) => {
   const { courses, error }: any = useContext(BrainstormContext);
   const courseList =
     selectedCourses && selectedCourses.length > 0 ? selectedCourses : courses;
@@ -39,7 +40,7 @@ const RenderCourses = ({ selectedCourses, noheading }: Props) => {
                   _id: any;
                   courses: Course[];
                 }) => (
-                  <Container key={_id} margin="50px auto" width="100%">
+                  <Container key={_id} margin="0 auto" width="100%">
                     {noheading ? (
                       <div style={{ margin: "50px 0" }}></div>
                     ) : (
@@ -48,7 +49,7 @@ const RenderCourses = ({ selectedCourses, noheading }: Props) => {
                     <Container
                       key={_id}
                       display="flex"
-                      gap="20px 15px"
+                      gap="20px 10px"
                       flexwrap="wrap"
                       width="100%"
                       margin="0 auto"
@@ -71,6 +72,7 @@ const RenderCourses = ({ selectedCourses, noheading }: Props) => {
                             courseDuration={
                               course?.schedule && course?.schedule[0]?.duration
                             }
+                            width={width}
                           />
                         );
                       })}

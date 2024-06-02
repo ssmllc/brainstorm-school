@@ -31,8 +31,6 @@ const fetchData = async () => {
 export default async function Workshops() {
   const result = await fetchData();
 
-  console.log("workshops", result[0].faqs);
-
   return (
     <>
       <MediaBanner
@@ -134,8 +132,8 @@ export default async function Workshops() {
           />
         </FlexBox>
 
-        <FlexBox flexdirection="column" margin="75px 0 0">
-          <FlexBox>
+        <FlexBox flexdirection="column" margin="75px 0 0" width="70%">
+          <FlexBox width="100%">
             <AnchorCard
               label="Mentorship Online"
               name="Oliver Beck"
@@ -159,7 +157,7 @@ export default async function Workshops() {
           </FlexBox>
         </FlexBox>
 
-        <FlexBox sm_width="80%">
+        <FlexBox sm_width="80%" width="70%">
           <FAQs results={result[0]} />
         </FlexBox>
       </FlexBox>

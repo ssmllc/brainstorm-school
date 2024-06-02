@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import styled from "styled-components";
 
 interface textProps {
@@ -8,6 +9,7 @@ interface textProps {
   fontweight?: string;
   margin?: string;
   textalign?: string;
+  href?: string;
 }
 
 const Header1 = styled.h1<textProps>`
@@ -50,6 +52,18 @@ const Header4 = styled.p<textProps>`
   line-height: 1.25;
 `;
 
+const Header5 = styled(Link)<textProps>`
+  color: var(--white);
+  font-size: ${({ fontsize }) => (fontsize ? fontsize : "24px")};
+  font-weight: ${({ fontweight }) => (fontweight ? fontweight : "normal")};
+  display: inline;
+  margin: ${({ margin }) => margin};
+  position: relative;
+  text-align: ${({ textalign }) => textalign};
+  text-decoration: underline;
+  line-height: 1.25;
+`;
+
 interface Props {
   level: string;
   text: string;
@@ -57,6 +71,7 @@ interface Props {
   fontSize?: string;
   fontweight?: string;
   margin?: string;
+  href?: string;
   textalign?: string;
 }
 
@@ -67,6 +82,7 @@ const Header = ({
   fontSize,
   fontweight,
   margin,
+  href,
   textalign,
 }: Props) => {
   return (
@@ -95,6 +111,17 @@ const Header = ({
         >
           {text}
         </Header4>
+      )}
+      {level === "5" && (
+        <Header5
+          href={href}
+          color={color}
+          fontsize={fontSize}
+          fontweight={fontweight}
+          margin={margin}
+        >
+          {text}
+        </Header5>
       )}
     </>
   );

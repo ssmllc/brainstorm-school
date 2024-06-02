@@ -1,23 +1,19 @@
 import MediaBanner from "@/app/components/banner/media-banner.component";
-import CardImageDetail from "@/app/components/card/card-image-detail.component";
-import FeaturedCard from "@/app/components/card/featured-card.component";
-import FAQs from "@/app/components/text-block/faqs.component";
-import Typography from "@/app/components/text-block/typography.component";
+import FlexBox from "@/app/components/layout/flexbox.component";
+import Header from "@/app/components/text-block/header.component";
+import AnchorCard from "@/app/components/tracks/track.component";
 import type { Metadata } from "next";
-import FlexBox from "../components/layout/flexbox.component";
-import { CardImage } from "../components/card/simple-card.component";
-import Pill from "../components/pill/pill.component";
-import Header from "../components/text-block/header.component";
-import ActionButton from "../components/buttons/action-button.component";
+import FeaturedCard from "../components/card/featured-card.component";
 
 export const metadata: Metadata = {
-  title: "Brainstorm Blog",
-  description: "Blog",
+  title: "Blogs, News, and Insights | Brainstorm School",
+  description:
+    "Explore insights, tips, and inspiration from artists on the Brainstorm School blog. Elevate your skills, and stay updated with the latest design and gaming trends.",
 };
 
 const fetchData = async () => {
   const query =
-    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27workshops%27%5D+%7B%0A++workshoptitle%2C%0A++content%2C%0A++future%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++workshopname%2C%0A++++slug%2C%0A++++instructor%2C%0A++++description%5B%5D-%3E%2C%0A++++date%2C%0A++++time%2C%0A++++location%2C%0A++++price%2C%0A++++registration%2C%0A++++%22imageUrl%22%3A+preview.asset-%3Eurl%2C%0A++++workexamples%5B%5D+-%3E%2C%0A++%7D%2C%0A++previous%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++workshopname%2C%0A++++slug%2C%0A++++instructor%2C%0A++++description%5B%5D-%3E%2C%0A++++date%2C%0A++++time%2C%0A++++location%2C%0A++++price%2C%0A++++registration%2C%0A++++%22imageUrl%22%3A+preview.asset-%3Eurl%2C%0A++++workexamples%5B%5D+-%3E%2C%0A++%7D%2C%0A++content%2C%0A++faqs%5B%5D-%3E+%7B%0A++++_id%2C%0A++++question%2C%0A++++answer%0A++%7D%0A%7D";
+    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27instructors%27%5D+%7B%0A++_id%2C%0A++title%2C%0A++slug%2C%0A++profession%2C%0A++%22imageUrl%22%3A+poster.asset-%3Eurl%2C%0A++bio%0A%7D";
   // const response = await fetch(query);
   const response = await fetch(query, { cache: "no-store" });
 
@@ -33,143 +29,159 @@ const fetchData = async () => {
 export default async function Blog() {
   const result = await fetchData();
 
-  // console.log("workshops", result[0].faqs);
-
   return (
-    <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
-      <Typography
-        heading="Blog headline for articles"
-        sm_padding="100px 25px 25px"
+    <>
+      <MediaBanner
+        header=""
+        subHeader=""
+        hero="false"
+        theme="dark"
+        background="/banner/banner-19.jpg"
+        image="/banner/media-banner.png"
+        media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <FlexBox
-        margin="20px 60px"
-        sm_margin="20px 25px"
-        sm_width="85%"
-        width="70%"
-        flexdirection="column"
-      >
-        <CardImage preview="/banner/banner-1.jpg" />
-      </FlexBox>
-
-      <Typography heading="Blog headline for articles" />
-
-      <FlexBox margin="20px 60px" sm_width="85%" width="70%">
-        <CardImage height="250px" preview="/banner/banner-2.jpg" />
-        <CardImage height="250px" preview="/banner/banner-3.jpg" />
-        <CardImage height="250px" preview="/banner/banner-4.jpg" />
-      </FlexBox>
-
-      <Typography heading="Blog headline for articles" />
-
-      <FlexBox
-        margin="20px 60px"
-        sm_width="85%"
-        width="70%"
-        alignitems="center"
-      >
-        <CardImageDetail
-          slug="workshops"
-          path="introduction-to-zbrush"
-          preview="/banner/banner-21.jpg"
-          courseTrack="2D - 3D Concept Design"
-          courseName="Introduction to ZBrush"
-          courseCode="ZB1"
-          courseTime="Fri 10am-1pm (PST)"
-          courseDuration="10-week Course"
-          width="50%"
-        />
+      <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
         <FlexBox
-          alignitems="center"
-          flexdirection="column"
-          margin="20px 60px"
+          margin="20px 60px 0"
           sm_width="85%"
           width="70%"
-          sm_textalign="center"
-          textalign="center"
+          flexdirection="column"
         >
-          <Header level="4" text="This blog mentions this course." />
-          <ActionButton type="primary" label="Register Today" margin="20px 0" />
-        </FlexBox>
-      </FlexBox>
+          <Header
+            level="1"
+            text="Brainstorm School Blog - Explore Insights, Tips, and Inspiration"
+          />
 
-      <FlexBox
-        sm_margin="40px 60px 20px"
-        margin="20px 60px"
-        sm_width="90%"
-        width="70%"
-        alignitems="center"
-      >
-        <Header level="4" text="More like this" margin="20px 0" />
-        <FlexBox margin="20px 40px" sm_width="85%" width="70%" flexwrap="wrap">
-          <Pill padding="15px 20px" label="Understanding Proportions" />
-          <Pill padding="15px 20px" label="Basic Anatomy" />
-          <Pill padding="15px 20px" label="Gesture & Rhythm" />
-          <Pill padding="15px 20px" label="Intro to construction" />
-          <Pill padding="15px 20px" label="Anatomical Focus" />
+          <Header
+            level="4"
+            text="Welcome to the Brainstorm School blog, your go-to source for expert insights, practical tips, and creative inspiration from some of the most talented artists in the industry. Whether you're looking to elevate your skills, stay updated with the latest design and gaming trends, or simply find inspiration for your next project, our blog has something for everyone."
+            fontSize="15px"
+          />
         </FlexBox>
-      </FlexBox>
 
-      <FlexBox
-        alignitems="center"
-        flexdirection="column"
-        margin="0 60px"
-        sm_width="85%"
-        width="100%"
-      >
-        <Header
-          text="Blog headline for articles"
-          level="1"
-          margin="20px 0 10px"
-        />
         <FlexBox
-          margin="20px 60px"
-          sm_width="100%"
-          width="100%"
-          alignitems="center"
+          margin="20px 60px 0"
+          sm_width="85%"
+          width="70%"
+          flexdirection="column"
         >
-          <CardImageDetail
-            slug="workshops"
-            path="introduction-to-zbrush"
-            preview="/banner/banner-21.jpg"
-            courseTrack="2D - 3D Concept Design"
-            courseName="Introduction to ZBrush"
-            courseCode="ZB1"
-            courseTime="Fri 10am-1pm (PST)"
-            courseDuration="10-week Course"
-          />
-          <CardImageDetail
-            slug="workshops"
-            path="introduction-to-zbrush"
-            preview="/banner/banner-21.jpg"
-            courseTrack="2D - 3D Concept Design"
-            courseName="Introduction to ZBrush"
-            courseCode="ZB1"
-            courseTime="Fri 10am-1pm (PST)"
-            courseDuration="10-week Course"
-          />
-          <CardImageDetail
-            slug="workshops"
-            path="introduction-to-zbrush"
-            preview="/banner/banner-21.jpg"
-            courseTrack="2D - 3D Concept Design"
-            courseName="Introduction to ZBrush"
-            courseCode="ZB1"
-            courseTime="Fri 10am-1pm (PST)"
-            courseDuration="10-week Course"
-          />
-          <CardImageDetail
-            slug="workshops"
-            path="introduction-to-zbrush"
-            preview="/banner/banner-21.jpg"
-            courseTrack="2D - 3D Concept Design"
-            courseName="Introduction to ZBrush"
-            courseCode="ZB1"
-            courseTime="Fri 10am-1pm (PST)"
-            courseDuration="10-week Course"
+          <Header level="2" text="Insights from Industry Experts" />
+
+          <Header
+            level="4"
+            text="Our blog features a wealth of articles written by industry professionals who share their experiences and knowledge. These insights can help you navigate the ever-evolving world of art and design. Learn about the latest techniques, discover new tools, and get advice on how to succeed in the competitive creative industry."
+            fontSize="15px"
           />
         </FlexBox>
+
+        <FlexBox
+          margin="25px 60px 0"
+          sm_width="85%"
+          width="70%"
+          flexdirection="column"
+        >
+          <Header level="2" text="Practical Tips for Artists" />
+
+          <Header
+            level="4"
+            text="At Brainstorm School, we believe in providing actionable advice that you can apply to your own work. Our blog is packed with practical tips and tutorials designed to help you improve your skills and overcome common challenges faced by artists."
+            fontSize="15px"
+          />
+        </FlexBox>
+
+        <FlexBox
+          margin="25px 60px 0"
+          sm_width="85%"
+          width="70%"
+          flexdirection="column"
+        >
+          <Header level="2" text="Inspiration to Fuel Your Creativity" />
+
+          <Header
+            level="4"
+            text="Finding inspiration can sometimes be the biggest hurdle for an artist. Our blog is dedicated to sparking your creativity by showcasing stunning artwork, sharing artist success stories, and exploring innovative trends in the design and gaming industries."
+            fontSize="15px"
+          />
+        </FlexBox>
+
+        <FlexBox
+          margin="25px 60px 0"
+          sm_width="85%"
+          width="70%"
+          flexdirection="column"
+        >
+          <Header level="2" text="Stay Updated with the Latest Trends" />
+
+          <Header
+            level="4"
+            text="The world of art and design is constantly evolving, and it's essential to stay informed about the latest trends and developments. Our blog covers a wide range of topics, including emerging trends in digital art, game design, and animation."
+            fontSize="15px"
+          />
+        </FlexBox>
+
+        <FlexBox
+          margin="20px 60px 0"
+          sm_margin="20px 25px"
+          sm_width="85%"
+          width="70%"
+        >
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(4, 1fr)",
+              gap: "20px 20px",
+              width: "100%",
+            }}
+          >
+            <AnchorCard
+              base="blog"
+              path="blog-1"
+              label="Blog 1"
+              poster="/banner/banner-1.jpg"
+              width="100%"
+            />
+
+            <AnchorCard
+              base="blog"
+              path="blog-2"
+              label="Blog 2"
+              poster="/banner/banner-2.jpg"
+              width="100%"
+            />
+
+            <AnchorCard
+              base="blog"
+              path="blog-3"
+              label="Blog 3"
+              poster="/banner/banner-3.jpg"
+              width="100%"
+            />
+
+            <AnchorCard
+              base="blog"
+              path="blog-4"
+              label="Blog 4"
+              poster="/banner/banner-4.jpg"
+              width="100%"
+            />
+
+            {/* {result &&
+              result.map((instructor: any) => (
+                <AnchorCard
+                  base="instructors"
+                  path={instructor?.slug?.current || ""}
+                  key={instructor._id}
+                  label={instructor.title}
+                  name={instructor.profession}
+                  poster={instructor.imageUrl}
+                  photo="/instructors/ico-image.png"
+                  width="100%"
+                />
+              ))} */}
+          </div>
+        </FlexBox>
       </FlexBox>
-    </FlexBox>
+    </>
   );
 }

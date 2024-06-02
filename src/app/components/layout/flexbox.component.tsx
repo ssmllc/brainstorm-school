@@ -7,6 +7,7 @@ interface containerProps {
   alignitems?: string;
   flexdirection?: string;
   flexwrap?: string;
+  justifycontent?: string;
   margin?: string;
   textalign?: string;
   sm_textalign?: string;
@@ -22,6 +23,7 @@ const Container = styled.div<containerProps>`
   gap: 10px;
   flex-direction: ${({ flexdirection }) =>
     flexdirection ? flexdirection : "column"};
+  justify-content: ${({ justifycontent }) => justifycontent};
   margin: ${({ sm_margin }) => (sm_margin ? sm_margin : "0 auto")};
   text-align: ${({ sm_textalign }) => (sm_textalign ? sm_textalign : "left")};
   max-width: 1400px;
@@ -54,6 +56,7 @@ interface Props {
   alignitems?: string;
   flexdirection?: string;
   flexwrap?: string;
+  justifycontent?: string;
   sm_margin?: string;
   margin?: string;
   textalign?: string;
@@ -66,6 +69,7 @@ const FlexBox = ({
   alignitems,
   flexdirection,
   flexwrap,
+  justifycontent,
   margin,
   textalign,
   sm_textalign,
@@ -78,6 +82,7 @@ const FlexBox = ({
       alignitems={alignitems}
       flexdirection={flexdirection}
       flexwrap={flexwrap}
+      justifycontent={justifycontent}
       margin={margin}
       textalign={textalign}
       sm_textalign={sm_textalign}

@@ -150,7 +150,7 @@ export default async function Workshops() {
           primary={false}
           heading="Are you ready to take the next step?"
           scale="xl"
-          cta="View All Courses"
+          cta="Register Today"
           ctaType="primary"
         />
 
@@ -173,12 +173,12 @@ export default async function Workshops() {
           />
         </FlexBox>
 
-        <FlexBox flexdirection="column">
+        <FlexBox flexdirection="column" width="70%">
           <FlexBox flexdirection="column" sm_width="80%" margin="25px 0">
             <Header level="3" text="Future Workshops" />
           </FlexBox>
 
-          <FlexBox>
+          <FlexBox width="100%">
             <AnchorCard
               label="Mentorship Online"
               name="Oliver Beck"
@@ -202,12 +202,12 @@ export default async function Workshops() {
           </FlexBox>
         </FlexBox>
 
-        <FlexBox flexdirection="column">
+        <FlexBox flexdirection="column" width="70%">
           <FlexBox flexdirection="column" sm_width="80%" margin="25px 0">
             <Header level="3" text="Previous Workshops" />
           </FlexBox>
 
-          <FlexBox>
+          <FlexBox width="100%">
             <AnchorCard
               label="Mentorship Online"
               name="Oliver Beck"

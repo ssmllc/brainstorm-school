@@ -1,18 +1,10 @@
+import MediaBanner from "@/app/components/banner/media-banner.component";
+import { Card } from "@/app/components/card/card-card.component";
+import { MiniCards } from "@/app/components/card/mini-card.component";
+import { FlexContainer } from "@/app/components/layout/container.component";
+import RegistrationBlock from "@/app/components/registration/registration-block.component";
+import VideoContentSplit from "@/app/components/registration/video-content-split.component";
 import type { Metadata } from "next";
-import MediaBanner from "../components/banner/media-banner.component";
-import Container, {
-  FlexContainer,
-} from "../components/layout/container.component";
-import RegistrationBlock from "../components/registration/registration-block.component";
-import VideoContentSplit from "../components/registration/video-content-split.component";
-import { Card } from "../components/card/card-card.component";
-import TextHeaderBlock from "../components/text-block/text-header-block.component";
-import ImageGallery from "../components/gallery/image-gallery.component";
-import FAQs from "../components/text-block/faqs.component";
-import { MiniCards } from "../components/card/mini-card.component";
-import CardImageDetail from "../components/card/card-image-detail.component";
-import TextBlock from "../components/text-block/text-block.component";
-import SimilarCourses from "../components/similar-courses/similar-courses.component";
 
 export const metadata: Metadata = {
   title: "Brainstorm Courses - Brainstorm School",
@@ -34,7 +26,7 @@ const fetchData = async () => {
   return result;
 };
 
-export default async function About() {
+export default async function FAQs() {
   const result = await fetchData();
 
   return (

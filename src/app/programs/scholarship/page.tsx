@@ -100,7 +100,7 @@ export default async function Scholarship() {
           // https://docs.google.com/forms/d/e/1FAIpQLSeUlK815oUWyjMKRorqD6KMcESkx67JuJ3rrhq4toegr4HtYw/closedform
         />
 
-        <FlexBox
+        {/* <FlexBox
           alignitems="center"
           flexdirection="column"
           margin="100px 60px 0"
@@ -159,9 +159,11 @@ export default async function Scholarship() {
               courseDuration="10-week Course"
             />
           </FlexBox>
-        </FlexBox>
+        </FlexBox> */}
 
-        <FAQsV2 />
+        <FlexBox width="70%">
+          <FAQsV2 />
+        </FlexBox>
       </FlexBox>
     </>
   );

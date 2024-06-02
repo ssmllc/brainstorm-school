@@ -43,10 +43,26 @@ const Home = async () => {
           heading="The Latest Industry Blogs, News and Insights"
           textalign="center"
         >
-          <Slide heading="Lorem ipsum dolor" variantType="lg" />
-          <Slide heading="Lorem ipsum dolor" variantType="lg" />
-          <Slide heading="Lorem ipsum dolor" variantType="lg" />
-          <Slide heading="Lorem ipsum dolor" variantType="lg" />
+          <Slide
+            poster="banner/banner-1.jpg"
+            heading="Lorem ipsum dolor"
+            variantType="lg"
+          />
+          <Slide
+            poster="banner/banner-2.jpg"
+            heading="Lorem ipsum dolor"
+            variantType="lg"
+          />
+          <Slide
+            poster="banner/banner-3.jpg"
+            heading="Lorem ipsum dolor"
+            variantType="lg"
+          />
+          <Slide
+            poster="banner/banner-4.jpg"
+            heading="Lorem ipsum dolor"
+            variantType="lg"
+          />
         </FeaturedSlider>
 
         <ContactBlock

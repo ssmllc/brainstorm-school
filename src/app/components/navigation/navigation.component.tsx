@@ -6,6 +6,7 @@ import { BrainstormContext } from "@/app/context/context-provider";
 import { useContext } from "react";
 import { Sections } from "@/app/types/types";
 import BrainstormLogo from "../Logo/logo.component";
+import { IconSearch } from "../icons/icon-search";
 
 const NavigationBar = styled.div`
   background: var(--off-black-90);
@@ -237,6 +238,11 @@ const Navigation = () => {
         </li>
         <li>
           <MenuItem href="/blog">Blog</MenuItem>
+        </li>
+        <li>
+          <MenuItem href="/search">
+            <IconSearch width="14px" height="14px" />
+          </MenuItem>
         </li>
         <li>
           <CallToAction href="/register">Register</CallToAction>
