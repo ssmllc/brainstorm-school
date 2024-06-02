@@ -1,18 +1,15 @@
 import type { Metadata } from "next";
 import RenderCourses from "./components/render-courses.component";
 import MediaBanner from "../components/banner/media-banner.component";
-import TextBlock from "../components/text-block/text-block.component";
-import Heading from "../components/heading/heading.component";
-import Container from "../components/layout/container.component";
-import FAQsV2 from "../components/text-block/faqs-v2.component";
 import FlexBox from "../components/layout/flexbox.component";
 import Header from "../components/text-block/header.component";
 import CoursesFAQs from "../components/faqs/courses-faqs.component";
+import FeaturedCard from "../components/card/featured-card.component";
 
 export const metadata: Metadata = {
   title: "All Courses | Brainstorm School",
   description:
-    "Enhance your skills with live classes, personalized mentorships, workshops, and interactive boot camps. Join our vibrant community and elevate your creative career. Visit now to learn more!",
+    "Enhance your skills with live classes, personalized mentorship, workshops, and interactive boot camps. Join our vibrant community and elevate your creative career. Visit now to learn more!",
 };
 
 export default async function Courses() {
@@ -28,11 +25,7 @@ export default async function Courses() {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <FlexBox
-        flexdirection="column"
-        margin="100px auto 50px"
-        alignitems="center"
-      >
+      <FlexBox flexdirection="column" margin="100px auto 0" alignitems="center">
         <FlexBox
           flexdirection="column"
           margin="20px 0"
@@ -62,6 +55,23 @@ export default async function Courses() {
             fontSize="15px"
           />
         </FlexBox>
+
+        <FlexBox
+          margin="25px 60px 0"
+          sm_width="85%"
+          width="70%"
+          flexdirection="column"
+        >
+          <Header level="3" text="Featured Course" />
+        </FlexBox>
+
+        <FeaturedCard
+          poster="/banner/banner-5.jpg"
+          superheading="Rhythm & Structure"
+          info="Lorem ipsum dolor sit amet"
+          heading="James Paick"
+          margin="25px 0"
+        />
       </FlexBox>
 
       <FlexBox flexdirection="column" margin="0 auto" alignitems="center">

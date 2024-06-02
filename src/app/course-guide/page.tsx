@@ -6,6 +6,7 @@ import Heading from "../components/heading/heading.component";
 import TracksGroup from "../components/tracks/tracks.component";
 import MoreTracks from "../components/contact/more-tracks.component";
 import MediaBanner from "../components/banner/media-banner.component";
+import FlexBox from "../components/layout/flexbox.component";
 
 export const metadata: Metadata = {
   title: "Brainstorm Courses - Brainstorm School",
@@ -42,7 +43,7 @@ export default async function Page() {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <Container margin="100px auto">
+      <FlexBox margin="100px auto" flexdirection="column" alignitems="center">
         <RegistrationBlock
           primary={false}
           heading="Course Guide"
@@ -80,10 +81,17 @@ export default async function Page() {
           </select>
         </Container>
 
-        <TracksGroup results={result} />
+        <FlexBox
+          flexdirection="column"
+          margin="20px 0"
+          sm_width="80%"
+          width="70%"
+        >
+          <TracksGroup results={result} />
 
-        <MoreTracks />
-      </Container>
+          <MoreTracks />
+        </FlexBox>
+      </FlexBox>
     </>
   );
 }

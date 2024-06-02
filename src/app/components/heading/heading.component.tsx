@@ -3,7 +3,7 @@
 import styled from "styled-components";
 
 const Content = styled.div`
-  margin: 10px 0;
+  margin: 25px 0;
 `;
 
 const SuperHeader = styled.h1`
@@ -13,9 +13,10 @@ const SuperHeader = styled.h1`
   margin: 0;
   padding: 0;
   text-transform: capitalize;
+  width: 70%;
 
   @media (min-width: 800px) {
-    font-size: 32px;
+    font-size: 48px;
   }
 `;
 
@@ -24,20 +25,21 @@ const Header = styled.p`
   font-size: 28px;
   font-weight: bold;
   letter-spacing: 2px;
-  padding: 20px 0;
+  padding: 10px 0;
   text-transform: capitalize;
+  width: 70%;
 
   @media (min-width: 800px) {
-    font-size: 32px;
+    font-size: 48px;
   }
 `;
 
 const SubHeader = styled.p`
   color: var(--white);
-  font-size: 16px;
+  font-size: 28px;
 
   @media (min-width: 800px) {
-    font-size: 18px;
+    font-size: 48px;
   }
 `;
 

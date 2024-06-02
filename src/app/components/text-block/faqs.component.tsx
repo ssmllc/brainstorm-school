@@ -47,6 +47,7 @@ const Anchor = styled(Link)`
   font-size: 15px;
   text-decoration: underline;
 `;
+
 const FAQs = ({ results }: any) => {
   const [selected, setSelected] = useState<number | null>(null);
   const { faqs } = results;
@@ -74,9 +75,7 @@ const FAQs = ({ results }: any) => {
               padding: "0",
             }}
           >
-            <TextHeaderBlock fontSize="28px" fontWeight="bold">
-              Course FAQ&apos;s
-            </TextHeaderBlock>
+            <Header level="2" text="FAQ's" margin="20px 0" />
 
             {faqs.map(
               (

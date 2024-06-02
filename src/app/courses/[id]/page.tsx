@@ -12,6 +12,7 @@ import DecipherText from "../components/decipher-text.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
 import Header from "@/app/components/text-block/header.component";
 import FeaturedCard from "@/app/components/card/featured-card.component";
+import CoursesFAQs from "@/app/components/faqs/courses-faqs.component";
 
 const fetchData = async () => {
   const query =
@@ -78,13 +79,13 @@ export default async function Page({ params }: { params: { id: string } }) {
           <Header level="3" text="Featured Course" />
         </FlexBox>
 
-        <FeaturedCard
+        {/* <FeaturedCard
           poster="/banner/banner-5.jpg"
           superheading="Rhythm & Structure"
           info="Lorem ipsum dolor sit amet"
           heading="James Paick"
           margin="25px 0"
-        />
+        /> */}
 
         <FlexBox
           margin="25px 60px 0"
@@ -114,6 +115,17 @@ export default async function Page({ params }: { params: { id: string } }) {
           scale="xl"
           cta="View All Courses"
         />
+      </FlexBox>
+
+      <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
+        <FlexBox
+          flexdirection="column"
+          margin="20px 0"
+          sm_width="80%"
+          width="70%"
+        >
+          <FAQs results={selectedCourses} />
+        </FlexBox>
       </FlexBox>
     </>
   );

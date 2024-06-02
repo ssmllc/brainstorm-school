@@ -10,6 +10,7 @@ import TextBlock from "../text-block/text-block.component";
 import { Card } from "../card/card-card.component";
 import { TracksContext } from "@/app/context/tracks-context-provider";
 import Header from "../text-block/header.component";
+import FlexBox from "../layout/flexbox.component";
 
 const TracksContainer = styled.div`
   /* border: thin solid red; */
@@ -34,7 +35,7 @@ const Tracks = styled.div`
   @media (min-width: 800px) {
     flex-direction: row;
     max-width: 1280px;
-    width: 100%;
+    width: 70%;
   }
 `;
 
@@ -414,7 +415,7 @@ const TracksGroup = ({ results }: Props) => {
         )}
       </Tracks>
 
-      <Container>
+      <FlexBox width="100%" flexdirection="column" alignitems="center">
         {currentTrack.length > 0 && (
           <TextBlock
             justifycontent="center"
@@ -476,7 +477,7 @@ const TracksGroup = ({ results }: Props) => {
               ))
             )}
         </FlexContainer>
-      </Container>
+      </FlexBox>
     </TracksContainer>
   );
 };

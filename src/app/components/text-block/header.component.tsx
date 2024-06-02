@@ -68,7 +68,6 @@ const Header6 = styled("span")<textProps>`
   color: var(--white);
   font-size: ${({ fontsize }) => (fontsize ? fontsize : "24px")};
   font-weight: ${({ fontweight }) => (fontweight ? fontweight : "normal")};
-  display: inline;
   margin: ${({ margin }) => margin};
   position: relative;
   text-align: ${({ textalign }) => textalign};

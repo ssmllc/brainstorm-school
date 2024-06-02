@@ -19,7 +19,7 @@ const Content = styled.div`
   padding: 35px 0 25px;
   position: relative;
   max-width: 1400px;
-  width: 100vw;
+  width: 100%;
 
   @media (min-width: 800px) {
     padding: 75px 0;
@@ -50,7 +50,7 @@ const Block = styled.div`
     padding: 30px 20px;
 
     @media (min-width: 800px) {
-      padding: 40px 40px;
+      padding: 40px 0;
     }
   }
 

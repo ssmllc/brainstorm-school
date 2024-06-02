@@ -75,7 +75,7 @@ const CoursesFAQs = () => {
           padding: "0",
         }}
       >
-        <Header level="2" text="Course FAQ's" />
+        <Header level="2" text="FAQ's" margin="20px 0" />
 
         <Container
           className="faq-container"
@@ -83,7 +83,11 @@ const CoursesFAQs = () => {
           background="var(--dark-grey)"
           padding="0 20px"
         >
-          <Question className="faq-question" onClick={() => toggleFAQ(1)}>
+          <Question
+            font-size="16px"
+            className="faq-question"
+            onClick={() => toggleFAQ(1)}
+          >
             <Header level="3" text="What is the cost of the courses?" />
             <span>
               <Image
@@ -132,9 +136,14 @@ const CoursesFAQs = () => {
           background="var(--dark-grey)"
           padding="0 20px"
         >
-          <Question className="faq-question" onClick={() => toggleFAQ(2)}>
+          <Question
+            font-size="16px"
+            className="faq-question"
+            onClick={() => toggleFAQ(2)}
+          >
             <Header
-              level="3"
+              level="4"
+              font-size="16px"
               text="What are the registration dates for upcoming courses?"
             />
             <span>
@@ -165,8 +174,16 @@ const CoursesFAQs = () => {
           background="var(--dark-grey)"
           padding="0 20px"
         >
-          <Question className="faq-question" onClick={() => toggleFAQ(3)}>
-            <Header level="3" text="How long do the courses last?" />
+          <Question
+            font-size="16px"
+            className="faq-question"
+            onClick={() => toggleFAQ(3)}
+          >
+            <Header
+              level="4"
+              font-size="16px"
+              text="How long do the courses last?"
+            />
             <span>
               <Image
                 src={`${
@@ -195,7 +212,11 @@ const CoursesFAQs = () => {
           background="var(--dark-grey)"
           padding="0 20px"
         >
-          <Question className="faq-question" onClick={() => toggleFAQ(4)}>
+          <Question
+            font-size="16px"
+            className="faq-question"
+            onClick={() => toggleFAQ(4)}
+          >
             <Header
               level="3"
               text="How can I get more information about a specific course?"
