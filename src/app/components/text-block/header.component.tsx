@@ -64,6 +64,17 @@ const Header5 = styled(Link)<textProps>`
   line-height: 1.25;
 `;
 
+const Header6 = styled("span")<textProps>`
+  color: var(--white);
+  font-size: ${({ fontsize }) => (fontsize ? fontsize : "24px")};
+  font-weight: ${({ fontweight }) => (fontweight ? fontweight : "normal")};
+  display: inline;
+  margin: ${({ margin }) => margin};
+  position: relative;
+  text-align: ${({ textalign }) => textalign};
+  line-height: 1.25;
+`;
+
 interface Props {
   level: string;
   text: string;
@@ -122,6 +133,16 @@ const Header = ({
         >
           {text}
         </Header5>
+      )}
+      {level === "6" && (
+        <Header6
+          color={color}
+          fontsize={fontSize}
+          fontweight={fontweight}
+          margin={margin}
+        >
+          {text}
+        </Header6>
       )}
     </>
   );

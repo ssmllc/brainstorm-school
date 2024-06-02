@@ -6,6 +6,9 @@ import styled from "styled-components";
 import Container from "../layout/container.component";
 import TextHeaderBlock from "./text-header-block.component";
 import Image from "next/image";
+import Header from "./header.component";
+import DecipherText from "@/app/courses/components/decipher-text.component";
+import Link from "next/link";
 
 const Question = styled("button")`
   align-items: center;
@@ -25,20 +28,25 @@ const Question = styled("button")`
 const Answer = styled("div")`
   background: var(--dark-grey);
   color: var(--white);
-  height: 0;
+  max-height: 0;
   overflow: hidden;
   opacity: 0;
   padding: 0;
   transition: all 0.35s ease-out;
 
   &.active {
-    height: 100px;
+    max-height: 9999px;
     opacity: 1;
     padding: 25px 0;
     transition: all 0.35s ease-out;
   }
 `;
 
+const Anchor = styled(Link)`
+  color: var(--white);
+  font-size: 15px;
+  text-decoration: underline;
+`;
 const FAQs = ({ results }: any) => {
   const [selected, setSelected] = useState<number | null>(null);
   const { faqs } = results;
@@ -78,13 +86,13 @@ const FAQs = ({ results }: any) => {
                   _id,
                 }: {
                   question: string;
-                  answer: string;
+                  answer: string | any;
                   _id: number;
                 },
                 index: number
               ) => (
                 <Container
-                  key={_id}
+                  key={index}
                   className="faq-container"
                   width="100%"
                   background="var(--dark-grey)"
@@ -95,19 +103,7 @@ const FAQs = ({ results }: any) => {
                     className="faq-question"
                     onClick={() => toggleFAQ(index)}
                   >
-                    <span>{question}</span>
-                    <span>
-                      <Image
-                        src={`${
-                          selected === index
-                            ? "/icons/ico-x.png"
-                            : "/icons/ico-expand.png"
-                        }`}
-                        width={20}
-                        height={20}
-                        alt="Expand collapse icon"
-                      />
-                    </span>
+                    {question}
                   </Question>
 
                   <Answer
@@ -115,7 +111,70 @@ const FAQs = ({ results }: any) => {
                       selected === index ? "active" : ""
                     }`}
                   >
-                    {answer}
+                    {answer.map((block: any, j: number) => {
+                      console.log("block style", block.style);
+                      if (block.style === "h1") {
+                        return (
+                          <Header
+                            level="1"
+                            key={j}
+                            text={block.children[0].text}
+                          />
+                        );
+                      }
+
+                      if (block.style === "h2") {
+                        return (
+                          <Header
+                            level="2"
+                            key={block._key}
+                            text={block.children[0].text}
+                          />
+                        );
+                      }
+
+                      if (block.style === "h3") {
+                        return (
+                          <Header
+                            level="3"
+                            key={block._key}
+                            text={block.children[0].text}
+                          />
+                        );
+                      }
+
+                      if (block.style === "normal") {
+                        return block.children.map((mark: any) => {
+                          if (block.markDefs.length > 0) {
+                            if (mark.marks.length > 0) {
+                              return block.markDefs.map((marker: any) => {
+                                if (mark.marks[0] === marker._key) {
+                                  // console.log("marker match", marker._key);
+                                  // console.log("marker match", marker._type);
+                                  // console.log("marker match", marker.href);
+                                  return (
+                                    <Anchor
+                                      key={marker._key}
+                                      href={marker.href}
+                                    >
+                                      {mark.text}
+                                    </Anchor>
+                                  );
+                                }
+                              });
+                            }
+                          }
+                          return (
+                            <Header
+                              key={mark._key}
+                              level="6"
+                              fontSize="15px"
+                              text={mark.text}
+                            />
+                          );
+                        });
+                      }
+                    })}
                   </Answer>
                 </Container>
               )

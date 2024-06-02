@@ -55,7 +55,7 @@ const RenderCourses = ({ selectedCourses, noheading, width }: Props) => {
                       margin="0 auto"
                     >
                       {courses?.map((course: Course) => {
-                        console.log("course", course.schedule);
+                        // console.log("course", course.schedule);
                         return (
                           <CardImageDetail
                             key={course._id}
