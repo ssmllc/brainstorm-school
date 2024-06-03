@@ -21,7 +21,6 @@ const Container = styled.div<containerProps>`
   box-shadow: ${({ boxshadow }) =>
     boxshadow ? boxshadow : "0 0 15px rgba(0, 0, 0, 0.5)"};
   border-radius: 20px;
-  border: thin solid var(--medium-grey);
   display: flex;
   flex-direction: ${({ stacked }) => (stacked === "true" ? "column" : "row")};
   padding: 25px 10px;

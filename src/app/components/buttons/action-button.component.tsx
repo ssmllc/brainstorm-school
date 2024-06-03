@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
@@ -9,9 +10,10 @@ interface buttonProps {
   offsetPadding?: string;
 }
 
-type Action = {
+type Props = {
   type: string;
   label: string;
+  href?: string;
   margin?: string;
   offsetPadding?: string;
 };
@@ -40,10 +42,16 @@ const CallToAction = styled.button<buttonProps>`
   text-transform: uppercase;
 `;
 
-const ActionButton = ({ type, label, margin, offsetPadding }: Action) => {
+const ActionButton = ({ href, type, label, margin, offsetPadding }: Props) => {
   return (
     <CallToAction type={type} margin={margin} offsetPadding={offsetPadding}>
-      {label}
+      {href ? (
+        <Link style={{ color: "var(--white)" }} href={href}>
+          Register
+        </Link>
+      ) : (
+        label
+      )}
     </CallToAction>
   );
 };

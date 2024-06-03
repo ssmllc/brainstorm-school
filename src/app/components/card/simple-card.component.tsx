@@ -8,6 +8,7 @@ import { Card } from "./card-card.component";
 import Container from "../layout/container.component";
 import DecipherText from "@/app/courses/components/decipher-text.component";
 import Link from "next/link";
+import Header from "../text-block/header.component";
 const CardHeader = ({ text }: { text: string }) => <h2>{text}</h2>;
 
 interface previewProps {
@@ -162,12 +163,7 @@ const CardLayout = ({ results }: Props) => {
 
         <InstructorWrapper>
           <CourseDetails>
-            <Container
-              // border={true}
-              display="flex"
-              padding="20px 20px"
-              width="100%"
-            >
+            <Container display="flex" padding="20px 20px" width="100%">
               <Container width="50%">
                 <TextBlock padding="0">Course Info</TextBlock>
               </Container>
@@ -205,8 +201,18 @@ const CardLayout = ({ results }: Props) => {
                 padding="20px 20px"
                 width="100%"
               >
-                <p>Opens</p>
-                <p>{formatOpen}</p>
+                <Header
+                  level="4"
+                  text="Opens"
+                  fontSize="20px"
+                  fontweight="bold"
+                />
+                <Header
+                  level="4"
+                  text={formatOpen}
+                  fontSize="14px"
+                  margin="10px 0"
+                />
               </Container>
 
               <Container
@@ -215,8 +221,18 @@ const CardLayout = ({ results }: Props) => {
                 padding="20px 20px"
                 width="100%"
               >
-                <p>Start</p>
-                <p>{formatStart}</p>
+                <Header
+                  level="4"
+                  text="Start"
+                  fontSize="20px"
+                  fontweight="bold"
+                />
+                <Header
+                  level="4"
+                  text={formatStart}
+                  fontSize="14px"
+                  margin="10px 0"
+                />
               </Container>
             </Container>
 

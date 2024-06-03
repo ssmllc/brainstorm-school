@@ -132,6 +132,9 @@ interface Props {
   label?: string;
   image?: string;
   media?: string;
+  duration?: string;
+  time?: string;
+  registration?: string;
 }
 
 const MediaBanner = ({
@@ -142,6 +145,9 @@ const MediaBanner = ({
   hero,
   image,
   media,
+  duration,
+  time,
+  registration,
 }: Props) => {
   const [randomBanner, setRandomBanner] = useState<string>("");
 
@@ -207,7 +213,7 @@ const MediaBanner = ({
                       </g>
                     </svg>
                   </span>
-                  Fri 10am - 1pm (PST)
+                  {time}
                 </CourseDetail>
 
                 <CourseDetail color="var(--white)">
@@ -233,14 +239,19 @@ const MediaBanner = ({
                       </g>
                     </svg>
                   </span>
-                  10 Week Course
+                  {duration}
                 </CourseDetail>
               </>
             )}
           </Column>
           {hero === "true" && (
             <Column>
-              <ActionButton type="primary" label="Register" margin="0" />
+              <ActionButton
+                href={registration}
+                type="primary"
+                label="Register"
+                margin="0"
+              />
             </Column>
           )}
         </ActionWrapper>

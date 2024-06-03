@@ -12,6 +12,7 @@ import Carousel from "@/app/components/carousel/carousel.component";
 import { Card } from "@/app/components/card/card-card.component";
 import TextHeaderBlock from "@/app/components/text-block/text-header-block.component";
 import SimilarCourses from "@/app/components/similar-courses/similar-courses.component";
+import DecipherText from "../../components/decipher-text.component";
 
 const fetchData = async () => {
   const query =
@@ -45,6 +46,10 @@ export default async function Page({
     return course.slug.current === params.courseId[0];
   })[0];
 
+  const { category, instructors, schedule } = selectedResults;
+
+  const { duration, time, registration } = schedule[0];
+
   return (
     <div
       style={{
@@ -52,8 +57,12 @@ export default async function Page({
       }}
     >
       <MediaBanner
+        label={category}
         header={header}
         subHeader="2024"
+        duration={duration}
+        time={time}
+        registration={registration}
         hero="true"
         theme="dark"
         background="/banner/banner-3.jpg"
@@ -133,20 +142,33 @@ export default async function Page({
             position="relative"
             display="flex"
           >
-            <Card
-              background="0"
-              boxshadow="none"
-              stacked="false"
-              icon="/instructors/ico-image.png"
-              heading="Christian Nacordia"
-              subHeading="Concept Artist & Instructor"
-            />
-            <TextBlock fontSize="14px" padding="0 0 0 100px">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-              fugiat, unde nemo dicta commodi veritatis veniam voluptatibus
-              adipisci recusandae ea impedit dolorem assumenda at earum. Ex nisi
-              quia iste vitae!
-            </TextBlock>
+            {instructors?.map(
+              ({
+                title,
+                profession,
+                bio,
+              }: {
+                bio: string | null;
+                title: string;
+                profession: string;
+              }) => {
+                return (
+                  <>
+                    <Card
+                      background="0"
+                      boxshadow="none"
+                      stacked="false"
+                      icon="/instructors/ico-image.png"
+                      heading={title}
+                      subHeading={profession}
+                    />
+                    <TextBlock fontSize="14px" padding="0 0 0 100px">
+                      <DecipherText description={bio} />
+                    </TextBlock>
+                  </>
+                );
+              }
+            )}
           </FlexContainer>
         </Container>
       </Container>
