@@ -5,7 +5,8 @@ import Link from "next/link";
 import styled from "styled-components";
 
 interface Props {
-  results: any;
+  results?: any;
+  description?: any;
 }
 
 const Anchor = styled(Link)`
@@ -14,13 +15,14 @@ const Anchor = styled(Link)`
   text-decoration: underline;
 `;
 
-const DecipherText = ({ results }: Props) => {
-  const { details } = results;
+const DecipherText = ({ results, description }: Props) => {
+  const { details } = results || [];
 
+  const textToDecifer = details?.length > 0 ? details : description;
   return (
     <>
-      {details?.map((block: any, index: number) => {
-        console.log("block style", block.style);
+      {textToDecifer?.map((block: any, index: number) => {
+        // console.log("block style", block.style);
         if (block.style === "h1") {
           return (
             <Header
@@ -56,7 +58,10 @@ const DecipherText = ({ results }: Props) => {
 
         if (block.style === "normal") {
           return (
-            <div key={index}>
+            <div
+              key={index}
+              style={{ margin: "20px 0", fontSize: "15px", lineHeight: "1.5" }}
+            >
               {block.children.map((mark: any) => {
                 if (block.markDefs.length > 0) {
                   if (mark.marks.length > 0) {

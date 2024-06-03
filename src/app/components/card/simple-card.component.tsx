@@ -6,7 +6,8 @@ import Pill from "../pill/pill.component";
 import TextBlock from "../text-block/text-block.component";
 import { Card } from "./card-card.component";
 import Container from "../layout/container.component";
-
+import DecipherText from "@/app/courses/components/decipher-text.component";
+import Link from "next/link";
 const CardHeader = ({ text }: { text: string }) => <h2>{text}</h2>;
 
 interface previewProps {
@@ -74,36 +75,15 @@ const CardTags = ({ tags }: { tags?: string[] }) => (
       What you&apos;ll learn
     </TextBlock>
     <TagsGroup>
-      <Pill
-        background="rgba(255, 255, 255, .10)"
-        label="Understanding Proportions"
-        padding="20px 20px"
-        boxshadow="0 0 7px var(--black)"
-      />
-      <Pill
-        background="rgba(255, 255, 255, .10)"
-        label="Basic Anatomy"
-        padding="20px 20px"
-        boxshadow="0 0 7px var(--black)"
-      />
-      <Pill
-        background="rgba(255, 255, 255, .10)"
-        label="Gesture & Rhythm"
-        padding="20px 20px"
-        boxshadow="0 0 7px var(--black)"
-      />
-      <Pill
-        background="rgba(255, 255, 255, .10)"
-        label="Intro to construction"
-        padding="20px 20px"
-        boxshadow="0 0 7px var(--black)"
-      />
-      <Pill
-        background="rgba(255, 255, 255, .10)"
-        label="Anatomical Focus"
-        padding="20px 20px"
-        boxshadow="0 0 7px var(--black)"
-      />
+      {tags?.map((tag: any, index: number) => (
+        <Pill
+          key={index}
+          background="rgba(255, 255, 255, .10)"
+          label={tag.title}
+          padding="20px 20px"
+          boxshadow="0 0 7px var(--black)"
+        />
+      ))}
     </TagsGroup>
   </Tags>
 );
@@ -154,15 +134,30 @@ const CourseDetails = styled("div")`
   }
 `;
 
-const CardLayout = () => {
+interface Props {
+  results: any;
+}
+
+const CardLayout = ({ results }: Props) => {
+  console.log("results from course details", results);
+  const { imageUrl, schedule, price, instructors, tags, description, format } =
+    results;
+
+  const { duration, registration, open, start, term, time } = schedule[0];
+
+  const { title, profession } = instructors[0];
+
+  const formatOpen = new Date(open).toDateString();
+  const formatStart = new Date(start).toDateString();
+
   return (
     <Container margin="0 auto" padding="25px 25px">
       <Wrapper>
         <CardWrapper>
           <CardHeader text="Gain understanding of the rhythm and structure for anatomical background" />
-          <CardImage preview="/cards/character-design.jpg" />
-          <CardDetails text="An 8 week introduction to figure drawing and the basic skills of gesture drawing, construction, and basic anatomy. This course focuses on building a process from gesture to form, construction and surface anatomy. It is a perfect class for a beginner artist looking for the proper starting point." />
-          <CardTags />
+          <CardImage preview={imageUrl} />
+          <DecipherText description={description} />
+          <CardTags tags={tags} />
         </CardWrapper>
 
         <InstructorWrapper>
@@ -184,7 +179,15 @@ const CardLayout = () => {
                   color="var(--blue)"
                   texttransform="uppercase"
                 >
-                  Registration Open
+                  <Link
+                    style={{
+                      color: "var(--blue)",
+                      textDecoration: "underline",
+                    }}
+                    href={registration}
+                  >
+                    Registration Open
+                  </Link>
                 </TextBlock>
               </Container>
             </Container>
@@ -203,7 +206,7 @@ const CardLayout = () => {
                 width="100%"
               >
                 <p>Opens</p>
-                <p>November 7, 2024</p>
+                <p>{formatOpen}</p>
               </Container>
 
               <Container
@@ -212,8 +215,8 @@ const CardLayout = () => {
                 padding="20px 20px"
                 width="100%"
               >
-                <p>Opens</p>
-                <p>November 7, 2024</p>
+                <p>Start</p>
+                <p>{formatStart}</p>
               </Container>
             </Container>
 
@@ -222,8 +225,8 @@ const CardLayout = () => {
               boxshadow="none"
               stacked="false"
               icon="/instructors/ico-image.png"
-              heading="Christian Nacordia"
-              subHeading="Concept Artist & Instructor"
+              heading={title}
+              subHeading={profession}
               width="100%"
             />
 
@@ -243,7 +246,7 @@ const CardLayout = () => {
 
                 <Container display="flex" padding="10px 20px" width="50%">
                   <TextBlock fontSize="14px" padding="0">
-                    Live (Recorded)
+                    {format}
                   </TextBlock>
                 </Container>
               </Container>
@@ -257,7 +260,7 @@ const CardLayout = () => {
 
                 <Container display="flex" padding="10px 20px" width="50%">
                   <TextBlock fontSize="14px" padding="0">
-                    $100.00 USD
+                    {price}
                   </TextBlock>
                 </Container>
               </Container>
@@ -285,7 +288,7 @@ const CardLayout = () => {
 
                 <Container display="flex" padding="10px 20px" width="50%">
                   <TextBlock fontSize="14px" padding="0">
-                    10 Weeks
+                    {duration}
                   </TextBlock>
                 </Container>
               </Container>

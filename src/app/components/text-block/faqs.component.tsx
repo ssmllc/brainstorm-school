@@ -52,7 +52,7 @@ const FAQs = ({ results }: any) => {
   const [selected, setSelected] = useState<number | null>(null);
   const { faqs } = results;
 
-  console.log("client", faqs);
+  // console.log("client", faqs);
 
   const toggleFAQ = (selectedIndex: number) => {
     if (selected === selectedIndex) {
@@ -111,7 +111,7 @@ const FAQs = ({ results }: any) => {
                     }`}
                   >
                     {answer.map((block: any, j: number) => {
-                      console.log("block style", block.style);
+                      // console.log("block style", block.style);
                       if (block.style === "h1") {
                         return (
                           <Header
