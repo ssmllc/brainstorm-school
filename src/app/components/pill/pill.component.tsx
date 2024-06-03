@@ -15,7 +15,9 @@ const PillContainer = styled.span<PillContainerProps>`
   color: var(--white);
   display: inline-block;
   font-size: 12px;
-  padding: ${({ padding }) => (padding ? padding : "10px 15px")};
+  letter-spacing: 1px;
+  padding: ${({ padding }) => (padding ? padding : "15px 15px")};
+  text-transform: uppercase;
 `;
 
 interface Props {

@@ -3,7 +3,7 @@
 import styled from "styled-components";
 
 const Content = styled.div`
-  margin: 25px 0;
+  margin: 15px 0;
 `;
 
 const SuperHeader = styled.h1`
@@ -36,10 +36,10 @@ const Header = styled.p`
 
 const SubHeader = styled.p`
   color: var(--white);
-  font-size: 28px;
+  font-size: 22px;
 
   @media (min-width: 800px) {
-    font-size: 48px;
+    font-size: 36px;
   }
 `;
 

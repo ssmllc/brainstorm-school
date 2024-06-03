@@ -160,7 +160,7 @@ const CardLayout = ({ results }: Props) => {
           <CardHeader text="Gain understanding of the rhythm and structure for anatomical background" />
           <CardImage preview={imageUrl} />
           <DecipherText description={description} />
-          <CardTags tags={tags} />
+          {tags && <CardTags tags={tags} />}
         </CardWrapper>
 
         <InstructorWrapper>
@@ -272,20 +272,6 @@ const CardLayout = ({ results }: Props) => {
               <Container display="flex" width="100%">
                 <Container display="flex" padding="10px 20px" width="50%">
                   <TextBlock fontWeight="bold" fontSize="14px" padding="0">
-                    Price
-                  </TextBlock>
-                </Container>
-
-                <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontSize="14px" padding="0">
-                    {price}
-                  </TextBlock>
-                </Container>
-              </Container>
-
-              <Container display="flex" width="100%">
-                <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontWeight="bold" fontSize="14px" padding="0">
                     Location
                   </TextBlock>
                 </Container>
@@ -300,6 +286,34 @@ const CardLayout = ({ results }: Props) => {
               <Container display="flex" width="100%">
                 <Container display="flex" padding="10px 20px" width="50%">
                   <TextBlock fontWeight="bold" fontSize="14px" padding="0">
+                    Term
+                  </TextBlock>
+                </Container>
+
+                <Container display="flex" padding="10px 20px" width="50%">
+                  <TextBlock fontSize="14px" padding="0">
+                    {term}
+                  </TextBlock>
+                </Container>
+              </Container>
+
+              <Container display="flex" width="100%">
+                <Container display="flex" padding="10px 20px" width="50%">
+                  <TextBlock fontWeight="bold" fontSize="14px" padding="0">
+                    Time
+                  </TextBlock>
+                </Container>
+
+                <Container display="flex" padding="10px 20px" width="50%">
+                  <TextBlock fontSize="14px" padding="0">
+                    {time}
+                  </TextBlock>
+                </Container>
+              </Container>
+
+              <Container display="flex" width="100%">
+                <Container display="flex" padding="10px 20px" width="50%">
+                  <TextBlock fontWeight="bold" fontSize="14px" padding="0">
                     Duration
                   </TextBlock>
                 </Container>
@@ -307,6 +321,20 @@ const CardLayout = ({ results }: Props) => {
                 <Container display="flex" padding="10px 20px" width="50%">
                   <TextBlock fontSize="14px" padding="0">
                     {duration}
+                  </TextBlock>
+                </Container>
+              </Container>
+
+              <Container display="flex" width="100%">
+                <Container display="flex" padding="10px 20px" width="50%">
+                  <TextBlock fontWeight="bold" fontSize="14px" padding="0">
+                    Price
+                  </TextBlock>
+                </Container>
+
+                <Container display="flex" padding="10px 20px" width="50%">
+                  <TextBlock fontSize="14px" padding="0">
+                    {price}
                   </TextBlock>
                 </Container>
               </Container>

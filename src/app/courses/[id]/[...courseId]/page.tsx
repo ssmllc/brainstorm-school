@@ -4,7 +4,6 @@ import RegistrationBlock from "@/app/components/registration/registration-block.
 import CardLayout, {
   CardImage,
 } from "@/app/components/card/simple-card.component";
-import TextBlock from "@/app/components/text-block/text-block.component";
 import Container, {
   FlexContainer,
 } from "@/app/components/layout/container.component";
@@ -47,7 +46,7 @@ export default async function Page({
     return course.slug.current === params.courseId[0];
   })[0];
 
-  const { category, instructors, schedule } = selectedResults;
+  const { category, instructors, schedule, code } = selectedResults;
 
   const { duration, time, registration } = schedule[0];
 
@@ -60,7 +59,7 @@ export default async function Page({
       <MediaBanner
         label={category}
         header={header}
-        subHeader="2024"
+        subHeader={code}
         duration={duration}
         time={time}
         registration={registration}

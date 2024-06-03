@@ -36,20 +36,18 @@ export default async function Page({ params }: { params: { id: string } }) {
     (res: any) => res.slug.current === params.id
   );
 
-  const header = result.filter((category: any) => {
-    return category.slug.current === params.id;
-  })[0]["category"];
-
   const selectedResults = result.filter((course: any) => {
     // console.log("slug", course.slug.current);
     // console.log("params.id[0]", params.id);
     return course.slug.current === params.id;
   })[0];
 
+  const { category } = selectedResults && selectedResults;
+
   return (
     <>
       <MediaBanner
-        header={header}
+        header={category}
         subHeader="2024"
         hero="false"
         theme="dark"
@@ -79,13 +77,13 @@ export default async function Page({ params }: { params: { id: string } }) {
           <Header level="3" text="Featured Course" />
         </FlexBox>
 
-        {/* <FeaturedCard
+        <FeaturedCard
           poster="/banner/banner-5.jpg"
           superheading="Rhythm & Structure"
           info="Lorem ipsum dolor sit amet"
           heading="James Paick"
           margin="25px 0"
-        /> */}
+        />
 
         <FlexBox
           margin="25px 60px 0"

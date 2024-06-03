@@ -18,7 +18,8 @@ const Banner = styled.div<bannerProps>`
   background: ${({ theme }) =>
     theme === "light" ? "var(--white)" : "var(--black)"};
   display: flex;
-  height: ${({ hero }) => (hero === "true" ? "100vh" : "50vh")};
+  min-height: 50vh;
+  /* height: ${({ hero }) => (hero === "true" ? "100vh" : "50vh")}; */
   flex-direction: column;
   overflow: hidden;
   padding: 100px 0 0 0;
@@ -47,8 +48,9 @@ const Banner = styled.div<bannerProps>`
   &::after {
     background: linear-gradient(
       to bottom,
-      var(--black) 25%,
-      rgba(0, 0, 0, 0) 100%
+      var(--off-black) 25%,
+      rgba(0, 0, 0, 0) 75%,
+      var(--off-black) 100%
     );
     content: "";
     display: block;
@@ -68,7 +70,7 @@ const Content = styled.div`
   justify-content: space-between;
   margin: 0 auto;
   position: relative;
-  width: 75%;
+  width: 80%;
   z-index: 2;
 
   @media (min-width: 800px) {
@@ -77,7 +79,7 @@ const Content = styled.div`
 `;
 
 const Column = styled.div`
-  /* border: thin dashed green; */
+  width: 50%;
 `;
 
 const ActionWrapper = styled.div`
@@ -112,7 +114,7 @@ const Media = styled.div<mediaProps>`
 
   @media (min-width: 800px) {
     height: 500px;
-    margin: 75px auto;
+    margin: 50px auto;
     width: 50%;
   }
 `;
