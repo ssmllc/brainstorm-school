@@ -7,6 +7,10 @@ import styled from "styled-components";
 interface Props {
   results?: any;
   description?: any;
+  sm_width?: string;
+  width?: string;
+  sm_margin?: string;
+  margin?: string;
 }
 
 const Anchor = styled(Link)`
@@ -15,7 +19,31 @@ const Anchor = styled(Link)`
   text-decoration: underline;
 `;
 
-const DecipherText = ({ results, description }: Props) => {
+interface textGroupProps {
+  sm_width?: string;
+  width?: string;
+  sm_margin?: string;
+  margin?: string;
+}
+const TextGroup = styled.div<textGroupProps>`
+  color: var(--white);
+  font-size: 15px;
+  line-height: 1.5;
+  margin: ${({ sm_margin }) => (sm_margin ? sm_margin : "20px 0")};
+
+  @media (min-width: 800px) {
+    margin: ${({ margin }) => (margin ? margin : "20px 0")};
+  }
+`;
+
+const DecipherText = ({
+  results,
+  description,
+  sm_margin,
+  margin,
+  width,
+  sm_width,
+}: Props) => {
   const { details } = results || [];
 
   const textToDecifer = details?.length > 0 ? details : description;
@@ -58,18 +86,18 @@ const DecipherText = ({ results, description }: Props) => {
 
         if (block.style === "normal") {
           return (
-            <div
+            <TextGroup
               key={index}
-              style={{ margin: "20px 0", fontSize: "15px", lineHeight: "1.5" }}
+              sm_margin={sm_margin}
+              margin={margin}
+              sm_width={sm_width}
+              width={width}
             >
               {block.children.map((mark: any) => {
                 if (block.markDefs.length > 0) {
                   if (mark.marks.length > 0) {
                     return block.markDefs.map((marker: any) => {
                       if (mark.marks[0] === marker._key) {
-                        // console.log("marker match", marker._key);
-                        // console.log("marker match", marker._type);
-                        // console.log("marker match", marker.href);
                         return (
                           <Anchor key={marker._key} href={marker.href}>
                             {mark.text}
@@ -89,7 +117,7 @@ const DecipherText = ({ results, description }: Props) => {
                   />
                 );
               })}
-            </div>
+            </TextGroup>
           );
         }
       })}

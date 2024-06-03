@@ -144,9 +144,11 @@ const CardLayout = ({ results }: Props) => {
   const { imageUrl, schedule, price, instructors, tags, description, format } =
     results;
 
-  const { duration, registration, open, start, term, time } = schedule[0];
+  const { duration, registration, open, start, term, time } = schedule
+    ? schedule[0]
+    : [];
 
-  const { title, profession } = instructors[0];
+  const { title, profession } = instructors ? instructors[0] : [];
 
   const formatOpen = new Date(open).toDateString();
   const formatStart = new Date(start).toDateString();

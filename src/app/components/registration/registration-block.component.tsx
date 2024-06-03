@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
@@ -114,6 +115,7 @@ const Heading = styled.p<headingProps>`
 
 const RegistrationBlock = ({
   primary = false,
+  href,
   heading,
   scale,
   text,
@@ -122,6 +124,7 @@ const RegistrationBlock = ({
   faq,
 }: {
   primary: boolean;
+  href?: string;
   heading: string;
   scale: string;
   text?: string;
@@ -140,7 +143,17 @@ const RegistrationBlock = ({
           <Heading scale={scale}>{heading}</Heading>
         )}
         {text && <p className="sub-heading">{text}</p>}
-        {cta && <CallToAction type={ctaType}>{cta}</CallToAction>}
+        {cta && (
+          <CallToAction type={ctaType}>
+            {href ? (
+              <Link style={{ color: "var(--white)" }} href={href}>
+                {cta}
+              </Link>
+            ) : (
+              cta
+            )}
+          </CallToAction>
+        )}
         {faq && (
           <RegistrationFAQ>
             <p className="faq-text">

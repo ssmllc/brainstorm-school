@@ -13,6 +13,7 @@ import { Card } from "@/app/components/card/card-card.component";
 import TextHeaderBlock from "@/app/components/text-block/text-header-block.component";
 import SimilarCourses from "@/app/components/similar-courses/similar-courses.component";
 import DecipherText from "../../components/decipher-text.component";
+import FlexBox from "@/app/components/layout/flexbox.component";
 
 const fetchData = async () => {
   const query =
@@ -136,14 +137,9 @@ export default async function Page({
             </TextHeaderBlock>
           </FlexContainer>
 
-          <FlexContainer
-            margin="0 auto"
-            width="100%"
-            position="relative"
-            display="flex"
-          >
-            {instructors?.map(
-              ({
+          {instructors?.map(
+            (
+              {
                 title,
                 profession,
                 bio,
@@ -151,35 +147,61 @@ export default async function Page({
                 bio: string | null;
                 title: string;
                 profession: string;
-              }) => {
-                return (
-                  <>
-                    <Card
-                      background="0"
-                      boxshadow="none"
-                      stacked="false"
-                      icon="/instructors/ico-image.png"
-                      heading={title}
-                      subHeading={profession}
+              },
+              index: number
+            ) => {
+              return (
+                <div
+                  key={index}
+                  style={{ borderBottom: "thin solid var(--medium-grey)" }}
+                >
+                  <FlexBox
+                    margin="50px auto"
+                    width="100%"
+                    flexdirection="column"
+                  >
+                    <FlexBox margin="50px auto" width="100%">
+                      <FlexBox
+                        margin="0 auto"
+                        width="30%"
+                        alignitems="baseline"
+                      >
+                        <Card
+                          background="0"
+                          boxshadow="none"
+                          stacked="false"
+                          icon="/instructors/ico-image.png"
+                          heading={title}
+                          subHeading={profession}
+                          padding="0 20px"
+                          width="100%"
+                        />
+                      </FlexBox>
+
+                      <FlexBox
+                        margin="0 auto"
+                        width="70%"
+                        flexdirection="column"
+                      >
+                        <DecipherText description={bio} margin="0" />
+                      </FlexBox>
+                    </FlexBox>
+
+                    <RegistrationBlock
+                      href={registration}
+                      primary={true}
+                      heading="Register for this course"
+                      scale="xl"
+                      cta="Register"
+                      ctaType="primary"
                     />
-                    <TextBlock fontSize="14px" padding="0 0 0 100px">
-                      <DecipherText description={bio} />
-                    </TextBlock>
-                  </>
-                );
-              }
-            )}
-          </FlexContainer>
+                  </FlexBox>
+                </div>
+              );
+            }
+          )}
         </Container>
       </Container>
-
-      <RegistrationBlock
-        primary={true}
-        heading="Register for this course"
-        scale="xl"
-        cta="Register"
-        ctaType="primary"
-      />
 
       <SimilarCourses />
     </div>
