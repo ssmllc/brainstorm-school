@@ -13,11 +13,12 @@ const Heading = styled.div<Props>`
   font-size: 18px;
   font-weight: bold;
   line-height: 1.5;
+  padding: 25px 0 15px;
 `;
 
 const SubHeading = styled.div<Props>`
   color: var(--white);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
 `;
 

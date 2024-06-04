@@ -39,8 +39,20 @@ const Container = styled.div<containerProps>`
 
 const Text = styled.p`
   color: var(--white);
-  font-size: 12px;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.55;
+`;
+
+const Anchor = styled(Link)`
+  background: var(--black);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  padding: 25px 25px;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    min-height: 350px;
+  }
 `;
 
 type Props = {
@@ -80,30 +92,18 @@ export const Card = ({
   return (
     <>
       {href ? (
-        <Link href={href}>
-          <Container
-            alignitems={alignitems}
-            background={background}
-            boxshadow={boxshadow}
-            stacked={stacked}
-            width={width}
-            padding={padding}
-            sm_padding={sm_padding}
-          >
-            {icon && (
-              <CardIcon
-                image={icon}
-                borderradius={borderradius}
-                width={icon_width}
-                height={icon_height}
-              />
-            )}
-            {heading && (
-              <CardDetails heading={heading} subHeading={subHeading} />
-            )}
-            {text && <Text>{text}</Text>}
-          </Container>
-        </Link>
+        <Anchor href={href}>
+          {icon && (
+            <CardIcon
+              image={icon}
+              borderradius={borderradius}
+              width={icon_width}
+              height={icon_height}
+            />
+          )}
+          {heading && <CardDetails heading={heading} subHeading={subHeading} />}
+          {text && <Text>{text}</Text>}
+        </Anchor>
       ) : (
         <Container
           alignitems={alignitems}

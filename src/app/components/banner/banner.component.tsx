@@ -1,7 +1,6 @@
 "use client";
 
 import styled from "styled-components";
-import RenderThreeDModel from "../three/model.component";
 import RegistrationBlock from "../registration/registration-block.component";
 import { useEffect, useState } from "react";
 import gsap from "gsap";

@@ -52,7 +52,7 @@ const FAQs = ({ results }: any) => {
   const [selected, setSelected] = useState<number | null>(null);
   const { faqs } = results;
 
-  // console.log("client", faqs);
+  console.log("client", faqs);
 
   const toggleFAQ = (selectedIndex: number) => {
     if (selected === selectedIndex) {
@@ -102,7 +102,19 @@ const FAQs = ({ results }: any) => {
                     className="faq-question"
                     onClick={() => toggleFAQ(index)}
                   >
-                    {question}
+                    <Header level="4" font-size="16px" text={question} />
+                    <span>
+                      <Image
+                        src={`${
+                          selected === index
+                            ? "/icons/ico-x.png"
+                            : "/icons/ico-expand.png"
+                        }`}
+                        width={20}
+                        height={20}
+                        alt="Expand collapse icon"
+                      />
+                    </span>
                   </Question>
 
                   <Answer

@@ -18,8 +18,7 @@ const Banner = styled.div<bannerProps>`
   background: ${({ theme }) =>
     theme === "light" ? "var(--white)" : "var(--black)"};
   display: flex;
-  min-height: 60vh;
-  /* height: ${({ hero }) => (hero === "true" ? "100vh" : "50vh")}; */
+  height: ${({ hero }) => (hero === "true" ? "100vh" : "60vh")};
   flex-direction: column;
   overflow: hidden;
   padding: 100px 0 0 0;
@@ -33,7 +32,7 @@ const Banner = styled.div<bannerProps>`
   &::before {
     background: ${({ background }) =>
       background ? `url(${background}) top center no-repeat` : "var(--black)"};
-    background-size: 100%;
+    background-size: cover;
     content: "";
     display: block;
     height: 100%;
