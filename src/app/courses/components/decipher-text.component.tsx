@@ -7,6 +7,7 @@ import styled from "styled-components";
 interface Props {
   results?: any;
   description?: any;
+  fontSize?: string;
   sm_width?: string;
   width?: string;
   sm_margin?: string;
@@ -20,6 +21,7 @@ const Anchor = styled(Link)`
 `;
 
 interface textGroupProps {
+  fontSize?: string;
   sm_width?: string;
   width?: string;
   sm_margin?: string;
@@ -27,7 +29,7 @@ interface textGroupProps {
 }
 const TextGroup = styled.div<textGroupProps>`
   color: var(--white);
-  font-size: 15px;
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "15px")};
   line-height: 1.5;
   margin: ${({ sm_margin }) => (sm_margin ? sm_margin : "0")};
 
@@ -37,6 +39,7 @@ const TextGroup = styled.div<textGroupProps>`
 `;
 
 const DecipherText = ({
+  fontSize,
   results,
   description,
   sm_margin,
@@ -92,6 +95,7 @@ const DecipherText = ({
               margin={margin}
               sm_width={sm_width}
               width={width}
+              fontSize={fontSize}
             >
               {block.children.map((mark: any) => {
                 if (block.markDefs.length > 0) {

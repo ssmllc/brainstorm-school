@@ -9,6 +9,15 @@ import Container from "../layout/container.component";
 import DecipherText from "@/app/courses/components/decipher-text.component";
 import Link from "next/link";
 import Header from "../text-block/header.component";
+import { IconPencilTip } from "../icons/icon-pencil-tip.component";
+import { IconRequirements } from "../icons/icon-requirements.component";
+import { IconPrice } from "../icons/icon-price.component";
+import { IconFormat } from "../icons/icon-format.component";
+import { IconLocation } from "../icons/icon-location.component";
+import { IconTime } from "../icons/icon-time.component";
+import { IconDuration } from "../icons/icon-duration.component";
+import { IconTerm } from "../icons/icon-term.component";
+
 const CardHeader = ({ text }: { text: string }) => <h2>{text}</h2>;
 
 interface previewProps {
@@ -72,9 +81,12 @@ const TagsGroup = styled("div")`
 
 const CardTags = ({ tags }: { tags?: string[] }) => (
   <Tags>
-    <TextBlock fontSize="28px" width="100%">
-      What you&apos;ll learn
-    </TextBlock>
+    <Header
+      level="3"
+      fontSize="28px"
+      text="What you'll learn"
+      margin="10px 0 25px 0"
+    />
     <TagsGroup>
       {tags?.map((tag: any, index: number) => (
         <Pill
@@ -82,7 +94,7 @@ const CardTags = ({ tags }: { tags?: string[] }) => (
           background="rgba(255, 255, 255, .10)"
           label={tag.title}
           padding="20px 20px"
-          boxshadow="0 0 7px var(--black)"
+          boxshadow="0 0 15px rgba(0, 0, 0, .50)"
         />
       ))}
     </TagsGroup>
@@ -157,9 +169,17 @@ const CardLayout = ({ results }: Props) => {
     <Container margin="0 auto" padding="25px 25px">
       <Wrapper>
         <CardWrapper>
-          <CardHeader text="Gain understanding of the rhythm and structure for anatomical background" />
+          <Header
+            level="2"
+            text="Portfolio Development Character Creature"
+            margin="20px 0"
+          />
           <CardImage preview={imageUrl} />
-          <DecipherText description={description} />
+          <DecipherText
+            description={description}
+            sm_margin="20px 0"
+            margin="20px 0"
+          />
           {tags && <CardTags tags={tags} />}
         </CardWrapper>
 
@@ -195,19 +215,21 @@ const CardLayout = ({ results }: Props) => {
               borderradius="20px"
               display="flex"
               margin="20px 0"
+              padding="20px 0"
               width="100%"
             >
               <Container
                 display="flex"
                 flexdirection="column"
-                padding="20px 20px"
+                padding="10px 20px"
                 width="100%"
+                borderright="thin solid var(--medium-grey)"
               >
                 <Header
                   level="4"
                   text="Opens"
                   fontSize="20px"
-                  fontweight="bold"
+                  fontWeight="bold"
                 />
                 <Header
                   level="4"
@@ -220,14 +242,14 @@ const CardLayout = ({ results }: Props) => {
               <Container
                 display="flex"
                 flexdirection="column"
-                padding="20px 20px"
+                padding="10px 20px"
                 width="100%"
               >
                 <Header
                   level="4"
                   text="Start"
                   fontSize="20px"
-                  fontweight="bold"
+                  fontWeight="bold"
                 />
                 <Header
                   level="4"
@@ -258,6 +280,21 @@ const CardLayout = ({ results }: Props) => {
               <Container display="flex" width="100%">
                 <Container display="flex" padding="10px 20px" width="50%">
                   <TextBlock fontWeight="bold" fontSize="14px" padding="0">
+                    <IconTerm width="24px" height="24px" /> Term
+                  </TextBlock>
+                </Container>
+
+                <Container display="flex" padding="10px 20px" width="50%">
+                  <TextBlock fontSize="14px" padding="0">
+                    {term}
+                  </TextBlock>
+                </Container>
+              </Container>
+
+              <Container display="flex" width="100%">
+                <Container display="flex" padding="10px 20px" width="50%">
+                  <TextBlock fontWeight="bold" fontSize="14px" padding="0">
+                    <IconFormat width="24px" height="24px" />
                     Format
                   </TextBlock>
                 </Container>
@@ -272,7 +309,7 @@ const CardLayout = ({ results }: Props) => {
               <Container display="flex" width="100%">
                 <Container display="flex" padding="10px 20px" width="50%">
                   <TextBlock fontWeight="bold" fontSize="14px" padding="0">
-                    Location
+                    <IconLocation width="24px" height="24px" /> Location
                   </TextBlock>
                 </Container>
 
@@ -286,21 +323,7 @@ const CardLayout = ({ results }: Props) => {
               <Container display="flex" width="100%">
                 <Container display="flex" padding="10px 20px" width="50%">
                   <TextBlock fontWeight="bold" fontSize="14px" padding="0">
-                    Term
-                  </TextBlock>
-                </Container>
-
-                <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontSize="14px" padding="0">
-                    {term}
-                  </TextBlock>
-                </Container>
-              </Container>
-
-              <Container display="flex" width="100%">
-                <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontWeight="bold" fontSize="14px" padding="0">
-                    Time
+                    <IconTime width="24px" height="24px" /> Time
                   </TextBlock>
                 </Container>
 
@@ -314,6 +337,7 @@ const CardLayout = ({ results }: Props) => {
               <Container display="flex" width="100%">
                 <Container display="flex" padding="10px 20px" width="50%">
                   <TextBlock fontWeight="bold" fontSize="14px" padding="0">
+                    <IconDuration width="24px" height="24px" />
                     Duration
                   </TextBlock>
                 </Container>
@@ -328,6 +352,7 @@ const CardLayout = ({ results }: Props) => {
               <Container display="flex" width="100%">
                 <Container display="flex" padding="10px 20px" width="50%">
                   <TextBlock fontWeight="bold" fontSize="14px" padding="0">
+                    <IconPrice width="24px" height="24px" />
                     Price
                   </TextBlock>
                 </Container>
@@ -352,14 +377,16 @@ const CardLayout = ({ results }: Props) => {
                 fontWeight="bold"
                 width="auto"
               >
-                Suggested Materials
+                <IconPencilTip width="24px" height="24px" /> Suggested Materials
               </TextBlock>
 
-              <p>
-                Traditional drawing supplies, pen & paper, sketchbook. Optional:
+              <Header
+                level="4"
+                fontSize="15px"
+                text="Traditional drawing supplies, pen & paper, sketchbook. Optional:
                 Computer or Tablet with comparable drawing software such as
-                photoshop, procreate, etc.
-              </p>
+                photoshop, procreate, etc."
+              />
             </Container>
 
             <Container
@@ -374,12 +401,14 @@ const CardLayout = ({ results }: Props) => {
                 fontWeight="bold"
                 width="auto"
               >
-                Requirements
+                <IconRequirements width="24px" height="24px" /> Requirements
               </TextBlock>
-              <p>
-                Computer with Photoshop and high speed internet. Mic (highly
-                recommended) and camera (optional).
-              </p>
+              <Header
+                level="4"
+                fontSize="15px"
+                text="Computer with Photoshop and high speed internet. Mic (highly
+                  recommended) and camera (optional)."
+              />
             </Container>
           </CourseDetails>
         </InstructorWrapper>

@@ -6,7 +6,7 @@ import { BrainstormContext } from "@/app/context/context-provider";
 import { useContext } from "react";
 import { Sections } from "@/app/types/types";
 import BrainstormLogo from "../Logo/logo.component";
-import { IconSearch } from "../icons/icon-search";
+import { IconSearch } from "../icons/icon-search.component";
 
 const NavigationBar = styled.div`
   background: var(--off-black-90);

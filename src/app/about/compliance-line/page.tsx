@@ -1,34 +1,15 @@
 import MediaBanner from "@/app/components/banner/media-banner.component";
-import { Card } from "@/app/components/card/card-card.component";
-import { MiniCards } from "@/app/components/card/mini-card.component";
-import { FlexContainer } from "@/app/components/layout/container.component";
+import FlexBox from "@/app/components/layout/flexbox.component";
 import RegistrationBlock from "@/app/components/registration/registration-block.component";
-import VideoContentSplit from "@/app/components/registration/video-content-split.component";
+import Header from "@/app/components/text-block/header.component";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Brainstorm Courses - Brainstorm School",
-  description: "Courses for brainstorm school",
-};
-
-const fetchData = async () => {
-  const query =
-    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27courses%27%5D+%7B%0A++category%2C%0A++slug+%7B%0A++++current%0A++%7D%2C%0A++details%5B0%5D+%7B%0A++++children%5B0%5D+%7B%0A++++++text%0A++++%7D%0A++%7D%2C%0A++faqs%5B%5D+-%3E+%7B%0A++++question%2C%0A++++answer%2C%0A++%7D%2C%0A++sections%5B%5D+-%3E+%7B%0A++++section%2C%0A++++category%2C%0A++++slug%2C%0A++++courses%5B%5D+-%3E+%7B%0A++++++_id%2C%0A++++++name%2C%0A++++++section%2C%0A++++++category%2C%0A++++++slug%2C%0A++++++code%2C%0A++++++description%5B0%5D+%7B%0A++++++++children%5B0%5D+%7B%0A++++++++++text%0A++++++++%7D%0A++++++%7D%2C%0A++++++preview+%7B%0A++++++++asset+-%3E+%7B%0A++++++++++url%0A++++++++%7D%2C%0A++++++%7D%2C%0A++++++instructors%5B%5D+-%3E+%7B%0A++++++++title%2C%0A++++++++profession%2C%0A++++++++bio%2C%0A++++++%7D%2C%0A++++++schedule%5B%5D+-%3E+%7B%0A++++++++instructor%5B0%5D+-%3E+%7B%0A++++++++++title%2C%0A++++++++%7D%2C%0A++++++++registration%2C%0A++++++++term%2C%0A++++++++time%2C%0A++++++++duration%2C%0A++++++++start%2C%0A++++++%7D%2C%0A++++%7D%2C%0A++%7D%2C%0A%7D";
-  // const response = await fetch(query);
-  const response = await fetch(query, { cache: "no-store" });
-
-  if (!response.ok) {
-    throw new Error(`HTTP error: Status ${response.status}`);
-  }
-
-  const { result } = await response.json();
-
-  return result;
+  title: "Brainstorm Compliance Line",
+  description: "Compliance line",
 };
 
 export default async function ComplianceLine() {
-  const result = await fetchData();
-
   return (
     <>
       <MediaBanner
@@ -36,98 +17,75 @@ export default async function ComplianceLine() {
         subHeader=""
         hero="false"
         theme="dark"
-        background="/banner/banner-1.jpg"
+        background="/banner/banner-31.jpg"
         image="/banner/media-banner.png"
         media="/video/brainstorm-design-solve-learn.mp4"
       />
-      <div style={{ marginTop: "50px" }}>
+
+      <FlexBox flexdirection="column" margin="150px auto" alignitems="center">
+        <FlexBox
+          margin="20px 60px 0"
+          sm_width="85%"
+          width="70%"
+          flexdirection="column"
+        >
+          <Header level="1" text="Compliance Line" />
+          <Header
+            level="4"
+            text=" We at Brainstorm aim to provide a safe learning environment."
+            fontSize="15px"
+          />
+        </FlexBox>
+        <FlexBox
+          margin="20px 60px 0"
+          sm_width="85%"
+          width="70%"
+          flexdirection="column"
+        >
+          <Header
+            level="4"
+            text="We understand that relationships with others are the basis of trust and a necessity for a wholesome community. We are all citizens of the world and members of our school community."
+            fontSize="15px"
+          />
+          <Header
+            level="4"
+            text="We will participate in creating a positive school environment and have a zero tolerance of any misconduct such threatening acts to the health and safety of others. Students and Staff shall be respectful of school personnel, fellow students regardless of religious, national, ethnic, or social origin."
+            fontSize="15px"
+          />
+        </FlexBox>
+
+        <FlexBox
+          margin="20px 60px 0"
+          sm_width="85%"
+          width="70%"
+          flexdirection="column"
+        >
+          <Header level="2" text="We value diversity" />
+          <Header
+            level="4"
+            text="We understand that a safe environment is important for the well-being of the school and art community as a whole. If you are ever feeling threatened, abused or harassed by a student, staff, or teacher please report to third party compliance hotline."
+            fontSize="15px"
+          />
+        </FlexBox>
+
+        <FlexBox
+          margin="20px 60px 0"
+          sm_width="85%"
+          width="70%"
+          flexdirection="column"
+        >
+          <Header level="4" text="The link is down below." fontSize="15px" />
+        </FlexBox>
+
         <RegistrationBlock
           primary={true}
-          heading="We are Brainstorm Online!"
-          text="Students from around the world gather to learn & develop in our friendly online community."
+          heading="24 hours a day, 7 days a week"
           scale="xl"
-          cta="Register Today"
+          cta="Begin Report"
           ctaType="primary"
+          href="https://www.mycompliancereport.com/report?cid=BSS&fbclid=IwAR2BbW3h-863VM3NoKK1SGJZmhYX13jdT5WAsIoy2INK6K8oObMTwwZolTI"
         />
-
-        <VideoContentSplit
-          video="https://youtu.be/cidlS92hRTQ?si=pWk-plQpUEOP_jt8"
-          heading="Who we are"
-          text="Brainstorm is an online concept art, design and illustration program focused on artistic development. Students from around the world gather to learn & develop in our friendly online community."
-          cta="View Courses"
-        />
-
-        <VideoContentSplit
-          video="https://youtu.be/cidlS92hRTQ?si=pWk-plQpUEOP_jt8"
-          heading="What we do"
-          text="Brainstorm is an online concept art, design and illustration program focused on artistic development. Students from around the world gather to learn & develop in our friendly online community."
-          cta="View Courses"
-          flexdirection="row-reverse"
-        />
-
-        <FlexContainer display="flex" margin="0 auto">
-          <FlexContainer display="flex" gap="10px" width="80%" margin="0 auto">
-            <Card
-              href="/courses"
-              background="var(--black-60)"
-              alignitems="start"
-              stacked="true"
-              icon="/instructors/ico-image.png"
-              heading="Courses"
-              subHeading="Traditional drawing supplies, pen & paper, sketchbook"
-              text="Optional: Computer or Tablet with comparable drawing software such as photoshop, procreate, etc."
-              width="100%"
-            />
-
-            <Card
-              href="/workshops"
-              background="var(--black-60)"
-              alignitems="start"
-              stacked="true"
-              icon="/instructors/ico-image.png"
-              heading="Workshops"
-              text="Optional: Computer or Tablet with comparable drawing software such as photoshop, procreate, etc."
-              width="100%"
-            />
-
-            <Card
-              href="/programs"
-              background="var(--black-60)"
-              alignitems="start"
-              stacked="true"
-              icon="/instructors/ico-image.png"
-              heading="Programs"
-              text="Optional: Computer or Tablet with comparable drawing software such as photoshop, procreate, etc."
-              width="100%"
-            />
-
-            <Card
-              href="/blog"
-              background="var(--black-60)"
-              alignitems="start"
-              stacked="true"
-              icon="/instructors/ico-image.png"
-              heading="Blog"
-              text="Optional: Computer or Tablet with comparable drawing software such as photoshop, procreate, etc."
-              width="100%"
-            />
-          </FlexContainer>
-        </FlexContainer>
-
-        <FlexContainer width="100%" margin="0 auto">
-          <MiniCards header="Spring 2024" width="100%" />
-        </FlexContainer>
-
-        <RegistrationBlock
-          primary={false}
-          heading="Get updates to your inbox"
-          scale="xl"
-          cta="Sign Me Up"
-          ctaType="primary"
-        />
-
-        {/* <FAQs results={selectedResults} /> */}
-      </div>
+      </FlexBox>
     </>
   );
 }

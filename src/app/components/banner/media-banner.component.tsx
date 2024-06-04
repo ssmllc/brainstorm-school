@@ -18,7 +18,7 @@ const Banner = styled.div<bannerProps>`
   background: ${({ theme }) =>
     theme === "light" ? "var(--white)" : "var(--black)"};
   display: flex;
-  min-height: 50vh;
+  min-height: 60vh;
   /* height: ${({ hero }) => (hero === "true" ? "100vh" : "50vh")}; */
   flex-direction: column;
   overflow: hidden;
@@ -32,8 +32,8 @@ const Banner = styled.div<bannerProps>`
 
   &::before {
     background: ${({ background }) =>
-      background ? `url(${background}) top left no-repeat` : "var(--black)"};
-    background-size: cover;
+      background ? `url(${background}) top center no-repeat` : "var(--black)"};
+    background-size: 100%;
     content: "";
     display: block;
     height: 100%;
@@ -48,8 +48,8 @@ const Banner = styled.div<bannerProps>`
   &::after {
     background: linear-gradient(
       to bottom,
-      var(--off-black) 25%,
-      rgba(0, 0, 0, 0) 75%,
+      var(--off-black) 15%,
+      rgba(0, 0, 0, 0) 90%,
       var(--off-black) 100%
     );
     content: "";
@@ -79,7 +79,7 @@ const Content = styled.div`
 `;
 
 const Column = styled.div`
-  width: 50%;
+  /* width: 50%; */
 `;
 
 const ActionWrapper = styled.div`
@@ -92,6 +92,7 @@ const ActionWrapper = styled.div`
   @media (min-width: 800px) {
     align-items: center;
     flex-direction: row;
+    min-width: 450px;
   }
 `;
 

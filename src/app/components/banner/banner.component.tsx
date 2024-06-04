@@ -50,11 +50,10 @@ const Banner = () => {
 
   useEffect(() => {
     const randomBannerImage = (min: number, max: number) => {
-      // min and max included
       return Math.floor(Math.random() * (max - min + 1) + min);
     };
 
-    const randomBanner = `/banner/banner-${randomBannerImage(1, 41)}.jpg`;
+    const randomBanner = `/banner/banner-${randomBannerImage(1, 45)}.jpg`;
     setRandomBanner(randomBanner);
 
     gsap.to(".banner-wrapper", {
@@ -73,17 +72,6 @@ const Banner = () => {
         cta="Register Today"
         ctaType="primary"
       />
-      {/* <RenderThreeDModel /> */}
-      {/* <video
-        style={{ position: "absolute", left: 0, top: 0, objectFit: "cover" }}
-        muted
-        loop
-        width="100%"
-        height="100%"
-        autoPlay={true}
-      >
-        <source src="/video/lightning2.mp4" type="video/mp4" />
-      </video> */}
       <Overlay />
     </BannerWrapper>
   );

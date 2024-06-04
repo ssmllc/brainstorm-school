@@ -190,7 +190,9 @@ const Footer = () => {
               {courses.length > 0 &&
                 courses.map((course: Sections) => (
                   <DropdownMenuItem key={course.slug.current}>
-                    <MenuItem href="/courses">{course.category}</MenuItem>
+                    <MenuItem href={`/courses/${course.slug.current}`}>
+                      {course.category}
+                    </MenuItem>
                   </DropdownMenuItem>
                 ))}
             </DropdownMenu>
@@ -217,12 +219,12 @@ const Footer = () => {
             </MenuItem>
 
             <DropdownMenu>
-              {courses.length > 0 &&
-                courses.map((course: Sections) => (
-                  <DropdownMenuItem key={course.slug.current}>
-                    <MenuItem href="/courses">{course.category}</MenuItem>
-                  </DropdownMenuItem>
-                ))}
+              <DropdownMenuItem>
+                <MenuItem href="/programs/mentorship">Mentorship</MenuItem>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <MenuItem href="/programs/scholarship">Scholarship</MenuItem>
+              </DropdownMenuItem>
             </DropdownMenu>
           </Column>
           <Column>
@@ -231,13 +233,34 @@ const Footer = () => {
             </MenuItem>
 
             <DropdownMenu>
-              {courses.length > 0 &&
-                courses.map((course: Sections) => (
-                  <DropdownMenuItem key={course.slug.current}>
-                    <MenuItem href="/courses">{course.category}</MenuItem>
-                  </DropdownMenuItem>
-                ))}
+              <DropdownMenuItem>
+                <MenuItem href="/about/compliance-line">
+                  Compliance Line
+                </MenuItem>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <MenuItem href="/about/faqs">FAQs</MenuItem>
+              </DropdownMenuItem>
             </DropdownMenu>
+          </Column>
+          <Column>
+            <MenuItem href="/gallery" weight="bold">
+              Gallery
+            </MenuItem>
+
+            <DropdownMenu>
+              <DropdownMenuItem>
+                <MenuItem href="/gallery/students">Students</MenuItem>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <MenuItem href="/gallery/instructors">Instructors</MenuItem>
+              </DropdownMenuItem>
+            </DropdownMenu>
+          </Column>
+          <Column>
+            <MenuItem href="/instructors" weight="bold">
+              Instructors
+            </MenuItem>
           </Column>
           <Column>
             <MenuItem href="/blog" weight="bold">

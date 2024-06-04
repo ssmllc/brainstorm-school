@@ -5,8 +5,8 @@ import styled from "styled-components";
 
 interface textProps {
   color?: string;
-  fontsize?: string;
-  fontweight?: string;
+  fontSize?: string;
+  fontWeight?: string;
   margin?: string;
   textalign?: string;
   href?: string;
@@ -44,8 +44,8 @@ const Header3 = styled.h3<textProps>`
 
 const Header4 = styled.p<textProps>`
   color: var(--white);
-  font-size: ${({ fontsize }) => (fontsize ? fontsize : "24px")};
-  font-weight: ${({ fontweight }) => (fontweight ? fontweight : "normal")};
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "24px")};
+  font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "normal")};
   margin: ${({ margin }) => margin};
   position: relative;
   text-align: ${({ textalign }) => textalign};
@@ -54,8 +54,8 @@ const Header4 = styled.p<textProps>`
 
 const Header5 = styled(Link)<textProps>`
   color: var(--white);
-  font-size: ${({ fontsize }) => (fontsize ? fontsize : "24px")};
-  font-weight: ${({ fontweight }) => (fontweight ? fontweight : "normal")};
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "24px")};
+  font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "normal")};
   display: inline;
   margin: ${({ margin }) => margin};
   position: relative;
@@ -66,8 +66,8 @@ const Header5 = styled(Link)<textProps>`
 
 const Header6 = styled("span")<textProps>`
   color: var(--white);
-  font-size: ${({ fontsize }) => (fontsize ? fontsize : "24px")};
-  font-weight: ${({ fontweight }) => (fontweight ? fontweight : "normal")};
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "24px")};
+  font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "normal")};
   margin: ${({ margin }) => margin};
   position: relative;
   text-align: ${({ textalign }) => textalign};
@@ -79,7 +79,7 @@ interface Props {
   text: string;
   color?: string;
   fontSize?: string;
-  fontweight?: string;
+  fontWeight?: string;
   margin?: string;
   href?: string;
   textalign?: string;
@@ -90,7 +90,7 @@ const Header = ({
   text,
   color,
   fontSize,
-  fontweight,
+  fontWeight,
   margin,
   href,
   textalign,
@@ -115,8 +115,8 @@ const Header = ({
       {level === "4" && (
         <Header4
           color={color}
-          fontsize={fontSize}
-          fontweight={fontweight}
+          fontSize={fontSize}
+          fontWeight={fontWeight}
           margin={margin}
         >
           {text}
@@ -126,8 +126,8 @@ const Header = ({
         <Header5
           href={href}
           color={color}
-          fontsize={fontSize}
-          fontweight={fontweight}
+          fontSize={fontSize}
+          fontWeight={fontWeight}
           margin={margin}
         >
           {text}
@@ -136,8 +136,8 @@ const Header = ({
       {level === "6" && (
         <Header6
           color={color}
-          fontsize={fontSize}
-          fontweight={fontweight}
+          fontSize={fontSize}
+          fontWeight={fontWeight}
           margin={margin}
         >
           {text}

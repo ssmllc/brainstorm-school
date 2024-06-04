@@ -1,16 +1,9 @@
 import MediaBanner from "@/app/components/banner/media-banner.component";
-import ActionButton from "@/app/components/buttons/action-button.component";
-import CardImageDetail from "@/app/components/card/card-image-detail.component";
-import { CardImage } from "@/app/components/card/simple-card.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
-import Pill from "@/app/components/pill/pill.component";
 import RegistrationBlock from "@/app/components/registration/registration-block.component";
 import FAQsV2 from "@/app/components/text-block/faqs-v2.component";
 import FAQs from "@/app/components/text-block/faqs.component";
 import Header from "@/app/components/text-block/header.component";
-import Typography from "@/app/components/text-block/typography.component";
-import AnchorCard from "@/app/components/tracks/track.component";
-import TracksGroup from "@/app/components/tracks/tracks.component";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -51,11 +51,7 @@ export default async function Page({
   const { duration, time, registration } = schedule[0];
 
   return (
-    <div
-      style={{
-        color: "white",
-      }}
-    >
+    <>
       <MediaBanner
         label={category}
         header={header}
@@ -203,6 +199,6 @@ export default async function Page({
       </Container>
 
       <SimilarCourses />
-    </div>
+    </>
   );
 }

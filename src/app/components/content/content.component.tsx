@@ -12,7 +12,7 @@ const ContentWrapper = styled.div`
     content: "";
     background-image: url("/backgrounds/lightning/lightning.png"),
       url("/backgrounds/lightning/lightning-2.png");
-    background-size: 50%, 50%;
+    background-size: contain, contain;
     background-position: top left, center right;
     background-repeat: no-repeat, no-repeat;
     position: absolute;

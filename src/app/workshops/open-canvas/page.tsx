@@ -38,7 +38,7 @@ export default async function Workshops() {
         subHeader=""
         hero="false"
         theme="dark"
-        background="/banner/banner-19.jpg"
+        background="/banner/banner-10.jpg"
         image="/banner/media-banner.png"
         media="/video/brainstorm-design-solve-learn.mp4"
       />

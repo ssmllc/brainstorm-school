@@ -7,6 +7,7 @@ interface sectionProps {
   alignitems?: string;
   background?: string;
   border?: string;
+  borderright?: string;
   borderradius?: string;
   display?: string;
   gap?: string;
@@ -27,6 +28,7 @@ const FlexSection = styled.div<sectionProps>`
   align-items: ${({ alignitems }) => alignitems};
   background: ${({ background }) => (background ? background : "0")};
   border: ${({ border }) => border};
+  border-right: ${({ borderright }) => borderright};
   border-radius: ${({ borderradius }) => (borderradius ? borderradius : 0)};
   display: ${({ display }) => (display ? display : "block")};
   gap: ${({ gap }) => (gap ? gap : 0)};
@@ -55,6 +57,7 @@ const Section = styled.div<sectionProps>`
   align-items: ${({ alignitems }) => alignitems};
   background: ${({ background }) => (background ? background : "0")};
   border: ${({ border }) => border};
+  border-right: ${({ borderright }) => borderright};
   border-radius: ${({ borderradius }) => (borderradius ? borderradius : 0)};
   display: ${({ display }) => (display ? display : "block")};
   gap: ${({ gap }) => (gap ? gap : 0)};
@@ -85,6 +88,7 @@ interface Props {
   alignitems?: string;
   background?: string;
   border?: string;
+  borderright?: string;
   borderradius?: string;
   children: string | ReactNode | JSX.Element | JSX.Element[];
   className?: string;
@@ -107,6 +111,7 @@ export const FlexContainer = ({
   alignitems,
   background,
   border,
+  borderright,
   borderradius,
   children,
   className,
@@ -129,6 +134,7 @@ export const FlexContainer = ({
       alignitems={alignitems}
       background={background}
       border={border}
+      borderright={borderright}
       borderradius={borderradius}
       className={className}
       display={display}
@@ -154,6 +160,7 @@ const Container = ({
   alignitems,
   background,
   border,
+  borderright,
   borderradius,
   children,
   className,
@@ -176,6 +183,7 @@ const Container = ({
       alignitems={alignitems}
       background={background}
       border={border}
+      borderright={borderright}
       borderradius={borderradius}
       className={className}
       display={display}
