@@ -31,6 +31,7 @@ const Container = styled.div<containerProps>`
 
   //medium
   @media (min-width: 768px) {
+    align-items: ${({ alignitems }) => alignitems};
     flex-direction: ${({ flexdirection }) =>
       flexdirection ? flexdirection : "row"};
     margin: ${({ margin }) => (margin ? margin : "0 auto")};

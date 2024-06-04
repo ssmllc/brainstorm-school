@@ -198,7 +198,14 @@ export default async function Page({
         </Container>
       </Container>
 
-      <SimilarCourses />
+      <FlexBox
+        flexdirection="column"
+        margin="75px auto"
+        alignitems="center"
+        width="100%"
+      >
+        <SimilarCourses />
+      </FlexBox>
     </>
   );
 }

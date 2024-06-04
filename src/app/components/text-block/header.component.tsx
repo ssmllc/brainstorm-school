@@ -49,7 +49,7 @@ const Header4 = styled.p<textProps>`
   margin: ${({ margin }) => margin};
   position: relative;
   text-align: ${({ textalign }) => textalign};
-  line-height: 1.25;
+  line-height: 1.5;
 `;
 
 const Header5 = styled(Link)<textProps>`
@@ -61,7 +61,7 @@ const Header5 = styled(Link)<textProps>`
   position: relative;
   text-align: ${({ textalign }) => textalign};
   text-decoration: underline;
-  line-height: 1.25;
+  line-height: 1.5;
 `;
 
 const Header6 = styled("span")<textProps>`
@@ -71,7 +71,7 @@ const Header6 = styled("span")<textProps>`
   margin: ${({ margin }) => margin};
   position: relative;
   text-align: ${({ textalign }) => textalign};
-  line-height: 1.25;
+  line-height: 1.5;
 `;
 
 interface Props {

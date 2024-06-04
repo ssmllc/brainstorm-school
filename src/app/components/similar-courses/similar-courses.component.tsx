@@ -1,28 +1,13 @@
 import CardImageDetail from "../card/card-image-detail.component";
+import FlexBox from "../layout/flexbox.component";
+import Header from "../text-block/header.component";
 
 const SimilarCourses = () => {
   return (
-    <div
-      style={{
-        width: "75%",
-        margin: "0 auto",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
-      <div style={{ color: "white", fontSize: "24px" }}>
-        <h2>Previous Workshops</h2>
-      </div>
+    <>
+      <Header level="2" text="View Similar Courses" />
 
-      <div
-        style={{
-          display: "flex",
-          // width: "100%",
-          margin: "50px auto",
-          gap: "20px 10px",
-        }}
-      >
+      <FlexBox margin="50px 0" width="80%">
         <CardImageDetail
           base="/workshops"
           slug="brainstorm-connection"
@@ -67,8 +52,8 @@ const SimilarCourses = () => {
           courseTime="Fri 10am-1pm (PST)"
           courseDuration="10-week Course"
         />
-      </div>
-    </div>
+      </FlexBox>
+    </>
   );
 };
 

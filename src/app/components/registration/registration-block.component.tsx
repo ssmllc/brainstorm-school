@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Content = styled.div`
-  padding: 75px 0;
+  padding: 50px 0;
   position: relative;
   width: 100%;
   z-index: 20;
