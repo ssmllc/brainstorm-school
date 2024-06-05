@@ -13,7 +13,11 @@ const Heading = styled.div<Props>`
   font-size: 18px;
   font-weight: bold;
   line-height: 1.5;
-  padding: 25px 0 15px;
+  padding: 10px 0 5px;
+
+  @media (min-width: 800px) {
+    padding: 0 0 5px;
+  }
 `;
 
 const SubHeading = styled.div<Props>`

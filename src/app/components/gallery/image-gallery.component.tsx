@@ -41,7 +41,7 @@ const Button = styled.button`
 
 const Gallery = styled.div`
   /* border: thin dashed cyan; */
-  margin: 75px 0;
+  margin: 0 0 50px 0;
   width: 100vw;
 
   @media (min-width: 800px) {

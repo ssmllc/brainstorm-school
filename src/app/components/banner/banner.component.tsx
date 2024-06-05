@@ -16,12 +16,16 @@ const BannerWrapper = styled("div")<bannerProps>`
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 50vh;
   justify-content: center;
   opacity: 0.5;
   padding-top: 25%;
   position: relative;
   width: 100vw;
+
+  @media (min-width: 800px) {
+    height: 100vh;
+  }
 `;
 
 const Overlay = styled.div`
@@ -33,7 +37,7 @@ const Overlay = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   justify-content: center;
   left: 0;
   padding-top: 20%;

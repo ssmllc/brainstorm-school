@@ -2,24 +2,30 @@
 
 import { useEffect, useState, useContext } from "react";
 import styled from "styled-components";
-import RegistrationBlock from "../registration/registration-block.component";
-
 import Link from "next/link";
-import Container, { FlexContainer } from "../layout/container.component";
 import TextBlock from "../text-block/text-block.component";
 import { Card } from "../card/card-card.component";
 import { TracksContext } from "@/app/context/tracks-context-provider";
 import Header from "../text-block/header.component";
 import FlexBox from "../layout/flexbox.component";
+import { FlexContainer } from "../layout/container.component";
 
 const TracksContainer = styled.div`
   /* border: thin solid red; */
-  padding: 0 0 75px 0;
+  padding: 0 0 50px 0;
   text-align: center;
+
+  @media (min-width: 800px) {
+    padding: 0 0 75px 0;
+  }
 `;
 
 const Anchor = styled(Link)`
   width: 100%;
+
+  @media (min-width: 768px) {
+    width: 48%;
+  }
 
   @media (min-width: 800px) {
     width: 25%;
@@ -30,14 +36,22 @@ const Tracks = styled.div`
   //border: thin solid red;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   justify-content: space-between;
   position: relative;
   margin: 0 auto;
   width: 80%;
 
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 60%;
+  }
+
   @media (min-width: 800px) {
     flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
     max-width: 1280px;
     width: 70%;
   }
@@ -55,10 +69,19 @@ const Track = styled.div<trackProps>`
   filter: grayscale(0.75);
   flex-grow: 1;
   flex-basis: 25%;
-  min-height: 350px;
-  padding: 185px 20px 0 20px;
+  min-height: 250px;
+  padding: 125px 20px 0 20px;
   position: relative;
   transition: all 0.35s ease-out;
+
+  @media (min-width: 768px) {
+    min-height: 280px;
+  }
+
+  @media (min-width: 800px) {
+    min-height: 350px;
+    padding: 185px 20px 0 20px;
+  }
 
   &[data-track="active"] {
     filter: grayscale(0);
@@ -154,12 +177,19 @@ const TracksGroup = ({ results }: Props) => {
 
   return (
     <TracksContainer>
-      <Header
-        level="2"
-        text="Course Guide - Tracks"
-        color="white"
-        margin="50px 0"
-      />
+      <FlexBox
+        sm_width="80%"
+        width="60%"
+        justifycontent="center"
+        margin="0 auto"
+      >
+        <Header
+          level="2"
+          text="Course Guide - Tracks"
+          color="white"
+          margin="50px 0"
+        />
+      </FlexBox>
       <Tracks>
         {results && results.length ? (
           results.map((track: any, index: number) => {

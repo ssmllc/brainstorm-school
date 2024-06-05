@@ -6,7 +6,11 @@ import ImageDetailCard from "../card/card.component";
 
 const Card = styled.div`
   /* border: thin solid green; */
-  width: 320px;
+  width: 280px;
+
+  @media (min-width: 400px) {
+    width: 320px;
+  }
 
   @media (min-width: 800px) {
     width: 1125px;

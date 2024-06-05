@@ -10,10 +10,16 @@ interface contentProps {
 const Content = styled.div<contentProps>`
   border-bottom: ${({ $faq }) =>
     $faq ? "thin solid var(--medium-grey)" : "0"};
+  margin: 0 auto;
   padding: 50px 0;
   position: relative;
-  width: 100%;
+  width: 80%;
   z-index: 20;
+
+  @media (min-width: 800px) {
+    margin: 0;
+    width: 100%;
+  }
 
   h1,
   h2,
@@ -87,9 +93,13 @@ const RegistrationFAQ = styled.div`
 `;
 
 const ContentBlock = styled.div`
-  width: 80%;
   margin: 0 auto;
   text-align: center;
+  width: 80%;
+
+  @media (min-width: 400px) {
+    width: 90%;
+  }
 
   @media (min-width: 800px) {
     max-width: 900px;
@@ -103,6 +113,7 @@ interface headingProps {
 
 const BigHeading = styled.h1<headingProps>`
   font-size: 32px;
+  text-transform: capitalize;
 
   @media (min-width: 800px) {
     font-size: ${(props) => (props.scale === "xl" ? "42px" : "28px")};
@@ -112,6 +123,7 @@ const BigHeading = styled.h1<headingProps>`
 const Heading = styled.p<headingProps>`
   font-size: 32px;
   font-weight: bold;
+  text-transform: capitalize;
 
   @media (min-width: 800px) {
     font-size: ${(props) => (props.scale === "xl" ? "42px" : "28px")};

@@ -13,15 +13,22 @@ const Container = styled.div`
 `;
 
 const Group = styled.div`
-  /* border: thin dashed green; */
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   margin: 0 auto;
   padding: 0 0 50px 0;
-  width: 80%;
+  width: 90%;
+
+  @media (min-width: 400px) {
+    width: 80%;
+  }
+
+  @media (min-width: 768) {
+  }
 
   @media (min-width: 800px) {
+    gap: 20px;
     max-width: 1250px;
     width: 60%;
   }
@@ -31,10 +38,11 @@ const Row = styled.div`
   /* border: thin dashed cyan; */
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
     flex-direction: row;
+    gap: 20px;
   }
 `;
 

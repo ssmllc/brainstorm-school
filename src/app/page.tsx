@@ -46,22 +46,22 @@ const Home = async () => {
           <Slide
             poster="banner/banner-1.jpg"
             heading="Lorem ipsum dolor"
-            variantType="lg"
+            variantType="sm"
           />
           <Slide
             poster="banner/banner-2.jpg"
             heading="Lorem ipsum dolor"
-            variantType="lg"
+            variantType="sm"
           />
           <Slide
             poster="banner/banner-3.jpg"
             heading="Lorem ipsum dolor"
-            variantType="lg"
+            variantType="sm"
           />
           <Slide
             poster="banner/banner-4.jpg"
             heading="Lorem ipsum dolor"
-            variantType="lg"
+            variantType="sm"
           />
         </FeaturedSlider>
 

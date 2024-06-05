@@ -2,17 +2,20 @@
 
 import React, { ReactNode, useEffect, useState } from "react";
 import styled from "styled-components";
-import RegistrationBlock from "../registration/registration-block.component";
-import ImageDetailCard from "../card/card.component";
 import gsap from "gsap";
 import ActionButton from "../buttons/action-button.component";
 import { IconNext, IconPrevious } from "../icons/icon-arrow.component";
 import Header from "../text-block/header.component";
+import FlexBox from "../layout/flexbox.component";
 
 const Content = styled.div`
-  margin: 50px 0;
+  margin: 0;
   position: relative;
   width: 100vw;
+
+  @media (min-width: 800px) {
+    margin: 50px 0;
+  }
 `;
 
 const Featured = styled.div`
@@ -23,7 +26,7 @@ const Featured = styled.div`
   flex-direction: row;
   margin: 0 auto;
   position: relative;
-  width: 85%;
+  width: 75%;
 
   @media (min-width: 800px) {
     max-width: 1125px;
@@ -41,15 +44,6 @@ const Slider = styled.div`
   box-shadow: 0 0 10px var(--black);
   display: flex;
   flex-direction: row;
-`;
-
-const Slide = styled.div`
-  /* border: thin solid green; */
-  width: 320px;
-
-  @media (min-width: 800px) {
-    width: 1125px;
-  }
 `;
 
 const ReadMore = styled.div`
@@ -179,12 +173,16 @@ const FeaturedSlider = ({ children, heading, textalign }: Props) => {
   return (
     <Content>
       {heading && (
-        <Header
-          level="2"
-          text={heading}
-          textalign={textalign}
-          margin="50px 0"
-        />
+        <FlexBox
+          alignitems="center"
+          justifycontent="center"
+          sm_width="80%"
+          sm_margin="50px 0"
+          margin="50px auto"
+          width="100%"
+        >
+          <Header level="2" text={heading} textalign={textalign} />
+        </FlexBox>
       )}
 
       <Featured>

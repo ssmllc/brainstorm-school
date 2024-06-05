@@ -35,8 +35,9 @@ const Poster = styled.div<cardProps>`
   width: 100%;
 
   @media (min-width: 800px) {
+    height: 100%;
     padding: 185px 20px 0 20px;
-    width: ${({ variant }) => (variant === "sm" ? "auto" : "45%")};
+    width: 45%;
   }
 
   &:before {
@@ -64,7 +65,9 @@ const Content = styled.div<cardProps>`
   width: 100%;
 
   @media (min-width: 800px) {
-    width: ${({ variant }) => (variant === "sm" ? "auto" : "55%")};
+    min-height: 100%;
+    padding: 40px 40px;
+    width: 55%;
   }
 `;
 
@@ -84,9 +87,13 @@ const Heading = styled.p`
 
 const Details = styled.ul<cardProps>`
   color: #ccc;
-  display: ${({ variant }) => (variant === "sm" ? "block" : "flex")};
+  display: block;
   gap: ${({ variant }) => (variant === "sm" ? "unset" : "20px")};
   font-size: 12px;
+
+  @media (min-width: 800px) {
+    display: flex;
+  }
 
   li {
     padding: 20px 0 0 0;

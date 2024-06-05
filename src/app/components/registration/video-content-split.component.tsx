@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Content = styled.div`
-  padding: 50px 0;
+  padding: 50px 0 0;
   position: relative;
   width: 100vw;
 
@@ -21,6 +21,10 @@ const ContentWrapper = styled.div<contentProps>`
   flex-direction: column;
   margin: 0 auto;
   width: 80%;
+
+  @media (min-width: 768px) {
+    width: 60%;
+  }
 
   @media (min-width: 800px) {
     flex-direction: ${({ $flexdirection }) =>

@@ -22,12 +22,13 @@ const CardSliderContainer = styled.div`
 `;
 
 const CardSliderControls = styled.div`
-  /* border: thin solid blue; */
-  padding: 20px 20px;
-  width: 100%;
+  padding: 50px 20px 20px;
+  margin: 0 auto;
+  width: 80%;
 
   @media (min-width: 800px) {
     height: 100%;
+    margin: 0;
     padding: 150px 50px 0;
     width: 25%;
   }
@@ -170,6 +171,10 @@ const CardsCarousel = styled.div`
   display: flex;
   flex-direction: column-reverse;
   width: 100%;
+
+  @media (min-width: 400px) {
+    width: 95%;
+  }
 
   @media (min-width: 800px) {
     flex-direction: row;

@@ -18,12 +18,13 @@ const ContentBlock = styled.div`
   /* border: thin dashed green; */
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
   margin: 0 auto;
   width: 80%;
 
   @media (min-width: 800px) {
     flex-direction: row;
+    gap: 5px;
     max-width: 1280px;
     width: 70%;
   }
@@ -71,8 +72,12 @@ const HotSpot = styled.a`
   box-shadow: inset 0 0 0 1px #3f3f3f;
   border-radius: 20px;
   display: flex;
-  padding: 75px 50px;
+  padding: 40px 25px;
   transition: all 0.25s ease-out;
+
+  @media (min-width: 800px) {
+    padding: 75px 50px;
+  }
 
   &:hover {
     box-shadow: inset 0 0 0 1px var(--blue);
@@ -98,15 +103,23 @@ const SubHeading = styled.p`
 
 const Caption = styled.p`
   color: var(--white);
-  font-size: 14px;
+  font-size: 12px;
+
+  @media (min-width: 400px) {
+    font-size: 14px;
+  }
 `;
 
 const Label = styled.p`
   color: var(--white);
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
   padding: 10px 0 0;
   transition: all 0.25s ease-out;
+
+  @media (min-width: 400px) {
+    font-size: 20px;
+  }
 `;
 
 interface Props {
