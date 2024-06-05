@@ -24,7 +24,7 @@ const ContentBlock = styled.div`
 
   @media (min-width: 800px) {
     flex-direction: row;
-    gap: 5px;
+    gap: 10px;
     max-width: 1280px;
     width: 70%;
   }
@@ -76,7 +76,7 @@ const HotSpot = styled.a`
   transition: all 0.25s ease-out;
 
   @media (min-width: 800px) {
-    padding: 75px 50px;
+    padding: 60px 25px;
   }
 
   &:hover {
@@ -92,6 +92,10 @@ const Heading = styled.p`
   color: var(--white);
   font-size: 28px;
   font-weight: bold;
+
+  @media (min-width: 800px) {
+    font-size: 36px;
+  }
 `;
 
 const SubHeading = styled.p`
@@ -99,6 +103,10 @@ const SubHeading = styled.p`
   font-size: 16px;
   font-weight: 500;
   padding-top: 10px;
+
+  @media (min-width: 800px) {
+    font-size: 18px;
+  }
 `;
 
 const Caption = styled.p`

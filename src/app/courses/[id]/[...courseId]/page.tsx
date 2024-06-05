@@ -13,10 +13,11 @@ import TextHeaderBlock from "@/app/components/text-block/text-header-block.compo
 import SimilarCourses from "@/app/components/similar-courses/similar-courses.component";
 import DecipherText from "../../components/decipher-text.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
+import { Metadata } from "next";
 
 const fetchData = async () => {
   const query =
-    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27course%27%5D+%7B%0A++_id%2C%0A++name%2C%0A++category%2C%0A++section%2C%0A++slug%2C%0A++code%2C%0A++duration%2C%0A++difficulty%2C%0A++format%2C%0A++time%2C%0A++price%2C%0A++instructors%5B%5D+-%3E+%7B%0A++++title%2C%0A++++profession%2C%0A++++bio%2C%0A++%7D%2C%0A++schedule%5B%5D+-%3E+%7B%0A++++instructor%5B0%5D+-%3E+%7B%0A++++++title%2C%0A++++%7D%2C%0A++++registration%2C%0A++++term%2C%0A++++time%2C%0A++++duration%2C%0A++++open%2C%0A++++start%2C%0A++%7D%2C%0A++%22imageUrl%22%3A+preview.asset+-%3E+url%2C%0A++description%2C%0A++tags%5B%5D+-%3E+%7B%0A++++title%2C%0A++%7D%0A%7D";
+    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27course%27%5D+%7B%0A++_id%2C%0A++metatitle%2C%0A++metadescription%2C%0A++name%2C%0A++category%2C%0A++section%2C%0A++slug%2C%0A++code%2C%0A++duration%2C%0A++difficulty%2C%0A++format%2C%0A++time%2C%0A++price%2C%0A++instructors%5B%5D+-%3E+%7B%0A++++title%2C%0A++++profession%2C%0A++++bio%2C%0A++%7D%2C%0A++schedule%5B%5D+-%3E+%7B%0A++++instructor%5B0%5D+-%3E+%7B%0A++++++title%2C%0A++++%7D%2C%0A++++registration%2C%0A++++term%2C%0A++++time%2C%0A++++duration%2C%0A++++open%2C%0A++++start%2C%0A++%7D%2C%0A++%22imageUrl%22%3A+preview.asset+-%3E+url%2C%0A++description%2C%0A++tags%5B%5D+-%3E+%7B%0A++++title%2C%0A++%7D%0A%7D";
   const response = await fetch(query, { cache: "no-store" });
   // const response = await fetch(query);
 
@@ -28,6 +29,35 @@ const fetchData = async () => {
 
   return result;
 };
+
+type Props = {
+  params: { courseId: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const query =
+    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27course%27%5D+%7B%0A++_id%2C%0A++metatitle%2C%0A++metadescription%2C%0A++name%2C%0A++category%2C%0A++section%2C%0A++slug%2C%0A++code%2C%0A++duration%2C%0A++difficulty%2C%0A++format%2C%0A++time%2C%0A++price%2C%0A++instructors%5B%5D+-%3E+%7B%0A++++title%2C%0A++++profession%2C%0A++++bio%2C%0A++%7D%2C%0A++schedule%5B%5D+-%3E+%7B%0A++++instructor%5B0%5D+-%3E+%7B%0A++++++title%2C%0A++++%7D%2C%0A++++registration%2C%0A++++term%2C%0A++++time%2C%0A++++duration%2C%0A++++open%2C%0A++++start%2C%0A++%7D%2C%0A++%22imageUrl%22%3A+preview.asset+-%3E+url%2C%0A++description%2C%0A++tags%5B%5D+-%3E+%7B%0A++++title%2C%0A++%7D%0A%7D";
+  const response = await fetch(query, { cache: "no-store" });
+  // const response = await fetch(query);
+
+  if (!response.ok) {
+    throw new Error(`HTTP error: Status ${response.status}`);
+  }
+
+  const { result } = await response.json();
+
+  const selectedResults = result.filter((course: any) => {
+    return course.slug.current === params.courseId[0];
+  })[0];
+
+  const { metatitle, metadescription } = selectedResults;
+
+  return {
+    title: metatitle,
+    description: metadescription,
+  };
+}
 
 export default async function Page({
   params,

@@ -13,6 +13,7 @@
   "dependencies": {
     "@gsap/react": "^2.1.1",
     "@react-three/fiber": "^8.16.3",
+    "@sanity/image-url": "^1.0.2",
     "babel-jest": "^29.7.0",
     "dayjs": "^1.11.11",
     "gsap": "^3.12.5",

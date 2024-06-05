@@ -107,7 +107,7 @@ const CardGroup = () => {
         </Row>
 
         <ReadMore>
-          <ActionButton type="secondary" label="Browse Instructors" />
+          <ActionButton type="tertiary" label="Browse Instructors" />
         </ReadMore>
       </Group>
     </Container>

@@ -152,7 +152,7 @@ interface Props {
 }
 
 const CardLayout = ({ results }: Props) => {
-  console.log("results from course details", results);
+  // console.log("results from course details", results);
   const {
     name,
     imageUrl,

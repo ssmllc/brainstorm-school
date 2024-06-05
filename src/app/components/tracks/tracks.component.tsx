@@ -53,7 +53,7 @@ const Tracks = styled.div`
     flex-wrap: nowrap;
     gap: 20px;
     max-width: 1280px;
-    width: 70%;
+    width: 65%;
   }
 `;
 

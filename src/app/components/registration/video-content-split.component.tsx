@@ -31,6 +31,10 @@ const ContentWrapper = styled.div<contentProps>`
       $flexdirection ? $flexdirection : "row"};
     max-width: 1100px;
     width: 70%;
+
+    @media (min-width: 800px) {
+      max-width: 1150px;
+    }
   }
 `;
 
