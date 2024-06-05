@@ -13,7 +13,7 @@ const Content = styled.div`
 `;
 
 interface contentProps {
-  flexdirection?: string;
+  $flexdirection?: string;
 }
 
 const ContentWrapper = styled.div<contentProps>`
@@ -23,8 +23,8 @@ const ContentWrapper = styled.div<contentProps>`
   width: 80%;
 
   @media (min-width: 800px) {
-    flex-direction: ${({ flexdirection }) =>
-      flexdirection ? flexdirection : "row"};
+    flex-direction: ${({ $flexdirection }) =>
+      $flexdirection ? $flexdirection : "row"};
     max-width: 1100px;
     width: 70%;
   }
@@ -55,7 +55,7 @@ const VideoPlayer = styled.div`
 `;
 
 interface contentBlockProps {
-  flexdirection?: string;
+  $flexdirection?: string;
 }
 
 const ContentBlock = styled.div<contentBlockProps>`
@@ -64,8 +64,8 @@ const ContentBlock = styled.div<contentBlockProps>`
   width: 100%;
 
   @media (min-width: 800px) {
-    padding: ${({ flexdirection }) =>
-      flexdirection === "row-reverse"
+    padding: ${({ $flexdirection }) =>
+      $flexdirection === "row-reverse"
         ? "30px 60px 30px 0"
         : "30px 0 30px 60px"};
     width: 50%;
@@ -120,7 +120,7 @@ const VideoContentSplit = ({
 }) => {
   return (
     <Content>
-      <ContentWrapper flexdirection={flexdirection}>
+      <ContentWrapper $flexdirection={flexdirection}>
         <Media>
           {video && (
             <VideoPlayer>
@@ -145,7 +145,7 @@ const VideoContentSplit = ({
           )}
         </Media>
 
-        <ContentBlock flexdirection={flexdirection}>
+        <ContentBlock $flexdirection={flexdirection}>
           <p className="heading">{heading}</p>
           <p className="text">{text}</p>
           {cta && <CallToAction>{cta}</CallToAction>}

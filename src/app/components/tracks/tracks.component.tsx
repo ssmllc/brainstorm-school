@@ -19,7 +19,11 @@ const TracksContainer = styled.div`
 `;
 
 const Anchor = styled(Link)`
-  width: 25%;
+  width: 100%;
+
+  @media (min-width: 800px) {
+    width: 25%;
+  }
 `;
 
 const Tracks = styled.div`

@@ -4,11 +4,12 @@ import React from "react";
 import styled from "styled-components";
 
 interface contentProps {
-  faq?: boolean;
+  $faq?: boolean;
 }
 
 const Content = styled.div<contentProps>`
-  border-bottom: ${({ faq }) => (faq ? "thin solid var(--medium-grey)" : "0")};
+  border-bottom: ${({ $faq }) =>
+    $faq ? "thin solid var(--medium-grey)" : "0"};
   padding: 50px 0;
   position: relative;
   width: 100%;
@@ -138,7 +139,7 @@ const RegistrationBlock = ({
   faq?: boolean;
 }) => {
   return (
-    <Content faq={faq}>
+    <Content $faq={faq}>
       <ContentBlock>
         {primary ? (
           <BigHeading scale={scale} className="heading">

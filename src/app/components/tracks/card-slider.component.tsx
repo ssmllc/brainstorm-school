@@ -9,7 +9,7 @@ import { IconNext, IconPrevious } from "../icons/icon-arrow.component";
 const CardSliderContainer = styled.div`
   /* border: thin solid red; */
   display: flex;
-  height: 100vh;
+  height: 75vh;
   justify-content: end;
   padding: 0;
   position: relative;
@@ -40,7 +40,7 @@ const CardSliderCards = styled.div`
   position: relative;
   height: 100%;
   padding: 0;
-  width: 100%;
+  width: 95%;
 
   &::after {
     background: linear-gradient(

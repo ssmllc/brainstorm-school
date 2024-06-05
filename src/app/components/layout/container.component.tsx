@@ -5,12 +5,12 @@ import styled from "styled-components";
 
 interface sectionProps {
   alignitems?: string;
-  background?: string;
+  $background?: string;
   border?: string;
   borderright?: string;
   borderradius?: string;
   display?: string;
-  gap?: string;
+  $gap?: string;
   height?: string;
   justifycontent?: string;
   flexdirection?: string;
@@ -18,7 +18,7 @@ interface sectionProps {
   flexgrow?: string;
   margin?: string;
   maxwidth?: string;
-  padding?: string;
+  $padding?: string;
   overflow?: string;
   position?: string;
   width?: string;
@@ -26,12 +26,12 @@ interface sectionProps {
 
 const FlexSection = styled.div<sectionProps>`
   align-items: ${({ alignitems }) => alignitems};
-  background: ${({ background }) => (background ? background : "0")};
+  background: ${({ $background }) => ($background ? $background : "0")};
   border: ${({ border }) => border};
   border-right: ${({ borderright }) => borderright};
   border-radius: ${({ borderradius }) => (borderradius ? borderradius : 0)};
   display: ${({ display }) => (display ? display : "block")};
-  gap: ${({ gap }) => (gap ? gap : 0)};
+  gap: ${({ $gap }) => ($gap ? $gap : 0)};
   height: ${({ height }) => (height ? height : "auto")};
   flex-direction: column;
   flex-wrap: ${({ flexwrap }) => (flexwrap ? flexwrap : "nowrap")};
@@ -40,7 +40,7 @@ const FlexSection = styled.div<sectionProps>`
   margin: ${({ margin }) => (margin ? margin : "0")};
   max-width: ${({ maxwidth }) => maxwidth};
   overflow: ${({ overflow }) => overflow};
-  padding: ${({ padding }) => (padding ? padding : "0")};
+  padding: ${({ $padding }) => ($padding ? $padding : "0")};
   position: ${({ position }) => (position ? position : "relative")};
   width: ${({ width }) => (width ? width : "100vw")};
 
@@ -55,12 +55,12 @@ const FlexSection = styled.div<sectionProps>`
 
 const Section = styled.div<sectionProps>`
   align-items: ${({ alignitems }) => alignitems};
-  background: ${({ background }) => (background ? background : "0")};
+  background: ${({ $background }) => ($background ? $background : "0")};
   border: ${({ border }) => border};
   border-right: ${({ borderright }) => borderright};
   border-radius: ${({ borderradius }) => (borderradius ? borderradius : 0)};
   display: ${({ display }) => (display ? display : "block")};
-  gap: ${({ gap }) => (gap ? gap : 0)};
+  gap: ${({ $gap }) => ($gap ? $gap : 0)};
   height: ${({ height }) => (height ? height : "auto")};
   flex-direction: ${({ flexdirection }) =>
     flexdirection ? flexdirection : "row"};
@@ -70,7 +70,7 @@ const Section = styled.div<sectionProps>`
   margin: ${({ margin }) => (margin ? margin : "0")};
   max-width: ${({ maxwidth }) => maxwidth};
   overflow: ${({ overflow }) => overflow};
-  padding: ${({ padding }) => (padding ? padding : "0")};
+  padding: ${({ $padding }) => ($padding ? $padding : "0")};
   position: ${({ position }) => (position ? position : "relative")};
   width: ${({ width }) => (width ? width : "100vw")};
   flex-grow: ${({ flexgrow }) => flexgrow};
@@ -132,7 +132,7 @@ export const FlexContainer = ({
   return (
     <FlexSection
       alignitems={alignitems}
-      background={background}
+      $background={background}
       border={border}
       borderright={borderright}
       borderradius={borderradius}
@@ -142,11 +142,11 @@ export const FlexContainer = ({
       flexdirection={flexdirection}
       flexwrap={flexwrap}
       flexgrow={flexgrow}
-      gap={gap}
+      $gap={gap}
       height={height}
       margin={margin}
       overflow={overflow}
-      padding={padding}
+      $padding={padding}
       position={position}
       width={width}
       maxwidth={maxwidth}
@@ -181,7 +181,7 @@ const Container = ({
   return (
     <Section
       alignitems={alignitems}
-      background={background}
+      $background={background}
       border={border}
       borderright={borderright}
       borderradius={borderradius}
@@ -191,12 +191,12 @@ const Container = ({
       flexdirection={flexdirection}
       flexwrap={flexwrap}
       flexgrow={flexgrow}
-      gap={gap}
+      $gap={gap}
       height={height}
       margin={margin}
       maxwidth={maxwidth}
       overflow={overflow}
-      padding={padding}
+      $padding={padding}
       position={position}
       width={width}
     >

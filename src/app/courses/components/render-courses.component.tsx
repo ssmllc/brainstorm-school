@@ -28,6 +28,7 @@ const RenderCourses = ({ selectedCourses, noheading, width }: Props) => {
         courseList.map(({ sections, slug }: any, index: number) => {
           return (
             <div key={index}>
+              <p>Filter</p>
               {sections?.map(
                 ({
                   category,

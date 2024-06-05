@@ -11,7 +11,7 @@ import gsap from "gsap";
 interface bannerProps {
   theme: string;
   $hero: string;
-  background: string;
+  $background: string;
 }
 
 const Banner = styled.div<bannerProps>`
@@ -30,8 +30,10 @@ const Banner = styled.div<bannerProps>`
   }
 
   &::before {
-    background: ${({ background }) =>
-      background ? `url(${background}) top center no-repeat` : "var(--black)"};
+    background: ${({ $background }) =>
+      $background
+        ? `url(${$background}) top center no-repeat`
+        : "var(--black)"};
     background-size: cover;
     content: "";
     display: block;
@@ -96,13 +98,13 @@ const ActionWrapper = styled.div`
 `;
 
 interface mediaProps {
-  image?: string;
+  $image?: string;
   media?: string;
 }
 
 const Media = styled.div<mediaProps>`
-  background: ${({ image }) =>
-    image ? `url(${image}) top left no-repeat` : "var(--black)"};
+  background: ${({ $image }) =>
+    $image ? `url(${$image}) top left no-repeat` : "var(--black)"};
   border-radius: 20px;
   overflow: hidden;
   height: 250px;
@@ -171,7 +173,7 @@ const MediaBanner = ({
   }, []);
 
   return (
-    <Banner theme={theme} $hero={hero} background={randomBanner}>
+    <Banner theme={theme} $hero={hero} $background={randomBanner}>
       <Content>
         <Column>
           {hero === "true" && <Pill label={label ? label : "no label added"} />}
@@ -259,7 +261,7 @@ const MediaBanner = ({
         </ActionWrapper>
       </Content>
 
-      {hero === "true" && image && !media && <Media image={image} />}
+      {hero === "true" && image && !media && <Media $image={image} />}
 
       {hero === "true" && media && (
         <Media>

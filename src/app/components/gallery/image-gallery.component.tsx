@@ -63,11 +63,11 @@ const Carousel = styled.div`
 `;
 
 interface cardProps {
-  image: string;
+  $image: string;
 }
 
 const Card = styled.div<cardProps>`
-  background: ${({ image }) => `url(${image}) center center no-repeat`};
+  background: ${({ $image }) => `url(${$image}) center center no-repeat`};
   background-size: cover;
   border-radius: 25px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -82,14 +82,14 @@ const Card = styled.div<cardProps>`
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 62%;
+    width: 65%;
     z-index: 10;
   }
 
   &[data-position="2"] {
     /* max-height: 450px; */
     height: 90%;
-    left: 61%;
+    left: 62%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -99,7 +99,7 @@ const Card = styled.div<cardProps>`
   &[data-position="3"] {
     /* max-height: 400px; */
     height: 80%;
-    left: 65.75%;
+    left: 66%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -109,7 +109,7 @@ const Card = styled.div<cardProps>`
   &[data-position="4"] {
     /* max-height: 350px; */
     height: 70%;
-    left: 70.25%;
+    left: 70%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -168,7 +168,7 @@ const ImageGallery = ({ header }: Props) => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "90%",
-                left: "26.5%",
+                left: "25.5%",
                 width: "25%",
                 zIndex: "9",
               });
@@ -182,7 +182,7 @@ const ImageGallery = ({ header }: Props) => {
                 height: "100%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                width: "62%",
+                width: "65%",
                 zIndex: "10",
               });
             }
@@ -190,7 +190,7 @@ const ImageGallery = ({ header }: Props) => {
             if (slide.dataset.position === "3") {
               gsap.to(slide, {
                 height: "90%",
-                left: "61%",
+                left: "62%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -242,7 +242,7 @@ const ImageGallery = ({ header }: Props) => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "90%",
-                left: "26.5%",
+                left: "25.5%",
                 width: "25%",
                 zIndex: "9",
               });
@@ -256,7 +256,7 @@ const ImageGallery = ({ header }: Props) => {
                 height: "100%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                width: "62%",
+                width: "65%",
                 zIndex: "10",
               });
             }
@@ -264,7 +264,7 @@ const ImageGallery = ({ header }: Props) => {
             if (slide.dataset.position === "4") {
               gsap.to(slide, {
                 height: "90%",
-                left: "61.25%",
+                left: "62%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -304,7 +304,7 @@ const ImageGallery = ({ header }: Props) => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "80%",
-                left: "22%",
+                left: "21.5%",
                 width: "25%",
                 zIndex: "8",
               });
@@ -315,7 +315,7 @@ const ImageGallery = ({ header }: Props) => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "90%",
-                left: "26.5%",
+                left: "25.5%",
                 width: "25%",
                 zIndex: "9",
               });
@@ -329,7 +329,7 @@ const ImageGallery = ({ header }: Props) => {
                 height: "100%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                width: "62%",
+                width: "65%",
                 zIndex: "10",
               });
             }
@@ -337,7 +337,7 @@ const ImageGallery = ({ header }: Props) => {
             if (slide.dataset.position === "5") {
               gsap.to(slide, {
                 height: "90%",
-                left: "61%",
+                left: "62%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -378,7 +378,7 @@ const ImageGallery = ({ header }: Props) => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "80%",
-                left: "22%",
+                left: "21.5%",
                 width: "25%",
                 zIndex: "8",
               });
@@ -389,7 +389,7 @@ const ImageGallery = ({ header }: Props) => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "90%",
-                left: "26.5%",
+                left: "25.5%",
                 width: "25%",
                 zIndex: "9",
               });
@@ -403,7 +403,7 @@ const ImageGallery = ({ header }: Props) => {
                 height: "100%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                width: "62%",
+                width: "65%",
                 zIndex: "10",
               });
             }
@@ -429,7 +429,7 @@ const ImageGallery = ({ header }: Props) => {
                 position: "absolute",
                 top: "50%",
                 transform: "translate(-50%, -50%)",
-                width: "62%",
+                width: "65%",
                 zIndex: "10",
               });
             }
@@ -439,7 +439,7 @@ const ImageGallery = ({ header }: Props) => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "90%",
-                left: "61%",
+                left: "62%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -451,7 +451,7 @@ const ImageGallery = ({ header }: Props) => {
             if (slide.dataset.position === "3") {
               gsap.to(slide, {
                 height: "80%",
-                left: "65.75%",
+                left: "66%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -463,7 +463,7 @@ const ImageGallery = ({ header }: Props) => {
             if (slide.dataset.position === "4") {
               gsap.to(slide, {
                 height: "70%",
-                left: "70.25%",
+                left: "70%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -475,7 +475,7 @@ const ImageGallery = ({ header }: Props) => {
             if (slide.dataset.position === "5") {
               gsap.to(slide, {
                 height: "60%",
-                left: "73.5%",
+                left: "73%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -493,7 +493,7 @@ const ImageGallery = ({ header }: Props) => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "90%",
-                left: "26.5%",
+                left: "25.5%",
                 width: "25%",
                 zIndex: "9",
               });
@@ -507,7 +507,7 @@ const ImageGallery = ({ header }: Props) => {
                 height: "100%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                width: "62%",
+                width: "65%",
                 zIndex: "10",
               });
             }
@@ -515,7 +515,7 @@ const ImageGallery = ({ header }: Props) => {
             if (slide.dataset.position === "3") {
               gsap.to(slide, {
                 height: "90%",
-                left: "61%",
+                left: "62%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -556,7 +556,7 @@ const ImageGallery = ({ header }: Props) => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "80%",
-                left: "22%",
+                left: "21.5%",
                 width: "25%",
                 zIndex: "9",
               });
@@ -567,7 +567,7 @@ const ImageGallery = ({ header }: Props) => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "90%",
-                left: "26.5%",
+                left: "25.5%",
                 width: "25%",
                 zIndex: "9",
               });
@@ -581,7 +581,7 @@ const ImageGallery = ({ header }: Props) => {
                 height: "100%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                width: "62%",
+                width: "65%",
                 zIndex: "10",
               });
             }
@@ -589,7 +589,7 @@ const ImageGallery = ({ header }: Props) => {
             if (slide.dataset.position === "4") {
               gsap.to(slide, {
                 height: "90%",
-                left: "61.25%",
+                left: "62%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -630,7 +630,7 @@ const ImageGallery = ({ header }: Props) => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "80%",
-                left: "22%",
+                left: "21.5%",
                 width: "25%",
                 zIndex: "8",
               });
@@ -641,7 +641,7 @@ const ImageGallery = ({ header }: Props) => {
                 duration: 0.5,
                 ease: "power1.out",
                 height: "90%",
-                left: "26.5%",
+                left: "25.5%",
                 width: "25%",
                 zIndex: "9",
               });
@@ -655,7 +655,7 @@ const ImageGallery = ({ header }: Props) => {
                 height: "100%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                width: "62%",
+                width: "65%",
                 zIndex: "10",
               });
             }
@@ -663,7 +663,7 @@ const ImageGallery = ({ header }: Props) => {
             if (slide.dataset.position === "5") {
               gsap.to(slide, {
                 height: "90%",
-                left: "61%",
+                left: "62%",
                 position: "absolute",
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -687,31 +687,31 @@ const ImageGallery = ({ header }: Props) => {
         </Button>
         <Carousel>
           <Card
-            image="/banner/banner-1.jpg"
+            $image="/banner/banner-1.jpg"
             data-position="1"
             data-active="true"
             className="gallery-card"
           />
           <Card
-            image="/banner/banner-15.jpg"
+            $image="/banner/banner-15.jpg"
             data-position="2"
             data-active="false"
             className="gallery-card"
           />
           <Card
-            image="/banner/banner-2.jpg"
+            $image="/banner/banner-2.jpg"
             data-position="3"
             data-active="false"
             className="gallery-card"
           />
           <Card
-            image="/banner/banner-24.jpg"
+            $image="/banner/banner-24.jpg"
             data-position="4"
             data-active="false"
             className="gallery-card"
           />
           <Card
-            image="/banner/banner-10.jpg"
+            $image="/banner/banner-10.jpg"
             data-position="5"
             data-active="false"
             className="gallery-card"

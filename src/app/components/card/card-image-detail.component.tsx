@@ -46,7 +46,7 @@ const Card = styled(Link)<cardProps>`
 
 interface previewProps {
   image: string;
-  tag: string;
+  $tag: string;
 }
 
 const Preview = styled.div<previewProps>`
@@ -59,7 +59,7 @@ const Preview = styled.div<previewProps>`
   &:before {
     background: var(--black);
     border-radius: 50px;
-    content: ${({ tag }) => `"${tag}"`};
+    content: ${({ $tag }) => `"${$tag}"`};
     color: var(--white);
     font-size: 10px;
     font-weight: 500;
@@ -124,7 +124,7 @@ const CardImageDetail = ({
       className="course-card"
       width={width}
     >
-      <Preview image={preview} tag={courseTrack} />
+      <Preview image={preview} $tag={courseTrack} />
       <Details>
         <CourseName>{courseName}</CourseName>
         <CourseDetails>

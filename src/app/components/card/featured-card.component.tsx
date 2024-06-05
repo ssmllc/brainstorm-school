@@ -4,8 +4,8 @@ import styled from "styled-components";
 import ImageDetailCard from "./card.component";
 
 interface featuredProps {
-  sm_margin?: string;
-  margin?: string;
+  $sm_margin?: string;
+  $margin?: string;
 }
 
 const Featured = styled.div<featuredProps>`
@@ -14,13 +14,13 @@ const Featured = styled.div<featuredProps>`
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: row;
-  margin: ${({ sm_margin }) => (sm_margin ? sm_margin : "75px auto")};
+  margin: ${({ $sm_margin }) => ($sm_margin ? $sm_margin : "75px auto")};
   position: relative;
   width: 85%;
 
   @media (min-width: 800px) {
     max-width: 1125px;
-    margin: ${({ margin }) => (margin ? margin : "75px auto")};
+    margin: ${({ $margin }) => ($margin ? $margin : "75px auto")};
     width: 70%;
   }
 `;
@@ -43,7 +43,7 @@ const FeaturedCard = ({
   sm_margin,
 }: Props) => {
   return (
-    <Featured sm_margin={sm_margin} margin={margin}>
+    <Featured $sm_margin={sm_margin} $margin={margin}>
       <ImageDetailCard
         variant="lg"
         poster={poster}

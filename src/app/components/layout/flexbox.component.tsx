@@ -4,37 +4,37 @@ import styled from "styled-components";
 import { ReactNode } from "react";
 
 interface containerProps {
-  alignitems?: string;
-  flexdirection?: string;
+  $alignitems?: string;
+  $flexdirection?: string;
   flexwrap?: string;
   justifycontent?: string;
-  margin?: string;
+  $margin?: string;
   textalign?: string;
   sm_textalign?: string;
   sm_margin?: string;
   width?: string;
-  sm_width?: string;
+  $sm_width?: string;
 }
 const Container = styled.div<containerProps>`
-  align-items: ${({ alignitems }) => alignitems};
+  align-items: ${({ $alignitems }) => $alignitems};
   /* border: thin dashed cyan; */
   display: flex;
   flex-wrap: ${({ flexwrap }) => flexwrap};
   gap: 10px;
-  flex-direction: ${({ flexdirection }) =>
-    flexdirection ? flexdirection : "column"};
+  flex-direction: ${({ $flexdirection }) =>
+    $flexdirection ? $flexdirection : "column"};
   justify-content: ${({ justifycontent }) => justifycontent};
   margin: ${({ sm_margin }) => (sm_margin ? sm_margin : "0 auto")};
   text-align: ${({ sm_textalign }) => (sm_textalign ? sm_textalign : "left")};
   max-width: 1400px;
-  width: ${({ sm_width }) => (sm_width ? sm_width : "100vw")};
+  width: ${({ $sm_width }) => ($sm_width ? $sm_width : "100vw")};
 
   //medium
   @media (min-width: 768px) {
-    align-items: ${({ alignitems }) => alignitems};
-    flex-direction: ${({ flexdirection }) =>
-      flexdirection ? flexdirection : "row"};
-    margin: ${({ margin }) => (margin ? margin : "0 auto")};
+    align-items: ${({ $alignitems }) => $alignitems};
+    flex-direction: ${({ $flexdirection }) =>
+      $flexdirection ? $flexdirection : "row"};
+    margin: ${({ $margin }) => ($margin ? $margin : "0 auto")};
     text-align: ${({ sm_textalign }) => (sm_textalign ? sm_textalign : "left")};
     width: ${({ width }) => (width ? width : "100vw")};
   }
@@ -80,16 +80,16 @@ const FlexBox = ({
 }: Props) => {
   return (
     <Container
-      alignitems={alignitems}
-      flexdirection={flexdirection}
+      $alignitems={alignitems}
+      $flexdirection={flexdirection}
       flexwrap={flexwrap}
       justifycontent={justifycontent}
-      margin={margin}
+      $margin={margin}
       textalign={textalign}
       sm_textalign={sm_textalign}
       sm_margin={sm_margin}
       width={width}
-      sm_width={sm_width}
+      $sm_width={sm_width}
     >
       {children}
     </Container>
