@@ -9,7 +9,7 @@ import Container from "../layout/container.component";
 import DecipherText from "@/app/courses/components/decipher-text.component";
 import Link from "next/link";
 import Header from "../text-block/header.component";
-import { IconPencilTip } from "../icons/icon-pencil-tip.component";
+import { IconPencilTip } from "../icons/icom-pencil-tip.component";
 import { IconRequirements } from "../icons/icon-requirements.component";
 import { IconPrice } from "../icons/icon-price.component";
 import { IconFormat } from "../icons/icon-format.component";
@@ -153,8 +153,16 @@ interface Props {
 
 const CardLayout = ({ results }: Props) => {
   console.log("results from course details", results);
-  const { imageUrl, schedule, price, instructors, tags, description, format } =
-    results;
+  const {
+    name,
+    imageUrl,
+    schedule,
+    price,
+    instructors,
+    tags,
+    description,
+    format,
+  } = results;
 
   const { duration, registration, open, start, term, time } = schedule
     ? schedule[0]
@@ -169,11 +177,7 @@ const CardLayout = ({ results }: Props) => {
     <Container margin="0 auto" padding="25px 25px">
       <Wrapper>
         <CardWrapper>
-          <Header
-            level="2"
-            text="Portfolio Development Character Creature"
-            margin="20px 0"
-          />
+          <Header level="2" text={name} margin="20px 0" />
           <CardImage preview={imageUrl} />
           <DecipherText
             description={description}

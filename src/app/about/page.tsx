@@ -8,6 +8,8 @@ import { MiniCards } from "../components/card/mini-card.component";
 import FlexBox from "../components/layout/flexbox.component";
 import Header from "../components/text-block/header.component";
 import FAQs from "@/app/components/text-block/faqs.component";
+import ImageGallery from "../components/gallery/image-gallery.component";
+import SimilarCourses from "../components/similar-courses/similar-courses.component";
 
 export const metadata: Metadata = {
   title: "About Brainstorm School",
@@ -154,16 +156,28 @@ export default async function About() {
           <MiniCards header="Spring 2024" width="100%" results={result[0]} />
         </FlexContainer>
 
+        <ImageGallery header="Gallery of Instructors Work" />
+
+        <FlexBox width="80%" margin="0 auto" flexdirection="column">
+          <FAQs results={result[0]} />
+        </FlexBox>
+
         <RegistrationBlock
           primary={false}
           heading="Get updates to your inbox"
           scale="xl"
           cta="Sign Me Up"
           ctaType="primary"
+          faq={true}
         />
 
-        <FlexBox width="80%" margin="0 auto" flexdirection="column">
-          <FAQs results={result[0]} />
+        <FlexBox
+          width="100%"
+          margin="75px auto 0"
+          flexdirection="column"
+          alignitems="center"
+        >
+          <SimilarCourses header="Start Exploring Courses!" />
         </FlexBox>
       </FlexBox>
     </>

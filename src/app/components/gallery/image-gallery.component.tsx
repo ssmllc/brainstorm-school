@@ -139,7 +139,11 @@ const CarouselWrapper = styled.div`
   }
 `;
 
-const ImageGallery = () => {
+interface Props {
+  header: string;
+}
+
+const ImageGallery = ({ header }: Props) => {
   let currentPosition: number = 1;
 
   const handleCardSliderMove = (direction: "next" | "prev") => {
@@ -675,11 +679,7 @@ const ImageGallery = () => {
 
   return (
     <Gallery>
-      <RegistrationBlock
-        heading="Gallery of Students' Work"
-        primary={false}
-        scale="xl"
-      />
+      <RegistrationBlock heading={header} primary={false} scale="xl" />
 
       <CarouselWrapper>
         <Button className="prev" onClick={() => handleCardSliderMove("prev")}>

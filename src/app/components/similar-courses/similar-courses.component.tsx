@@ -2,15 +2,18 @@ import CardImageDetail from "../card/card-image-detail.component";
 import FlexBox from "../layout/flexbox.component";
 import Header from "../text-block/header.component";
 
-const SimilarCourses = () => {
+interface Props {
+  header: string;
+}
+const SimilarCourses = ({ header }: Props) => {
   return (
     <>
-      <Header level="2" text="View Similar Courses" />
+      <Header level="2" text={header} />
 
       <FlexBox margin="50px 0" width="80%">
         <CardImageDetail
-          base="/workshops"
-          slug="brainstorm-connection"
+          base="/courses"
+          slug="foundation"
           path="creature-anatomy"
           preview="/banner/banner-17.jpg"
           courseTrack="Foundation"
@@ -31,9 +34,9 @@ const SimilarCourses = () => {
           courseDuration="10-week Course"
         />
         <CardImageDetail
-          base="/workshops"
-          slug="brainstorm-connection"
-          path="rhythm-and-structure"
+          base="/courses"
+          slug="concept-art-games-and-film"
+          path="introduction-to-character-design"
           preview="/banner/banner-19.jpg"
           courseTrack="Foundation"
           courseName="Rhythm & Structure"
@@ -42,9 +45,9 @@ const SimilarCourses = () => {
           courseDuration="10-week Course"
         />
         <CardImageDetail
-          base="/workshops"
-          slug="brainstorm-connection"
-          path="introduction-to-zbrush"
+          base="/courses"
+          slug="foundation"
+          path="creature-anatomy"
           preview="/banner/banner-21.jpg"
           courseTrack="2D - 3D Concept Design"
           courseName="Introduction to ZBrush"
@@ -53,6 +56,14 @@ const SimilarCourses = () => {
           courseDuration="10-week Course"
         />
       </FlexBox>
+
+      <Header
+        href="/courses"
+        level="5"
+        text="Explore more courses"
+        color="var(--blue)"
+        fontSize="12px"
+      />
     </>
   );
 };

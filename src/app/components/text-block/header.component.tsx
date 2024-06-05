@@ -53,7 +53,7 @@ const Header4 = styled.p<textProps>`
 `;
 
 const Header5 = styled(Link)<textProps>`
-  color: var(--white);
+  color: ${({ color }) => (color ? color : "var(--white)")};
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "24px")};
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "normal")};
   display: inline;

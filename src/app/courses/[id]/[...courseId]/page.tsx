@@ -204,7 +204,7 @@ export default async function Page({
         alignitems="center"
         width="100%"
       >
-        <SimilarCourses />
+        <SimilarCourses header="View Similar Courses" />
       </FlexBox>
     </>
   );

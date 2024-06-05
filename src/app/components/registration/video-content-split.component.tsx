@@ -3,7 +3,6 @@ import React from "react";
 import styled from "styled-components";
 
 const Content = styled.div`
-  /* border: thin solid red; */
   padding: 50px 0;
   position: relative;
   width: 100vw;
@@ -18,7 +17,6 @@ interface contentProps {
 }
 
 const ContentWrapper = styled.div<contentProps>`
-  /* border: thin solid red; */
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -27,13 +25,12 @@ const ContentWrapper = styled.div<contentProps>`
   @media (min-width: 800px) {
     flex-direction: ${({ flexdirection }) =>
       flexdirection ? flexdirection : "row"};
-    max-width: 1280px;
+    max-width: 1100px;
     width: 70%;
   }
 `;
 
 const Media = styled.div`
-  /* border: thin solid red; */
   background: var(--black);
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -45,7 +42,6 @@ const Media = styled.div`
 `;
 
 const VideoPlayer = styled.div`
-  /* border: thin solid blue; */
   background: var(--black);
   border-radius: 20px;
   overflow: hidden;
@@ -58,13 +54,20 @@ const VideoPlayer = styled.div`
   }
 `;
 
-const ContentBlock = styled.div`
+interface contentBlockProps {
+  flexdirection?: string;
+}
+
+const ContentBlock = styled.div<contentBlockProps>`
   color: var(--white);
   padding: 30px 0;
   width: 100%;
 
   @media (min-width: 800px) {
-    padding: 30px 60px;
+    padding: ${({ flexdirection }) =>
+      flexdirection === "row-reverse"
+        ? "30px 60px 30px 0"
+        : "30px 0 30px 60px"};
     width: 50%;
   }
 
@@ -141,7 +144,8 @@ const VideoContentSplit = ({
             </VideoPlayer>
           )}
         </Media>
-        <ContentBlock>
+
+        <ContentBlock flexdirection={flexdirection}>
           <p className="heading">{heading}</p>
           <p className="text">{text}</p>
           {cta && <CallToAction>{cta}</CallToAction>}

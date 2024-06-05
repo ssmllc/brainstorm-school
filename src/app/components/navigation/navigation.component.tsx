@@ -245,7 +245,7 @@ const Navigation = () => {
           </MenuItem>
         </li>
         <li>
-          <CallToAction href="/register">Register</CallToAction>
+          <CallToAction href="/registration">Register</CallToAction>
         </li>
       </NavigationMenu>
     </NavigationBar>
