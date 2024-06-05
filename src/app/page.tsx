@@ -35,7 +35,7 @@ const Home = async () => {
 
         <CardSlider />
 
-        <ImageGallery />
+        <ImageGallery header="Gallery of Instructors Work" />
 
         <CardGroup />
 

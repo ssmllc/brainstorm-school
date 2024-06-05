@@ -5,14 +5,14 @@ import Image from "next/image";
 import styled from "styled-components";
 
 interface logoProps {
-  justify: string;
+  $justify: string;
   padding?: string;
 }
 
 const Logo = styled.div<logoProps>`
   align-items: center;
   display: flex;
-  justify-content: ${({ justify }) => justify};
+  justify-content: ${({ $justify }) => $justify};
   padding: ${({ padding }) => (padding ? padding : "0 20px")};
 `;
 
@@ -32,7 +32,7 @@ interface Props {
 
 const BrainstormLogo = ({ justify, padding }: Props) => {
   return (
-    <Logo justify={justify} padding={padding}>
+    <Logo $justify={justify} padding={padding}>
       <Image
         src="/logo/brainstorm-logo.png"
         width={42}

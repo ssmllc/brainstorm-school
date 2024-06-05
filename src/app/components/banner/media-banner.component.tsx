@@ -10,7 +10,7 @@ import gsap from "gsap";
 
 interface bannerProps {
   theme: string;
-  hero: string;
+  $hero: string;
   background: string;
 }
 
@@ -18,7 +18,7 @@ const Banner = styled.div<bannerProps>`
   background: ${({ theme }) =>
     theme === "light" ? "var(--white)" : "var(--black)"};
   display: flex;
-  height: ${({ hero }) => (hero === "true" ? "100vh" : "60vh")};
+  height: ${({ $hero }) => ($hero === "true" ? "100vh" : "60vh")};
   flex-direction: column;
   overflow: hidden;
   padding: 100px 0 0 0;
@@ -36,7 +36,7 @@ const Banner = styled.div<bannerProps>`
     content: "";
     display: block;
     height: 100%;
-    filter: ${({ hero }) => (hero === "true" ? "blur(5px)" : "blur(0)")};
+    filter: ${({ $hero }) => ($hero === "true" ? "blur(5px)" : "blur(0)")};
     left: 0;
     position: absolute;
     top: 0;
@@ -171,7 +171,7 @@ const MediaBanner = ({
   }, []);
 
   return (
-    <Banner theme={theme} hero={hero} background={randomBanner}>
+    <Banner theme={theme} $hero={hero} background={randomBanner}>
       <Content>
         <Column>
           {hero === "true" && <Pill label={label ? label : "no label added"} />}

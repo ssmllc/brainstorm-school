@@ -9,7 +9,7 @@ import Link from "next/link";
 type containerProps = {
   stacked: string;
   alignitems?: string;
-  background?: string;
+  $background?: string;
   boxshadow?: string;
   width?: string;
   sm_padding?: string;
@@ -18,8 +18,8 @@ type containerProps = {
 
 const Container = styled.div<containerProps>`
   align-items: ${({ alignitems }) => (alignitems ? alignitems : "center")};
-  background: ${({ background }) =>
-    background ? background : "var(--off-black)"};
+  background: ${({ $background }) =>
+    $background ? $background : "var(--off-black)"};
   box-shadow: ${({ boxshadow }) =>
     boxshadow ? boxshadow : "0 0 15px rgba(0, 0, 0, 0.5)"};
   border-radius: 20px;
@@ -107,7 +107,7 @@ export const Card = ({
       ) : (
         <Container
           alignitems={alignitems}
-          background={background}
+          $background={background}
           boxshadow={boxshadow}
           stacked={stacked}
           width={width}
