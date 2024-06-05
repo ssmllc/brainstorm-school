@@ -177,7 +177,7 @@ const FeaturedSlider = ({ children, heading, textalign }: Props) => {
           alignitems="center"
           justifycontent="center"
           sm_width="80%"
-          sm_margin="50px 0"
+          sm_margin="50px auto"
           margin="50px auto"
           width="100%"
         >

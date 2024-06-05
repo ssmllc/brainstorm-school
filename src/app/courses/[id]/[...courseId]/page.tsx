@@ -115,52 +115,51 @@ export default async function Page({
             <CardImage
               boxshadow="0 0 10px var(--black)"
               className="slide"
-              preview="/cards/character-design.jpg"
+              preview="/banner/banner-1.jpg"
               width="350px"
             />
             <CardImage
               boxshadow="0 0 10px var(--black)"
               className="slide"
-              preview="/cards/character-design.jpg"
+              preview="/banner/banner-10.jpg"
               width="350px"
             />
             <CardImage
               boxshadow="0 0 10px var(--black)"
               className="slide"
-              preview="/cards/character-design.jpg"
+              preview="/banner/banner-21.jpg"
               width="350px"
             />
             <CardImage
               boxshadow="0 0 10px var(--black)"
               className="slide"
-              preview="/cards/character-design.jpg"
+              preview="/banner/banner-31.jpg"
               width="350px"
             />
             <CardImage
               boxshadow="0 0 10px var(--black)"
               className="slide"
-              preview="/cards/character-design.jpg"
+              preview="/banner/banner-41.jpg"
               width="350px"
             />
             <CardImage
               boxshadow="0 0 10px var(--black)"
               className="slide"
-              preview="/cards/character-design.jpg"
+              preview="/banner/banner-45.jpg"
               width="350px"
             />
           </Carousel>
 
-          <FlexContainer
+          <Container
             alignitems="center"
             display="flex"
-            justifycontent="end"
             position="relative"
             width="100%"
           >
             <TextHeaderBlock fontSize="36px" fontWeight="bold">
-              Meet your instructor
+              Meet Your Instructor
             </TextHeaderBlock>
-          </FlexContainer>
+          </Container>
 
           {instructors?.map(
             (
@@ -178,17 +177,20 @@ export default async function Page({
               return (
                 <div
                   key={index}
-                  style={{ borderBottom: "thin solid var(--medium-grey)" }}
+                  style={{
+                    borderBottom: "thin solid var(--medium-grey)",
+                    width: "100%",
+                  }}
                 >
                   <FlexBox
                     margin="50px auto"
                     width="100%"
                     flexdirection="column"
                   >
-                    <FlexBox margin="50px auto" width="100%">
+                    <FlexBox margin="35px auto" width="100%">
                       <FlexBox
                         margin="0 auto"
-                        width="30%"
+                        width="45%"
                         alignitems="baseline"
                       >
                         <Card
@@ -205,7 +207,7 @@ export default async function Page({
 
                       <FlexBox
                         margin="0 auto"
-                        width="70%"
+                        width="100%"
                         flexdirection="column"
                       >
                         <DecipherText description={bio} margin="0" />
@@ -217,7 +219,7 @@ export default async function Page({
                       primary={true}
                       heading="Register for this course"
                       scale="xl"
-                      cta="Register"
+                      cta="Register Today"
                       ctaType="primary"
                     />
                   </FlexBox>

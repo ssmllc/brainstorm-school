@@ -117,7 +117,7 @@ const Carousel = ({ children }: Props) => {
   }, [windowWidth]);
 
   return (
-    <Container display="flex" width={"100%"} height="450px">
+    <Container display="flex" width={"100%"} height="350px">
       <Button className="prev" onClick={() => handleCardSliderMove("prev")}>
         <svg
           viewBox="0 0 48 48"

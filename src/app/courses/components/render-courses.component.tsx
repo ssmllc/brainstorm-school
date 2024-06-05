@@ -6,6 +6,8 @@ import CardImageDetail from "@/app/components/card/card-image-detail.component";
 import Container from "@/app/components/layout/container.component";
 import Heading from "@/app/components/heading/heading.component";
 import { Course, Sections } from "@/app/types/types";
+import Header from "@/app/components/text-block/header.component";
+import FlexBox from "@/app/components/layout/flexbox.component";
 
 interface Props {
   selectedCourses?: Sections[];
@@ -45,7 +47,14 @@ const RenderCourses = ({ selectedCourses, noheading, width }: Props) => {
                     {noheading ? (
                       <div style={{ margin: "50px 0" }}></div>
                     ) : (
-                      <Heading key={index} header={section} />
+                      <FlexBox
+                        width="100%"
+                        flexdirection="column"
+                        sm_margin="50px 0"
+                        margin="50px 0"
+                      >
+                        <Header level="2" key={index} text={section} />
+                      </FlexBox>
                     )}
                     <Container
                       key={_id}

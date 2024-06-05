@@ -9,7 +9,6 @@ import { IconNext, IconPrevious } from "../icons/icon-arrow.component";
 const CardSliderContainer = styled.div`
   /* border: thin solid red; */
   display: flex;
-  height: 75vh;
   justify-content: end;
   padding: 0;
   position: relative;
@@ -22,7 +21,7 @@ const CardSliderContainer = styled.div`
 `;
 
 const CardSliderControls = styled.div`
-  padding: 50px 20px 20px;
+  padding: 0 20px 20px;
   margin: 0 auto;
   width: 80%;
 
@@ -39,7 +38,7 @@ const CardSliderCards = styled.div`
   display: flex;
   overflow: hidden;
   position: relative;
-  height: 100%;
+  height: 500px;
   padding: 0;
   width: 95%;
 

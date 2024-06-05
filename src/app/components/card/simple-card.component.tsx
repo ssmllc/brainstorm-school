@@ -31,7 +31,7 @@ const Preview = styled("div")<previewProps>`
   background-size: cover;
   border-radius: 20px;
   box-shadow: ${({ boxshadow }) => boxshadow};
-  height: ${({ height }) => (height ? height : "400px")};
+  height: ${({ height }) => (height ? height : "300px")};
   overflow: hidden;
   margin: 5px 0;
   width: ${({ width }) => (width ? width : "100%")};
@@ -111,8 +111,8 @@ const Wrapper = styled("div")`
 
   @media (min-width: 800px) {
     flex-direction: row;
-    padding: 40px 40px;
-    width: 100%;
+    padding: 40px 0;
+    width: 80%;
   }
 `;
 

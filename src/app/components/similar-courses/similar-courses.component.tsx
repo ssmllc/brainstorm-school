@@ -10,7 +10,7 @@ const SimilarCourses = ({ header }: Props) => {
     <>
       <Header level="2" text={header} />
 
-      <FlexBox margin="50px 0" width="80%">
+      <FlexBox margin="50px auto" width="90%" justifycontent="center">
         <CardImageDetail
           base="/courses"
           slug="foundation"

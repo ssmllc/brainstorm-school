@@ -5,6 +5,8 @@ import styled from "styled-components";
 import RegistrationBlock from "../registration/registration-block.component";
 import gsap from "gsap";
 import { IconNext, IconPrevious } from "../icons/icon-arrow.component";
+import Header from "../text-block/header.component";
+import FlexBox from "../layout/flexbox.component";
 
 const Button = styled.button`
   height: 65px;
@@ -679,7 +681,18 @@ const ImageGallery = ({ header }: Props) => {
 
   return (
     <Gallery>
-      <RegistrationBlock heading={header} primary={false} scale="xl" />
+      <FlexBox
+        sm_width="80%"
+        width="70%"
+        sm_margin="50px auto"
+        flexdirection="column"
+      >
+        <Header
+          level="2"
+          text="Gallery of Instructors Work"
+          textalign="center"
+        />
+      </FlexBox>
 
       <CarouselWrapper>
         <Button className="prev" onClick={() => handleCardSliderMove("prev")}>

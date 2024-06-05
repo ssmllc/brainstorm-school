@@ -13,7 +13,7 @@ const Content = styled.div<contentProps>`
   margin: 0 auto;
   padding: 50px 0;
   position: relative;
-  width: 80%;
+  width: 100%;
   z-index: 20;
 
   @media (min-width: 800px) {

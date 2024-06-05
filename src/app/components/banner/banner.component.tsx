@@ -2,7 +2,7 @@
 
 import styled from "styled-components";
 import RegistrationBlock from "../registration/registration-block.component";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 interface bannerProps {
@@ -16,7 +16,7 @@ const BannerWrapper = styled("div")<bannerProps>`
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 50vh;
+  height: 75vh;
   justify-content: center;
   opacity: 0.5;
   padding-top: 25%;
@@ -50,24 +50,28 @@ const Overlay = styled.div`
 
 const Banner = () => {
   const [randomBanner, setRandomBanner] = useState<string>("");
+  const bannerRef = useRef(null);
 
   useEffect(() => {
-    const randomBannerImage = (min: number, max: number) => {
-      return Math.floor(Math.random() * (max - min + 1) + min);
-    };
+    if (bannerRef.current) {
+      const randomBannerImage = (min: number, max: number) => {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      };
 
-    const randomBanner = `/banner/banner-${randomBannerImage(1, 45)}.jpg`;
-    setRandomBanner(randomBanner);
+      const randomBanner = `/banner/banner-${randomBannerImage(1, 45)}.jpg`;
 
-    gsap.to(".banner-wrapper", {
-      ease: "power1.out",
-      duration: 1,
-      opacity: 1,
-    });
+      setRandomBanner(randomBanner);
+
+      gsap.to(bannerRef.current, {
+        ease: "power1.out",
+        duration: 1,
+        opacity: 1,
+      });
+    }
   }, []);
 
   return (
-    <BannerWrapper className="banner-wrapper" background={randomBanner}>
+    <BannerWrapper ref={bannerRef} background={randomBanner}>
       <RegistrationBlock
         primary={true}
         heading="Learn from Industry-Leading Professionals in Various Creative Fields!"
