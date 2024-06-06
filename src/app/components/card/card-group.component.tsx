@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Card } from "./card-card.component";
 import ActionButton from "../buttons/action-button.component";
@@ -43,7 +43,9 @@ const Row = styled.div`
   gap: 10px;
 
   @media (min-width: 768px) {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 2;
     gap: 20px;
   }
 `;
@@ -61,8 +63,28 @@ interface Props {
   padding: string;
   icon_height?: string;
   icon_width?: string;
+  instructors?: any;
 }
-const CardGroup = ({ padding, icon_height, icon_width }: Props) => {
+const CardGroup = ({
+  padding,
+  icon_height,
+  icon_width,
+  instructors,
+}: Props) => {
+  const [featured, setFeatured] = useState<any>([]);
+
+  useEffect(() => {
+    let featuredInstructors = [];
+
+    for (let i = 0; i < 6; i++) {
+      let idx = Math.floor(Math.random() * (instructors.length - 0 + 1) + 0);
+      featuredInstructors.push(instructors[idx]);
+      instructors.splice(idx, 1);
+    }
+
+    setFeatured(featuredInstructors);
+  }, []);
+
   return (
     <Container>
       <FlexBox
@@ -80,65 +102,29 @@ const CardGroup = ({ padding, icon_height, icon_width }: Props) => {
       </FlexBox>
       <Group>
         <Row>
-          <Card
-            stacked="false"
-            icon="/instructors/ico-image.png"
-            heading="Christian Nacordia"
-            padding={padding}
-            subHeading="Concept Artist & Instructor"
-            icon_height={icon_height}
-            icon_width={icon_width}
-          />
-          <Card
-            stacked="false"
-            icon="/instructors/ico-image.png"
-            heading="Christian Nacordia"
-            padding={padding}
-            subHeading="Concept Artist & Instructor"
-            icon_height={icon_height}
-            icon_width={icon_width}
-          />
-          <Card
-            stacked="false"
-            icon="/instructors/ico-image.png"
-            heading="Christian Nacordia"
-            padding={padding}
-            subHeading="Concept Artist & Instructor"
-            icon_height={icon_height}
-            icon_width={icon_width}
-          />
+          {featured?.length > 0 &&
+            featured.map((instructor: any) => {
+              return (
+                <>
+                  <Card
+                    key={instructor._id}
+                    stacked="false"
+                    icon={
+                      instructor?.headshot
+                        ? instructor.headshot
+                        : "/instructors/ico-image.png"
+                    }
+                    heading={instructor.title}
+                    padding={padding}
+                    subHeading={instructor.profession}
+                    icon_height={icon_height}
+                    icon_width={icon_width}
+                    width="100%"
+                  />
+                </>
+              );
+            })}
         </Row>
-
-        <Row>
-          <Card
-            stacked="false"
-            icon="/instructors/ico-image.png"
-            heading="Christian Nacordia"
-            padding={padding}
-            subHeading="Concept Artist & Instructor"
-            icon_height={icon_height}
-            icon_width={icon_width}
-          />
-          <Card
-            stacked="false"
-            icon="/instructors/ico-image.png"
-            heading="Christian Nacordia"
-            padding={padding}
-            subHeading="Concept Artist & Instructor"
-            icon_height={icon_height}
-            icon_width={icon_width}
-          />
-          <Card
-            stacked="false"
-            icon="/instructors/ico-image.png"
-            heading="Christian Nacordia"
-            padding={padding}
-            subHeading="Concept Artist & Instructor"
-            icon_height={icon_height}
-            icon_width={icon_width}
-          />
-        </Row>
-
         <ReadMore>
           <ActionButton type="tertiary" label="Browse Instructors" />
         </ReadMore>

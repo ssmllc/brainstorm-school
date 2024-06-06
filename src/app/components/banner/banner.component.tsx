@@ -54,9 +54,9 @@ const Credit = styled(Link)`
   background: var(--off-black);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
-  padding: 20px 20px;
+  padding: 15px 15px;
   position: absolute;
-  right: 50px;
+  right: 25px;
   top: 125px;
 `;
 
@@ -68,12 +68,25 @@ const CreditTag = ({
   label: string;
   artist: string;
   slug: string;
-}) => (
-  <Credit href={`/instructors/${slug}`}>
-    <Header level="4" text={label} fontSize="18px" fontWeight="bold" />
-    <Header level="4" text={artist} fontSize="12px" margin="10px 0 0" />
-  </Credit>
-);
+}) => {
+  const artistTagRef = useRef(null);
+
+  useEffect(() => {
+    gsap.to(artistTagRef.current, {
+      ease: "power1.out",
+      duration: 0.5,
+      opacity: 1,
+      right: "50px",
+    });
+  }, []);
+
+  return (
+    <Credit ref={artistTagRef} href={`/instructors/${slug}`}>
+      <Header level="4" text={label} fontSize="14px" fontWeight="bold" />
+      <Header level="4" text={artist} fontSize="12px" margin="10px 0 0" />
+    </Credit>
+  );
+};
 
 interface Props {
   header: string;
@@ -105,8 +118,6 @@ const Banner = ({ header, gallery }: Props) => {
         artist: { title: artistName, slug: pathToArtist },
         imageUrl,
       } = gallery[getRandomArt];
-
-      console.log("gallery[getRandomArt]", gallery[getRandomArt]);
 
       // const randomBanner = `/banner/banner-${randomBannerImage(1, 45)}.jpg`;
 

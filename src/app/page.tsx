@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 const fetchData = async () => {
   const query =
-    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27home%27%5D+%7B%0A++header%2C%0A++gallery%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++title%2C%0A++++artist%5B0%5D+-%3E+%7B%0A++++++_id%2C%0A++++++title%2C%0A++++++%22slug%22%3A+slug.current%0A++%7D%2C%0A++++%22imageUrl%22%3A+portfolio.asset-%3Eurl%2C%0A++%7D%0A%7D";
+    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=%7B%27home%27%3A+*%5B_type+%3D%3D+%27home%27%5D+%7B%0A++header%2C%0A++gallery%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++title%2C%0A++++artist%5B0%5D+-%3E+%7B%0A++++++_id%2C%0A++++++title%2C%0A++++++%22slug%22%3A+slug.current%0A++%7D%2C%0A++++%22imageUrl%22%3A+portfolio.asset-%3Eurl%2C%0A++%7D%0A%7D%2C%0A%27instructors%27%3A+*%5B_type+%3D%3D+%27instructors%27%5D+%7B%0A++_id%2C%0A++title%2C%0A++profession%2C%0A++%22headshot%22%3A+photo.asset-%3Eurl%2C%0A++%22poster%22%3A+poster.asset-%3Eurl%2C%0A++%22slug%22%3A+slug.current%0A%7D%0A%7D";
   // const response = await fetch(query);
   const response = await fetch(query, { cache: "no-store" });
 
@@ -30,13 +30,15 @@ const fetchData = async () => {
 
   const { result } = await response.json();
 
-  return result[0];
+  return result;
 };
 
 const Home = async () => {
   const result = await fetchData();
 
-  const { header, gallery } = result || [];
+  const { home, instructors } = result;
+
+  const { header, gallery } = home[0] || [];
 
   return (
     <main>
@@ -56,7 +58,7 @@ const Home = async () => {
 
         <ImageGallery header="Gallery of Instructors Work" />
 
-        <CardGroup padding="25px 25px" />
+        <CardGroup padding="25px 25px" instructors={instructors} />
 
         <FeaturedSlider
           heading="The Latest Industry Blogs, News and Insights"
