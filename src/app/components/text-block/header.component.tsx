@@ -20,6 +20,11 @@ const Header1 = styled.h1<textProps>`
   margin: ${({ margin }) => margin};
   position: relative;
   text-align: ${({ textalign }) => textalign};
+  text-transform: capitalize;
+
+  @media (min-width: 800px) {
+    font-size: 42px;
+  }
 `;
 
 const Header2 = styled.h2<textProps>`
@@ -30,6 +35,11 @@ const Header2 = styled.h2<textProps>`
   margin: ${({ margin }) => margin};
   position: relative;
   text-align: ${({ textalign }) => textalign};
+  text-transform: capitalize;
+
+  @media (min-width: 800px) {
+    font-size: 36px;
+  }
 `;
 
 const Header3 = styled.h3<textProps>`
@@ -40,6 +50,7 @@ const Header3 = styled.h3<textProps>`
   margin: ${({ margin }) => margin};
   position: relative;
   text-align: ${({ textalign }) => textalign};
+  text-transform: capitalize;
 `;
 
 const Header4 = styled.p<textProps>`
@@ -49,6 +60,7 @@ const Header4 = styled.p<textProps>`
   margin: ${({ margin }) => margin};
   position: relative;
   text-align: ${({ textalign }) => textalign};
+  text-transform: capitalize;
   line-height: 1.5;
 `;
 

@@ -24,7 +24,7 @@ const Button = styled.button`
     z-index: 20;
 
     @media (min-width: 800px) {
-      left: -75px;
+      left: -25px;
     }
   }
 
@@ -36,7 +36,7 @@ const Button = styled.button`
     z-index: 20;
 
     @media (min-width: 800px) {
-      right: -75px;
+      right: -25px;
     }
   }
 `;
@@ -47,7 +47,7 @@ const Gallery = styled.div`
   width: 100vw;
 
   @media (min-width: 800px) {
-    margin: 50px 0;
+    /* margin: 50px 0; */
   }
 `;
 
@@ -685,6 +685,7 @@ const ImageGallery = ({ header }: Props) => {
         sm_width="80%"
         width="70%"
         sm_margin="50px auto"
+        margin="50px auto"
         flexdirection="column"
       >
         <Header

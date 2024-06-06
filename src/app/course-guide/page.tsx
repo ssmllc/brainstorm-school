@@ -7,6 +7,7 @@ import TracksGroup from "../components/tracks/tracks.component";
 import MoreTracks from "../components/contact/more-tracks.component";
 import MediaBanner from "../components/banner/media-banner.component";
 import FlexBox from "../components/layout/flexbox.component";
+import Header from "../components/text-block/header.component";
 
 export const metadata: Metadata = {
   title: "Brainstorm Courses - Brainstorm School",
@@ -51,14 +52,14 @@ export default async function Page() {
           scale="xl"
         />
 
-        <Container
-          alignitems="center"
-          display="flex"
+        <FlexBox
           flexdirection="column"
+          width="70%"
+          margin="0 auto"
+          alignitems="center"
           justifycontent="center"
-          width="100%"
         >
-          <Heading superHeader={false} header="Select your experience level?" />
+          <Header level="2" text="Select your experience level?" />
 
           <select
             style={{
@@ -79,13 +80,13 @@ export default async function Page() {
             <option>Intermediate</option>
             <option>Advanced</option>
           </select>
-        </Container>
+        </FlexBox>
 
         <FlexBox
           flexdirection="column"
           margin="20px 0"
           sm_width="80%"
-          width="70%"
+          width="80%"
         >
           <TracksGroup results={result} />
 

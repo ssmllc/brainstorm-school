@@ -3,11 +3,13 @@
 import React from "react";
 import styled from "styled-components";
 import { Card } from "./card-card.component";
-import RegistrationBlock from "../registration/registration-block.component";
 import ActionButton from "../buttons/action-button.component";
+import Header from "../text-block/header.component";
+import FlexBox from "../layout/flexbox.component";
 
 const Container = styled.div`
   /* border: thin dashed red; */
+  padding: 50px 0;
   position: relative;
   width: 100vw;
 `;
@@ -55,33 +57,55 @@ const ReadMore = styled.div`
   }
 `;
 
-const CardGroup = () => {
+interface Props {
+  padding: string;
+  icon_height?: string;
+  icon_width?: string;
+}
+const CardGroup = ({ padding, icon_height, icon_width }: Props) => {
   return (
     <Container>
-      <RegistrationBlock
-        primary={false}
-        heading="Learn from todays top instructors"
-        scale="xl"
-      />
+      <FlexBox
+        justifycontent="center"
+        sm_margin="25px auto"
+        margin="50px auto"
+        sm_width="80%"
+        width="70%"
+      >
+        <Header
+          level="2"
+          text="Learn from todays top instructors"
+          textalign="center"
+        />
+      </FlexBox>
       <Group>
         <Row>
           <Card
             stacked="false"
             icon="/instructors/ico-image.png"
             heading="Christian Nacordia"
+            padding={padding}
             subHeading="Concept Artist & Instructor"
+            icon_height={icon_height}
+            icon_width={icon_width}
           />
           <Card
             stacked="false"
             icon="/instructors/ico-image.png"
             heading="Christian Nacordia"
+            padding={padding}
             subHeading="Concept Artist & Instructor"
+            icon_height={icon_height}
+            icon_width={icon_width}
           />
           <Card
             stacked="false"
             icon="/instructors/ico-image.png"
             heading="Christian Nacordia"
+            padding={padding}
             subHeading="Concept Artist & Instructor"
+            icon_height={icon_height}
+            icon_width={icon_width}
           />
         </Row>
 
@@ -90,19 +114,28 @@ const CardGroup = () => {
             stacked="false"
             icon="/instructors/ico-image.png"
             heading="Christian Nacordia"
+            padding={padding}
             subHeading="Concept Artist & Instructor"
+            icon_height={icon_height}
+            icon_width={icon_width}
           />
           <Card
             stacked="false"
             icon="/instructors/ico-image.png"
             heading="Christian Nacordia"
+            padding={padding}
             subHeading="Concept Artist & Instructor"
+            icon_height={icon_height}
+            icon_width={icon_width}
           />
           <Card
             stacked="false"
             icon="/instructors/ico-image.png"
             heading="Christian Nacordia"
+            padding={padding}
             subHeading="Concept Artist & Instructor"
+            icon_height={icon_height}
+            icon_width={icon_width}
           />
         </Row>
 

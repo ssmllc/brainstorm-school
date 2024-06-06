@@ -18,10 +18,29 @@ export const metadata: Metadata = {
     "Our courses cover a wide range of creative fields, including animation, 3D modeling, concept, online game design, and digital art. Register Today!",
 };
 
+const fetchData = async () => {
+  const query =
+    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27home%27%5D+%7B%0A++header%2C%0A++gallery%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++title%2C%0A++++artist%5B0%5D+-%3E+%7B%0A++++++_id%2C%0A++++++title%2C%0A++++++%22slug%22%3A+slug.current%0A++%7D%2C%0A++++%22imageUrl%22%3A+portfolio.asset-%3Eurl%2C%0A++%7D%0A%7D";
+  // const response = await fetch(query);
+  const response = await fetch(query, { cache: "no-store" });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error: Status ${response.status}`);
+  }
+
+  const { result } = await response.json();
+
+  return result[0];
+};
+
 const Home = async () => {
+  const result = await fetchData();
+
+  const { header, gallery } = result || [];
+
   return (
     <main>
-      <Banner />
+      <Banner header={header} gallery={gallery} />
 
       <Content>
         <VideoContentSplit
@@ -37,7 +56,7 @@ const Home = async () => {
 
         <ImageGallery header="Gallery of Instructors Work" />
 
-        <CardGroup />
+        <CardGroup padding="25px 25px" />
 
         <FeaturedSlider
           heading="The Latest Industry Blogs, News and Insights"

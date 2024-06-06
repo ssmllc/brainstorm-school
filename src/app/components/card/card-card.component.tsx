@@ -37,7 +37,7 @@ const Container = styled.div<containerProps>`
 
   @media (min-width: 800px) {
     flex-direction: row;
-    padding: ${({ padding }) => (padding ? padding : "25px 25px")};
+    padding: ${({ padding }) => (padding ? padding : "0")};
     width: ${({ width }) => (width ? width : "33.33%")};
   }
 `;

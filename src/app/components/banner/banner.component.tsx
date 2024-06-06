@@ -4,6 +4,8 @@ import styled from "styled-components";
 import RegistrationBlock from "../registration/registration-block.component";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import Header from "../text-block/header.component";
+import Link from "next/link";
 
 interface bannerProps {
   background: string;
@@ -48,8 +50,46 @@ const Overlay = styled.div`
   z-index: 15;
 `;
 
-const Banner = () => {
+const Credit = styled(Link)`
+  background: var(--off-black);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 20px 20px;
+  position: absolute;
+  right: 50px;
+  top: 125px;
+`;
+
+const CreditTag = ({
+  label,
+  artist,
+  slug,
+}: {
+  label: string;
+  artist: string;
+  slug: string;
+}) => (
+  <Credit href={`/instructors/${slug}`}>
+    <Header level="4" text={label} fontSize="18px" fontWeight="bold" />
+    <Header level="4" text={artist} fontSize="12px" margin="10px 0 0" />
+  </Credit>
+);
+
+interface Props {
+  header: string;
+  gallery: {
+    _id: string;
+    title: string;
+    artist: any;
+    slug: string;
+    imageUrl: string;
+  }[];
+}
+const Banner = ({ header, gallery }: Props) => {
   const [randomBanner, setRandomBanner] = useState<string>("");
+  const [randomArtist, setRandomArtist] = useState<string>("");
+  const [randomTitle, setRandomTitle] = useState<string>("");
+  const [randomSlug, setRandomSlug] = useState<string>("");
   const bannerRef = useRef(null);
 
   useEffect(() => {
@@ -58,9 +98,20 @@ const Banner = () => {
         return Math.floor(Math.random() * (max - min + 1) + min);
       };
 
-      const randomBanner = `/banner/banner-${randomBannerImage(1, 45)}.jpg`;
+      const getRandomArt = randomBannerImage(0, gallery.length);
+      const { title } = gallery[getRandomArt];
+      const {
+        _id,
+        artist: { title: artistName, slug: pathToArtist },
+        imageUrl,
+      } = gallery[getRandomArt];
 
-      setRandomBanner(randomBanner);
+      // const randomBanner = `/banner/banner-${randomBannerImage(1, 45)}.jpg`;
+
+      setRandomTitle(title);
+      setRandomArtist(artistName);
+      setRandomSlug(pathToArtist);
+      setRandomBanner(imageUrl);
 
       gsap.to(bannerRef.current, {
         ease: "power1.out",
@@ -72,9 +123,10 @@ const Banner = () => {
 
   return (
     <BannerWrapper ref={bannerRef} background={randomBanner}>
+      <CreditTag label={randomTitle} artist={randomArtist} slug={randomSlug} />
       <RegistrationBlock
         primary={true}
-        heading="Learn from Industry-Leading Professionals in Various Creative Fields!"
+        heading={header}
         scale="xl"
         cta="Register Today"
         ctaType="primary"

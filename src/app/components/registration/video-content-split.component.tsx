@@ -7,7 +7,11 @@ const Content = styled.div`
   position: relative;
   width: 100vw;
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
+    padding: 50px 0;
+  }
+
+  @media (min-width: 1400px) {
     padding: 100px 0;
   }
 `;
@@ -31,10 +35,15 @@ const ContentWrapper = styled.div<contentProps>`
       $flexdirection ? $flexdirection : "row"};
     max-width: 1100px;
     width: 70%;
+  }
 
-    @media (min-width: 800px) {
-      max-width: 1150px;
-    }
+  @media (min-width: 1024px) {
+    align-items: center;
+    width: 90%;
+  }
+
+  @media (min-width: 1400px) {
+    max-width: 1250px;
   }
 `;
 
@@ -60,6 +69,10 @@ const VideoPlayer = styled.div`
     min-height: 380px;
     height: 100%;
   }
+
+  @media (min-width: 1024px) {
+    height: 380px;
+  }
 `;
 
 interface contentBlockProps {
@@ -71,7 +84,15 @@ const ContentBlock = styled.div<contentBlockProps>`
   padding: 30px 0;
   width: 100%;
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
+    padding: ${({ $flexdirection }) =>
+      $flexdirection === "row-reverse"
+        ? "30px 50px 30px 0"
+        : "30px 0 30px 50px"};
+    width: 50%;
+  }
+
+  @media (min-width: 1400px) {
     padding: ${({ $flexdirection }) =>
       $flexdirection === "row-reverse"
         ? "30px 60px 30px 0"
@@ -84,7 +105,7 @@ const ContentBlock = styled.div<contentBlockProps>`
     font-weight: bold;
 
     @media (min-width: 800px) {
-      font-size: 34px;
+      font-size: 36px;
     }
   }
 

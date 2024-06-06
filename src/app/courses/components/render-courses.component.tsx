@@ -8,6 +8,10 @@ import Heading from "@/app/components/heading/heading.component";
 import { Course, Sections } from "@/app/types/types";
 import Header from "@/app/components/text-block/header.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
+import Icon3D from "@/app/components/icons/icon-3d.component";
+import { IconPencilTip } from "@/app/components/icons/icom-pencil-tip.component";
+import { IconRequirements } from "@/app/components/icons/icon-requirements.component";
+import { IconLocation } from "@/app/components/icons/icon-location.component";
 
 interface Props {
   selectedCourses?: Sections[];
@@ -30,7 +34,6 @@ const RenderCourses = ({ selectedCourses, noheading, width }: Props) => {
         courseList.map(({ sections, slug }: any, index: number) => {
           return (
             <div key={index}>
-              <p>Filter</p>
               {sections?.map(
                 ({
                   category,
@@ -48,11 +51,13 @@ const RenderCourses = ({ selectedCourses, noheading, width }: Props) => {
                       <div style={{ margin: "50px 0" }}></div>
                     ) : (
                       <FlexBox
+                        alignitems="center"
                         width="100%"
-                        flexdirection="column"
+                        flexdirection="row"
                         sm_margin="50px 0"
                         margin="50px 0"
                       >
+                        <IconLocation width="28px" height="28px" />{" "}
                         <Header level="2" key={index} text={section} />
                       </FlexBox>
                     )}

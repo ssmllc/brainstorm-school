@@ -189,6 +189,7 @@ const FeaturedSlider = ({ children, heading, textalign }: Props) => {
         <Button className="prev" onClick={() => handleCardSliderMove("prev")}>
           <IconPrevious width="28px" height="28px" />
         </Button>
+
         <SliderWrapper style={{ width: `${slideWidth}px` }}>
           <Slider className="slider-wrapper">{children}</Slider>
         </SliderWrapper>
