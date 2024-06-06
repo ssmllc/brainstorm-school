@@ -98,7 +98,7 @@ const Banner = ({ header, gallery }: Props) => {
         return Math.floor(Math.random() * (max - min + 1) + min);
       };
 
-      const getRandomArt = randomBannerImage(0, gallery.length);
+      const getRandomArt = randomBannerImage(0, gallery.length - 1);
       const { title } = gallery[getRandomArt];
       const {
         _id,
@@ -106,16 +106,18 @@ const Banner = ({ header, gallery }: Props) => {
         imageUrl,
       } = gallery[getRandomArt];
 
+      console.log("gallery[getRandomArt]", gallery[getRandomArt]);
+
       // const randomBanner = `/banner/banner-${randomBannerImage(1, 45)}.jpg`;
 
       setRandomTitle(title);
       setRandomArtist(artistName);
       setRandomSlug(pathToArtist);
-      setRandomBanner(imageUrl);
+      setRandomBanner(`${imageUrl}?w=1920`);
 
       gsap.to(bannerRef.current, {
         ease: "power1.out",
-        duration: 1,
+        duration: 0.5,
         opacity: 1,
       });
     }
