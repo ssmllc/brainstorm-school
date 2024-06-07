@@ -35,8 +35,9 @@ export default async function Page() {
   return (
     <>
       <MediaBanner
-        header=""
-        subHeader=""
+        header="Tracks"
+        label="Course Guide"
+        subHeader="Choose your roadmap"
         hero="false"
         theme="dark"
         background="/banner/banner-10.jpg"

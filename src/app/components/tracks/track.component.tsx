@@ -1,10 +1,9 @@
 "use client";
 
-import { useEffect, useState, useContext, ReactNode } from "react";
+import { ReactNode } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import Icon3D from "../icons/icon-3d.component";
-import Image from "next/image";
 
 interface anchorProps {
   sm_width?: string;
@@ -31,7 +30,7 @@ const Track = styled.div<trackProps>`
   filter: grayscale(0.75);
   flex-grow: 1;
   flex-basis: 25%;
-  padding: 100px 20px 0 20px;
+  /* padding: 100px 20px 0 20px; */
   position: relative;
   transition: all 0.35s ease-out;
 
@@ -65,13 +64,21 @@ const Track = styled.div<trackProps>`
   }
 `;
 
-const Icon = styled.div`
+interface iconProps {
+  $photo?: string;
+  $width?: string;
+  $height?: string;
+}
+const Icon = styled.div<iconProps>`
   align-items: center;
+  background: ${({ $photo }) => `url(${$photo}) top center no-repeat`};
+  background-size: cover;
   border: 2px solid var(--white);
   border-radius: 100%;
   display: flex;
   height: 50px;
   justify-content: center;
+  overflow: hidden;
   position: relative;
   width: 50px;
   z-index: 2;
@@ -81,7 +88,7 @@ const Label = styled.p`
   color: var(--white);
   font-weight: bold;
   font-size: 28px;
-  padding: 20px 0 10px;
+  padding: 10px 0;
   position: relative;
   z-index: 2;
 `;
@@ -89,7 +96,7 @@ const Label = styled.p`
 const Name = styled.p`
   color: var(--white);
   font-size: 14px;
-  padding: 0 0 25px 0;
+  padding: 0;
   position: relative;
   text-align: left;
   z-index: 2;
@@ -131,28 +138,27 @@ const AnchorCard = ({
       width={width}
     >
       <Track poster={poster}>
-        {children && children}
+        <div
+          style={{
+            position: "absolute",
+            bottom: "15px",
+            padding: "0 20px",
+          }}
+        >
+          {children && children}
 
-        {photo && (
-          <Icon>
-            <Image
-              src={photo}
-              width={42}
-              height={42}
-              alt="Brainstorm School Logo"
-            />
-          </Icon>
-        )}
+          {photo && <Icon $photo={photo} />}
 
-        {icon && (
-          <Icon>
-            {" "}
-            <Icon3D height="48px" width="48px" />
-          </Icon>
-        )}
+          {icon && (
+            <Icon $photo={photo}>
+              {" "}
+              <Icon3D height="48px" width="48px" />
+            </Icon>
+          )}
 
-        <Label>{label}</Label>
-        <Name>{name}</Name>
+          <Label>{label}</Label>
+          <Name>{name}</Name>
+        </div>
       </Track>
     </Anchor>
   );

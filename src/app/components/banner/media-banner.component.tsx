@@ -7,6 +7,7 @@ import Pill from "../pill/pill.component";
 import Heading from "../heading/heading.component";
 import CourseDetail from "../course-detail/course-detail.component";
 import gsap from "gsap";
+import FlexBox from "../layout/flexbox.component";
 
 interface bannerProps {
   theme: string;
@@ -18,22 +19,21 @@ const Banner = styled.div<bannerProps>`
   background: ${({ theme }) =>
     theme === "light" ? "var(--white)" : "var(--black)"};
   display: flex;
-  height: ${({ $hero }) => ($hero === "true" ? "100vh" : "60vh")};
+  height: ${({ $hero }) => ($hero === "true" ? "80vh" : "65vh")};
   flex-direction: column;
   overflow: hidden;
-  padding: 100px 0 0 0;
+  /* padding: 100px 0 0 0; */
   position: relative;
   width: 100vw;
 
   @media (min-width: 800px) {
-    padding: 150px 0 0 0;
+    height: ${({ $hero }) => ($hero === "true" ? "80vh" : "50vh")};
+    /* padding: 150px 0 0 0; */
   }
 
   &::before {
     background: ${({ $background }) =>
-      $background
-        ? `url(${$background}) top center no-repeat`
-        : "var(--black)"};
+      $background ? `url(${$background}) top left no-repeat` : "var(--black)"};
     background-size: cover;
     content: "";
     display: block;
@@ -47,12 +47,10 @@ const Banner = styled.div<bannerProps>`
   }
 
   &::after {
-    background: linear-gradient(
-      to bottom,
-      var(--off-black) 15%,
-      rgba(0, 0, 0, 0) 90%,
-      var(--off-black) 100%
-    );
+    background: ${({ $hero }) =>
+      $hero === "false"
+        ? "linear-gradient(to bottom, var(--off-black) 0%, rgba(0, 0, 0, 0) 100%)"
+        : "linear-gradient(to bottom, var(--off-black) 15%, rgba(0, 0, 0, 0) 80%, var(--off-black) 100%)"};
     content: "";
     display: block;
     height: 100%;
@@ -69,18 +67,22 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 0 auto;
-  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
   width: 80%;
-  z-index: 2;
+  z-index: 5;
 
   @media (min-width: 800px) {
     flex-direction: row;
+    width: 70%;
   }
 `;
 
 const Column = styled.div`
-  /* width: 50%; */
+  min-width: 50%;
+  /* border: thin dashed blue; */
 `;
 
 const ActionWrapper = styled.div`
@@ -99,13 +101,29 @@ const ActionWrapper = styled.div`
 
 interface mediaProps {
   $image?: string;
+  $headshot?: string;
   media?: string;
 }
 
+const Headshot = styled.div<mediaProps>`
+  background: ${({ $headshot }) => `url(${$headshot}) top left no-repeat`};
+  background-size: cover;
+  border-radius: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  height: 140px;
+  margin: 0px 0;
+  position: relative;
+  width: 140px;
+  z-index: 50;
+`;
+
 const Media = styled.div<mediaProps>`
   background: ${({ $image }) =>
-    $image ? `url(${$image}) top left no-repeat` : "var(--black)"};
+    $image ? `url(${$image}) top center no-repeat` : "var(--black)"};
+  background-size: contain;
   border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
   overflow: hidden;
   height: 250px;
   margin: 25px auto;
@@ -135,33 +153,45 @@ interface Props {
   background: string;
   label?: string;
   image?: string;
+  headshot?: string;
   media?: string;
   duration?: string;
   time?: string;
   registration?: string;
+  randomize?: boolean;
 }
 
 const MediaBanner = ({
+  background,
   header,
   subHeader,
   label,
   theme,
   hero,
   image,
+  headshot,
   media,
   duration,
   time,
   registration,
+  randomize = true,
 }: Props) => {
   const [randomBanner, setRandomBanner] = useState<string>("");
 
   useEffect(() => {
-    const randomBannerImage = (min: number, max: number) => {
-      // min and max included
-      return Math.floor(Math.random() * (max - min + 1) + min);
-    };
+    let randomBanner: string = "";
 
-    const randomBanner = `/banner/banner-${randomBannerImage(1, 20)}.jpg`;
+    if (randomize === true) {
+      const randomBannerImage = (min: number, max: number) => {
+        // min and max included
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      };
+
+      randomBanner = `/banner/banner-${randomBannerImage(1, 20)}.jpg`;
+    } else {
+      randomBanner = background;
+    }
+
     setRandomBanner(randomBanner);
 
     gsap.to(".banner-wrapper", {
@@ -176,9 +206,16 @@ const MediaBanner = ({
     <Banner theme={theme} $hero={hero} $background={randomBanner}>
       <Content>
         <Column>
-          {hero === "true" && <Pill label={label ? label : "no label added"} />}
-          {header && (
+          {label && <Pill label={label} />}
+          {header && !headshot && (
             <Heading header={header} subHeader={subHeader ? subHeader : ""} />
+          )}
+
+          {header && headshot && (
+            <FlexBox gap="25px" alignitems="center" margin="0">
+              <Headshot $headshot={headshot} />
+              <Heading header={header} subHeader={subHeader ? subHeader : ""} />
+            </FlexBox>
           )}
         </Column>
 

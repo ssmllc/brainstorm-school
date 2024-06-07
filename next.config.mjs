@@ -3,7 +3,10 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
-  reactStrictMode: false,
+  images: {
+    domains: ["cdn.sanity.io"],
+  },
+  reactStrictMode: true,
 };
 
 export default nextConfig;

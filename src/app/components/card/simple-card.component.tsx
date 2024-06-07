@@ -23,6 +23,7 @@ const CardHeader = ({ text }: { text: string }) => <h2>{text}</h2>;
 interface previewProps {
   image: string;
   height?: string;
+  $sm_height?: string;
   boxshadow?: string;
   width?: string;
 }
@@ -31,28 +32,34 @@ const Preview = styled("div")<previewProps>`
   background-size: cover;
   border-radius: 20px;
   box-shadow: ${({ boxshadow }) => boxshadow};
-  height: ${({ height }) => (height ? height : "300px")};
+  height: ${({ $sm_height }) => ($sm_height ? $sm_height : "300px")};
   overflow: hidden;
   margin: 5px 0;
   width: ${({ width }) => (width ? width : "100%")};
 
   @media (min-width: 768px) {
+    height: ${({ height }) => (height ? height : "300px")};
     margin: 25px 0;
+    width: ${({ width }) => (width ? width : "100%")};
   }
 `;
 
 export const CardImage = ({
   className,
   boxshadow,
+  sm_height,
   height,
   preview,
   width,
+  setPreview,
 }: {
   className?: string;
   preview: string;
   height?: string;
+  sm_height?: string;
   boxshadow?: string;
   width?: string;
+  setPreview?: (preview: string) => void;
 }) => (
   <Preview
     className={className}
@@ -60,6 +67,12 @@ export const CardImage = ({
     height={height}
     image={preview}
     width={width}
+    $sm_height={sm_height}
+    onClick={() => {
+      if (!setPreview) return false;
+
+      setPreview(preview);
+    }}
   />
 );
 
@@ -168,7 +181,9 @@ const CardLayout = ({ results }: Props) => {
     ? schedule[0]
     : [];
 
-  const { title, profession } = instructors ? instructors[0] : [];
+  const { title, profession, headshot } = instructors ? instructors[0] : [];
+
+  // console.log("instructors", instructors);
 
   const formatOpen = new Date(open).toDateString();
   const formatStart = new Date(start).toDateString();
@@ -201,15 +216,17 @@ const CardLayout = ({ results }: Props) => {
                   color="var(--blue)"
                   texttransform="uppercase"
                 >
-                  <Link
-                    style={{
-                      color: "var(--blue)",
-                      textDecoration: "underline",
-                    }}
-                    href={registration}
-                  >
-                    Registration Open
-                  </Link>
+                  {registration && (
+                    <Link
+                      style={{
+                        color: "var(--blue)",
+                        textDecoration: "underline",
+                      }}
+                      href={registration}
+                    >
+                      Registration Open
+                    </Link>
+                  )}
                 </TextBlock>
               </Container>
             </Container>
@@ -268,8 +285,9 @@ const CardLayout = ({ results }: Props) => {
               background="0"
               boxshadow="none"
               stacked="false"
-              icon="/instructors/ico-image.png"
+              icon={headshot || "/instructors/ico-image.png"}
               heading={title}
+              padding="20px 20px"
               subHeading={profession}
               width="100%"
             />

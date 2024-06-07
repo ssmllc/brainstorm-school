@@ -20,15 +20,15 @@ const Button = styled.button`
 
   &.prev {
     position: absolute;
-    left: -20px;
-    top: 75px;
+    left: -30px;
+    top: 55px;
     z-index: 10;
   }
 
   &.next {
     position: absolute;
-    right: -20px;
-    top: 75px;
+    right: -30px;
+    top: 55px;
     z-index: 10;
   }
 
@@ -53,23 +53,25 @@ const Button = styled.button`
 
 interface Props {
   children: React.ReactNode;
+  sm_height?: string;
+  height?: string;
 }
 
-const Carousel = ({ children }: Props) => {
+const Carousel = ({ children, sm_height, height }: Props) => {
+  const [currentSlide, setCurrentSlide] = useState<number>(1);
   const [slideCardWidth, setSlideCardWidth] = useState<number>(320);
   const [slidesTotal, setSlidesTotal] = useState<number>(0);
-  const [slideWidth, setSlideWidth] = useState<number>(0);
+  const [slideWidth, setSlideWidth] = useState<string>("");
   const [windowWidth, setWindowWidth] = useState<number>(
     typeof window !== "undefined" ? window.innerWidth : 0
   );
-  let currentSlide: number = 0;
 
   const handleCardSliderMove = (direction: string) => {
     if (direction === "next") {
       if (currentSlide >= slidesTotal - 1) {
-        currentSlide = slidesTotal - 1;
+        setCurrentSlide(slidesTotal - 1);
       } else {
-        currentSlide++;
+        setCurrentSlide((prev) => prev + 1);
       }
 
       const moveAmount = `-${currentSlide * slideCardWidth}px`;
@@ -81,9 +83,9 @@ const Carousel = ({ children }: Props) => {
 
     if (direction === "prev") {
       if (currentSlide <= 0) {
-        currentSlide = 0;
+        setCurrentSlide(0);
       } else {
-        currentSlide--;
+        setCurrentSlide((prev) => prev - 1);
       }
 
       const moveAmount = `-${currentSlide * slideCardWidth}px`;
@@ -97,12 +99,12 @@ const Carousel = ({ children }: Props) => {
   useEffect(() => {
     const slides: any = [].slice.call(document.querySelectorAll(".slide"));
 
-    if (!!slides.length) {
+    if (slides.length > 0) {
       setSlidesTotal(slides.length);
-      const slideCardWidth = slides[0].offsetWidth;
+      const slideCardWidth = slides[0].offsetWidth + 20;
       setSlideCardWidth(slideCardWidth);
-      const slideTotalWidth = slides[0].offsetWidth * slides.length;
-      setSlideWidth(slideTotalWidth);
+      const slideTotalWidth = slides[0].offsetWidth * (slides.length - 1);
+      setSlideWidth(`${slideTotalWidth}px`);
     }
 
     if (typeof window !== "undefined") {
@@ -117,7 +119,12 @@ const Carousel = ({ children }: Props) => {
   }, [windowWidth]);
 
   return (
-    <Container display="flex" width={"100%"} height="350px">
+    <Container
+      display="flex"
+      width={"100%"}
+      sm_height={sm_height}
+      height={height || "350px"}
+    >
       <Button className="prev" onClick={() => handleCardSliderMove("prev")}>
         <svg
           viewBox="0 0 48 48"
@@ -132,7 +139,7 @@ const Carousel = ({ children }: Props) => {
           className="slider-wrapper"
           style={{
             display: "flex",
-            width: "2200px",
+            width: `${slideWidth}`,
             position: "absolute",
             gap: "20px",
           }}

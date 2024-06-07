@@ -38,8 +38,9 @@ export default async function About() {
   return (
     <>
       <MediaBanner
-        header=""
-        subHeader=""
+        header="Brainstorm School"
+        label="About Us"
+        subHeader="Join Our Community"
         hero="false"
         theme="dark"
         background="/banner/banner-1.jpg"

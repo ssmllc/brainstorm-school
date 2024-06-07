@@ -3,7 +3,7 @@
 import styled from "styled-components";
 
 const Content = styled.div`
-  margin: 15px 0;
+  margin: 5px 0;
 `;
 
 const SuperHeader = styled.h1`
@@ -27,10 +27,10 @@ const Header = styled.p`
   letter-spacing: 2px;
   padding: 10px 0;
   text-transform: capitalize;
-  width: 70%;
+  width: 100%;
 
   @media (min-width: 800px) {
-    font-size: 48px;
+    font-size: 60px;
   }
 `;
 

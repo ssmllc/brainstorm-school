@@ -9,6 +9,7 @@ interface containerProps {
   flexwrap?: string;
   justifycontent?: string;
   $margin?: string;
+  $gap?: string;
   textalign?: string;
   sm_textalign?: string;
   sm_margin?: string;
@@ -20,7 +21,7 @@ const Container = styled.div<containerProps>`
   /* border: thin dashed cyan; */
   display: flex;
   flex-wrap: ${({ flexwrap }) => flexwrap};
-  gap: 10px;
+  gap: ${({ $gap }) => ($gap ? $gap : "10px")};
   flex-direction: ${({ $flexdirection }) =>
     $flexdirection ? $flexdirection : "column"};
   justify-content: ${({ justifycontent }) => justifycontent};
@@ -53,10 +54,11 @@ const Container = styled.div<containerProps>`
 `;
 
 interface Props {
-  children: string | ReactNode | JSX.Element | JSX.Element[];
   alignitems?: string;
+  children: string | ReactNode | JSX.Element | JSX.Element[];
   flexdirection?: string;
   flexwrap?: string;
+  gap?: string;
   justifycontent?: string;
   sm_margin?: string;
   margin?: string;
@@ -66,10 +68,11 @@ interface Props {
   width?: string;
 }
 const FlexBox = ({
-  children,
   alignitems,
+  children,
   flexdirection,
   flexwrap,
+  gap,
   justifycontent,
   margin,
   textalign,
@@ -82,6 +85,7 @@ const FlexBox = ({
     <Container
       $alignitems={alignitems}
       $flexdirection={flexdirection}
+      $gap={gap}
       flexwrap={flexwrap}
       justifycontent={justifycontent}
       $margin={margin}

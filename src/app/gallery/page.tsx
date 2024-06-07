@@ -29,13 +29,12 @@ const fetchData = async () => {
 export default async function Gallery() {
   const result = await fetchData();
 
-  console.log("workshops", result[0].faqs);
-
   return (
     <>
       <MediaBanner
-        header=""
-        subHeader=""
+        header="School Gallery"
+        label="Gallery"
+        subHeader="A World of Creativity"
         hero="false"
         theme="dark"
         background="/banner/banner-21.jpg"

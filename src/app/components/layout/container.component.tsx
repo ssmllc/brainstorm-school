@@ -11,7 +11,8 @@ interface sectionProps {
   borderradius?: string;
   display?: string;
   $gap?: string;
-  height?: string;
+  $height?: string;
+  $sm_height?: string;
   justifycontent?: string;
   flexdirection?: string;
   flexwrap?: string;
@@ -32,7 +33,7 @@ const FlexSection = styled.div<sectionProps>`
   border-radius: ${({ borderradius }) => (borderradius ? borderradius : 0)};
   display: ${({ display }) => (display ? display : "block")};
   gap: ${({ $gap }) => ($gap ? $gap : 0)};
-  height: ${({ height }) => (height ? height : "auto")};
+  height: ${({ $sm_height }) => ($sm_height ? $sm_height : "auto")};
   flex-direction: column;
   flex-wrap: ${({ flexwrap }) => (flexwrap ? flexwrap : "nowrap")};
   justify-content: ${({ justifycontent }) =>
@@ -47,6 +48,7 @@ const FlexSection = styled.div<sectionProps>`
   @media (min-width: 800px) {
     flex-direction: ${({ flexdirection }) =>
       flexdirection ? flexdirection : "row"};
+    height: ${({ $height }) => ($height ? $height : "auto")};
     max-width: ${({ maxwidth }) => (maxwidth ? maxwidth : "1440px")};
     margin: ${({ margin }) => (margin ? margin : "0")};
     width: ${({ width }) => (width ? width : "100vw")};
@@ -61,7 +63,7 @@ const Section = styled.div<sectionProps>`
   border-radius: ${({ borderradius }) => (borderradius ? borderradius : 0)};
   display: ${({ display }) => (display ? display : "block")};
   gap: ${({ $gap }) => ($gap ? $gap : 0)};
-  height: ${({ height }) => (height ? height : "auto")};
+  height: ${({ $sm_height }) => ($sm_height ? $sm_height : "auto")};
   flex-direction: ${({ flexdirection }) =>
     flexdirection ? flexdirection : "row"};
   flex-wrap: ${({ flexwrap }) => (flexwrap ? flexwrap : "nowrap")};
@@ -78,6 +80,7 @@ const Section = styled.div<sectionProps>`
   @media (min-width: 800px) {
     flex-direction: ${({ flexdirection }) =>
       flexdirection ? flexdirection : "row"};
+    height: ${({ $height }) => ($height ? $height : "auto")};
     max-width: ${({ maxwidth }) => (maxwidth ? maxwidth : "1440px")};
     margin: ${({ margin }) => (margin ? margin : "0")};
     width: ${({ width }) => (width ? width : "100vw")};
@@ -98,6 +101,7 @@ interface Props {
   flexgrow?: string;
   gap?: string;
   height?: string;
+  sm_height?: string;
   justifycontent?: string;
   margin?: string;
   maxwidth?: string;
@@ -121,6 +125,7 @@ export const FlexContainer = ({
   flexgrow,
   gap,
   height,
+  sm_height,
   justifycontent,
   margin,
   maxwidth,
@@ -143,7 +148,8 @@ export const FlexContainer = ({
       flexwrap={flexwrap}
       flexgrow={flexgrow}
       $gap={gap}
-      height={height}
+      $height={height}
+      $sm_height={sm_height}
       margin={margin}
       overflow={overflow}
       $padding={padding}
@@ -169,6 +175,7 @@ const Container = ({
   flexwrap,
   flexgrow,
   gap,
+  sm_height,
   height,
   justifycontent,
   margin,
@@ -192,7 +199,8 @@ const Container = ({
       flexwrap={flexwrap}
       flexgrow={flexgrow}
       $gap={gap}
-      height={height}
+      $height={height}
+      $sm_height={sm_height}
       margin={margin}
       maxwidth={maxwidth}
       overflow={overflow}

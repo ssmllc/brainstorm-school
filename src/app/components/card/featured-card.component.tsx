@@ -32,6 +32,7 @@ interface Props {
   sm_margin?: string;
   margin?: string;
   info?: string;
+  bio?: string;
 }
 
 const FeaturedCard = ({
@@ -39,6 +40,7 @@ const FeaturedCard = ({
   poster,
   heading,
   info,
+  bio,
   margin,
   sm_margin,
 }: Props) => {
@@ -50,6 +52,8 @@ const FeaturedCard = ({
         superHeading={superheading}
         heading={heading}
         info={info}
+        bio={bio}
+        tags={false}
       />
     </Featured>
   );

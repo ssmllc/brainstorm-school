@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
+import Poster from "../poster/poster.component";
 
 const Content = styled.div`
   padding: 50px 0 0;
@@ -172,6 +173,8 @@ const VideoContentSplit = ({
               </object>
             </VideoPlayer>
           )}
+
+          {image && <Poster imageUrl={image} />}
         </Media>
 
         <ContentBlock $flexdirection={flexdirection}>

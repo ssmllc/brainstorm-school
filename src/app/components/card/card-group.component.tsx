@@ -77,13 +77,15 @@ const CardGroup = ({
     let featuredInstructors = [];
 
     for (let i = 0; i < 6; i++) {
-      let idx = Math.floor(Math.random() * (instructors.length - 0 + 1) + 0);
+      let idx = Math.floor(
+        Math.random() * (instructors.length - 1 - 0 + 1) + 0
+      );
       featuredInstructors.push(instructors[idx]);
       instructors.splice(idx, 1);
     }
 
     setFeatured(featuredInstructors);
-  }, []);
+  }, [instructors]);
 
   return (
     <Container>
@@ -105,7 +107,7 @@ const CardGroup = ({
           {featured?.length > 0 &&
             featured.map((instructor: any) => {
               return (
-                <>
+                <div key={instructor._id}>
                   <Card
                     key={instructor._id}
                     stacked="false"
@@ -121,7 +123,7 @@ const CardGroup = ({
                     icon_width={icon_width}
                     width="100%"
                   />
-                </>
+                </div>
               );
             })}
         </Row>

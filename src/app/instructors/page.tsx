@@ -1,11 +1,8 @@
 import MediaBanner from "@/app/components/banner/media-banner.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
-import FAQs from "@/app/components/text-block/faqs.component";
 import Header from "@/app/components/text-block/header.component";
 import AnchorCard from "@/app/components/tracks/track.component";
 import type { Metadata } from "next";
-import CardImageDetail from "../components/card/card-image-detail.component";
-import FeaturedSlider from "../components/featured/featured-slider.component";
 import FeaturedCard from "../components/card/featured-card.component";
 
 export const metadata: Metadata = {
@@ -16,7 +13,7 @@ export const metadata: Metadata = {
 
 const fetchData = async () => {
   const query =
-    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27instructors%27%5D+%7B%0A++_id%2C%0A++title%2C%0A++slug%2C%0A++profession%2C%0A++%22imageUrl%22%3A+poster.asset-%3Eurl%2C%0A++bio%0A%7D";
+    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27instructors%27%5D+%7B%0A++_id%2C%0A++title%2C%0A++%22headshot%22%3A+photo.asset-%3E+url%2C%0A++%22slug%22%3A+slug.current%2C%0A++profession%2C%0A++%22imageUrl%22%3A+poster.asset-%3Eurl%2C%0A++bio%0A%7D";
   // const response = await fetch(query);
   const response = await fetch(query, { cache: "no-store" });
 
@@ -32,11 +29,22 @@ const fetchData = async () => {
 export default async function Instructors() {
   const result = await fetchData();
 
+  let featuredInstructors: any = [];
+
+  for (let i = 0; i < 1; i++) {
+    let idx = Math.floor(Math.random() * (result.length - 1 - 0 + 1) + 0);
+    featuredInstructors.push(result[idx]);
+    result.splice(idx, 1);
+  }
+
+  console.log("find it here =>", featuredInstructors);
+
   return (
     <>
       <MediaBanner
-        header=""
-        subHeader=""
+        label="Instructors"
+        header="Brainstorm Instructors"
+        subHeader="Experienced Instructors"
         hero="false"
         theme="dark"
         background="/banner/banner-17.jpg"
@@ -85,11 +93,11 @@ export default async function Instructors() {
         </FlexBox>
 
         <FeaturedCard
-          poster="banner/banner-5.jpg"
-          superheading="Rhythm & Structure"
-          info="Lorem ipsum dolor sit amet"
-          heading="James Paick"
+          poster={featuredInstructors[0].imageUrl}
+          superheading={featuredInstructors[0].profession}
+          heading={featuredInstructors[0].title}
           margin="25px 0"
+          bio={featuredInstructors[0].bio}
         />
 
         <FlexBox
@@ -107,18 +115,21 @@ export default async function Instructors() {
             }}
           >
             {result &&
-              result.map((instructor: any) => (
-                <AnchorCard
-                  base="instructors"
-                  path={instructor?.slug?.current || ""}
-                  key={instructor._id}
-                  label={instructor.title}
-                  name={instructor.profession}
-                  poster={instructor.imageUrl}
-                  photo="/instructors/ico-image.png"
-                  width="100%"
-                />
-              ))}
+              result.map((instructor: any) => {
+                // console.log("instructor", instructor);
+                return (
+                  <AnchorCard
+                    base="instructors"
+                    path={instructor?.slug || ""}
+                    key={instructor._id}
+                    label={instructor.title}
+                    name={instructor.profession}
+                    poster={instructor.imageUrl}
+                    photo={instructor.headshot || "/instructors/ico-image.png"}
+                    width="100%"
+                  />
+                );
+              })}
           </div>
         </FlexBox>
       </FlexBox>

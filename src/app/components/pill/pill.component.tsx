@@ -18,6 +18,7 @@ const PillContainer = styled.span<PillContainerProps>`
   letter-spacing: 1px;
   padding: ${({ padding }) => (padding ? padding : "15px 15px")};
   text-transform: uppercase;
+  width: max-content;
 `;
 
 interface Props {
