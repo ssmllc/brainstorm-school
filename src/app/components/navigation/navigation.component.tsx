@@ -312,7 +312,9 @@ const Navigation = () => {
 
       <MobileNavigation data-active={active}>
         <MobileNavigationItems>
-          <MainMenuItem href="/">Home</MainMenuItem>
+          <MainMenuItem onClick={() => setActive(false)} href="/">
+            Home
+          </MainMenuItem>
 
           <Accordion data-active={selected === 1 ? "true" : "false"}>
             <MainMenu
@@ -321,19 +323,24 @@ const Navigation = () => {
             >
               Courses
             </MainMenu>
-            <AccordionItem href="/courses">All Courses</AccordionItem>
+            <AccordionItem href="/courses" onClick={() => setActive(false)}>
+              All Courses
+            </AccordionItem>
             {courses.length > 0 &&
               courses.map((course: Sections) => (
                 <AccordionItem
                   key={course.slug.current}
                   href={`/courses/${course.slug.current}`}
+                  onClick={() => setActive(false)}
                 >
                   {course.category}
                 </AccordionItem>
               ))}
           </Accordion>
 
-          <MainMenuItem href="/course-guide">Course Guide</MainMenuItem>
+          <MainMenuItem href="/course-guide" onClick={() => setActive(false)}>
+            Course Guide
+          </MainMenuItem>
 
           <Accordion data-active={selected === 2 ? "true" : "false"}>
             <MainMenu
@@ -342,10 +349,16 @@ const Navigation = () => {
             >
               Workshops
             </MainMenu>
-            <AccordionItem href="/workshops/open-canvas">
+            <AccordionItem
+              onClick={() => setActive(false)}
+              href="/workshops/open-canvas"
+            >
               Open Canvas
             </AccordionItem>
-            <AccordionItem href="/workshops/brainstorm-connection">
+            <AccordionItem
+              onClick={() => setActive(false)}
+              href="/workshops/brainstorm-connection"
+            >
               Brainstorm Connection
             </AccordionItem>
           </Accordion>
@@ -357,10 +370,16 @@ const Navigation = () => {
             >
               Programs
             </MainMenu>
-            <AccordionItem href="/about/compliance-line">
+            <AccordionItem
+              onClick={() => setActive(false)}
+              href="/about/compliance-line"
+            >
               Mentorship
             </AccordionItem>
-            <AccordionItem href="/workshops/brainstorm-connection">
+            <AccordionItem
+              onClick={() => setActive(false)}
+              href="/workshops/brainstorm-connection"
+            >
               Scholarship
             </AccordionItem>
           </Accordion>
@@ -372,10 +391,16 @@ const Navigation = () => {
             >
               About
             </MainMenu>
-            <AccordionItem href="/about/compliance-line">
+            <AccordionItem
+              onClick={() => setActive(false)}
+              href="/about/compliance-line"
+            >
               Compliance Line
             </AccordionItem>
-            <AccordionItem href="/workshops/brainstorm-connection">
+            <AccordionItem
+              onClick={() => setActive(false)}
+              href="/workshops/brainstorm-connection"
+            >
               FAQs
             </AccordionItem>
           </Accordion>
@@ -387,15 +412,27 @@ const Navigation = () => {
             >
               Gallery
             </MainMenu>
-            <AccordionItem href="/gallery/students">Students</AccordionItem>
-            <AccordionItem href="/gallery/instructors">
+            <AccordionItem
+              onClick={() => setActive(false)}
+              href="/gallery/students"
+            >
+              Students
+            </AccordionItem>
+            <AccordionItem
+              onClick={() => setActive(false)}
+              href="/gallery/instructors"
+            >
               Instructors
             </AccordionItem>
           </Accordion>
 
-          <MainMenuItem href="/instructors">Instructors</MainMenuItem>
+          <MainMenuItem onClick={() => setActive(false)} href="/instructors">
+            Instructors
+          </MainMenuItem>
 
-          <MainMenuItem href="/blog">Blog</MainMenuItem>
+          <MainMenuItem onClick={() => setActive(false)} href="/blog">
+            Blog
+          </MainMenuItem>
         </MobileNavigationItems>
       </MobileNavigation>
 
