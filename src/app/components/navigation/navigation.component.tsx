@@ -144,6 +144,77 @@ const MenuItem = styled(Link)`
   }
 `;
 
+// START Mobile Menu
+const MobileNavigation = styled("div")`
+  background: var(--off-black);
+  color: white;
+  height: 100vh;
+  overflow-y: auto;
+  left: 0;
+  position: absolute;
+  top: 65px;
+  width: 100vw;
+  z-index: 9999999999;
+`;
+
+const MobileNavigationItems = styled("menu")`
+  border: thin dashed green;
+  overflow-y: scroll;
+  min-height: 180vh;
+  list-style: none;
+  margin: 0 auto;
+  width: 70%;
+`;
+
+const Accordion = styled("menu")`
+  align-items: center;
+  border: thin dashed red;
+  max-height: 50px;
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+
+  &[data-active="true"] {
+    max-height: 500px;
+  }
+`;
+
+const MainMenu = styled.div`
+  padding: 15px 0;
+  position: relative;
+
+  &::after {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid var(--white);
+    content: "";
+    display: block;
+    height: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+  }
+`;
+
+const MainMenuItem = styled(Link)`
+  color: var(--white);
+  display: block;
+  padding: 15px 0;
+  position: relative;
+`;
+
+const AccordionItem = styled(Link)`
+  border: thin dashed green;
+  color: #ccc;
+  display: block;
+  font-size: 14px;
+  padding: 15px 10px;
+`;
+// END Mobile Menu
+
 const CallToAction = styled(Link)`
   background: transparent;
   border: 3px solid var(--white);
@@ -160,15 +231,96 @@ const Navigation = () => {
   return (
     <NavigationBar>
       <BrainstormLogo justify="center" />
+
       <DropdownButton>
         <DropdownButtonBar />
         <DropdownButtonBar />
         <DropdownButtonBar />
       </DropdownButton>
+
+      <MobileNavigation>
+        <MobileNavigationItems>
+          <MainMenuItem href="/">Home</MainMenuItem>
+
+          <Accordion>
+            <MainMenu
+              onClick={(evt: any) => {
+                const getState =
+                  evt.target.parentNode.getAttribute("data-active");
+
+                console.log("getState", getState);
+                if (getState === "true") {
+                  evt.target.parentNode.removeAttribute("data-active");
+                } else {
+                  evt.target.parentNode.setAttribute("data-active", "true");
+                }
+              }}
+            >
+              Courses
+            </MainMenu>
+            <AccordionItem href="/courses">All Courses</AccordionItem>
+            {courses.length > 0 &&
+              courses.map((course: Sections) => (
+                <AccordionItem
+                  key={course.slug.current}
+                  href={`/courses/${course.slug.current}`}
+                >
+                  {course.category}
+                </AccordionItem>
+              ))}
+          </Accordion>
+
+          <MainMenuItem href="/course-guide">Course Guide</MainMenuItem>
+
+          <Accordion>
+            <MainMenu>Workshops</MainMenu>
+            <AccordionItem href="/workshops/open-canvas">
+              Open Canvas
+            </AccordionItem>
+            <AccordionItem href="/workshops/brainstorm-connection">
+              Brainstorm Connection
+            </AccordionItem>
+          </Accordion>
+
+          <Accordion>
+            <MainMenu>Programs</MainMenu>
+            <AccordionItem href="/about/compliance-line">
+              Mentorship
+            </AccordionItem>
+            <AccordionItem href="/workshops/brainstorm-connection">
+              Scholarship
+            </AccordionItem>
+          </Accordion>
+
+          <Accordion>
+            <MainMenuItem href="/about">About</MainMenuItem>
+            <AccordionItem href="/about/compliance-line">
+              Compliance Line
+            </AccordionItem>
+            <AccordionItem href="/workshops/brainstorm-connection">
+              FAQs
+            </AccordionItem>
+          </Accordion>
+
+          <Accordion>
+            <MainMenuItem href="/gallery">Gallery</MainMenuItem>
+            <AccordionItem href="/gallery/students">Students</AccordionItem>
+            <AccordionItem href="/gallery/instructors">
+              Instructors
+            </AccordionItem>
+          </Accordion>
+
+          <MainMenuItem href="/instructors">Instructors</MainMenuItem>
+
+          <MainMenuItem href="/blog">Blog</MainMenuItem>
+        </MobileNavigationItems>
+      </MobileNavigation>
+
       <NavigationMenu>
         <li>
           <MenuItem href="/">Home</MenuItem>
         </li>
+
         <Dropdown>
           <MenuItem href="/courses">Courses</MenuItem>
           <DropdownMenu>
@@ -182,9 +334,11 @@ const Navigation = () => {
               ))}
           </DropdownMenu>
         </Dropdown>
+
         <li>
           <MenuItem href="/course-guide">Course Guide</MenuItem>
         </li>
+
         <Dropdown>
           <MenuItem href="/workshops">Workshops</MenuItem>
           <DropdownMenu>
@@ -198,6 +352,7 @@ const Navigation = () => {
             </DropdownMenuItem>
           </DropdownMenu>
         </Dropdown>
+
         <Dropdown>
           <MenuItem href="">Programs</MenuItem>
           <DropdownMenu>
@@ -209,6 +364,7 @@ const Navigation = () => {
             </DropdownMenuItem>
           </DropdownMenu>
         </Dropdown>
+
         <Dropdown>
           <MenuItem href="/about">About</MenuItem>
           <DropdownMenu>
@@ -221,6 +377,7 @@ const Navigation = () => {
             </DropdownMenuItem>
           </DropdownMenu>
         </Dropdown>
+
         <Dropdown>
           <MenuItem href="/gallery">Gallery</MenuItem>
           <DropdownMenu>
@@ -233,17 +390,21 @@ const Navigation = () => {
             </DropdownMenuItem>
           </DropdownMenu>
         </Dropdown>
+
         <li>
           <MenuItem href="/instructors">Instructors</MenuItem>
         </li>
+
         <li>
           <MenuItem href="/blog">Blog</MenuItem>
         </li>
+
         <li>
           <MenuItem href="/search">
             <IconSearch width="14px" height="14px" />
           </MenuItem>
         </li>
+
         <li>
           <CallToAction href="/registration">Register</CallToAction>
         </li>

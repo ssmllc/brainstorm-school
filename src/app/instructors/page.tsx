@@ -116,7 +116,6 @@ export default async function Instructors() {
           >
             {result &&
               result.map((instructor: any) => {
-                // console.log("instructor", instructor);
                 return (
                   <AnchorCard
                     base="instructors"

@@ -33,25 +33,27 @@ const CarouselPreview = ({ selectedInstructor, gallery, imageUrl }: Props) => {
         <Poster imageUrl={preview || imageUrl} />
       </FlexBox>
 
-      <FlexBox sm_width="60%" width="70%" sm_margin="0 auto" margin="0 auto">
-        <Carousel sm_height="200px" height="350px">
-          {gallery &&
-            gallery.map((art: any) => {
-              return (
-                <div key={art._id}>
-                  <CardImage
-                    key={art._id}
-                    boxshadow="0 0 10px var(--black)"
-                    className="slide"
-                    preview={art.poster}
-                    width="350px"
-                    sm_height="150px"
-                    setPreview={setPreview}
-                  />
-                </div>
-              );
-            })}
-        </Carousel>
+      <FlexBox sm_width="60%" width="55%" sm_margin="0 auto" margin="0 auto">
+        {gallery?.length > 0 && (
+          <Carousel sm_height="200px" height="350px">
+            {gallery &&
+              gallery.map((art: any) => {
+                return (
+                  <div key={art._id}>
+                    <CardImage
+                      key={art._id}
+                      boxshadow="0 0 10px var(--black)"
+                      className="slide"
+                      preview={art.poster}
+                      width="350px"
+                      sm_height="150px"
+                      setPreview={setPreview}
+                    />
+                  </div>
+                );
+              })}
+          </Carousel>
+        )}
       </FlexBox>
     </FlexBox>
   );

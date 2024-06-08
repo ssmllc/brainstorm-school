@@ -53,7 +53,6 @@ const DecipherText = ({
   return (
     <>
       {textToDecifer?.map((block: any, index: number) => {
-        // console.log("block style", block.style);
         if (block.style === "h1") {
           return (
             <Header
@@ -98,10 +97,12 @@ const DecipherText = ({
               fontSize={fontSize}
             >
               {block.children.map((mark: any) => {
+                console.log("mark", mark);
                 if (block.markDefs.length > 0) {
                   if (mark.marks.length > 0) {
+                    console.log("markDefs", block.markDefs);
                     return block.markDefs.map((marker: any) => {
-                      if (mark.marks[0] === marker._key) {
+                      if (mark.marks[0] === marker._key && marker.href) {
                         return (
                           <Anchor key={marker._key} href={marker.href}>
                             {mark.text}

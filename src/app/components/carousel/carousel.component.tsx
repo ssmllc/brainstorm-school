@@ -58,7 +58,7 @@ interface Props {
 }
 
 const Carousel = ({ children, sm_height, height }: Props) => {
-  const [currentSlide, setCurrentSlide] = useState<number>(1);
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [slideCardWidth, setSlideCardWidth] = useState<number>(320);
   const [slidesTotal, setSlidesTotal] = useState<number>(0);
   const [slideWidth, setSlideWidth] = useState<string>("");
@@ -67,33 +67,31 @@ const Carousel = ({ children, sm_height, height }: Props) => {
   );
 
   const handleCardSliderMove = (direction: string) => {
+    let currentSlideNumber = currentSlide;
+    let moveAmount = "";
+
     if (direction === "next") {
-      if (currentSlide >= slidesTotal - 1) {
-        setCurrentSlide(slidesTotal - 1);
-      } else {
-        setCurrentSlide((prev) => prev + 1);
+      currentSlideNumber++;
+
+      if (currentSlideNumber >= slidesTotal - 1) {
+        currentSlideNumber = slidesTotal - 1;
       }
-
-      const moveAmount = `-${currentSlide * slideCardWidth}px`;
-
-      gsap.to(".slider-wrapper", {
-        x: moveAmount,
-      });
     }
 
     if (direction === "prev") {
-      if (currentSlide <= 0) {
-        setCurrentSlide(0);
-      } else {
-        setCurrentSlide((prev) => prev - 1);
+      currentSlideNumber--;
+
+      if (currentSlideNumber <= 0) {
+        currentSlideNumber = 0;
       }
-
-      const moveAmount = `-${currentSlide * slideCardWidth}px`;
-
-      gsap.to(".slider-wrapper", {
-        x: moveAmount,
-      });
     }
+
+    moveAmount = `-${currentSlideNumber * slideCardWidth}px`;
+    gsap.to(".slider-wrapper", {
+      x: moveAmount,
+    });
+
+    setCurrentSlide(currentSlideNumber);
   };
 
   useEffect(() => {

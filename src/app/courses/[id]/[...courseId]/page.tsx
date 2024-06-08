@@ -80,6 +80,9 @@ export default async function Page({
 
   const { duration, time, registration } = schedule[0];
 
+  console.log("debug registration", registration);
+  console.log("debug schedule", schedule);
+
   return (
     <>
       <MediaBanner

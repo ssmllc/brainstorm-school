@@ -323,7 +323,7 @@ const CardLayout = ({ results }: Props) => {
 
                 <Container display="flex" padding="10px 20px" width="50%">
                   <TextBlock fontSize="14px" padding="0">
-                    {format}
+                    {format || "Live (Recorded)"}
                   </TextBlock>
                 </Container>
               </Container>
