@@ -92,7 +92,7 @@ const DropdownButton = styled.div`
   position: relative;
   width: 30px;
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     display: none;
   }
 `;
@@ -127,6 +127,10 @@ const DropdownMenu = styled.ul`
   padding: 15px 25px;
   position: absolute;
   top: 70px;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
 `;
 
 const DropdownMenuItem = styled.li`
