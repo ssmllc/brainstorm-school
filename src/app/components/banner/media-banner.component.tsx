@@ -22,13 +22,11 @@ const Banner = styled.div<bannerProps>`
   height: ${({ $hero }) => ($hero === "true" ? "80vh" : "65vh")};
   flex-direction: column;
   overflow: hidden;
-  /* padding: 100px 0 0 0; */
   position: relative;
   width: 100vw;
 
   @media (min-width: 800px) {
     height: ${({ $hero }) => ($hero === "true" ? "80vh" : "50vh")};
-    /* padding: 150px 0 0 0; */
   }
 
   &::before {

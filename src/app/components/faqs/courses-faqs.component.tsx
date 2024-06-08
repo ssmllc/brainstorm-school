@@ -88,7 +88,7 @@ const CoursesFAQs = () => {
             className="faq-question"
             onClick={() => toggleFAQ(1)}
           >
-            <Header level="3" text="What is the cost of the courses?" />
+            <h3>What is the cost of the courses?</h3>
             <span>
               <Image
                 src={`${
@@ -136,11 +136,12 @@ const CoursesFAQs = () => {
           background="var(--dark-grey)"
           padding="0 20px"
         >
-          <Question className="faq-question" onClick={() => toggleFAQ(2)}>
-            <Header
-              level="3"
-              text="What are the registration dates for upcoming courses?"
-            />
+          <Question
+            font-size="16px"
+            className="faq-question"
+            onClick={() => toggleFAQ(2)}
+          >
+            <h3>What are the registration dates for upcoming courses?</h3>
             <span>
               <Image
                 src={`${
@@ -169,8 +170,12 @@ const CoursesFAQs = () => {
           background="var(--dark-grey)"
           padding="0 20px"
         >
-          <Question className="faq-question" onClick={() => toggleFAQ(3)}>
-            <Header level="3" text="How long do the courses last?" />
+          <Question
+            font-size="16px"
+            className="faq-question"
+            onClick={() => toggleFAQ(3)}
+          >
+            <h3>How long do the courses last?</h3>
             <span>
               <Image
                 src={`${
@@ -199,11 +204,12 @@ const CoursesFAQs = () => {
           background="var(--dark-grey)"
           padding="0 20px"
         >
-          <Question className="faq-question" onClick={() => toggleFAQ(4)}>
-            <Header
-              level="3"
-              text="How can I get more information about a specific course?"
-            />
+          <Question
+            font-size="16px"
+            className="faq-question"
+            onClick={() => toggleFAQ(4)}
+          >
+            <h3>How can I get more information about a specific course?</h3>
             <span>
               <Image
                 src={`${

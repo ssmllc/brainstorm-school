@@ -4,13 +4,9 @@ import { useContext } from "react";
 import { BrainstormContext } from "@/app/context/context-provider";
 import CardImageDetail from "@/app/components/card/card-image-detail.component";
 import Container from "@/app/components/layout/container.component";
-import Heading from "@/app/components/heading/heading.component";
 import { Course, Sections } from "@/app/types/types";
 import Header from "@/app/components/text-block/header.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
-import Icon3D from "@/app/components/icons/icon-3d.component";
-import { IconPencilTip } from "@/app/components/icons/icom-pencil-tip.component";
-import { IconRequirements } from "@/app/components/icons/icon-requirements.component";
 import { IconLocation } from "@/app/components/icons/icon-location.component";
 
 interface Props {
@@ -52,6 +48,7 @@ const RenderCourses = ({ selectedCourses, noheading, width }: Props) => {
                     ) : (
                       <FlexBox
                         alignitems="center"
+                        sm_width="100%"
                         width="100%"
                         flexdirection="row"
                         sm_margin="50px 0"

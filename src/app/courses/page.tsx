@@ -26,7 +26,12 @@ export default async function Courses() {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <FlexBox flexdirection="column" margin="100px auto 0" alignitems="center">
+      <FlexBox
+        flexdirection="column"
+        sm_margin="50px auto 50px"
+        margin="100px auto 0"
+        alignitems="center"
+      >
         <FlexBox
           flexdirection="column"
           margin="20px 0"
@@ -56,14 +61,21 @@ export default async function Courses() {
             fontSize="15px"
           />
         </FlexBox>
+      </FlexBox>
 
+      <FlexBox
+        sm_width="100%"
+        sm_margin="0 auto"
+        flexdirection="column"
+        alignitems="center"
+      >
         <FlexBox
-          margin="25px 60px 0"
-          sm_width="85%"
+          margin="25px auto 0"
+          sm_width="80%"
           width="70%"
           flexdirection="column"
         >
-          <Header level="3" text="Featured Course" />
+          <Header level="2" text="Featured Course" />
         </FlexBox>
 
         <FeaturedCard
@@ -72,6 +84,7 @@ export default async function Courses() {
           info="Lorem ipsum dolor sit amet"
           heading="James Paick"
           margin="25px 0"
+          sm_margin="25px 0"
         />
       </FlexBox>
 

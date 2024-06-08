@@ -57,11 +57,15 @@ const Header4 = styled.p<textProps>`
   color: var(--white);
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "24px")};
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "normal")};
-  margin: ${({ margin }) => margin};
+  margin: 25px 0;
   position: relative;
   text-align: ${({ textalign }) => textalign};
   text-transform: capitalize;
   line-height: 1.5;
+
+  @media (min-width: 800px) {
+    margin: ${({ margin }) => margin};
+  }
 `;
 
 const Header5 = styled(Link)<textProps>`

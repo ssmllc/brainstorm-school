@@ -4,10 +4,8 @@ import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import styled from "styled-components";
 import Container from "../layout/container.component";
-import TextHeaderBlock from "./text-header-block.component";
 import Image from "next/image";
 import Header from "./header.component";
-import DecipherText from "@/app/courses/components/decipher-text.component";
 import Link from "next/link";
 
 const Question = styled("button")`
@@ -160,9 +158,6 @@ const FAQs = ({ results }: any) => {
                             if (mark.marks.length > 0) {
                               return block.markDefs.map((marker: any) => {
                                 if (mark.marks[0] === marker._key) {
-                                  // console.log("marker match", marker._key);
-                                  // console.log("marker match", marker._type);
-                                  // console.log("marker match", marker.href);
                                   return (
                                     <Anchor
                                       key={marker._key}
