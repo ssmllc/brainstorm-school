@@ -158,7 +158,11 @@ const MobileNavigation = styled("div")`
   position: absolute;
   top: 65px;
   width: 100vw;
-  z-index: 9999999999;
+  z-index: 999;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
 `;
 
 const MobileNavigationItems = styled("menu")`
