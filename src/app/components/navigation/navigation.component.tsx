@@ -92,6 +92,24 @@ const DropdownButton = styled.div`
   position: relative;
   width: 30px;
 
+  &[data-active="true"] {
+    .dropdown-bar {
+      &:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+        top: 50%;
+        transform: translateY(-100%);
+      }
+      &:nth-child(3) {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+    }
+  }
+
   @media (min-width: 1024px) {
     display: none;
   }
@@ -101,6 +119,7 @@ const DropdownButtonBar = styled.div`
   background: var(--white);
   height: 3px;
   position: absolute;
+  transition: all 0.35s ease-out;
   width: 100%;
 
   &:nth-child(1) {
@@ -153,7 +172,8 @@ const MobileNavigation = styled("div")`
   background: var(--off-black);
   /* border: thin solid red; */
   color: white;
-  height: 100vh;
+  height: 0;
+  opacity: 0;
   overflow-y: auto;
   left: 0;
   padding: 10px 0;
@@ -161,6 +181,12 @@ const MobileNavigation = styled("div")`
   top: 65px;
   width: 100vw;
   z-index: 999;
+  transition: all 0.35s ease-out;
+
+  &[data-active="true"] {
+    height: 100vh;
+    opacity: 1;
+  }
 
   @media (min-width: 1024px) {
     display: none;
@@ -258,6 +284,7 @@ const CallToAction = styled(Link)`
 const Navigation = () => {
   const { courses }: any = useContext(BrainstormContext);
   const [selected, setSelected] = useState<number | null>(null);
+  const [active, setActive] = useState<boolean>(false);
 
   const toggleMobileMenu = (selectedIndex: number) => {
     if (selected === selectedIndex) {
@@ -271,13 +298,17 @@ const Navigation = () => {
     <NavigationBar>
       <BrainstormLogo justify="center" />
 
-      <DropdownButton>
-        <DropdownButtonBar />
-        <DropdownButtonBar />
-        <DropdownButtonBar />
+      <DropdownButton
+        className="dropdown-button"
+        data-active={active}
+        onClick={() => setActive(!active)}
+      >
+        <DropdownButtonBar className="dropdown-bar" />
+        <DropdownButtonBar className="dropdown-bar" />
+        <DropdownButtonBar className="dropdown-bar" />
       </DropdownButton>
 
-      <MobileNavigation>
+      <MobileNavigation data-active={active}>
         <MobileNavigationItems>
           <MainMenuItem href="/">Home</MainMenuItem>
 
