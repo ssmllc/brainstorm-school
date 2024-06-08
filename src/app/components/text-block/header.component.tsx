@@ -29,7 +29,7 @@ const Header1 = styled.h1<textProps>`
 
 const Header2 = styled.h2<textProps>`
   color: var(--white);
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
   line-height: 1.25;
   margin: ${({ margin }) => margin};
