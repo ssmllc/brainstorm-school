@@ -170,7 +170,7 @@ const MobileNavigationItems = styled("menu")`
   overflow-y: scroll;
   height: auto;
   list-style: none;
-  margin: 0 auto;
+  margin: 50px auto 100px;
   width: 80%;
 `;
 
@@ -216,7 +216,7 @@ const MainMenuItem = styled(Link)`
 `;
 
 const AccordionItem = styled(Link)`
-  border-bottom: thin dashed green;
+  border-bottom: thin solid var(--medium-grey);
   color: #ccc;
   display: block;
   font-size: 14px;
@@ -237,6 +237,18 @@ const CallToAction = styled(Link)`
 
 const Navigation = () => {
   const { courses }: any = useContext(BrainstormContext);
+
+  const toggleMobileMenu = (target: any) => {
+    const getState = target.parentNode.getAttribute("data-active");
+
+    console.log("getState", getState);
+    if (getState === "true") {
+      target.parentNode.removeAttribute("data-active");
+    } else {
+      target.parentNode.setAttribute("data-active", "true");
+    }
+  };
+
   return (
     <NavigationBar>
       <BrainstormLogo justify="center" />
@@ -252,19 +264,7 @@ const Navigation = () => {
           <MainMenuItem href="/">Home</MainMenuItem>
 
           <Accordion>
-            <MainMenu
-              onClick={(evt: any) => {
-                const getState =
-                  evt.target.parentNode.getAttribute("data-active");
-
-                console.log("getState", getState);
-                if (getState === "true") {
-                  evt.target.parentNode.removeAttribute("data-active");
-                } else {
-                  evt.target.parentNode.setAttribute("data-active", "true");
-                }
-              }}
-            >
+            <MainMenu onClick={(evt: any) => toggleMobileMenu(evt.target)}>
               Courses
             </MainMenu>
             <AccordionItem href="/courses">All Courses</AccordionItem>
@@ -282,7 +282,9 @@ const Navigation = () => {
           <MainMenuItem href="/course-guide">Course Guide</MainMenuItem>
 
           <Accordion>
-            <MainMenu>Workshops</MainMenu>
+            <MainMenu onClick={(evt: any) => toggleMobileMenu(evt.target)}>
+              Workshops
+            </MainMenu>
             <AccordionItem href="/workshops/open-canvas">
               Open Canvas
             </AccordionItem>
@@ -292,7 +294,9 @@ const Navigation = () => {
           </Accordion>
 
           <Accordion>
-            <MainMenu>Programs</MainMenu>
+            <MainMenu onClick={(evt: any) => toggleMobileMenu(evt.target)}>
+              Programs
+            </MainMenu>
             <AccordionItem href="/about/compliance-line">
               Mentorship
             </AccordionItem>
@@ -302,7 +306,9 @@ const Navigation = () => {
           </Accordion>
 
           <Accordion>
-            <MainMenuItem href="/about">About</MainMenuItem>
+            <MainMenu onClick={(evt: any) => toggleMobileMenu(evt.target)}>
+              About
+            </MainMenu>
             <AccordionItem href="/about/compliance-line">
               Compliance Line
             </AccordionItem>
@@ -312,7 +318,9 @@ const Navigation = () => {
           </Accordion>
 
           <Accordion>
-            <MainMenuItem href="/gallery">Gallery</MainMenuItem>
+            <MainMenu onClick={(evt: any) => toggleMobileMenu(evt.target)}>
+              Gallery
+            </MainMenu>
             <AccordionItem href="/gallery/students">Students</AccordionItem>
             <AccordionItem href="/gallery/instructors">
               Instructors
