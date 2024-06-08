@@ -305,7 +305,7 @@ const Navigation = () => {
           <Accordion data-active={selected === 2 ? "true" : "false"}>
             <MainMenu
               className="mobile-dropdown"
-              onClick={() => toggleMobileMenu(3)}
+              onClick={() => toggleMobileMenu(2)}
             >
               Workshops
             </MainMenu>
