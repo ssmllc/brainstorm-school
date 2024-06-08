@@ -3,7 +3,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 import { BrainstormContext } from "@/app/context/context-provider";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Sections } from "@/app/types/types";
 import BrainstormLogo from "../Logo/logo.component";
 import { IconSearch } from "../icons/icon-search.component";
@@ -151,10 +151,12 @@ const MenuItem = styled(Link)`
 // START Mobile Menu
 const MobileNavigation = styled("div")`
   background: var(--off-black);
+  /* border: thin solid red; */
   color: white;
   height: 100vh;
   overflow-y: auto;
   left: 0;
+  padding: 10px 0;
   position: absolute;
   top: 65px;
   width: 100vw;
@@ -167,29 +169,47 @@ const MobileNavigation = styled("div")`
 
 const MobileNavigationItems = styled("menu")`
   /* border: thin dashed green; */
-  overflow-y: scroll;
-  height: auto;
+  overflow-y: auto;
+  height: 100%;
   list-style: none;
-  margin: 50px auto 100px;
-  width: 80%;
+  padding: 0 25px;
+  width: 100%;
 `;
 
 const Accordion = styled("menu")`
   align-items: center;
   border-bottom: thin solid var(--medium-grey);
-  max-height: 50px;
+  max-height: 60px;
   list-style: none;
   overflow: hidden;
   padding: 0;
   position: relative;
 
   &[data-active="true"] {
-    max-height: 500px;
+    overflow-y: scroll;
+    max-height: 9999px;
+
+    .mobile-dropdown {
+      &::after {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 7px solid var(--blue);
+        border-top: 5px solid transparent;
+        content: "";
+        display: block;
+        height: 0;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+      }
+    }
   }
 `;
 
 const MainMenu = styled.div`
-  padding: 15px 0;
+  padding: 20px 0;
   position: relative;
 
   &::after {
@@ -211,7 +231,7 @@ const MainMenuItem = styled(Link)`
   border-bottom: thin solid var(--medium-grey);
   color: var(--white);
   display: block;
-  padding: 15px 0;
+  padding: 20px 0;
   position: relative;
 `;
 
@@ -237,16 +257,14 @@ const CallToAction = styled(Link)`
 
 const Navigation = () => {
   const { courses }: any = useContext(BrainstormContext);
+  const [selected, setSelected] = useState<number | null>(null);
 
-  const toggleMobileMenu = (target: any) => {
-    const getState = target.parentNode.getAttribute("data-active");
-
-    console.log("getState", getState);
-    if (getState === "true") {
-      target.parentNode.removeAttribute("data-active");
-    } else {
-      target.parentNode.setAttribute("data-active", "true");
+  const toggleMobileMenu = (selectedIndex: number) => {
+    if (selected === selectedIndex) {
+      return setSelected(null);
     }
+
+    setSelected(selectedIndex);
   };
 
   return (
@@ -263,8 +281,11 @@ const Navigation = () => {
         <MobileNavigationItems>
           <MainMenuItem href="/">Home</MainMenuItem>
 
-          <Accordion>
-            <MainMenu onClick={(evt: any) => toggleMobileMenu(evt.target)}>
+          <Accordion data-active={selected === 1 ? "true" : "false"}>
+            <MainMenu
+              className="mobile-dropdown"
+              onClick={() => toggleMobileMenu(1)}
+            >
               Courses
             </MainMenu>
             <AccordionItem href="/courses">All Courses</AccordionItem>
@@ -281,8 +302,11 @@ const Navigation = () => {
 
           <MainMenuItem href="/course-guide">Course Guide</MainMenuItem>
 
-          <Accordion>
-            <MainMenu onClick={(evt: any) => toggleMobileMenu(evt.target)}>
+          <Accordion data-active={selected === 2 ? "true" : "false"}>
+            <MainMenu
+              className="mobile-dropdown"
+              onClick={() => toggleMobileMenu(3)}
+            >
               Workshops
             </MainMenu>
             <AccordionItem href="/workshops/open-canvas">
@@ -293,8 +317,11 @@ const Navigation = () => {
             </AccordionItem>
           </Accordion>
 
-          <Accordion>
-            <MainMenu onClick={(evt: any) => toggleMobileMenu(evt.target)}>
+          <Accordion data-active={selected === 3 ? "true" : "false"}>
+            <MainMenu
+              className="mobile-dropdown"
+              onClick={() => toggleMobileMenu(3)}
+            >
               Programs
             </MainMenu>
             <AccordionItem href="/about/compliance-line">
@@ -305,8 +332,11 @@ const Navigation = () => {
             </AccordionItem>
           </Accordion>
 
-          <Accordion>
-            <MainMenu onClick={(evt: any) => toggleMobileMenu(evt.target)}>
+          <Accordion data-active={selected === 4 ? "true" : "false"}>
+            <MainMenu
+              className="mobile-dropdown"
+              onClick={() => toggleMobileMenu(4)}
+            >
               About
             </MainMenu>
             <AccordionItem href="/about/compliance-line">
@@ -317,8 +347,11 @@ const Navigation = () => {
             </AccordionItem>
           </Accordion>
 
-          <Accordion>
-            <MainMenu onClick={(evt: any) => toggleMobileMenu(evt.target)}>
+          <Accordion data-active={selected === 5 ? "true" : "false"}>
+            <MainMenu
+              className="mobile-dropdown"
+              onClick={() => toggleMobileMenu(5)}
+            >
               Gallery
             </MainMenu>
             <AccordionItem href="/gallery/students">Students</AccordionItem>
