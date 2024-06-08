@@ -17,12 +17,12 @@ const Card = styled(Link)<cardProps>`
   flex-wrap: wrap;
   overflow: hidden;
   min-height: 400px;
-  max-width: 320px;
   position: relative;
   transition: all 0.15s ease-out;
   width: 100%;
 
   @media (min-width: 800px) {
+    max-width: 320px;
     width: ${({ width }) => (width ? width : "25%")};
   }
 
