@@ -95,6 +95,7 @@ const DropdownButton = styled.div`
   &[data-active="true"] {
     .dropdown-bar {
       &:nth-child(1) {
+        background: var(--blue);
         top: 50%;
         transform: translateY(-50%) rotate(-45deg);
       }
@@ -104,6 +105,7 @@ const DropdownButton = styled.div`
         transform: translateY(-100%);
       }
       &:nth-child(3) {
+        background: var(--blue);
         top: 50%;
         transform: translateY(-50%) rotate(45deg);
       }
