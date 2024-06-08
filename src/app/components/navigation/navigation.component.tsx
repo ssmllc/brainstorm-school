@@ -162,17 +162,17 @@ const MobileNavigation = styled("div")`
 `;
 
 const MobileNavigationItems = styled("menu")`
-  border: thin dashed green;
+  /* border: thin dashed green; */
   overflow-y: scroll;
-  min-height: 180vh;
+  height: auto;
   list-style: none;
   margin: 0 auto;
-  width: 70%;
+  width: 80%;
 `;
 
 const Accordion = styled("menu")`
   align-items: center;
-  border: thin dashed red;
+  border-bottom: thin solid var(--medium-grey);
   max-height: 50px;
   list-style: none;
   overflow: hidden;
@@ -204,6 +204,7 @@ const MainMenu = styled.div`
 `;
 
 const MainMenuItem = styled(Link)`
+  border-bottom: thin solid var(--medium-grey);
   color: var(--white);
   display: block;
   padding: 15px 0;
@@ -211,7 +212,7 @@ const MainMenuItem = styled(Link)`
 `;
 
 const AccordionItem = styled(Link)`
-  border: thin dashed green;
+  border-bottom: thin dashed green;
   color: #ccc;
   display: block;
   font-size: 14px;
