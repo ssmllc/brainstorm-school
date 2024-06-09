@@ -17,17 +17,22 @@ const Text = styled.div<textProps>`
   align-items: center;
   color: ${({ color }) => (color ? color : "var(--white)")};
   display: flex;
-  font-size: ${({ fontSize }) => (fontSize ? fontSize : "18px")};
+  font-size: 14px;
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "normal")};
   gap: 10px;
   line-height: 1.5;
-  padding: 20px 0;
+  padding: 5px 0;
   justify-content: ${({ justifycontent }) => justifycontent};
   text-transform: ${({ texttransform }) =>
     texttransform ? texttransform : "capitalize"};
   width: ${({ width }) => (width ? width : "100%")};
 
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+
   @media (min-width: 800px) {
+    font-size: ${({ fontSize }) => (fontSize ? fontSize : "18px")};
     padding: ${({ padding }) => (padding ? padding : "25px 0")};
   }
 `;

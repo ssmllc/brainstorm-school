@@ -20,6 +20,7 @@ interface sectionProps {
   margin?: string;
   maxwidth?: string;
   $padding?: string;
+  $sm_padding?: string;
   overflow?: string;
   position?: string;
   width?: string;
@@ -41,7 +42,7 @@ const FlexSection = styled.div<sectionProps>`
   margin: ${({ margin }) => (margin ? margin : "0")};
   max-width: ${({ maxwidth }) => maxwidth};
   overflow: ${({ overflow }) => overflow};
-  padding: ${({ $padding }) => ($padding ? $padding : "0")};
+  padding: ${({ $sm_padding }) => ($sm_padding ? $sm_padding : "0")};
   position: ${({ position }) => (position ? position : "relative")};
   width: ${({ width }) => (width ? width : "100vw")};
 
@@ -51,6 +52,7 @@ const FlexSection = styled.div<sectionProps>`
     height: ${({ $height }) => ($height ? $height : "auto")};
     max-width: ${({ maxwidth }) => (maxwidth ? maxwidth : "1440px")};
     margin: ${({ margin }) => (margin ? margin : "0")};
+    padding: ${({ $padding }) => ($padding ? $padding : "0")};
     width: ${({ width }) => (width ? width : "100vw")};
   }
 `;
@@ -72,7 +74,7 @@ const Section = styled.div<sectionProps>`
   margin: ${({ margin }) => (margin ? margin : "0")};
   max-width: ${({ maxwidth }) => maxwidth};
   overflow: ${({ overflow }) => overflow};
-  padding: ${({ $padding }) => ($padding ? $padding : "0")};
+  padding: ${({ $sm_padding }) => ($sm_padding ? $sm_padding : "0")};
   position: ${({ position }) => (position ? position : "relative")};
   width: ${({ width }) => (width ? width : "100vw")};
   flex-grow: ${({ flexgrow }) => flexgrow};
@@ -83,6 +85,7 @@ const Section = styled.div<sectionProps>`
     height: ${({ $height }) => ($height ? $height : "auto")};
     max-width: ${({ maxwidth }) => (maxwidth ? maxwidth : "1440px")};
     margin: ${({ margin }) => (margin ? margin : "0")};
+    padding: ${({ $padding }) => ($padding ? $padding : "0")};
     width: ${({ width }) => (width ? width : "100vw")};
   }
 `;
@@ -107,6 +110,7 @@ interface Props {
   maxwidth?: string;
   overflow?: string;
   padding?: string;
+  sm_padding?: string;
   position?: string;
   width?: string;
 }
@@ -131,6 +135,7 @@ export const FlexContainer = ({
   maxwidth,
   overflow,
   padding,
+  sm_padding,
   position,
   width,
 }: Props) => {
@@ -153,6 +158,7 @@ export const FlexContainer = ({
       margin={margin}
       overflow={overflow}
       $padding={padding}
+      $sm_padding={sm_padding}
       position={position}
       width={width}
       maxwidth={maxwidth}
@@ -182,6 +188,7 @@ const Container = ({
   maxwidth,
   overflow,
   padding,
+  sm_padding,
   position,
   width,
 }: Props) => {
@@ -205,6 +212,7 @@ const Container = ({
       maxwidth={maxwidth}
       overflow={overflow}
       $padding={padding}
+      $sm_padding={sm_padding}
       position={position}
       width={width}
     >

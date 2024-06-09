@@ -106,7 +106,8 @@ const CardTags = ({ tags }: { tags?: string[] }) => (
           key={index}
           background="rgba(255, 255, 255, .10)"
           label={tag.title}
-          padding="20px 20px"
+          sm_padding="12px 15px"
+          padding="15px 15px"
           boxshadow="0 0 15px rgba(0, 0, 0, .50)"
         />
       ))}
@@ -120,7 +121,7 @@ const Wrapper = styled("div")`
   flex-direction: column;
   padding: 0;
   margin: 0 auto;
-  width: 100%;
+  width: 70%;
 
   @media (min-width: 800px) {
     flex-direction: row;
@@ -151,11 +152,17 @@ const CourseDetails = styled("div")`
   background: var(--dark-grey);
   border-radius: 20px;
   height: 100%;
-  padding: 20px 20px;
+  padding: 0 20px;
   margin: 0 auto;
   width: 100%;
 
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
+    padding: 20px 20px;
+    width: 100%;
+  }
+
+  @media (min-width: 1400px) {
+    padding: 20px 20px;
     width: 80%;
   }
 `;
@@ -189,253 +196,323 @@ const CardLayout = ({ results }: Props) => {
   const formatStart = new Date(start).toDateString();
 
   return (
-    <Container margin="0 auto" padding="25px 25px">
-      <Wrapper>
-        <CardWrapper>
-          <Header level="2" text={name} margin="20px 0" />
-          <CardImage preview={imageUrl} />
-          <DecipherText
-            description={description}
-            sm_margin="20px 0"
-            margin="20px 0"
-          />
-          {tags && <CardTags tags={tags} />}
-        </CardWrapper>
+    <Wrapper>
+      <CardWrapper>
+        <Header level="2" text={name} margin="20px 0" />
+        <CardImage preview={imageUrl} />
+        <DecipherText
+          description={description}
+          sm_margin="20px 0"
+          margin="20px 0"
+        />
+        {tags && <CardTags tags={tags} />}
+      </CardWrapper>
 
-        <InstructorWrapper>
-          <CourseDetails>
-            <Container display="flex" padding="20px 20px" width="100%">
-              <Container width="50%">
-                <TextBlock padding="0">Course Info</TextBlock>
+      <InstructorWrapper>
+        <CourseDetails>
+          <Container
+            display="flex"
+            sm_padding="20px 20px"
+            padding="20px 20px"
+            width="100%"
+          >
+            <Container width="50%">
+              <TextBlock padding="0">Course Info</TextBlock>
+            </Container>
+            <Container width="50%" display="flex" justifycontent="right">
+              <TextBlock
+                padding="0"
+                fontSize="12px"
+                width="auto"
+                color="var(--blue)"
+                texttransform="uppercase"
+              >
+                {registration && (
+                  <Link
+                    style={{
+                      color: "var(--blue)",
+                      textDecoration: "underline",
+                    }}
+                    href={registration}
+                  >
+                    Registration Open
+                  </Link>
+                )}
+              </TextBlock>
+            </Container>
+          </Container>
+
+          <Container
+            background="var(--black)"
+            borderradius="20px"
+            display="flex"
+            margin="20px 0"
+            padding="10px 0"
+            sm_padding="20px 0"
+            width="100%"
+          >
+            <Container
+              display="flex"
+              flexdirection="column"
+              padding="10px 20px"
+              sm_padding="0 20px"
+              width="100%"
+              borderright="thin solid var(--medium-grey)"
+            >
+              <Header
+                level="4"
+                text="Opens"
+                fontSize="24px"
+                fontWeight="bold"
+              />
+              <Header
+                level="4"
+                text={formatOpen}
+                fontSize="16px"
+                sm_fontSize="12px"
+                margin="10px 0"
+              />
+            </Container>
+
+            <Container
+              display="flex"
+              flexdirection="column"
+              padding="10px 20px"
+              sm_padding="0 20px"
+              width="100%"
+            >
+              <Header
+                level="4"
+                text="Start"
+                fontSize="24px"
+                fontWeight="bold"
+              />
+              <Header
+                level="4"
+                text={formatStart}
+                fontSize="16px"
+                sm_fontSize="12px"
+                margin="10px 0"
+              />
+            </Container>
+          </Container>
+
+          <Card
+            background="0"
+            boxshadow="none"
+            stacked="false"
+            icon={headshot || "/instructors/ico-image.png"}
+            heading={title}
+            padding="20px 20px"
+            subHeading={profession}
+            width="100%"
+          />
+
+          <Container
+            borderradius="20px"
+            display="flex"
+            flexdirection="column"
+            margin="20px 0"
+            width="100%"
+          >
+            <Container display="flex" width="100%">
+              <Container
+                display="flex"
+                padding="10px 20px"
+                sm_padding="10px 20px"
+                width="50%"
+              >
+                <TextBlock fontWeight="bold" fontSize="14px" padding="0">
+                  <IconTerm width="24px" height="24px" /> Term
+                </TextBlock>
               </Container>
-              <Container width="50%" display="flex" justifycontent="right">
-                <TextBlock
-                  padding="0"
-                  fontSize="12px"
-                  width="auto"
-                  color="var(--blue)"
-                  texttransform="uppercase"
-                >
-                  {registration && (
-                    <Link
-                      style={{
-                        color: "var(--blue)",
-                        textDecoration: "underline",
-                      }}
-                      href={registration}
-                    >
-                      Registration Open
-                    </Link>
-                  )}
+
+              <Container
+                display="flex"
+                padding="10px 20px"
+                sm_padding="10px 20px"
+                width="50%"
+              >
+                <TextBlock fontSize="14px" padding="0">
+                  {term}
                 </TextBlock>
               </Container>
             </Container>
 
-            <Container
-              background="var(--black)"
-              borderradius="20px"
-              display="flex"
-              margin="20px 0"
-              padding="20px 0"
-              width="100%"
-            >
+            <Container display="flex" width="100%">
               <Container
                 display="flex"
-                flexdirection="column"
                 padding="10px 20px"
-                width="100%"
-                borderright="thin solid var(--medium-grey)"
+                sm_padding="10px 20px"
+                width="50%"
               >
-                <Header
-                  level="4"
-                  text="Opens"
-                  fontSize="20px"
-                  fontWeight="bold"
-                />
-                <Header
-                  level="4"
-                  text={formatOpen}
-                  fontSize="14px"
-                  margin="10px 0"
-                />
+                <TextBlock fontWeight="bold" fontSize="14px" padding="0">
+                  <IconFormat width="24px" height="24px" />
+                  Format
+                </TextBlock>
               </Container>
 
               <Container
                 display="flex"
-                flexdirection="column"
                 padding="10px 20px"
-                width="100%"
+                sm_padding="10px 20px"
+                width="50%"
               >
-                <Header
-                  level="4"
-                  text="Start"
-                  fontSize="20px"
-                  fontWeight="bold"
-                />
-                <Header
-                  level="4"
-                  text={formatStart}
-                  fontSize="14px"
-                  margin="10px 0"
-                />
+                <TextBlock fontSize="14px" padding="0">
+                  {format || "Live (Recorded)"}
+                </TextBlock>
               </Container>
             </Container>
 
-            <Card
-              background="0"
-              boxshadow="none"
-              stacked="false"
-              icon={headshot || "/instructors/ico-image.png"}
-              heading={title}
-              padding="20px 20px"
-              subHeading={profession}
-              width="100%"
-            />
-
-            <Container
-              borderradius="20px"
-              display="flex"
-              flexdirection="column"
-              margin="20px 0"
-              width="100%"
-            >
-              <Container display="flex" width="100%">
-                <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontWeight="bold" fontSize="14px" padding="0">
-                    <IconTerm width="24px" height="24px" /> Term
-                  </TextBlock>
-                </Container>
-
-                <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontSize="14px" padding="0">
-                    {term}
-                  </TextBlock>
-                </Container>
+            <Container display="flex" width="100%">
+              <Container
+                display="flex"
+                padding="10px 20px"
+                sm_padding="10px 20px"
+                width="50%"
+              >
+                <TextBlock fontWeight="bold" fontSize="14px" padding="0">
+                  <IconLocation width="24px" height="24px" /> Location
+                </TextBlock>
               </Container>
 
-              <Container display="flex" width="100%">
-                <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontWeight="bold" fontSize="14px" padding="0">
-                    <IconFormat width="24px" height="24px" />
-                    Format
-                  </TextBlock>
-                </Container>
-
-                <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontSize="14px" padding="0">
-                    {format || "Live (Recorded)"}
-                  </TextBlock>
-                </Container>
-              </Container>
-
-              <Container display="flex" width="100%">
-                <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontWeight="bold" fontSize="14px" padding="0">
-                    <IconLocation width="24px" height="24px" /> Location
-                  </TextBlock>
-                </Container>
-
-                <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontSize="14px" padding="0">
-                    Online Course
-                  </TextBlock>
-                </Container>
-              </Container>
-
-              <Container display="flex" width="100%">
-                <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontWeight="bold" fontSize="14px" padding="0">
-                    <IconTime width="24px" height="24px" /> Time
-                  </TextBlock>
-                </Container>
-
-                <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontSize="14px" padding="0">
-                    {time}
-                  </TextBlock>
-                </Container>
-              </Container>
-
-              <Container display="flex" width="100%">
-                <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontWeight="bold" fontSize="14px" padding="0">
-                    <IconDuration width="24px" height="24px" />
-                    Duration
-                  </TextBlock>
-                </Container>
-
-                <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontSize="14px" padding="0">
-                    {duration}
-                  </TextBlock>
-                </Container>
-              </Container>
-
-              <Container display="flex" width="100%">
-                <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontWeight="bold" fontSize="14px" padding="0">
-                    <IconPrice width="24px" height="24px" />
-                    Price
-                  </TextBlock>
-                </Container>
-
-                <Container display="flex" padding="10px 20px" width="50%">
-                  <TextBlock fontSize="14px" padding="0">
-                    {price}
-                  </TextBlock>
-                </Container>
+              <Container
+                display="flex"
+                padding="10px 20px"
+                sm_padding="10px 20px"
+                width="50%"
+              >
+                <TextBlock fontSize="14px" padding="0">
+                  Online Course
+                </TextBlock>
               </Container>
             </Container>
 
-            <Container
-              borderradius="20px"
-              margin="20px 0"
-              padding="20px 20px"
-              width="100%"
-            >
-              <TextBlock
-                padding="10px 0"
-                fontSize="18px"
-                fontWeight="bold"
-                width="auto"
+            <Container display="flex" width="100%">
+              <Container
+                display="flex"
+                padding="10px 20px"
+                sm_padding="10px 20px"
+                width="50%"
               >
-                <IconPencilTip width="24px" height="24px" /> Suggested Materials
-              </TextBlock>
+                <TextBlock fontWeight="bold" fontSize="14px" padding="0">
+                  <IconTime width="24px" height="24px" /> Time
+                </TextBlock>
+              </Container>
 
-              <Header
-                level="4"
-                fontSize="15px"
-                text="Traditional drawing supplies, pen & paper, sketchbook. Optional:
+              <Container
+                display="flex"
+                padding="10px 20px"
+                sm_padding="10px 20px"
+                width="50%"
+              >
+                <TextBlock fontSize="14px" padding="0">
+                  {time}
+                </TextBlock>
+              </Container>
+            </Container>
+
+            <Container display="flex" width="100%">
+              <Container
+                display="flex"
+                padding="10px 20px"
+                sm_padding="10px 20px"
+                width="50%"
+              >
+                <TextBlock fontWeight="bold" fontSize="14px" padding="0">
+                  <IconDuration width="24px" height="24px" />
+                  Duration
+                </TextBlock>
+              </Container>
+
+              <Container
+                display="flex"
+                padding="10px 20px"
+                sm_padding="10px 20px"
+                width="50%"
+              >
+                <TextBlock fontSize="14px" padding="0">
+                  {duration}
+                </TextBlock>
+              </Container>
+            </Container>
+
+            <Container display="flex" width="100%">
+              <Container
+                display="flex"
+                padding="10px 20px"
+                sm_padding="10px 20px"
+                width="50%"
+              >
+                <TextBlock fontWeight="bold" fontSize="14px" padding="0">
+                  <IconPrice width="24px" height="24px" />
+                  Price
+                </TextBlock>
+              </Container>
+
+              <Container
+                display="flex"
+                padding="10px 20px"
+                sm_padding="10px 20px"
+                width="50%"
+              >
+                <TextBlock fontSize="14px" padding="0">
+                  {price}
+                </TextBlock>
+              </Container>
+            </Container>
+          </Container>
+
+          <Container
+            borderradius="20px"
+            margin="20px 0"
+            padding="20px 20px"
+            sm_padding="20px 20px"
+            width="100%"
+          >
+            <TextBlock
+              padding="10px 0"
+              fontSize="18px"
+              fontWeight="bold"
+              width="auto"
+            >
+              <IconPencilTip width="24px" height="24px" /> Suggested Materials
+            </TextBlock>
+
+            <Header
+              level="4"
+              fontSize="15px"
+              text="Traditional drawing supplies, pen & paper, sketchbook. Optional:
                 Computer or Tablet with comparable drawing software such as
                 photoshop, procreate, etc."
-              />
-            </Container>
+            />
+          </Container>
 
-            <Container
-              borderradius="20px"
-              margin="20px 0"
-              padding="20px 20px"
-              width="100%"
+          <Container
+            borderradius="20px"
+            margin="20px 0"
+            padding="20px 20px"
+            sm_padding="20px 20px"
+            width="100%"
+          >
+            <TextBlock
+              padding="10px 0"
+              fontSize="18px"
+              fontWeight="bold"
+              width="auto"
             >
-              <TextBlock
-                padding="10px 0"
-                fontSize="18px"
-                fontWeight="bold"
-                width="auto"
-              >
-                <IconRequirements width="24px" height="24px" /> Requirements
-              </TextBlock>
-              <Header
-                level="4"
-                fontSize="15px"
-                text="Computer with Photoshop and high speed internet. Mic (highly
+              <IconRequirements width="24px" height="24px" /> Requirements
+            </TextBlock>
+            <Header
+              level="4"
+              fontSize="15px"
+              text="Computer with Photoshop and high speed internet. Mic (highly
                   recommended) and camera (optional)."
-              />
-            </Container>
-          </CourseDetails>
-        </InstructorWrapper>
-      </Wrapper>
-    </Container>
+            />
+          </Container>
+        </CourseDetails>
+      </InstructorWrapper>
+    </Wrapper>
   );
 };
 

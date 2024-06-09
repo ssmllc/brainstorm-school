@@ -119,8 +119,8 @@ const Carousel = ({ children, sm_height, height }: Props) => {
   return (
     <Container
       display="flex"
-      width={"100%"}
-      sm_height={sm_height}
+      width="100%"
+      sm_height={sm_height || "350px"}
       height={height || "350px"}
     >
       <Button className="prev" onClick={() => handleCardSliderMove("prev")}>

@@ -6,6 +6,7 @@ import styled from "styled-components";
 interface textProps {
   color?: string;
   fontSize?: string;
+  $sm_fontSize?: string;
   fontWeight?: string;
   margin?: string;
   textalign?: string;
@@ -55,15 +56,16 @@ const Header3 = styled.h3<textProps>`
 
 const Header4 = styled.p<textProps>`
   color: var(--white);
-  font-size: ${({ fontSize }) => (fontSize ? fontSize : "24px")};
+  font-size: ${({ $sm_fontSize }) => ($sm_fontSize ? $sm_fontSize : "18px")};
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "normal")};
-  margin: 25px 0;
+  margin: 5px 0;
   position: relative;
   text-align: ${({ textalign }) => textalign};
   text-transform: capitalize;
   line-height: 1.5;
 
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
+    font-size: ${({ fontSize }) => (fontSize ? fontSize : "24px")};
     margin: ${({ margin }) => margin};
   }
 `;
@@ -95,6 +97,7 @@ interface Props {
   text: string;
   color?: string;
   fontSize?: string;
+  sm_fontSize?: string;
   fontWeight?: string;
   margin?: string;
   href?: string;
@@ -106,6 +109,7 @@ const Header = ({
   text,
   color,
   fontSize,
+  sm_fontSize,
   fontWeight,
   margin,
   href,
@@ -133,6 +137,7 @@ const Header = ({
           color={color}
           fontSize={fontSize}
           fontWeight={fontWeight}
+          $sm_fontSize={sm_fontSize}
           margin={margin}
         >
           {text}

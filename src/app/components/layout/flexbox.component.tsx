@@ -15,6 +15,7 @@ interface containerProps {
   sm_margin?: string;
   width?: string;
   $sm_width?: string;
+  $md_width?: string;
 }
 const Container = styled.div<containerProps>`
   align-items: ${({ $alignitems }) => $alignitems};
@@ -37,11 +38,12 @@ const Container = styled.div<containerProps>`
       $flexdirection ? $flexdirection : "row"};
     margin: ${({ $margin }) => ($margin ? $margin : "0 auto")};
     text-align: ${({ sm_textalign }) => (sm_textalign ? sm_textalign : "left")};
-    width: ${({ width }) => (width ? width : "100vw")};
+    width: ${({ $md_width }) => ($md_width ? $md_width : "100vw")};
   }
 
   //large
   @media (min-width: 1024px) {
+    width: ${({ width }) => (width ? width : "100vw")};
   }
 
   //x-large
@@ -65,6 +67,7 @@ interface Props {
   textalign?: string;
   sm_textalign?: string;
   sm_width?: string;
+  md_width?: string;
   width?: string;
 }
 const FlexBox = ({
@@ -80,6 +83,7 @@ const FlexBox = ({
   sm_margin,
   width,
   sm_width,
+  md_width,
 }: Props) => {
   return (
     <Container
@@ -94,6 +98,7 @@ const FlexBox = ({
       sm_margin={sm_margin}
       width={width}
       $sm_width={sm_width}
+      $md_width={md_width}
     >
       {children}
     </Container>

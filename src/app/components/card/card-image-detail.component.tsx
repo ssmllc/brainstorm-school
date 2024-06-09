@@ -21,6 +21,10 @@ const Card = styled(Link)<cardProps>`
   transition: all 0.15s ease-out;
   width: 100%;
 
+  @media (min-width: 768px) {
+    width: 49%;
+  }
+
   @media (min-width: 800px) {
     max-width: 320px;
     width: ${({ width }) => (width ? width : "25%")};

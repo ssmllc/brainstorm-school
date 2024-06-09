@@ -14,6 +14,7 @@ import SimilarCourses from "@/app/components/similar-courses/similar-courses.com
 import DecipherText from "../../components/decipher-text.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
 import { Metadata } from "next";
+import InstructorBio from "@/app/components/instructors/instructor.component";
 
 const fetchData = async () => {
   const query =
@@ -152,95 +153,35 @@ export default async function Page({
               width="350px"
             />
           </Carousel>
-
-          <Container
-            alignitems="center"
-            display="flex"
-            position="relative"
-            width="100%"
-          >
-            <TextHeaderBlock fontSize="36px" fontWeight="bold">
-              Meet Your Instructor
-            </TextHeaderBlock>
-          </Container>
-
-          {instructors?.map(
-            (
-              {
-                title,
-                profession,
-                bio,
-              }: {
-                bio: string | null;
-                title: string;
-                profession: string;
-              },
-              index: number
-            ) => {
-              return (
-                <div
-                  key={index}
-                  style={{
-                    borderBottom: "thin solid var(--medium-grey)",
-                    width: "100%",
-                  }}
-                >
-                  <FlexBox
-                    margin="50px auto"
-                    width="100%"
-                    flexdirection="column"
-                  >
-                    <FlexBox margin="35px auto" width="100%">
-                      <FlexBox
-                        margin="0 auto"
-                        width="45%"
-                        alignitems="baseline"
-                      >
-                        <Card
-                          background="0"
-                          boxshadow="none"
-                          stacked="false"
-                          icon="/instructors/ico-image.png"
-                          heading={title}
-                          subHeading={profession}
-                          padding="0 20px"
-                          width="100%"
-                        />
-                      </FlexBox>
-
-                      <FlexBox
-                        margin="0 auto"
-                        width="100%"
-                        flexdirection="column"
-                      >
-                        <DecipherText description={bio} margin="0" />
-                      </FlexBox>
-                    </FlexBox>
-
-                    <RegistrationBlock
-                      href={registration}
-                      primary={true}
-                      heading="Register for this course"
-                      scale="xl"
-                      cta="Register Today"
-                      ctaType="primary"
-                    />
-                  </FlexBox>
-                </div>
-              );
-            }
-          )}
         </Container>
       </Container>
 
-      <FlexBox
-        flexdirection="column"
-        margin="75px auto"
-        alignitems="center"
-        width="100%"
-      >
-        <SimilarCourses header="View Similar Courses" />
-      </FlexBox>
+      {instructors?.map(
+        (
+          {
+            title,
+            profession,
+            bio,
+          }: {
+            bio: string | null;
+            title: string;
+            profession: string;
+          },
+          index: number
+        ) => {
+          return (
+            <InstructorBio
+              key={index}
+              title={title}
+              profession={profession}
+              bio={bio}
+              registration={registration}
+            />
+          );
+        }
+      )}
+
+      <SimilarCourses header="View Similar Courses" />
     </>
   );
 }

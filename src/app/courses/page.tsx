@@ -36,6 +36,7 @@ export default async function Courses() {
           flexdirection="column"
           margin="20px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
         >
           <Header
@@ -72,6 +73,7 @@ export default async function Courses() {
         <FlexBox
           margin="25px auto 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
           flexdirection="column"
         >
@@ -89,7 +91,12 @@ export default async function Courses() {
       </FlexBox>
 
       <FlexBox flexdirection="column" margin="0 auto" alignitems="center">
-        <FlexBox flexdirection="column" sm_width="80%" width="70%">
+        <FlexBox
+          flexdirection="column"
+          sm_width="80%"
+          md_width="80%"
+          width="70%"
+        >
           <RenderCourses width="33%" />
         </FlexBox>
       </FlexBox>

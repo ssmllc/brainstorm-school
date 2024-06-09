@@ -19,13 +19,17 @@ const Banner = styled.div<bannerProps>`
   background: ${({ theme }) =>
     theme === "light" ? "var(--white)" : "var(--black)"};
   display: flex;
-  height: ${({ $hero }) => ($hero === "true" ? "80vh" : "65vh")};
+  height: ${({ $hero }) => ($hero === "true" ? "100vh" : "65vh")};
   flex-direction: column;
   overflow: hidden;
   position: relative;
   width: 100vw;
 
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
+    height: 100vh;
+  }
+
+  @media (min-width: 1024px) {
     height: ${({ $hero }) => ($hero === "true" ? "80vh" : "50vh")};
   }
 
@@ -60,11 +64,21 @@ const Banner = styled.div<bannerProps>`
   }
 `;
 
+const BannerWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+`;
+
 const Content = styled.div`
   /* border: thin dashed red; */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  /* display: flex; */
+  /* flex-direction: column; */
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -72,15 +86,31 @@ const Content = styled.div`
   width: 80%;
   z-index: 5;
 
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
     flex-direction: column;
     width: 70%;
+  }
+
+  @media (min-width: 1900px) {
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
   }
 `;
 
 const Column = styled.div`
   min-width: 50%;
   /* border: thin dashed blue; */
+
+  @media (min-width: 1400px) {
+    width: 45%;
+  }
+
+  @media (min-width: 1900px) {
+    width: 35%;
+  }
 `;
 
 const ActionWrapper = styled.div`
@@ -88,10 +118,16 @@ const ActionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  gap: 50px;
+  margin: 15px 0;
+  gap: 10px;
+
+  @media (min-width: 768px) {
+    gap: 20px;
+  }
 
   @media (min-width: 800px) {
     align-items: center;
+    gap: 50px;
     flex-direction: row;
     min-width: 450px;
   }
@@ -127,8 +163,12 @@ const Media = styled.div<mediaProps>`
   margin: 25px auto;
   max-width: 800px;
   position: relative;
-  width: 80%;
+  width: 100%;
   z-index: 50;
+
+  @media (min-width: 768px) {
+    height: 300px;
+  }
 
   @media (min-width: 800px) {
     height: 500px;
@@ -181,7 +221,6 @@ const MediaBanner = ({
 
     if (randomize === true) {
       const randomBannerImage = (min: number, max: number) => {
-        // min and max included
         return Math.floor(Math.random() * (max - min + 1) + min);
       };
 
@@ -203,13 +242,7 @@ const MediaBanner = ({
   return (
     <Banner theme={theme} $hero={hero} $background={randomBanner}>
       <Content>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            width: "100%",
-          }}
-        >
+        <BannerWrapper>
           <Column>
             {label && <Pill label={label} />}
             {header && !headshot && (
@@ -304,7 +337,7 @@ const MediaBanner = ({
               </Column>
             )}
           </ActionWrapper>
-        </div>
+        </BannerWrapper>
 
         <div style={{ width: "100%", height: "100%" }}>
           {hero === "true" && image && !media && <Media $image={image} />}

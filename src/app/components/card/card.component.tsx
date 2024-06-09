@@ -22,6 +22,10 @@ const Card = styled.div<cardProps>`
   width: 100%;
   position: relative;
 
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
   @media (min-width: 800px) {
     flex-direction: row;
     height: 325px;

@@ -8,9 +8,24 @@ interface Props {
 const SimilarCourses = ({ header }: Props) => {
   return (
     <>
-      <Header level="2" text={header} />
+      <FlexBox
+        margin="50px auto"
+        sm_margin="25px auto"
+        width="70%"
+        sm_width="70%"
+        md_width="70%"
+      >
+        <Header level="2" text={header} />
+      </FlexBox>
 
-      <FlexBox margin="50px auto" width="90%" justifycontent="center">
+      <FlexBox
+        margin="50px auto"
+        width="70%"
+        sm_width="70%"
+        md_width="75%"
+        justifycontent="center"
+        flexwrap="wrap"
+      >
         <CardImageDetail
           base="/courses"
           slug="foundation"
@@ -57,13 +72,20 @@ const SimilarCourses = ({ header }: Props) => {
         />
       </FlexBox>
 
-      <Header
-        href="/courses"
-        level="5"
-        text="Explore more courses"
-        color="var(--blue)"
-        fontSize="12px"
-      />
+      <FlexBox
+        margin="50px auto"
+        width="70%"
+        sm_width="70%"
+        justifycontent="center"
+      >
+        <Header
+          href="/courses"
+          level="5"
+          text="Explore more courses"
+          color="var(--blue)"
+          fontSize="12px"
+        />
+      </FlexBox>
     </>
   );
 };

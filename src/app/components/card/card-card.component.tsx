@@ -32,6 +32,10 @@ const Container = styled.div<containerProps>`
   width: ${({ width }) => (width ? width : "100%")};
 
   @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  @media (min-width: 1400px) {
     flex-direction: column;
   }
 
@@ -46,6 +50,10 @@ const Text = styled.p`
   color: var(--white);
   font-size: 13px;
   line-height: 1.55;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const Anchor = styled(Link)`

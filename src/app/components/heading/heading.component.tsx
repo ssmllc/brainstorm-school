@@ -22,12 +22,16 @@ const SuperHeader = styled.h1`
 
 const Header = styled.p`
   color: var(--white);
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
   letter-spacing: 2px;
   padding: 10px 0;
   text-transform: capitalize;
   width: 100%;
+
+  @media (min-width: 768px) {
+    font-size: 48px;
+  }
 
   @media (min-width: 800px) {
     font-size: 60px;
@@ -36,9 +40,13 @@ const Header = styled.p`
 
 const SubHeader = styled.p`
   color: var(--white);
-  font-size: 22px;
+  font-size: 18px;
 
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
+    font-size: 28px;
+  }
+
+  @media (min-width: 1440px) {
     font-size: 36px;
   }
 `;
