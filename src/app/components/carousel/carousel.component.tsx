@@ -32,6 +32,24 @@ const Button = styled.button`
     z-index: 10;
   }
 
+  @media (min-width: 768px) {
+    &.prev {
+      position: absolute;
+      left: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    &.next {
+      position: absolute;
+      right: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+  }
+
   @media (min-width: 800px) {
     &.prev {
       position: absolute;

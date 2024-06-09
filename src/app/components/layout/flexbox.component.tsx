@@ -13,7 +13,7 @@ interface containerProps {
   textalign?: string;
   sm_textalign?: string;
   sm_margin?: string;
-  width?: string;
+  $width?: string;
   $sm_width?: string;
   $md_width?: string;
 }
@@ -43,7 +43,7 @@ const Container = styled.div<containerProps>`
 
   //large
   @media (min-width: 1024px) {
-    width: ${({ width }) => (width ? width : "100vw")};
+    width: ${({ $width }) => ($width ? $width : "100vw")};
   }
 
   //x-large
@@ -96,7 +96,7 @@ const FlexBox = ({
       textalign={textalign}
       sm_textalign={sm_textalign}
       sm_margin={sm_margin}
-      width={width}
+      $width={width}
       $sm_width={sm_width}
       $md_width={md_width}
     >

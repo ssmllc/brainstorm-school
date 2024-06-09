@@ -116,17 +116,23 @@ const CardTags = ({ tags }: { tags?: string[] }) => (
 );
 
 const Wrapper = styled("div")`
-  /* border: thin solid red; */
   display: flex;
   flex-direction: column;
   padding: 0;
   margin: 0 auto;
+  max-width: 1200px;
   width: 70%;
 
   @media (min-width: 800px) {
     flex-direction: row;
     padding: 40px 0;
     width: 80%;
+  }
+
+  @media (min-width: 800px) {
+    flex-direction: row;
+    padding: 40px 0;
+    width: 65%;
   }
 `;
 

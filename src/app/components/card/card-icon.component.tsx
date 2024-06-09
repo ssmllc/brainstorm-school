@@ -19,13 +19,13 @@ const Icon = styled.div<cardIconProps>`
   width: ${({ width }) => (width ? width : "50px")};
 
   @media (min-width: 768px) {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
   }
 
   @media (min-width: 1400px) {
-    height: ${({ height }) => (height ? height : "100px")};
-    width: ${({ width }) => (width ? width : "100px")};
+    height: ${({ height }) => (height ? height : "80px")};
+    width: ${({ width }) => (width ? width : "80px")};
   }
 `;
 

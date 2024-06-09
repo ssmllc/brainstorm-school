@@ -1,17 +1,26 @@
+"use client";
+
+import styled from "styled-components";
 import CardImageDetail from "../card/card-image-detail.component";
 import FlexBox from "../layout/flexbox.component";
 import Header from "../text-block/header.component";
+
+const Wrapper = styled.div`
+  /* border: thin solid red; */
+  max-width: 1200px;
+  margin: 0 auto;
+`;
 
 interface Props {
   header: string;
 }
 const SimilarCourses = ({ header }: Props) => {
   return (
-    <>
+    <Wrapper>
       <FlexBox
-        margin="50px auto"
+        margin="25px auto"
         sm_margin="25px auto"
-        width="70%"
+        width="100%"
         sm_width="70%"
         md_width="70%"
       >
@@ -20,11 +29,10 @@ const SimilarCourses = ({ header }: Props) => {
 
       <FlexBox
         margin="50px auto"
-        width="70%"
+        width="100%"
         sm_width="70%"
         md_width="75%"
         justifycontent="center"
-        flexwrap="wrap"
       >
         <CardImageDetail
           base="/courses"
@@ -38,8 +46,8 @@ const SimilarCourses = ({ header }: Props) => {
           courseDuration="10-week Course"
         />
         <CardImageDetail
-          base="/workshops"
-          slug="brainstorm-connection"
+          base="/courses"
+          slug="concept-art-games-and-film"
           path="introduction-to-character-design"
           preview="/banner/banner-18.jpg"
           courseTrack="Concept Art Games & Film"
@@ -50,8 +58,8 @@ const SimilarCourses = ({ header }: Props) => {
         />
         <CardImageDetail
           base="/courses"
-          slug="concept-art-games-and-film"
-          path="introduction-to-character-design"
+          slug="foundation"
+          path="rhythm-and-structure"
           preview="/banner/banner-19.jpg"
           courseTrack="Foundation"
           courseName="Rhythm & Structure"
@@ -61,8 +69,8 @@ const SimilarCourses = ({ header }: Props) => {
         />
         <CardImageDetail
           base="/courses"
-          slug="foundation"
-          path="creature-anatomy"
+          slug="2d-3d-concept-design"
+          path="introduction-to-zbrush"
           preview="/banner/banner-21.jpg"
           courseTrack="2D - 3D Concept Design"
           courseName="Introduction to ZBrush"
@@ -83,10 +91,10 @@ const SimilarCourses = ({ header }: Props) => {
           level="5"
           text="Explore more courses"
           color="var(--blue)"
-          fontSize="12px"
+          fontSize="16px"
         />
       </FlexBox>
-    </>
+    </Wrapper>
   );
 };
 

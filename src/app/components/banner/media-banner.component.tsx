@@ -33,6 +33,10 @@ const Banner = styled.div<bannerProps>`
     height: ${({ $hero }) => ($hero === "true" ? "80vh" : "50vh")};
   }
 
+  @media (min-width: 1400px) {
+    height: ${({ $hero }) => ($hero === "true" ? "100vh" : "50vh")};
+  }
+
   &::before {
     background: ${({ $background }) =>
       $background ? `url(${$background}) top left no-repeat` : "var(--black)"};
@@ -77,12 +81,11 @@ const BannerWrapper = styled.div`
 
 const Content = styled.div`
   /* border: thin dashed red; */
-  /* display: flex; */
-  /* flex-direction: column; */
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
+  max-width: 1400px;
   width: 80%;
   z-index: 5;
 
@@ -93,24 +96,24 @@ const Content = styled.div`
     width: 70%;
   }
 
-  @media (min-width: 1900px) {
+  @media (min-width: 1400px) {
     left: 50%;
     top: 55%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+  }
+
+  @media (min-width: 1900px) {
+    left: 50%;
+    max-width: 1450px;
+    top: 50%;
     transform: translate(-50%, -50%);
   }
 `;
 
 const Column = styled.div`
-  min-width: 50%;
+  min-width: 25%;
   /* border: thin dashed blue; */
-
-  @media (min-width: 1400px) {
-    width: 45%;
-  }
-
-  @media (min-width: 1900px) {
-    width: 35%;
-  }
 `;
 
 const ActionWrapper = styled.div`
@@ -171,8 +174,14 @@ const Media = styled.div<mediaProps>`
   }
 
   @media (min-width: 800px) {
-    height: 500px;
+    height: 400px;
     margin: 50px auto;
+    width: 50%;
+  }
+
+  @media (min-width: 1900px) {
+    height: 400px;
+    margin: 150px auto 0;
     width: 50%;
   }
 `;

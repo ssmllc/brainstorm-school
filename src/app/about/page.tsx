@@ -172,14 +172,7 @@ export default async function About() {
           faq={true}
         />
 
-        <FlexBox
-          width="100%"
-          margin="75px auto 0"
-          flexdirection="column"
-          alignitems="center"
-        >
-          <SimilarCourses header="Start Exploring Courses!" />
-        </FlexBox>
+        <SimilarCourses header="Start Exploring Courses!" />
       </FlexBox>
     </>
   );
