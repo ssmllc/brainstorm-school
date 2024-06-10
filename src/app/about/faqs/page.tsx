@@ -32,102 +32,17 @@ export default async function FAQs() {
   return (
     <>
       <MediaBanner
-        header=""
-        subHeader=""
+        label="faqs"
+        header="Frequenly Asked Questions"
+        subHeader="Find answers to common questions"
         hero="false"
         theme="dark"
         background="/banner/banner-1.jpg"
         image="/banner/media-banner.png"
         media="/video/brainstorm-design-solve-learn.mp4"
       />
-      <div style={{ marginTop: "50px" }}>
-        <RegistrationBlock
-          primary={true}
-          heading="We are Brainstorm Online!"
-          text="Students from around the world gather to learn & develop in our friendly online community."
-          scale="xl"
-          cta="Register Today"
-          ctaType="primary"
-        />
 
-        <VideoContentSplit
-          video="https://youtu.be/cidlS92hRTQ?si=pWk-plQpUEOP_jt8"
-          heading="Who we are"
-          text="Brainstorm is an online concept art, design and illustration program focused on artistic development. Students from around the world gather to learn & develop in our friendly online community."
-          cta="View Courses"
-        />
-
-        <VideoContentSplit
-          video="https://youtu.be/cidlS92hRTQ?si=pWk-plQpUEOP_jt8"
-          heading="What we do"
-          text="Brainstorm is an online concept art, design and illustration program focused on artistic development. Students from around the world gather to learn & develop in our friendly online community."
-          cta="View Courses"
-          flexdirection="row-reverse"
-        />
-
-        <FlexContainer display="flex" margin="0 auto">
-          <FlexContainer display="flex" gap="10px" width="80%" margin="0 auto">
-            <Card
-              href="/courses"
-              background="var(--black-60)"
-              alignitems="start"
-              stacked="true"
-              icon="/instructors/ico-image.png"
-              heading="Courses"
-              subHeading="Traditional drawing supplies, pen & paper, sketchbook"
-              text="Optional: Computer or Tablet with comparable drawing software such as photoshop, procreate, etc."
-              width="100%"
-            />
-
-            <Card
-              href="/workshops"
-              background="var(--black-60)"
-              alignitems="start"
-              stacked="true"
-              icon="/instructors/ico-image.png"
-              heading="Workshops"
-              text="Optional: Computer or Tablet with comparable drawing software such as photoshop, procreate, etc."
-              width="100%"
-            />
-
-            <Card
-              href="/programs"
-              background="var(--black-60)"
-              alignitems="start"
-              stacked="true"
-              icon="/instructors/ico-image.png"
-              heading="Programs"
-              text="Optional: Computer or Tablet with comparable drawing software such as photoshop, procreate, etc."
-              width="100%"
-            />
-
-            <Card
-              href="/blog"
-              background="var(--black-60)"
-              alignitems="start"
-              stacked="true"
-              icon="/instructors/ico-image.png"
-              heading="Blog"
-              text="Optional: Computer or Tablet with comparable drawing software such as photoshop, procreate, etc."
-              width="100%"
-            />
-          </FlexContainer>
-        </FlexContainer>
-
-        <FlexContainer width="100%" margin="0 auto">
-          <MiniCards header="Spring 2024" width="100%" />
-        </FlexContainer>
-
-        <RegistrationBlock
-          primary={false}
-          heading="Get updates to your inbox"
-          scale="xl"
-          cta="Sign Me Up"
-          ctaType="primary"
-        />
-
-        {/* <FAQs results={selectedResults} /> */}
-      </div>
+      {/* <FAQs results={selectedResults} /> */}
     </>
   );
 }

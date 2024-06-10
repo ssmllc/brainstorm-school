@@ -28,7 +28,7 @@ const ContentWrapper = styled.div<contentProps>`
   width: 80%;
 
   @media (min-width: 768px) {
-    width: 60%;
+    width: 0%;
   }
 
   @media (min-width: 800px) {
@@ -45,6 +45,10 @@ const ContentWrapper = styled.div<contentProps>`
 
   @media (min-width: 1400px) {
     max-width: 1250px;
+  }
+
+  @media (min-width: 1900px) {
+    max-width: 1120px;
   }
 `;
 

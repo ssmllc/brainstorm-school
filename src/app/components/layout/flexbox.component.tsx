@@ -12,7 +12,8 @@ interface containerProps {
   $gap?: string;
   textalign?: string;
   sm_textalign?: string;
-  sm_margin?: string;
+  $sm_margin?: string;
+  $md_margin?: string;
   $width?: string;
   $sm_width?: string;
   $md_width?: string;
@@ -26,7 +27,7 @@ const Container = styled.div<containerProps>`
   flex-direction: ${({ $flexdirection }) =>
     $flexdirection ? $flexdirection : "column"};
   justify-content: ${({ justifycontent }) => justifycontent};
-  margin: ${({ sm_margin }) => (sm_margin ? sm_margin : "0 auto")};
+  margin: ${({ $sm_margin }) => ($sm_margin ? $sm_margin : "0 auto")};
   text-align: ${({ sm_textalign }) => (sm_textalign ? sm_textalign : "left")};
   max-width: 1400px;
   width: ${({ $sm_width }) => ($sm_width ? $sm_width : "100vw")};
@@ -36,13 +37,14 @@ const Container = styled.div<containerProps>`
     align-items: ${({ $alignitems }) => $alignitems};
     flex-direction: ${({ $flexdirection }) =>
       $flexdirection ? $flexdirection : "row"};
-    margin: ${({ $margin }) => ($margin ? $margin : "0 auto")};
+    margin: ${({ $md_margin }) => ($md_margin ? $md_margin : "0 auto")};
     text-align: ${({ sm_textalign }) => (sm_textalign ? sm_textalign : "left")};
     width: ${({ $md_width }) => ($md_width ? $md_width : "100vw")};
   }
 
   //large
   @media (min-width: 1024px) {
+    margin: ${({ $margin }) => ($margin ? $margin : "0 auto")};
     width: ${({ $width }) => ($width ? $width : "100vw")};
   }
 
@@ -63,6 +65,7 @@ interface Props {
   gap?: string;
   justifycontent?: string;
   sm_margin?: string;
+  md_margin?: string;
   margin?: string;
   textalign?: string;
   sm_textalign?: string;
@@ -81,6 +84,7 @@ const FlexBox = ({
   textalign,
   sm_textalign,
   sm_margin,
+  md_margin,
   width,
   sm_width,
   md_width,
@@ -95,7 +99,8 @@ const FlexBox = ({
       $margin={margin}
       textalign={textalign}
       sm_textalign={sm_textalign}
-      sm_margin={sm_margin}
+      $sm_margin={sm_margin}
+      $md_margin={md_margin}
       $width={width}
       $sm_width={sm_width}
       $md_width={md_width}

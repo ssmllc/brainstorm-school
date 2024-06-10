@@ -46,8 +46,8 @@ const Gallery = styled.div`
   margin: 0 0 50px 0;
   width: 100vw;
 
-  @media (min-width: 800px) {
-    /* margin: 50px 0; */
+  @media (min-width: 1024px) {
+    margin: 50px 0;
   }
 `;
 
@@ -59,7 +59,11 @@ const Carousel = styled.div`
   position: relative;
   width: 100%;
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
+    height: 400px;
+  }
+
+  @media (min-width: 1400px) {
     height: 500px;
   }
 `;
@@ -686,6 +690,7 @@ const ImageGallery = ({ header }: Props) => {
         width="70%"
         sm_margin="50px auto"
         margin="50px auto"
+        md_margin="50px auto"
         flexdirection="column"
       >
         <Header

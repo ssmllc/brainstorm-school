@@ -51,7 +51,10 @@ export default async function Workshops() {
         <FlexBox
           flexdirection="column"
           margin="20px 0"
+          sm_margin="25px 0"
+          md_margin="75px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
         >
           <Header level="1" text="Brainstorm School In-Person Workshops" />
@@ -66,6 +69,7 @@ export default async function Workshops() {
           flexdirection="column"
           margin="20px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
         >
           <Header level="2" text="Why Choose In-Person Workshops?" />
@@ -81,6 +85,7 @@ export default async function Workshops() {
           flexdirection="column"
           margin="20px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
         >
           <Header level="2" text="Networking Opportunities" />
@@ -96,6 +101,7 @@ export default async function Workshops() {
           flexdirection="column"
           margin="20px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
         >
           <Header level="2" text="In-Person Artist" />
@@ -111,6 +117,7 @@ export default async function Workshops() {
           flexdirection="column"
           margin="20px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
         >
           <Header level="3" text="Weekend In-Person Workshops" />
@@ -126,6 +133,7 @@ export default async function Workshops() {
           flexdirection="column"
           margin="20px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
         >
           <Header level="3" text="The Brainstorm School Experience" />
@@ -157,12 +165,12 @@ export default async function Workshops() {
           ctaType="primary"
         />
 
-        <FlexBox flexdirection="column" width="70%">
+        <FlexBox flexdirection="column" width="70%" md_width="70%">
           <FlexBox flexdirection="column" sm_width="80%" margin="25px 0">
             <Header level="3" text="Free Workshops" />
           </FlexBox>
 
-          <FlexBox width="100%">
+          <FlexBox width="100%" md_width="100%" sm_width="80%" flexwrap="wrap">
             <AnchorCard
               label="Mentorship Online"
               name="Oliver Beck"
@@ -186,7 +194,7 @@ export default async function Workshops() {
           </FlexBox>
         </FlexBox>
 
-        <FlexBox sm_width="80%" width="70%">
+        <FlexBox sm_width="80%" width="70%" md_width="70%">
           <FAQs results={result[0]} />
         </FlexBox>
       </FlexBox>

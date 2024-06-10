@@ -66,6 +66,14 @@ const Anchor = styled(Link)`
   @media (min-width: 768px) {
     min-height: 350px;
   }
+
+  @media (min-width: 1024px) {
+    width: 49%;
+  }
+
+  @media (min-width: 1400px) {
+    width: 24%;
+  }
 `;
 
 type Props = {

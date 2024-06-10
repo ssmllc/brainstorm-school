@@ -37,6 +37,7 @@ interface Props {
   margin?: string;
   info?: string;
   bio?: string;
+  slug?: string;
 }
 
 const FeaturedCard = ({
@@ -47,6 +48,7 @@ const FeaturedCard = ({
   bio,
   margin,
   sm_margin,
+  slug,
 }: Props) => {
   return (
     <Featured $sm_margin={sm_margin} $margin={margin}>
@@ -58,6 +60,7 @@ const FeaturedCard = ({
         info={info}
         bio={bio}
         tags={false}
+        slug={slug}
       />
     </Featured>
   );

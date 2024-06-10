@@ -37,7 +37,11 @@ const MiniCard = styled.div`
   width: 100%;
 
   @media (min-width: 768px) {
-    width: 25%;
+    width: 45%;
+  }
+
+  @media (min-width: 1024px) {
+    width: 24%;
   }
 
   &:hover {
@@ -116,20 +120,29 @@ export const MiniCards = ({ width, results }: Props) => {
   return (
     <FlexBox
       sm_width="100%"
+      md_width="70%"
       width="100%"
       margin="0 auto"
+      md_margin="50px auto"
       flexdirection="column"
     >
-      <FlexBox width="80%" margin="50px auto" flexdirection="column">
+      <FlexBox
+        width="80%"
+        md_width="100%"
+        margin="25px auto"
+        flexdirection="column"
+      >
         <TextHeaderBlock fontSize="36px" fontWeight="bold">
           Quarterly Schedule
         </TextHeaderBlock>
 
         <FlexBox
           sm_width="70%"
+          md_width="100%"
           width="70%"
           flexdirection="column"
           margin="20px 0"
+          md_margin="20px 0"
         >
           <Header
             level="4"
@@ -139,7 +152,7 @@ export const MiniCards = ({ width, results }: Props) => {
         </FlexBox>
       </FlexBox>
 
-      <FlexBox sm_width="80%" width="80%">
+      <FlexBox sm_width="80%" md_width="100%" width="80%" flexwrap="wrap">
         {quarters.length > 0 &&
           quarters.map((quarter: any) => {
             const { _id, nextup, term, year, open, start } = quarter;

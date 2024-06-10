@@ -15,8 +15,8 @@ const Icon = styled.div<cardIconProps>`
   background-size: cover;
   border-radius: ${({ borderradius }) =>
     borderradius ? borderradius : "100%"};
-  height: ${({ height }) => (height ? height : "50px")};
-  width: ${({ width }) => (width ? width : "50px")};
+  height: ${({ height }) => (height ? height : "60px")};
+  width: ${({ width }) => (width ? width : "60px")};
 
   @media (min-width: 768px) {
     height: 80px;

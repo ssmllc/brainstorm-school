@@ -38,16 +38,18 @@ const Anchor = styled(Link)`
 `;
 
 const Tracks = styled.div`
-  //border: thin solid red;
+  /* border: thin solid red; */
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction: row;
+  gap: 10px 5px;
   justify-content: space-between;
+  flex-wrap: wrap;
   position: relative;
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
 
   @media (min-width: 768px) {
+    gap: 10px;
     flex-direction: row;
     flex-wrap: wrap;
     width: 60%;
@@ -77,14 +79,14 @@ const Track = styled.div<trackProps>`
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   filter: grayscale(0.75);
-  flex-grow: 1;
-  flex-basis: 25%;
-  min-height: 250px;
-  padding: 125px 20px 0 20px;
+  min-height: 150px;
+  padding: 100px 20px 0 20px;
   position: relative;
   transition: all 0.35s ease-out;
+  width: 49%;
 
   @media (min-width: 768px) {
+    padding: 125px 20px 0 20px;
     min-height: 280px;
   }
 
@@ -124,18 +126,22 @@ const Icon = styled.div`
   background: var(--off-black);
   align-items: center;
   border-radius: 100%;
-  display: flex;
+  display: none;
   height: 50px;
   justify-content: center;
   position: relative;
   width: 50px;
   z-index: 2;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
 `;
 
 const Name = styled.p`
   color: var(--white);
   font-weight: bold;
-  font-size: 28px;
+  font-size: 16px;
   padding: 20px 0;
   position: relative;
   text-align: left;
@@ -160,7 +166,7 @@ const Terms = styled.div`
   flex-grow: 1;
   margin: 0 auto;
   padding: 25px 25px;
-  width: 80%;
+  width: 100%;
 
   @media (min-width: 800px) {
     width: 32%;
@@ -283,7 +289,12 @@ const TracksGroup = ({ results }: Props) => {
         )}
       </Tracks>
 
-      <FlexBox width="100%" flexdirection="column" alignitems="center">
+      <FlexBox
+        width="100%"
+        sm_width="100%"
+        flexdirection="column"
+        alignitems="center"
+      >
         {currentTrack.length > 0 && (
           <TextBlock
             justifycontent="center"
@@ -297,12 +308,12 @@ const TracksGroup = ({ results }: Props) => {
           </TextBlock>
         )}
 
-        <FlexContainer
-          display="flex"
+        <FlexBox
           flexwrap="wrap"
           gap="20px 10px"
           margin="0 auto"
           width="100%"
+          sm_width="100%"
           justifycontent="space-between"
         >
           {currentTrack.length > 0 &&
@@ -344,7 +355,7 @@ const TracksGroup = ({ results }: Props) => {
                 </Terms>
               ))
             )}
-        </FlexContainer>
+        </FlexBox>
       </FlexBox>
     </TracksContainer>
   );

@@ -11,10 +11,18 @@ interface anchorProps {
 }
 
 const Anchor = styled(Link)<anchorProps>`
-  width: ${({ width }) => (width ? width : "25%")};
+  width: 100%;
 
   @media (min-width: 768px) {
-    width: ${({ width }) => (width ? width : "25%")};
+    width: 49%;
+  }
+
+  @media (min-width: 1024px) {
+    width: 49%;
+  }
+
+  @media (min-width: 1400px) {
+    width: 100%;
   }
 `;
 
@@ -28,11 +36,11 @@ const Track = styled.div<trackProps>`
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   filter: grayscale(0.75);
-  flex-grow: 1;
-  flex-basis: 25%;
-  /* padding: 100px 20px 0 20px; */
+  min-height: 150px;
+  padding: 100px 20px 0 20px;
   position: relative;
   transition: all 0.35s ease-out;
+  width: 100%;
 
   @media (min-width: 768px) {
     min-height: 300px;

@@ -48,8 +48,11 @@ export default async function Mentorship() {
       <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
         <FlexBox
           margin="20px 60px 0"
+          md_margin="75px 60px 0"
+          sm_margin="25px 60px 0"
           sm_width="85%"
           width="70%"
+          md_width="70%"
           flexdirection="column"
         >
           <Header
@@ -93,6 +96,7 @@ export default async function Mentorship() {
           sm_margin="40px 60px 20px"
           margin="20px 60px"
           sm_width="90%"
+          md_width="70%"
           width="70%"
         >
           <Header
@@ -104,10 +108,13 @@ export default async function Mentorship() {
         </FlexBox>
 
         <FlexBox
+          flexdirection="row"
           justifycontent="center"
           sm_margin="40px 60px 20px"
+          md_margin="40px 60px 20px"
           margin="0 60px"
           sm_width="90%"
+          md_width="70%"
           width="70%"
         >
           <Pill
@@ -134,6 +141,8 @@ export default async function Mentorship() {
           margin="20px 60px 0"
           sm_margin="20px 25px"
           sm_width="85%"
+          md_width="70%"
+          flexwrap="wrap"
           width="70%"
         >
           <AnchorCard
@@ -162,6 +171,8 @@ export default async function Mentorship() {
           margin="20px 60px 0"
           sm_margin="20px 25px"
           sm_width="85%"
+          md_width="70%"
+          flexwrap="wrap"
           width="70%"
         >
           <AnchorCard
@@ -190,6 +201,8 @@ export default async function Mentorship() {
           margin="20px 60px 10px"
           sm_margin="20px 25px"
           sm_width="85%"
+          md_width="70%"
+          flexwrap="wrap"
           width="70%"
         >
           <AnchorCard

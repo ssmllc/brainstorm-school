@@ -38,7 +38,7 @@ const Header2 = styled.h2<textProps>`
   text-align: ${({ textalign }) => textalign};
   text-transform: capitalize;
 
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
     font-size: 36px;
   }
 `;

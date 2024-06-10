@@ -20,6 +20,8 @@ const SimilarCourses = ({ header }: Props) => {
       <FlexBox
         margin="25px auto"
         sm_margin="25px auto"
+        md_margin="30px auto"
+        justifycontent="center"
         width="100%"
         sm_width="70%"
         md_width="70%"
@@ -33,18 +35,8 @@ const SimilarCourses = ({ header }: Props) => {
         sm_width="70%"
         md_width="75%"
         justifycontent="center"
+        flexwrap="wrap"
       >
-        <CardImageDetail
-          base="/courses"
-          slug="foundation"
-          path="creature-anatomy"
-          preview="/banner/banner-17.jpg"
-          courseTrack="Foundation"
-          courseName="Creature Anatomy"
-          courseCode="CA1"
-          courseTime="Fri 10am-1pm (PST)"
-          courseDuration="10-week Course"
-        />
         <CardImageDetail
           base="/courses"
           slug="concept-art-games-and-film"

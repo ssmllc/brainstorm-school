@@ -34,8 +34,9 @@ export default async function Workshops() {
   return (
     <>
       <MediaBanner
-        header=""
-        subHeader=""
+        header="Open Canvas"
+        subHeader="Free Workshops"
+        label="Workshops"
         hero="false"
         theme="dark"
         background="/banner/banner-10.jpg"
@@ -46,8 +47,11 @@ export default async function Workshops() {
       <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
         <FlexBox
           flexdirection="column"
+          sm_margin="25px 0"
+          md_margin="75px 0"
           margin="20px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
         >
           <Header level="1" text="Brainstorm School Open Canvas" />
@@ -62,6 +66,7 @@ export default async function Workshops() {
           flexdirection="column"
           margin="20px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
         >
           <Header level="2" text="What is the Open Canvas Workshop?" />
@@ -76,6 +81,7 @@ export default async function Workshops() {
           flexdirection="column"
           margin="20px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
         >
           <Header
@@ -106,6 +112,7 @@ export default async function Workshops() {
           flexdirection="column"
           margin="20px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
         >
           <Header level="3" text="Connecting with the Artist Community" />
@@ -121,6 +128,7 @@ export default async function Workshops() {
           flexdirection="column"
           margin="20px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
         >
           <Header level="3" text="Online Open Canvas Workshop" />
@@ -133,7 +141,7 @@ export default async function Workshops() {
         </FlexBox>
 
         <FlexBox flexdirection="column" margin="75px 0 0" width="70%">
-          <FlexBox width="100%">
+          <FlexBox width="100%" md_width="70%" sm_width="80%" flexwrap="wrap">
             <AnchorCard
               label="Mentorship Online"
               name="Oliver Beck"
@@ -157,7 +165,7 @@ export default async function Workshops() {
           </FlexBox>
         </FlexBox>
 
-        <FlexBox sm_width="80%" width="70%">
+        <FlexBox sm_width="80%" width="70%" md_width="70%">
           <FAQs results={result[0]} />
         </FlexBox>
       </FlexBox>

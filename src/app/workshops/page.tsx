@@ -30,7 +30,10 @@ export default async function Workshops() {
         <FlexBox
           flexdirection="column"
           margin="20px 0"
+          sm_margin="25px 0"
+          md_margin="75px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
         >
           <Header
@@ -68,6 +71,7 @@ export default async function Workshops() {
           flexdirection="column"
           margin="20px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
         >
           <Header level="2" text="What You'll Learn" margin="0 0 25px 0" />
@@ -85,6 +89,7 @@ export default async function Workshops() {
           flexdirection="column"
           margin="20px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
         >
           <Header level="2" text="Character and Environment Design" />
@@ -100,6 +105,7 @@ export default async function Workshops() {
           flexdirection="column"
           margin="20px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
         >
           <Header level="2" text="Advanced Digital Painting Techniques" />
@@ -115,6 +121,7 @@ export default async function Workshops() {
           flexdirection="column"
           margin="20px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
         >
           <Header level="2" text="Visual Storytelling and Narrative Art" />
@@ -130,6 +137,7 @@ export default async function Workshops() {
           flexdirection="column"
           margin="20px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
         >
           <Header
@@ -156,6 +164,7 @@ export default async function Workshops() {
           flexdirection="column"
           margin="20px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
         >
           <Header
@@ -172,11 +181,18 @@ export default async function Workshops() {
         </FlexBox>
 
         <FlexBox flexdirection="column" width="70%">
-          <FlexBox flexdirection="column" sm_width="80%" margin="25px 0">
+          <FlexBox
+            flexdirection="column"
+            sm_width="80%"
+            md_width="70%"
+            margin="25px 0"
+            md_margin="25px auto"
+            sm_margin="25px auto"
+          >
             <Header level="3" text="Future Workshops" />
           </FlexBox>
 
-          <FlexBox width="100%">
+          <FlexBox width="100%" sm_width="80%" md_width="70%" flexwrap="wrap">
             <AnchorCard
               label="Mentorship Online"
               name="Oliver Beck"
@@ -201,11 +217,17 @@ export default async function Workshops() {
         </FlexBox>
 
         <FlexBox flexdirection="column" width="70%">
-          <FlexBox flexdirection="column" sm_width="80%" margin="25px 0">
+          <FlexBox
+            flexdirection="column"
+            sm_width="80%"
+            md_width="70%"
+            margin="25px 0"
+            md_margin="25px auto"
+          >
             <Header level="3" text="Previous Workshops" />
           </FlexBox>
 
-          <FlexBox width="100%">
+          <FlexBox width="100%" sm_width="80%" md_width="70%" flexwrap="wrap">
             <AnchorCard
               label="Mentorship Online"
               name="Oliver Beck"

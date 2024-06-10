@@ -31,10 +31,10 @@ const TextGroup = styled.div<textGroupProps>`
   color: var(--white);
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "15px")};
   line-height: 1.5;
-  margin: ${({ sm_margin }) => (sm_margin ? sm_margin : "0")};
+  margin: ${({ sm_margin }) => (sm_margin ? sm_margin : "10px 0")};
 
   @media (min-width: 800px) {
-    margin: ${({ margin }) => (margin ? margin : "0")};
+    margin: ${({ margin }) => (margin ? margin : "10px 0")};
   }
 `;
 

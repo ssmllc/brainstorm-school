@@ -45,7 +45,12 @@ export default async function Page() {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <FlexBox margin="100px auto" flexdirection="column" alignitems="center">
+      <FlexBox
+        margin="100px auto"
+        flexdirection="column"
+        alignitems="center"
+        width="100%"
+      >
         <RegistrationBlock
           primary={false}
           heading="Course Guide"
@@ -56,6 +61,7 @@ export default async function Page() {
         <FlexBox
           flexdirection="column"
           width="70%"
+          sm_width="70%"
           margin="0 auto"
           alignitems="center"
           justifycontent="center"
@@ -73,7 +79,7 @@ export default async function Page() {
               color: "var(--white)",
               fontWeight: "bold",
               fontSize: "16px",
-              width: "500px",
+              width: "275px",
               padding: "15px 15px",
             }}
           >

@@ -16,9 +16,19 @@ const Content = styled.div<contentProps>`
   width: 100%;
   z-index: 20;
 
-  @media (min-width: 800px) {
-    margin: 0;
-    width: 100%;
+  @media (min-width: 768px) {
+    margin: 0 auto;
+    width: 60%;
+  }
+
+  @media (min-width: 1024px) {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  @media (min-width: 1400px) {
+    margin: 0 auto;
+    width: 50%;
   }
 
   h1,

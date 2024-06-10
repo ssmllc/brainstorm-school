@@ -22,7 +22,7 @@ const SuperHeader = styled.h1`
 
 const Header = styled.p`
   color: var(--white);
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
   letter-spacing: 2px;
   padding: 10px 0;

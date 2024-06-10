@@ -98,6 +98,7 @@ export default async function Instructors() {
           heading={featuredInstructors[0].title}
           margin="25px 0"
           bio={featuredInstructors[0].bio}
+          slug={featuredInstructors[0].slug}
         />
 
         <FlexBox

@@ -48,12 +48,7 @@ export default async function About() {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <FlexBox
-        margin="75px auto"
-        flexdirection="column"
-        alignitems="center"
-        width="100%"
-      >
+      <FlexBox width="100%" margin="50px auto">
         <RegistrationBlock
           primary={true}
           heading="We are Brainstorm School!"
@@ -62,7 +57,14 @@ export default async function About() {
           cta="Register Today"
           ctaType="primary"
         />
+      </FlexBox>
 
+      <FlexBox
+        margin="75px auto"
+        flexdirection="column"
+        alignitems="center"
+        width="100%"
+      >
         <VideoContentSplit
           video="F2itysjblHA?si=w3ET9c6hsGqlTg7m"
           heading="About Brainstorm School"
@@ -80,7 +82,8 @@ export default async function About() {
 
         <FlexBox
           sm_width="80%"
-          width="70%"
+          md_width="70%"
+          width="80%"
           flexdirection="column"
           margin="20px 0"
         >
@@ -105,61 +108,70 @@ export default async function About() {
           />
         </FlexBox>
 
-        <FlexContainer display="flex" margin="50px auto">
-          <FlexContainer display="flex" gap="10px" width="80%" margin="0 auto">
-            <Card
-              href="/courses"
-              background="var(--black-60)"
-              alignitems="start"
-              stacked="true"
-              icon="/instructors/ico-image.png"
-              heading="Courses"
-              text="Classes are the most popular method of learning. A 10-week course focusing on a specific subject, or 5-8 week hyper-focused bootcamps. Lectures, demonstrations, homework, and feedback are important components that make classrooms an effective learning environment.  Class sizes range from ten to twenty students."
-              width="100%"
-            />
+        <FlexBox
+          gap="10px"
+          width="80%"
+          md_width="70%"
+          margin="0 auto"
+          md_margin="0 auto"
+          flexwrap="wrap"
+        >
+          <Card
+            href="/courses"
+            background="var(--black-60)"
+            alignitems="start"
+            stacked="true"
+            icon="/instructors/ico-image.png"
+            heading="Courses"
+            text="Classes are the most popular method of learning. A 10-week course focusing on a specific subject, or 5-8 week hyper-focused bootcamps. Lectures, demonstrations, homework, and feedback are important components that make classrooms an effective learning environment.  Class sizes range from ten to twenty students."
+            width="100%"
+          />
 
-            <Card
-              href="/workshops"
-              background="var(--black-60)"
-              alignitems="start"
-              stacked="true"
-              icon="/instructors/ico-image.png"
-              heading="Workshops"
-              text="Workshops are precisely designed to provide attendees with hands-on experience, experienced advice, and a supportive community—all of which are essential for perfecting your skills and advancing your career in the entertainment industry. In Person Workshop or Online Workshops."
-              width="100%"
-            />
+          <Card
+            href="/workshops"
+            background="var(--black-60)"
+            alignitems="start"
+            stacked="true"
+            icon="/instructors/ico-image.png"
+            heading="Workshops"
+            text="Workshops are precisely designed to provide attendees with hands-on experience, experienced advice, and a supportive community—all of which are essential for perfecting your skills and advancing your career in the entertainment industry. In Person Workshop or Online Workshops."
+            width="100%"
+          />
 
-            <Card
-              href="/programs"
-              background="var(--black-60)"
-              alignitems="start"
-              stacked="true"
-              icon="/instructors/ico-image.png"
-              heading="Programs"
-              text="A true mentoring experience! Our team of core mentors will take you through a 12-week intensive curriculum that is completely tailored to you! You will meet with your mentor weekly for private sessions to go over your learning plan and how you are progressing toward your goals.  The most intensive technique to improve your artistic, soft, and professional talents."
-              width="100%"
-            />
+          <Card
+            href="/programs"
+            background="var(--black-60)"
+            alignitems="start"
+            stacked="true"
+            icon="/instructors/ico-image.png"
+            heading="Programs"
+            text="A true mentoring experience! Our team of core mentors will take you through a 12-week intensive curriculum that is completely tailored to you! You will meet with your mentor weekly for private sessions to go over your learning plan and how you are progressing toward your goals.  The most intensive technique to improve your artistic, soft, and professional talents."
+            width="100%"
+          />
 
-            <Card
-              href="/courses/flash"
-              background="var(--black-60)"
-              alignitems="start"
-              stacked="true"
-              icon="/instructors/ico-image.png"
-              heading="Flash Courses"
-              text="A five-week cost-effective course designed to give focused information and practices. Classes are live and will only include demonstrations and lectures. No feedback will be given. Students are issued self-study assignments and encouraged to provide peer critique."
-              width="100%"
-            />
-          </FlexContainer>
-        </FlexContainer>
+          <Card
+            href="/courses/flash"
+            background="var(--black-60)"
+            alignitems="start"
+            stacked="true"
+            icon="/instructors/ico-image.png"
+            heading="Flash Courses"
+            text="A five-week cost-effective course designed to give focused information and practices. Classes are live and will only include demonstrations and lectures. No feedback will be given. Students are issued self-study assignments and encouraged to provide peer critique."
+            width="100%"
+          />
+        </FlexBox>
 
-        <FlexContainer width="100%" margin="0 auto">
-          <MiniCards header="Spring 2024" width="100%" results={result[0]} />
-        </FlexContainer>
+        <MiniCards header="Spring 2024" width="100%" results={result[0]} />
 
         <ImageGallery header="Gallery of Instructors Work" />
 
-        <FlexBox width="80%" margin="0 auto" flexdirection="column">
+        <FlexBox
+          width="80%"
+          sm_width="80%"
+          md_width="70%"
+          margin="0 auto"
+          flexdirection="column"
+        >
           <FAQs results={result[0]} />
         </FlexBox>
 
@@ -171,9 +183,9 @@ export default async function About() {
           ctaType="primary"
           faq={true}
         />
-
-        <SimilarCourses header="Start Exploring Courses!" />
       </FlexBox>
+
+      <SimilarCourses header="Start Exploring Courses!" />
     </>
   );
 }
