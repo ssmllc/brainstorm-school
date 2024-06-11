@@ -236,7 +236,9 @@ const TracksGroup = ({ results }: Props) => {
 
   return (
     <TracksContainer>
-      <SelectLevel setLevelOfExpertise={setLevelOfExpertise} />
+      {results && results.length && (
+        <SelectLevel setLevelOfExpertise={setLevelOfExpertise} />
+      )}
 
       <FlexBox
         sm_width="100%"
@@ -367,7 +369,16 @@ const TracksGroup = ({ results }: Props) => {
                   </TextBlock>
 
                   {courses.courses.map((course: any, index: number) => {
-                    console.log("looking for difficulty", course?.difficulty);
+                    // console.log("looking for difficulty", course?.difficulty);
+                    let color: string = "";
+
+                    if (course?.difficulty === "Beginner") {
+                      color = "green";
+                    } else if (course?.difficulty === "Intermediate") {
+                      color = "var(--blue)";
+                    } else if (course?.difficulty === "Advanced") {
+                      color = "red";
+                    }
                     return (
                       <Link
                         key={index}
@@ -387,10 +398,10 @@ const TracksGroup = ({ results }: Props) => {
                           icon_height="100px"
                           padding="0"
                           show_icon={true}
-                          border={
+                          boxshadow={
                             course?.difficulty === levelOfExpertise
-                              ? "thin solid red"
-                              : "0"
+                              ? `0 0 5px ${color}`
+                              : "unset"
                           }
                         />
                       </Link>
