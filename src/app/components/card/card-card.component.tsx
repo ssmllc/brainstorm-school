@@ -32,16 +32,18 @@ const Container = styled.div<containerProps>`
   width: ${({ width }) => (width ? width : "100%")};
 
   @media (min-width: 768px) {
-    flex-direction: row;
-  }
-
-  @media (min-width: 1400px) {
     flex-direction: column;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     flex-direction: row;
-    padding: ${({ padding }) => (padding ? padding : "0")};
+    padding: 15px 10px;
+    width: ${({ width }) => (width ? width : "33.33%")};
+  }
+
+  @media (min-width: 1400px) {
+    flex-direction: row;
+    padding: 15px 15px;
     width: ${({ width }) => (width ? width : "33.33%")};
   }
 `;

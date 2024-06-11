@@ -16,11 +16,7 @@ const ListItem = styled.div<listItemProps>`
   padding: 10px 0;
 
   @media (min-width: 768px) {
-    font-size: 18px;
-  }
-
-  @media (min-width: 1024px) {
-    font-size: 18px;
+    font-size: 16px;
   }
 `;
 

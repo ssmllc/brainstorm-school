@@ -5,6 +5,11 @@ import { ReactNode } from "react";
 
 interface containerProps {
   $alignitems?: string;
+  $border?: string;
+  $borderTop?: string;
+  $borderRight?: string;
+  $borderBottom?: string;
+  $borderLeft?: string;
   $flexdirection?: string;
   flexwrap?: string;
   justifycontent?: string;
@@ -20,7 +25,11 @@ interface containerProps {
 }
 const Container = styled.div<containerProps>`
   align-items: ${({ $alignitems }) => $alignitems};
-  /* border: thin dashed cyan; */
+  border: ${({ $border }) => $border};
+  border-top: ${({ $borderTop }) => $borderTop};
+  border-right: ${({ $borderRight }) => $borderRight};
+  border-bottom: ${({ $borderBottom }) => $borderBottom};
+  border-left: ${({ $borderLeft }) => $borderLeft};
   display: flex;
   flex-wrap: ${({ flexwrap }) => flexwrap};
   gap: ${({ $gap }) => ($gap ? $gap : "10px")};
@@ -59,6 +68,11 @@ const Container = styled.div<containerProps>`
 
 interface Props {
   alignitems?: string;
+  border?: string;
+  borderTop?: string;
+  borderRight?: string;
+  borderBottom?: string;
+  borderLeft?: string;
   children: string | ReactNode | JSX.Element | JSX.Element[];
   flexdirection?: string;
   flexwrap?: string;
@@ -75,6 +89,11 @@ interface Props {
 }
 const FlexBox = ({
   alignitems,
+  border,
+  borderTop,
+  borderRight,
+  borderBottom,
+  borderLeft,
   children,
   flexdirection,
   flexwrap,
@@ -92,6 +111,11 @@ const FlexBox = ({
   return (
     <Container
       $alignitems={alignitems}
+      $border={border}
+      $borderTop={borderTop}
+      $borderRight={borderRight}
+      $borderBottom={borderBottom}
+      $borderLeft={borderLeft}
       $flexdirection={flexdirection}
       $gap={gap}
       flexwrap={flexwrap}

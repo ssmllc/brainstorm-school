@@ -165,20 +165,6 @@ export default async function Blog() {
               poster="/banner/banner-4.jpg"
               width="100%"
             />
-
-            {/* {result &&
-              result.map((instructor: any) => (
-                <AnchorCard
-                  base="instructors"
-                  path={instructor?.slug?.current || ""}
-                  key={instructor._id}
-                  label={instructor.title}
-                  name={instructor.profession}
-                  poster={instructor.imageUrl}
-                  photo="/instructors/ico-image.png"
-                  width="100%"
-                />
-              ))} */}
           </div>
         </FlexBox>
       </FlexBox>

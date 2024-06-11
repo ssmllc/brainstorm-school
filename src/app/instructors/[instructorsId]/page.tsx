@@ -1,5 +1,6 @@
 import MediaBanner from "@/app/components/banner/media-banner.component";
 import { Card } from "@/app/components/card/card-card.component";
+import CardImageDetail from "@/app/components/card/card-image-detail.component";
 import { CardImage } from "@/app/components/card/simple-card.component";
 import CarouselPreview from "@/app/components/carousel/carousel-preview.component";
 import Carousel from "@/app/components/carousel/carousel.component";
@@ -62,6 +63,72 @@ export default async function Instructors({
         gallery={gallery}
         imageUrl={imageUrl}
       />
+
+      <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
+        <FlexBox
+          alignitems="center"
+          borderTop="thin solid var(--medium-grey)"
+          flexdirection="column"
+          margin="0 60px"
+          sm_width="85%"
+          width="80%"
+        >
+          <Header
+            text="Courses by this instructor"
+            level="1"
+            margin="50px 0 10px"
+          />
+
+          <FlexBox
+            margin="20px 60px"
+            sm_width="100%"
+            width="100%"
+            alignitems="center"
+            justifycontent="center"
+          >
+            <CardImageDetail
+              slug="workshops"
+              path="introduction-to-zbrush"
+              preview="/banner/banner-21.jpg"
+              courseTrack="2D - 3D Concept Design"
+              courseName="Introduction to ZBrush"
+              courseCode="ZB1"
+              courseTime="Fri 10am-1pm (PST)"
+              courseDuration="10-week Course"
+            />
+            <CardImageDetail
+              slug="workshops"
+              path="introduction-to-zbrush"
+              preview="/banner/banner-21.jpg"
+              courseTrack="2D - 3D Concept Design"
+              courseName="Introduction to ZBrush"
+              courseCode="ZB1"
+              courseTime="Fri 10am-1pm (PST)"
+              courseDuration="10-week Course"
+            />
+            <CardImageDetail
+              slug="workshops"
+              path="introduction-to-zbrush"
+              preview="/banner/banner-21.jpg"
+              courseTrack="2D - 3D Concept Design"
+              courseName="Introduction to ZBrush"
+              courseCode="ZB1"
+              courseTime="Fri 10am-1pm (PST)"
+              courseDuration="10-week Course"
+            />
+            <CardImageDetail
+              slug="workshops"
+              path="introduction-to-zbrush"
+              preview="/banner/banner-21.jpg"
+              courseTrack="2D - 3D Concept Design"
+              courseName="Introduction to ZBrush"
+              courseCode="ZB1"
+              courseTime="Fri 10am-1pm (PST)"
+              courseDuration="10-week Course"
+            />
+          </FlexBox>
+        </FlexBox>
+      </FlexBox>
     </>
   );
 }

@@ -22,7 +22,21 @@ const ContentBlock = styled.div`
   margin: 0 auto;
   width: 80%;
 
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+    max-width: 1280px;
+    width: 55%;
+  }
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    gap: 10px;
+    max-width: 1280px;
+    width: 80%;
+  }
+
+  @media (min-width: 1400px) {
     flex-direction: row;
     gap: 10px;
     max-width: 1280px;
@@ -55,8 +69,12 @@ const FlexBlock = styled.div`
   flex-direction: column;
   gap: 25px;
 
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
     flex-direction: row;
+  }
+
+  @media (min-width: 1024px) {
+    flex-direction: column;
   }
 `;
 
@@ -127,6 +145,10 @@ const Label = styled.p`
 
   @media (min-width: 400px) {
     font-size: 20px;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 16px;
   }
 `;
 

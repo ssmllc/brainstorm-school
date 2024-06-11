@@ -15,25 +15,29 @@ const TracksContainer = styled.div`
   /* border: thin solid red; */
   padding: 0 0 50px 0;
   text-align: center;
+  margin: 0 auto;
+  width: 80%;
 
   @media (min-width: 800px) {
     padding: 0 0 75px 0;
   }
+
+  @media (min-width: 1024px) {
+    width: 50%;
+  }
 `;
 
 const Anchor = styled(Link)`
+  display: block;
   width: 100%;
 
   @media (min-width: 768px) {
-    width: 48%;
+    width: 49%;
   }
 
-  @media (min-width: 800px) {
-    width: 25%;
-  }
-
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     min-width: 200px;
+    width: 25%;
   }
 `;
 
@@ -49,10 +53,10 @@ const Tracks = styled.div`
   width: 100%;
 
   @media (min-width: 768px) {
-    gap: 10px;
+    gap: 0px;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 60%;
+    width: 75%;
   }
 
   @media (min-width: 800px) {
@@ -65,6 +69,7 @@ const Tracks = styled.div`
 
   @media (min-width: 1024px) {
     justify-content: center;
+    gap: 10px;
     width: 90%;
   }
 `;
@@ -83,17 +88,19 @@ const Track = styled.div<trackProps>`
   padding: 100px 20px 0 20px;
   position: relative;
   transition: all 0.35s ease-out;
-  width: 49%;
+  width: 100%;
 
   @media (min-width: 768px) {
     padding: 125px 20px 0 20px;
     min-height: 280px;
+    width: 100%;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1400px) {
     min-height: 350px;
     padding: 185px 20px 0 20px;
     min-width: 250px;
+    width: 100%;
   }
 
   &[data-track="active"] {
@@ -203,7 +210,8 @@ const TracksGroup = ({ results }: Props) => {
   return (
     <TracksContainer>
       <FlexBox
-        sm_width="80%"
+        sm_width="100%"
+        md_width="100%"
         width="60%"
         justifycontent="center"
         margin="0 auto"
@@ -212,7 +220,7 @@ const TracksGroup = ({ results }: Props) => {
           level="2"
           text="Course Guide - Tracks"
           color="white"
-          margin="50px 0"
+          margin="50px 0 25px"
         />
       </FlexBox>
       <Tracks>

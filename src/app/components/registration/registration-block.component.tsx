@@ -28,7 +28,12 @@ const Content = styled.div<contentProps>`
 
   @media (min-width: 1400px) {
     margin: 0 auto;
-    width: 50%;
+    width: 90%;
+  }
+
+  @media (min-width: 1900px) {
+    margin: 0 auto;
+    width: 40%;
   }
 
   h1,
@@ -111,7 +116,12 @@ const ContentBlock = styled.div`
     width: 90%;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  @media (min-width: 1400px) {
     max-width: 900px;
     width: 100%;
   }

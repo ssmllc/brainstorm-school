@@ -127,7 +127,7 @@ export const MiniCards = ({ width, results }: Props) => {
       flexdirection="column"
     >
       <FlexBox
-        width="80%"
+        width="90%"
         md_width="100%"
         margin="25px auto"
         flexdirection="column"
@@ -152,7 +152,7 @@ export const MiniCards = ({ width, results }: Props) => {
         </FlexBox>
       </FlexBox>
 
-      <FlexBox sm_width="80%" md_width="100%" width="80%" flexwrap="wrap">
+      <FlexBox sm_width="80%" md_width="100%" width="90%" flexwrap="wrap">
         {quarters.length > 0 &&
           quarters.map((quarter: any) => {
             const { _id, nextup, term, year, open, start } = quarter;

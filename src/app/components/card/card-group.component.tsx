@@ -6,6 +6,7 @@ import { Card } from "./card-card.component";
 import ActionButton from "../buttons/action-button.component";
 import Header from "../text-block/header.component";
 import FlexBox from "../layout/flexbox.component";
+import Link from "next/link";
 
 const Container = styled.div`
   /* border: thin dashed red; */
@@ -26,13 +27,20 @@ const Group = styled.div`
     width: 80%;
   }
 
-  @media (min-width: 768) {
+  @media (min-width: 1024px) {
+    max-width: 1250px;
+    width: 70%;
   }
 
-  @media (min-width: 800px) {
-    gap: 20px;
+  @media (min-width: 1400px) {
     max-width: 1250px;
+    padding: 0;
     width: 60%;
+  }
+
+  @media (min-width: 1900px) {
+    gap: 10px;
+    max-width: 1150px;
   }
 `;
 
@@ -44,9 +52,14 @@ const Row = styled.div`
 
   @media (min-width: 768px) {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 2;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+  }
+
+  @media (min-width: 1400px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
   }
 `;
 
@@ -92,7 +105,7 @@ const CardGroup = ({
       <FlexBox
         justifycontent="center"
         sm_margin="25px auto"
-        margin="50px auto"
+        margin="0 auto 40px"
         sm_width="80%"
         width="70%"
       >
@@ -107,7 +120,10 @@ const CardGroup = ({
           {featured?.length > 0 &&
             featured.map((instructor: any) => {
               return (
-                <div key={instructor._id}>
+                <Link
+                  href={`/instructors/${instructor.slug}`}
+                  key={instructor._id}
+                >
                   <Card
                     key={instructor._id}
                     stacked="false"
@@ -123,12 +139,16 @@ const CardGroup = ({
                     icon_width={icon_width}
                     width="100%"
                   />
-                </div>
+                </Link>
               );
             })}
         </Row>
         <ReadMore>
-          <ActionButton type="tertiary" label="Browse Instructors" />
+          <ActionButton
+            type="tertiary"
+            label="Browse Instructors"
+            href="/instructors"
+          />
         </ReadMore>
       </Group>
     </Container>

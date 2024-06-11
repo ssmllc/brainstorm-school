@@ -13,7 +13,11 @@ const Content = styled.div`
   position: relative;
   width: 100vw;
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
+    margin: 0;
+  }
+
+  @media (min-width: 1400px) {
     margin: 50px 0;
   }
 `;
@@ -177,9 +181,11 @@ const FeaturedSlider = ({ children, heading, textalign }: Props) => {
           alignitems="center"
           justifycontent="center"
           sm_width="80%"
+          md_width="70%"
           sm_margin="50px auto"
+          md_margin="0 auto 50px"
           margin="50px auto"
-          width="100%"
+          width="60%"
         >
           <Header level="2" text={heading} textalign={textalign} />
         </FlexBox>

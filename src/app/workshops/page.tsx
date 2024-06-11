@@ -192,7 +192,12 @@ export default async function Workshops() {
             <Header level="3" text="Future Workshops" />
           </FlexBox>
 
-          <FlexBox width="100%" sm_width="80%" md_width="70%" flexwrap="wrap">
+          <FlexBox
+            margin="20px 0"
+            sm_margin="20px 25px"
+            sm_width="85%"
+            width="100%"
+          >
             <AnchorCard
               label="Mentorship Online"
               name="Oliver Beck"
@@ -227,7 +232,12 @@ export default async function Workshops() {
             <Header level="3" text="Previous Workshops" />
           </FlexBox>
 
-          <FlexBox width="100%" sm_width="80%" md_width="70%" flexwrap="wrap">
+          <FlexBox
+            margin="20px 0"
+            sm_margin="20px 25px"
+            sm_width="85%"
+            width="100%"
+          >
             <AnchorCard
               label="Mentorship Online"
               name="Oliver Beck"

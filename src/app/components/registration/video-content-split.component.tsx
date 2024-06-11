@@ -13,7 +13,7 @@ const Content = styled.div`
   }
 
   @media (min-width: 1400px) {
-    padding: 100px 0;
+    padding: 50px 0;
   }
 `;
 
@@ -28,18 +28,19 @@ const ContentWrapper = styled.div<contentProps>`
   width: 80%;
 
   @media (min-width: 768px) {
-    width: 0%;
+    max-width: 1100px;
+    width: 60%;
   }
 
   @media (min-width: 800px) {
     flex-direction: ${({ $flexdirection }) =>
       $flexdirection ? $flexdirection : "row"};
-    max-width: 1100px;
     width: 70%;
   }
 
   @media (min-width: 1024px) {
     align-items: center;
+    max-width: 1100px;
     width: 90%;
   }
 
@@ -48,7 +49,7 @@ const ContentWrapper = styled.div<contentProps>`
   }
 
   @media (min-width: 1900px) {
-    max-width: 1120px;
+    max-width: 1150px;
   }
 `;
 

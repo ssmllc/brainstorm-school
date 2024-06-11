@@ -33,7 +33,7 @@ const CarouselPreview = ({ selectedInstructor, gallery, imageUrl }: Props) => {
         <Poster imageUrl={preview || imageUrl} />
       </FlexBox>
 
-      <FlexBox sm_width="60%" width="55%" sm_margin="0 auto" margin="0 auto">
+      <FlexBox sm_width="60%" width="50%" sm_margin="0 auto" margin="0 auto">
         {gallery?.length > 0 && (
           <Carousel sm_height="200px" height="350px">
             {gallery &&
@@ -45,7 +45,7 @@ const CarouselPreview = ({ selectedInstructor, gallery, imageUrl }: Props) => {
                       boxshadow="0 0 10px var(--black)"
                       className="slide"
                       preview={art.poster}
-                      width="350px"
+                      width="320px"
                       sm_height="150px"
                       setPreview={setPreview}
                     />

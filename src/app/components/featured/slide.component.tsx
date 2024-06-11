@@ -6,13 +6,25 @@ import ImageDetailCard from "../card/card.component";
 
 const Card = styled.div`
   /* border: thin solid green; */
-  width: 280px;
+  width: 292px;
 
-  @media (min-width: 400px) {
-    width: 320px;
+  @media (min-width: 360px) {
+    width: 270px;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 400px) {
+    width: 322px;
+  }
+
+  @media (min-width: 768px) {
+    width: 576px;
+  }
+
+  @media (min-width: 1024px) {
+    width: 667px;
+  }
+
+  @media (min-width: 1400px) {
     width: 1125px;
   }
 `;

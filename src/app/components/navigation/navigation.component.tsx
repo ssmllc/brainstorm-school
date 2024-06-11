@@ -42,7 +42,7 @@ const NavigationMenu = styled.nav`
     height: 100vh;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1400px) {
     background: transparent;
     column-gap: 25px;
     flex-direction: row;
@@ -112,20 +112,20 @@ const DropdownButton = styled.div`
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1400px) {
     display: none;
   }
 `;
 
 const DropdownButtonBar = styled.div`
   background: var(--white);
-  height: 3px;
+  height: 2px;
   position: absolute;
   transition: all 0.35s ease-out;
   width: 100%;
 
   &:nth-child(1) {
-    top: 0;
+    top: 2px;
   }
 
   &:nth-child(2) {
@@ -134,7 +134,7 @@ const DropdownButtonBar = styled.div`
   }
 
   &:nth-child(3) {
-    bottom: 0;
+    bottom: 2px;
   }
 `;
 
@@ -149,7 +149,7 @@ const DropdownMenu = styled.ul`
   position: absolute;
   top: 70px;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1400px) {
     display: none;
   }
 `;
@@ -177,7 +177,7 @@ const MobileNavigation = styled("div")`
   height: 0;
   opacity: 0;
   overflow-y: auto;
-  left: 0;
+  right: 0;
   padding: 10px 0;
   position: absolute;
   top: 65px;
@@ -191,6 +191,10 @@ const MobileNavigation = styled("div")`
   }
 
   @media (min-width: 1024px) {
+    width: 30vw;
+  }
+
+  @media (min-width: 1400px) {
     display: none;
   }
 `;
