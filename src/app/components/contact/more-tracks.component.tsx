@@ -112,6 +112,7 @@ const MoreTracks = () => {
             }}
           >
             <FlexBlock>
+              <IconPencil width="48px" height="48px" />
               <Caption>Character Design</Caption>
             </FlexBlock>
           </HotSpot>

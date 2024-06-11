@@ -25,8 +25,20 @@ const BannerWrapper = styled("div")<bannerProps>`
   position: relative;
   width: 100vw;
 
-  @media (min-width: 800px) {
-    height: 100vh;
+  @media (min-width: 768px) {
+    height: 50vh;
+  }
+
+  @media (min-width: 1024px) {
+    height: 50vh;
+  }
+
+  @media (min-width: 1440px) {
+    height: 70vh;
+  }
+
+  @media (min-width: 1900px) {
+    height: 75vh;
   }
 `;
 

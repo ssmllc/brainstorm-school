@@ -4,21 +4,23 @@ import React from "react";
 import styled from "styled-components";
 
 const ContentWrapper = styled.div`
+  /* border: thin solid red; */
   height: 100%;
+  margin: 50px 0;
   position: relative;
   width: 100vw;
 
   &::before {
     content: "";
-    background: url("/backgrounds/lightning/lightning.png") top left no-repeat;
-    background-size: contain;
-    /* background-image: url("/backgrounds/lightning/lightning.png"),
-      url("/backgrounds/lightning/lightning-2.png");
-    background-size: contain, contain;
-    background-position: top left, center right;
-    background-repeat: no-repeat, no-repeat; */
+    background-image: url("/backgrounds/lightning/lightning.png"),
+      url("/backgrounds/clouds/cloud-2.png"),
+      url("/backgrounds/clouds/cloud-4.png"),
+      url("/backgrounds/clouds/cloud-3.png"),
+      url("/backgrounds/clouds/cloud-1.png");
+    background-size: 50%;
+    background-position: top left, 10% 50%, 80% 50%, 100% 10%, 0% 85%;
+    background-repeat: no-repeat, no-repeat;
     position: absolute;
-    rotate: 0;
     transform-origin: top left;
     height: 100%;
     pointer-events: none;
@@ -27,14 +29,7 @@ const ContentWrapper = styled.div`
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
-
-    @media (min-width: 768px) {
-      background-size: 50%, 100%, 50%, 100%;
-    }
-
-    @media (min-width: 1900px) {
-      background-size: 40%, 100%, 40%, 100%;
-    }
+    z-index: 0;
   }
 `;
 

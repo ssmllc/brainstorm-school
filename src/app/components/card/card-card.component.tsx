@@ -9,10 +9,12 @@ import Link from "next/link";
 type containerProps = {
   stacked: string;
   alignitems?: string;
+  $border?: string;
   $background?: string;
   boxshadow?: string;
   width?: string;
   sm_padding?: string;
+  $md_padding?: string;
   padding?: string;
 };
 
@@ -23,27 +25,30 @@ const Container = styled.div<containerProps>`
   box-shadow: ${({ boxshadow }) =>
     boxshadow ? boxshadow : "0 0 15px rgba(0, 0, 0, 0.5)"};
   border-radius: 20px;
+  border: ${({ $border }) => $border};
   display: flex;
   flex-direction: ${({ stacked }) => (stacked === "true" ? "column" : "row")};
   padding: ${({ sm_padding }) => (sm_padding ? sm_padding : "25px 10px")};
   min-height: ${({ stacked }) => (stacked === "true" ? "300px" : "auto")};
+  overflow: hidden;
   position: relative;
-  gap: 20px;
+  gap: 15px;
   width: ${({ width }) => (width ? width : "100%")};
 
   @media (min-width: 768px) {
     flex-direction: column;
+    padding: ${({ $md_padding }) => ($md_padding ? $md_padding : "25px 10px")};
   }
 
   @media (min-width: 1024px) {
     flex-direction: row;
-    padding: 15px 10px;
+    padding: ${({ padding }) => (padding ? padding : "15px 10px")};
     width: ${({ width }) => (width ? width : "33.33%")};
   }
 
   @media (min-width: 1400px) {
     flex-direction: row;
-    padding: 15px 15px;
+    padding: ${({ padding }) => (padding ? padding : "15px 15px")};
     width: ${({ width }) => (width ? width : "33.33%")};
   }
 `;
@@ -86,14 +91,17 @@ type Props = {
   alignitems?: string;
   background?: string;
   boxshadow?: string;
+  border?: string;
   borderradius?: string;
   subHeading?: string;
   text?: string;
   width?: string;
   sm_padding?: string;
+  md_padding?: string;
   padding?: string;
   icon_width?: string;
   icon_height?: string;
+  show_icon?: boolean;
 };
 export const Card = ({
   href,
@@ -101,16 +109,19 @@ export const Card = ({
   background,
   boxshadow,
   borderradius,
+  border,
   stacked,
   icon,
   heading,
   subHeading,
   text,
   sm_padding,
+  md_padding,
   padding,
   width,
   icon_width,
   icon_height,
+  show_icon,
 }: Props) => {
   return (
     <>
@@ -131,11 +142,13 @@ export const Card = ({
         <Container
           alignitems={alignitems}
           $background={background}
+          $border={border}
           boxshadow={boxshadow}
           stacked={stacked}
           width={width}
           padding={padding}
           sm_padding={sm_padding}
+          $md_padding={md_padding}
         >
           {icon && (
             <CardIcon
@@ -145,7 +158,13 @@ export const Card = ({
               height={icon_height}
             />
           )}
-          {heading && <CardDetails heading={heading} subHeading={subHeading} />}
+          {heading && (
+            <CardDetails
+              heading={heading}
+              subHeading={subHeading}
+              show_icon={show_icon}
+            />
+          )}
           {text && <Text>{text}</Text>}
         </Container>
       )}

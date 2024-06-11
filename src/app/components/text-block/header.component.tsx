@@ -10,6 +10,7 @@ interface textProps {
   fontWeight?: string;
   margin?: string;
   textalign?: string;
+  $texttransform?: string;
   href?: string;
 }
 
@@ -61,7 +62,8 @@ const Header4 = styled.p<textProps>`
   margin: 5px 0;
   position: relative;
   text-align: ${({ textalign }) => textalign};
-  text-transform: capitalize;
+  text-transform: ${({ $texttransform }) =>
+    $texttransform ? $texttransform : "capitalize"};
   line-height: 1.5;
 
   @media (min-width: 768px) {
@@ -102,6 +104,7 @@ interface Props {
   margin?: string;
   href?: string;
   textalign?: string;
+  texttransform?: string;
 }
 
 const Header = ({
@@ -114,6 +117,7 @@ const Header = ({
   margin,
   href,
   textalign,
+  texttransform,
 }: Props) => {
   return (
     <>
@@ -139,6 +143,8 @@ const Header = ({
           fontWeight={fontWeight}
           $sm_fontSize={sm_fontSize}
           margin={margin}
+          textalign={textalign}
+          $texttransform={texttransform}
         >
           {text}
         </Header4>

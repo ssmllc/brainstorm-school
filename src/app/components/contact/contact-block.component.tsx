@@ -39,7 +39,13 @@ const ContentBlock = styled.div`
   @media (min-width: 1400px) {
     flex-direction: row;
     gap: 10px;
-    max-width: 1280px;
+    max-width: 1150px;
+    width: 80%;
+  }
+
+  @media (min-width: 1900px) {
+    flex-direction: row;
+    gap: 10px;
     width: 70%;
   }
 `;
@@ -75,6 +81,10 @@ const FlexBlock = styled.div`
 
   @media (min-width: 1024px) {
     flex-direction: column;
+  }
+
+  @media (min-width: 1400px) {
+    flex-direction: row;
   }
 `;
 
@@ -149,6 +159,12 @@ const Label = styled.p`
 
   @media (min-width: 1024px) {
     font-size: 16px;
+    padding: 15px 0 0;
+  }
+
+  @media (min-width: 1400px) {
+    font-size: 18px;
+    padding: 15px 0 0;
   }
 `;
 
@@ -165,6 +181,7 @@ const ContactBlock = ({ heading, subheading }: Props) => {
           <Heading>{heading}</Heading>
           <SubHeading>{subheading ? subheading : null}</SubHeading>
         </Block>
+
         <Block>
           <HotSpot href="tel:999-9999">
             <FlexBlock>
@@ -193,6 +210,7 @@ const ContactBlock = ({ heading, subheading }: Props) => {
             </FlexBlock>
           </HotSpot>
         </Block>
+
         <Block>
           <HotSpot href="mailto:info@brainstormschool.com">
             <FlexBlock>

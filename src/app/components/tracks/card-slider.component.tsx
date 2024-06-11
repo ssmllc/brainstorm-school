@@ -297,12 +297,12 @@ const CardSlider = () => {
         <CardSliderCards>
           <CardWrapper className="course-slider" width={`${coursesTotal}px`}>
             <Card
-              href="/courses/foundation/rhythm-and-structure"
+              href="/courses/foundation/figure-drawing-1"
               className="slider-course-card"
             >
               <Poster image="/banner/banner-1.jpg" tag="Foundation" />
               <Details>
-                <CourseName>Rhythm & Structure</CourseName>
+                <CourseName>Figure Drawing 1</CourseName>
                 <CourseDetails>
                   <CourseDetail>
                     <span>
@@ -314,7 +314,7 @@ const CardSlider = () => {
                         width="20px"
                       >
                         <g>
-                          <g id="Layer_1" data-name="Layer 1">
+                          <g>
                             <path
                               className="cls-1"
                               d="M12,15.86a.75.75,0,0,1-.41-.12L.35,8.58a.78.78,0,0,1,0-1.3L11.59.12a.76.76,0,0,1,.82,0L23.65,7.28a.78.78,0,0,1,0,1.3L12.41,15.74A.75.75,0,0,1,12,15.86ZM2.19,7.93,12,14.18l9.81-6.25L12,1.68Z"
@@ -331,7 +331,7 @@ const CardSlider = () => {
                         </g>
                       </svg>
                     </span>
-                    FIG RS
+                    FIG 1
                   </CourseDetail>
 
                   <CourseDetail>
@@ -351,10 +351,13 @@ const CardSlider = () => {
               </Details>
             </Card>
 
-            <Card href="/courses" className="slider-course-card">
-              <Poster image="/banner/banner-2.jpg" tag="Concept Art & Design" />
+            <Card
+              href="/courses/2d-3d-concept-design"
+              className="slider-course-card"
+            >
+              <Poster image="/banner/banner-2.jpg" tag="2D-3D Concept Design" />
               <Details>
-                <CourseName>Rhythm & Structure</CourseName>
+                <CourseName>2D 3D Concept Design</CourseName>
                 <CourseDetails>
                   <CourseDetail>
                     <span>
@@ -403,10 +406,10 @@ const CardSlider = () => {
               </Details>
             </Card>
 
-            <Card href="/courses" className="slider-course-card">
+            <Card href="/courses/foundation" className="slider-course-card">
               <Poster image="/banner/banner-3.jpg" tag="Concept Art & Design" />
               <Details>
-                <CourseName>Rhythm & Structure</CourseName>
+                <CourseName>Foundation Courses</CourseName>
                 <CourseDetails>
                   <CourseDetail>
                     <span>
@@ -455,10 +458,16 @@ const CardSlider = () => {
               </Details>
             </Card>
 
-            <Card href="/courses" className="slider-course-card">
-              <Poster image="/banner/banner-4.jpg" tag="Concept Art & Design" />
+            <Card
+              href="/workshops/brainstorm-connection"
+              className="slider-course-card"
+            >
+              <Poster
+                image="/banner/banner-4.jpg"
+                tag="Brainstorm Connection"
+              />
               <Details>
-                <CourseName>Rhythm & Structure</CourseName>
+                <CourseName>Brainstorm Connection</CourseName>
                 <CourseDetails>
                   <CourseDetail>
                     <span>
@@ -507,10 +516,13 @@ const CardSlider = () => {
               </Details>
             </Card>
 
-            <Card href="/courses" className="slider-course-card">
+            <Card
+              href="/courses/concept-art-games-and-film/concept-art-boot-camp"
+              className="slider-course-card"
+            >
               <Poster image="/banner/banner-6.jpg" tag="Concept Art & Design" />
               <Details>
-                <CourseName>Rhythm & Structure</CourseName>
+                <CourseName>Concept Art Bootcamp</CourseName>
                 <CourseDetails>
                   <CourseDetail>
                     <span>
@@ -539,7 +551,7 @@ const CardSlider = () => {
                         </g>
                       </svg>
                     </span>
-                    FIG RS
+                    CABC
                   </CourseDetail>
 
                   <CourseDetail>

@@ -6,23 +6,24 @@ import Link from "next/link";
 import Icon3D from "../icons/icon-3d.component";
 
 interface anchorProps {
-  sm_width?: string;
-  width?: string;
+  $sm_width?: string;
+  $md_width?: string;
+  $width?: string;
 }
 
 const Anchor = styled(Link)<anchorProps>`
-  width: 100%;
+  width: ${({ $sm_width }) => ($sm_width ? $sm_width : "100%")};
 
   @media (min-width: 768px) {
     width: 49%;
   }
 
   @media (min-width: 1024px) {
-    width: 49%;
+    width: ${({ $md_width }) => ($md_width ? $md_width : "49%")};
   }
 
   @media (min-width: 1400px) {
-    width: 100%;
+    width: ${({ $width }) => ($width ? $width : "24%")};
   }
 `;
 
@@ -119,6 +120,7 @@ interface Props {
   photo?: string;
   name?: string;
   sm_width?: string;
+  md_width?: string;
   width?: string;
   children?: string | ReactNode | JSX.Element | JSX.Element[];
 }
@@ -133,6 +135,7 @@ const AnchorCard = ({
   photo,
   name,
   sm_width,
+  md_width,
   width,
 }: Props) => {
   const baseLocation = base ? base : "";
@@ -142,8 +145,9 @@ const AnchorCard = ({
   return (
     <Anchor
       href={hrefToPath ? hrefToPath : "/course-guide"}
-      sm_width={sm_width}
-      width={width}
+      $sm_width={sm_width}
+      $md_width={md_width}
+      $width={width}
     >
       <Track poster={poster}>
         <div

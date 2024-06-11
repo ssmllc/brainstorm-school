@@ -10,6 +10,8 @@ import Header from "../text-block/header.component";
 import FlexBox from "../layout/flexbox.component";
 import { FlexContainer } from "../layout/container.component";
 import Icon3D from "../icons/icon-3d.component";
+import SelectLevel from "../select-level/select-level.component";
+import { Results } from "@/app/types/types";
 
 const TracksContainer = styled.div`
   /* border: thin solid red; */
@@ -23,7 +25,11 @@ const TracksContainer = styled.div`
   }
 
   @media (min-width: 1024px) {
-    width: 50%;
+    width: 100%;
+  }
+
+  @media (min-width: 1400px) {
+    width: 100%;
   }
 `;
 
@@ -36,6 +42,16 @@ const Anchor = styled(Link)`
   }
 
   @media (min-width: 768px) {
+    min-width: 200px;
+    width: 49%;
+  }
+
+  @media (min-width: 1024px) {
+    min-width: 200px;
+    width: 24%;
+  }
+
+  @media (min-width: 1400px) {
     min-width: 200px;
     width: 25%;
   }
@@ -53,24 +69,33 @@ const Tracks = styled.div`
   width: 100%;
 
   @media (min-width: 768px) {
-    gap: 0px;
+    gap: 10px 0;
     flex-direction: row;
     flex-wrap: wrap;
     width: 75%;
   }
 
-  @media (min-width: 800px) {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 20px;
-    max-width: 1250px;
-    width: 65%;
-  }
-
   @media (min-width: 1024px) {
     justify-content: center;
     gap: 10px;
+    max-width: 1150px;
     width: 90%;
+  }
+
+  @media (min-width: 1400px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    max-width: 1150px;
+    width: 80%;
+  }
+
+  @media (min-width: 1900px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    max-width: 1150px;
+    width: 65%;
   }
 `;
 
@@ -181,14 +206,16 @@ const Terms = styled.div`
 `;
 
 interface Props {
-  results?: any;
+  results?: Results[];
 }
 
 const TracksGroup = ({ results }: Props) => {
   const { selectedContextTrack, setSelectedContextTrack }: any =
     useContext(TracksContext);
-  const [currentTrack, setCurrentTrack] = useState([]);
-  const [heading, setHeading] = useState(null);
+  const [currentTrack, setCurrentTrack] = useState<Results[]>([]);
+  const [heading, setHeading] = useState<string | undefined>("");
+
+  const [levelOfExpertise, setLevelOfExpertise] = useState<string>("");
 
   useEffect(() => {
     if (results) {
@@ -209,6 +236,8 @@ const TracksGroup = ({ results }: Props) => {
 
   return (
     <TracksContainer>
+      <SelectLevel setLevelOfExpertise={setLevelOfExpertise} />
+
       <FlexBox
         sm_width="100%"
         md_width="100%"
@@ -223,6 +252,7 @@ const TracksGroup = ({ results }: Props) => {
           margin="50px 0 25px"
         />
       </FlexBox>
+
       <Tracks>
         {results && results.length ? (
           results.map((track: any, index: number) => {
@@ -337,7 +367,7 @@ const TracksGroup = ({ results }: Props) => {
                   </TextBlock>
 
                   {courses.courses.map((course: any, index: number) => {
-                    // console.log("looking for name", course);
+                    console.log("looking for difficulty", course?.difficulty);
                     return (
                       <Link
                         key={index}
@@ -349,13 +379,19 @@ const TracksGroup = ({ results }: Props) => {
                           background="var(--black)"
                           borderradius="10px"
                           stacked="false"
-                          boxshadow="0"
                           icon={course.imageUrl}
                           heading={course.name}
                           subHeading={course.code}
                           width="100%"
-                          icon_width="75px"
-                          icon_height="75px"
+                          icon_width="100px"
+                          icon_height="100px"
+                          padding="0"
+                          show_icon={true}
+                          border={
+                            course?.difficulty === levelOfExpertise
+                              ? "thin solid red"
+                              : "0"
+                          }
                         />
                       </Link>
                     );

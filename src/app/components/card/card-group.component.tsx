@@ -29,13 +29,13 @@ const Group = styled.div`
 
   @media (min-width: 1024px) {
     max-width: 1250px;
+    padding: 0;
     width: 70%;
   }
 
   @media (min-width: 1400px) {
-    max-width: 1250px;
-    padding: 0;
-    width: 60%;
+    max-width: 1150px;
+    width: 80%;
   }
 
   @media (min-width: 1900px) {
@@ -105,6 +105,7 @@ const CardGroup = ({
       <FlexBox
         justifycontent="center"
         sm_margin="25px auto"
+        md_margin="0 auto 50px"
         margin="0 auto 40px"
         sm_width="80%"
         width="70%"

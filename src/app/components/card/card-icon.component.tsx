@@ -15,17 +15,12 @@ const Icon = styled.div<cardIconProps>`
   background-size: cover;
   border-radius: ${({ borderradius }) =>
     borderradius ? borderradius : "100%"};
-  height: ${({ height }) => (height ? height : "60px")};
-  width: ${({ width }) => (width ? width : "60px")};
+  min-height: ${({ height }) => (height ? height : "65px")};
+  min-width: ${({ height }) => (height ? height : "65px")};
 
   @media (min-width: 768px) {
-    height: 80px;
-    width: 80px;
-  }
-
-  @media (min-width: 1400px) {
-    height: ${({ height }) => (height ? height : "80px")};
-    width: ${({ width }) => (width ? width : "80px")};
+    min-height: ${({ height }) => (height ? height : "75px")};
+    min-width: ${({ height }) => (height ? height : "75px")};
   }
 `;
 

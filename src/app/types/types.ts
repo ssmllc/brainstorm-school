@@ -49,3 +49,10 @@ export type Schedule = {
   duration: string;
   start: string;
 };
+
+export type Results = {
+  imageUrl?: string;
+  name?: string;
+  slug?: any;
+  tracks?: any[];
+};
