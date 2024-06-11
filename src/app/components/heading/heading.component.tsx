@@ -33,7 +33,7 @@ const Header = styled.p`
     font-size: 48px;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1400px) {
     font-size: 60px;
   }
 `;

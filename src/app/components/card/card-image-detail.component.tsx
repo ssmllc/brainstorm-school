@@ -31,19 +31,24 @@ const Card = styled(Link)<cardProps>`
   }
 
   &:hover {
-    outline: 2px solid var(--blue);
+    outline: 2px solid var(--primary);
 
     &::after {
-      background: var(--blue) url("/icons/ico-eye.png") top center no-repeat;
-      background-size: 50%;
-      background-position: center center;
-      border-radius: 100%;
+      background-color: var(--primary);
+      align-items: center;
       bottom: 10px;
-      content: "";
-      height: 50px;
+      border-radius: 20px;
+      color: var(--black);
+      display: flex;
+      content: "Register";
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1px;
+      font-weight: bold;
+      padding: 10px 20px;
+
       right: 10px;
       position: absolute;
-      width: 50px;
     }
   }
 `;

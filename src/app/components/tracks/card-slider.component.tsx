@@ -85,10 +85,10 @@ const Card = styled(Link)`
   transition: all 0.15s ease-out;
 
   &:hover {
-    outline: 2px solid var(--blue);
+    outline: 2px solid var(--primary);
 
     &::after {
-      background: var(--blue) url("/icons/ico-eye.png") top center no-repeat;
+      background: var(--primary) url("/icons/ico-eye.png") top center no-repeat;
       background-size: 50%;
       background-position: center center;
       border-radius: 100%;

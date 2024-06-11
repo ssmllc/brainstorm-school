@@ -66,8 +66,6 @@ export default async function Page() {
           />
         </FlexBox>
 
-        {/* <SelectLevel /> */}
-
         <FlexBox
           flexdirection="column"
           margin="20px 0"

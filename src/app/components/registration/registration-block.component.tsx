@@ -1,7 +1,9 @@
 "use client";
+
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
+import ActionButton from "../buttons/action-button.component";
 
 interface contentProps {
   $faq?: boolean;
@@ -18,7 +20,7 @@ const Content = styled.div<contentProps>`
 
   @media (min-width: 768px) {
     margin: 0 auto;
-    width: 60%;
+    width: 80%;
   }
 
   @media (min-width: 1024px) {
@@ -63,17 +65,18 @@ interface buttonProps {
 const CallToAction = styled.button<buttonProps>`
   background: ${(props) =>
     props.type === "primary"
-      ? "#0091ff"
+      ? "var(--primary)"
       : props.type === "tertiary"
       ? "transparent"
-      : "#fff"};
+      : "var(--primary)"};
   border-radius: 35px;
-  border: ${(props) => (props.type === "tertiary" ? "3px solid #fff" : 0)};
+  border: ${(props) =>
+    props.type === "tertiary" ? "3px solid var(--primary)" : 0};
   color: ${(props) =>
     props.type === "primary"
-      ? "#fff"
+      ? "var(--black)"
       : props.type === "tertiary"
-      ? "#fff"
+      ? "var(--primary)"
       : "#000"};
   font-size: 12px;
   font-weight: bold;
@@ -99,7 +102,7 @@ const RegistrationFAQ = styled.div`
   }
 
   a {
-    color: var(--blue);
+    color: var(--primary);
   }
 
   p {
@@ -167,7 +170,7 @@ const RegistrationBlock = ({
   scale: string;
   text?: string;
   cta?: string;
-  ctaType?: "primary" | "secondary" | "tertiary";
+  ctaType: "primary" | "secondary" | "tertiary";
   faq?: boolean;
 }) => {
   return (
@@ -181,17 +184,7 @@ const RegistrationBlock = ({
           <Heading scale={scale}>{heading}</Heading>
         )}
         {text && <p className="sub-heading">{text}</p>}
-        {cta && (
-          <CallToAction type={ctaType}>
-            {href ? (
-              <Link style={{ color: "var(--white)" }} href={href}>
-                {cta}
-              </Link>
-            ) : (
-              cta
-            )}
-          </CallToAction>
-        )}
+        {cta && <ActionButton href={href} type={ctaType} label={cta} />}
         {faq && (
           <RegistrationFAQ>
             <p className="faq-text">

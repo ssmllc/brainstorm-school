@@ -2,8 +2,6 @@
 
 import React from "react";
 import styled from "styled-components";
-import { IconSchedule } from "../icons/icon-schedule.component";
-import { IconFormat } from "../icons/icon-format.component";
 import { IconCap } from "../icons/icon-cap.component";
 
 const Details = styled.div<Props>`
@@ -20,6 +18,10 @@ const Heading = styled.div<Props>`
   padding: 10px 0 5px;
 
   @media (min-width: 800px) {
+    padding: 0 0 10px;
+  }
+
+  @media (min-width: 1024px) {
     padding: 0 0 10px;
   }
 `;

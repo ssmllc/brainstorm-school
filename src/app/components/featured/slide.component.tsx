@@ -43,7 +43,7 @@ const Slide = ({ variantType, heading, poster }: Props) => {
         variant={variantType}
         poster={poster}
         superHeading="Featured Blog"
-        info="Lorem ipsum dolor sit amet, Optio pariatur blanditiis accusantium placeat."
+        info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod sed provident exercitationem ipsa deleniti ut blanditiis a saepe reiciendis natus rerum eos quaerat delectus nulla eum iste, quibusdam in dicta."
       />
     </Card>
   );

@@ -82,7 +82,7 @@ const SimilarCourses = ({ header }: Props) => {
           href="/courses"
           level="5"
           text="Explore more courses"
-          color="var(--blue)"
+          color="var(--primary)"
           fontSize="16px"
         />
       </FlexBox>

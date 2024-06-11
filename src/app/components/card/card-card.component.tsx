@@ -36,12 +36,12 @@ const Container = styled.div<containerProps>`
   width: ${({ width }) => (width ? width : "100%")};
 
   @media (min-width: 768px) {
-    flex-direction: column;
+    flex-direction: ${({ stacked }) => (stacked === "true" ? "column" : "row")};
     padding: ${({ $md_padding }) => ($md_padding ? $md_padding : "25px 10px")};
   }
 
   @media (min-width: 1024px) {
-    flex-direction: row;
+    flex-direction: ${({ stacked }) => (stacked === "true" ? "column" : "row")};
     padding: ${({ padding }) => (padding ? padding : "15px 10px")};
     width: ${({ width }) => (width ? width : "33.33%")};
   }

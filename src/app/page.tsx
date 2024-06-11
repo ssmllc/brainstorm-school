@@ -66,22 +66,22 @@ const Home = async () => {
         >
           <Slide
             poster="banner/banner-1.jpg"
-            heading="Lorem ipsum dolor"
+            heading="Do I need to be good at drawing to succeed in game art?"
             variantType="sm"
           />
           <Slide
             poster="banner/banner-2.jpg"
-            heading="Lorem ipsum dolor"
+            heading="Developing Backstories for Characters"
             variantType="sm"
           />
           <Slide
             poster="banner/banner-3.jpg"
-            heading="Lorem ipsum dolor"
+            heading="Exploring Career Opportunities in Concept Art"
             variantType="sm"
           />
           <Slide
             poster="banner/banner-4.jpg"
-            heading="Lorem ipsum dolor"
+            heading="How important is a portfolio for getting a job in game art?"
             variantType="sm"
           />
         </FeaturedSlider>
@@ -95,7 +95,7 @@ const Home = async () => {
           primary={false}
           heading="Ready to start your journey?"
           scale="xl"
-          cta="Register"
+          cta="Register Today"
           ctaType="primary"
         />
       </Content>

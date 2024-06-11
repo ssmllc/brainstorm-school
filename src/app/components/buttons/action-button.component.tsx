@@ -5,7 +5,7 @@ import React from "react";
 import styled from "styled-components";
 
 interface buttonProps {
-  type?: string;
+  type: string;
   margin?: string;
   offsetPadding?: string;
 }
@@ -21,17 +21,18 @@ type Props = {
 const CallToAction = styled.button<buttonProps>`
   background: ${(props) =>
     props.type === "primary"
-      ? "#0091ff"
+      ? "var(--primary)"
       : props.type === "tertiary"
       ? "transparent"
-      : "#fff"};
+      : "var(--primary)"};
   border-radius: 35px;
-  border: ${(props) => (props.type === "tertiary" ? "3px solid #fff" : 0)};
+  border: ${(props) =>
+    props.type === "tertiary" ? "3px solid var(--primary)" : 0};
   color: ${(props) =>
     props.type === "primary"
-      ? "#fff"
+      ? "var(--black)"
       : props.type === "tertiary"
-      ? "#fff"
+      ? "var(--primary)"
       : "#000"};
   font-size: 12px;
   font-weight: bold;
@@ -42,13 +43,25 @@ const CallToAction = styled.button<buttonProps>`
   text-transform: uppercase;
 `;
 
+interface linkProps {
+  type: string;
+}
+const Anchor = styled(Link)<linkProps>`
+  color: ${(props) =>
+    props.type === "primary"
+      ? "var(--black)"
+      : props.type === "tertiary"
+      ? "var(--primary)"
+      : "#000"};
+`;
+
 const ActionButton = ({ href, type, label, margin, offsetPadding }: Props) => {
   return (
     <CallToAction type={type} margin={margin} offsetPadding={offsetPadding}>
       {href ? (
-        <Link style={{ color: "var(--white)" }} href={href}>
-          Register
-        </Link>
+        <Anchor type={type} href={href}>
+          {label}
+        </Anchor>
       ) : (
         label
       )}

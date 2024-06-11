@@ -85,7 +85,7 @@ const Content = styled.div<cardProps>`
 `;
 
 const SuperHeading = styled.p`
-  color: var(--blue);
+  color: var(--primary);
   font-size: 12px;
   font-weight: bold;
   padding: 0 0 10px 0;
@@ -224,7 +224,7 @@ const ImageDetailCard = ({
               href={`/instructors/${slug}`}
               style={{
                 textDecoration: "none",
-                color: "var(--blue)",
+                color: "var(--primary)",
                 display: "block",
                 padding: "25px 0",
               }}

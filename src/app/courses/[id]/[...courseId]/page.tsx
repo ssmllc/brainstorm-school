@@ -102,85 +102,103 @@ export default async function Page({
 
       <CardLayout results={selectedResults} />
 
-      <Container margin="0 auto">
-        <Container margin="0 auto" width="80%" position="relative">
-          <Container
+      <FlexBox margin="0 auto">
+        <FlexBox flexdirection="column">
+          <FlexBox
             alignitems="center"
-            display="flex"
-            position="relative"
-            width="100%"
+            md_width="90%"
+            md_margin="50px auto 0px"
+            width="80%"
           >
             <TextHeaderBlock fontSize="36px" fontWeight="bold">
               Gallery
             </TextHeaderBlock>
-          </Container>
+          </FlexBox>
 
-          <Carousel>
-            <CardImage
-              boxshadow="0 0 10px var(--black)"
-              className="slide"
-              preview="/banner/banner-1.jpg"
-              width="350px"
-            />
-            <CardImage
-              boxshadow="0 0 10px var(--black)"
-              className="slide"
-              preview="/banner/banner-10.jpg"
-              width="350px"
-            />
-            <CardImage
-              boxshadow="0 0 10px var(--black)"
-              className="slide"
-              preview="/banner/banner-21.jpg"
-              width="350px"
-            />
-            <CardImage
-              boxshadow="0 0 10px var(--black)"
-              className="slide"
-              preview="/banner/banner-31.jpg"
-              width="350px"
-            />
-            <CardImage
-              boxshadow="0 0 10px var(--black)"
-              className="slide"
-              preview="/banner/banner-41.jpg"
-              width="350px"
-            />
-            <CardImage
-              boxshadow="0 0 10px var(--black)"
-              className="slide"
-              preview="/banner/banner-45.jpg"
-              width="350px"
-            />
-          </Carousel>
-        </Container>
-      </Container>
+          <FlexBox
+            alignitems="center"
+            sm_width="80%"
+            md_width="80%"
+            width="80%"
+          >
+            <Carousel>
+              <CardImage
+                boxshadow="0 0 10px var(--black)"
+                className="slide"
+                preview="/banner/banner-1.jpg"
+                width="350px"
+              />
+              <CardImage
+                boxshadow="0 0 10px var(--black)"
+                className="slide"
+                preview="/banner/banner-10.jpg"
+                width="350px"
+              />
+              <CardImage
+                boxshadow="0 0 10px var(--black)"
+                className="slide"
+                preview="/banner/banner-21.jpg"
+                width="350px"
+              />
+              <CardImage
+                boxshadow="0 0 10px var(--black)"
+                className="slide"
+                preview="/banner/banner-31.jpg"
+                width="350px"
+              />
+              <CardImage
+                boxshadow="0 0 10px var(--black)"
+                className="slide"
+                preview="/banner/banner-41.jpg"
+                width="350px"
+              />
+              <CardImage
+                boxshadow="0 0 10px var(--black)"
+                className="slide"
+                preview="/banner/banner-45.jpg"
+                width="350px"
+              />
+            </Carousel>
+          </FlexBox>
+        </FlexBox>
+      </FlexBox>
 
-      {instructors?.map(
-        (
-          {
-            title,
-            profession,
-            bio,
-          }: {
-            bio: string | null;
-            title: string;
-            profession: string;
-          },
-          index: number
-        ) => {
-          return (
-            <InstructorBio
-              key={index}
-              title={title}
-              profession={profession}
-              bio={bio}
-              registration={registration}
-            />
-          );
-        }
-      )}
-
+      <FlexBox flexdirection="column">
+        <FlexBox
+          alignitems="center"
+          md_width="90%"
+          md_margin="50px auto 0px"
+          width="80%"
+        >
+          <TextHeaderBlock fontSize="36px" fontWeight="bold">
+            Meet Your Instructor
+          </TextHeaderBlock>
+        </FlexBox>
+        {instructors?.map(
+          (
+            {
+              title,
+              profession,
+              bio,
+            }: {
+              bio: string | null;
+              title: string;
+              profession: string;
+            },
+            index: number
+          ) => {
+            return (
+              <InstructorBio
+                key={index}
+                title={title}
+                profession={profession}
+                bio={bio}
+                registration={registration}
+              />
+            );
+          }
+        )}
+      </FlexBox>
       <SimilarCourses header="View Similar Courses" />
     </>
   );

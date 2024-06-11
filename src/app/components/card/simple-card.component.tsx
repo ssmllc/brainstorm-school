@@ -121,7 +121,7 @@ const Wrapper = styled("div")`
   padding: 0;
   margin: 0 auto;
   max-width: 1200px;
-  width: 70%;
+  width: 80%;
 
   @media (min-width: 800px) {
     flex-direction: row;
@@ -230,18 +230,18 @@ const CardLayout = ({ results }: Props) => {
                 padding="0"
                 fontSize="12px"
                 width="auto"
-                color="var(--blue)"
+                color="var(--primary)"
                 texttransform="uppercase"
               >
                 {registration && (
                   <Link
                     style={{
-                      color: "var(--blue)",
+                      color: "var(--primary)",
                       textDecoration: "underline",
                     }}
                     href={registration}
                   >
-                    Registration Open
+                    Register Today
                   </Link>
                 )}
               </TextBlock>

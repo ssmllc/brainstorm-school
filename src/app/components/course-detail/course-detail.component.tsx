@@ -10,13 +10,13 @@ interface listItemProps {
 const ListItem = styled.div<listItemProps>`
   align-items: center;
   display: flex;
-  font-size: 14px;
+  font-size: 16px;
   gap: 10px;
   color: ${({ color }) => (color ? `${color}` : "var(--white-50)")};
   padding: 10px 0;
 
-  @media (min-width: 768px) {
-    font-size: 16px;
+  @media (min-width: 1400px) {
+    font-size: 15px;
   }
 `;
 

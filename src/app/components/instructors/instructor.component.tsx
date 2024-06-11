@@ -9,6 +9,7 @@ import RegistrationBlock from "../registration/registration-block.component";
 const InstructorWrapper = styled.div`
   /* border: thin solid red; */
   display: flex;
+  flex-direction: column;
   width: 100%;
 
   @media (min-width: 768px) {
@@ -24,7 +25,7 @@ const Instructor = styled.div`
   border-bottom: thin solid var(--medium-grey);
   display: flex;
   flex-direction: column;
-  margin: 50px auto;
+  margin: 0 auto;
   max-width: 1200px;
   padding: 0 0 50px 0;
   position: relative;
@@ -33,6 +34,10 @@ const Instructor = styled.div`
   @media (min-width: 768px) {
     flex-direction: column;
     width: 70%;
+  }
+
+  @media (min-width: 1400px) {
+    width: 80%;
   }
 `;
 
@@ -60,7 +65,12 @@ const InstructorBio = ({ title, profession, bio, registration }: Props) => {
           />
         </FlexBox>
 
-        <FlexBox sm_width="100%" md_width="100%" width="70%" sm_margin="20px 0">
+        <FlexBox
+          sm_width="100%"
+          md_width="100%"
+          width="100%"
+          sm_margin="20px 0"
+        >
           <DecipherText description={bio} margin="0" />
         </FlexBox>
       </InstructorWrapper>

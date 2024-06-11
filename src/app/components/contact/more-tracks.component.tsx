@@ -75,11 +75,11 @@ const HotSpot = styled.div`
   transition: all 0.25s ease-out;
 
   &:hover {
-    box-shadow: inset 0 0 0 1px var(--blue);
+    box-shadow: inset 0 0 0 1px var(--primary);
     cursor: pointer;
 
     .contact-info {
-      color: var(--blue);
+      color: var(--primary);
     }
   }
 `;

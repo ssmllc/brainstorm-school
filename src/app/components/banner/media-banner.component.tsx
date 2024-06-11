@@ -8,8 +8,8 @@ import Heading from "../heading/heading.component";
 import CourseDetail from "../course-detail/course-detail.component";
 import gsap from "gsap";
 import FlexBox from "../layout/flexbox.component";
-import { IconTime } from "../icons/icon-time.component";
 import { IconDuration } from "../icons/icon-duration.component";
+import { IconTerm } from "../icons/icon-term.component";
 
 interface bannerProps {
   theme: string;
@@ -21,22 +21,22 @@ const Banner = styled.div<bannerProps>`
   background: ${({ theme }) =>
     theme === "light" ? "var(--white)" : "var(--black)"};
   display: flex;
-  height: ${({ $hero }) => ($hero === "true" ? "100vh" : "40vh")};
+  height: ${({ $hero }) => ($hero === "true" ? "100vh" : "50vh")};
   flex-direction: column;
   overflow: hidden;
   position: relative;
   width: 100vw;
 
   @media (min-width: 768px) {
-    height: 60vh;
+    height: 100vh;
   }
 
   @media (min-width: 1024px) {
-    height: ${({ $hero }) => ($hero === "true" ? "80vh" : "50vh")};
+    height: ${({ $hero }) => ($hero === "true" ? "100vh" : "75vh")};
   }
 
   @media (min-width: 1400px) {
-    height: ${({ $hero }) => ($hero === "true" ? "100vh" : "50vh")};
+    height: ${({ $hero }) => ($hero === "true" ? "100vh" : "75vh")};
   }
 
   &::before {
@@ -70,17 +70,6 @@ const Banner = styled.div<bannerProps>`
   }
 `;
 
-const BannerWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  width: 100%;
-
-  @media (min-width: 1024px) {
-    flex-direction: row;
-  }
-`;
-
 const Content = styled.div`
   /* border: thin dashed red; */
   left: 50%;
@@ -98,6 +87,13 @@ const Content = styled.div`
     width: 70%;
   }
 
+  @media (min-width: 1024px) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 90%;
+  }
+
   @media (min-width: 1400px) {
     left: 50%;
     top: 55%;
@@ -113,9 +109,33 @@ const Content = styled.div`
   }
 `;
 
-const Column = styled.div`
-  min-width: 25%;
-  /* border: thin dashed blue; */
+const BannerWrapper = styled.div`
+  /* border: thin solid red; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  @media (min-width: 1400px) {
+    align-items: baseline;
+    flex-direction: row;
+  }
+`;
+
+interface columnProps {
+  $width?: string;
+}
+const Column = styled.div<columnProps>`
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: ${({ $width }) => ($width ? $width : "25%")};
+  }
 `;
 
 const ActionWrapper = styled.div`
@@ -130,10 +150,11 @@ const ActionWrapper = styled.div`
     gap: 20px;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     align-items: center;
-    gap: 50px;
+    gap: 40px;
     flex-direction: row;
+    margin: 0;
     min-width: 450px;
   }
 `;
@@ -175,7 +196,12 @@ const Media = styled.div<mediaProps>`
     height: 300px;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
+    height: 300px;
+    width: 55%;
+  }
+
+  @media (min-width: 1400px) {
     height: 400px;
     margin: 50px auto;
     width: 50%;
@@ -254,7 +280,7 @@ const MediaBanner = ({
     <Banner theme={theme} $hero={hero} $background={randomBanner}>
       <Content>
         <BannerWrapper>
-          <Column>
+          <Column $width="50%">
             {label && <Pill label={label} />}
             {header && !headshot && (
               <Heading header={header} subHeader={subHeader ? subHeader : ""} />
@@ -272,13 +298,13 @@ const MediaBanner = ({
           </Column>
 
           <ActionWrapper>
-            <Column>
+            <Column $width="60%">
               {!hero && <StartDate>Courses begin: May 20, 2024</StartDate>}
               {hero === "true" && (
                 <>
                   <CourseDetail color="var(--white)">
                     <span>
-                      <IconTime width="24px" height="24px" />
+                      <IconTerm width="24px" height="24px" />
                     </span>
                     {time}
                   </CourseDetail>
@@ -293,12 +319,13 @@ const MediaBanner = ({
               )}
             </Column>
             {hero === "true" && (
-              <Column>
+              <Column $width="40%">
                 <ActionButton
                   href={registration}
                   type="primary"
-                  label="Register"
+                  label="Register Today"
                   margin="0"
+                  offsetPadding="15px 15px"
                 />
               </Column>
             )}

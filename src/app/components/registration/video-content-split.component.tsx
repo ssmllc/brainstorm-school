@@ -127,7 +127,7 @@ const ContentBlock = styled.div<contentBlockProps>`
 `;
 
 const CallToAction = styled.button`
-  background: var(--white);
+  background: var(--primary);
   border-radius: 35px;
   border: 0;
   color: var(--black);

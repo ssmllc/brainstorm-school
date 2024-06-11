@@ -21,14 +21,14 @@ const Button = styled.button`
   &.prev {
     position: absolute;
     left: -30px;
-    top: 55px;
+    top: 40%;
     z-index: 10;
   }
 
   &.next {
     position: absolute;
     right: -30px;
-    top: 55px;
+    top: 40%;
     z-index: 10;
   }
 
@@ -138,7 +138,7 @@ const Carousel = ({ children, sm_height, height }: Props) => {
     <Container
       display="flex"
       width="100%"
-      sm_height={sm_height || "350px"}
+      sm_height={sm_height || "310px"}
       height={height || "350px"}
     >
       <Button className="prev" onClick={() => handleCardSliderMove("prev")}>

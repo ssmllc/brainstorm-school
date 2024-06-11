@@ -108,10 +108,10 @@ const HotSpot = styled.a`
   }
 
   &:hover {
-    box-shadow: inset 0 0 0 1px var(--blue);
+    box-shadow: inset 0 0 0 1px var(--primary);
 
     .contact-info {
-      color: var(--blue);
+      color: var(--primary);
     }
   }
 `;

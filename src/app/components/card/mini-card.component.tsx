@@ -45,12 +45,12 @@ const MiniCard = styled.div`
   }
 
   &:hover {
-    box-shadow: 0 0 0 2px var(--blue);
+    box-shadow: 0 0 0 2px var(--primary);
   }
 `;
 
 const Label = styled.p`
-  color: var(--blue);
+  color: var(--primary);
   font-size: 12px;
   font-weight: bold;
   line-height: 1.5;

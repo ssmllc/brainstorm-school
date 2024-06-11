@@ -274,7 +274,7 @@ const Footer = () => {
         primary={false}
         heading="Summer Registration is Now Open!"
         scale="md"
-        cta="Register"
+        cta="Register Today"
         ctaType="tertiary"
       />
 

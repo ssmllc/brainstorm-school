@@ -95,7 +95,7 @@ const DropdownButton = styled.div`
   &[data-active="true"] {
     .dropdown-bar {
       &:nth-child(1) {
-        background: var(--blue);
+        background: var(--primary);
         top: 50%;
         transform: translateY(-50%) rotate(-45deg);
       }
@@ -105,7 +105,7 @@ const DropdownButton = styled.div`
         transform: translateY(-100%);
       }
       &:nth-child(3) {
-        background: var(--blue);
+        background: var(--primary);
         top: 50%;
         transform: translateY(-50%) rotate(45deg);
       }
@@ -165,7 +165,7 @@ const MenuItem = styled(Link)`
   text-transform: uppercase;
 
   &:hover {
-    color: #afafaf;
+    color: var(--light-grey);
   }
 `;
 
@@ -225,7 +225,7 @@ const Accordion = styled("menu")`
       &::after {
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
-        border-bottom: 7px solid var(--blue);
+        border-bottom: 7px solid var(--primary);
         border-top: 5px solid transparent;
         content: "";
         display: block;
@@ -278,9 +278,9 @@ const AccordionItem = styled(Link)`
 
 const CallToAction = styled(Link)`
   background: transparent;
-  border: 3px solid var(--white);
+  border: 3px solid var(--primary);
   border-radius: 20px;
-  color: var(--white);
+  color: var(--primary);
   font-weight: bold;
   padding: 10px 25px;
   text-decoration: none;

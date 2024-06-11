@@ -375,7 +375,7 @@ const TracksGroup = ({ results }: Props) => {
                     if (course?.difficulty === "Beginner") {
                       color = "green";
                     } else if (course?.difficulty === "Intermediate") {
-                      color = "var(--blue)";
+                      color = "var(--primary)";
                     } else if (course?.difficulty === "Advanced") {
                       color = "red";
                     }
