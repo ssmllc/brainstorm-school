@@ -16,8 +16,10 @@ const SelectLevel = ({ setLevelOfExpertise }: Props) => {
     <FlexBox
       flexdirection="column"
       width="70%"
+      xl_width="70%"
       sm_width="70%"
       margin="50px auto 0"
+      xl_margin="50px auto 0"
       alignitems="center"
       justifycontent="center"
     >

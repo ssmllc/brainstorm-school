@@ -122,12 +122,15 @@ export const MiniCards = ({ width, results }: Props) => {
       sm_width="100%"
       md_width="70%"
       width="100%"
+      xl_width="100%"
       margin="0 auto"
+      xl_margin="50px auto 0"
       md_margin="50px auto"
       flexdirection="column"
     >
       <FlexBox
         width="90%"
+        xl_width="90%"
         md_width="100%"
         margin="25px auto"
         flexdirection="column"
@@ -140,8 +143,10 @@ export const MiniCards = ({ width, results }: Props) => {
           sm_width="70%"
           md_width="100%"
           width="70%"
+          xl_width="70%"
           flexdirection="column"
           margin="20px 0"
+          xl_margin="0 60px 50px"
           md_margin="20px 0"
         >
           <Header
@@ -152,11 +157,16 @@ export const MiniCards = ({ width, results }: Props) => {
         </FlexBox>
       </FlexBox>
 
-      <FlexBox sm_width="80%" md_width="100%" width="90%" flexwrap="wrap">
+      <FlexBox
+        sm_width="80%"
+        md_width="100%"
+        width="90%"
+        xl_width="82%"
+        flexwrap="wrap"
+      >
         {quarters.length > 0 &&
           quarters.map((quarter: any) => {
             const { _id, nextup, term, year, open, start } = quarter;
-
             const formatYear = new Date(year).getFullYear();
             const formatOpen = new Date(open).toDateString();
             const formatStart = new Date(start).toDateString();

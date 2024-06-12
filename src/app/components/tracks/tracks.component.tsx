@@ -244,8 +244,10 @@ const TracksGroup = ({ results }: Props) => {
         sm_width="100%"
         md_width="100%"
         width="60%"
+        xl_width="60%"
         justifycontent="center"
         margin="0 auto"
+        xl_margin="0 auto"
       >
         <Header
           level="2"
@@ -330,6 +332,7 @@ const TracksGroup = ({ results }: Props) => {
       </Tracks>
 
       <FlexBox
+        xl_width="100%"
         width="100%"
         sm_width="100%"
         flexdirection="column"
@@ -342,7 +345,7 @@ const TracksGroup = ({ results }: Props) => {
             padding="100px 0 50px"
           >
             Roadmap for{" "}
-            <span style={{ color: "var(--blue)", fontWeight: "bold" }}>
+            <span style={{ color: "var(--primary)", fontWeight: "bold" }}>
               {heading}
             </span>
           </TextBlock>
@@ -352,7 +355,9 @@ const TracksGroup = ({ results }: Props) => {
           flexwrap="wrap"
           gap="20px 10px"
           margin="0 auto"
+          xl_margin="0 auto"
           width="100%"
+          xl_width="100%"
           sm_width="100%"
           justifycontent="space-between"
         >

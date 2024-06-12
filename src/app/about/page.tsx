@@ -49,8 +49,8 @@ export default async function About() {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <FlexBox flexdirection="column" margin="50px auto">
-        <FlexBox width="100%">
+      <FlexBox flexdirection="column" margin="50px auto" xl_margin="100px auto">
+        <FlexBox width="100%" xl_width="100%">
           <RegistrationBlock
             primary={true}
             heading="We are Brainstorm School!"
@@ -62,10 +62,12 @@ export default async function About() {
         </FlexBox>
 
         <FlexBox
-          margin="20px auto"
-          flexdirection="column"
           alignitems="center"
+          flexdirection="column"
+          margin="20px auto"
+          xl_margin="20px auto"
           width="100%"
+          xl_width="100%"
         >
           <VideoContentSplit
             video="F2itysjblHA?si=w3ET9c6hsGqlTg7m"
@@ -86,8 +88,10 @@ export default async function About() {
             sm_width="80%"
             md_width="70%"
             width="90%"
+            xl_width="80%"
             flexdirection="column"
             margin="20px 0"
+            xl_margin="20px 0"
           >
             <Header level="2" text="What should I expect?" />
 
@@ -112,10 +116,12 @@ export default async function About() {
 
           <FlexBox
             gap="10px"
-            width="90%"
             md_width="70%"
-            margin="0 auto"
+            width="90%"
+            xl_width="80%"
             md_margin="0 auto"
+            margin="0 auto"
+            xl_margin="50px auto 0"
             flexwrap="wrap"
           >
             <Card
@@ -127,6 +133,7 @@ export default async function About() {
               heading="Courses"
               text="Classes are the most popular method of learning. A 10-week course focusing on a specific subject, or 5-8 week hyper-focused bootcamps. Lectures, demonstrations, homework, and feedback are important components that make classrooms an effective learning environment.  Class sizes range from ten to twenty students."
               width="100%"
+              xl_margin="10px 0 25px"
             />
 
             <Card
@@ -138,6 +145,7 @@ export default async function About() {
               heading="Workshops"
               text="Workshops are precisely designed to provide attendees with hands-on experience, experienced advice, and a supportive community—all of which are essential for perfecting your skills and advancing your career in the entertainment industry. In Person Workshop or Online Workshops."
               width="100%"
+              xl_margin="10px 0 25px"
             />
 
             <Card
@@ -149,6 +157,7 @@ export default async function About() {
               heading="Programs"
               text="A true mentoring experience! Our team of core mentors will take you through a 12-week intensive curriculum that is completely tailored to you! You will meet with your mentor weekly for private sessions to go over your learning plan and how you are progressing toward your goals.  The most intensive technique to improve your artistic, soft, and professional talents."
               width="100%"
+              xl_margin="10px 0 25px"
             />
 
             <Card
@@ -160,6 +169,7 @@ export default async function About() {
               heading="Flash Courses"
               text="A five-week cost-effective course designed to give focused information and practices. Classes are live and will only include demonstrations and lectures. No feedback will be given. Students are issued self-study assignments and encouraged to provide peer critique."
               width="100%"
+              xl_margin="10px 0 25px"
             />
           </FlexBox>
 
@@ -168,11 +178,13 @@ export default async function About() {
           <ImageGallery header="Gallery of Instructors Work" />
 
           <FlexBox
-            width="90%"
+            flexdirection="column"
             sm_width="80%"
             md_width="70%"
             margin="0 auto"
-            flexdirection="column"
+            xl_margin="0 auto"
+            width="90%"
+            xl_width="90%"
           >
             <FAQs results={result[0]} />
           </FlexBox>
@@ -189,15 +201,24 @@ export default async function About() {
 
         <FlexBox flexdirection="column">
           <FlexBox
-            width="90%"
+            margin="50px auto 25px"
+            xl_margin="50px auto 25px"
             sm_width="80%"
             md_width="70%"
-            margin="50px auto 25px"
+            width="90%"
+            xl_width="90%"
           >
             <Header level="2" text="Start Exploring Courses!" />
           </FlexBox>
 
-          <FlexBox width="90%" sm_width="80%" md_width="70%" margin="0 auto">
+          <FlexBox
+            sm_width="80%"
+            md_width="70%"
+            width="90%"
+            xl_width="90%"
+            margin="0 auto"
+            xl_margin="0 auto"
+          >
             <CardImageDetail
               base="/courses"
               slug="concept-art-games-and-film"
@@ -244,8 +265,6 @@ export default async function About() {
             />
           </FlexBox>
         </FlexBox>
-
-        {/* <SimilarCourses header="Start Exploring Courses!" /> */}
       </FlexBox>
     </>
   );

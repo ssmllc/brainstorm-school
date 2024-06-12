@@ -16,8 +16,9 @@ export default async function Scholarship() {
   return (
     <>
       <MediaBanner
-        header=""
-        subHeader=""
+        label="Programs"
+        header="Scholarship"
+        subHeader="Apply for our scholarship program"
         hero="false"
         theme="dark"
         background="/banner/banner-19.jpg"
@@ -25,11 +26,18 @@ export default async function Scholarship() {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <FlexBox flexdirection="column" margin="150px auto" alignitems="center">
+      <FlexBox
+        flexdirection="column"
+        xl_margin="100px auto"
+        margin="100px auto"
+        alignitems="center"
+      >
         <FlexBox
           margin="20px 60px 0"
+          xl_margin="20px 60px 0"
           sm_width="85%"
           width="70%"
+          xl_width="70%"
           flexdirection="column"
         >
           <Header
@@ -44,8 +52,10 @@ export default async function Scholarship() {
         </FlexBox>
         <FlexBox
           margin="20px 60px 0"
+          xl_margin="20px 60px 0"
           sm_width="85%"
           width="70%"
+          xl_width="70%"
           flexdirection="column"
         >
           <Header level="2" text="What is the Brainstorm School Scholarship?" />
@@ -58,8 +68,10 @@ export default async function Scholarship() {
 
         <FlexBox
           margin="20px 60px 0"
+          xl_margin="20px 60px 0"
           sm_width="85%"
           width="70%"
+          xl_width="70%"
           flexdirection="column"
         >
           <Header level="2" text="Online Brainstorm School Scholarship" />
@@ -72,8 +84,10 @@ export default async function Scholarship() {
 
         <FlexBox
           margin="20px 60px 0"
+          xl_margin="20px 60px 0"
           sm_width="85%"
           width="70%"
+          xl_width="70%"
           flexdirection="column"
         >
           <Header level="2" text="Best of term scholarships." />
@@ -90,71 +104,10 @@ export default async function Scholarship() {
           scale="xl"
           cta="Apply Now"
           ctaType="primary"
-          // https://docs.google.com/forms/d/e/1FAIpQLSeUlK815oUWyjMKRorqD6KMcESkx67JuJ3rrhq4toegr4HtYw/closedform
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeUlK815oUWyjMKRorqD6KMcESkx67JuJ3rrhq4toegr4HtYw/closedform"
         />
 
-        {/* <FlexBox
-          alignitems="center"
-          flexdirection="column"
-          margin="100px 60px 0"
-          sm_width="85%"
-          width="100%"
-        >
-          <Header
-            text="Check out these courses"
-            level="1"
-            margin="20px 0 10px"
-          />
-          <FlexBox
-            margin="20px 60px"
-            sm_width="100%"
-            width="100%"
-            alignitems="center"
-          >
-            <CardImageDetail
-              slug="workshops"
-              path="introduction-to-zbrush"
-              preview="/banner/banner-21.jpg"
-              courseTrack="2D - 3D Concept Design"
-              courseName="Introduction to ZBrush"
-              courseCode="ZB1"
-              courseTime="Fri 10am-1pm (PST)"
-              courseDuration="10-week Course"
-            />
-            <CardImageDetail
-              slug="workshops"
-              path="introduction-to-zbrush"
-              preview="/banner/banner-21.jpg"
-              courseTrack="2D - 3D Concept Design"
-              courseName="Introduction to ZBrush"
-              courseCode="ZB1"
-              courseTime="Fri 10am-1pm (PST)"
-              courseDuration="10-week Course"
-            />
-            <CardImageDetail
-              slug="workshops"
-              path="introduction-to-zbrush"
-              preview="/banner/banner-21.jpg"
-              courseTrack="2D - 3D Concept Design"
-              courseName="Introduction to ZBrush"
-              courseCode="ZB1"
-              courseTime="Fri 10am-1pm (PST)"
-              courseDuration="10-week Course"
-            />
-            <CardImageDetail
-              slug="workshops"
-              path="introduction-to-zbrush"
-              preview="/banner/banner-21.jpg"
-              courseTrack="2D - 3D Concept Design"
-              courseName="Introduction to ZBrush"
-              courseCode="ZB1"
-              courseTime="Fri 10am-1pm (PST)"
-              courseDuration="10-week Course"
-            />
-          </FlexBox>
-        </FlexBox> */}
-
-        <FlexBox width="70%">
+        <FlexBox xl_width="70%" width="70%">
           <FAQsV2 />
         </FlexBox>
       </FlexBox>

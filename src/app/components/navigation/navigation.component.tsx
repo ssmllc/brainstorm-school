@@ -478,7 +478,7 @@ const Navigation = () => {
         </Dropdown>
 
         <Dropdown>
-          <MenuItem href="">Programs</MenuItem>
+          <MenuItem href="/programs">Programs</MenuItem>
           <DropdownMenu>
             <DropdownMenuItem>
               <MenuItem href="/programs/mentorship">Mentorship</MenuItem>

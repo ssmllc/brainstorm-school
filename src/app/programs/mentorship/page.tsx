@@ -1,13 +1,8 @@
 import MediaBanner from "@/app/components/banner/media-banner.component";
-import ActionButton from "@/app/components/buttons/action-button.component";
-import CardImageDetail from "@/app/components/card/card-image-detail.component";
-import { CardImage } from "@/app/components/card/simple-card.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
 import Pill from "@/app/components/pill/pill.component";
 import Header from "@/app/components/text-block/header.component";
-import Typography from "@/app/components/text-block/typography.component";
 import AnchorCard from "@/app/components/tracks/track.component";
-import TracksGroup from "@/app/components/tracks/tracks.component";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -36,8 +31,9 @@ export default async function Mentorship() {
   return (
     <>
       <MediaBanner
-        header=""
-        subHeader=""
+        label="Programs"
+        header="Mentorship"
+        subHeader="One-on-One Mentorship"
         hero="false"
         theme="dark"
         background="/banner/banner-19.jpg"
@@ -45,14 +41,21 @@ export default async function Mentorship() {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
+      <FlexBox
+        flexdirection="column"
+        margin="100px auto"
+        xl_margin="100px auto"
+        alignitems="center"
+      >
         <FlexBox
           margin="20px 60px 0"
+          xl_margin="100px auto 0"
           md_margin="75px 60px 0"
           sm_margin="25px 60px 0"
           sm_width="85%"
-          width="70%"
           md_width="70%"
+          width="70%"
+          xl_width="70%"
           flexdirection="column"
         >
           <Header
@@ -95,9 +98,11 @@ export default async function Mentorship() {
         <FlexBox
           sm_margin="40px 60px 20px"
           margin="20px 60px"
+          xl_margin="20px 60px"
           sm_width="90%"
           md_width="70%"
           width="70%"
+          xl_width="70%"
         >
           <Header
             level="2"
@@ -113,9 +118,11 @@ export default async function Mentorship() {
           sm_margin="40px 60px 20px"
           md_margin="40px 60px 20px"
           margin="0 60px"
+          xl_margin="0 60px"
           sm_width="90%"
           md_width="70%"
           width="70%"
+          xl_width="70%"
         >
           <Pill
             background="rgba(255, 255, 255, .10)"
@@ -139,11 +146,13 @@ export default async function Mentorship() {
 
         <FlexBox
           margin="20px 60px 0"
+          xl_margin="20px 60px 0"
           sm_margin="20px 25px"
           sm_width="85%"
           md_width="70%"
           flexwrap="wrap"
           width="70%"
+          xl_width="70%"
         >
           <AnchorCard
             label="Foundation Mentorship"
@@ -169,11 +178,13 @@ export default async function Mentorship() {
 
         <FlexBox
           margin="20px 60px 0"
+          xl_margin="20px 60px 0"
           sm_margin="20px 25px"
           sm_width="85%"
           md_width="70%"
           flexwrap="wrap"
           width="70%"
+          xl_width="70%"
         >
           <AnchorCard
             label="Mentorship Online"
@@ -199,11 +210,13 @@ export default async function Mentorship() {
 
         <FlexBox
           margin="20px 60px 10px"
+          xl_margin="20px 60px 10px"
           sm_margin="20px 25px"
           sm_width="85%"
           md_width="70%"
           flexwrap="wrap"
           width="70%"
+          xl_width="70%"
         >
           <AnchorCard
             label="Advanced Mentorship"
@@ -216,67 +229,6 @@ export default async function Mentorship() {
             poster="https://cdn.sanity.io/images/y8rjsgga/production/edafb39d7261d2f9492ac1728b2bd7a4c4725086-3885x1959.jpg"
           />
         </FlexBox>
-
-        {/* <FlexBox
-          alignitems="center"
-          flexdirection="column"
-          margin="100px 60px 0"
-          sm_width="85%"
-          width="100%"
-        >
-          <Header
-            text="Check out these courses"
-            level="1"
-            margin="20px 0 10px"
-          />
-          <FlexBox
-            margin="20px 60px"
-            sm_width="100%"
-            width="100%"
-            alignitems="center"
-          >
-            <CardImageDetail
-              slug="workshops"
-              path="introduction-to-zbrush"
-              preview="/banner/banner-21.jpg"
-              courseTrack="2D - 3D Concept Design"
-              courseName="Introduction to ZBrush"
-              courseCode="ZB1"
-              courseTime="Fri 10am-1pm (PST)"
-              courseDuration="10-week Course"
-            />
-            <CardImageDetail
-              slug="workshops"
-              path="introduction-to-zbrush"
-              preview="/banner/banner-21.jpg"
-              courseTrack="2D - 3D Concept Design"
-              courseName="Introduction to ZBrush"
-              courseCode="ZB1"
-              courseTime="Fri 10am-1pm (PST)"
-              courseDuration="10-week Course"
-            />
-            <CardImageDetail
-              slug="workshops"
-              path="introduction-to-zbrush"
-              preview="/banner/banner-21.jpg"
-              courseTrack="2D - 3D Concept Design"
-              courseName="Introduction to ZBrush"
-              courseCode="ZB1"
-              courseTime="Fri 10am-1pm (PST)"
-              courseDuration="10-week Course"
-            />
-            <CardImageDetail
-              slug="workshops"
-              path="introduction-to-zbrush"
-              preview="/banner/banner-21.jpg"
-              courseTrack="2D - 3D Concept Design"
-              courseName="Introduction to ZBrush"
-              courseCode="ZB1"
-              courseTime="Fri 10am-1pm (PST)"
-              courseDuration="10-week Course"
-            />
-          </FlexBox>
-        </FlexBox> */}
       </FlexBox>
     </>
   );

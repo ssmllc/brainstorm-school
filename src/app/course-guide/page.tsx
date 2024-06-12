@@ -44,15 +44,19 @@ export default async function Page() {
 
       <FlexBox
         margin="100px auto"
+        xl_margin="100px auto"
         flexdirection="column"
         alignitems="center"
         width="100%"
+        xl_width="100%"
       >
         <FlexBox
           flexdirection="column"
           width="35%"
+          xl_width="35%"
           sm_width="70%"
           margin="0 auto"
+          xl_margin="0 auto"
           alignitems="center"
           justifycontent="center"
         >
@@ -69,8 +73,10 @@ export default async function Page() {
         <FlexBox
           flexdirection="column"
           margin="20px 0"
+          xl_margin="20px 0"
           sm_width="80%"
           width="80%"
+          xl_width="80%"
         >
           <TracksGroup results={result} />
 

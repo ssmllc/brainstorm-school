@@ -45,11 +45,11 @@ const ContentWrapper = styled.div<contentProps>`
   }
 
   @media (min-width: 1400px) {
-    max-width: 1250px;
+    max-width: 1150px;
   }
 
   @media (min-width: 1900px) {
-    max-width: 1150px;
+    max-width: 1100px;
   }
 `;
 

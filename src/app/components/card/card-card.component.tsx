@@ -24,7 +24,7 @@ const Container = styled.div<containerProps>`
     $background ? $background : "var(--off-black)"};
   box-shadow: ${({ boxshadow }) =>
     boxshadow ? boxshadow : "0 0 15px rgba(0, 0, 0, 0.5)"};
-  border-radius: 20px;
+  border-radius: 10px;
   border: ${({ $border }) => $border};
   display: flex;
   flex-direction: ${({ stacked }) => (stacked === "true" ? "column" : "row")};
@@ -98,6 +98,10 @@ type Props = {
   width?: string;
   sm_padding?: string;
   md_padding?: string;
+  sm_margin?: string;
+  md_margin?: string;
+  margin?: string;
+  xl_margin?: string;
   padding?: string;
   icon_width?: string;
   icon_height?: string;
@@ -117,6 +121,10 @@ export const Card = ({
   text,
   sm_padding,
   md_padding,
+  sm_margin,
+  md_margin,
+  margin,
+  xl_margin,
   padding,
   width,
   icon_width,
@@ -133,6 +141,10 @@ export const Card = ({
               borderradius={borderradius}
               width={icon_width}
               height={icon_height}
+              sm_margin={sm_margin}
+              md_margin={md_margin}
+              margin={margin}
+              xl_margin={xl_margin}
             />
           )}
           {heading && <CardDetails heading={heading} subHeading={subHeading} />}

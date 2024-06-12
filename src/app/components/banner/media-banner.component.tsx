@@ -55,10 +55,15 @@ const Banner = styled.div<bannerProps>`
   }
 
   &::after {
-    background: ${({ $hero }) =>
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 25%,
+      var(--off-black) 100%
+    );
+    /* background: ${({ $hero }) =>
       $hero === "false"
         ? "linear-gradient(to bottom, var(--off-black) 0%, rgba(0, 0, 0, 0) 100%)"
-        : "linear-gradient(to bottom, var(--off-black) 15%, rgba(0, 0, 0, 0) 80%, var(--off-black) 100%)"};
+        : "linear-gradient(to bottom, var(--off-black) 15%, rgba(0, 0, 0, 0) 80%, var(--off-black) 100%)"}; */
     content: "";
     display: block;
     height: 100%;

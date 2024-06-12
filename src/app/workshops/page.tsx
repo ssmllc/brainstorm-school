@@ -32,9 +32,11 @@ export default async function Workshops() {
           margin="20px 0"
           sm_margin="25px 0"
           md_margin="75px 0"
+          xl_margin="100px 0 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
+          xl_width="70%"
         >
           <Header
             level="1"
@@ -70,9 +72,11 @@ export default async function Workshops() {
         <FlexBox
           flexdirection="column"
           margin="20px 0"
+          xl_margin="25px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
+          xl_width="70%"
         >
           <Header level="2" text="What You'll Learn" margin="0 0 25px 0" />
 
@@ -88,9 +92,11 @@ export default async function Workshops() {
         <FlexBox
           flexdirection="column"
           margin="20px 0"
+          xl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
+          xl_width="70%"
         >
           <Header level="2" text="Character and Environment Design" />
 
@@ -104,9 +110,11 @@ export default async function Workshops() {
         <FlexBox
           flexdirection="column"
           margin="20px 0"
+          xl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
+          xl_width="70%"
         >
           <Header level="2" text="Advanced Digital Painting Techniques" />
 
@@ -123,6 +131,8 @@ export default async function Workshops() {
           sm_width="80%"
           md_width="70%"
           width="70%"
+          xl_margin="20px 0"
+          xl_width="70%"
         >
           <Header level="2" text="Visual Storytelling and Narrative Art" />
 
@@ -139,6 +149,8 @@ export default async function Workshops() {
           sm_width="80%"
           md_width="70%"
           width="70%"
+          xl_margin="20px 0"
+          xl_width="70%"
         >
           <Header
             level="2"
@@ -154,7 +166,7 @@ export default async function Workshops() {
 
         <RegistrationBlock
           primary={false}
-          heading="Are you ready to take the next step?"
+          heading="Ready to take the next step?"
           scale="xl"
           cta="Register Today"
           ctaType="primary"
@@ -166,6 +178,8 @@ export default async function Workshops() {
           sm_width="80%"
           md_width="70%"
           width="70%"
+          xl_margin="20px 0"
+          xl_width="70%"
         >
           <Header
             level="4"
@@ -180,7 +194,7 @@ export default async function Workshops() {
           />
         </FlexBox>
 
-        <FlexBox flexdirection="column" width="70%">
+        <FlexBox flexdirection="column" width="70%" xl_width="70%">
           <FlexBox
             flexdirection="column"
             sm_width="80%"
@@ -188,6 +202,9 @@ export default async function Workshops() {
             margin="25px 0"
             md_margin="25px auto"
             sm_margin="25px auto"
+            xl_margin="20px 0"
+            width="70%"
+            xl_width="70%"
           >
             <Header level="3" text="Future Workshops" />
           </FlexBox>
@@ -197,6 +214,8 @@ export default async function Workshops() {
             sm_margin="20px 25px"
             sm_width="85%"
             width="100%"
+            xl_margin="20px 0"
+            xl_width="100%"
           >
             <AnchorCard
               label="Mentorship Online"
@@ -221,13 +240,16 @@ export default async function Workshops() {
           </FlexBox>
         </FlexBox>
 
-        <FlexBox flexdirection="column" width="70%">
+        <FlexBox flexdirection="column" width="70%" xl_width="70%">
           <FlexBox
             flexdirection="column"
             sm_width="80%"
             md_width="70%"
             margin="25px 0"
             md_margin="25px auto"
+            xl_margin="20px 0"
+            width="70%"
+            xl_width="70%"
           >
             <Header level="3" text="Previous Workshops" />
           </FlexBox>
@@ -237,6 +259,8 @@ export default async function Workshops() {
             sm_margin="20px 25px"
             sm_width="85%"
             width="100%"
+            xl_margin="20px 0"
+            xl_width="100%"
           >
             <AnchorCard
               label="Mentorship Online"
