@@ -22,11 +22,18 @@ export default async function ComplianceLine() {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <FlexBox flexdirection="column" margin="150px auto" alignitems="center">
+      <FlexBox
+        flexdirection="column"
+        margin="150px auto"
+        xl_margin="150px auto"
+        alignitems="center"
+      >
         <FlexBox
           margin="20px 60px 0"
+          xl_margin="20px 60px 0"
           sm_width="85%"
           width="70%"
+          xl_width="70%"
           flexdirection="column"
         >
           <Header level="1" text="Compliance Line" />
@@ -36,11 +43,14 @@ export default async function ComplianceLine() {
             fontSize="15px"
           />
         </FlexBox>
+
         <FlexBox
+          flexdirection="column"
           margin="20px 60px 0"
+          xl_margin="20px 60px 0"
           sm_width="85%"
           width="70%"
-          flexdirection="column"
+          xl_width="70%"
         >
           <Header
             level="4"
@@ -56,8 +66,10 @@ export default async function ComplianceLine() {
 
         <FlexBox
           margin="20px 60px 0"
+          xl_margin="20px 60px 0"
           sm_width="85%"
           width="70%"
+          xl_width="70%"
           flexdirection="column"
         >
           <Header level="2" text="We value diversity" />
@@ -69,10 +81,12 @@ export default async function ComplianceLine() {
         </FlexBox>
 
         <FlexBox
+          flexdirection="column"
           margin="20px 60px 0"
+          xl_margin="20px 60px 0"
           sm_width="85%"
           width="70%"
-          flexdirection="column"
+          xl_width="70%"
         >
           <Header level="4" text="The link is down below." fontSize="15px" />
         </FlexBox>

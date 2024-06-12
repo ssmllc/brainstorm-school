@@ -72,12 +72,20 @@ const Dropdown = styled.li`
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+    transition: all 0.35s ease-out;
     width: 0;
   }
 
   &:hover {
-    ul {
+    .bs-dropdown-menu {
       display: block;
+    }
+
+    &::after {
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 7px solid var(--primary);
+      content: "";
     }
   }
 `;
@@ -447,7 +455,7 @@ const Navigation = () => {
 
         <Dropdown>
           <MenuItem href="/courses">Courses</MenuItem>
-          <DropdownMenu>
+          <DropdownMenu className="bs-dropdown-menu">
             {courses.length > 0 &&
               courses.map((course: Sections) => (
                 <DropdownMenuItem key={course.slug.current}>
@@ -465,7 +473,7 @@ const Navigation = () => {
 
         <Dropdown>
           <MenuItem href="/workshops">Workshops</MenuItem>
-          <DropdownMenu>
+          <DropdownMenu className="bs-dropdown-menu">
             <DropdownMenuItem>
               <MenuItem href="/workshops/open-canvas">Open Canvas</MenuItem>
             </DropdownMenuItem>
@@ -479,7 +487,7 @@ const Navigation = () => {
 
         <Dropdown>
           <MenuItem href="/programs">Programs</MenuItem>
-          <DropdownMenu>
+          <DropdownMenu className="bs-dropdown-menu">
             <DropdownMenuItem>
               <MenuItem href="/programs/mentorship">Mentorship</MenuItem>
             </DropdownMenuItem>
@@ -491,7 +499,7 @@ const Navigation = () => {
 
         <Dropdown>
           <MenuItem href="/about">About</MenuItem>
-          <DropdownMenu>
+          <DropdownMenu className="bs-dropdown-menu">
             <DropdownMenuItem>
               <MenuItem href="/about/compliance-line">Compliance Line</MenuItem>
             </DropdownMenuItem>
@@ -504,7 +512,7 @@ const Navigation = () => {
 
         <Dropdown>
           <MenuItem href="/gallery">Gallery</MenuItem>
-          <DropdownMenu>
+          <DropdownMenu className="bs-dropdown-menu">
             <DropdownMenuItem>
               <MenuItem href="/gallery/students">Students</MenuItem>
             </DropdownMenuItem>
