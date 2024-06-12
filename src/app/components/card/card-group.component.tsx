@@ -106,9 +106,11 @@ const CardGroup = ({
         justifycontent="center"
         sm_margin="25px auto"
         md_margin="0 auto 50px"
+        xl_margin="0 auto 50px"
         margin="0 auto 40px"
         sm_width="80%"
         width="70%"
+        xl_width="70%"
       >
         <Header
           level="2"

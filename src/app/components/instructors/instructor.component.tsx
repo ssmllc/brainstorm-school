@@ -16,7 +16,7 @@ const InstructorWrapper = styled.div`
     flex-direction: column;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1024px) {
     flex-direction: row;
   }
 `;
@@ -36,7 +36,8 @@ const Instructor = styled.div`
     width: 70%;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1024px) {
+    padding: 0;
     width: 80%;
   }
 `;
@@ -46,18 +47,25 @@ interface Props {
   profession: string;
   bio: string | null;
   registration?: string;
+  icon: string;
 }
 
-const InstructorBio = ({ title, profession, bio, registration }: Props) => {
+const InstructorBio = ({
+  title,
+  profession,
+  bio,
+  registration,
+  icon,
+}: Props) => {
   return (
     <Instructor>
       <InstructorWrapper>
-        <FlexBox sm_width="100%" md_width="100%" width="30%">
+        <FlexBox sm_width="100%" md_width="100%" width="30%" xl_width="30%">
           <Card
             background="0"
             boxshadow="none"
             stacked="false"
-            icon="/instructors/ico-image.png"
+            icon={icon}
             heading={title}
             subHeading={profession}
             padding="0 20px"
@@ -68,7 +76,8 @@ const InstructorBio = ({ title, profession, bio, registration }: Props) => {
         <FlexBox
           sm_width="100%"
           md_width="100%"
-          width="100%"
+          width="70%"
+          xl_width="70%"
           sm_margin="20px 0"
         >
           <DecipherText description={bio} margin="0" />

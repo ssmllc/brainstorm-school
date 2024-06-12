@@ -53,6 +53,7 @@ const RenderCourses = ({ selectedCourses, noheading, width }: Props) => {
                         flexdirection="row"
                         sm_margin="50px 0"
                         margin="50px 0"
+                        xl_margin="50px 0"
                       >
                         <IconLocation width="28px" height="28px" />{" "}
                         <Header level="2" key={index} text={section} />

@@ -60,8 +60,10 @@ export default async function Page({ params }: { params: { id: string } }) {
         <FlexBox
           flexdirection="column"
           margin="20px 0"
+          xl_margin="100px 0 50px"
           sm_width="80%"
           width="70%"
+          xl_width="70%"
         >
           <DecipherText results={selectedResults} />
         </FlexBox>
@@ -70,8 +72,10 @@ export default async function Page({ params }: { params: { id: string } }) {
       <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
         <FlexBox
           margin="25px 60px 0"
+          xl_margin="25px 60px 0"
           sm_width="85%"
           width="70%"
+          xl_width="70%"
           flexdirection="column"
         >
           <Header level="3" text="Featured Course" />
@@ -80,15 +84,17 @@ export default async function Page({ params }: { params: { id: string } }) {
         <FeaturedCard
           poster="/banner/banner-5.jpg"
           superheading="Rhythm & Structure"
-          info="Lorem ipsum dolor sit amet"
+          info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eligendi, aliquam rem quidem fugit culpa molestiae neque incidunt distinctio. Distinctio tenetur dolorem nihil deleniti eos iure rerum, minus rem reiciendis."
           heading="James Paick"
           margin="25px 0"
         />
 
         <FlexBox
           margin="25px 60px 0"
+          xl_margin="25px 60px 0"
           sm_width="85%"
           width="70%"
+          xl_width="70%"
           flexdirection="column"
         >
           <RenderCourses
@@ -100,8 +106,10 @@ export default async function Page({ params }: { params: { id: string } }) {
 
         <FlexBox
           margin="25px 60px 0"
+          xl_margin="25px 60px 0"
           sm_width="85%"
           width="70%"
+          xl_width="70%"
           flexdirection="column"
         >
           <FAQs results={selectedResults} />
@@ -112,18 +120,8 @@ export default async function Page({ params }: { params: { id: string } }) {
           heading="Not what you are looking for?"
           scale="xl"
           cta="View All Courses"
+          ctaType="primary"
         />
-      </FlexBox>
-
-      <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
-        <FlexBox
-          flexdirection="column"
-          margin="20px 0"
-          sm_width="80%"
-          width="70%"
-        >
-          <FAQs results={selectedCourses} />
-        </FlexBox>
       </FlexBox>
     </>
   );

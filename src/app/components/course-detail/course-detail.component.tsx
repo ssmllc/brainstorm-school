@@ -15,7 +15,7 @@ const ListItem = styled.div<listItemProps>`
   color: ${({ color }) => (color ? `${color}` : "var(--white-50)")};
   padding: 10px 0;
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1024px) {
     font-size: 15px;
   }
 `;

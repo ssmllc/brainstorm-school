@@ -122,7 +122,6 @@ const BannerWrapper = styled.div`
   }
 
   @media (min-width: 1400px) {
-    align-items: baseline;
     flex-direction: row;
   }
 `;

@@ -129,9 +129,14 @@ const Wrapper = styled("div")`
     width: 80%;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
+    width: 85%;
+  }
+
+  @media (min-width: 1400px) {
     flex-direction: row;
     padding: 40px 0;
+    justify-content: space-between;
     width: 65%;
   }
 `;
@@ -140,9 +145,9 @@ const CardWrapper = styled("div")`
   padding: 25px 5px;
   width: 100%;
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     padding: 25px 25px;
-    width: 60%;
+    width: 55%;
   }
 `;
 

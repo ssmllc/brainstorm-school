@@ -30,12 +30,7 @@ const Content = styled.div<contentProps>`
 
   @media (min-width: 1400px) {
     margin: 0 auto;
-    width: 90%;
-  }
-
-  @media (min-width: 1900px) {
-    margin: 0 auto;
-    width: 40%;
+    width: 50%;
   }
 
   h1,

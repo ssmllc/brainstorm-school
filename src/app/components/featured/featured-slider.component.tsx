@@ -184,8 +184,10 @@ const FeaturedSlider = ({ children, heading, textalign }: Props) => {
           md_width="70%"
           sm_margin="50px auto"
           md_margin="0 auto 50px"
+          xl_margin="0 auto 50px"
           margin="50px auto"
           width="60%"
+          xl_width="60%"
         >
           <Header level="2" text={heading} textalign={textalign} />
         </FlexBox>

@@ -108,7 +108,9 @@ export default async function Page({
             alignitems="center"
             md_width="90%"
             md_margin="50px auto 0px"
-            width="80%"
+            margin="50px auto 0"
+            width="90%"
+            xl_width="90%"
           >
             <TextHeaderBlock fontSize="36px" fontWeight="bold">
               Gallery
@@ -120,6 +122,7 @@ export default async function Page({
             sm_width="80%"
             md_width="80%"
             width="80%"
+            xl_width="70%"
           >
             <Carousel>
               <CardImage
@@ -168,7 +171,9 @@ export default async function Page({
           alignitems="center"
           md_width="90%"
           md_margin="50px auto 0px"
-          width="80%"
+          margin="25px auto 0"
+          width="90%"
+          xl_width="90%"
         >
           <TextHeaderBlock fontSize="36px" fontWeight="bold">
             Meet Your Instructor
@@ -180,10 +185,12 @@ export default async function Page({
               title,
               profession,
               bio,
+              headshot,
             }: {
               bio: string | null;
               title: string;
               profession: string;
+              headshot: string;
             },
             index: number
           ) => {
@@ -194,11 +201,13 @@ export default async function Page({
                 profession={profession}
                 bio={bio}
                 registration={registration}
+                icon={headshot}
               />
             );
           }
         )}
       </FlexBox>
+
       <SimilarCourses header="View Similar Courses" />
     </>
   );

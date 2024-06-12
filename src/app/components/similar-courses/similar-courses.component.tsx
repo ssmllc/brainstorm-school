@@ -18,11 +18,13 @@ const SimilarCourses = ({ header }: Props) => {
   return (
     <Wrapper>
       <FlexBox
-        margin="25px auto"
+        xl_margin="50px auto"
+        margin="50px auto"
         sm_margin="25px auto"
         md_margin="30px auto"
         justifycontent="center"
         width="100%"
+        xl_width="100%"
         sm_width="70%"
         md_width="70%"
       >
@@ -31,6 +33,7 @@ const SimilarCourses = ({ header }: Props) => {
 
       <FlexBox
         margin="50px auto"
+        xl_width="100%"
         width="100%"
         sm_width="70%"
         md_width="75%"
@@ -70,13 +73,26 @@ const SimilarCourses = ({ header }: Props) => {
           courseTime="Fri 10am-1pm (PST)"
           courseDuration="10-week Course"
         />
+        {/* <CardImageDetail
+          base="/courses"
+          slug="2d-3d-concept-design"
+          path="introduction-to-zbrush"
+          preview="/banner/banner-21.jpg"
+          courseTrack="2D - 3D Concept Design"
+          courseName="Introduction to ZBrush"
+          courseCode="ZB1"
+          courseTime="Fri 10am-1pm (PST)"
+          courseDuration="10-week Course"
+        /> */}
       </FlexBox>
 
       <FlexBox
-        margin="50px auto"
-        width="70%"
-        sm_width="70%"
         justifycontent="center"
+        margin="50px auto"
+        xl_margin="50px auto"
+        sm_width="70%"
+        width="70%"
+        xl_width="70%"
       >
         <Header
           href="/courses"

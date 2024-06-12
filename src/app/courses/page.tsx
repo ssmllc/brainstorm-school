@@ -29,15 +29,18 @@ export default async function Courses() {
       <FlexBox
         flexdirection="column"
         sm_margin="50px auto 50px"
+        xl_margin="100px auto 50px"
         margin="100px auto 0"
         alignitems="center"
       >
         <FlexBox
           flexdirection="column"
           margin="20px 0"
+          xl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
+          xl_width="70%"
         >
           <Header
             level="1"
@@ -74,6 +77,7 @@ export default async function Courses() {
           margin="25px auto 0"
           sm_width="80%"
           md_width="70%"
+          xl_width="70%"
           width="70%"
           flexdirection="column"
         >
@@ -95,6 +99,7 @@ export default async function Courses() {
           flexdirection="column"
           sm_width="80%"
           md_width="80%"
+          xl_width="70%"
           width="70%"
         >
           <RenderCourses width="33%" />
@@ -107,6 +112,7 @@ export default async function Courses() {
           margin="20px 0"
           sm_width="80%"
           width="70%"
+          xl_width="70%"
         >
           <CoursesFAQs />
         </FlexBox>

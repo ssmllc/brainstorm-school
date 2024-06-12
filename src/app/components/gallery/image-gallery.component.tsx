@@ -693,8 +693,10 @@ const ImageGallery = ({ header }: Props) => {
       <FlexBox
         sm_width="80%"
         width="70%"
+        xl_width="70%"
         sm_margin="50px auto"
         margin="50px auto"
+        xl_margin="50px auto"
         md_margin="50px auto"
         flexdirection="column"
       >
