@@ -1,14 +1,11 @@
-import MediaBanner from "@/app/components/banner/media-banner.component";
+import ActionButton from "@/app/components/buttons/action-button.component";
 import CardImageDetail from "@/app/components/card/card-image-detail.component";
-import FeaturedCard from "@/app/components/card/featured-card.component";
-import FAQs from "@/app/components/text-block/faqs.component";
+import { CardImage } from "@/app/components/card/simple-card.component";
+import FlexBox from "@/app/components/layout/flexbox.component";
+import Pill from "@/app/components/pill/pill.component";
+import Header from "@/app/components/text-block/header.component";
 import Typography from "@/app/components/text-block/typography.component";
 import type { Metadata } from "next";
-import FlexBox from "../../../components/layout/flexbox.component";
-import { CardImage } from "../../../components/card/simple-card.component";
-import Pill from "../../../components/pill/pill.component";
-import Header from "../../../components/text-block/header.component";
-import ActionButton from "../../../components/buttons/action-button.component";
 
 export const metadata: Metadata = {
   title: "Brainstorm Blog",

@@ -2,7 +2,6 @@ import MediaBanner from "@/app/components/banner/media-banner.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
 import RegistrationBlock from "@/app/components/registration/registration-block.component";
 import FAQsV2 from "@/app/components/text-block/faqs-v2.component";
-import FAQs from "@/app/components/text-block/faqs.component";
 import Header from "@/app/components/text-block/header.component";
 import type { Metadata } from "next";
 
