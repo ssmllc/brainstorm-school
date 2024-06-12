@@ -534,6 +534,9 @@ const Navigation = () => {
         <Dropdown>
           <MenuItem href="/courses">Courses</MenuItem>
           <DropdownMenu className="bs-dropdown-menu">
+            <DropdownMenuItem>
+              <MenuItem href="/courses">All Courses</MenuItem>
+            </DropdownMenuItem>
             {courses.length > 0 &&
               courses.map((course: Sections) => (
                 <DropdownMenuItem key={course.slug.current}>
@@ -553,6 +556,9 @@ const Navigation = () => {
           <MenuItem href="/workshops">Workshops</MenuItem>
           <DropdownMenu className="bs-dropdown-menu">
             <DropdownMenuItem>
+              <MenuItem href="/workshops">Online Workshops</MenuItem>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
               <MenuItem href="/workshops/open-canvas">Open Canvas</MenuItem>
             </DropdownMenuItem>
             <DropdownMenuItem>
@@ -563,17 +569,9 @@ const Navigation = () => {
           </DropdownMenu>
         </Dropdown>
 
-        <Dropdown>
-          <MenuItem href="/programs">Programs</MenuItem>
-          <DropdownMenu className="bs-dropdown-menu">
-            <DropdownMenuItem>
-              <MenuItem href="/programs/mentorship">Mentorship</MenuItem>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <MenuItem href="/programs/scholarship">Scholarship</MenuItem>
-            </DropdownMenuItem>
-          </DropdownMenu>
-        </Dropdown>
+        <li>
+          <MenuItem href="/mentorship">Mentorship</MenuItem>
+        </li>
 
         <Dropdown>
           <MenuItem href="/about">About</MenuItem>
@@ -581,7 +579,9 @@ const Navigation = () => {
             <DropdownMenuItem>
               <MenuItem href="/about/compliance-line">Compliance Line</MenuItem>
             </DropdownMenuItem>
-
+            <DropdownMenuItem>
+              <MenuItem href="/about/scholarship">Scholarship</MenuItem>
+            </DropdownMenuItem>
             <DropdownMenuItem>
               <MenuItem href="/about/faqs">FAQs</MenuItem>
             </DropdownMenuItem>
@@ -609,18 +609,16 @@ const Navigation = () => {
           <MenuItem href="/blog">Blog</MenuItem>
         </li>
 
-        <li>
+        {/* <li>
           <MenuItem href="" onClick={toggleSearch}>
             <IconSearch width="14px" height="14px" />
           </MenuItem>
-        </li>
+        </li> */}
 
         <li>
           <CallToAction href="/registration">Register</CallToAction>
         </li>
       </NavigationMenu>
-
-      <SearchCourses courses={courses} isActive={showSearch} />
     </NavigationBar>
   );
 };
