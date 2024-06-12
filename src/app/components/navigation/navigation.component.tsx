@@ -7,6 +7,9 @@ import { useContext, useState } from "react";
 import { Sections } from "@/app/types/types";
 import BrainstormLogo from "../Logo/logo.component";
 import { IconSearch } from "../icons/icon-search.component";
+import RenderCourses from "@/app/courses/components/render-courses.component";
+import FlexBox from "../layout/flexbox.component";
+import Header from "../text-block/header.component";
 
 const NavigationBar = styled.div`
   background: var(--off-black-90);
@@ -295,10 +298,80 @@ const CallToAction = styled(Link)`
   text-transform: uppercase;
 `;
 
+const SearchView = styled.div`
+  background: var(--black);
+  height: 0;
+  overflow: hidden;
+  transition: all 0.35s ease-out;
+  left: 0;
+  opacity: 0;
+  top: 70px;
+  position: absolute;
+  width: 100vw;
+
+  &[data-active="true"] {
+    height: 100vh;
+    overflow-y: auto;
+    opacity: 1;
+  }
+`;
+
+const SearchCourses = ({
+  courses,
+  isActive,
+}: {
+  courses: any;
+  isActive: boolean;
+}) => {
+  return (
+    <SearchView data-active={isActive}>
+      <FlexBox flexdirection="column" margin="0 auto" alignitems="center">
+        <FlexBox
+          flexdirection="column"
+          sm_width="80%"
+          md_width="80%"
+          xl_width="70%"
+          xl_margin="100px 0"
+          width="70%"
+        >
+          <FlexBox
+            flexdirection="column"
+            sm_width="50%"
+            md_width="50%"
+            xl_width="50%"
+            width="50%"
+            justifycontent="center"
+          >
+            <Header
+              level="4"
+              text="Search"
+              fontSize="32px"
+              textalign="center"
+            />
+            <input
+              type="text"
+              style={{
+                background: "var(--light-black)",
+                border: "0",
+                color: "var(--white)",
+                fontSize: "24px",
+                padding: "15px 20px",
+                borderRadius: "30px",
+              }}
+            />
+          </FlexBox>
+          <RenderCourses selectedCourses={courses} width="33%" />
+        </FlexBox>
+      </FlexBox>
+    </SearchView>
+  );
+};
+
 const Navigation = () => {
   const { courses }: any = useContext(BrainstormContext);
   const [selected, setSelected] = useState<number | null>(null);
   const [active, setActive] = useState<boolean>(false);
+  const [showSearch, setShowSearch] = useState<boolean>(false);
 
   const toggleMobileMenu = (selectedIndex: number) => {
     if (selected === selectedIndex) {
@@ -306,6 +379,11 @@ const Navigation = () => {
     }
 
     setSelected(selectedIndex);
+  };
+
+  const toggleSearch = (evt: any) => {
+    evt.preventDefault();
+    setShowSearch(!showSearch);
   };
 
   return (
@@ -532,7 +610,7 @@ const Navigation = () => {
         </li>
 
         <li>
-          <MenuItem href="/search">
+          <MenuItem href="" onClick={toggleSearch}>
             <IconSearch width="14px" height="14px" />
           </MenuItem>
         </li>
@@ -541,6 +619,8 @@ const Navigation = () => {
           <CallToAction href="/registration">Register</CallToAction>
         </li>
       </NavigationMenu>
+
+      <SearchCourses courses={courses} isActive={showSearch} />
     </NavigationBar>
   );
 };
