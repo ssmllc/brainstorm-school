@@ -1,10 +1,11 @@
 "use client";
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { BrainstormContext } from "@/app/context/context-provider";
 import CardImageDetail from "@/app/components/card/card-image-detail.component";
 import Container from "@/app/components/layout/container.component";
 import { Course, Sections } from "@/app/types/types";
+import SelectLevel from "@/app/components/select-level/select-level.component";
 
 interface Props {
   selectedCourses?: Sections[];
@@ -14,13 +15,18 @@ interface Props {
 
 const RenderCourses = ({ selectedCourses, width }: Props) => {
   const { courses, error }: any = useContext(BrainstormContext);
+  const [levelOfExpertise, setLevelOfExpertise] = useState<string>("");
+
   const courseList =
     selectedCourses && selectedCourses.length > 0 ? selectedCourses : courses;
+
+  console.log("courseList", courseList);
 
   const base = selectedCourses && selectedCourses.length > 0 ? "" : "courses";
 
   return (
-    <>
+    <div>
+      <SelectLevel setLevelOfExpertise={setLevelOfExpertise} />
       {error ? (
         <p>{error} : Error Loading Courses</p>
       ) : (
@@ -30,12 +36,10 @@ const RenderCourses = ({ selectedCourses, width }: Props) => {
               {sections?.map(
                 ({
                   category,
-                  section,
                   courses,
                   _id,
                 }: {
                   category: string;
-                  section: string;
                   _id: any;
                   courses: Course[];
                 }) => (
@@ -49,7 +53,7 @@ const RenderCourses = ({ selectedCourses, width }: Props) => {
                       margin="50px auto"
                     >
                       {courses?.map((course: Course) => {
-                        // console.log("course", course.schedule);
+                        // console.log("courses", courses);
                         return (
                           <CardImageDetail
                             key={course._id}
@@ -78,7 +82,7 @@ const RenderCourses = ({ selectedCourses, width }: Props) => {
           );
         })
       )}
-    </>
+    </div>
   );
 };
 

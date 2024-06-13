@@ -1,6 +1,5 @@
 "use client";
 
-import { Results } from "@/app/types/types";
 import FlexBox from "../layout/flexbox.component";
 import Header from "../text-block/header.component";
 

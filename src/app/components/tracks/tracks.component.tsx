@@ -8,9 +8,7 @@ import { Card } from "../card/card-card.component";
 import { TracksContext } from "@/app/context/tracks-context-provider";
 import Header from "../text-block/header.component";
 import FlexBox from "../layout/flexbox.component";
-import { FlexContainer } from "../layout/container.component";
 import Icon3D from "../icons/icon-3d.component";
-import SelectLevel from "../select-level/select-level.component";
 import { Results } from "@/app/types/types";
 
 const TracksContainer = styled.div`
@@ -215,8 +213,6 @@ const TracksGroup = ({ results }: Props) => {
   const [currentTrack, setCurrentTrack] = useState<Results[]>([]);
   const [heading, setHeading] = useState<string | undefined>("");
 
-  const [levelOfExpertise, setLevelOfExpertise] = useState<string>("");
-
   useEffect(() => {
     if (results) {
       const currentTrack = results.filter(
@@ -236,10 +232,6 @@ const TracksGroup = ({ results }: Props) => {
 
   return (
     <TracksContainer>
-      {results && results.length && (
-        <SelectLevel setLevelOfExpertise={setLevelOfExpertise} />
-      )}
-
       <FlexBox
         sm_width="100%"
         md_width="100%"
@@ -403,11 +395,6 @@ const TracksGroup = ({ results }: Props) => {
                           icon_height="100px"
                           padding="0"
                           show_icon={true}
-                          boxshadow={
-                            course?.difficulty === levelOfExpertise
-                              ? `0 0 5px ${color}`
-                              : "unset"
-                          }
                         />
                       </Link>
                     );
