@@ -170,6 +170,7 @@ const Banner = ({ header, gallery }: Props) => {
         height="100%"
         muted
         autoPlay
+        loop
       >
         <source
           src="/video/brainstorm-design-solve-learn.mp4"
