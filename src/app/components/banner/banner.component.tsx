@@ -162,8 +162,9 @@ const Banner = ({ header, gallery }: Props) => {
         style={{
           position: "absolute",
           left: 0,
-          top: 0,
+          top: "50%",
           objectFit: "cover",
+          transform: "translateY(-50%)",
           zIndex: 1,
         }}
         width="100%"

@@ -7,6 +7,7 @@ import CourseDetail from "../course-detail/course-detail.component";
 import Link from "next/link";
 import { IconPrice } from "../icons/icon-price.component";
 import { IconDuration } from "../icons/icon-duration.component";
+import { IconLevel } from "../icons/icon-level.component";
 
 interface cardProps {
   width?: string;
@@ -104,6 +105,71 @@ const CourseDetails = styled.ul`
   text-transform: uppercase;
 `;
 
+const Label = styled.span`
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+`;
+
+const Level = styled.div`
+  align-items: center;
+  bottom: 20px;
+  display: flex;
+  gap: 0 5px;
+  left: 20px;
+  position: absolute;
+`;
+
+const LevelIndicator = styled.div`
+  background: url("/logo/brainstorm-logo.png") top center no-repeat;
+  background-size: contain;
+  border-radius: 100%;
+  height: 24px;
+  width: 24px;
+`;
+
+const Difficulty = ({
+  courseDifficulty,
+}: {
+  courseDifficulty: string | undefined;
+}) => {
+  enum Difficulty {
+    Beginner = "Beginner",
+    Intermediate = "Intermediate",
+    Advanced = "Advanced",
+  }
+
+  return (
+    <Level>
+      {courseDifficulty && Difficulty.Beginner === courseDifficulty && (
+        <>
+          <Label>Level</Label>
+          <LevelIndicator />
+        </>
+      )}
+
+      {courseDifficulty && Difficulty.Intermediate === courseDifficulty && (
+        <>
+          <Label>Level</Label>
+          <LevelIndicator />
+          <LevelIndicator />
+        </>
+      )}
+
+      {courseDifficulty && Difficulty.Advanced === courseDifficulty && (
+        <>
+          <Label>Level</Label>
+          <LevelIndicator />
+          <LevelIndicator />
+          <LevelIndicator />
+        </>
+      )}
+    </Level>
+  );
+};
+
 interface Props {
   base?: string;
   slug: any;
@@ -115,6 +181,7 @@ interface Props {
   courseTime: string;
   coursePrice?: string;
   courseDuration: string;
+  courseDifficulty?: string;
   width?: string;
 }
 
@@ -129,6 +196,7 @@ const CardImageDetail = ({
   courseTime,
   coursePrice,
   courseDuration,
+  courseDifficulty,
   width,
 }: Props) => {
   return (
@@ -219,6 +287,7 @@ const CardImageDetail = ({
           </CourseDetail>
         </CourseDetails>
       </Details>
+      <Difficulty courseDifficulty={courseDifficulty} />
     </Card>
   );
 };

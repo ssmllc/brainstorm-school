@@ -39,28 +39,27 @@ const RenderAllCourses = ({ selectedCourses, width }: Props) => {
           <p>{error} : Error Loading Courses</p>
         ) : (
           courseList.map(
-            (
-              {
-                _id,
-                imageUrl,
-                name,
-                code,
-                category,
-                price,
-                slug,
-                schedule,
-              }: {
-                _id: string;
-                imageUrl: string;
-                name: string;
-                code: string;
-                category: string;
-                price: string;
-                slug: string;
-                schedule: any;
-              },
-              index: number
-            ) => {
+            ({
+              _id,
+              imageUrl,
+              name,
+              code,
+              category,
+              difficulty,
+              price,
+              slug,
+              schedule,
+            }: {
+              _id: string;
+              imageUrl: string;
+              name: string;
+              code: string;
+              difficulty: string;
+              category: string;
+              price: string;
+              slug: string;
+              schedule: any;
+            }) => {
               return (
                 <CardImageDetail
                   key={_id}
@@ -77,6 +76,7 @@ const RenderAllCourses = ({ selectedCourses, width }: Props) => {
                   courseTime={schedule[0]?.time}
                   courseDuration={schedule[0]?.duration}
                   coursePrice={price}
+                  courseDifficulty={difficulty}
                   width={width}
                 />
               );

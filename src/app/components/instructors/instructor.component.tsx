@@ -79,6 +79,7 @@ const InstructorBio = ({
           width="70%"
           xl_width="70%"
           sm_margin="20px 0"
+          flexdirection="column"
         >
           <DecipherText description={bio} margin="0" />
         </FlexBox>

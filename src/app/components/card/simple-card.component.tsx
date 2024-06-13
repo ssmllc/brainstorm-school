@@ -9,7 +9,7 @@ import Container from "../layout/container.component";
 import DecipherText from "@/app/courses/components/decipher-text.component";
 import Link from "next/link";
 import Header from "../text-block/header.component";
-import { IconPencilTip } from "../icons/icom-pencil-tip.component";
+import { IconPencilTip } from "../icons/icon-pencil-tip.component";
 import { IconRequirements } from "../icons/icon-requirements.component";
 import { IconPrice } from "../icons/icon-price.component";
 import { IconFormat } from "../icons/icon-format.component";
