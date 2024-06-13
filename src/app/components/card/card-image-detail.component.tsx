@@ -8,6 +8,8 @@ import Link from "next/link";
 import { IconPrice } from "../icons/icon-price.component";
 import { IconDuration } from "../icons/icon-duration.component";
 import { IconLevel } from "../icons/icon-level.component";
+import { IconCalendar } from "../icons/icon-calendar.component";
+import { IconCap } from "../icons/icon-cap.component";
 
 interface cardProps {
   width?: string;
@@ -115,10 +117,13 @@ const Label = styled.span`
 
 const Level = styled.div`
   align-items: center;
-  bottom: 20px;
+  background: black;
+  border-radius: 20px;
+  bottom: 7px;
   display: flex;
   gap: 0 5px;
-  left: 20px;
+  left: 10px;
+  padding: 10px 20px;
   position: absolute;
 `;
 
@@ -126,8 +131,8 @@ const LevelIndicator = styled.div`
   background: url("/logo/brainstorm-logo.png") top center no-repeat;
   background-size: contain;
   border-radius: 100%;
-  height: 24px;
-  width: 24px;
+  height: 20px;
+  width: 20px;
 `;
 
 const Difficulty = ({
@@ -211,63 +216,14 @@ const CardImageDetail = ({
         <CourseDetails>
           <CourseDetail>
             <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 22"
-                height="20px"
-                fill="#bababa"
-                width="20px"
-              >
-                <g>
-                  <g id="Layer_1" data-name="Layer 1">
-                    <path
-                      className="cls-1"
-                      d="M12,15.86a.75.75,0,0,1-.41-.12L.35,8.58a.78.78,0,0,1,0-1.3L11.59.12a.76.76,0,0,1,.82,0L23.65,7.28a.78.78,0,0,1,0,1.3L12.41,15.74A.75.75,0,0,1,12,15.86ZM2.19,7.93,12,14.18l9.81-6.25L12,1.68Z"
-                    />
-                    <path
-                      className="cls-1"
-                      d="M12,22a.75.75,0,0,1-.41-.12L4.44,17.32a.76.76,0,0,1-.35-.65V10.53a.76.76,0,0,1,.76-.76.77.77,0,0,1,.77.76v5.72L12,20.32l6.38-4.07V10.53a.77.77,0,0,1,.77-.76.76.76,0,0,1,.76.76v6.14a.76.76,0,0,1-.35.65l-7.15,4.56A.75.75,0,0,1,12,22Z"
-                    />
-                    <path
-                      className="cls-1"
-                      d="M23.23,14.84a.77.77,0,0,1-.76-.77V7.93a.77.77,0,1,1,1.53,0v6.14A.77.77,0,0,1,23.23,14.84Z"
-                    />
-                  </g>
-                </g>
-              </svg>
+              <IconCap width="24px" height="24px" />
             </span>
             {courseCode}
           </CourseDetail>
 
           <CourseDetail>
             <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 22"
-                height="20px"
-                fill="#bababa"
-                width="20px"
-              >
-                <g>
-                  <g id="_1" data-name="1">
-                    <path d="M21.19,24H2.81A2.81,2.81,0,0,1,0,21.19V8.94a.76.76,0,0,1,.77-.77H23.23a.76.76,0,0,1,.77.77V21.19A2.81,2.81,0,0,1,21.19,24ZM1.53,9.7V21.19a1.28,1.28,0,0,0,1.28,1.28H21.19a1.28,1.28,0,0,0,1.28-1.28V9.7Z" />
-                    <path d="M23.23,9.7H.77A.76.76,0,0,1,0,8.94V4.85A2.81,2.81,0,0,1,2.81,2H21.19A2.81,2.81,0,0,1,24,4.85V8.94A.76.76,0,0,1,23.23,9.7ZM1.53,8.17H22.47V4.85a1.28,1.28,0,0,0-1.28-1.28H2.81A1.28,1.28,0,0,0,1.53,4.85Z" />
-                    <path d="M12,5.62a.78.78,0,0,1-.77-.77V.77a.77.77,0,1,1,1.54,0V4.85A.78.78,0,0,1,12,5.62Z" />
-                    <path d="M6.89,5.62a.77.77,0,0,1-.76-.77V.77a.77.77,0,1,1,1.53,0V4.85A.77.77,0,0,1,6.89,5.62Z" />
-                    <path d="M17.11,5.62a.77.77,0,0,1-.77-.77V.77a.77.77,0,1,1,1.53,0V4.85A.77.77,0,0,1,17.11,5.62Z" />
-                    <path d="M12.77,16.09a.77.77,0,1,1-.77-.77A.77.77,0,0,1,12.77,16.09Z" />
-                    <circle cx="12" cy="19.15" r="0.77" />
-                    <path d="M15.83,13a.77.77,0,1,1-1.53,0,.77.77,0,0,1,1.53,0Z" />
-                    <path d="M15.83,16.09a.77.77,0,1,1-.77-.77A.76.76,0,0,1,15.83,16.09Z" />
-                    <path d="M6.64,16.09a.77.77,0,1,1-.77-.77A.76.76,0,0,1,6.64,16.09Z" />
-                    <path d="M6.64,19.15a.77.77,0,1,1-.77-.77A.77.77,0,0,1,6.64,19.15Z" />
-                    <path d="M9.7,16.09a.77.77,0,1,1-.76-.77A.76.76,0,0,1,9.7,16.09Z" />
-                    <path d="M9.7,19.15a.77.77,0,0,1-1.53,0,.77.77,0,1,1,1.53,0Z" />
-                    <path d="M18.89,13a.77.77,0,1,1-.76-.76A.76.76,0,0,1,18.89,13Z" />
-                    <path d="M18.89,16.09a.77.77,0,1,1-.76-.77A.76.76,0,0,1,18.89,16.09Z" />
-                  </g>
-                </g>
-              </svg>
+              <IconCalendar height="24px" width="24px" />
             </span>
             {courseTime}
           </CourseDetail>
@@ -287,7 +243,7 @@ const CardImageDetail = ({
           </CourseDetail>
         </CourseDetails>
       </Details>
-      <Difficulty courseDifficulty={courseDifficulty} />
+      {courseDifficulty && <Difficulty courseDifficulty={courseDifficulty} />}
     </Card>
   );
 };
