@@ -13,10 +13,10 @@ interface Props {
 const RenderAllCourses = ({ selectedCourses, width }: Props) => {
   const [courseList, setCourseList] = useState<any>(selectedCourses);
 
-  const [levelOfExpertise, setLevelOfExpertise] = useState<string>("");
+  const [levelOfExpertise, setLevelOfExpertise] = useState<string>("All");
 
   useEffect(() => {
-    if (levelOfExpertise) {
+    if (levelOfExpertise !== "All") {
       const filteredResults = selectedCourses.filter((level) => {
         return level.difficulty === levelOfExpertise;
       });
@@ -25,13 +25,15 @@ const RenderAllCourses = ({ selectedCourses, width }: Props) => {
     } else {
       setCourseList(selectedCourses);
     }
+
+    console.log("levelOfExpertise", levelOfExpertise);
   }, [levelOfExpertise]);
 
   return (
     <FlexBox flexdirection="column" margin="0 auto" alignitems="center">
       <SelectLevel setLevelOfExpertise={setLevelOfExpertise} />
       <FlexBox
-        gap="20px 10px"
+        gap="25px 10px"
         flexwrap="wrap"
         xl_width="100%"
         xl_margin="50px auto"

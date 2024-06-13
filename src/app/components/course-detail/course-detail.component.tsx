@@ -13,7 +13,7 @@ const ListItem = styled.div<listItemProps>`
   font-size: 16px;
   gap: 10px;
   color: ${({ color }) => (color ? `${color}` : "var(--white-50)")};
-  padding: 10px 0;
+  padding: 0 0 15px 0;
 
   @media (min-width: 1024px) {
     font-size: 14px;

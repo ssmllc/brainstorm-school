@@ -38,7 +38,9 @@ const SelectLevel = ({ setLevelOfExpertise }: Props) => {
         }}
         onChange={(evt) => setLevelOfExpertise(evt.target.value)}
       >
-        <option defaultChecked>Select your level</option>
+        <option defaultChecked value="All">
+          Select your level
+        </option>
         <option>Beginner</option>
         <option>Intermediate</option>
         <option>Advanced</option>

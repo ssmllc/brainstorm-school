@@ -66,7 +66,7 @@ interface previewProps {
 const Preview = styled.div<previewProps>`
   background: url(${({ image }) => image}) top center no-repeat;
   background-size: cover;
-  height: 100px;
+  height: 200px;
   padding: 185px 20px 0 20px;
   position: relative;
 
@@ -90,7 +90,7 @@ const Preview = styled.div<previewProps>`
 const Details = styled.div`
   background: var(--off-black);
   min-height: 100px;
-  padding: 20px 20px;
+  padding: 25px 20px;
   position: relative;
 `;
 
@@ -103,7 +103,7 @@ const CourseName = styled.p`
 const CourseDetails = styled.ul`
   color: #ccc;
   font-size: 12px;
-  padding: 15px 0 0 0;
+  padding: 20px 0 0 0;
   text-transform: uppercase;
 `;
 
