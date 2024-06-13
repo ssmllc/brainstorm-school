@@ -242,8 +242,14 @@ const CardImageDetail = ({
             {coursePrice}
           </CourseDetail>
         </CourseDetails>
+        <CourseDetails>
+          <CourseDetail>
+            {courseDifficulty && (
+              <Difficulty courseDifficulty={courseDifficulty} />
+            )}
+          </CourseDetail>
+        </CourseDetails>
       </Details>
-      {courseDifficulty && <Difficulty courseDifficulty={courseDifficulty} />}
     </Card>
   );
 };

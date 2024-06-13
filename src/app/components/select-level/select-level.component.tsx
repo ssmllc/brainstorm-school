@@ -7,10 +7,6 @@ interface Props {
   setLevelOfExpertise: (l: string) => void;
 }
 const SelectLevel = ({ setLevelOfExpertise }: Props) => {
-  const filterByLevel = (level: string) => {
-    setLevelOfExpertise(level);
-  };
-
   return (
     <FlexBox
       flexdirection="column"
@@ -40,7 +36,7 @@ const SelectLevel = ({ setLevelOfExpertise }: Props) => {
           margin: "20px 0 0",
           padding: "15px 15px",
         }}
-        onChange={(evt) => filterByLevel(evt.target.value)}
+        onChange={(evt) => setLevelOfExpertise(evt.target.value)}
       >
         <option defaultChecked>Select your level</option>
         <option>Beginner</option>

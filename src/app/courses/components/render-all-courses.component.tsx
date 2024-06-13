@@ -1,30 +1,31 @@
 "use client";
 
-import { useContext, useState } from "react";
-import { BrainstormContext } from "@/app/context/context-provider";
+import { useEffect, useState } from "react";
 import CardImageDetail from "@/app/components/card/card-image-detail.component";
-import Container from "@/app/components/layout/container.component";
-import { Course, Sections } from "@/app/types/types";
 import SelectLevel from "@/app/components/select-level/select-level.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
 
 interface Props {
-  selectedCourses?: Sections[];
-  results?: Sections[];
-  noheading?: boolean;
+  selectedCourses: any[];
   width?: string;
 }
 
 const RenderAllCourses = ({ selectedCourses, width }: Props) => {
-  const { courses, error }: any = useContext(BrainstormContext);
+  const [courseList, setCourseList] = useState<any>(selectedCourses);
+
   const [levelOfExpertise, setLevelOfExpertise] = useState<string>("");
 
-  const courseList =
-    selectedCourses && selectedCourses.length > 0 ? selectedCourses : courses;
+  useEffect(() => {
+    if (levelOfExpertise) {
+      const filteredResults = selectedCourses.filter((level) => {
+        return level.difficulty === levelOfExpertise;
+      });
 
-  console.log("courseList", courseList);
-
-  const base = selectedCourses && selectedCourses.length > 0 ? "" : "courses";
+      setCourseList(filteredResults);
+    } else {
+      setCourseList(selectedCourses);
+    }
+  }, [levelOfExpertise]);
 
   return (
     <FlexBox flexdirection="column" margin="0 auto" alignitems="center">
@@ -35,9 +36,7 @@ const RenderAllCourses = ({ selectedCourses, width }: Props) => {
         xl_width="100%"
         xl_margin="50px auto"
       >
-        {error ? (
-          <p>{error} : Error Loading Courses</p>
-        ) : (
+        {courseList &&
           courseList.map(
             ({
               _id,
@@ -81,8 +80,7 @@ const RenderAllCourses = ({ selectedCourses, width }: Props) => {
                 />
               );
             }
-          )
-        )}
+          )}
       </FlexBox>
     </FlexBox>
   );
