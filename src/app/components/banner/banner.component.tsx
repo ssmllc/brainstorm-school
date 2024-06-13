@@ -157,6 +157,25 @@ const Banner = ({ header, gallery }: Props) => {
         ctaType="primary"
       />
       <Overlay />
+
+      <video
+        style={{
+          position: "absolute",
+          left: 0,
+          top: 0,
+          objectFit: "cover",
+          zIndex: 1,
+        }}
+        width="100%"
+        height="100%"
+        muted
+        autoPlay
+      >
+        <source
+          src="/video/brainstorm-design-solve-learn.mp4"
+          type="video/mp4"
+        />
+      </video>
     </BannerWrapper>
   );
 };

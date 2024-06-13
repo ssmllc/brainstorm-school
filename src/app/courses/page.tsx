@@ -5,6 +5,7 @@ import FlexBox from "../components/layout/flexbox.component";
 import Header from "../components/text-block/header.component";
 import CoursesFAQs from "../components/faqs/courses-faqs.component";
 import FeaturedCard from "../components/card/featured-card.component";
+import RenderAllCourses from "./components/render-all-courses.component";
 
 export const metadata: Metadata = {
   title: "All Courses | Brainstorm School",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 const fetchData = async () => {
   const query =
-    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27course%27%5D+%7B%0A++_id%2C%0A++name%2C%0A++category%2C%0A++%22slug%22%3A+slug.current%2C%0A++%22imageUrl%22%3A+preview.asset-%3E+url%2C%0A++difficulty%2C%0A++price%2C%0A++code%2C%0A++section%2C%0A++duration%2C%0A++_type%0A%7D";
+    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27course%27%5D+%7C+order%28name+asc%29+%7B%0A++_id%2C%0A++name%2C%0A++category%2C%0A++%22slug%22%3A+slug.current%2C%0A++%22imageUrl%22%3A+preview.asset-%3E+url%2C%0A++difficulty%2C%0A++price%2C%0A++schedule%5B%5D+-%3E+%7B%0A++++registration%2C%0A++++duration%2C%0A++++time%2C%0A++%7D%2C%0A++code%2C%0A++section%2C%0A++_type%0A%7D";
   // const response = await fetch(query);
   const response = await fetch(query, { cache: "no-store" });
 
@@ -111,17 +112,7 @@ export default async function Courses() {
         />
       </FlexBox>
 
-      <FlexBox flexdirection="column" margin="0 auto" alignitems="center">
-        <FlexBox
-          flexdirection="column"
-          sm_width="80%"
-          md_width="80%"
-          xl_width="70%"
-          width="70%"
-        >
-          <RenderCourses width="33%" />
-        </FlexBox>
-      </FlexBox>
+      <RenderAllCourses selectedCourses={result} width="33%" />
 
       <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
         <FlexBox

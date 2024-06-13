@@ -15,18 +15,14 @@ interface Props {
 
 const RenderCourses = ({ selectedCourses, width }: Props) => {
   const { courses, error }: any = useContext(BrainstormContext);
-  const [levelOfExpertise, setLevelOfExpertise] = useState<string>("");
 
   const courseList =
     selectedCourses && selectedCourses.length > 0 ? selectedCourses : courses;
-
-  console.log("courseList", courseList);
 
   const base = selectedCourses && selectedCourses.length > 0 ? "" : "courses";
 
   return (
     <div>
-      <SelectLevel setLevelOfExpertise={setLevelOfExpertise} />
       {error ? (
         <p>{error} : Error Loading Courses</p>
       ) : (
@@ -53,7 +49,7 @@ const RenderCourses = ({ selectedCourses, width }: Props) => {
                       margin="50px auto"
                     >
                       {courses?.map((course: Course) => {
-                        // console.log("courses", courses);
+                        console.log("courses", courses);
                         return (
                           <CardImageDetail
                             key={course._id}

@@ -1,18 +1,12 @@
 import React from "react";
 import MediaBanner from "@/app/components/banner/media-banner.component";
-import FeaturedSlider from "@/app/components/featured/featured-slider.component";
-import Container from "@/app/components/layout/container.component";
-import Heading from "@/app/components/heading/heading.component";
-import TextBlock from "@/app/components/text-block/text-block.component";
 import RenderCourses from "../components/render-courses.component";
 import RegistrationBlock from "@/app/components/registration/registration-block.component";
 import FAQs from "@/app/components/text-block/faqs.component";
-import Slide from "@/app/components/featured/slide.component";
 import DecipherText from "../components/decipher-text.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
 import Header from "@/app/components/text-block/header.component";
 import FeaturedCard from "@/app/components/card/featured-card.component";
-import CoursesFAQs from "@/app/components/faqs/courses-faqs.component";
 
 const fetchData = async () => {
   const query =
