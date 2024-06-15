@@ -168,6 +168,10 @@ export const Card = ({
               borderradius={borderradius}
               width={icon_width}
               height={icon_height}
+              sm_margin={sm_margin}
+              md_margin={md_margin}
+              margin={margin}
+              xl_margin={xl_margin}
             />
           )}
           {heading && (

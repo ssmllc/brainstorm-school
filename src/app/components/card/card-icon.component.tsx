@@ -12,6 +12,7 @@ interface cardIconProps {
   $margin?: string;
   $xl_margin?: string;
   width?: string;
+  $xl_width?: string;
 }
 
 const Icon = styled.div<cardIconProps>`
@@ -21,24 +22,24 @@ const Icon = styled.div<cardIconProps>`
     borderradius ? borderradius : "100%"};
   height: ${({ height }) => (height ? height : "65px")};
   margin: ${({ $sm_margin }) => $sm_margin};
-  width: ${({ height }) => (height ? height : "65px")};
+  width: ${({ width }) => (width ? width : "65px")};
 
   @media (min-width: 768px) {
     height: ${({ height }) => (height ? height : "75px")};
     margin: ${({ $md_margin }) => $md_margin};
-    width: ${({ height }) => (height ? height : "75px")};
+    width: ${({ width }) => (width ? width : "75px")};
   }
 
   @media (min-width: 1024px) {
     height: ${({ height }) => (height ? height : "65px")};
     margin: ${({ $margin }) => $margin};
-    width: ${({ height }) => (height ? height : "65px")};
+    width: ${({ width }) => (width ? width : "65px")};
   }
 
   @media (min-width: 1024px) {
     height: ${({ height }) => (height ? height : "65px")};
     margin: ${({ $xl_margin }) => $xl_margin};
-    width: ${({ height }) => (height ? height : "65px")};
+    width: ${({ width }) => (width ? width : "65px")};
   }
 `;
 

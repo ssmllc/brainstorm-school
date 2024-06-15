@@ -7,7 +7,6 @@ import CourseDetail from "../course-detail/course-detail.component";
 import Link from "next/link";
 import { IconPrice } from "../icons/icon-price.component";
 import { IconDuration } from "../icons/icon-duration.component";
-import { IconLevel } from "../icons/icon-level.component";
 import { IconCalendar } from "../icons/icon-calendar.component";
 import { IconCap } from "../icons/icon-cap.component";
 
@@ -95,9 +94,15 @@ const Details = styled.div`
 `;
 
 const CourseName = styled.p`
+  /* border: thin solid red; */
   color: var(--white);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: bold;
+
+  @media (min-width: 1024px) {
+    font-size: 24px;
+    min-height: 60px;
+  }
 `;
 
 const CourseDetails = styled.ul`
