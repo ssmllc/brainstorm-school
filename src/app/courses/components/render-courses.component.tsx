@@ -6,6 +6,7 @@ import CardImageDetail from "@/app/components/card/card-image-detail.component";
 import Container from "@/app/components/layout/container.component";
 import { Course, Sections } from "@/app/types/types";
 import SelectLevel from "@/app/components/select-level/select-level.component";
+import FlexBox from "@/app/components/layout/flexbox.component";
 
 interface Props {
   selectedCourses?: Sections[];
@@ -22,13 +23,20 @@ const RenderCourses = ({ selectedCourses, width }: Props) => {
   const base = selectedCourses && selectedCourses.length > 0 ? "" : "courses";
 
   return (
-    <div>
+    <FlexBox flexdirection="column" margin="0 auto" alignitems="center">
       {error ? (
         <p>{error} : Error Loading Courses</p>
       ) : (
         courseList.map(({ sections, slug }: any, index: number) => {
           return (
-            <div key={index}>
+            <FlexBox
+              gap="25px 10px"
+              justifycontent="center"
+              flexwrap="wrap"
+              width="100%"
+              xl_width="100%"
+              xl_margin="50px auto"
+            >
               {sections?.map(
                 ({
                   category,
@@ -39,46 +47,37 @@ const RenderCourses = ({ selectedCourses, width }: Props) => {
                   _id: any;
                   courses: Course[];
                 }) => (
-                  <Container key={_id} margin="0 auto" width="100%">
-                    <Container
-                      key={_id}
-                      display="flex"
-                      gap="20px 10px"
-                      flexwrap="wrap"
-                      width="100%"
-                      margin="50px auto"
-                    >
-                      {courses?.map((course: Course) => {
-                        console.log("courses", courses);
-                        return (
-                          <CardImageDetail
-                            key={course._id}
-                            base={base}
-                            preview={course.preview.asset.url}
-                            slug={slug.current}
-                            path={course.slug.current}
-                            courseTrack={category}
-                            courseName={course.name && course.name}
-                            courseCode={course.code && course.code}
-                            courseTime={
-                              course?.schedule && course?.schedule[0]?.time
-                            }
-                            courseDuration={
-                              course?.schedule && course?.schedule[0]?.duration
-                            }
-                            width={width}
-                          />
-                        );
-                      })}
-                    </Container>
-                  </Container>
+                  <>
+                    {courses?.map((course: Course) => {
+                      console.log("courses", courses);
+                      return (
+                        <CardImageDetail
+                          key={course._id}
+                          base={base}
+                          preview={course.preview.asset.url}
+                          slug={slug.current}
+                          path={course.slug.current}
+                          courseTrack={category}
+                          courseName={course.name && course.name}
+                          courseCode={course.code && course.code}
+                          courseTime={
+                            course?.schedule && course?.schedule[0]?.time
+                          }
+                          courseDuration={
+                            course?.schedule && course?.schedule[0]?.duration
+                          }
+                          width={width}
+                        />
+                      );
+                    })}
+                  </>
                 )
               )}
-            </div>
+            </FlexBox>
           );
         })
       )}
-    </div>
+    </FlexBox>
   );
 };
 

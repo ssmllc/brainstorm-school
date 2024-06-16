@@ -84,7 +84,8 @@ const RenderAllCourses = ({ selectedCourses, width }: Props) => {
         gap="25px 10px"
         justifycontent="center"
         flexwrap="wrap"
-        xl_width="100%"
+        width="100%"
+        xl_width="90%"
         xl_margin="50px auto"
       >
         {courseList &&

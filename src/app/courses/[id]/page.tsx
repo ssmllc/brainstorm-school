@@ -83,27 +83,18 @@ export default async function Page({ params }: { params: { id: string } }) {
           margin="25px 0"
         />
 
-        <FlexBox
-          margin="25px 60px 0"
-          xl_margin="25px 60px 0"
-          sm_width="85%"
-          width="70%"
-          xl_width="70%"
-          flexdirection="column"
-        >
-          <RenderCourses
-            selectedCourses={selectedCourses}
-            noheading={true}
-            width="33%"
-          />
-        </FlexBox>
+        <RenderCourses
+          selectedCourses={selectedCourses}
+          noheading={true}
+          width="33%"
+        />
 
         <FlexBox
           margin="25px 60px 0"
           xl_margin="25px 60px 0"
           sm_width="85%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
           flexdirection="column"
         >
           <FAQs results={selectedResults} />

@@ -34,6 +34,11 @@ const Card = styled(Link)<cardProps>`
     width: ${({ width }) => (width ? width : "25%")};
   }
 
+  @media (min-width: 1400px) {
+    max-width: 360px;
+    width: ${({ width }) => (width ? width : "25%")};
+  }
+
   &:hover {
     outline: 2px solid var(--primary);
 

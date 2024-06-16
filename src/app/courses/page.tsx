@@ -112,15 +112,16 @@ export default async function Courses() {
         />
       </FlexBox>
 
-      <RenderAllCourses selectedCourses={result} width="33%" />
+      <RenderAllCourses selectedCourses={result} width="33.33%" />
 
       <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
         <FlexBox
-          flexdirection="column"
-          margin="20px 0"
-          sm_width="80%"
+          margin="25px 60px 0"
+          xl_margin="25px 60px 0"
+          sm_width="85%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
+          flexdirection="column"
         >
           <CoursesFAQs />
         </FlexBox>
