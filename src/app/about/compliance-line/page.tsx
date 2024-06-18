@@ -23,12 +23,14 @@ export default async function ComplianceLine() {
       />
 
       <FlexBox
-        flexdirection="column"
-        margin="150px auto"
-        xl_margin="150px auto"
         alignitems="center"
+        flexdirection="column"
+        sm_margin="100px auto 50px"
+        margin="100px auto"
+        xl_margin="150px auto"
       >
         <FlexBox
+          sm_margin="20px 60px 0"
           margin="20px 60px 0"
           xl_margin="20px 60px 0"
           sm_width="85%"
@@ -46,9 +48,10 @@ export default async function ComplianceLine() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 60px 0"
           margin="20px 60px 0"
           xl_margin="20px 60px 0"
-          sm_width="85%"
+          sm_width="80%"
           width="70%"
           xl_width="70%"
         >
@@ -65,9 +68,10 @@ export default async function ComplianceLine() {
         </FlexBox>
 
         <FlexBox
+          sm_margin="20px 60px 0"
           margin="20px 60px 0"
           xl_margin="20px 60px 0"
-          sm_width="85%"
+          sm_width="80%"
           width="70%"
           xl_width="70%"
           flexdirection="column"
@@ -78,17 +82,6 @@ export default async function ComplianceLine() {
             text="We understand that a safe environment is important for the well-being of the school and art community as a whole. If you are ever feeling threatened, abused or harassed by a student, staff, or teacher please report to third party compliance hotline."
             fontSize="15px"
           />
-        </FlexBox>
-
-        <FlexBox
-          flexdirection="column"
-          margin="20px 60px 0"
-          xl_margin="20px 60px 0"
-          sm_width="85%"
-          width="70%"
-          xl_width="70%"
-        >
-          <Header level="4" text="The link is down below." fontSize="15px" />
         </FlexBox>
 
         <RegistrationBlock

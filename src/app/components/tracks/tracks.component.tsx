@@ -16,7 +16,7 @@ const TracksContainer = styled.div`
   padding: 0 0 50px 0;
   text-align: center;
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
 
   @media (min-width: 800px) {
     padding: 0 0 75px 0;
@@ -64,7 +64,7 @@ const Tracks = styled.div`
   flex-wrap: wrap;
   position: relative;
   margin: 0 auto;
-  width: 100%;
+  width: 80%;
 
   @media (min-width: 768px) {
     gap: 10px 0;
@@ -172,15 +172,11 @@ const Icon = styled.div`
 const Name = styled.p`
   color: var(--white);
   font-weight: bold;
-  font-size: 16px;
+  font-size: 24px;
   padding: 20px 0;
   position: relative;
   text-align: left;
   z-index: 2;
-
-  @media (min-width: 1024px) {
-    font-size: 24px;
-  }
 
   @media (min-width: 1400px) {
     font-size: 28px;
@@ -234,7 +230,7 @@ const TracksGroup = ({ results }: Props) => {
   return (
     <TracksContainer>
       <FlexBox
-        sm_width="100%"
+        sm_width="80%"
         md_width="100%"
         width="60%"
         xl_width="60%"

@@ -18,9 +18,13 @@ const Question = styled("button")`
   font-size: 16px;
   font-weight: bold;
   justify-content: space-between;
-  padding: 25px 0;
+  padding: 25px 20px;
   text-align: left;
   width: 100%;
+
+  @media (min-width: 1024px) {
+    padding: 25px 0;
+  }
 `;
 
 const Answer = styled("div")`
@@ -35,8 +39,12 @@ const Answer = styled("div")`
   &.active {
     max-height: 999px;
     opacity: 1;
-    padding: 25px 0;
+    padding: 25px 20px;
     transition: all 0.35s ease-out;
+
+    @media (min-width: 1024px) {
+      padding: 25px 0;
+    }
   }
 `;
 
@@ -47,7 +55,6 @@ const FAQsV2 = () => {
     if (selected === selectedIndex) {
       return setSelected(null);
     }
-    console.log("selectedIndex", selectedIndex);
     setSelected(selectedIndex);
   };
   return (
@@ -58,12 +65,12 @@ const FAQsV2 = () => {
           flexDirection: "column",
           width: "100%",
           position: "relative",
-          margin: "75px auto",
+          margin: "0 auto",
           padding: "0",
         }}
       >
         <TextHeaderBlock fontSize="36px" fontWeight="bold">
-          Course FAQ&apos;s
+          FAQ&apos;s
         </TextHeaderBlock>
 
         <Container

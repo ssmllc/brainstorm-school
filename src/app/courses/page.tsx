@@ -45,7 +45,7 @@ export default async function Courses() {
 
       <FlexBox
         flexdirection="column"
-        sm_margin="50px auto 50px"
+        sm_margin="100px auto"
         xl_margin="100px auto 50px"
         margin="100px auto 0"
         alignitems="center"
@@ -117,7 +117,7 @@ export default async function Courses() {
         <FlexBox
           margin="25px 60px 0"
           xl_margin="25px 60px 0"
-          sm_width="85%"
+          sm_width="80%"
           width="70%"
           xl_width="80%"
           flexdirection="column"

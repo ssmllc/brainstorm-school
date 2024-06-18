@@ -53,6 +53,7 @@ export default async function Page({ params }: { params: { id: string } }) {
       <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
         <FlexBox
           flexdirection="column"
+          sm_margin="100px auto 50px"
           margin="20px 0"
           xl_margin="100px 0 50px"
           sm_width="80%"
@@ -65,6 +66,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 
       <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
         <FlexBox
+          sm_margin="0 60px 0"
           margin="25px 60px 0"
           xl_margin="25px 60px 0"
           sm_width="85%"
@@ -90,6 +92,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         />
 
         <FlexBox
+          sm_margin="25px 60px 0"
           margin="25px 60px 0"
           xl_margin="25px 60px 0"
           sm_width="85%"

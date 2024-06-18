@@ -25,20 +25,20 @@ const SimilarCourses = ({ header }: Props) => {
         justifycontent="center"
         width="100%"
         xl_width="100%"
-        sm_width="70%"
+        sm_width="80%"
         md_width="70%"
       >
         <Header level="2" text={header} />
       </FlexBox>
 
       <FlexBox
+        flexwrap="wrap"
+        justifycontent="center"
         margin="50px auto"
         xl_width="100%"
-        width="100%"
-        sm_width="70%"
+        sm_width="80%"
         md_width="75%"
-        justifycontent="center"
-        flexwrap="wrap"
+        width="100%"
       >
         <CardImageDetail
           base="/courses"
@@ -52,6 +52,7 @@ const SimilarCourses = ({ header }: Props) => {
           courseDuration="10-week Course"
           width="33%"
         />
+
         <CardImageDetail
           base="/courses"
           slug="foundation"
@@ -64,6 +65,7 @@ const SimilarCourses = ({ header }: Props) => {
           courseDuration="10-week Course"
           width="33%"
         />
+
         <CardImageDetail
           base="/courses"
           slug="2d-3d-concept-design"
@@ -94,6 +96,7 @@ const SimilarCourses = ({ header }: Props) => {
         margin="50px auto"
         xl_margin="50px auto"
         sm_width="70%"
+        sm_textalign="center"
         width="70%"
         xl_width="70%"
       >

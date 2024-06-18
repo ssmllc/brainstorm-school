@@ -59,7 +59,7 @@ const DecipherText = ({
               level="1"
               key={block._key}
               text={block.children[0].text}
-              margin="20px 0"
+              margin="0 0 20px 0"
             />
           );
         }

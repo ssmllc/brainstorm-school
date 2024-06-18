@@ -6,7 +6,6 @@ import { BrainstormContext } from "@/app/context/context-provider";
 import { useContext, useState } from "react";
 import { Sections } from "@/app/types/types";
 import BrainstormLogo from "../Logo/logo.component";
-import { IconSearch } from "../icons/icon-search.component";
 import RenderCourses from "@/app/courses/components/render-courses.component";
 import FlexBox from "../layout/flexbox.component";
 import Header from "../text-block/header.component";
@@ -316,57 +315,6 @@ const SearchView = styled.div`
   }
 `;
 
-const SearchCourses = ({
-  courses,
-  isActive,
-}: {
-  courses: any;
-  isActive: boolean;
-}) => {
-  return (
-    <SearchView data-active={isActive}>
-      <FlexBox flexdirection="column" margin="0 auto" alignitems="center">
-        <FlexBox
-          flexdirection="column"
-          sm_width="80%"
-          md_width="80%"
-          xl_width="70%"
-          xl_margin="100px 0"
-          width="70%"
-        >
-          <FlexBox
-            flexdirection="column"
-            sm_width="50%"
-            md_width="50%"
-            xl_width="50%"
-            width="50%"
-            justifycontent="center"
-          >
-            <Header
-              level="4"
-              text="Search"
-              fontSize="32px"
-              textalign="center"
-            />
-            <input
-              type="text"
-              style={{
-                background: "var(--light-black)",
-                border: "0",
-                color: "var(--white)",
-                fontSize: "24px",
-                padding: "15px 20px",
-                borderRadius: "30px",
-              }}
-            />
-          </FlexBox>
-          <RenderCourses selectedCourses={courses} width="33%" />
-        </FlexBox>
-      </FlexBox>
-    </SearchView>
-  );
-};
-
 const Navigation = () => {
   const { courses }: any = useContext(BrainstormContext);
   const [selected, setSelected] = useState<number | null>(null);
@@ -379,11 +327,6 @@ const Navigation = () => {
     }
 
     setSelected(selectedIndex);
-  };
-
-  const toggleSearch = (evt: any) => {
-    evt.preventDefault();
-    setShowSearch(!showSearch);
   };
 
   return (
@@ -439,6 +382,9 @@ const Navigation = () => {
             >
               Workshops
             </MainMenu>
+            <AccordionItem onClick={() => setActive(false)} href="/workshops">
+              Online Workshops
+            </AccordionItem>
             <AccordionItem
               onClick={() => setActive(false)}
               href="/workshops/open-canvas"
@@ -453,26 +399,9 @@ const Navigation = () => {
             </AccordionItem>
           </Accordion>
 
-          <Accordion data-active={selected === 3 ? "true" : "false"}>
-            <MainMenu
-              className="mobile-dropdown"
-              onClick={() => toggleMobileMenu(3)}
-            >
-              Programs
-            </MainMenu>
-            <AccordionItem
-              onClick={() => setActive(false)}
-              href="/about/compliance-line"
-            >
-              Mentorship
-            </AccordionItem>
-            <AccordionItem
-              onClick={() => setActive(false)}
-              href="/workshops/brainstorm-connection"
-            >
-              Scholarship
-            </AccordionItem>
-          </Accordion>
+          <MainMenuItem onClick={() => setActive(false)} href="/mentorship">
+            Mentorship
+          </MainMenuItem>
 
           <Accordion data-active={selected === 4 ? "true" : "false"}>
             <MainMenu
@@ -481,11 +410,20 @@ const Navigation = () => {
             >
               About
             </MainMenu>
+            <AccordionItem onClick={() => setActive(false)} href="/about">
+              About Us
+            </AccordionItem>
             <AccordionItem
               onClick={() => setActive(false)}
               href="/about/compliance-line"
             >
               Compliance Line
+            </AccordionItem>
+            <AccordionItem
+              onClick={() => setActive(false)}
+              href="/about/scholarship"
+            >
+              Scholarship
             </AccordionItem>
             <AccordionItem
               onClick={() => setActive(false)}
@@ -502,6 +440,9 @@ const Navigation = () => {
             >
               Gallery
             </MainMenu>
+            <AccordionItem onClick={() => setActive(false)} href="/gallery">
+              Galleries
+            </AccordionItem>
             <AccordionItem
               onClick={() => setActive(false)}
               href="/gallery/students"

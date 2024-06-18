@@ -47,7 +47,12 @@ export default async function Workshops() {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
+      <FlexBox
+        flexdirection="column"
+        margin="100px auto"
+        sm_margin="100px auto 50px"
+        alignitems="center"
+      >
         <FlexBox
           flexdirection="column"
           margin="20px 0"

@@ -35,7 +35,7 @@ const Preview = styled("div")<previewProps>`
   box-shadow: ${({ boxshadow }) => boxshadow};
   height: ${({ $sm_height }) => ($sm_height ? $sm_height : "300px")};
   overflow: hidden;
-  margin: 5px 0;
+  margin: 40px 0;
   width: ${({ width }) => (width ? width : "100%")};
 
   @media (min-width: 768px) {
@@ -143,7 +143,7 @@ const Wrapper = styled("div")`
 `;
 
 const CardWrapper = styled("div")`
-  padding: 25px 5px;
+  padding: 100px 5px 35px;
   width: 100%;
 
   @media (min-width: 1024px) {
@@ -210,7 +210,7 @@ const CardLayout = ({ results }: Props) => {
   return (
     <Wrapper>
       <CardWrapper>
-        <Header level="2" text={name} margin="20px 0" />
+        <Header level="2" text={name} margin="25px 0" />
         <CardImage preview={imageUrl} />
         <DecipherText
           description={description}
@@ -281,7 +281,7 @@ const CardLayout = ({ results }: Props) => {
                 level="4"
                 text={formatOpen}
                 fontSize="16px"
-                sm_fontSize="12px"
+                sm_fontSize="14px"
                 margin="10px 0"
               />
             </Container>
@@ -303,7 +303,7 @@ const CardLayout = ({ results }: Props) => {
                 level="4"
                 text={formatStart}
                 fontSize="16px"
-                sm_fontSize="12px"
+                sm_fontSize="14px"
                 margin="10px 0"
               />
             </Container>

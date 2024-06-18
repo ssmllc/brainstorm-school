@@ -32,6 +32,7 @@ const RenderCourses = ({ selectedCourses, width }: Props) => {
               gap="25px 10px"
               justifycontent="center"
               flexwrap="wrap"
+              sm_width="80%"
               width="100%"
               xl_width="100%"
               xl_margin="50px auto"

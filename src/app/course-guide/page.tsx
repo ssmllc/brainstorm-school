@@ -43,10 +43,11 @@ export default async function Page() {
       />
 
       <FlexBox
+        alignitems="center"
+        flexdirection="column"
+        sm_margin="100px auto"
         margin="100px auto"
         xl_margin="100px auto"
-        flexdirection="column"
-        alignitems="center"
         width="100%"
         xl_width="100%"
       >
@@ -57,14 +58,12 @@ export default async function Page() {
           sm_width="70%"
           margin="0 auto"
           xl_margin="0 auto"
-          alignitems="center"
           justifycontent="center"
         >
           <Header level="1" text="Course Guide" />
           <Header
             level="4"
             fontSize="16px"
-            textalign="center"
             texttransform="normal"
             text="Our course guide is here to show a general roadmap for artist who are trying to get and idea of where to start."
           />

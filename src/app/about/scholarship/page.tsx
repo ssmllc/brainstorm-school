@@ -26,15 +26,17 @@ export default async function Scholarship() {
       />
 
       <FlexBox
-        flexdirection="column"
-        xl_margin="100px auto"
-        margin="100px auto"
         alignitems="center"
+        flexdirection="column"
+        sm_margin="100px auto 50px"
+        margin="100px auto"
+        xl_margin="100px auto"
       >
         <FlexBox
+          sm_margin="20px 60px 0"
           margin="20px 60px 0"
           xl_margin="20px 60px 0"
-          sm_width="85%"
+          sm_width="80%"
           width="70%"
           xl_width="70%"
           flexdirection="column"
@@ -49,10 +51,12 @@ export default async function Scholarship() {
             fontSize="15px"
           />
         </FlexBox>
+
         <FlexBox
+          sm_margin="20px 60px 0"
           margin="20px 60px 0"
           xl_margin="20px 60px 0"
-          sm_width="85%"
+          sm_width="80%"
           width="70%"
           xl_width="70%"
           flexdirection="column"
@@ -66,9 +70,10 @@ export default async function Scholarship() {
         </FlexBox>
 
         <FlexBox
+          sm_margin="20px 60px 0"
           margin="20px 60px 0"
           xl_margin="20px 60px 0"
-          sm_width="85%"
+          sm_width="80%"
           width="70%"
           xl_width="70%"
           flexdirection="column"
@@ -82,12 +87,13 @@ export default async function Scholarship() {
         </FlexBox>
 
         <FlexBox
+          flexdirection="column"
+          sm_margin="20px 60px 0"
           margin="20px 60px 0"
           xl_margin="20px 60px 0"
-          sm_width="85%"
+          sm_width="80%"
           width="70%"
           xl_width="70%"
-          flexdirection="column"
         >
           <Header level="2" text="Best of term scholarships." />
           <Header
@@ -106,7 +112,7 @@ export default async function Scholarship() {
           href="https://docs.google.com/forms/d/e/1FAIpQLSeUlK815oUWyjMKRorqD6KMcESkx67JuJ3rrhq4toegr4HtYw/closedform"
         />
 
-        <FlexBox xl_width="70%" width="70%">
+        <FlexBox xl_width="70%" width="70%" sm_width="80%">
           <FAQsV2 />
         </FlexBox>
       </FlexBox>

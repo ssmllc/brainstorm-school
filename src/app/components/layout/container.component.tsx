@@ -65,7 +65,7 @@ const Section = styled.div<sectionProps>`
   border-radius: ${({ borderradius }) => (borderradius ? borderradius : 0)};
   display: ${({ display }) => (display ? display : "block")};
   gap: ${({ $gap }) => ($gap ? $gap : 0)};
-  height: ${({ $sm_height }) => ($sm_height ? $sm_height : "auto")};
+  height: ${({ $sm_height }) => $sm_height};
   flex-direction: ${({ flexdirection }) =>
     flexdirection ? flexdirection : "row"};
   flex-wrap: ${({ flexwrap }) => (flexwrap ? flexwrap : "nowrap")};

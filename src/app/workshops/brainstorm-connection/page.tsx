@@ -1,11 +1,8 @@
 import MediaBanner from "@/app/components/banner/media-banner.component";
-import CardImageDetail from "@/app/components/card/card-image-detail.component";
-import FeaturedCard from "@/app/components/card/featured-card.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
 import RegistrationBlock from "@/app/components/registration/registration-block.component";
 import FAQs from "@/app/components/text-block/faqs.component";
 import Header from "@/app/components/text-block/header.component";
-import Typography from "@/app/components/text-block/typography.component";
 import AnchorCard from "@/app/components/tracks/track.component";
 import type { Metadata } from "next";
 
@@ -50,6 +47,7 @@ export default async function Workshops() {
 
       <FlexBox
         flexdirection="column"
+        sm_margin="100px auto 50px"
         margin="100px auto"
         xl_margin="100px auto 0"
         alignitems="center"
@@ -75,6 +73,7 @@ export default async function Workshops() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
           margin="20px 0"
           xl_margin="20px 0"
           sm_width="80%"
@@ -93,6 +92,7 @@ export default async function Workshops() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
           margin="20px 0"
           xl_margin="20px 0"
           sm_width="80%"
@@ -111,6 +111,7 @@ export default async function Workshops() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
           margin="20px 0"
           xl_margin="20px 0"
           sm_width="80%"
@@ -129,6 +130,7 @@ export default async function Workshops() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
           margin="20px 0"
           xl_margin="20px 0"
           sm_width="80%"
@@ -147,6 +149,7 @@ export default async function Workshops() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
           margin="20px 0"
           xl_margin="20px 0"
           sm_width="80%"

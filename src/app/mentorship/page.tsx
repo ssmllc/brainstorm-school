@@ -43,6 +43,7 @@ export default async function Mentorship() {
 
       <FlexBox
         flexdirection="column"
+        sm_margin="100px auto 50px"
         margin="100px auto"
         xl_margin="100px auto"
         alignitems="center"
@@ -96,10 +97,10 @@ export default async function Mentorship() {
         </FlexBox>
 
         <FlexBox
-          sm_margin="40px 60px 20px"
+          sm_margin="40px auto 20px"
           margin="20px 60px"
           xl_margin="20px 60px"
-          sm_width="90%"
+          sm_width="80%"
           md_width="70%"
           width="70%"
           xl_width="70%"
@@ -115,7 +116,7 @@ export default async function Mentorship() {
         <FlexBox
           flexdirection="row"
           justifycontent="center"
-          sm_margin="40px 60px 20px"
+          sm_margin="20px 60px"
           md_margin="40px 60px 20px"
           margin="0 60px"
           xl_margin="0 60px"
@@ -145,12 +146,12 @@ export default async function Mentorship() {
         </FlexBox>
 
         <FlexBox
+          flexwrap="wrap"
+          sm_margin="20px 25px"
           margin="20px 60px 0"
           xl_margin="20px 60px 0"
-          sm_margin="20px 25px"
-          sm_width="85%"
+          sm_width="80%"
           md_width="70%"
-          flexwrap="wrap"
           width="70%"
           xl_width="70%"
         >
@@ -177,12 +178,12 @@ export default async function Mentorship() {
         </FlexBox>
 
         <FlexBox
+          flexwrap="wrap"
+          sm_margin="20px 25px"
           margin="20px 60px 0"
           xl_margin="20px 60px 0"
-          sm_margin="20px 25px"
           sm_width="85%"
           md_width="70%"
-          flexwrap="wrap"
           width="70%"
           xl_width="70%"
         >
@@ -209,12 +210,12 @@ export default async function Mentorship() {
         </FlexBox>
 
         <FlexBox
+          flexwrap="wrap"
+          sm_margin="20px 25px"
           margin="20px 60px 10px"
           xl_margin="20px 60px 10px"
-          sm_margin="20px 25px"
           sm_width="85%"
           md_width="70%"
-          flexwrap="wrap"
           width="70%"
           xl_width="70%"
         >

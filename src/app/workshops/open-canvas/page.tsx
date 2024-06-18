@@ -1,10 +1,7 @@
 import MediaBanner from "@/app/components/banner/media-banner.component";
-import CardImageDetail from "@/app/components/card/card-image-detail.component";
-import FeaturedCard from "@/app/components/card/featured-card.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
 import FAQs from "@/app/components/text-block/faqs.component";
 import Header from "@/app/components/text-block/header.component";
-import Typography from "@/app/components/text-block/typography.component";
 import AnchorCard from "@/app/components/tracks/track.component";
 import type { Metadata } from "next";
 
@@ -44,7 +41,12 @@ export default async function Workshops() {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <FlexBox flexdirection="column" margin="100px auto 0" alignitems="center">
+      <FlexBox
+        flexdirection="column"
+        sm_margin="100px auto 50px"
+        margin="100px auto 0"
+        alignitems="center"
+      >
         <FlexBox
           flexdirection="column"
           sm_margin="25px 0"
@@ -66,6 +68,7 @@ export default async function Workshops() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
           margin="20px 0"
           xl_margin="20px 0"
           sm_width="80%"
@@ -83,6 +86,7 @@ export default async function Workshops() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
           margin="20px 0"
           xl_margin="20px 0"
           sm_width="80%"
@@ -116,6 +120,7 @@ export default async function Workshops() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
           margin="20px 0"
           xl_margin="20px 0"
           sm_width="80%"
@@ -134,6 +139,7 @@ export default async function Workshops() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
           margin="20px 0"
           xl_margin="20px 0"
           sm_width="80%"
@@ -152,6 +158,7 @@ export default async function Workshops() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="75px 0 0"
           margin="75px 0 0"
           xl_margin="75px 0 0"
           width="70%"
@@ -187,7 +194,13 @@ export default async function Workshops() {
           </FlexBox>
         </FlexBox>
 
-        <FlexBox sm_width="80%" width="70%" md_width="70%" xl_width="70%">
+        <FlexBox
+          sm_width="80%"
+          width="70%"
+          md_width="70%"
+          xl_width="70%"
+          sm_margin="50px 0 25px"
+        >
           <FAQs results={result[0]} />
         </FlexBox>
       </FlexBox>

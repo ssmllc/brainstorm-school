@@ -4,6 +4,7 @@ import Header from "@/app/components/text-block/header.component";
 import AnchorCard from "@/app/components/tracks/track.component";
 import type { Metadata } from "next";
 import FeaturedCard from "../components/card/featured-card.component";
+import Grid from "../components/layout/grid.component";
 
 export const metadata: Metadata = {
   title: "Meet our Instructors | Brainstorm School",
@@ -52,14 +53,20 @@ export default async function Instructors() {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
+      <FlexBox
+        flexdirection="column"
+        sm_margin="100px auto 50px"
+        margin="100px auto"
+        alignitems="center"
+      >
         <FlexBox
+          flexdirection="column"
+          sm_margin="20px 60px 0"
           margin="20px 60px 0"
           xl_margin="100px 60px 0"
-          sm_width="85%"
+          sm_width="80%"
           width="70%"
           xl_width="70%"
-          flexdirection="column"
         >
           <Header level="1" text="Brainstorm School Instructors" />
 
@@ -71,9 +78,10 @@ export default async function Instructors() {
         </FlexBox>
 
         <FlexBox
+          sm_margin="20px 60px 0"
           margin="20px 60px 0"
           xl_margin="20px 60px 0"
-          sm_width="85%"
+          sm_width="80%"
           width="70%"
           xl_width="70%"
           flexdirection="column"
@@ -97,21 +105,14 @@ export default async function Instructors() {
         />
 
         <FlexBox
+          sm_margin="20px 25px"
           margin="20px 60px 0"
           xl_margin="20px 60px 0"
-          sm_margin="20px 25px"
-          sm_width="85%"
+          sm_width="80%"
           width="70%"
           xl_width="70%"
         >
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
-              gap: "20px 20px",
-              width: "100%",
-            }}
-          >
+          <Grid sm_columns="repeat(1, 1fr)" columns="repeat(4, 1fr)">
             {result &&
               result.map((instructor: any) => {
                 return (
@@ -127,7 +128,7 @@ export default async function Instructors() {
                   />
                 );
               })}
-          </div>
+          </Grid>
         </FlexBox>
       </FlexBox>
     </>

@@ -77,7 +77,7 @@ const FAQs = ({ results }: any) => {
               flexDirection: "column",
               width: "100%",
               position: "relative",
-              margin: "75px auto",
+              margin: "25px auto",
               padding: "0",
             }}
           >

@@ -1,7 +1,6 @@
 import MediaBanner from "@/app/components/banner/media-banner.component";
-import { Card } from "@/app/components/card/card-card.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
-import FAQs from "@/app/components/text-block/faqs.component";
+import Grid from "@/app/components/layout/grid.component";
 import Header from "@/app/components/text-block/header.component";
 import AnchorCard from "@/app/components/tracks/track.component";
 import type { Metadata } from "next";
@@ -45,6 +44,7 @@ export default async function Gallery() {
       <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
         <FlexBox
           flexdirection="column"
+          sm_margin="100px auto 50px"
           margin="20px 0"
           xl_margin="100px auto 50px"
           sm_width="80%"
@@ -61,21 +61,14 @@ export default async function Gallery() {
         </FlexBox>
 
         <FlexBox
+          sm_margin="20px 25px"
           margin="20px 60px 0"
           xl_margin="20px auto 50px"
-          sm_margin="20px 25px"
-          sm_width="85%"
+          sm_width="80%"
           width="70%"
           xl_width="70%"
         >
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
-              gap: "20px 20px",
-              width: "100%",
-            }}
-          >
+          <Grid sm_columns="repeat(2, 1fr)" columns="repeat(4, 1fr)">
             {result &&
               result.map((instructor: any) => (
                 <AnchorCard
@@ -84,7 +77,7 @@ export default async function Gallery() {
                   width="100%"
                 />
               ))}
-          </div>
+          </Grid>
         </FlexBox>
       </FlexBox>
     </>

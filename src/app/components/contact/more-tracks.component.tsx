@@ -32,11 +32,10 @@ const ContentBlock = styled.div`
   flex-direction: column;
   gap: 5px;
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
 
   @media (min-width: 800px) {
     flex-direction: row;
-    width: 100%;
   }
 `;
 

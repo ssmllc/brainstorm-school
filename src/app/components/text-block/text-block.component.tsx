@@ -17,11 +17,11 @@ const Text = styled.div<textProps>`
   align-items: center;
   color: ${({ color }) => (color ? color : "var(--white)")};
   display: flex;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "normal")};
   gap: 10px;
   line-height: 1.5;
-  padding: 5px 0;
+  padding: 25px 0;
   justify-content: ${({ justifycontent }) => justifycontent};
   text-transform: ${({ texttransform }) =>
     texttransform ? texttransform : "capitalize"};

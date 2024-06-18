@@ -14,7 +14,7 @@ const Featured = styled.div<featuredProps>`
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: row;
-  margin: ${({ $sm_margin }) => ($sm_margin ? $sm_margin : "75px auto")};
+  margin: ${({ $sm_margin }) => ($sm_margin ? $sm_margin : "50px auto")};
   position: relative;
   width: 85%;
 

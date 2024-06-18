@@ -1,6 +1,7 @@
 import MediaBanner from "@/app/components/banner/media-banner.component";
 import Icon3D from "@/app/components/icons/icon-3d.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
+import Grid from "@/app/components/layout/grid.component";
 import FAQs from "@/app/components/text-block/faqs.component";
 import Header from "@/app/components/text-block/header.component";
 import AnchorCard from "@/app/components/tracks/track.component";
@@ -42,9 +43,15 @@ export default async function Gallery() {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
+      <FlexBox
+        alignitems="center"
+        flexdirection="column"
+        sm_margin="100px auto 50px"
+        margin="100px auto"
+      >
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
           margin="20px 0"
           xl_margin="100px auto 50px"
           sm_width="80%"
@@ -64,18 +71,11 @@ export default async function Gallery() {
           margin="20px 60px 0"
           xl_margin="20px 60px 50px"
           sm_margin="20px 25px"
-          sm_width="85%"
+          sm_width="80%"
           width="70%"
           xl_width="70%"
         >
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
-              gap: "20px 20px",
-              width: "100%",
-            }}
-          >
+          <Grid sm_columns="repeat(2, 1fr)" columns="repeat(4, 1fr)">
             {result &&
               result.map((instructor: any) => (
                 <AnchorCard
@@ -84,7 +84,7 @@ export default async function Gallery() {
                   width="100%"
                 />
               ))}
-          </div>
+          </Grid>
         </FlexBox>
       </FlexBox>
     </>

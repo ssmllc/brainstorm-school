@@ -20,7 +20,7 @@ const Text = styled.div<textProps>`
   flex-direction: column;
   gap: 20px;
   line-height: 1.5;
-  padding: ${({ padding }) => (padding ? padding : "25px 50px")};
+  padding: ${({ padding }) => (padding ? padding : "25px 0")};
   text-transform: ${({ texttransform }) =>
     texttransform ? texttransform : "capitalize"};
   width: ${({ width }) => (width ? width : "100%")};

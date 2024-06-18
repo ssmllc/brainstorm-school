@@ -1,17 +1,11 @@
 import React from "react";
 import MediaBanner from "@/app/components/banner/media-banner.component";
-import RegistrationBlock from "@/app/components/registration/registration-block.component";
 import CardLayout, {
   CardImage,
 } from "@/app/components/card/simple-card.component";
-import Container, {
-  FlexContainer,
-} from "@/app/components/layout/container.component";
 import Carousel from "@/app/components/carousel/carousel.component";
-import { Card } from "@/app/components/card/card-card.component";
 import TextHeaderBlock from "@/app/components/text-block/text-header-block.component";
 import SimilarCourses from "@/app/components/similar-courses/similar-courses.component";
-import DecipherText from "../../components/decipher-text.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
 import { Metadata } from "next";
 import InstructorBio from "@/app/components/instructors/instructor.component";
@@ -78,11 +72,7 @@ export default async function Page({
   })[0];
 
   const { category, instructors, schedule, code } = selectedResults;
-
   const { duration, time, registration } = schedule[0];
-
-  console.log("debug registration", registration);
-  console.log("debug schedule", schedule);
 
   return (
     <>
@@ -106,9 +96,9 @@ export default async function Page({
         <FlexBox flexdirection="column">
           <FlexBox
             alignitems="center"
-            md_width="90%"
             md_margin="50px auto 0px"
             margin="50px auto 0"
+            md_width="90%"
             width="90%"
             xl_width="90%"
           >

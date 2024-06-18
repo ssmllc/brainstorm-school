@@ -23,7 +23,7 @@ const CarouselPreview = ({ selectedInstructor, gallery, imageUrl }: Props) => {
         margin="20px 60px 0"
         xl_margin="50px 60px"
         sm_margin="50px auto 0"
-        sm_width="85%"
+        sm_width="80%"
         width="50%"
         xl_width="75%"
         flexdirection="column"

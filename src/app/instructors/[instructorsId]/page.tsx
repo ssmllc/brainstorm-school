@@ -1,15 +1,8 @@
 import MediaBanner from "@/app/components/banner/media-banner.component";
-import { Card } from "@/app/components/card/card-card.component";
 import CardImageDetail from "@/app/components/card/card-image-detail.component";
-import { CardImage } from "@/app/components/card/simple-card.component";
 import CarouselPreview from "@/app/components/carousel/carousel-preview.component";
-import Carousel from "@/app/components/carousel/carousel.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
-import Pill from "@/app/components/pill/pill.component";
-import Poster from "@/app/components/poster/poster.component";
-import VideoContentSplit from "@/app/components/registration/video-content-split.component";
 import Header from "@/app/components/text-block/header.component";
-import DecipherText from "@/app/courses/components/decipher-text.component";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -64,14 +57,20 @@ export default async function Instructors({
         imageUrl={imageUrl}
       />
 
-      <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
+      <FlexBox
+        flexdirection="column"
+        margin="100px auto"
+        sm_margin="100px auto 50px"
+        alignitems="center"
+      >
         <FlexBox
           alignitems="center"
           borderTop="thin solid var(--medium-grey)"
           flexdirection="column"
+          sm_margin="0 60px"
           margin="0 60px"
           xl_margin="75px 60px"
-          sm_width="85%"
+          sm_width="80%"
           width="80%"
           xl_width="80%"
         >
@@ -82,6 +81,7 @@ export default async function Instructors({
           />
 
           <FlexBox
+            sm_margin="20px 60px"
             margin="20px 60px"
             xl_margin="20px 60px"
             sm_width="100%"

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import MediaBanner from "../components/banner/media-banner.component";
-import { FlexContainer } from "../components/layout/container.component";
 import RegistrationBlock from "../components/registration/registration-block.component";
 import VideoContentSplit from "../components/registration/video-content-split.component";
 import { Card } from "../components/card/card-card.component";
@@ -9,7 +8,6 @@ import FlexBox from "../components/layout/flexbox.component";
 import Header from "../components/text-block/header.component";
 import FAQs from "@/app/components/text-block/faqs.component";
 import ImageGallery from "../components/gallery/image-gallery.component";
-import SimilarCourses from "../components/similar-courses/similar-courses.component";
 import CardImageDetail from "../components/card/card-image-detail.component";
 
 export const metadata: Metadata = {
@@ -49,8 +47,13 @@ export default async function About() {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <FlexBox flexdirection="column" margin="50px auto" xl_margin="100px auto">
-        <FlexBox width="100%" xl_width="100%">
+      <FlexBox
+        flexdirection="column"
+        sm_margin="100px auto 50px"
+        margin="50px auto"
+        xl_margin="100px auto"
+      >
+        <FlexBox width="100%" sm_width="100%" xl_width="100%">
           <RegistrationBlock
             primary={true}
             heading="We are Brainstorm School!"
@@ -64,6 +67,7 @@ export default async function About() {
         <FlexBox
           alignitems="center"
           flexdirection="column"
+          sm_margin="20px auto"
           margin="20px auto"
           xl_margin="20px auto"
           width="100%"
@@ -85,13 +89,14 @@ export default async function About() {
           />
 
           <FlexBox
+            flexdirection="column"
             sm_width="80%"
             md_width="70%"
-            width="90%"
             xl_width="80%"
-            flexdirection="column"
+            sm_margin="20px 0"
             margin="20px 0"
             xl_margin="20px 0"
+            width="90%"
           >
             <Header level="2" text="What should I expect?" />
 
@@ -115,14 +120,16 @@ export default async function About() {
           </FlexBox>
 
           <FlexBox
+            flexwrap="wrap"
             gap="10px"
-            md_width="70%"
-            width="90%"
-            xl_width="80%"
+            sm_margin="0 auto"
             md_margin="0 auto"
             margin="0 auto"
             xl_margin="50px auto 0"
-            flexwrap="wrap"
+            sm_width="80%"
+            md_width="70%"
+            width="90%"
+            xl_width="80%"
           >
             <Card
               href="/courses"

@@ -42,9 +42,15 @@ export default async function Gallery() {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
+      <FlexBox
+        flexdirection="column"
+        margin="100px auto"
+        sm_margin="100px auto 50px"
+        alignitems="center"
+      >
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
           margin="20px 0"
           sm_width="80%"
           width="70%"
@@ -59,6 +65,7 @@ export default async function Gallery() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
           margin="20px 0"
           sm_width="80%"
           width="70%"
@@ -73,6 +80,7 @@ export default async function Gallery() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
           margin="20px 0"
           sm_width="80%"
           width="70%"
@@ -133,6 +141,7 @@ export default async function Gallery() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
           margin="20px 0"
           sm_width="80%"
           width="70%"
@@ -148,6 +157,7 @@ export default async function Gallery() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
           margin="20px 0"
           sm_width="80%"
           width="70%"
@@ -164,10 +174,10 @@ export default async function Gallery() {
         <FlexBox
           margin="20px 60px 0"
           sm_margin="20px 25px"
-          sm_width="85%"
+          sm_width="80%"
           width="70%"
         >
-          <FlexBox>
+          <FlexBox sm_width="100%">
             <AnchorCard
               base="gallery"
               path="students"
