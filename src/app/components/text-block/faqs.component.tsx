@@ -18,9 +18,13 @@ const Question = styled("button")`
   font-size: 16px;
   font-weight: bold;
   justify-content: space-between;
-  padding: 25px 0;
+  padding: 25px 20px;
   text-align: left;
   width: 100%;
+
+  @media (min-width: 1024px) {
+    padding: 25px 0;
+  }
 `;
 
 const Answer = styled("div")`
@@ -35,8 +39,12 @@ const Answer = styled("div")`
   &.active {
     max-height: 9999px;
     opacity: 1;
-    padding: 25px 0;
+    padding: 25px 20px;
     transition: all 0.35s ease-out;
+
+    @media (min-width: 1024px) {
+      padding: 25px 0;
+    }
   }
 `;
 

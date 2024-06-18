@@ -198,6 +198,27 @@ const Footer = () => {
             </DropdownMenu>
           </Column>
           <Column>
+            <MenuItem href="/course-guide" weight="bold">
+              Workshops
+            </MenuItem>
+
+            <DropdownMenu>
+              <li>
+                <MenuItem href="/workshops/open-canvas">Open Canvas</MenuItem>
+              </li>
+              <li>
+                <MenuItem href="/workshops/brainstorm-connection">
+                  Brainstorm Connection
+                </MenuItem>
+              </li>
+            </DropdownMenu>
+          </Column>
+          <Column>
+            <MenuItem href="/course-guide" weight="bold">
+              Course Guide
+            </MenuItem>
+          </Column>
+          <Column>
             <MenuItem href="/workshops" weight="bold">
               Workshops
             </MenuItem>
@@ -215,17 +236,8 @@ const Footer = () => {
           </Column>
           <Column>
             <MenuItem href="/programs" weight="bold">
-              Programs
+              Mentorship
             </MenuItem>
-
-            <DropdownMenu>
-              <DropdownMenuItem>
-                <MenuItem href="/programs/mentorship">Mentorship</MenuItem>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <MenuItem href="/programs/scholarship">Scholarship</MenuItem>
-              </DropdownMenuItem>
-            </DropdownMenu>
           </Column>
           <Column>
             <MenuItem href="/about" weight="bold">
@@ -237,6 +249,9 @@ const Footer = () => {
                 <MenuItem href="/about/compliance-line">
                   Compliance Line
                 </MenuItem>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <MenuItem href="/programs/scholarship">Scholarship</MenuItem>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <MenuItem href="/about/faqs">FAQs</MenuItem>
@@ -272,7 +287,7 @@ const Footer = () => {
 
       <RegistrationBlock
         primary={false}
-        heading="Summer Registration is Now Open!"
+        heading="Fall Registration is Now Open!"
         scale="md"
         cta="Register Today"
         ctaType="tertiary"
@@ -281,7 +296,13 @@ const Footer = () => {
       <Copyright>
         <Credits>
           <p>&copy; 2024 Brainstorm Online - All rights reserved</p>
-          <p>Designed By : Studio Supermassive LLC</p>
+          <Link
+            href="https://www.studiosupermassive.com"
+            target="_blank"
+            style={{ color: "var(--white)" }}
+          >
+            Designed By : Studio Supermassive LLC
+          </Link>
         </Credits>
       </Copyright>
     </Content>

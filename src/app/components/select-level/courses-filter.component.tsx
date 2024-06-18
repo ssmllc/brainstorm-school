@@ -12,8 +12,12 @@ interface Props {
 
 const FilterSystem = styled.div`
   border-radius: 20px;
-  padding: 10px 20px;
+  padding: 25px 0;
   width: 100%;
+
+  @media (min-width: 1024px) {
+    padding: 10px 20px;
+  }
 `;
 
 const DropdownSelect = styled.select`
@@ -27,9 +31,13 @@ const DropdownSelect = styled.select`
   color: var(--white);
   font-weight: bold;
   font-size: 16px;
-  width: 30%;
+  width: 100%;
   margin: 0;
   padding: 15px 15px;
+
+  @media (min-width: 1024px) {
+    width: 30%;
+  }
 `;
 
 const CoursesFilter = ({
@@ -39,18 +47,23 @@ const CoursesFilter = ({
 }: Props) => {
   return (
     <FlexBox
+      alignitems="center"
       flexdirection="column"
+      sm_width="100%"
       width="70%"
       xl_width="80%"
-      sm_width="70%"
       margin="50px auto 0"
       xl_margin="50px auto 0"
-      alignitems="center"
       justifycontent="center"
     >
       <FilterSystem>
-        <FlexBox width="100%" xl_width="100%" alignitems="center">
-          <FlexBox width="10%" xl_width="10%">
+        <FlexBox
+          sm_width="100%"
+          width="100%"
+          xl_width="100%"
+          alignitems="center"
+        >
+          <FlexBox sm_width="100%" width="10%" xl_width="10%">
             <Header
               level="6"
               text="Filter by:"

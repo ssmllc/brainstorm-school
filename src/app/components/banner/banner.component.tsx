@@ -125,17 +125,16 @@ const Banner = ({ header, gallery }: Props) => {
 
       const getRandomArt = randomBannerImage(0, gallery.length - 1);
       const { title } = gallery[getRandomArt];
-      const {
-        _id,
-        artist: { title: artistName, slug: pathToArtist },
-        imageUrl,
-      } = gallery[getRandomArt];
+
+      console.log("gallery", gallery);
+
+      const { _id, artist, imageUrl } = gallery[getRandomArt];
 
       // const randomBanner = `/banner/banner-${randomBannerImage(1, 45)}.jpg`;
 
-      setRandomTitle(title);
-      setRandomArtist(artistName);
-      setRandomSlug(pathToArtist);
+      setRandomTitle(title || "");
+      setRandomArtist(artist?.title);
+      setRandomSlug(artist?.slug);
       setRandomBanner(`${imageUrl}?w=1920`);
 
       gsap.to(bannerRef.current, {

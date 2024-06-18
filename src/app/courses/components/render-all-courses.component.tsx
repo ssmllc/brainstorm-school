@@ -74,7 +74,12 @@ const RenderAllCourses = ({ selectedCourses, width }: Props) => {
   }, [priceOrder]);
 
   return (
-    <FlexBox flexdirection="column" margin="0 auto" alignitems="center">
+    <FlexBox
+      flexdirection="column"
+      margin="0 auto"
+      alignitems="center"
+      sm_width="80%"
+    >
       <CoursesFilter
         setLevelOfExpertise={setLevelOfExpertise}
         setDayOfTheWeek={setDayOfTheWeek}
@@ -84,6 +89,7 @@ const RenderAllCourses = ({ selectedCourses, width }: Props) => {
         gap="25px 10px"
         justifycontent="center"
         flexwrap="wrap"
+        sm_width="100%"
         width="100%"
         xl_width="90%"
         xl_margin="50px auto"
