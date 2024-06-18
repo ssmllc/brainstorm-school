@@ -53,7 +53,7 @@ const RenderCourses = ({ selectedCourses, width }: Props) => {
                         <CardImageDetail
                           key={course._id}
                           base={base}
-                          preview={course.preview.asset.url}
+                          preview={course.preview?.asset.url}
                           slug={slug.current}
                           path={course.slug.current}
                           courseTrack={category}
