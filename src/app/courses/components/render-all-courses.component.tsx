@@ -124,8 +124,8 @@ const RenderAllCourses = ({ selectedCourses, width }: Props) => {
                   courseTrack={category}
                   courseName={name}
                   courseCode={code}
-                  courseTime={schedule[0]?.time}
-                  courseDuration={schedule[0]?.duration}
+                  courseTime={schedule && schedule[0]?.time}
+                  courseDuration={schedule && schedule[0]?.duration}
                   coursePrice={price}
                   courseDifficulty={difficulty}
                   width={width}
