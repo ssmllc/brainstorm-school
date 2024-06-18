@@ -5,6 +5,7 @@ import Header from "@/app/components/text-block/header.component";
 import type { Metadata } from "next";
 import AnchorCard from "../components/tracks/track.component";
 import RegistrationBlock from "../components/registration/registration-block.component";
+import FeaturedCard from "../components/card/featured-card.component";
 
 export const metadata: Metadata = {
   title: "Brainstorm School Workshops",
@@ -12,7 +13,27 @@ export const metadata: Metadata = {
     "Explore Brainstorm's online workshops to develop essential creative skills utilized in the design industry, guided by seasoned professional artists. Register Today!",
 };
 
+const fetchData = async () => {
+  const query =
+    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27workshops%27%5D+%7B%0A++featured%5B0%5D+-%3E+%7B%0A++++_id%2C%0A++++slug%2C%0A++++%22imageUrl%22%3A+preview.asset-%3Eurl%2C%0A++++workshopname%2C%0A++++description%2C%0A++++important%2C%0A++++instructor%2C%0A++++registration%2C%0A++++price%2C%0A++++date%2C%0A++++time%2C%0A++++location%2C%0A++++workexamples%2C%0A++++description%0A++%7D%2C%0A++content%2C%0A++faqs%2C%0A++future%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++slug%2C%0A++++%22imageUrl%22%3A+preview.asset-%3Eurl%2C%0A++++workshopname%2C%0A++++description%2C%0A++++important%2C%0A++++instructor%2C%0A++++registration%2C%0A++++price%2C%0A++++date%2C%0A++++time%2C%0A++++location%2C%0A++++workexamples%2C%0A++++description%0A++%7D%2C%0A++previous%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++slug%2C%0A++++%22imageUrl%22%3A+preview.asset-%3Eurl%2C%0A++++workshopname%2C%0A++++description%2C%0A++++important%2C%0A++++instructor%2C%0A++++registration%2C%0A++++price%2C%0A++++date%2C%0A++++time%2C%0A++++location%2C%0A++++workexamples%2C%0A++++description%0A++%7D%0A%7D";
+  // const response = await fetch(query);
+  const response = await fetch(query, { cache: "no-store" });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error: Status ${response.status}`);
+  }
+
+  const { result } = await response.json();
+
+  return result;
+};
+
 export default async function Workshops() {
+  const result = await fetchData();
+
+  const { featured } = result[0];
+  console.log("featured", featured);
+
   return (
     <>
       <MediaBanner
@@ -191,6 +212,22 @@ export default async function Workshops() {
             level="4"
             fontSize="15px"
             text="Join us at Brainstorm School and unlock your creative potential. Our workshops are the perfect place to start your journey towards becoming a professional artist and designer. We look forward to seeing you in the workshops and helping you achieve your artistic goals. For more information and to register, visit our enrollment page."
+          />
+        </FlexBox>
+
+        <FlexBox
+          sm_width="100%"
+          sm_margin="0 auto"
+          flexdirection="column"
+          alignitems="center"
+        >
+          <FeaturedCard
+            poster={featured.imageUrl}
+            superheading={featured.workshopname}
+            heading={featured.instructor}
+            bio={featured.description}
+            margin="25px 0"
+            sm_margin="25px 0"
           />
         </FlexBox>
 

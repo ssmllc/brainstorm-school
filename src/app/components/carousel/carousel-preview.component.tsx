@@ -21,9 +21,11 @@ const CarouselPreview = ({ selectedInstructor, gallery, imageUrl }: Props) => {
     <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
       <FlexBox
         margin="20px 60px 0"
+        xl_margin="50px 60px"
         sm_margin="50px auto 0"
         sm_width="85%"
         width="50%"
+        xl_width="75%"
         flexdirection="column"
       >
         <Header level="1" text="Instructor Bio." />
@@ -33,7 +35,14 @@ const CarouselPreview = ({ selectedInstructor, gallery, imageUrl }: Props) => {
         <Poster imageUrl={preview || imageUrl} />
       </FlexBox>
 
-      <FlexBox sm_width="60%" width="50%" sm_margin="0 auto" margin="0 auto">
+      <FlexBox
+        sm_width="60%"
+        width="50%"
+        xl_width="75%"
+        sm_margin="0 auto"
+        margin="0 auto"
+        xl_margin="0 auto"
+      >
         {gallery?.length > 0 && (
           <Carousel sm_height="200px" height="350px">
             {gallery &&

@@ -70,8 +70,10 @@ export default async function Instructors({
           borderTop="thin solid var(--medium-grey)"
           flexdirection="column"
           margin="0 60px"
+          xl_margin="75px 60px"
           sm_width="85%"
           width="80%"
+          xl_width="80%"
         >
           <Header
             text="Courses by this instructor"
@@ -81,8 +83,10 @@ export default async function Instructors({
 
           <FlexBox
             margin="20px 60px"
+            xl_margin="20px 60px"
             sm_width="100%"
             width="100%"
+            xl_width="100%"
             alignitems="center"
             justifycontent="center"
           >
@@ -95,6 +99,7 @@ export default async function Instructors({
               courseCode="ZB1"
               courseTime="Fri 10am-1pm (PST)"
               courseDuration="10-week Course"
+              width="33%"
             />
             <CardImageDetail
               slug="workshops"
@@ -105,6 +110,7 @@ export default async function Instructors({
               courseCode="ZB1"
               courseTime="Fri 10am-1pm (PST)"
               courseDuration="10-week Course"
+              width="33%"
             />
             <CardImageDetail
               slug="workshops"
@@ -115,8 +121,9 @@ export default async function Instructors({
               courseCode="ZB1"
               courseTime="Fri 10am-1pm (PST)"
               courseDuration="10-week Course"
+              width="33%"
             />
-            <CardImageDetail
+            {/* <CardImageDetail
               slug="workshops"
               path="introduction-to-zbrush"
               preview="/banner/banner-21.jpg"
@@ -125,7 +132,7 @@ export default async function Instructors({
               courseCode="ZB1"
               courseTime="Fri 10am-1pm (PST)"
               courseDuration="10-week Course"
-            />
+            /> */}
           </FlexBox>
         </FlexBox>
       </FlexBox>

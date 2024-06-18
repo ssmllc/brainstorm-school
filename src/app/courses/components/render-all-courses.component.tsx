@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import CardImageDetail from "@/app/components/card/card-image-detail.component";
-import SelectLevel from "@/app/components/select-level/select-level.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
+import CoursesFilter from "@/app/components/select-level/courses-filter.component";
 
 interface Props {
   selectedCourses: any[];
@@ -75,7 +75,7 @@ const RenderAllCourses = ({ selectedCourses, width }: Props) => {
 
   return (
     <FlexBox flexdirection="column" margin="0 auto" alignitems="center">
-      <SelectLevel
+      <CoursesFilter
         setLevelOfExpertise={setLevelOfExpertise}
         setDayOfTheWeek={setDayOfTheWeek}
         setPrice={setPriceOrder}

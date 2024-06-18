@@ -15,6 +15,10 @@ const Preview = styled.div<posterProps>`
   overflow: hidden;
   margin: 50px 0;
   width: 100%;
+
+  @media (min-width: 1400px) {
+    height: 600px;
+  }
 `;
 
 interface Props {

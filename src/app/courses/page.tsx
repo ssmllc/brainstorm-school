@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import RenderCourses from "./components/render-courses.component";
 import MediaBanner from "../components/banner/media-banner.component";
 import FlexBox from "../components/layout/flexbox.component";
 import Header from "../components/text-block/header.component";

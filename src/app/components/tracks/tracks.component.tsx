@@ -110,7 +110,7 @@ const Track = styled.div<trackProps>`
   min-height: 150px;
   padding: 100px 20px 0 20px;
   position: relative;
-  transition: all 0.35s ease-out;
+  transition: all 0.25s ease-out;
   width: 100%;
 
   @media (min-width: 768px) {
@@ -149,6 +149,7 @@ const Track = styled.div<trackProps>`
   &:hover {
     filter: grayscale(0);
     cursor: pointer;
+    box-shadow: 0 0 0 1px var(--primary);
   }
 `;
 

@@ -6,17 +6,10 @@ import styled from "styled-components";
 
 interface buttonProps {
   type: string;
+  $fontsize?: string;
   margin?: string;
   offsetPadding?: string;
 }
-
-type Props = {
-  type: string;
-  label: string;
-  href?: string;
-  margin?: string;
-  offsetPadding?: string;
-};
 
 const CallToAction = styled.button<buttonProps>`
   background: ${(props) =>
@@ -34,7 +27,7 @@ const CallToAction = styled.button<buttonProps>`
       : props.type === "tertiary"
       ? "var(--primary)"
       : "#000"};
-  font-size: 12px;
+  font-size: ${({ $fontsize }) => ($fontsize ? $fontsize : "12px")};
   font-weight: bold;
   letter-spacing: 2px;
   margin: ${({ margin }) => (margin ? `${margin}` : "35px 0 0")};
@@ -55,9 +48,30 @@ const Anchor = styled(Link)<linkProps>`
       : "#000"};
 `;
 
-const ActionButton = ({ href, type, label, margin, offsetPadding }: Props) => {
+type Props = {
+  type: string;
+  label: string;
+  fontSize?: string;
+  href?: string;
+  margin?: string;
+  offsetPadding?: string;
+};
+
+const ActionButton = ({
+  href,
+  type,
+  label,
+  margin,
+  offsetPadding,
+  fontSize,
+}: Props) => {
   return (
-    <CallToAction type={type} margin={margin} offsetPadding={offsetPadding}>
+    <CallToAction
+      type={type}
+      margin={margin}
+      offsetPadding={offsetPadding}
+      $fontsize={fontSize}
+    >
       {href ? (
         <Anchor type={type} href={href}>
           {label}

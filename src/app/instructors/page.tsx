@@ -55,8 +55,10 @@ export default async function Instructors() {
       <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
         <FlexBox
           margin="20px 60px 0"
+          xl_margin="100px 60px 0"
           sm_width="85%"
           width="70%"
+          xl_width="70%"
           flexdirection="column"
         >
           <Header level="1" text="Brainstorm School Instructors" />
@@ -70,8 +72,10 @@ export default async function Instructors() {
 
         <FlexBox
           margin="20px 60px 0"
+          xl_margin="20px 60px 0"
           sm_width="85%"
           width="70%"
+          xl_width="70%"
           flexdirection="column"
         >
           <Header level="2" text="Expert Guidance in Concept Design" />
@@ -81,15 +85,6 @@ export default async function Instructors() {
             text="Concept design is at the heart of what we do at Brainstorm School. Our instructors have years of experience creating innovative and captivating concepts that bring stories and worlds to life. Whether you’re interested in character design, vehicle design, or creating fantastical creatures, our instructors will guide you through the process, teaching you the techniques and skills needed to excel in this field. Creating believable and captivating environments is crucial in both games and films. Our instructors excel in environment design, teaching students how to develop rich, detailed worlds that enhance storytelling and gameplay. From lush forests to futuristic cities, our instructors cover all aspects of environment design, providing students with a comprehensive understanding of this vital discipline."
             fontSize="15px"
           />
-        </FlexBox>
-
-        <FlexBox
-          margin="25px 60px 0"
-          sm_width="85%"
-          width="70%"
-          flexdirection="column"
-        >
-          <Header level="3" text="Featured Instructor" />
         </FlexBox>
 
         <FeaturedCard
@@ -103,9 +98,11 @@ export default async function Instructors() {
 
         <FlexBox
           margin="20px 60px 0"
+          xl_margin="20px 60px 0"
           sm_margin="20px 25px"
           sm_width="85%"
           width="70%"
+          xl_width="70%"
         >
           <div
             style={{

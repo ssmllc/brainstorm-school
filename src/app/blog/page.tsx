@@ -32,8 +32,9 @@ export default async function Blog() {
   return (
     <>
       <MediaBanner
-        header=""
-        subHeader=""
+        header="Blogs"
+        subHeader="Latest on Brainstorm"
+        label="Blog"
         hero="false"
         theme="dark"
         background="/banner/banner-19.jpg"

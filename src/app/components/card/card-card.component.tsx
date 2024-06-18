@@ -32,6 +32,7 @@ const Container = styled.div<containerProps>`
   min-height: ${({ stacked }) => (stacked === "true" ? "300px" : "auto")};
   overflow: hidden;
   position: relative;
+  transition: all 0.25s ease-out;
   gap: 15px;
   width: ${({ width }) => (width ? width : "100%")};
 
@@ -50,6 +51,10 @@ const Container = styled.div<containerProps>`
     flex-direction: row;
     padding: ${({ padding }) => (padding ? padding : "15px 15px")};
     width: ${({ width }) => (width ? width : "33.33%")};
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 1px var(--primary);
   }
 `;
 

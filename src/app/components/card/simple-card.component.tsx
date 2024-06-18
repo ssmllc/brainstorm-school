@@ -17,6 +17,7 @@ import { IconLocation } from "../icons/icon-location.component";
 import { IconTime } from "../icons/icon-time.component";
 import { IconDuration } from "../icons/icon-duration.component";
 import { IconTerm } from "../icons/icon-term.component";
+import ActionButton from "../buttons/action-button.component";
 
 const CardHeader = ({ text }: { text: string }) => <h2>{text}</h2>;
 
@@ -137,7 +138,7 @@ const Wrapper = styled("div")`
     flex-direction: row;
     padding: 40px 0;
     justify-content: space-between;
-    width: 65%;
+    width: 70%;
   }
 `;
 
@@ -222,6 +223,7 @@ const CardLayout = ({ results }: Props) => {
       <InstructorWrapper>
         <CourseDetails>
           <Container
+            alignitems="center"
             display="flex"
             sm_padding="20px 20px"
             padding="20px 20px"
@@ -239,15 +241,14 @@ const CardLayout = ({ results }: Props) => {
                 texttransform="uppercase"
               >
                 {registration && (
-                  <Link
-                    style={{
-                      color: "var(--primary)",
-                      textDecoration: "underline",
-                    }}
+                  <ActionButton
                     href={registration}
-                  >
-                    Register Today
-                  </Link>
+                    type="primary"
+                    label="Register Today"
+                    margin="0"
+                    offsetPadding="15px 15px"
+                    fontSize="10px"
+                  />
                 )}
               </TextBlock>
             </Container>

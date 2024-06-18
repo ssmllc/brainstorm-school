@@ -46,8 +46,10 @@ export default async function Gallery() {
         <FlexBox
           flexdirection="column"
           margin="20px 0"
+          xl_margin="100px auto 50px"
           sm_width="80%"
           width="70%"
+          xl_width="70%"
         >
           <Header level="1" text="Instructors Gallery" />
 
@@ -60,9 +62,11 @@ export default async function Gallery() {
 
         <FlexBox
           margin="20px 60px 0"
+          xl_margin="20px 60px 50px"
           sm_margin="20px 25px"
           sm_width="85%"
           width="70%"
+          xl_width="70%"
         >
           <div
             style={{

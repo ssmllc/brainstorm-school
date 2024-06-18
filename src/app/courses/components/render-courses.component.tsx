@@ -3,9 +3,7 @@
 import { useContext, useState } from "react";
 import { BrainstormContext } from "@/app/context/context-provider";
 import CardImageDetail from "@/app/components/card/card-image-detail.component";
-import Container from "@/app/components/layout/container.component";
 import { Course, Sections } from "@/app/types/types";
-import SelectLevel from "@/app/components/select-level/select-level.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
 
 interface Props {
@@ -30,6 +28,7 @@ const RenderCourses = ({ selectedCourses, width }: Props) => {
         courseList.map(({ sections, slug }: any, index: number) => {
           return (
             <FlexBox
+              key={index}
               gap="25px 10px"
               justifycontent="center"
               flexwrap="wrap"

@@ -50,6 +50,7 @@ const SimilarCourses = ({ header }: Props) => {
           courseCode="CH"
           courseTime="Fri 10am-1pm (PST)"
           courseDuration="10-week Course"
+          width="33%"
         />
         <CardImageDetail
           base="/courses"
@@ -61,6 +62,7 @@ const SimilarCourses = ({ header }: Props) => {
           courseCode="FIG RS"
           courseTime="Fri 10am-1pm (PST)"
           courseDuration="10-week Course"
+          width="33%"
         />
         <CardImageDetail
           base="/courses"
@@ -72,6 +74,7 @@ const SimilarCourses = ({ header }: Props) => {
           courseCode="ZB1"
           courseTime="Fri 10am-1pm (PST)"
           courseDuration="10-week Course"
+          width="33%"
         />
         {/* <CardImageDetail
           base="/courses"
