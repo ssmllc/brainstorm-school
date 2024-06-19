@@ -81,7 +81,8 @@ export default async function Workshops() {
                   heading={featured.workshopname}
                   subheading={fullDateTime}
                   width="915px"
-                  info={featured.description}
+                  bio={featured.description}
+                  cta="Register Today"
                 />
               );
             })}

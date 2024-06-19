@@ -71,23 +71,35 @@ const Home = async () => {
         >
           <Slide
             poster="banner/banner-1.jpg"
+            superheading="Featured Blog"
+            subheading="Featured Blog"
             heading="Do I need to be good at drawing to succeed in game art?"
             variantType="sm"
+            info="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est eum, sint laboriosam, cupiditate hic explicabo qui repudiandae, fugit nesciunt perferendis obcaecati placeat in dicta rerum aliquid inventore maiores provident incidunt."
           />
           <Slide
             poster="banner/banner-2.jpg"
+            superheading="Featured Blog"
+            subheading="Featured Blog"
             heading="Developing Backstories for Characters"
             variantType="sm"
+            info="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est eum, sint laboriosam, cupiditate hic explicabo qui repudiandae, fugit nesciunt perferendis obcaecati placeat in dicta rerum aliquid inventore maiores provident incidunt."
           />
           <Slide
             poster="banner/banner-3.jpg"
+            superheading="Featured Blog"
+            subheading="Featured Blog"
             heading="Exploring Career Opportunities in Concept Art"
             variantType="sm"
+            info="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est eum, sint laboriosam, cupiditate hic explicabo qui repudiandae, fugit nesciunt perferendis obcaecati placeat in dicta rerum aliquid inventore maiores provident incidunt."
           />
           <Slide
             poster="banner/banner-4.jpg"
+            superheading="Featured Blog"
+            subheading="Featured Blog"
             heading="How important is a portfolio for getting a job in game art?"
             variantType="sm"
+            info="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est eum, sint laboriosam, cupiditate hic explicabo qui repudiandae, fugit nesciunt perferendis obcaecati placeat in dicta rerum aliquid inventore maiores provident incidunt."
           />
         </FeaturedSlider>
 

@@ -40,6 +40,8 @@ interface Props {
   variantType?: string;
   width?: string;
   info?: any;
+  bio?: any;
+  cta?: any;
 }
 
 const Slide = ({
@@ -50,6 +52,8 @@ const Slide = ({
   poster,
   width,
   info,
+  bio,
+  cta,
 }: Props) => {
   return (
     <Card className="slide" width={width}>
@@ -59,7 +63,9 @@ const Slide = ({
         variant={variantType}
         poster={poster}
         superHeading={superheading}
-        bio={info}
+        info={info}
+        bio={bio}
+        cta={cta}
       />
     </Card>
   );

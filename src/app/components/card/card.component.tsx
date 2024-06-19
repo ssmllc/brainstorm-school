@@ -139,6 +139,7 @@ interface Props {
   bio?: string;
   tags?: boolean;
   slug?: string;
+  cta?: string;
 }
 
 const ImageDetailCard = ({
@@ -151,6 +152,7 @@ const ImageDetailCard = ({
   bio,
   tags,
   slug,
+  cta,
 }: Props) => {
   return (
     <Card className="course-card" variant={variant}>
@@ -226,7 +228,7 @@ const ImageDetailCard = ({
                 padding: "25px 0",
               }}
             >
-              Read more...
+              {cta}
             </a>
           </>
         )}
