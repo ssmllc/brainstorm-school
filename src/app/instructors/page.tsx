@@ -102,6 +102,7 @@ export default async function Instructors() {
           margin="25px 0"
           bio={featuredInstructors[0].bio}
           slug={featuredInstructors[0].slug}
+          cta="Read More"
         />
 
         <FlexBox
