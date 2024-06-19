@@ -45,6 +45,7 @@ export default async function Gallery() {
       <FlexBox
         flexdirection="column"
         margin="100px auto"
+        xl_margin="100px auto"
         sm_margin="100px auto 50px"
         alignitems="center"
       >
@@ -52,8 +53,10 @@ export default async function Gallery() {
           flexdirection="column"
           sm_margin="20px 0"
           margin="20px 0"
+          xl_margin="20px 0"
           sm_width="80%"
           width="70%"
+          xl_width="70%"
         >
           <Header level="1" text="Brainstorm School Gallery" />
           <Header
@@ -67,8 +70,10 @@ export default async function Gallery() {
           flexdirection="column"
           sm_margin="20px 0"
           margin="20px 0"
+          xl_margin="20px 0"
           sm_width="80%"
           width="70%"
+          xl_width="70%"
         >
           <Header level="2" text="Discover Concept Design Masterpiece" />
           <Header
@@ -82,8 +87,10 @@ export default async function Gallery() {
           flexdirection="column"
           sm_margin="20px 0"
           margin="20px 0"
+          xl_margin="20px 0"
           sm_width="80%"
           width="70%"
+          xl_width="70%"
         >
           <Header
             level="4"
@@ -143,8 +150,10 @@ export default async function Gallery() {
           flexdirection="column"
           sm_margin="20px 0"
           margin="20px 0"
+          xl_margin="20px 0"
           sm_width="80%"
           width="70%"
+          xl_width="70%"
         >
           <Header level="2" text="Student Gallery" />
 
@@ -159,8 +168,10 @@ export default async function Gallery() {
           flexdirection="column"
           sm_margin="20px 0"
           margin="20px 0"
+          xl_margin="20px 0"
           sm_width="80%"
           width="70%"
+          xl_width="70%"
         >
           <Header level="2" text="Instructors Gallery" />
 
@@ -174,8 +185,10 @@ export default async function Gallery() {
         <FlexBox
           margin="20px 60px 0"
           sm_margin="20px 25px"
+          xl_margin="20px 60px 0"
           sm_width="80%"
           width="70%"
+          xl_width="70%"
         >
           <FlexBox sm_width="100%">
             <AnchorCard

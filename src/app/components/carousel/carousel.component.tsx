@@ -73,9 +73,10 @@ interface Props {
   children: React.ReactNode;
   sm_height?: string;
   height?: string;
+  instructors?: any;
 }
 
-const Carousel = ({ children, sm_height, height }: Props) => {
+const Carousel = ({ children, sm_height, height, instructors }: Props) => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [slideCardWidth, setSlideCardWidth] = useState<number>(320);
   const [slidesTotal, setSlidesTotal] = useState<number>(0);

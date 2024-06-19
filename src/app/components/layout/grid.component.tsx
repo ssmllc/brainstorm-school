@@ -19,6 +19,18 @@ const Container = styled.div<containerProps>`
   grid-template-columns: ${({ $sm_columns }) => $sm_columns};
   gap: 20px 20px;
   width: 100%;
+
+  @media (min-width: 768px) {
+    grid-template-columns: ${({ $md_columns }) => $md_columns};
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: ${({ $columns }) => $columns};
+  }
+
+  @media (min-width: 1900px) {
+    grid-template-columns: ${({ $xl_columns }) => $xl_columns};
+  }
 `;
 
 interface Props {
@@ -44,7 +56,16 @@ const Grid = ({
   xl_rows,
   children,
 }: Props) => {
-  return <Container $sm_columns={sm_columns}>{children}</Container>;
+  return (
+    <Container
+      $sm_columns={sm_columns}
+      $md_columns={md_columns}
+      $columns={columns}
+      $xl_columns={xl_columns}
+    >
+      {children}
+    </Container>
+  );
 };
 
 export default Grid;

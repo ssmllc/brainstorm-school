@@ -58,7 +58,12 @@ const Home = async () => {
 
         <ImageGallery header="Gallery of Instructors Work" />
 
-        <CardGroup padding="25px 25px" instructors={instructors} />
+        <CardGroup
+          padding="25px 25px"
+          instructors={instructors}
+          icon_height="100px"
+          icon_width="120px"
+        />
 
         <FeaturedSlider
           heading="The Latest Industry Blogs, News and Insights"

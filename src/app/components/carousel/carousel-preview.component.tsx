@@ -46,9 +46,9 @@ const CarouselPreview = ({ selectedInstructor, gallery, imageUrl }: Props) => {
         {gallery?.length > 0 && (
           <Carousel sm_height="200px" height="350px">
             {gallery &&
-              gallery.map((art: any) => {
+              gallery.map((art: any, index: number) => {
                 return (
-                  <div key={art._id}>
+                  <div key={index}>
                     <CardImage
                       key={art._id}
                       boxshadow="0 0 10px var(--black)"

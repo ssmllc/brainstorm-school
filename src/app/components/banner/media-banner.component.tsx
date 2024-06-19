@@ -185,7 +185,7 @@ const Headshot = styled.div<mediaProps>`
 const Media = styled.div<mediaProps>`
   background: ${({ $image }) =>
     $image ? `url(${$image}) top center no-repeat` : "var(--black)"};
-  background-size: contain;
+  background-size: cover;
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
   overflow: hidden;
@@ -337,9 +337,11 @@ const MediaBanner = ({
         </BannerWrapper>
 
         <div style={{ width: "100%", height: "100%" }}>
-          {hero === "true" && image && !media && <Media $image={image} />}
+          {hero === "true" && image && !media && (
+            <Media $image={randomBanner} />
+          )}
 
-          {hero === "true" && media && (
+          {/* {hero === "true" && media && (
             <Media>
               <video
                 style={{
@@ -355,7 +357,7 @@ const MediaBanner = ({
                 <source src={media} type="video/mp4" />
               </video>
             </Media>
-          )}
+          )} */}
         </div>
       </Content>
     </Banner>

@@ -18,6 +18,7 @@ const InstructorWrapper = styled.div`
 
   @media (min-width: 1024px) {
     flex-direction: row;
+    gap: 0 20px;
   }
 `;
 
@@ -70,6 +71,8 @@ const InstructorBio = ({
             subHeading={profession}
             padding="0 20px"
             width="100%"
+            icon_height="100px"
+            icon_width="120px"
           />
         </FlexBox>
 

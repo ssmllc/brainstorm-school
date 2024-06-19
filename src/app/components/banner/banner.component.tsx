@@ -118,31 +118,25 @@ const Banner = ({ header, gallery }: Props) => {
   const bannerRef = useRef(null);
 
   useEffect(() => {
-    if (bannerRef.current) {
-      const randomBannerImage = (min: number, max: number) => {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-      };
-
-      const getRandomArt = randomBannerImage(0, gallery.length - 1);
-      const { title } = gallery[getRandomArt];
-
-      console.log("gallery", gallery);
-
-      const { _id, artist, imageUrl } = gallery[getRandomArt];
-
-      // const randomBanner = `/banner/banner-${randomBannerImage(1, 45)}.jpg`;
-
-      setRandomTitle(title || "");
-      setRandomArtist(artist?.title);
-      setRandomSlug(artist?.slug);
-      setRandomBanner(`${imageUrl}?w=1920`);
-
-      gsap.to(bannerRef.current, {
-        ease: "power1.out",
-        duration: 0.5,
-        opacity: 1,
-      });
-    }
+    // if (bannerRef.current) {
+    //   const randomBannerImage = (min: number, max: number) => {
+    //     return Math.floor(Math.random() * (max - min + 1) + min);
+    //   };
+    //   const getRandomArt = randomBannerImage(0, gallery.length - 1);
+    //   const { title } = gallery[getRandomArt];
+    //   console.log("gallery", gallery);
+    //   const { _id, artist, imageUrl } = gallery[getRandomArt];
+    //   // const randomBanner = `/banner/banner-${randomBannerImage(1, 45)}.jpg`;
+    //   setRandomTitle(title || "");
+    //   setRandomArtist(artist?.title);
+    //   setRandomSlug(artist?.slug);
+    //   setRandomBanner(`${imageUrl}?w=1920`);
+    //   gsap.to(bannerRef.current, {
+    //     ease: "power1.out",
+    //     duration: 0.5,
+    //     opacity: 1,
+    //   });
+    // }
   }, []);
 
   return (

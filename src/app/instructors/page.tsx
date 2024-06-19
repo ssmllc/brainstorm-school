@@ -112,7 +112,7 @@ export default async function Instructors() {
           width="70%"
           xl_width="70%"
         >
-          <Grid sm_columns="repeat(1, 1fr)" columns="repeat(4, 1fr)">
+          <Grid sm_columns="repeat(1, 1fr)" columns="repeat(3, 1fr)">
             {result &&
               result.map((instructor: any) => {
                 return (

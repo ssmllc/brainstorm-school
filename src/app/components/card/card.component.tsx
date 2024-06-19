@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import gsap from "gsap";
 import styled from "styled-components";
-import { Decipher } from "crypto";
 import DecipherText from "@/app/courses/components/decipher-text.component";
 import { IconTime } from "../icons/icon-time.component";
 import { IconDuration } from "../icons/icon-duration.component";
@@ -131,8 +130,9 @@ const Tag = ({ children }: any) => {
 };
 
 interface Props {
-  variant: string;
+  variant?: string;
   heading: string;
+  subheading?: string;
   poster: string;
   superHeading?: string;
   info?: string;
@@ -146,6 +146,7 @@ const ImageDetailCard = ({
   poster,
   superHeading,
   heading,
+  subheading,
   info,
   bio,
   tags,
@@ -155,11 +156,7 @@ const ImageDetailCard = ({
     <Card className="course-card" variant={variant}>
       <Poster variant={variant} image={poster} tag={superHeading} />
       <Content variant={variant}>
-        {superHeading && (
-          <SuperHeading>
-            {superHeading ? superHeading : "Featured Blog"}
-          </SuperHeading>
-        )}
+        {subheading && <SuperHeading>{subheading}</SuperHeading>}
         <Heading>{heading}</Heading>
         {tags && (
           <Details variant={variant}>
@@ -213,7 +210,7 @@ const ImageDetailCard = ({
           <>
             <div
               style={{
-                height: "160px",
+                height: "125px",
                 overflow: "hidden",
                 padding: "10px 0",
               }}

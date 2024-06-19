@@ -60,11 +60,12 @@ export default async function Page() {
           xl_margin="0 auto"
           justifycontent="center"
         >
-          <Header level="1" text="Course Guide" />
+          <Header level="1" text="Course Guide" textalign="center" />
           <Header
             level="4"
             fontSize="16px"
             texttransform="normal"
+            textalign="center"
             text="Our course guide is here to show a general roadmap for artist who are trying to get and idea of where to start."
           />
         </FlexBox>

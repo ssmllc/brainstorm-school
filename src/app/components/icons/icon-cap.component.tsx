@@ -9,7 +9,7 @@ export const IconCap = ({ height, width }: Props) => (
     height={height}
     viewBox="0 0 24 24"
     fill="#bababa"
-    fill-opacity="0.5"
+    fillOpacity="0.5"
   >
     <g>
       <path d="M12,15.86a.75.75,0,0,1-.41-.12L.35,8.58a.78.78,0,0,1,0-1.3L11.59.12a.76.76,0,0,1,.82,0L23.65,7.28a.78.78,0,0,1,0,1.3L12.41,15.74A.75.75,0,0,1,12,15.86ZM2.19,7.93,12,14.18l9.81-6.25L12,1.68Z" />

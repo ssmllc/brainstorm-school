@@ -1,10 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { ReactNode } from "react";
 import styled from "styled-components";
 import ImageDetailCard from "../card/card.component";
 
-const Card = styled.div`
+interface cardProps {
+  width?: string;
+}
+const Card = styled.div<cardProps>`
   /* border: thin solid green; */
   width: 292px;
 
@@ -25,25 +28,38 @@ const Card = styled.div`
   }
 
   @media (min-width: 1400px) {
-    width: 1125px;
+    width: ${({ width }) => (width ? width : "1125px")};
   }
 `;
 
 interface Props {
   heading: string;
+  superheading: string;
+  subheading?: string;
   poster: string;
-  variantType: string;
+  variantType?: string;
+  width?: string;
+  info?: any;
 }
 
-const Slide = ({ variantType, heading, poster }: Props) => {
+const Slide = ({
+  variantType,
+  superheading,
+  heading,
+  subheading,
+  poster,
+  width,
+  info,
+}: Props) => {
   return (
-    <Card className="slide">
+    <Card className="slide" width={width}>
       <ImageDetailCard
         heading={heading}
+        subheading={subheading}
         variant={variantType}
         poster={poster}
-        superHeading="Featured Blog"
-        info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod sed provident exercitationem ipsa deleniti ut blanditiis a saepe reiciendis natus rerum eos quaerat delectus nulla eum iste, quibusdam in dicta."
+        superHeading={superheading}
+        bio={info}
       />
     </Card>
   );

@@ -8,10 +8,14 @@ import { IconNext, IconPrevious } from "../icons/icon-arrow.component";
 import Header from "../text-block/header.component";
 import FlexBox from "../layout/flexbox.component";
 
-const Content = styled.div`
+interface contentProps {
+  width?: string;
+}
+
+const Content = styled.div<contentProps>`
   margin: 0;
   position: relative;
-  width: 100vw;
+  width: ${({ width }) => (width ? width : "100vw")};
 
   @media (min-width: 1024px) {
     margin: 0;
@@ -107,11 +111,19 @@ const Button = styled.button`
 
 interface Props {
   heading?: string;
+  cta?: string;
   textalign?: string;
+  width?: string;
   children: string | ReactNode | JSX.Element | JSX.Element[];
 }
 
-const FeaturedSlider = ({ children, heading, textalign }: Props) => {
+const FeaturedSlider = ({
+  children,
+  heading,
+  textalign,
+  cta,
+  width,
+}: Props) => {
   const [variantType, setVariantType] = useState<string>("lg");
   const [slideWidth, setSlideWidth] = useState<number>(0);
   const [slideCardWidth, setSlideCardWidth] = useState<number>(0);
@@ -175,7 +187,7 @@ const FeaturedSlider = ({ children, heading, textalign }: Props) => {
   }, [windowWidth]);
 
   return (
-    <Content>
+    <Content width={width}>
       {heading && (
         <FlexBox
           alignitems="center"
@@ -207,9 +219,11 @@ const FeaturedSlider = ({ children, heading, textalign }: Props) => {
         </Button>
       </Featured>
 
-      <ReadMore>
-        <ActionButton type="tertiary" label="Read More" />
-      </ReadMore>
+      {cta && (
+        <ReadMore>
+          <ActionButton type="tertiary" label={cta} />
+        </ReadMore>
+      )}
     </Content>
   );
 };

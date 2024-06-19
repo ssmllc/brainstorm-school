@@ -3,9 +3,9 @@ import FlexBox from "@/app/components/layout/flexbox.component";
 import FAQs from "@/app/components/text-block/faqs.component";
 import Header from "@/app/components/text-block/header.component";
 import type { Metadata } from "next";
-import AnchorCard from "../components/tracks/track.component";
-import RegistrationBlock from "../components/registration/registration-block.component";
-import FeaturedCard from "../components/card/featured-card.component";
+import FeaturedSlider from "../components/featured/featured-slider.component";
+import Slide from "../components/featured/slide.component";
+import { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "Brainstorm School Workshops",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 const fetchData = async () => {
   const query =
-    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27workshops%27%5D+%7B%0A++featured%5B0%5D+-%3E+%7B%0A++++_id%2C%0A++++slug%2C%0A++++%22imageUrl%22%3A+preview.asset-%3Eurl%2C%0A++++workshopname%2C%0A++++description%2C%0A++++important%2C%0A++++instructor%2C%0A++++registration%2C%0A++++price%2C%0A++++date%2C%0A++++time%2C%0A++++location%2C%0A++++workexamples%2C%0A++++description%0A++%7D%2C%0A++content%2C%0A++faqs%2C%0A++future%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++slug%2C%0A++++%22imageUrl%22%3A+preview.asset-%3Eurl%2C%0A++++workshopname%2C%0A++++description%2C%0A++++important%2C%0A++++instructor%2C%0A++++registration%2C%0A++++price%2C%0A++++date%2C%0A++++time%2C%0A++++location%2C%0A++++workexamples%2C%0A++++description%0A++%7D%2C%0A++previous%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++slug%2C%0A++++%22imageUrl%22%3A+preview.asset-%3Eurl%2C%0A++++workshopname%2C%0A++++description%2C%0A++++important%2C%0A++++instructor%2C%0A++++registration%2C%0A++++price%2C%0A++++date%2C%0A++++time%2C%0A++++location%2C%0A++++workexamples%2C%0A++++description%0A++%7D%0A%7D";
+    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27workshops%27%5D+%7B%0A++content%2C%0A++faqs%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++question%2C%0A++++answer%2C%0A++%7D%2C%0A++future%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++slug%2C%0A++++%22imageUrl%22%3A+preview.asset-%3Eurl%2C%0A++++workshopname%2C%0A++++description%2C%0A++++important%2C%0A++++instructor%2C%0A++++registration%2C%0A++++price%2C%0A++++date%2C%0A++++time%2C%0A++++location%2C%0A++++workexamples%2C%0A++++description%0A++%7D%2C%0A%0A%7D";
   // const response = await fetch(query);
   const response = await fetch(query, { cache: "no-store" });
 
@@ -31,8 +31,7 @@ const fetchData = async () => {
 export default async function Workshops() {
   const result = await fetchData();
 
-  const { featured } = result[0];
-  console.log("featured", featured);
+  const { future } = result[0];
 
   return (
     <>
@@ -68,7 +67,44 @@ export default async function Workshops() {
             level="1"
             text="Featured Brainstorm School Online Workshops"
           />
+        </FlexBox>
 
+        <FeaturedSlider width="100%">
+          {future &&
+            future.map((featured: any) => {
+              const formatDate = new Date(featured.date).toDateString();
+              const fullDateTime = `${formatDate} @ ${featured.time}`;
+              return (
+                <Slide
+                  poster="banner/banner-1.jpg"
+                  superheading={featured.instructor}
+                  heading={featured.workshopname}
+                  subheading={fullDateTime}
+                  width="915px"
+                  info={featured.description}
+                />
+              );
+            })}
+        </FeaturedSlider>
+      </FlexBox>
+
+      <FlexBox
+        flexdirection="column"
+        margin="100px auto"
+        sm_margin="100px auto 50px"
+        alignitems="center"
+      >
+        <FlexBox
+          flexdirection="column"
+          margin="20px 0"
+          sm_margin="25px 0"
+          md_margin="75px 0"
+          xl_margin="20px 0"
+          sm_width="80%"
+          md_width="70%"
+          width="70%"
+          xl_width="70%"
+        >
           <Header
             level="4"
             fontSize="15px"
@@ -190,14 +226,6 @@ export default async function Workshops() {
           />
         </FlexBox>
 
-        <RegistrationBlock
-          primary={false}
-          heading="Ready to take the next step?"
-          scale="xl"
-          cta="Register Today"
-          ctaType="primary"
-        />
-
         <FlexBox
           flexdirection="column"
           margin="20px 0"
@@ -220,115 +248,8 @@ export default async function Workshops() {
           />
         </FlexBox>
 
-        <FlexBox
-          sm_width="100%"
-          sm_margin="0 auto"
-          flexdirection="column"
-          alignitems="center"
-        >
-          <FeaturedCard
-            poster={featured.imageUrl}
-            superheading={featured.workshopname}
-            heading={featured.instructor}
-            bio={featured.description}
-            margin="25px 0"
-            sm_margin="25px 0"
-          />
-        </FlexBox>
-
-        <FlexBox flexdirection="column" width="70%" xl_width="70%">
-          <FlexBox
-            flexdirection="column"
-            sm_width="80%"
-            md_width="70%"
-            margin="25px 0"
-            md_margin="25px auto"
-            sm_margin="25px auto"
-            xl_margin="20px 0"
-            width="70%"
-            xl_width="70%"
-          >
-            <Header level="3" text="Future Workshops" />
-          </FlexBox>
-
-          <FlexBox
-            margin="20px 0"
-            sm_margin="20px 25px"
-            sm_width="85%"
-            width="100%"
-            xl_margin="20px 0"
-            xl_width="100%"
-          >
-            <AnchorCard
-              label="Mentorship Online"
-              name="Oliver Beck"
-              poster="https://cdn.sanity.io/images/y8rjsgga/production/dbe0f90d49ecc458b97ab1efcea97632eae87bf7-1866x1126.jpg"
-            />
-            <AnchorCard
-              label="Character Design"
-              name="Gue Yang"
-              poster="https://cdn.sanity.io/images/y8rjsgga/production/edafb39d7261d2f9492ac1728b2bd7a4c4725086-3885x1959.jpg"
-            />
-            <AnchorCard
-              label="Visual Development"
-              name="Mike Hernandez"
-              poster="https://cdn.sanity.io/images/y8rjsgga/production/9c7210b2b15a0a81a7ddef73464dba57107501e3-1085x2048.jpg"
-            />
-            <AnchorCard
-              label="World Building"
-              name="Joon Ahn"
-              poster="https://cdn.sanity.io/images/y8rjsgga/production/7fea55489b20ab06011bd39fbad35bace2170cbb-1075x1512.jpg"
-            />
-          </FlexBox>
-        </FlexBox>
-
-        <FlexBox flexdirection="column" width="70%" xl_width="70%">
-          <FlexBox
-            flexdirection="column"
-            sm_width="80%"
-            md_width="70%"
-            margin="25px 0"
-            md_margin="25px auto"
-            xl_margin="20px 0"
-            width="70%"
-            xl_width="70%"
-          >
-            <Header level="3" text="Previous Workshops" />
-          </FlexBox>
-
-          <FlexBox
-            margin="20px 0"
-            sm_margin="20px 25px"
-            sm_width="85%"
-            width="100%"
-            xl_margin="20px 0"
-            xl_width="100%"
-          >
-            <AnchorCard
-              label="Mentorship Online"
-              name="Oliver Beck"
-              poster="https://cdn.sanity.io/images/y8rjsgga/production/dbe0f90d49ecc458b97ab1efcea97632eae87bf7-1866x1126.jpg"
-            />
-            <AnchorCard
-              label="Character Design"
-              name="Gue Yang"
-              poster="https://cdn.sanity.io/images/y8rjsgga/production/edafb39d7261d2f9492ac1728b2bd7a4c4725086-3885x1959.jpg"
-            />
-            <AnchorCard
-              label="Visual Development"
-              name="Mike Hernandez"
-              poster="https://cdn.sanity.io/images/y8rjsgga/production/9c7210b2b15a0a81a7ddef73464dba57107501e3-1085x2048.jpg"
-            />
-            <AnchorCard
-              label="World Building"
-              name="Joon Ahn"
-              poster="https://cdn.sanity.io/images/y8rjsgga/production/7fea55489b20ab06011bd39fbad35bace2170cbb-1075x1512.jpg"
-            />
-          </FlexBox>
-        </FlexBox>
-
-        <FlexBox sm_width="80%">
-          <FAQs results={[]} />
+        <FlexBox sm_width="80%" width="80%" xl_width="70%">
+          <FAQs results={result[0]} />
         </FlexBox>
       </FlexBox>
     </>

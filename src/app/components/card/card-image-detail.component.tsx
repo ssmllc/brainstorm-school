@@ -160,14 +160,14 @@ const Difficulty = ({
     <Level>
       {courseDifficulty && Difficulty.Beginner === courseDifficulty && (
         <>
-          <Label>Level</Label>
+          <Label>Beginner</Label>
           <LevelIndicator />
         </>
       )}
 
       {courseDifficulty && Difficulty.Intermediate === courseDifficulty && (
         <>
-          <Label>Level</Label>
+          <Label>Intermediate</Label>
           <LevelIndicator />
           <LevelIndicator />
         </>
@@ -175,7 +175,7 @@ const Difficulty = ({
 
       {courseDifficulty && Difficulty.Advanced === courseDifficulty && (
         <>
-          <Label>Level</Label>
+          <Label>Advanced</Label>
           <LevelIndicator />
           <LevelIndicator />
           <LevelIndicator />

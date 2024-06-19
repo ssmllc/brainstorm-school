@@ -17,12 +17,12 @@ const Heading = styled.div<Props>`
   line-height: 1.5;
   padding: 10px 0 5px;
 
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
     padding: 0 0 10px;
   }
 
   @media (min-width: 1024px) {
-    padding: 0 0 10px;
+    padding: 0 0 3px;
   }
 `;
 

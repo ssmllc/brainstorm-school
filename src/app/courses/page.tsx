@@ -104,7 +104,7 @@ export default async function Courses() {
         <FeaturedCard
           poster="/banner/banner-5.jpg"
           superheading="Rhythm & Structure"
-          info="Lorem ipsum dolor sit amet"
+          info="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam expedita ad fugiat possimus ab vero nobis facere quam modi, reprehenderit accusamus suscipit maxime porro exercitationem blanditiis eveniet ducimus, vitae in."
           heading="James Paick"
           margin="25px 0"
           sm_margin="25px 0"
