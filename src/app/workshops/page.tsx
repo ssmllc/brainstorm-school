@@ -71,11 +71,12 @@ export default async function Workshops() {
 
         <FeaturedSlider width="100%">
           {future &&
-            future.map((featured: any) => {
+            future.map((featured: any, index: number) => {
               const formatDate = new Date(featured.date).toDateString();
               const fullDateTime = `${formatDate} @ ${featured.time}`;
               return (
                 <Slide
+                  key={index}
                   poster="banner/banner-1.jpg"
                   superheading={featured.instructor}
                   heading={featured.workshopname}
