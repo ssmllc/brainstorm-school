@@ -60,6 +60,7 @@ export default async function Instructors({
       <FlexBox
         flexdirection="column"
         margin="100px auto"
+        xl_margin="100px auto 50px"
         sm_margin="100px auto 50px"
         alignitems="center"
       >

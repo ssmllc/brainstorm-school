@@ -116,9 +116,10 @@ export default async function Page({
           >
             <Carousel instructors={instructors}>
               {instructors &&
-                instructors[0]?.gallery.map((g: any) => {
+                instructors[0]?.gallery.map((g: any, index: number) => {
                   return (
                     <CardImage
+                      key={index}
                       boxshadow="0 0 10px var(--black)"
                       className="slide"
                       preview={g.imageUrl}

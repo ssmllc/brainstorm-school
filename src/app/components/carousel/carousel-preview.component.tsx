@@ -21,7 +21,7 @@ const CarouselPreview = ({ selectedInstructor, gallery, imageUrl }: Props) => {
     <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
       <FlexBox
         margin="20px 60px 0"
-        xl_margin="50px 60px"
+        xl_margin="100px auto 50px"
         sm_margin="50px auto 0"
         sm_width="80%"
         width="50%"
