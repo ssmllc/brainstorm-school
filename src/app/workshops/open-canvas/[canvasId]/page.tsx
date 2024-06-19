@@ -1,7 +1,4 @@
 import MediaBanner from "@/app/components/banner/media-banner.component";
-import CardImageDetail from "@/app/components/card/card-image-detail.component";
-import FeaturedCard from "@/app/components/card/featured-card.component";
-import FAQs from "@/app/components/text-block/faqs.component";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -32,10 +29,10 @@ export default async function Workshops() {
   return (
     <div>
       <MediaBanner
-        header="Open Canvas Videos"
+        header="Open Canvas"
         subHeader=""
-        label="Open Canvas"
-        hero="true"
+        label="Workshops"
+        hero="false"
         theme="dark"
         background="/banner/banner-19.jpg"
         image="/banner/media-banner.png"

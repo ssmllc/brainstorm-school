@@ -20,7 +20,7 @@ const BannerWrapper = styled("div")<bannerProps>`
   flex-direction: column;
   height: 75vh;
   justify-content: center;
-  opacity: 0.5;
+  opacity: 1;
   padding-top: 25%;
   position: relative;
   width: 100vw;
@@ -34,12 +34,12 @@ const BannerWrapper = styled("div")<bannerProps>`
   }
 
   @media (min-width: 1440px) {
-    height: 70vh;
+    height: 100vh;
   }
 
-  @media (min-width: 1900px) {
+  /* @media (min-width: 1900px) {
     height: 75vh;
-  }
+  } */
 `;
 
 const Overlay = styled.div`
@@ -59,7 +59,7 @@ const Overlay = styled.div`
   pointer-events: none;
   top: 0;
   width: 100vw;
-  z-index: 15;
+  z-index: 2;
 `;
 
 const Credit = styled(Link)`
@@ -141,13 +141,14 @@ const Banner = ({ header, gallery }: Props) => {
 
   return (
     <BannerWrapper ref={bannerRef} background={randomBanner}>
-      <CreditTag label={randomTitle} artist={randomArtist} slug={randomSlug} />
+      {/* <CreditTag label={randomTitle} artist={randomArtist} slug={randomSlug} /> */}
       <RegistrationBlock
         primary={true}
         heading={header}
         scale="xl"
         cta="Register Today"
         ctaType="primary"
+        href="/courses"
       />
       <Overlay />
 

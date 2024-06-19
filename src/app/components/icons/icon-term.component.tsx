@@ -1,16 +1,21 @@
 export const IconTerm = ({
   width,
   height,
+  fill,
+  fillOpacity,
 }: {
   width: string;
   height: string;
+  fill?: string;
+  fillOpacity?: string;
 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={width}
     height={height}
     viewBox="0 0 24 24"
-    fill="#bababa"
+    fill={fill ? fill : "#bababa"}
+    fillOpacity={fillOpacity ? fillOpacity : "0.5"}
   >
     <g>
       <path d="M21.19,24H2.81A2.81,2.81,0,0,1,0,21.19V8.94a.76.76,0,0,1,.77-.77H23.23a.76.76,0,0,1,.77.77V21.19A2.81,2.81,0,0,1,21.19,24ZM1.53,9.7V21.19a1.28,1.28,0,0,0,1.28,1.28H21.19a1.28,1.28,0,0,0,1.28-1.28V9.7Z" />

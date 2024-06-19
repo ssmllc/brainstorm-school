@@ -29,23 +29,18 @@ const ContentWrapper = styled.div<contentProps>`
 
   @media (min-width: 768px) {
     max-width: 1100px;
-    width: 60%;
-  }
-
-  @media (min-width: 800px) {
+    width: 70%;
     flex-direction: ${({ $flexdirection }) =>
       $flexdirection ? $flexdirection : "row"};
-    width: 70%;
   }
 
   @media (min-width: 1024px) {
     align-items: center;
-    max-width: 1100px;
-    width: 90%;
   }
 
   @media (min-width: 1400px) {
     max-width: 1150px;
+    width: 100%;
   }
 
   @media (min-width: 1900px) {

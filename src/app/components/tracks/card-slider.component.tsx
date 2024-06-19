@@ -3,11 +3,9 @@
 import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import styled from "styled-components";
-import CourseDetail from "../course-detail/course-detail.component";
 import { IconNext, IconPrevious } from "../icons/icon-arrow.component";
-import { IconTime } from "../icons/icon-time.component";
-import { IconDuration } from "../icons/icon-duration.component";
 import Link from "next/link";
+import CardImageDetail from "../card/card-image-detail.component";
 
 const CardSliderContainer = styled.div`
   /* border: thin solid red; */
@@ -48,7 +46,7 @@ const CardSliderCards = styled.div`
   display: flex;
   overflow: hidden;
   position: relative;
-  height: 500px;
+  height: 550px;
   padding: 0;
   width: 95%;
 
@@ -107,53 +105,54 @@ interface cardProps {
   tag: string;
 }
 
-const Poster = styled.div<cardProps>`
-  background: url(${({ image }) => image}) top center no-repeat;
-  background-size: cover;
-  height: 100px;
-  padding: 185px 20px 0 20px;
-  position: relative;
+// const Poster = styled.div<cardProps>`
+//   background: url(${({ image }) => image}) top center no-repeat;
+//   background-size: cover;
+//   height: 100px;
+//   padding: 185px 20px 0 20px;
+//   position: relative;
 
-  &:before {
-    background: var(--black);
-    border-radius: 50px;
-    content: ${({ tag }) => `"${tag}"`};
-    color: var(--white);
-    font-size: 10px;
-    font-weight: 500;
-    left: 15px;
-    letter-spacing: 1px;
-    padding: 12px 15px;
-    position: absolute;
-    top: 15px;
-    text-transform: uppercase;
-    z-index: 5;
-  }
-`;
+//   &:before {
+//     background: var(--black);
+//     border-radius: 50px;
+//     content: ${({ tag }) => `"${tag}"`};
+//     color: var(--white);
+//     font-size: 10px;
+//     font-weight: 500;
+//     left: 15px;
+//     letter-spacing: 1px;
+//     padding: 12px 15px;
+//     position: absolute;
+//     top: 15px;
+//     text-transform: uppercase;
+//     z-index: 5;
+//   }
+// `;
 
-const Details = styled.div`
-  background: var(--off-black);
-  min-height: 100px;
-  padding: 40px 20px;
-  position: relative;
-`;
+// const Details = styled.div`
+//   background: var(--off-black);
+//   min-height: 100px;
+//   padding: 25px 20px;
+//   position: relative;
+// `;
 
-const CourseName = styled.p`
-  color: var(--white);
-  font-size: 24px;
-  font-weight: bold;
-  padding: 5px 0 15px;
-`;
+// const CourseName = styled.p`
+//   min-height: 70px;
+//   color: var(--white);
+//   font-size: 24px;
+//   font-weight: bold;
+//   padding: 5px 0 15px;
+// `;
 
-const CourseDetails = styled.ul`
-  color: #ccc;
-  font-size: 12px;
+// const CourseDetails = styled.ul`
+//   color: #ccc;
+//   font-size: 12px;
 
-  li {
-    padding: 20px 0 0 0;
-    text-transform: uppercase;
-  }
-`;
+//   li {
+//     padding: 20px 0 0 0;
+//     text-transform: uppercase;
+//   }
+// `;
 
 interface cardWrapperProps {
   width: string;
@@ -179,7 +178,7 @@ const Heading = styled.p`
 
 const CardsCarousel = styled.div`
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   width: 95%;
 
   @media (min-width: 400px) {
@@ -227,7 +226,7 @@ const CardSlider = () => {
   const delta: number = 10;
 
   let currentSlider = 0;
-  const minCardsShown = 3;
+  const minCardsShown = 1;
 
   const handleCardSliderMove = (direction: string) => {
     const courseSlider = document.querySelector(".course-slider");
@@ -296,280 +295,85 @@ const CardSlider = () => {
 
         <CardSliderCards>
           <CardWrapper className="course-slider" width={`${coursesTotal}px`}>
-            <Card
-              href="/courses/foundation/figure-drawing-1"
+            <CardImageDetail
               className="slider-course-card"
-            >
-              <Poster image="/banner/banner-1.jpg" tag="Foundation" />
-              <Details>
-                <CourseName>Figure Drawing 1</CourseName>
-                <CourseDetails>
-                  <CourseDetail>
-                    <span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 22"
-                        height="20px"
-                        fill="#bababa"
-                        width="20px"
-                      >
-                        <g>
-                          <g>
-                            <path
-                              className="cls-1"
-                              d="M12,15.86a.75.75,0,0,1-.41-.12L.35,8.58a.78.78,0,0,1,0-1.3L11.59.12a.76.76,0,0,1,.82,0L23.65,7.28a.78.78,0,0,1,0,1.3L12.41,15.74A.75.75,0,0,1,12,15.86ZM2.19,7.93,12,14.18l9.81-6.25L12,1.68Z"
-                            />
-                            <path
-                              className="cls-1"
-                              d="M12,22a.75.75,0,0,1-.41-.12L4.44,17.32a.76.76,0,0,1-.35-.65V10.53a.76.76,0,0,1,.76-.76.77.77,0,0,1,.77.76v5.72L12,20.32l6.38-4.07V10.53a.77.77,0,0,1,.77-.76.76.76,0,0,1,.76.76v6.14a.76.76,0,0,1-.35.65l-7.15,4.56A.75.75,0,0,1,12,22Z"
-                            />
-                            <path
-                              className="cls-1"
-                              d="M23.23,14.84a.77.77,0,0,1-.76-.77V7.93a.77.77,0,1,1,1.53,0v6.14A.77.77,0,0,1,23.23,14.84Z"
-                            />
-                          </g>
-                        </g>
-                      </svg>
-                    </span>
-                    FIG 1
-                  </CourseDetail>
+              base="/courses"
+              preview="/banner/banner-1.jpg"
+              slug="foundation"
+              path="figure-drawing-1"
+              courseName="Figure Drawing & Anatomy"
+              courseCode="FIG 1"
+              courseTime="Wednesday 2:00pm - 5:00pm (PST)"
+              courseDuration="10 - Week Course"
+              coursePrice="$100.00"
+              courseDifficulty="Beginner"
+              width="320px"
+              courseTrack="Foundation"
+            />
 
-                  <CourseDetail>
-                    <span>
-                      <IconTime width="24px" height="24px" />
-                    </span>
-                    Fri 10am - 1pm (PST)
-                  </CourseDetail>
-
-                  <CourseDetail>
-                    <span>
-                      <IconDuration width="24px" height="24px" />
-                    </span>
-                    10 Week Course
-                  </CourseDetail>
-                </CourseDetails>
-              </Details>
-            </Card>
-
-            <Card
-              href="/courses/2d-3d-concept-design"
+            <CardImageDetail
               className="slider-course-card"
-            >
-              <Poster image="/banner/banner-2.jpg" tag="2D-3D Concept Design" />
-              <Details>
-                <CourseName>2D 3D Concept Design</CourseName>
-                <CourseDetails>
-                  <CourseDetail>
-                    <span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 22"
-                        height="20px"
-                        fill="#bababa"
-                        width="20px"
-                      >
-                        <g>
-                          <g id="Layer_1" data-name="Layer 1">
-                            <path
-                              className="cls-1"
-                              d="M12,15.86a.75.75,0,0,1-.41-.12L.35,8.58a.78.78,0,0,1,0-1.3L11.59.12a.76.76,0,0,1,.82,0L23.65,7.28a.78.78,0,0,1,0,1.3L12.41,15.74A.75.75,0,0,1,12,15.86ZM2.19,7.93,12,14.18l9.81-6.25L12,1.68Z"
-                            />
-                            <path
-                              className="cls-1"
-                              d="M12,22a.75.75,0,0,1-.41-.12L4.44,17.32a.76.76,0,0,1-.35-.65V10.53a.76.76,0,0,1,.76-.76.77.77,0,0,1,.77.76v5.72L12,20.32l6.38-4.07V10.53a.77.77,0,0,1,.77-.76.76.76,0,0,1,.76.76v6.14a.76.76,0,0,1-.35.65l-7.15,4.56A.75.75,0,0,1,12,22Z"
-                            />
-                            <path
-                              className="cls-1"
-                              d="M23.23,14.84a.77.77,0,0,1-.76-.77V7.93a.77.77,0,1,1,1.53,0v6.14A.77.77,0,0,1,23.23,14.84Z"
-                            />
-                          </g>
-                        </g>
-                      </svg>
-                    </span>
-                    FIG RS
-                  </CourseDetail>
+              base="/courses"
+              preview="/banner/banner-2.jpg"
+              slug="visual-development-and-storyboard"
+              path="storyboarding-1"
+              courseName="Storyboarding 1"
+              courseCode="SB 1"
+              courseTime="Sunday 10:00am-1:00pm (PST)"
+              courseDuration="10 - Week Course"
+              coursePrice="$775.00"
+              courseDifficulty="Beginner"
+              width="320px"
+              courseTrack="Visual Development & Storyboard"
+            />
 
-                  <CourseDetail>
-                    <span>
-                      <IconTime width="24px" height="24px" />
-                    </span>
-                    Fri 10am - 1pm (PST)
-                  </CourseDetail>
-
-                  <CourseDetail>
-                    <span>
-                      <IconDuration width="24px" height="24px" />
-                    </span>
-                    10 Week Course
-                  </CourseDetail>
-                </CourseDetails>
-              </Details>
-            </Card>
-
-            <Card href="/courses/foundation" className="slider-course-card">
-              <Poster image="/banner/banner-3.jpg" tag="Concept Art & Design" />
-              <Details>
-                <CourseName>Foundation Courses</CourseName>
-                <CourseDetails>
-                  <CourseDetail>
-                    <span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 22"
-                        height="20px"
-                        fill="#bababa"
-                        width="20px"
-                      >
-                        <g>
-                          <g id="Layer_1" data-name="Layer 1">
-                            <path
-                              className="cls-1"
-                              d="M12,15.86a.75.75,0,0,1-.41-.12L.35,8.58a.78.78,0,0,1,0-1.3L11.59.12a.76.76,0,0,1,.82,0L23.65,7.28a.78.78,0,0,1,0,1.3L12.41,15.74A.75.75,0,0,1,12,15.86ZM2.19,7.93,12,14.18l9.81-6.25L12,1.68Z"
-                            />
-                            <path
-                              className="cls-1"
-                              d="M12,22a.75.75,0,0,1-.41-.12L4.44,17.32a.76.76,0,0,1-.35-.65V10.53a.76.76,0,0,1,.76-.76.77.77,0,0,1,.77.76v5.72L12,20.32l6.38-4.07V10.53a.77.77,0,0,1,.77-.76.76.76,0,0,1,.76.76v6.14a.76.76,0,0,1-.35.65l-7.15,4.56A.75.75,0,0,1,12,22Z"
-                            />
-                            <path
-                              className="cls-1"
-                              d="M23.23,14.84a.77.77,0,0,1-.76-.77V7.93a.77.77,0,1,1,1.53,0v6.14A.77.77,0,0,1,23.23,14.84Z"
-                            />
-                          </g>
-                        </g>
-                      </svg>
-                    </span>
-                    FIG RS
-                  </CourseDetail>
-
-                  <CourseDetail>
-                    <span>
-                      <IconTime width="24px" height="24px" />
-                    </span>
-                    Fri 10am - 1pm (PST)
-                  </CourseDetail>
-
-                  <CourseDetail>
-                    <span>
-                      <IconDuration width="24px" height="24px" />
-                    </span>
-                    10 Week Course
-                  </CourseDetail>
-                </CourseDetails>
-              </Details>
-            </Card>
-
-            <Card
-              href="/workshops/brainstorm-connection"
+            <CardImageDetail
               className="slider-course-card"
-            >
-              <Poster
-                image="/banner/banner-4.jpg"
-                tag="Brainstorm Connection"
-              />
-              <Details>
-                <CourseName>Brainstorm Connection</CourseName>
-                <CourseDetails>
-                  <CourseDetail>
-                    <span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 22"
-                        height="20px"
-                        fill="#bababa"
-                        width="20px"
-                      >
-                        <g>
-                          <g id="Layer_1" data-name="Layer 1">
-                            <path
-                              className="cls-1"
-                              d="M12,15.86a.75.75,0,0,1-.41-.12L.35,8.58a.78.78,0,0,1,0-1.3L11.59.12a.76.76,0,0,1,.82,0L23.65,7.28a.78.78,0,0,1,0,1.3L12.41,15.74A.75.75,0,0,1,12,15.86ZM2.19,7.93,12,14.18l9.81-6.25L12,1.68Z"
-                            />
-                            <path
-                              className="cls-1"
-                              d="M12,22a.75.75,0,0,1-.41-.12L4.44,17.32a.76.76,0,0,1-.35-.65V10.53a.76.76,0,0,1,.76-.76.77.77,0,0,1,.77.76v5.72L12,20.32l6.38-4.07V10.53a.77.77,0,0,1,.77-.76.76.76,0,0,1,.76.76v6.14a.76.76,0,0,1-.35.65l-7.15,4.56A.75.75,0,0,1,12,22Z"
-                            />
-                            <path
-                              className="cls-1"
-                              d="M23.23,14.84a.77.77,0,0,1-.76-.77V7.93a.77.77,0,1,1,1.53,0v6.14A.77.77,0,0,1,23.23,14.84Z"
-                            />
-                          </g>
-                        </g>
-                      </svg>
-                    </span>
-                    FIG RS
-                  </CourseDetail>
+              base="/courses"
+              preview="/banner/banner-3.jpg"
+              slug="2d-3d-concept-design"
+              path="world-building-3d"
+              courseName="World Building 3D"
+              courseCode="WB3D"
+              courseTime="Saturday 7:00pm - 10:00pm (PST)"
+              courseDuration="10 - Week Course"
+              coursePrice="$625.00"
+              courseDifficulty="Beginner"
+              width="320px"
+              courseTrack="2D 3D CONCEPT DESIGN"
+            />
 
-                  <CourseDetail>
-                    <span>
-                      <IconTime width="24px" height="24px" />
-                    </span>
-                    Fri 10am - 1pm (PST)
-                  </CourseDetail>
-
-                  <CourseDetail>
-                    <span>
-                      <IconDuration width="24px" height="24px" />
-                    </span>
-                    10 Week Course
-                  </CourseDetail>
-                </CourseDetails>
-              </Details>
-            </Card>
-
-            <Card
-              href="/courses/concept-art-games-and-film/concept-art-boot-camp"
+            <CardImageDetail
               className="slider-course-card"
-            >
-              <Poster image="/banner/banner-6.jpg" tag="Concept Art & Design" />
-              <Details>
-                <CourseName>Concept Art Bootcamp</CourseName>
-                <CourseDetails>
-                  <CourseDetail>
-                    <span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 22"
-                        height="20px"
-                        fill="#bababa"
-                        width="20px"
-                      >
-                        <g>
-                          <g id="Layer_1" data-name="Layer 1">
-                            <path
-                              className="cls-1"
-                              d="M12,15.86a.75.75,0,0,1-.41-.12L.35,8.58a.78.78,0,0,1,0-1.3L11.59.12a.76.76,0,0,1,.82,0L23.65,7.28a.78.78,0,0,1,0,1.3L12.41,15.74A.75.75,0,0,1,12,15.86ZM2.19,7.93,12,14.18l9.81-6.25L12,1.68Z"
-                            />
-                            <path
-                              className="cls-1"
-                              d="M12,22a.75.75,0,0,1-.41-.12L4.44,17.32a.76.76,0,0,1-.35-.65V10.53a.76.76,0,0,1,.76-.76.77.77,0,0,1,.77.76v5.72L12,20.32l6.38-4.07V10.53a.77.77,0,0,1,.77-.76.76.76,0,0,1,.76.76v6.14a.76.76,0,0,1-.35.65l-7.15,4.56A.75.75,0,0,1,12,22Z"
-                            />
-                            <path
-                              className="cls-1"
-                              d="M23.23,14.84a.77.77,0,0,1-.76-.77V7.93a.77.77,0,1,1,1.53,0v6.14A.77.77,0,0,1,23.23,14.84Z"
-                            />
-                          </g>
-                        </g>
-                      </svg>
-                    </span>
-                    CABC
-                  </CourseDetail>
+              base="/courses"
+              preview="/banner/banner-4.jpg"
+              slug="foundation"
+              path="figure-drawing-1"
+              courseName="Figure Drawing 1"
+              courseCode="FIG 1"
+              courseTime="Thursday 7:30pm - 10:30pm (PST)"
+              courseDuration="10 - Week Course"
+              coursePrice="$100.00"
+              courseDifficulty="Beginner"
+              width="320px"
+              courseTrack="2D 3D CONCEPT DESIGN"
+            />
 
-                  <CourseDetail>
-                    <span>
-                      <IconTime width="24px" height="24px" />
-                    </span>
-                    Fri 10am - 1pm (PST)
-                  </CourseDetail>
-
-                  <CourseDetail>
-                    <span>
-                      <IconDuration width="24px" height="24px" />
-                    </span>
-                    10 Week Course
-                  </CourseDetail>
-                </CourseDetails>
-              </Details>
-            </Card>
+            <CardImageDetail
+              className="slider-course-card"
+              base="/courses"
+              preview="/banner/banner-5.jpg"
+              slug="concept-art-games-and-film"
+              path="environment-design"
+              courseName="Environment Design"
+              courseCode="WB2"
+              courseTime="Thursday 7:30pm - 10:30pm (PST)"
+              courseDuration="10 - Week Course"
+              coursePrice="$100.00"
+              courseDifficulty="Beginner"
+              width="320px"
+              courseTrack="CONCEPT ART GAMES & FILM"
+            />
           </CardWrapper>
         </CardSliderCards>
       </CardsCarousel>

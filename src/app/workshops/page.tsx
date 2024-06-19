@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import FeaturedSlider from "../components/featured/featured-slider.component";
 import Slide from "../components/featured/slide.component";
 import { ReactNode } from "react";
+import FeaturedCard from "../components/card/featured-card.component";
 
 export const metadata: Metadata = {
   title: "Brainstorm School Workshops",
@@ -69,25 +70,23 @@ export default async function Workshops() {
           />
         </FlexBox>
 
-        <FeaturedSlider width="100%">
-          {future &&
-            future.map((featured: any, index: number) => {
-              const formatDate = new Date(featured.date).toDateString();
-              const fullDateTime = `${formatDate} @ ${featured.time}`;
-              return (
-                <Slide
-                  key={index}
-                  poster="banner/banner-1.jpg"
-                  superheading={featured.instructor}
-                  heading={featured.workshopname}
-                  subheading={fullDateTime}
-                  width="915px"
-                  bio={featured.description}
-                  cta="Register Today"
-                />
-              );
-            })}
-        </FeaturedSlider>
+        {future &&
+          future.map((featured: any, index: number) => {
+            const formatDate = new Date(featured.date).toDateString();
+            const fullDateTime = `${formatDate} @ ${featured.time}`;
+
+            return (
+              <FeaturedCard
+                key={index}
+                poster="banner/banner-1.jpg"
+                superheading={featured.instructor}
+                subheading={fullDateTime}
+                heading={featured.workshopname}
+                bio={featured.description}
+                cta="Register Today"
+              />
+            );
+          })}
       </FlexBox>
 
       <FlexBox

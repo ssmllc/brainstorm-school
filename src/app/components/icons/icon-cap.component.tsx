@@ -1,14 +1,15 @@
 interface Props {
   height: string;
   width: string;
+  fill?: string;
 }
-export const IconCap = ({ height, width }: Props) => (
+export const IconCap = ({ height, width, fill }: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={width}
     height={height}
     viewBox="0 0 24 24"
-    fill="#bababa"
+    fill={fill ? fill : "#bababa"}
     fillOpacity="0.5"
   >
     <g>

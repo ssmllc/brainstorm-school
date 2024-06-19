@@ -6,8 +6,9 @@ import AnchorCard from "@/app/components/tracks/track.component";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Brainstorm Blog",
-  description: "Blog",
+  title: "Brainstorm Online Mentorship Programs - Brainschool School",
+  description:
+    "Elevate your design skills with personalized mentorships. Collaborate with industry experts to sharpen your abilities and achieve your professional aspirations. Register Today!",
 };
 
 const fetchData = async () => {
@@ -50,7 +51,7 @@ export default async function Mentorship() {
       >
         <FlexBox
           margin="20px 60px 0"
-          xl_margin="100px auto 0"
+          xl_margin="20px 60px 0"
           md_margin="75px 60px 0"
           sm_margin="25px 60px 0"
           sm_width="85%"

@@ -1,5 +1,6 @@
 import MediaBanner from "@/app/components/banner/media-banner.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
+import VideoContentSplit from "@/app/components/registration/video-content-split.component";
 import FAQs from "@/app/components/text-block/faqs.component";
 import Header from "@/app/components/text-block/header.component";
 import AnchorCard from "@/app/components/tracks/track.component";
@@ -41,10 +42,20 @@ export default async function Workshops() {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
 
+      <FlexBox width="100%" xl_margin="100px auto 0">
+        <VideoContentSplit
+          video="ADpWI2n1PZ8?si=BaZHmaTByvvU7-2e"
+          heading="Open industry talk, with Stephanie Ma Stine."
+          text="Let's get to know Stephanie Ma Stine and her amazing journey and story! We will be discussing various topics of art, career talk, habits, life tips and more! We want to bring encouragement, learning, excitement and good energy. Every question has a purpose."
+          cta=""
+        />
+      </FlexBox>
+
       <FlexBox
         flexdirection="column"
-        sm_margin="100px auto 50px"
-        margin="100px auto 0"
+        sm_margin="20px auto 50px"
+        margin="20px auto 0"
+        xl_margin="20px auto 0"
         alignitems="center"
       >
         <FlexBox
@@ -52,11 +63,11 @@ export default async function Workshops() {
           sm_margin="25px 0"
           md_margin="75px 0"
           margin="20px 0"
-          xl_margin="100px auto 0"
+          xl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header level="1" text="Brainstorm School Open Canvas" />
           <Header
@@ -74,7 +85,7 @@ export default async function Workshops() {
           sm_width="80%"
           md_width="70%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header level="2" text="What is the Open Canvas Workshop?" />
           <Header
@@ -92,7 +103,7 @@ export default async function Workshops() {
           sm_width="80%"
           md_width="70%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header
             level="3"
@@ -126,7 +137,7 @@ export default async function Workshops() {
           sm_width="80%"
           md_width="70%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header level="3" text="Connecting with the Artist Community" />
 
@@ -145,7 +156,7 @@ export default async function Workshops() {
           sm_width="80%"
           md_width="70%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header level="3" text="Online Open Canvas Workshop" />
 
@@ -157,49 +168,11 @@ export default async function Workshops() {
         </FlexBox>
 
         <FlexBox
-          flexdirection="column"
-          sm_margin="75px 0 0"
-          margin="75px 0 0"
-          xl_margin="75px 0 0"
-          width="70%"
-          xl_width="70%"
-        >
-          <FlexBox
-            width="100%"
-            xl_width="100%"
-            md_width="70%"
-            sm_width="80%"
-            flexwrap="wrap"
-          >
-            <AnchorCard
-              label="Mentorship Online"
-              name="Oliver Beck"
-              poster="https://cdn.sanity.io/images/y8rjsgga/production/dbe0f90d49ecc458b97ab1efcea97632eae87bf7-1866x1126.jpg"
-            />
-            <AnchorCard
-              label="Character Design"
-              name="Gue Yang"
-              poster="https://cdn.sanity.io/images/y8rjsgga/production/edafb39d7261d2f9492ac1728b2bd7a4c4725086-3885x1959.jpg"
-            />
-            <AnchorCard
-              label="Visual Development"
-              name="Mike Hernandez"
-              poster="https://cdn.sanity.io/images/y8rjsgga/production/9c7210b2b15a0a81a7ddef73464dba57107501e3-1085x2048.jpg"
-            />
-            <AnchorCard
-              label="World Building"
-              name="Joon Ahn"
-              poster="https://cdn.sanity.io/images/y8rjsgga/production/7fea55489b20ab06011bd39fbad35bace2170cbb-1075x1512.jpg"
-            />
-          </FlexBox>
-        </FlexBox>
-
-        <FlexBox
+          sm_margin="0"
           sm_width="80%"
-          width="70%"
           md_width="70%"
-          xl_width="70%"
-          sm_margin="50px 0 25px"
+          width="70%"
+          xl_width="80%"
         >
           <FAQs results={result[0]} />
         </FlexBox>

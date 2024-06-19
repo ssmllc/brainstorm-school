@@ -33,6 +33,7 @@ interface Props {
   poster: string;
   heading: string;
   superheading?: string;
+  subheading?: string;
   sm_margin?: string;
   margin?: string;
   info?: string;
@@ -43,6 +44,7 @@ interface Props {
 
 const FeaturedCard = ({
   superheading,
+  subheading,
   poster,
   heading,
   info,
@@ -58,6 +60,7 @@ const FeaturedCard = ({
         variant="lg"
         poster={poster}
         superHeading={superheading}
+        subheading={subheading}
         heading={heading}
         info={info}
         bio={bio}

@@ -1,17 +1,5 @@
 import React from "react";
 import MediaBanner from "@/app/components/banner/media-banner.component";
-import RegistrationBlock from "@/app/components/registration/registration-block.component";
-import CardLayout, {
-  CardImage,
-} from "@/app/components/card/simple-card.component";
-import TextBlock from "@/app/components/text-block/text-block.component";
-import Container, {
-  FlexContainer,
-} from "@/app/components/layout/container.component";
-import Carousel from "@/app/components/carousel/carousel.component";
-import { Card } from "@/app/components/card/card-card.component";
-import TextHeaderBlock from "@/app/components/text-block/text-header-block.component";
-import SimilarCourses from "@/app/components/similar-courses/similar-courses.component";
 
 const fetchData = async () => {
   const query =

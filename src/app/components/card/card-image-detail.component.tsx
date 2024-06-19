@@ -145,7 +145,7 @@ const LevelIndicator = styled.div`
   width: 20px;
 `;
 
-const Difficulty = ({
+export const Difficulty = ({
   courseDifficulty,
 }: {
   courseDifficulty: string | undefined;
@@ -195,6 +195,7 @@ interface Props {
   courseCode: string;
   courseTime: string;
   coursePrice?: string;
+  className?: string;
   courseDuration: string;
   courseDifficulty?: string;
   width?: string;
@@ -202,6 +203,7 @@ interface Props {
 
 const CardImageDetail = ({
   base,
+  className,
   slug,
   path,
   preview,
@@ -217,7 +219,7 @@ const CardImageDetail = ({
   return (
     <Card
       href={base ? `${base}/${slug}/${path}` : `${slug}/${path}`}
-      className="course-card"
+      className={className ? className : "course-card"}
       width={width}
     >
       <Preview image={preview} $tag={courseTrack} />

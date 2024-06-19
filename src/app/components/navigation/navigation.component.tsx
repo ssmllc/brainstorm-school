@@ -6,9 +6,6 @@ import { BrainstormContext } from "@/app/context/context-provider";
 import { useContext, useState } from "react";
 import { Sections } from "@/app/types/types";
 import BrainstormLogo from "../Logo/logo.component";
-import RenderCourses from "@/app/courses/components/render-courses.component";
-import FlexBox from "../layout/flexbox.component";
-import Header from "../text-block/header.component";
 
 const NavigationBar = styled.div`
   background: var(--off-black-90);
@@ -391,12 +388,12 @@ const Navigation = () => {
             >
               Open Canvas
             </AccordionItem>
-            <AccordionItem
+            {/* <AccordionItem
               onClick={() => setActive(false)}
               href="/workshops/brainstorm-connection"
             >
               Brainstorm Connection
-            </AccordionItem>
+            </AccordionItem> */}
           </Accordion>
 
           <MainMenuItem onClick={() => setActive(false)} href="/mentorship">
@@ -502,11 +499,11 @@ const Navigation = () => {
             <DropdownMenuItem>
               <MenuItem href="/workshops/open-canvas">Open Canvas</MenuItem>
             </DropdownMenuItem>
-            <DropdownMenuItem>
+            {/* <DropdownMenuItem>
               <MenuItem href="/workshops/brainstorm-connection">
                 Brainstorm Connection
               </MenuItem>
-            </DropdownMenuItem>
+            </DropdownMenuItem> */}
           </DropdownMenu>
         </Dropdown>
 
