@@ -57,7 +57,7 @@ export default async function Courses() {
           sm_width="80%"
           md_width="70%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header
             level="1"
@@ -94,7 +94,7 @@ export default async function Courses() {
           margin="25px auto 0"
           sm_width="80%"
           md_width="70%"
-          xl_width="70%"
+          xl_width="80%"
           width="70%"
           flexdirection="column"
         >

@@ -92,7 +92,7 @@ export default async function About() {
             flexdirection="column"
             sm_width="80%"
             md_width="70%"
-            xl_width="80%"
+            xl_width="82%"
             sm_margin="20px 0"
             margin="20px 0"
             xl_margin="20px 0"

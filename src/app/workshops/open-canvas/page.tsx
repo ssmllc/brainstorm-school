@@ -45,7 +45,7 @@ export default async function Workshops() {
       <FlexBox width="100%" xl_margin="100px auto 0">
         <VideoContentSplit
           video="ADpWI2n1PZ8?si=BaZHmaTByvvU7-2e"
-          heading="Open industry talk, with Stephanie Ma Stine."
+          heading="Open industry talk, with Stephanie Ma Stine"
           text="Let's get to know Stephanie Ma Stine and her amazing journey and story! We will be discussing various topics of art, career talk, habits, life tips and more! We want to bring encouragement, learning, excitement and good energy. Every question has a purpose."
           cta=""
         />

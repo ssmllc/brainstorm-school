@@ -130,9 +130,10 @@ export const MiniCards = ({ width, results }: Props) => {
     >
       <FlexBox
         width="90%"
-        xl_width="90%"
+        xl_width="80%"
         md_width="100%"
         margin="25px auto"
+        xl_margin="25px auto"
         flexdirection="column"
       >
         <TextHeaderBlock fontSize="36px" fontWeight="bold">
@@ -146,7 +147,7 @@ export const MiniCards = ({ width, results }: Props) => {
           xl_width="70%"
           flexdirection="column"
           margin="20px 0"
-          xl_margin="0 60px 50px"
+          xl_margin="0"
           md_margin="20px 0"
         >
           <Header
