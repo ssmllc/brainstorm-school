@@ -56,7 +56,7 @@ export default async function Gallery() {
           xl_margin="20px 0"
           sm_width="80%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header level="1" text="Brainstorm School Gallery" />
           <Header
@@ -73,7 +73,7 @@ export default async function Gallery() {
           xl_margin="20px 0"
           sm_width="80%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header level="2" text="Discover Concept Design Masterpiece" />
           <Header
@@ -90,7 +90,7 @@ export default async function Gallery() {
           xl_margin="20px 0"
           sm_width="80%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header
             level="4"
@@ -153,7 +153,7 @@ export default async function Gallery() {
           xl_margin="20px 0"
           sm_width="80%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header level="2" text="Student Gallery" />
 
@@ -171,7 +171,7 @@ export default async function Gallery() {
           xl_margin="20px 0"
           sm_width="80%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header level="2" text="Instructors Gallery" />
 
@@ -188,7 +188,7 @@ export default async function Gallery() {
           xl_margin="20px 60px 0"
           sm_width="80%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <FlexBox sm_width="100%">
             <AnchorCard

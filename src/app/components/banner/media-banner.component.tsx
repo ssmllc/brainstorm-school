@@ -21,7 +21,7 @@ const Banner = styled.div<bannerProps>`
   background: ${({ theme }) =>
     theme === "light" ? "var(--white)" : "var(--black)"};
   display: flex;
-  height: ${({ $hero }) => ($hero === "true" ? "100vh" : "50vh")};
+  height: ${({ $hero }) => ($hero === "true" ? "100vh" : "65vh")};
   flex-direction: column;
   overflow: hidden;
   position: relative;
@@ -60,10 +60,6 @@ const Banner = styled.div<bannerProps>`
       rgba(0, 0, 0, 0) 25%,
       var(--off-black) 100%
     );
-    /* background: ${({ $hero }) =>
-      $hero === "false"
-        ? "linear-gradient(to bottom, var(--off-black) 0%, rgba(0, 0, 0, 0) 100%)"
-        : "linear-gradient(to bottom, var(--off-black) 15%, rgba(0, 0, 0, 0) 80%, var(--off-black) 100%)"}; */
     content: "";
     display: block;
     height: 100%;
@@ -96,14 +92,15 @@ const Content = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    width: 90%;
+    /* width: 90%; */
+    width: 65%;
   }
 
   @media (min-width: 1400px) {
     left: 50%;
     top: 55%;
     transform: translate(-50%, -50%);
-    width: 80%;
+    /* width: 80%; */
   }
 
   @media (min-width: 1900px) {
@@ -172,13 +169,13 @@ interface mediaProps {
 const Headshot = styled.div<mediaProps>`
   background: ${({ $headshot }) => `url(${$headshot}) top left no-repeat`};
   background-size: cover;
-  border-radius: 100%;
+  border-radius: 20%;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  height: 175px;
   overflow: hidden;
-  height: 140px;
-  margin: 0px 0;
+  margin: 0;
   position: relative;
-  width: 140px;
+  width: 175px;
   z-index: 50;
 `;
 
@@ -291,7 +288,12 @@ const MediaBanner = ({
             )}
 
             {header && headshot && (
-              <FlexBox gap="25px" alignitems="center" margin="0">
+              <FlexBox
+                alignitems="center"
+                gap="25px"
+                margin="0"
+                sm_width="100%"
+              >
                 <Headshot $headshot={headshot} />
                 <Heading
                   header={header}

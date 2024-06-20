@@ -58,7 +58,7 @@ export default async function Page({ params }: { params: { id: string } }) {
           xl_margin="100px 0 50px"
           sm_width="80%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <DecipherText results={selectedResults} />
         </FlexBox>

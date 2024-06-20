@@ -13,8 +13,9 @@ export default async function ComplianceLine() {
   return (
     <>
       <MediaBanner
-        header=""
-        subHeader=""
+        header="Compliance Line"
+        label="About"
+        subHeader="A safe learning environment"
         hero="false"
         theme="dark"
         background="/banner/banner-31.jpg"
@@ -27,16 +28,16 @@ export default async function ComplianceLine() {
         flexdirection="column"
         sm_margin="100px auto 50px"
         margin="100px auto"
-        xl_margin="150px auto"
+        xl_margin="100px auto"
       >
         <FlexBox
+          flexdirection="column"
           sm_margin="20px 60px 0"
           margin="20px 60px 0"
           xl_margin="20px 60px 0"
           sm_width="85%"
           width="70%"
-          xl_width="70%"
-          flexdirection="column"
+          xl_width="80%"
         >
           <Header level="1" text="Compliance Line" />
           <Header
@@ -53,7 +54,7 @@ export default async function ComplianceLine() {
           xl_margin="20px 60px 0"
           sm_width="80%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header
             level="4"
@@ -68,13 +69,13 @@ export default async function ComplianceLine() {
         </FlexBox>
 
         <FlexBox
+          flexdirection="column"
           sm_margin="20px 60px 0"
           margin="20px 60px 0"
           xl_margin="20px 60px 0"
           sm_width="80%"
           width="70%"
-          xl_width="70%"
-          flexdirection="column"
+          xl_width="80%"
         >
           <Header level="2" text="We value diversity" />
           <Header

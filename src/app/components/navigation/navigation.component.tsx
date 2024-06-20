@@ -530,6 +530,10 @@ const Navigation = () => {
           <MenuItem href="/gallery">Gallery</MenuItem>
           <DropdownMenu className="bs-dropdown-menu">
             <DropdownMenuItem>
+              <MenuItem href="/gallery">School Gallery</MenuItem>
+            </DropdownMenuItem>
+
+            <DropdownMenuItem>
               <MenuItem href="/gallery/students">Students</MenuItem>
             </DropdownMenuItem>
 

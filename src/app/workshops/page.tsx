@@ -62,7 +62,7 @@ export default async function Workshops() {
           sm_width="80%"
           md_width="70%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header
             level="1"
@@ -104,7 +104,7 @@ export default async function Workshops() {
           sm_width="80%"
           md_width="70%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header
             level="4"
@@ -139,7 +139,7 @@ export default async function Workshops() {
           sm_width="80%"
           md_width="70%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header level="2" text="What You'll Learn" margin="0 0 25px 0" />
 
@@ -159,7 +159,7 @@ export default async function Workshops() {
           sm_width="80%"
           md_width="70%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header level="2" text="Character and Environment Design" />
 
@@ -177,7 +177,7 @@ export default async function Workshops() {
           sm_width="80%"
           md_width="70%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header level="2" text="Advanced Digital Painting Techniques" />
 
@@ -195,7 +195,7 @@ export default async function Workshops() {
           md_width="70%"
           width="70%"
           xl_margin="20px 0"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header level="2" text="Visual Storytelling and Narrative Art" />
 
@@ -209,11 +209,11 @@ export default async function Workshops() {
         <FlexBox
           flexdirection="column"
           margin="20px 0"
+          xl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
-          xl_margin="20px 0"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header
             level="2"
@@ -230,11 +230,11 @@ export default async function Workshops() {
         <FlexBox
           flexdirection="column"
           margin="20px 0"
+          xl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
-          xl_margin="20px 0"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header
             level="4"
@@ -249,7 +249,7 @@ export default async function Workshops() {
           />
         </FlexBox>
 
-        <FlexBox sm_width="80%" width="80%" xl_width="70%">
+        <FlexBox sm_width="80%" width="80%" xl_width="80%">
           <FAQs results={result[0]} />
         </FlexBox>
       </FlexBox>

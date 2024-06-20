@@ -54,11 +54,11 @@ export default async function Instructors() {
       />
 
       <FlexBox
+        alignitems="center"
         flexdirection="column"
         sm_margin="100px auto 50px"
         margin="100px auto"
         xl_margin="100px auto"
-        alignitems="center"
       >
         <FlexBox
           flexdirection="column"
@@ -67,7 +67,7 @@ export default async function Instructors() {
           xl_margin="20px 60px 0"
           sm_width="80%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header level="1" text="Brainstorm School Instructors" />
 
@@ -84,7 +84,7 @@ export default async function Instructors() {
           xl_margin="20px 60px 0"
           sm_width="80%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
           flexdirection="column"
         >
           <Header level="2" text="Expert Guidance in Concept Design" />
@@ -112,7 +112,7 @@ export default async function Instructors() {
           xl_margin="20px 60px 0"
           sm_width="80%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Grid sm_columns="repeat(1, 1fr)" columns="repeat(3, 1fr)">
             {result &&

@@ -7,7 +7,6 @@ import TextBlock from "../text-block/text-block.component";
 import { Card } from "./card-card.component";
 import Container from "../layout/container.component";
 import DecipherText from "@/app/courses/components/decipher-text.component";
-import Link from "next/link";
 import Header from "../text-block/header.component";
 import { IconPencilTip } from "../icons/icon-pencil-tip.component";
 import { IconRequirements } from "../icons/icon-requirements.component";
@@ -18,8 +17,6 @@ import { IconTime } from "../icons/icon-time.component";
 import { IconDuration } from "../icons/icon-duration.component";
 import { IconTerm } from "../icons/icon-term.component";
 import ActionButton from "../buttons/action-button.component";
-
-const CardHeader = ({ text }: { text: string }) => <h2>{text}</h2>;
 
 interface previewProps {
   image: string;
@@ -35,7 +32,7 @@ const Preview = styled("div")<previewProps>`
   box-shadow: ${({ boxshadow }) => boxshadow};
   height: ${({ $sm_height }) => ($sm_height ? $sm_height : "300px")};
   overflow: hidden;
-  margin: 40px 0;
+  margin: 20px 0;
   width: ${({ width }) => (width ? width : "100%")};
 
   @media (min-width: 768px) {
@@ -75,12 +72,6 @@ export const CardImage = ({
       setPreview(preview);
     }}
   />
-);
-
-const CardDetails = ({ text }: { text: string }) => (
-  <TextBlock fontSize="14px" padding="0" width="100%">
-    {text}
-  </TextBlock>
 );
 
 const Tags = styled("div")`

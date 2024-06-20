@@ -45,14 +45,14 @@ export default async function BlogDetails() {
       />
 
       <FlexBox
+        alignitems="center"
+        flexdirection="column"
+        sm_margin="20px 25px"
         margin="20px 60px"
         xl_margin="0"
-        sm_margin="20px 25px"
         sm_width="85%"
         width="70%"
         xl_width="70%"
-        flexdirection="column"
-        alignitems="center"
       >
         <CardImage preview="/banner/banner-1.jpg" width="100%" height="450px" />
       </FlexBox>
@@ -60,6 +60,7 @@ export default async function BlogDetails() {
       <Typography heading="Blog headline for articles" />
 
       <FlexBox
+        sm_margin="20px 60px"
         margin="20px 60px"
         xl_margin="20px 0"
         sm_width="85%"
@@ -74,12 +75,13 @@ export default async function BlogDetails() {
       <Typography heading="Blog headline for articles" />
 
       <FlexBox
+        alignitems="center"
+        sm_margin="20px 60px"
         margin="20px 60px"
         xl_margin="20px 60px"
         sm_width="85%"
         width="70%"
         xl_width="70%"
-        alignitems="center"
       >
         <CardImageDetail
           slug="workshops"
@@ -95,6 +97,7 @@ export default async function BlogDetails() {
         <FlexBox
           alignitems="center"
           flexdirection="column"
+          sm_margin="20px 60px"
           margin="20px 60px"
           xl_margin="20px 60px"
           sm_width="85%"
@@ -109,22 +112,23 @@ export default async function BlogDetails() {
       </FlexBox>
 
       <FlexBox
+        alignitems="center"
         sm_margin="40px 60px 20px"
         margin="20px 60px"
         xl_margin="20px 60px"
         sm_width="90%"
         width="70%"
         xl_width="70%"
-        alignitems="center"
       >
         <Header level="4" text="More like this" margin="20px 0" />
         <FlexBox
+          flexwrap="wrap"
+          sm_margin="20px 40px"
           margin="20px 40px"
           xl_margin="20px 40px"
           sm_width="85%"
           width="70%"
           xl_width="70%"
-          flexwrap="wrap"
         >
           <Pill padding="15px 20px" label="Understanding Proportions" />
           <Pill padding="15px 20px" label="Basic Anatomy" />
@@ -138,11 +142,12 @@ export default async function BlogDetails() {
         alignitems="center"
         borderTop="thin solid var(--medium-grey)"
         flexdirection="column"
+        sm_margin="0 60px"
         margin="0 60px"
         xl_margin="50px 60px"
         sm_width="85%"
         width="100%"
-        xl_width="100%"
+        xl_width="80%"
       >
         <Header
           text="Courses releated to this blog"
@@ -150,11 +155,12 @@ export default async function BlogDetails() {
           margin="50px 0 10px"
         />
         <FlexBox
+          sm_margin="20px 60px"
           margin="20px 60px"
           xl_margin="20px 60px"
           sm_width="100%"
           width="80%"
-          xl_width="80%"
+          xl_width="100%"
           alignitems="center"
         >
           <CardImageDetail

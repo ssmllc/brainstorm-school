@@ -32,8 +32,9 @@ export default async function Gallery() {
   return (
     <>
       <MediaBanner
-        header=""
-        subHeader=""
+        label="Gallery"
+        header="Student Gallery"
+        subHeader="Our talented students work"
         hero="false"
         theme="dark"
         background="/banner/banner-21.jpg"
@@ -49,7 +50,7 @@ export default async function Gallery() {
           xl_margin="100px auto 50px"
           sm_width="80%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header level="1" text="Student Gallery" />
 
@@ -66,7 +67,7 @@ export default async function Gallery() {
           xl_margin="20px auto 50px"
           sm_width="80%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Grid sm_columns="repeat(2, 1fr)" columns="repeat(4, 1fr)">
             {result &&

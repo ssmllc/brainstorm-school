@@ -191,7 +191,7 @@ export default async function About() {
             margin="0 auto"
             xl_margin="0 auto"
             width="90%"
-            xl_width="90%"
+            xl_width="80%"
           >
             <FAQs results={result[0]} />
           </FlexBox>
