@@ -57,7 +57,7 @@ export default async function Mentorship() {
           sm_width="85%"
           md_width="70%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
           flexdirection="column"
         >
           <Header
@@ -104,7 +104,7 @@ export default async function Mentorship() {
           sm_width="80%"
           md_width="70%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Header
             level="2"
@@ -124,7 +124,7 @@ export default async function Mentorship() {
           sm_width="90%"
           md_width="70%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <Pill
             background="rgba(255, 255, 255, .10)"
@@ -154,7 +154,7 @@ export default async function Mentorship() {
           sm_width="80%"
           md_width="70%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <AnchorCard
             label="Foundation Mentorship"
@@ -186,7 +186,7 @@ export default async function Mentorship() {
           sm_width="85%"
           md_width="70%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <AnchorCard
             label="Mentorship Online"
@@ -218,7 +218,7 @@ export default async function Mentorship() {
           sm_width="85%"
           md_width="70%"
           width="70%"
-          xl_width="70%"
+          xl_width="80%"
         >
           <AnchorCard
             label="Advanced Mentorship"

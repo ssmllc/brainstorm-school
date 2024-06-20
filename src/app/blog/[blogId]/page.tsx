@@ -52,8 +52,9 @@ export default async function BlogDetails() {
         width="70%"
         xl_width="70%"
         flexdirection="column"
+        alignitems="center"
       >
-        <CardImage preview="/banner/banner-1.jpg" width="75%" height="400px" />
+        <CardImage preview="/banner/banner-1.jpg" width="100%" height="450px" />
       </FlexBox>
 
       <Typography heading="Blog headline for articles" />
@@ -65,21 +66,9 @@ export default async function BlogDetails() {
         width="70%"
         xl_width="70%"
       >
-        <CardImage
-          height="200px"
-          preview="/banner/banner-2.jpg"
-          width="240px"
-        />
-        <CardImage
-          height="200px"
-          preview="/banner/banner-3.jpg"
-          width="240px"
-        />
-        <CardImage
-          height="200px"
-          preview="/banner/banner-4.jpg"
-          width="240px"
-        />
+        <CardImage height="200px" preview="/banner/banner-2.jpg" width="33%" />
+        <CardImage height="200px" preview="/banner/banner-3.jpg" width="33%" />
+        <CardImage height="200px" preview="/banner/banner-4.jpg" width="33%" />
       </FlexBox>
 
       <Typography heading="Blog headline for articles" />

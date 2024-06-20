@@ -49,6 +49,10 @@ const Copy = styled.p`
   @media (min-width: 768px) {
     width: 75%;
   }
+
+  @media (min-width: 1024px) {
+    width: 100%;
+  }
 `;
 
 interface Props {
