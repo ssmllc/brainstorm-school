@@ -17,6 +17,18 @@ const ModalOverlay = styled.div`
   top: 0;
   width: 100vw;
   z-index: 999;
+
+  &::before {
+    content: "Loading ...";
+    color: var(--white-50);
+    font-size: 24px;
+    left: 50%;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+  }
 `;
 
 interface carouselProps {
@@ -190,7 +202,6 @@ const Modal = ({
           }}
         />
 
-        {/* <Image src={currentImage} alt={artist} /> */}
         <CarouselSlider $totalWidth={sliderWidth}>
           {gallery &&
             gallery.map(({ imageUrl }: { imageUrl: string }, index: number) => {
@@ -200,7 +211,7 @@ const Modal = ({
                   $bgImage={`${imageUrl}?w=100`}
                   className="gallery-card"
                   onClick={() => {
-                    setCurrentImage(imageUrl);
+                    setCurrentImage(`${imageUrl}?w=1440`);
                   }}
                 />
               );

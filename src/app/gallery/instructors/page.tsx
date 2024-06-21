@@ -1,10 +1,7 @@
 import MediaBanner from "@/app/components/banner/media-banner.component";
-import Icon3D from "@/app/components/icons/icon-3d.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
-import Grid from "@/app/components/layout/grid.component";
-import FAQs from "@/app/components/text-block/faqs.component";
+import GallerySlide from "@/app/components/modal/gallery-slider.component";
 import Header from "@/app/components/text-block/header.component";
-import AnchorCard from "@/app/components/tracks/track.component";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,7 +12,7 @@ export const metadata: Metadata = {
 
 const fetchData = async () => {
   const query =
-    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27instructors%27%5D+%7B%0A++_id%2C%0A++title%2C%0A++slug%2C%0A++profession%2C%0A++%22imageUrl%22%3A+poster.asset-%3Eurl%2C%0A++bio%0A%7D";
+    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27instructors%27%5D+%7B%0A++_id%2C%0A++title%2C%0A++slug%2C%0A++profession%2C%0A++%22imageUrl%22%3A+poster.asset-%3Eurl%2C%0A++bio%2C%0A++gallery%5B%5D+-%3E+%7B%0A++++title%2C%0A++++%22imageUrl%22%3A+portfolio.asset-%3Eurl%0A++%7D%0A%7D";
   // const response = await fetch(query);
   const response = await fetch(query, { cache: "no-store" });
 
@@ -68,27 +65,7 @@ export default async function Gallery() {
           />
         </FlexBox>
 
-        <FlexBox
-          margin="20px 60px 0"
-          xl_margin="20px 60px 50px"
-          sm_margin="20px 25px"
-          sm_width="80%"
-          width="70%"
-          xl_width="80%"
-        >
-          <Grid sm_columns="repeat(2, 1fr)" columns="repeat(4, 1fr)">
-            {result &&
-              result.map((instructor: any) => {
-                return (
-                  <AnchorCard
-                    key={instructor._id}
-                    poster={instructor.imageUrl}
-                    width="100%"
-                  />
-                );
-              })}
-          </Grid>
-        </FlexBox>
+        <GallerySlide results={result} />
       </FlexBox>
     </>
   );
