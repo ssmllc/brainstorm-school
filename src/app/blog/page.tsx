@@ -153,11 +153,12 @@ export default async function Blog() {
             }}
           >
             {result &&
-              result.map((blog: any) => {
+              result.map((blog: any, index: number) => {
                 const { slug, imageUrl } = blog;
 
                 return (
                   <AnchorCard
+                    key={index}
                     base="blog"
                     path={slug}
                     label="Blog 1"
