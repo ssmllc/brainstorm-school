@@ -50,6 +50,7 @@ const Home = async () => {
           heading="Online education tailored for creatives at every stage"
           text="From those eager to kickstart their careers to seasoned professionals seeking to refine their skills and stay ahead in the industry. Brainstorm School provides online classes for concept art, design, and illustration. Our program is dedicated to artistic development, bringing together students from around the globe to learn and grow in a supportive online community. Our courses, led by professionals in the field, teach the most recent techniques utilized in today's entertainment industry, including concept art for games and films, visual development, and more."
           cta="View Courses"
+          href="/courses"
         />
 
         <TracksGroup />
@@ -114,6 +115,7 @@ const Home = async () => {
           scale="xl"
           cta="Register Today"
           ctaType="primary"
+          href="/courses"
         />
       </Content>
     </main>

@@ -2,6 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 import Poster from "../poster/poster.component";
+import Link from "next/link";
 
 const Content = styled.div`
   padding: 50px 0 0;
@@ -121,11 +122,12 @@ const ContentBlock = styled.div<contentBlockProps>`
   }
 `;
 
-const CallToAction = styled.button`
+const CallToAction = styled(Link)`
   background: var(--primary);
   border-radius: 35px;
   border: 0;
   color: var(--black);
+  display: inline-block;
   font-size: 12px;
   letter-spacing: 2px;
   margin: 35px 0 0;
@@ -140,6 +142,7 @@ const VideoContentSplit = ({
   heading,
   text,
   cta,
+  href,
 }: {
   flexdirection?: string;
   video?: string;
@@ -147,6 +150,7 @@ const VideoContentSplit = ({
   heading: string;
   text?: string;
   cta: string;
+  href: string;
 }) => {
   return (
     <Content>
@@ -180,7 +184,7 @@ const VideoContentSplit = ({
         <ContentBlock $flexdirection={flexdirection}>
           <p className="heading">{heading}</p>
           <p className="text">{text}</p>
-          {cta && <CallToAction>{cta}</CallToAction>}
+          {cta && <CallToAction href={href}>{cta}</CallToAction>}
         </ContentBlock>
       </ContentWrapper>
     </Content>

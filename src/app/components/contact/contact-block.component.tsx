@@ -116,6 +116,26 @@ const HotSpot = styled.a`
   }
 `;
 
+const Newsletter = styled.div`
+  box-shadow: inset 0 0 0 1px #3f3f3f;
+  border-radius: 20px;
+  display: flex;
+  padding: 40px 25px;
+  transition: all 0.25s ease-out;
+
+  @media (min-width: 800px) {
+    padding: 60px 25px;
+  }
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px var(--primary);
+
+    .contact-info {
+      color: var(--primary);
+    }
+  }
+`;
+
 const Heading = styled.p`
   color: var(--white);
   font-size: 28px;
@@ -183,7 +203,7 @@ const ContactBlock = ({ heading, subheading }: Props) => {
         </Block>
 
         <Block>
-          <HotSpot href="tel:999-9999">
+          <Newsletter>
             <FlexBlock>
               <Icon>
                 <svg
@@ -204,11 +224,27 @@ const ContactBlock = ({ heading, subheading }: Props) => {
                 </svg>
               </Icon>
               <Information>
-                <Caption>Contact us by telephone.</Caption>
-                <Label className="contact-info">1-800-123-4567</Label>
+                <Caption>Sign up for our newsletter</Caption>
+
+                <form
+                  method="post"
+                  action="https://ymlp.com/subscribe.php?id=ghmqejqgmgh"
+                >
+                  <input
+                    type="text"
+                    name="YMP0"
+                    id="bs-email"
+                    className="bs-required"
+                    placeholder="Email Address"
+                  />
+
+                  <button type="submit" id="bs-submit">
+                    Join
+                  </button>
+                </form>
               </Information>
             </FlexBlock>
-          </HotSpot>
+          </Newsletter>
         </Block>
 
         <Block>

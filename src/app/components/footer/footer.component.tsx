@@ -291,6 +291,7 @@ const Footer = () => {
         scale="md"
         cta="Register Today"
         ctaType="tertiary"
+        href="/courses"
       />
 
       <Copyright>
