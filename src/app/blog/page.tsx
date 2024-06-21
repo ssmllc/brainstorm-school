@@ -3,7 +3,6 @@ import FlexBox from "@/app/components/layout/flexbox.component";
 import Header from "@/app/components/text-block/header.component";
 import AnchorCard from "@/app/components/tracks/track.component";
 import type { Metadata } from "next";
-import FeaturedCard from "../components/card/featured-card.component";
 
 export const metadata: Metadata = {
   title: "Blogs, News, and Insights | Brainstorm School",
@@ -13,7 +12,8 @@ export const metadata: Metadata = {
 
 const fetchData = async () => {
   const query =
-    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27instructors%27%5D+%7B%0A++_id%2C%0A++title%2C%0A++slug%2C%0A++profession%2C%0A++%22imageUrl%22%3A+poster.asset-%3Eurl%2C%0A++bio%0A%7D";
+    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27blogs%27%5D+%7B%0A++_id%2C%0A++metatitle%2C%0A++metadescription%2C%0A++headline%2C%0A++%22slug%22%3A+slug.current%2C%0A++%22imageUrl%22%3A+poster.asset-%3Eurl%2C%0A++content%2C%0A++related%0A%7D";
+  // "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27blogs%27%5D+%7B%0A++_id%2C%0A++metatitle%2C%0A++metadescription%2C%0A++headline%2C%0A++%22slug%22%3A+slug.current%2C%0A++%22imageUrl%22%3A+poster.asset-%3Eurl%2C%0A++content%2C%0A++related%0A%7D";
   // const response = await fetch(query);
   const response = await fetch(query, { cache: "no-store" });
 
@@ -152,37 +152,20 @@ export default async function Blog() {
               width: "100%",
             }}
           >
-            <AnchorCard
-              base="blog"
-              path="blog-1"
-              label="Blog 1"
-              poster="/banner/banner-1.jpg"
-              width="100%"
-            />
+            {result &&
+              result.map((blog: any) => {
+                const { slug, imageUrl } = blog;
 
-            <AnchorCard
-              base="blog"
-              path="blog-2"
-              label="Blog 2"
-              poster="/banner/banner-2.jpg"
-              width="100%"
-            />
-
-            <AnchorCard
-              base="blog"
-              path="blog-3"
-              label="Blog 3"
-              poster="/banner/banner-3.jpg"
-              width="100%"
-            />
-
-            <AnchorCard
-              base="blog"
-              path="blog-4"
-              label="Blog 4"
-              poster="/banner/banner-4.jpg"
-              width="100%"
-            />
+                return (
+                  <AnchorCard
+                    base="blog"
+                    path={slug}
+                    label="Blog 1"
+                    poster={`${imageUrl}?w=500`}
+                    width="100%"
+                  />
+                );
+              })}
           </div>
         </FlexBox>
       </FlexBox>

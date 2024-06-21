@@ -51,6 +51,7 @@ export default async function Workshops() {
         flexdirection="column"
         margin="100px auto"
         sm_margin="100px auto 50px"
+        xl_margin="100px auto 50px"
         alignitems="center"
       >
         <FlexBox
@@ -58,7 +59,7 @@ export default async function Workshops() {
           margin="20px 0"
           sm_margin="25px 0"
           md_margin="75px 0"
-          xl_margin="100px 0 0"
+          xl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"

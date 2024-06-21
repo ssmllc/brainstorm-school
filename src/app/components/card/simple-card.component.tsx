@@ -42,7 +42,7 @@ const Preview = styled("div")<previewProps>`
   }
 
   @media (min-width: 1400px) {
-    height: ${({ height }) => (height ? height : "400px")};
+    height: ${({ height }) => (height ? height : "320px")};
     margin: 25px 0;
     width: ${({ width }) => (width ? width : "100%")};
   }

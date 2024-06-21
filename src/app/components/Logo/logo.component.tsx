@@ -3,13 +3,14 @@
 import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
+import Link from "next/link";
 
 interface logoProps {
   $justify: string;
   padding?: string;
 }
 
-const Logo = styled.div<logoProps>`
+const Logo = styled(Link)<logoProps>`
   align-items: center;
   display: flex;
   justify-content: ${({ $justify }) => $justify};
@@ -32,7 +33,7 @@ interface Props {
 
 const BrainstormLogo = ({ justify, padding }: Props) => {
   return (
-    <Logo $justify={justify} padding={padding}>
+    <Logo href="/" $justify={justify} padding={padding}>
       <Image
         src="/logo/brainstorm-logo.png"
         width={42}
