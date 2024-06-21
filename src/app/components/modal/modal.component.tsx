@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import gsap from "gsap";
+import Image from "next/image";
 
 const ModalOverlay = styled.div`
   background: var(--black);
@@ -26,12 +27,13 @@ const Carousel = styled.div<carouselProps>`
     `url(${$background}) top center no-repeat`};
   /* border: thin dashed var(--primary); */
   background-size: contain;
+  background-position: center;
   display: flex;
   height: 85vh;
   left: 50%;
   position: absolute;
-  top: 5%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
   justify-content: space-between;
   width: 90vw;
 `;
@@ -49,7 +51,7 @@ const CarouselSlider = styled.div<carouselSliderProps>`
   left: 50%;
   padding: 10px 10px;
   position: absolute;
-  bottom: 20px;
+  bottom: 0;
   transform: translateX(-50%);
   width: ${({ $totalWidth }) => `${$totalWidth}px`};
 `;
@@ -58,7 +60,7 @@ interface imageProps {
   $bgImage: string;
 }
 
-const Image = styled.div<imageProps>`
+const Thumbnail = styled.div<imageProps>`
   background: ${({ $bgImage }) => `url(${$bgImage}) top center no-repeat`};
   background-size: cover;
   border: 3px solid var(--white-50);
@@ -67,13 +69,6 @@ const Image = styled.div<imageProps>`
   height: 100px;
   width: 100px;
 `;
-
-interface Props {
-  isActive: boolean;
-  setIsActive: (a: boolean) => void;
-  selectedImage: string;
-  gallery?: any;
-}
 
 const ExitModal = styled.button`
   background: var(--off-black);
@@ -109,7 +104,21 @@ const ExitModal = styled.button`
   }
 `;
 
-const Modal = ({ isActive, setIsActive, selectedImage, gallery }: Props) => {
+interface Props {
+  isActive: boolean;
+  setIsActive: (a: boolean) => void;
+  selectedImage: string;
+  artist: string;
+  gallery?: any;
+}
+
+const Modal = ({
+  isActive,
+  setIsActive,
+  artist,
+  selectedImage,
+  gallery,
+}: Props) => {
   const [sliderWidth, setSliderWidth] = useState<number>(0);
   const [cardWidth, setCardWidth] = useState<number>(100);
   const [currentImage, setCurrentImage] = useState<string>("");
@@ -122,7 +131,7 @@ const Modal = ({ isActive, setIsActive, selectedImage, gallery }: Props) => {
       const totalW = gallery.length * cardWidth;
 
       setSliderWidth(totalW);
-      setCurrentImage(`${selectedImage}?w=1920`);
+      setCurrentImage(`${selectedImage}?w=1440`);
 
       if (isActive) {
         gsap.set(modalRef.current, {
@@ -146,7 +155,7 @@ const Modal = ({ isActive, setIsActive, selectedImage, gallery }: Props) => {
         });
       }
     } else {
-      setCurrentImage(`${selectedImage}?w=1920`);
+      setCurrentImage(`${selectedImage}?w=1440`);
 
       if (isActive) {
         gsap.set(modalRef.current, {
@@ -178,25 +187,26 @@ const Modal = ({ isActive, setIsActive, selectedImage, gallery }: Props) => {
         <ExitModal
           onClick={() => {
             setIsActive(false);
-            console.log("exit");
           }}
         />
+
+        {/* <Image src={currentImage} alt={artist} /> */}
+        <CarouselSlider $totalWidth={sliderWidth}>
+          {gallery &&
+            gallery.map(({ imageUrl }: { imageUrl: string }, index: number) => {
+              return (
+                <Thumbnail
+                  key={index}
+                  $bgImage={`${imageUrl}?w=100`}
+                  className="gallery-card"
+                  onClick={() => {
+                    setCurrentImage(imageUrl);
+                  }}
+                />
+              );
+            })}
+        </CarouselSlider>
       </Carousel>
-      <CarouselSlider $totalWidth={sliderWidth}>
-        {gallery &&
-          gallery.map(({ imageUrl }: { imageUrl: string }, index: number) => {
-            return (
-              <Image
-                key={index}
-                $bgImage={`${imageUrl}?w=100&`}
-                className="gallery-card"
-                onClick={() => {
-                  setCurrentImage(imageUrl);
-                }}
-              />
-            );
-          })}
-      </CarouselSlider>
     </ModalOverlay>
   );
 };

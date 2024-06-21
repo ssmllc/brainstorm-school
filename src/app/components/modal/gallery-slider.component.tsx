@@ -38,13 +38,15 @@ const GallerySlide = ({ results }: Props) => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [selectedGallery, setSelectedGallery] = useState<any>([]);
   const [selectedImage, setSelectedImage] = useState<any>([]);
+  const [artist, setArtist] = useState<any>([]);
 
-  console.log("results", results);
+  // console.log("results", results);
   const handler = (title: string, imageUrl: string, gallery: any[]) => {
     // console.log("title", title);
     // console.log("gallery", gallery);
     setSelectedGallery(gallery);
     setSelectedImage(imageUrl);
+    setArtist(title);
     setIsActive(true);
   };
 
@@ -63,11 +65,11 @@ const GallerySlide = ({ results }: Props) => {
           selectedImage={selectedImage}
           isActive={isActive}
           setIsActive={setIsActive}
+          artist={artist}
         />
         {results &&
           results.map((instructor: Instructor) => {
             const { _id, title, imageUrl, gallery } = instructor;
-            console.log("title", title);
             return (
               <Art
                 key={_id}
