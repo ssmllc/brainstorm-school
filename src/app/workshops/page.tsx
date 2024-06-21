@@ -70,25 +70,25 @@ export default async function Workshops() {
             text="Featured Brainstorm School Online Workshops"
           />
         </FlexBox>
-
-        {future &&
-          future.map((featured: any, index: number) => {
-            const formatDate = new Date(featured.date).toDateString();
-            const fullDateTime = `${formatDate} @ ${featured.time}`;
-
-            return (
-              <FeaturedCard
-                key={index}
-                poster="banner/banner-1.jpg"
-                superheading={featured.instructor}
-                subheading={fullDateTime}
-                heading={featured.workshopname}
-                bio={featured.description}
-                cta="Register Today"
-              />
-            );
-          })}
       </FlexBox>
+
+      {future &&
+        future.map((featured: any, index: number) => {
+          const formatDate = new Date(featured.date).toDateString();
+          const fullDateTime = `${formatDate} @ ${featured.time}`;
+
+          return (
+            <FeaturedCard
+              key={index}
+              poster="banner/banner-1.jpg"
+              superheading={featured.instructor}
+              subheading={fullDateTime}
+              heading={featured.workshopname}
+              bio={featured.description}
+              cta="Register Today"
+            />
+          );
+        })}
 
       <FlexBox
         flexdirection="column"

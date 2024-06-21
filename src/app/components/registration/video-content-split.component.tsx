@@ -149,8 +149,8 @@ const VideoContentSplit = ({
   image?: string;
   heading: string;
   text?: string;
-  cta: string;
-  href: string;
+  cta?: string;
+  href?: string;
 }) => {
   return (
     <Content>
@@ -184,7 +184,7 @@ const VideoContentSplit = ({
         <ContentBlock $flexdirection={flexdirection}>
           <p className="heading">{heading}</p>
           <p className="text">{text}</p>
-          {cta && <CallToAction href={href}>{cta}</CallToAction>}
+          {cta && href && <CallToAction href={href}>{cta}</CallToAction>}
         </ContentBlock>
       </ContentWrapper>
     </Content>
