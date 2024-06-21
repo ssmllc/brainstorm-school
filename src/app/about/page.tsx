@@ -78,14 +78,16 @@ export default async function About() {
             heading="About Brainstorm School"
             text="Brainstorm is an online school for concept art, design, and illustration that focuses on artistic development. Students from all around the world come together to learn and grow in our welcoming online community. All of our courses are led by industry professionals who teach the latest design and creative methods used in today's entertainment business."
             cta="View Courses"
+            href="/courses"
           />
 
           <VideoContentSplit
+            flexdirection="row-reverse"
             video="S6TDzSuykV0?si=q3HmbL3tF3qKJlMp"
             heading="What we do"
             text="At Brainstorm School, we offer a diverse range of courses tailored to different skill levels and interests. Our offerings include beginner courses for those new to concept art, advanced concept classes for experienced artists looking to refine their skills, and gaming industry courses designed to support career advancement in the gaming sector. All our courses provide opportunities for students to learn, gain experience, and receive feedback and criticism from industry professionals."
             cta="View Courses"
-            flexdirection="row-reverse"
+            href="/courses"
           />
 
           <FlexBox
