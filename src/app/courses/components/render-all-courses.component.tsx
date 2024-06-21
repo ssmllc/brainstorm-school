@@ -122,10 +122,14 @@ const RenderAllCourses = ({ selectedCourses, width }: Props) => {
                   key={_id}
                   base="/courses"
                   preview={imageUrl}
-                  slug={category
-                    .toLocaleLowerCase()
-                    .replaceAll(" ", "-")
-                    .replaceAll("&", "and")}
+                  slug={
+                    category
+                      ? category
+                          .toLocaleLowerCase()
+                          .replaceAll(" ", "-")
+                          .replaceAll("&", "and")
+                      : "foundation"
+                  }
                   path={slug}
                   courseTrack={category}
                   courseName={name}
