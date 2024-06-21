@@ -169,8 +169,9 @@ interface mediaProps {
 const Headshot = styled.div<mediaProps>`
   background: ${({ $headshot }) => `url(${$headshot}) top left no-repeat`};
   background-size: cover;
-  border-radius: 20%;
+  border-radius: 100%;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  border: 5px solid white;
   height: 175px;
   overflow: hidden;
   margin: 0;

@@ -78,13 +78,15 @@ export default async function Gallery() {
         >
           <Grid sm_columns="repeat(2, 1fr)" columns="repeat(4, 1fr)">
             {result &&
-              result.map((instructor: any) => (
-                <AnchorCard
-                  key={instructor._id}
-                  poster={instructor.imageUrl}
-                  width="100%"
-                />
-              ))}
+              result.map((instructor: any) => {
+                return (
+                  <AnchorCard
+                    key={instructor._id}
+                    poster={instructor.imageUrl}
+                    width="100%"
+                  />
+                );
+              })}
           </Grid>
         </FlexBox>
       </FlexBox>

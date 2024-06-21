@@ -58,7 +58,7 @@ const FAQs = ({ results }: any) => {
   const [selected, setSelected] = useState<number | null>(null);
   const { faqs } = results;
 
-  console.log("client faqs component", results);
+  console.log("client faqs component", faqs);
 
   const toggleFAQ = (selectedIndex: number) => {
     if (selected === selectedIndex) {

@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import styled from "styled-components";
 import { IconNext, IconPrevious } from "../icons/icon-arrow.component";
-import Link from "next/link";
 import CardImageDetail from "../card/card-image-detail.component";
 
 const CardSliderContainer = styled.div`
@@ -72,87 +71,6 @@ const CardSliderCards = styled.div`
     width: 75%;
   }
 `;
-
-const Card = styled(Link)`
-  border-radius: 20px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-  max-width: 320px;
-  width: 25%;
-  position: relative;
-  transition: all 0.15s ease-out;
-
-  &:hover {
-    outline: 2px solid var(--primary);
-
-    &::after {
-      background: var(--primary) url("/icons/ico-eye.png") top center no-repeat;
-      background-size: 50%;
-      background-position: center center;
-      border-radius: 100%;
-      bottom: 10px;
-      content: "";
-      height: 50px;
-      right: 10px;
-      position: absolute;
-      width: 50px;
-    }
-  }
-`;
-
-interface cardProps {
-  image: string;
-  tag: string;
-}
-
-// const Poster = styled.div<cardProps>`
-//   background: url(${({ image }) => image}) top center no-repeat;
-//   background-size: cover;
-//   height: 100px;
-//   padding: 185px 20px 0 20px;
-//   position: relative;
-
-//   &:before {
-//     background: var(--black);
-//     border-radius: 50px;
-//     content: ${({ tag }) => `"${tag}"`};
-//     color: var(--white);
-//     font-size: 10px;
-//     font-weight: 500;
-//     left: 15px;
-//     letter-spacing: 1px;
-//     padding: 12px 15px;
-//     position: absolute;
-//     top: 15px;
-//     text-transform: uppercase;
-//     z-index: 5;
-//   }
-// `;
-
-// const Details = styled.div`
-//   background: var(--off-black);
-//   min-height: 100px;
-//   padding: 25px 20px;
-//   position: relative;
-// `;
-
-// const CourseName = styled.p`
-//   min-height: 70px;
-//   color: var(--white);
-//   font-size: 24px;
-//   font-weight: bold;
-//   padding: 5px 0 15px;
-// `;
-
-// const CourseDetails = styled.ul`
-//   color: #ccc;
-//   font-size: 12px;
-
-//   li {
-//     padding: 20px 0 0 0;
-//     text-transform: uppercase;
-//   }
-// `;
 
 interface cardWrapperProps {
   width: string;
