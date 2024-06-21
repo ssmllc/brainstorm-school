@@ -122,9 +122,10 @@ const CardGroup = ({
         <Row>
           {featured?.length > 0 &&
             featured.map((instructor: any) => {
+              console.log("instructor", instructor);
               return (
                 <Link
-                  href={`/instructors/${instructor.slug}`}
+                  href={`/instructors/${instructor.slug || ""}`}
                   key={instructor._id}
                 >
                   <Card

@@ -558,7 +558,7 @@ const Navigation = () => {
         </li> */}
 
         <li>
-          <CallToAction href="/registration">Register</CallToAction>
+          <CallToAction href="/courses">Register</CallToAction>
         </li>
       </NavigationMenu>
     </NavigationBar>
