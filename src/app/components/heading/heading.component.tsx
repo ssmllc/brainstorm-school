@@ -34,6 +34,10 @@ const Header = styled.p`
   }
 
   @media (min-width: 1400px) {
+    font-size: 55px;
+  }
+
+  @media (min-width: 1900px) {
     font-size: 60px;
   }
 `;

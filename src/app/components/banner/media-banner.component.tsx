@@ -98,9 +98,9 @@ const Content = styled.div`
 
   @media (min-width: 1400px) {
     left: 50%;
-    top: 55%;
+    top: 50%;
     transform: translate(-50%, -50%);
-    /* width: 80%; */
+    width: 70%;
   }
 
   @media (min-width: 1900px) {
@@ -206,7 +206,7 @@ const Media = styled.div<mediaProps>`
   @media (min-width: 1400px) {
     height: 400px;
     margin: 50px auto;
-    width: 50%;
+    width: 60%;
   }
 
   @media (min-width: 1900px) {

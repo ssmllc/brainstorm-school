@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ReactNode, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Modal from "./modal.component";
 import Grid from "../layout/grid.component";
@@ -24,23 +24,20 @@ interface Props {
   results: any;
 }
 
-type Instructor = {
-  bio?: any;
+type Student = {
   gallery: any[];
   imageUrl: string;
-  profession: string;
-  slug: any;
   title: string;
   _id: string;
 };
 
-const GallerySlide = ({ results }: Props) => {
+const StudentGallerySlide = ({ results }: Props) => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [selectedGallery, setSelectedGallery] = useState<any>([]);
   const [selectedImage, setSelectedImage] = useState<any>([]);
   const [artist, setArtist] = useState<any>([]);
 
-  console.log("results", results);
+  // console.log("results", results);
   const handler = (title: string, imageUrl: string, gallery: any[]) => {
     // console.log("title", title);
     // console.log("gallery", gallery);
@@ -68,16 +65,24 @@ const GallerySlide = ({ results }: Props) => {
           artist={artist}
         />
         {results &&
-          results.map((instructor: Instructor) => {
-            const { _id, title, imageUrl, gallery } = instructor;
+          results.map((students: Student) => {
+            const { title, gallery } = students;
+
             return (
-              <Art
-                key={_id}
-                $poster={imageUrl}
-                $width="100%"
-                onClick={() => handler(title, imageUrl, gallery)}
-                data-artist={title || "Student"}
-              />
+              gallery &&
+              gallery.map((student: any, index: number) => {
+                const { _id, imageUrl } = student;
+
+                return (
+                  <Art
+                    key={index}
+                    $poster={imageUrl}
+                    $width="100%"
+                    onClick={() => handler(title, imageUrl, gallery)}
+                    data-artist={title}
+                  />
+                );
+              })
             );
           })}
       </Grid>
@@ -85,4 +90,4 @@ const GallerySlide = ({ results }: Props) => {
   );
 };
 
-export default GallerySlide;
+export default StudentGallerySlide;

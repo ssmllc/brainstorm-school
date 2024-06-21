@@ -8,7 +8,7 @@ interface buttonProps {
   type: string;
   $fontsize?: string;
   margin?: string;
-  offsetPadding?: string;
+  $offsetPadding?: string;
 }
 
 const CallToAction = styled.button<buttonProps>`
@@ -31,8 +31,8 @@ const CallToAction = styled.button<buttonProps>`
   font-weight: bold;
   letter-spacing: 2px;
   margin: ${({ margin }) => (margin ? `${margin}` : "35px 0 0")};
-  padding: ${({ offsetPadding }) =>
-    offsetPadding ? `${offsetPadding}` : "15px 30px"};
+  padding: ${({ $offsetPadding }) =>
+    $offsetPadding ? `${$offsetPadding}` : "15px 30px"};
   text-transform: uppercase;
 `;
 
@@ -69,7 +69,7 @@ const ActionButton = ({
     <CallToAction
       type={type}
       margin={margin}
-      offsetPadding={offsetPadding}
+      $offsetPadding={offsetPadding}
       $fontsize={fontSize}
     >
       {href ? (

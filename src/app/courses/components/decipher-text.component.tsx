@@ -97,10 +97,10 @@ const DecipherText = ({
               fontSize={fontSize}
             >
               {block.children.map((mark: any) => {
-                console.log("mark", mark);
+                // console.log("mark", mark);
                 if (block.markDefs.length > 0) {
                   if (mark.marks.length > 0) {
-                    console.log("markDefs", block.markDefs);
+                    // console.log("markDefs", block.markDefs);
                     return block.markDefs.map((marker: any) => {
                       if (mark.marks[0] === marker._key && marker.href) {
                         return (

@@ -40,6 +40,12 @@ const Preview = styled("div")<previewProps>`
     margin: 25px 0;
     width: ${({ width }) => (width ? width : "100%")};
   }
+
+  @media (min-width: 1400px) {
+    height: ${({ height }) => (height ? height : "400px")};
+    margin: 25px 0;
+    width: ${({ width }) => (width ? width : "100%")};
+  }
 `;
 
 export const CardImage = ({
@@ -175,7 +181,7 @@ interface Props {
 }
 
 const CardLayout = ({ results }: Props) => {
-  // console.log("results from course details", results);
+  console.log("results from course details", results);
   const {
     name,
     imageUrl,
