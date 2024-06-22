@@ -192,7 +192,7 @@ const RegistrationBlock = ({
               </span>
             </p>
             <p>
-              For refund and credit policy, See <a href="/faqs">FAQ</a>
+              For refund and credit policy, See <a href="/about/faqs">FAQ</a>
             </p>
           </RegistrationFAQ>
         )}

@@ -1,153 +1,103 @@
-import ActionButton from "@/app/components/buttons/action-button.component";
-import CardImageDetail from "@/app/components/card/card-image-detail.component";
-import { CardImage } from "@/app/components/card/simple-card.component";
+import React from "react";
+import MediaBanner from "@/app/components/banner/media-banner.component";
+import CardLayout, {
+  CardImage,
+} from "@/app/components/card/simple-card.component";
+import Carousel from "@/app/components/carousel/carousel.component";
+import TextHeaderBlock from "@/app/components/text-block/text-header-block.component";
+import SimilarCourses from "@/app/components/similar-courses/similar-courses.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
-import Pill from "@/app/components/pill/pill.component";
+import { Metadata } from "next";
+import InstructorBio from "@/app/components/instructors/instructor.component";
+import DecipherText from "@/app/courses/components/decipher-text.component";
 import Header from "@/app/components/text-block/header.component";
-import Typography from "@/app/components/text-block/typography.component";
-import type { Metadata } from "next";
+import RegistrationBlock from "@/app/components/registration/registration-block.component";
 
 export const metadata: Metadata = {
-  title: "Brainstorm Blog",
-  description: "Blog",
+  title: "Brainstorm Online Mentorship Programs - Brainschool School",
+  description:
+    "Elevate your design skills with personalized mentorships. Collaborate with industry experts to sharpen your abilities and achieve your professional aspirations. Register Today!",
 };
 
-export default async function MentorshipDetails() {
+const fetchData = async () => {
+  const query =
+    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27mentorship%27%5D+%7B%0A++_id%2C%0A++%22slug%22%3A+slug.current%2C%0A++%22imageUrl%22%3A+preview.asset-%3Eurl%2C%0A++mentorship%2C%0A++programs%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++mentor%2C%0A++++description%2C%0A++++registration%2C%0A++++program_name%2C%0A++%7D%2C%0A%7D";
+  const response = await fetch(query, { cache: "no-store" });
+  // const response = await fetch(query);
+
+  if (!response.ok) {
+    throw new Error(`HTTP error: Status ${response.status}`);
+  }
+
+  const { result } = await response.json();
+
+  return result;
+};
+
+type Props = {
+  params: { programsId: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export default async function MentorshipPrograms({
+  params,
+}: {
+  params: { programsId: string };
+}) {
+  const result = await fetchData();
+
+  const selectedResults = result.filter((mentorship: any) => {
+    return mentorship.slug === params.programsId;
+  })[0];
+
+  // console.log("selectedResults", selectedResults);
+
+  const { mentorship, programs } = selectedResults;
+  const { mentor, description, registration, program_name } = programs[0];
+
   return (
-    <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
-      <Typography
-        heading="Blog headline for articles"
-        sm_padding="100px 25px 25px"
+    <>
+      <MediaBanner
+        label="Mentorship"
+        header={mentorship}
+        subHeader={program_name}
+        hero="false"
+        theme="dark"
+        background="/banner/banner-3.jpg"
       />
 
       <FlexBox
-        margin="20px 60px"
-        sm_margin="20px 25px"
-        sm_width="85%"
-        width="70%"
+        sm_margin="50px 0"
+        xl_margin="100px auto 50px"
+        alignitems="center"
         flexdirection="column"
       >
-        <CardImage preview="/banner/banner-1.jpg" />
-      </FlexBox>
+        <FlexBox sm_margin="20px 0" sm_width="80%" width="80%" xl_width="80%">
+          <Header level="1" text={mentorship} />
+        </FlexBox>
 
-      <Typography heading="Blog headline for articles" />
-
-      <FlexBox margin="20px 60px" sm_width="85%" width="70%">
-        <CardImage height="250px" preview="/banner/banner-2.jpg" />
-        <CardImage height="250px" preview="/banner/banner-3.jpg" />
-        <CardImage height="250px" preview="/banner/banner-4.jpg" />
-      </FlexBox>
-
-      <Typography heading="Blog headline for articles" />
-
-      <FlexBox
-        margin="20px 60px"
-        sm_width="85%"
-        width="70%"
-        alignitems="center"
-      >
-        <CardImageDetail
-          slug="workshops"
-          path="introduction-to-zbrush"
-          preview="/banner/banner-21.jpg"
-          courseTrack="2D - 3D Concept Design"
-          courseName="Introduction to ZBrush"
-          courseCode="ZB1"
-          courseTime="Fri 10am-1pm (PST)"
-          courseDuration="10-week Course"
-          width="50%"
-        />
         <FlexBox
-          alignitems="center"
+          sm_margin="20px 0"
+          sm_width="80%"
+          width="80%"
+          xl_width="80%"
           flexdirection="column"
-          margin="20px 60px"
-          sm_width="85%"
-          width="70%"
-          sm_textalign="center"
-          textalign="center"
         >
-          <Header level="4" text="This blog mentions this course." />
-          <ActionButton type="primary" label="Register Today" margin="20px 0" />
+          <DecipherText description={description} />
         </FlexBox>
       </FlexBox>
 
-      <FlexBox
-        sm_margin="40px 60px 20px"
-        margin="20px 60px"
-        sm_width="90%"
-        width="70%"
-        alignitems="center"
-      >
-        <Header level="4" text="More like this" margin="20px 0" />
-        <FlexBox margin="20px 40px" sm_width="85%" width="70%" flexwrap="wrap">
-          <Pill padding="15px 20px" label="Understanding Proportions" />
-          <Pill padding="15px 20px" label="Basic Anatomy" />
-          <Pill padding="15px 20px" label="Gesture & Rhythm" />
-          <Pill padding="15px 20px" label="Intro to construction" />
-          <Pill padding="15px 20px" label="Anatomical Focus" />
-        </FlexBox>
-      </FlexBox>
+      <RegistrationBlock
+        primary={true}
+        heading="Ready to take the next step?"
+        scale="xl"
+        ctaType="primary"
+        cta="Register today"
+        href={registration}
+        faq={true}
+      />
 
-      <FlexBox
-        alignitems="center"
-        flexdirection="column"
-        margin="0 60px"
-        sm_width="85%"
-        width="100%"
-      >
-        <Header
-          text="Blog headline for articles"
-          level="1"
-          margin="20px 0 10px"
-        />
-        <FlexBox
-          margin="20px 60px"
-          sm_width="100%"
-          width="100%"
-          alignitems="center"
-        >
-          <CardImageDetail
-            slug="workshops"
-            path="introduction-to-zbrush"
-            preview="/banner/banner-21.jpg"
-            courseTrack="2D - 3D Concept Design"
-            courseName="Introduction to ZBrush"
-            courseCode="ZB1"
-            courseTime="Fri 10am-1pm (PST)"
-            courseDuration="10-week Course"
-          />
-          <CardImageDetail
-            slug="workshops"
-            path="introduction-to-zbrush"
-            preview="/banner/banner-21.jpg"
-            courseTrack="2D - 3D Concept Design"
-            courseName="Introduction to ZBrush"
-            courseCode="ZB1"
-            courseTime="Fri 10am-1pm (PST)"
-            courseDuration="10-week Course"
-          />
-          <CardImageDetail
-            slug="workshops"
-            path="introduction-to-zbrush"
-            preview="/banner/banner-21.jpg"
-            courseTrack="2D - 3D Concept Design"
-            courseName="Introduction to ZBrush"
-            courseCode="ZB1"
-            courseTime="Fri 10am-1pm (PST)"
-            courseDuration="10-week Course"
-          />
-          <CardImageDetail
-            slug="workshops"
-            path="introduction-to-zbrush"
-            preview="/banner/banner-21.jpg"
-            courseTrack="2D - 3D Concept Design"
-            courseName="Introduction to ZBrush"
-            courseCode="ZB1"
-            courseTime="Fri 10am-1pm (PST)"
-            courseDuration="10-week Course"
-          />
-        </FlexBox>
-      </FlexBox>
-    </FlexBox>
+      <SimilarCourses header="View Similar Courses" />
+    </>
   );
 }

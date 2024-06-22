@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const fetchData = async () => {
   const query =
-    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27workshops%27%5D+%7B%0A++workshoptitle%2C%0A++content%2C%0A++future%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++workshopname%2C%0A++++slug%2C%0A++++instructor%2C%0A++++description%5B%5D-%3E%2C%0A++++date%2C%0A++++time%2C%0A++++location%2C%0A++++price%2C%0A++++registration%2C%0A++++%22imageUrl%22%3A+preview.asset-%3Eurl%2C%0A++++workexamples%5B%5D+-%3E%2C%0A++%7D%2C%0A++previous%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++workshopname%2C%0A++++slug%2C%0A++++instructor%2C%0A++++description%5B%5D-%3E%2C%0A++++date%2C%0A++++time%2C%0A++++location%2C%0A++++price%2C%0A++++registration%2C%0A++++%22imageUrl%22%3A+preview.asset-%3Eurl%2C%0A++++workexamples%5B%5D+-%3E%2C%0A++%7D%2C%0A++content%2C%0A++faqs%5B%5D-%3E+%7B%0A++++_id%2C%0A++++question%2C%0A++++answer%0A++%7D%0A%7D";
+    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27mentorship%27%5D+%7B%0A++_id%2C%0A++%22slug%22%3A+slug.current%2C%0A++%22imageUrl%22%3A+preview.asset-%3Eurl%2C%0A++mentorship%2C%0A++programs%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++mentor%2C%0A++++description%2C%0A++++registration%2C%0A++++program_name%2C%0A++%7D%2C%0A%7D";
   // const response = await fetch(query);
   const response = await fetch(query, { cache: "no-store" });
 
@@ -28,7 +28,7 @@ const fetchData = async () => {
 
 export default async function Mentorship() {
   const result = await fetchData();
-
+  console.log("result", result);
   return (
     <>
       <MediaBanner
@@ -156,80 +156,21 @@ export default async function Mentorship() {
           width="70%"
           xl_width="80%"
         >
-          <AnchorCard
-            label="Foundation Mentorship"
-            name="Jonathan Kuo"
-            poster="https://cdn.sanity.io/images/y8rjsgga/production/dbe0f90d49ecc458b97ab1efcea97632eae87bf7-1866x1126.jpg"
-          />
-          <AnchorCard
-            label="Design Mentorship"
-            name="Norris Lin"
-            poster="https://cdn.sanity.io/images/y8rjsgga/production/edafb39d7261d2f9492ac1728b2bd7a4c4725086-3885x1959.jpg"
-          />
-          <AnchorCard
-            label="Process Mentorship"
-            name="Keshan Lam"
-            poster="https://cdn.sanity.io/images/y8rjsgga/production/9c7210b2b15a0a81a7ddef73464dba57107501e3-1085x2048.jpg"
-          />
-          <AnchorCard
-            label="Heartstorm Mentorship"
-            name="Saiful Haque"
-            poster="https://cdn.sanity.io/images/y8rjsgga/production/7fea55489b20ab06011bd39fbad35bace2170cbb-1075x1512.jpg"
-          />
-        </FlexBox>
-
-        <FlexBox
-          flexwrap="wrap"
-          sm_margin="20px 25px"
-          margin="20px 60px 0"
-          xl_margin="20px 60px 0"
-          sm_width="85%"
-          md_width="70%"
-          width="70%"
-          xl_width="80%"
-        >
-          <AnchorCard
-            label="Mentorship Online"
-            name="Oliver Beck"
-            poster="https://cdn.sanity.io/images/y8rjsgga/production/dbe0f90d49ecc458b97ab1efcea97632eae87bf7-1866x1126.jpg"
-          />
-          <AnchorCard
-            label="Character Design"
-            name="Gue Yang"
-            poster="https://cdn.sanity.io/images/y8rjsgga/production/edafb39d7261d2f9492ac1728b2bd7a4c4725086-3885x1959.jpg"
-          />
-          <AnchorCard
-            label="Visual Development"
-            name="Mike Hernandez"
-            poster="https://cdn.sanity.io/images/y8rjsgga/production/9c7210b2b15a0a81a7ddef73464dba57107501e3-1085x2048.jpg"
-          />
-          <AnchorCard
-            label="World Building"
-            name="Joon Ahn"
-            poster="https://cdn.sanity.io/images/y8rjsgga/production/7fea55489b20ab06011bd39fbad35bace2170cbb-1075x1512.jpg"
-          />
-        </FlexBox>
-
-        <FlexBox
-          flexwrap="wrap"
-          sm_margin="20px 25px"
-          margin="20px 60px 10px"
-          xl_margin="20px 60px 10px"
-          sm_width="85%"
-          md_width="70%"
-          width="70%"
-          xl_width="80%"
-        >
-          <AnchorCard
-            label="Advanced Mentorship"
-            name="John Park"
-            poster="https://cdn.sanity.io/images/y8rjsgga/production/dbe0f90d49ecc458b97ab1efcea97632eae87bf7-1866x1126.jpg"
-          />
-          <AnchorCard
-            label="Advanced Mentorship"
-            name="James Paick"
-            poster="https://cdn.sanity.io/images/y8rjsgga/production/edafb39d7261d2f9492ac1728b2bd7a4c4725086-3885x1959.jpg"
-          />
+          {result &&
+            result.map((data: any) => {
+              const { _id, slug, imageUrl, programs } = data;
+              const { program_name, mentor } = programs[0];
+              return (
+                <AnchorCard
+                  key={_id}
+                  base="mentorship"
+                  path={slug}
+                  label={program_name}
+                  name={mentor}
+                  poster={imageUrl}
+                />
+              );
+            })}
         </FlexBox>
       </FlexBox>
     </>
