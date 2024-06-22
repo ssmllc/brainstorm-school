@@ -67,21 +67,36 @@ export default async function MentorshipPrograms({
       />
 
       <FlexBox
-        sm_margin="50px 0"
-        xl_margin="100px auto 50px"
         alignitems="center"
         flexdirection="column"
+        sm_margin="50px 0"
+        md_margin="100px auto 50px"
+        margin="100px auto 50px"
+        xl_margin="100px auto 50px"
       >
-        <FlexBox sm_margin="20px 0" sm_width="80%" width="80%" xl_width="80%">
-          <Header level="1" text={mentorship} />
+        <FlexBox
+          sm_margin="20px 0"
+          md_margin="20px 0"
+          margin="20px 0"
+          xl_margin="0"
+          sm_width="80%"
+          md_width="70%"
+          width="70%"
+          xl_width="80%"
+        >
+          <Header level="1" text={mentorship} margin="0" />
         </FlexBox>
 
         <FlexBox
-          sm_margin="20px 0"
-          sm_width="80%"
-          width="80%"
-          xl_width="80%"
           flexdirection="column"
+          sm_margin="20px 0"
+          md_margin="20px 0"
+          margin="20px 0"
+          xl_margin="20px 0"
+          sm_width="80%"
+          md_width="70%"
+          width="70%"
+          xl_width="80%"
         >
           <DecipherText description={description} />
         </FlexBox>

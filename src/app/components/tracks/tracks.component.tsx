@@ -272,7 +272,7 @@ const TracksGroup = ({ results }: Props) => {
             <Anchor href="/course-guide">
               <Track
                 onClick={() => setSelectedContextTrack("3d-concept")}
-                poster="https://cdn.sanity.io/images/y8rjsgga/production/dbe0f90d49ecc458b97ab1efcea97632eae87bf7-1866x1126.jpg"
+                poster="https://cdn.sanity.io/images/y8rjsgga/production/2cdf3da6e469a0057a3184418763683d7abc4869-3885x2193.jpg?w=800"
               >
                 <Icon>
                   <Icon3D width="28px" height="28px" />
@@ -284,7 +284,7 @@ const TracksGroup = ({ results }: Props) => {
             <Anchor href="/course-guide">
               <Track
                 onClick={() => setSelectedContextTrack("environmental-design")}
-                poster="https://cdn.sanity.io/images/y8rjsgga/production/edafb39d7261d2f9492ac1728b2bd7a4c4725086-3885x1959.jpg"
+                poster="https://cdn.sanity.io/images/y8rjsgga/production/f584a3b679d5a97b60570faa81afb6c48312c18e-3059x1928.jpg?w=800"
               >
                 <Icon>
                   <Icon3D width="28px" height="28px" />
@@ -296,7 +296,7 @@ const TracksGroup = ({ results }: Props) => {
             <Anchor href="/course-guide">
               <Track
                 onClick={() => setSelectedContextTrack("character-design")}
-                poster="https://cdn.sanity.io/images/y8rjsgga/production/9c7210b2b15a0a81a7ddef73464dba57107501e3-1085x2048.jpg"
+                poster="https://cdn.sanity.io/images/y8rjsgga/production/c54972b56f3240f3ef994675235e58d1b438da38-6189x5500.jpg?w=800"
               >
                 <Icon>
                   <Icon3D width="28px" height="28px" />
@@ -308,7 +308,7 @@ const TracksGroup = ({ results }: Props) => {
             <Anchor href="/course-guide">
               <Track
                 onClick={() => setSelectedContextTrack("storyboarding")}
-                poster="https://cdn.sanity.io/images/y8rjsgga/production/7fea55489b20ab06011bd39fbad35bace2170cbb-1075x1512.jpg"
+                poster="https://cdn.sanity.io/images/y8rjsgga/production/ddeab862e800c6bd9432c2fa92906b9c5e5e3f61-6727x3838.png?w=800"
               >
                 <Icon>
                   <Icon3D width="28px" height="28px" />
