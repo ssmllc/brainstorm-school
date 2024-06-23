@@ -17,11 +17,16 @@ const Art = styled.div<modalProps>`
   border-radius: 20px;
   position: relative;
   width: ${({ $width }) => $width};
-  height: 350px;
+  height: 250px;
+
+  @media (min-width: 1400) {
+    height: 350px;
+  }
 `;
 
 interface Props {
-  results: any;
+  results?: any;
+  selectedInstructor?: any;
 }
 
 type Instructor = {
@@ -34,13 +39,14 @@ type Instructor = {
   _id: string;
 };
 
-const GallerySlide = ({ results }: Props) => {
+const GallerySlide = ({ results, selectedInstructor }: Props) => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [selectedGallery, setSelectedGallery] = useState<any>([]);
   const [selectedImage, setSelectedImage] = useState<any>([]);
   const [artist, setArtist] = useState<any>([]);
 
   console.log("results", results);
+  console.log("selectedInstructor", selectedInstructor);
   const handler = (title: string, imageUrl: string, gallery: any[]) => {
     // console.log("title", title);
     // console.log("gallery", gallery);
@@ -52,7 +58,7 @@ const GallerySlide = ({ results }: Props) => {
 
   return (
     <FlexBox
-      sm_margin="20px 25px"
+      sm_margin="20px auto"
       margin="20px 60px 0"
       xl_margin="20px auto 50px"
       sm_width="80%"
@@ -79,6 +85,24 @@ const GallerySlide = ({ results }: Props) => {
                 data-artist={title || "Student"}
               />
             );
+          })}
+
+        {selectedInstructor &&
+          selectedInstructor.map((instructor: Instructor) => {
+            const { title, gallery } = instructor;
+            {
+              return gallery.map((image: any, index: number) => {
+                return (
+                  <Art
+                    key={index}
+                    $poster={image.poster}
+                    $width="100%"
+                    onClick={() => handler(title, image.poster, gallery)}
+                    data-artist={title || "Student"}
+                  />
+                );
+              });
+            }
           })}
       </Grid>
     </FlexBox>

@@ -1,50 +1,48 @@
 "use client";
 
-import DecipherText from "@/app/courses/components/decipher-text.component";
 import { CardImage } from "../card/simple-card.component";
 import FlexBox from "../layout/flexbox.component";
-import Header from "../text-block/header.component";
 import Carousel from "./carousel.component";
 import Poster from "../poster/poster.component";
 import { useState } from "react";
+import styled from "styled-components";
+
+const CarouselWrapper = styled.div`
+  width: 70%;
+
+  @media (min-width: 1024px) {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 50%;
+  }
+`;
 
 interface Props {
   selectedInstructor: any;
   gallery: any[];
   imageUrl: string;
+  bgSize?: string;
+  margin?: string;
 }
 
-const CarouselPreview = ({ selectedInstructor, gallery, imageUrl }: Props) => {
+const GalleryCarousel = ({
+  selectedInstructor,
+  gallery,
+  imageUrl,
+  bgSize,
+  margin,
+}: Props) => {
   const [preview, setPreview] = useState<string>(gallery && gallery[0]?.poster);
 
   return (
-    <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
-      <FlexBox
-        margin="20px 60px 0"
-        xl_margin="100px auto 50px"
-        sm_margin="50px auto 0"
-        sm_width="80%"
-        width="50%"
-        xl_width="75%"
-        flexdirection="column"
-      >
-        <Header level="1" text="Instructor Bio." />
+    <FlexBox flexdirection="column" margin="0 auto" alignitems="center">
+      <Poster imageUrl={preview || imageUrl} bgSize={bgSize} margin={margin} />
 
-        <DecipherText description={selectedInstructor.bio} />
-
-        <Poster imageUrl={preview || imageUrl} />
-      </FlexBox>
-
-      <FlexBox
-        sm_width="75%"
-        width="50%"
-        xl_width="75%"
-        sm_margin="0 auto"
-        margin="0 auto"
-        xl_margin="0 auto"
-      >
-        {gallery?.length > 0 && (
-          <Carousel sm_height="200px" height="350px">
+      {gallery?.length > 0 && (
+        <CarouselWrapper>
+          <Carousel sm_height="200px" height="180px">
             {gallery &&
               gallery.map((art: any, index: number) => {
                 console.log("gallery", gallery);
@@ -56,15 +54,16 @@ const CarouselPreview = ({ selectedInstructor, gallery, imageUrl }: Props) => {
                     preview={art.poster ? art.poster : art.imageUrl}
                     width="320px"
                     sm_height="150px"
+                    height="120px"
                     setPreview={setPreview}
                   />
                 );
               })}
           </Carousel>
-        )}
-      </FlexBox>
+        </CarouselWrapper>
+      )}
     </FlexBox>
   );
 };
 
-export default CarouselPreview;
+export default GalleryCarousel;

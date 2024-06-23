@@ -34,7 +34,7 @@ const Header = styled.p`
   }
 
   @media (min-width: 1400px) {
-    font-size: 55px;
+    font-size: 48px;
   }
 
   @media (min-width: 1900px) {

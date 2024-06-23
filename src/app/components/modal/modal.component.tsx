@@ -1,10 +1,10 @@
 "use client";
 
 import { useGSAP } from "@gsap/react";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import gsap from "gsap";
-import Image from "next/image";
+import GalleryCarousel from "../carousel/gallery-carousel.component";
 
 const ModalOverlay = styled.div`
   background: var(--black);
@@ -13,12 +13,17 @@ const ModalOverlay = styled.div`
   height: 100vh;
   left: 0;
   opacity: 0;
+  padding: 75px 0 0;
   position: absolute;
   top: 0;
   width: 100vw;
   z-index: 999;
 
-  &::before {
+  @media (min-width: 1400px) {
+    padding: 50px 0 0;
+  }
+
+  /* &::before {
     content: "Loading ...";
     color: var(--white-50);
     font-size: 24px;
@@ -28,58 +33,7 @@ const ModalOverlay = styled.div`
     top: 50%;
     transform: translate(-50%, -50%);
     text-transform: uppercase;
-  }
-`;
-
-interface carouselProps {
-  $background: string;
-}
-const Carousel = styled.div<carouselProps>`
-  background: ${({ $background }) =>
-    `url(${$background}) top center no-repeat`};
-  /* border: thin dashed var(--primary); */
-  background-size: contain;
-  background-position: center;
-  display: flex;
-  height: 85vh;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  justify-content: space-between;
-  width: 90vw;
-`;
-
-interface carouselSliderProps {
-  $totalWidth: number;
-}
-const CarouselSlider = styled.div<carouselSliderProps>`
-  /* border: thin dashed var(--blue); */
-  background: var(--black);
-  border-radius: 20px;
-  display: flex;
-  gap: 0 5px;
-  height: 120px;
-  left: 50%;
-  padding: 10px 10px;
-  position: absolute;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: ${({ $totalWidth }) => `${$totalWidth}px`};
-`;
-
-interface imageProps {
-  $bgImage: string;
-}
-
-const Thumbnail = styled.div<imageProps>`
-  background: ${({ $bgImage }) => `url(${$bgImage}) top center no-repeat`};
-  background-size: cover;
-  border: 3px solid var(--white-50);
-  border-radius: 20px;
-  background-position: center;
-  height: 100px;
-  width: 100px;
+  } */
 `;
 
 const ExitModal = styled.button`
@@ -87,9 +41,9 @@ const ExitModal = styled.button`
   border-radius: 100px;
   border: 3px solid var(--primary);
   height: 75px;
-  top: -25px;
+  top: 25px;
   position: absolute;
-  right: -25px;
+  right: 25px;
   width: 75px;
   z-index: 100;
 
@@ -195,29 +149,19 @@ const Modal = ({
 
   return (
     <ModalOverlay ref={modalRef}>
-      <Carousel $background={currentImage}>
-        <ExitModal
-          onClick={() => {
-            setIsActive(false);
-          }}
-        />
+      <ExitModal
+        onClick={() => {
+          setIsActive(false);
+        }}
+      />
 
-        <CarouselSlider $totalWidth={sliderWidth}>
-          {gallery &&
-            gallery.map(({ imageUrl }: { imageUrl: string }, index: number) => {
-              return (
-                <Thumbnail
-                  key={index}
-                  $bgImage={`${imageUrl}?w=100`}
-                  className="gallery-card"
-                  onClick={() => {
-                    setCurrentImage(`${imageUrl}?w=1440`);
-                  }}
-                />
-              );
-            })}
-        </CarouselSlider>
-      </Carousel>
+      <GalleryCarousel
+        selectedInstructor={artist}
+        gallery={gallery}
+        imageUrl={currentImage}
+        bgSize="contain"
+        margin="0"
+      />
     </ModalOverlay>
   );
 };

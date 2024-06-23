@@ -2,7 +2,9 @@ import MediaBanner from "@/app/components/banner/media-banner.component";
 import CardImageDetail from "@/app/components/card/card-image-detail.component";
 import CarouselPreview from "@/app/components/carousel/carousel-preview.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
+import GallerySlide from "@/app/components/modal/gallery-slider.component";
 import Header from "@/app/components/text-block/header.component";
+import DecipherText from "@/app/courses/components/decipher-text.component";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -35,10 +37,11 @@ export default async function Instructors({
 
   const selectedInstructor = result.filter((instructor: any) => {
     return instructor.slug === params.instructorsId;
-  })[0];
+  });
 
-  const { title, profession, headshot, imageUrl, gallery } = selectedInstructor;
+  const { title, profession, headshot, imageUrl, bio } = selectedInstructor[0];
 
+  console.log("title", title);
   return (
     <>
       <MediaBanner
@@ -51,80 +54,105 @@ export default async function Instructors({
         randomize={false}
       />
 
-      <CarouselPreview
-        selectedInstructor={selectedInstructor}
-        gallery={gallery}
-        imageUrl={imageUrl}
-      />
-
       <FlexBox
         flexdirection="column"
+        sm_margin="50px auto"
         margin="100px auto"
         xl_margin="100px auto 50px"
-        sm_margin="50px auto"
-        alignitems="center"
       >
         <FlexBox
-          alignitems="center"
-          borderTop="thin solid var(--medium-grey)"
-          flexdirection="column"
-          sm_margin="0 60px"
-          margin="0 60px"
-          xl_margin="75px 60px"
-          sm_width="80%"
-          width="80%"
+          sm_margin="20px auto"
+          md_margin="20px auto"
+          margin="20px auto"
+          xl_margin="20px auto"
+          sm_width="70%"
+          md_width="80%"
+          width="70%"
           xl_width="80%"
+          flexdirection="column"
         >
-          <Header
-            text="Courses by this instructor"
-            level="1"
-            margin="50px 0 10px"
-          />
+          <Header text="Instructor Bio" level="1" />
 
-          <FlexBox
-            sm_margin="20px 60px"
-            margin="20px 60px"
-            xl_margin="20px 60px"
-            sm_width="100%"
-            width="100%"
-            xl_width="100%"
-            alignitems="center"
-            justifycontent="center"
-          >
-            <CardImageDetail
-              slug="workshops"
-              path="introduction-to-zbrush"
-              preview="/banner/banner-21.jpg"
-              courseTrack="2D - 3D Concept Design"
-              courseName="Introduction to ZBrush"
-              courseCode="ZB1"
-              courseTime="Fri 10am-1pm (PST)"
-              courseDuration="10-week Course"
-              width="33%"
-            />
-            <CardImageDetail
-              slug="workshops"
-              path="introduction-to-zbrush"
-              preview="/banner/banner-21.jpg"
-              courseTrack="2D - 3D Concept Design"
-              courseName="Introduction to ZBrush"
-              courseCode="ZB1"
-              courseTime="Fri 10am-1pm (PST)"
-              courseDuration="10-week Course"
-              width="33%"
-            />
-            <CardImageDetail
-              slug="workshops"
-              path="introduction-to-zbrush"
-              preview="/banner/banner-21.jpg"
-              courseTrack="2D - 3D Concept Design"
-              courseName="Introduction to ZBrush"
-              courseCode="ZB1"
-              courseTime="Fri 10am-1pm (PST)"
-              courseDuration="10-week Course"
-              width="33%"
-            />
-            {/* <CardImageDetail
+          <DecipherText description={bio} />
+        </FlexBox>
+      </FlexBox>
+
+      <FlexBox
+        alignitems="center"
+        sm_margin="20px auto"
+        md_margin="20px auto"
+        margin="20px auto"
+        xl_margin="20px auto"
+        sm_width="100%"
+        md_width="80%"
+        width="100%"
+        xl_width="80%"
+        flexdirection="column"
+      >
+        <GallerySlide selectedInstructor={selectedInstructor} />
+      </FlexBox>
+
+      <FlexBox
+        alignitems="center"
+        borderTop="thin solid var(--medium-grey)"
+        flexdirection="column"
+        sm_margin="0 auto"
+        margin="0 auto"
+        xl_margin="75px auto"
+        sm_width="80%"
+        width="80%"
+        xl_width="80%"
+      >
+        <Header
+          text="Courses by this instructor"
+          level="1"
+          margin="50px 0 10px"
+        />
+
+        <FlexBox
+          alignitems="center"
+          justifycontent="center"
+          sm_margin="20px auto"
+          margin="20px auto"
+          xl_margin="20px auto"
+          sm_width="100%"
+          width="100%"
+          xl_width="100%"
+        >
+          <CardImageDetail
+            slug="workshops"
+            path="introduction-to-zbrush"
+            preview="/banner/banner-21.jpg"
+            courseTrack="2D - 3D Concept Design"
+            courseName="Introduction to ZBrush"
+            courseCode="ZB1"
+            courseTime="Fri 10am-1pm (PST)"
+            courseDuration="10-week Course"
+            width="33%"
+          />
+          <CardImageDetail
+            slug="workshops"
+            path="introduction-to-zbrush"
+            preview="/banner/banner-21.jpg"
+            courseTrack="2D - 3D Concept Design"
+            courseName="Introduction to ZBrush"
+            courseCode="ZB1"
+            courseTime="Fri 10am-1pm (PST)"
+            courseDuration="10-week Course"
+            width="33%"
+          />
+          <CardImageDetail
+            slug="workshops"
+            path="introduction-to-zbrush"
+            preview="/banner/banner-21.jpg"
+            courseTrack="2D - 3D Concept Design"
+            courseName="Introduction to ZBrush"
+            courseCode="ZB1"
+            courseTime="Fri 10am-1pm (PST)"
+            courseDuration="10-week Course"
+            width="33%"
+          />
+          {/* <CardImageDetail
               slug="workshops"
               path="introduction-to-zbrush"
               preview="/banner/banner-21.jpg"
@@ -134,7 +162,6 @@ export default async function Instructors({
               courseTime="Fri 10am-1pm (PST)"
               courseDuration="10-week Course"
             /> */}
-          </FlexBox>
         </FlexBox>
       </FlexBox>
     </>
