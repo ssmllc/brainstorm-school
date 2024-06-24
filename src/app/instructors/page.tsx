@@ -38,7 +38,7 @@ export default async function Instructors() {
     result.splice(idx, 1);
   }
 
-  console.log("find it here =>", featuredInstructors);
+  // console.log("find it here =>", featuredInstructors);
 
   return (
     <>
@@ -99,6 +99,7 @@ export default async function Instructors() {
         <FeaturedCard
           poster={featuredInstructors[0].imageUrl}
           superheading={featuredInstructors[0].profession}
+          subheading="Featured Instructor"
           heading={featuredInstructors[0].title}
           margin="25px 0"
           bio={featuredInstructors[0].bio}

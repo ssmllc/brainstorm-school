@@ -42,6 +42,8 @@ interface Props {
   info?: any;
   bio?: any;
   cta?: any;
+  base?: string;
+  path?: string;
 }
 
 const Slide = ({
@@ -54,6 +56,8 @@ const Slide = ({
   info,
   bio,
   cta,
+  base,
+  path,
 }: Props) => {
   return (
     <Card className="slide" width={width}>
@@ -66,6 +70,8 @@ const Slide = ({
         info={info}
         bio={bio}
         cta={cta}
+        base={base}
+        path={path}
       />
     </Card>
   );

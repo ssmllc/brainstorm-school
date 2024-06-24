@@ -98,7 +98,7 @@ export default async function BlogDetails({
           <DecipherText description={content3} />
         </FlexBox>
 
-        <FlexBox
+        {/* <FlexBox
           alignitems="center"
           sm_margin="20px 60px"
           margin="20px 60px"
@@ -137,9 +137,9 @@ export default async function BlogDetails({
               margin="20px 0"
             />
           </FlexBox>
-        </FlexBox>
+        </FlexBox> */}
 
-        <FlexBox
+        {/* <FlexBox
           alignitems="center"
           sm_margin="40px 60px 20px"
           margin="20px 60px"
@@ -164,7 +164,7 @@ export default async function BlogDetails({
             <Pill padding="15px 20px" label="Intro to construction" />
             <Pill padding="15px 20px" label="Anatomical Focus" />
           </FlexBox>
-        </FlexBox>
+        </FlexBox> */}
 
         <FlexBox
           alignitems="center"

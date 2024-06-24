@@ -163,6 +163,7 @@ export default async function Blog() {
                     label="Blog 1"
                     poster={`${imageUrl}?w=500`}
                     width="100%"
+                    md_width="100%"
                   />
                 );
               })}

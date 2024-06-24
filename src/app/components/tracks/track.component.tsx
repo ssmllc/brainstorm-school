@@ -9,21 +9,22 @@ interface anchorProps {
   $sm_width?: string;
   $md_width?: string;
   $width?: string;
+  $xl_width?: string;
 }
 
 const Anchor = styled(Link)<anchorProps>`
   width: ${({ $sm_width }) => ($sm_width ? $sm_width : "100%")};
 
   @media (min-width: 768px) {
-    width: 49%;
-  }
-
-  @media (min-width: 1024px) {
-    width: ${({ $md_width }) => ($md_width ? $md_width : "49%")};
+    width: ${({ $md_width }) => ($md_width ? $md_width : "100%")};
   }
 
   @media (min-width: 1400px) {
-    width: ${({ $width }) => ($width ? $width : "24%")};
+    width: ${({ $width }) => ($width ? $width : "100%")};
+  }
+
+  @media (min-width: 1900px) {
+    width: ${({ $xl_width }) => ($xl_width ? $xl_width : "100%")};
   }
 `;
 
@@ -122,6 +123,7 @@ interface Props {
   sm_width?: string;
   md_width?: string;
   width?: string;
+  xl_width?: string;
   children?: string | ReactNode | JSX.Element | JSX.Element[];
 }
 
@@ -137,6 +139,7 @@ const AnchorCard = ({
   sm_width,
   md_width,
   width,
+  xl_width,
 }: Props) => {
   const baseLocation = base ? base : "";
   const pathLocation = path ? path : "";
@@ -148,6 +151,7 @@ const AnchorCard = ({
       $sm_width={sm_width}
       $md_width={md_width}
       $width={width}
+      $xl_width={xl_width}
     >
       <Track poster={poster}>
         <div

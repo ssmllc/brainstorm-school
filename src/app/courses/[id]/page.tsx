@@ -65,25 +65,25 @@ export default async function Page({ params }: { params: { id: string } }) {
       </FlexBox>
 
       <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
-        <FlexBox
-          sm_margin="0 60px 0"
-          margin="25px 60px 0"
-          xl_margin="25px 60px 0"
-          sm_width="85%"
-          width="70%"
-          xl_width="70%"
-          flexdirection="column"
-        >
-          <Header level="3" text="Featured Course" />
-        </FlexBox>
-
         <FeaturedCard
           poster="/banner/banner-5.jpg"
           superheading="Rhythm & Structure"
+          subheading="Featured Course"
           info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eligendi, aliquam rem quidem fugit culpa molestiae neque incidunt distinctio. Distinctio tenetur dolorem nihil deleniti eos iure rerum, minus rem reiciendis."
-          heading="James Paick"
+          heading="Portfolio Development Environments"
           margin="25px 0"
         />
+
+        {/* <FeaturedCard
+          poster={featuredInstructors[0].imageUrl}
+          superheading={featuredInstructors[0].profession}
+          subheading="Featured Instructor"
+          heading={featuredInstructors[0].title}
+          margin="25px 0"
+          bio={featuredInstructors[0].bio}
+          slug={featuredInstructors[0].slug}
+          cta="Read More"
+        /> */}
 
         <RenderCourses
           selectedCourses={selectedCourses}

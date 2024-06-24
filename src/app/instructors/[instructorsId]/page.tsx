@@ -153,7 +153,7 @@ export default async function Instructors({
                   courseDuration={schedule && schedule[0]?.duration}
                   coursePrice={price}
                   courseDifficulty={difficulty}
-                  width={"25%"}
+                  width={"100%"}
                 />
               );
             })}

@@ -71,36 +71,48 @@ const Home = async () => {
           textalign="center"
         >
           <Slide
-            poster="banner/banner-1.jpg"
-            superheading="Featured Blog"
+            poster="https://cdn.sanity.io/images/y8rjsgga/production/2703ff4f7c50ad0a267007dfa7f7ef4cf2e14b0c-1920x1224.jpg?w=800"
+            superheading="Concept Art and 3D modeling"
+            subheading="Featured Blog"
+            heading="Building Backstories for Characters"
+            variantType="sm"
+            info="Character development is evolving all the time. One of the most exciting trends in creating backstories is the use of concept art and 3D modeling. In this guide, we’ll explore how to create impactful backstories, outline new trends and discuss the importance of backstories in character development."
+            cta="Read more"
+            base="blog"
+            path="developing-backstories-for-characters"
+          />
+          <Slide
+            poster="https://cdn.sanity.io/images/y8rjsgga/production/648ca5cc355566adf6bbbc47526c67ef00686c1b-3000x1500.jpg?w=800"
+            superheading="Game Art"
             subheading="Featured Blog"
             heading="Do I need to be good at drawing to succeed in game art?"
             variantType="sm"
-            info="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est eum, sint laboriosam, cupiditate hic explicabo qui repudiandae, fugit nesciunt perferendis obcaecati placeat in dicta rerum aliquid inventore maiores provident incidunt."
+            info="Game art is an often overlooked component of the creative process, but it's just a fact that the video game industry — and, to a lesser extent, the film industry — just wouldn't be the same without them. After all, it's the work of those 3D modeling and animation experts that helps bring the designer's vision to life."
+            cta="Read more"
+            base="blog"
+            path="do-i-need-to-be-good-at-drawing-to-succeed-in-game-art"
           />
           <Slide
-            poster="banner/banner-2.jpg"
-            superheading="Featured Blog"
-            subheading="Featured Blog"
-            heading="Developing Backstories for Characters"
-            variantType="sm"
-            info="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est eum, sint laboriosam, cupiditate hic explicabo qui repudiandae, fugit nesciunt perferendis obcaecati placeat in dicta rerum aliquid inventore maiores provident incidunt."
-          />
-          <Slide
-            poster="banner/banner-3.jpg"
-            superheading="Featured Blog"
+            poster="https://cdn.sanity.io/images/y8rjsgga/production/bd374be148aa998135abc2ec701d752aaa278b39-3840x2160.jpg?w=800"
+            superheading="Concept Art and 3D modeling"
             subheading="Featured Blog"
             heading="Exploring Career Opportunities in Concept Art"
             variantType="sm"
-            info="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est eum, sint laboriosam, cupiditate hic explicabo qui repudiandae, fugit nesciunt perferendis obcaecati placeat in dicta rerum aliquid inventore maiores provident incidunt."
+            info="ver wondered how those awesome-looking gaming and film titles came to be? Well, they didn't materialize out of thin air. They’re the result of work from a lot of creatively-important professionals, including the concept designer. In fact, you can think of the concept designer as the genesis for the idea; without them, the final aesthetic just wouldn't be possible."
+            cta="Read more"
+            base="blog"
+            path="exploring-career-opportunities-in-concept-art"
           />
           <Slide
-            poster="banner/banner-4.jpg"
-            superheading="Featured Blog"
+            poster="https://cdn.sanity.io/images/y8rjsgga/production/dde7890b72ef40ec28a216290cd7ebfec65b8ffd-2500x1062.jpg?w=800"
+            superheading="Game Art Portfolios"
             subheading="Featured Blog"
-            heading="How important is a portfolio for getting a job in game art?"
+            heading="How Important Is A Portfolio For Getting A Job In Game Art?"
             variantType="sm"
-            info="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est eum, sint laboriosam, cupiditate hic explicabo qui repudiandae, fugit nesciunt perferendis obcaecati placeat in dicta rerum aliquid inventore maiores provident incidunt."
+            info="The gaming industry is now valued at an estimated $204bn, making game art designing the perfect career path for creative artists. However, it is very competitive, which is why you must give yourself every opportunity to stand out as you seek your first job. A solid portfolio is easily one of the most important factors."
+            cta="Read more"
+            base="blog"
+            path="how-important-is-a-portfolio-for-getting-a-job-in-game-art"
           />
         </FeaturedSlider>
 
