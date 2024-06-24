@@ -189,7 +189,23 @@ const ImageDetailCard = ({
             </Tag>
           </Details>
         )}
-        {info && <Info>{info}</Info>}
+        {info && cta && (
+          <>
+            <Info>{info}</Info>
+
+            <a
+              href={`/${base}/${path}`}
+              style={{
+                textDecoration: "none",
+                color: "var(--primary)",
+                display: "block",
+                padding: "25px 0",
+              }}
+            >
+              {cta}
+            </a>
+          </>
+        )}
         {bio && (
           <>
             <div
@@ -202,7 +218,7 @@ const ImageDetailCard = ({
               <DecipherText description={bio} />
             </div>
             <a
-              href={`/instructors/${slug}`}
+              href={`/${base}/${slug}`}
               style={{
                 textDecoration: "none",
                 color: "var(--primary)",
@@ -215,7 +231,7 @@ const ImageDetailCard = ({
           </>
         )}
 
-        {cta && (
+        {/* {cta && (
           <a
             href={`/${base}/${path}`}
             style={{
@@ -227,7 +243,7 @@ const ImageDetailCard = ({
           >
             {cta}
           </a>
-        )}
+        )} */}
       </Content>
     </Card>
   );

@@ -41,6 +41,8 @@ interface Props {
   slug?: string;
   cta?: string;
   tags?: boolean;
+  base?: string;
+  path?: string;
 }
 
 const FeaturedCard = ({
@@ -54,6 +56,8 @@ const FeaturedCard = ({
   sm_margin,
   slug,
   cta,
+  base,
+  path,
   tags = false,
 }: Props) => {
   return (
@@ -69,6 +73,8 @@ const FeaturedCard = ({
         tags={tags}
         slug={slug}
         cta={cta}
+        base={base}
+        path={path}
       />
     </Featured>
   );

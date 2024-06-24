@@ -33,6 +33,7 @@ export default async function Workshops() {
   const result = await fetchData();
 
   const { future } = result[0];
+  console.log("future", future);
 
   return (
     <>
@@ -80,12 +81,14 @@ export default async function Workshops() {
           return (
             <FeaturedCard
               key={index}
-              poster="banner/banner-1.jpg"
+              poster={featured.imageUrl}
               superheading={featured.instructor}
               subheading={fullDateTime}
               heading={featured.workshopname}
               bio={featured.description}
               cta="Register Today"
+              base="workshops"
+              slug={featured.slug.current}
             />
           );
         })}
