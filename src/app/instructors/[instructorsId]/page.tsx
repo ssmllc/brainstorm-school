@@ -1,6 +1,5 @@
 import MediaBanner from "@/app/components/banner/media-banner.component";
 import CardImageDetail from "@/app/components/card/card-image-detail.component";
-import CarouselPreview from "@/app/components/carousel/carousel-preview.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
 import GallerySlide from "@/app/components/modal/gallery-slider.component";
 import Header from "@/app/components/text-block/header.component";
@@ -8,7 +7,7 @@ import DecipherText from "@/app/courses/components/decipher-text.component";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Meet our Instructors | Brainstorm School",
+  title: "Meet Our Instructors | Brainstorm School",
   description:
     "Discover the insights of top industry professionals at Brainstorm School to guide you toward success in concept design for film, gaming, environment, and more. Register Today!",
 };
@@ -134,22 +133,6 @@ export default async function Instructors({
                 difficulty,
               } = course;
               return (
-                // <CardImageDetail
-                //   key={course._id}
-                //   base={course.slug}
-                //   preview={course.imageUrl}
-                //   slug={course.slug}
-                //   path={course.slug}
-                //   courseTrack={course.category}
-                //   courseName={course.name && course.name}
-                //   courseCode={course.code && course.code}
-                //   courseTime={course?.schedule && course?.schedule[0]?.time}
-                //   courseDuration={
-                //     course?.schedule && course?.schedule[0]?.duration
-                //   }
-                //   width="25%"
-                // />
-
                 <CardImageDetail
                   key={_id}
                   base="/courses"
@@ -174,17 +157,6 @@ export default async function Instructors({
                 />
               );
             })}
-
-          {/* <CardImageDetail
-              slug="workshops"
-              path="introduction-to-zbrush"
-              preview="/banner/banner-21.jpg"
-              courseTrack="2D - 3D Concept Design"
-              courseName="Introduction to ZBrush"
-              courseCode="ZB1"
-              courseTime="Fri 10am-1pm (PST)"
-              courseDuration="10-week Course"
-            /> */}
         </FlexBox>
       </FlexBox>
     </>

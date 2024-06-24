@@ -4,8 +4,7 @@ import { CardImage } from "@/app/components/card/simple-card.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
 import Pill from "@/app/components/pill/pill.component";
 import Header from "@/app/components/text-block/header.component";
-
-import Typography from "@/app/components/text-block/typography.component";
+import DecipherText from "@/app/courses/components/decipher-text.component";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
 
 const fetchData = async () => {
   const query =
-    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27workshops%27%5D+%7B%0A++workshoptitle%2C%0A++content%2C%0A++future%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++workshopname%2C%0A++++slug%2C%0A++++instructor%2C%0A++++description%5B%5D-%3E%2C%0A++++date%2C%0A++++time%2C%0A++++location%2C%0A++++price%2C%0A++++registration%2C%0A++++%22imageUrl%22%3A+preview.asset-%3Eurl%2C%0A++++workexamples%5B%5D+-%3E%2C%0A++%7D%2C%0A++previous%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++workshopname%2C%0A++++slug%2C%0A++++instructor%2C%0A++++description%5B%5D-%3E%2C%0A++++date%2C%0A++++time%2C%0A++++location%2C%0A++++price%2C%0A++++registration%2C%0A++++%22imageUrl%22%3A+preview.asset-%3Eurl%2C%0A++++workexamples%5B%5D+-%3E%2C%0A++%7D%2C%0A++content%2C%0A++faqs%5B%5D-%3E+%7B%0A++++_id%2C%0A++++question%2C%0A++++answer%0A++%7D%0A%7D";
+    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27blogs%27%5D+%7B%0A++_id%2C%0A++metatitle%2C%0A++metadescription%2C%0A++headline%2C%0A++%22imageUrl%22%3A+poster.asset-%3Eurl%2C%0A++%22slug%22%3A+slug.current%2C%0A++content1%2C%0A++content2%2C%0A++content3%2C%0A++related%5B%5D+-%3E+%7B%0A++++_id%2C%0A++++category%2C%0A++++%22imageUrl%22%3A+preview.asset-%3Eurl%2C%0A++++name%2C%0A++++%22slug%22%3A+slug.current%2C%0A++++code%2C%0A++++schedule%5B%5D-%3E%2C%0A++++price%2C%0A++++difficulty%2C%0A++%7D%2C%0A%7D";
   // const response = await fetch(query);
   const response = await fetch(query, { cache: "no-store" });
 
@@ -29,139 +28,84 @@ const fetchData = async () => {
   return result;
 };
 
-export default async function BlogDetails() {
+export default async function BlogDetails({
+  params,
+}: {
+  params: { blogId: string };
+}) {
   const result = await fetchData();
 
+  const selectedResults = result.filter((course: any) => {
+    return course.slug === params.blogId;
+  })[0];
+
+  const { imageUrl, slug, content1, content2, content3, related } =
+    selectedResults;
+
   return (
-    <FlexBox
-      flexdirection="column"
-      margin="100px auto"
-      xl_margin="100px auto"
-      alignitems="center"
-    >
-      <Typography
-        heading="Blog headline for articles"
-        sm_padding="100px 25px 25px"
-      />
-
-      <FlexBox
-        alignitems="center"
-        flexdirection="column"
-        sm_margin="20px 25px"
-        margin="20px 60px"
-        xl_margin="0"
-        sm_width="85%"
-        width="70%"
-        xl_width="70%"
-      >
-        <CardImage preview="/banner/banner-1.jpg" width="100%" height="450px" />
-      </FlexBox>
-
-      <Typography heading="Blog headline for articles" />
-
-      <FlexBox
-        sm_margin="20px 60px"
-        margin="20px 60px"
-        xl_margin="20px 0"
-        sm_width="85%"
-        width="70%"
-        xl_width="70%"
-      >
-        <CardImage height="200px" preview="/banner/banner-2.jpg" width="33%" />
-        <CardImage height="200px" preview="/banner/banner-3.jpg" width="33%" />
-        <CardImage height="200px" preview="/banner/banner-4.jpg" width="33%" />
-      </FlexBox>
-
-      <Typography heading="Blog headline for articles" />
-
-      <FlexBox
-        alignitems="center"
-        sm_margin="20px 60px"
-        margin="20px 60px"
-        xl_margin="20px 60px"
-        sm_width="85%"
-        width="70%"
-        xl_width="70%"
-      >
-        <CardImageDetail
-          slug="workshops"
-          path="introduction-to-zbrush"
-          preview="/banner/banner-21.jpg"
-          courseTrack="2D - 3D Concept Design"
-          courseName="Introduction to ZBrush"
-          courseCode="ZB1"
-          courseTime="Fri 10am-1pm (PST)"
-          courseDuration="10-week Course"
-          width="50%"
-        />
+    <>
+      <FlexBox flexdirection="column" xl_margin="150px auto">
         <FlexBox
-          alignitems="center"
           flexdirection="column"
-          sm_margin="20px 60px"
+          sm_margin="20px 25px"
           margin="20px 60px"
-          xl_margin="20px 60px"
-          sm_width="85%"
-          width="70%"
-          xl_width="70%"
-          sm_textalign="center"
-          textalign="center"
-        >
-          <Header level="4" text="This blog mentions this course." />
-          <ActionButton type="primary" label="Register Today" margin="20px 0" />
-        </FlexBox>
-      </FlexBox>
-
-      <FlexBox
-        alignitems="center"
-        sm_margin="40px 60px 20px"
-        margin="20px 60px"
-        xl_margin="20px 60px"
-        sm_width="90%"
-        width="70%"
-        xl_width="70%"
-      >
-        <Header level="4" text="More like this" margin="20px 0" />
-        <FlexBox
-          flexwrap="wrap"
-          sm_margin="20px 40px"
-          margin="20px 40px"
-          xl_margin="20px 40px"
+          xl_margin="0 auto"
           sm_width="85%"
           width="70%"
           xl_width="70%"
         >
-          <Pill padding="15px 20px" label="Understanding Proportions" />
-          <Pill padding="15px 20px" label="Basic Anatomy" />
-          <Pill padding="15px 20px" label="Gesture & Rhythm" />
-          <Pill padding="15px 20px" label="Intro to construction" />
-          <Pill padding="15px 20px" label="Anatomical Focus" />
-        </FlexBox>
-      </FlexBox>
+          <DecipherText description={content1} />
 
-      <FlexBox
-        alignitems="center"
-        borderTop="thin solid var(--medium-grey)"
-        flexdirection="column"
-        sm_margin="0 60px"
-        margin="0 60px"
-        xl_margin="50px 60px"
-        sm_width="85%"
-        width="100%"
-        xl_width="80%"
-      >
-        <Header
-          text="Courses releated to this blog"
-          level="1"
-          margin="50px 0 10px"
-        />
+          <CardImage preview={imageUrl} width="100%" height="450px" />
+
+          <DecipherText description={content2} />
+        </FlexBox>
+
         <FlexBox
           sm_margin="20px 60px"
           margin="20px 60px"
-          xl_margin="20px 60px"
-          sm_width="100%"
-          width="80%"
-          xl_width="100%"
+          xl_margin="20px auto"
+          sm_width="85%"
+          width="70%"
+          xl_width="70%"
+        >
+          <CardImage
+            height="200px"
+            preview="/banner/banner-2.jpg"
+            width="33%"
+          />
+          <CardImage
+            height="200px"
+            preview="/banner/banner-3.jpg"
+            width="33%"
+          />
+          <CardImage
+            height="200px"
+            preview="/banner/banner-4.jpg"
+            width="33%"
+          />
+        </FlexBox>
+
+        <FlexBox
+          flexdirection="column"
+          sm_margin="20px 25px"
+          margin="20px 60px"
+          xl_margin="0 auto"
+          sm_width="85%"
+          width="70%"
+          xl_width="70%"
+        >
+          <DecipherText description={content3} />
+        </FlexBox>
+
+        <FlexBox
           alignitems="center"
+          sm_margin="20px 60px"
+          margin="20px 60px"
+          xl_margin="20px auto"
+          sm_width="85%"
+          width="70%"
+          xl_width="70%"
         >
           <CardImageDetail
             slug="workshops"
@@ -172,32 +116,125 @@ export default async function BlogDetails() {
             courseCode="ZB1"
             courseTime="Fri 10am-1pm (PST)"
             courseDuration="10-week Course"
-            width="33%"
+            width="50%"
           />
-          <CardImageDetail
-            slug="workshops"
-            path="introduction-to-zbrush"
-            preview="/banner/banner-21.jpg"
-            courseTrack="2D - 3D Concept Design"
-            courseName="Introduction to ZBrush"
-            courseCode="ZB1"
-            courseTime="Fri 10am-1pm (PST)"
-            courseDuration="10-week Course"
-            width="33%"
+          <FlexBox
+            alignitems="center"
+            flexdirection="column"
+            sm_margin="20px 60px"
+            margin="20px 60px"
+            xl_margin="20px 60px"
+            sm_width="85%"
+            width="70%"
+            xl_width="70%"
+            sm_textalign="center"
+            textalign="center"
+          >
+            <Header level="4" text="This blog mentions this course." />
+            <ActionButton
+              type="primary"
+              label="Register Today"
+              margin="20px 0"
+            />
+          </FlexBox>
+        </FlexBox>
+
+        <FlexBox
+          alignitems="center"
+          sm_margin="40px 60px 20px"
+          margin="20px 60px"
+          xl_margin="20px auto"
+          sm_width="90%"
+          width="70%"
+          xl_width="70%"
+        >
+          <Header level="4" text="More like this" margin="20px 0" />
+          <FlexBox
+            flexwrap="wrap"
+            sm_margin="20px 40px"
+            margin="20px 40px"
+            xl_margin="20px 40px"
+            sm_width="85%"
+            width="70%"
+            xl_width="70%"
+          >
+            <Pill padding="15px 20px" label="Understanding Proportions" />
+            <Pill padding="15px 20px" label="Basic Anatomy" />
+            <Pill padding="15px 20px" label="Gesture & Rhythm" />
+            <Pill padding="15px 20px" label="Intro to construction" />
+            <Pill padding="15px 20px" label="Anatomical Focus" />
+          </FlexBox>
+        </FlexBox>
+
+        <FlexBox
+          alignitems="center"
+          borderTop="thin solid var(--medium-grey)"
+          flexdirection="column"
+          sm_margin="0 60px"
+          margin="0 60px"
+          xl_margin="50px auto"
+          sm_width="85%"
+          width="100%"
+          xl_width="80%"
+        >
+          <Header
+            text="Courses releated to this blog"
+            level="1"
+            margin="50px 0 10px"
           />
-          <CardImageDetail
-            slug="workshops"
-            path="introduction-to-zbrush"
-            preview="/banner/banner-21.jpg"
-            courseTrack="2D - 3D Concept Design"
-            courseName="Introduction to ZBrush"
-            courseCode="ZB1"
-            courseTime="Fri 10am-1pm (PST)"
-            courseDuration="10-week Course"
-            width="33%"
-          />
+          <FlexBox
+            sm_margin="20px 60px"
+            margin="20px 60px"
+            xl_margin="20px 60px"
+            sm_width="100%"
+            width="80%"
+            xl_width="100%"
+            alignitems="center"
+          >
+            {related &&
+              related.map((course: any) => {
+                const {
+                  _id,
+                  slug,
+                  category,
+                  imageUrl,
+                  name,
+                  code,
+                  schedule,
+                  price,
+                  difficulty,
+                } = course;
+
+                console.log("category", category);
+
+                return (
+                  <CardImageDetail
+                    key={_id}
+                    base="/courses"
+                    preview={imageUrl}
+                    slug={
+                      category
+                        ? category
+                            .toLocaleLowerCase()
+                            .replaceAll(" ", "-")
+                            .replaceAll("&", "and")
+                        : "foundation"
+                    }
+                    path={slug}
+                    courseTrack={category}
+                    courseName={name}
+                    courseCode={code}
+                    courseTime={schedule && schedule[0]?.time}
+                    courseDuration={schedule && schedule[0]?.duration}
+                    coursePrice={price}
+                    courseDifficulty={difficulty}
+                    width={"33%"}
+                  />
+                );
+              })}
+          </FlexBox>
         </FlexBox>
       </FlexBox>
-    </FlexBox>
+    </>
   );
 }

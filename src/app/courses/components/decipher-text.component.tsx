@@ -51,7 +51,7 @@ const DecipherText = ({
 
   const textToDecifer = details?.length > 0 ? details : description;
   return (
-    <>
+    <div>
       {textToDecifer?.map((block: any, index: number) => {
         if (block.style === "h1") {
           return (
@@ -126,7 +126,7 @@ const DecipherText = ({
           );
         }
       })}
-    </>
+    </div>
   );
 };
 

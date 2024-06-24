@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 const fetchData = async () => {
   const query =
     "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27blogs%27%5D+%7B%0A++_id%2C%0A++metatitle%2C%0A++metadescription%2C%0A++headline%2C%0A++%22slug%22%3A+slug.current%2C%0A++%22imageUrl%22%3A+poster.asset-%3Eurl%2C%0A++content%2C%0A++related%0A%7D";
-  // "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27blogs%27%5D+%7B%0A++_id%2C%0A++metatitle%2C%0A++metadescription%2C%0A++headline%2C%0A++%22slug%22%3A+slug.current%2C%0A++%22imageUrl%22%3A+poster.asset-%3Eurl%2C%0A++content%2C%0A++related%0A%7D";
   // const response = await fetch(query);
   const response = await fetch(query, { cache: "no-store" });
 

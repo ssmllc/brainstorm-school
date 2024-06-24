@@ -719,13 +719,13 @@ const ImageGallery = ({ header }: Props) => {
             className="gallery-card"
           />
           <Card
-            $image="/banner/banner-15.jpg"
+            $image="https://cdn.sanity.io/images/y8rjsgga/production/eafc8743663d9c504873c2170aeaa5903c67e22e-1498x709.jpg"
             data-position="2"
             data-active="false"
             className="gallery-card"
           />
           <Card
-            $image="/banner/banner-2.jpg"
+            $image="https://cdn.sanity.io/images/y8rjsgga/production/1bbf059c9267ecc42b1ff3fcd45fcb3254e38499-1920x1080.jpg"
             data-position="3"
             data-active="false"
             className="gallery-card"
