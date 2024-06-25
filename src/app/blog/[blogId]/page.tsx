@@ -61,7 +61,7 @@ export default async function BlogDetails({
           <DecipherText description={content2} />
         </FlexBox>
 
-        <FlexBox
+        {/* <FlexBox
           sm_margin="20px 60px"
           margin="20px 60px"
           xl_margin="20px auto"
@@ -84,7 +84,7 @@ export default async function BlogDetails({
             preview="/banner/banner-4.jpg"
             width="33%"
           />
-        </FlexBox>
+        </FlexBox> */}
 
         <FlexBox
           flexdirection="column"
