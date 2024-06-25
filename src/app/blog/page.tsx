@@ -27,7 +27,7 @@ const fetchData = async () => {
 
 export default async function Blog() {
   const result = await fetchData();
-
+  console.log("result", result);
   return (
     <>
       <MediaBanner
@@ -153,17 +153,18 @@ export default async function Blog() {
           >
             {result &&
               result.map((blog: any, index: number) => {
-                const { slug, imageUrl } = blog;
+                const { slug, imageUrl, headline } = blog;
 
                 return (
                   <AnchorCard
                     key={index}
                     base="blog"
                     path={slug}
-                    label="Blog 1"
+                    label={headline}
                     poster={`${imageUrl}?w=500`}
                     width="100%"
                     md_width="100%"
+                    xl_padding="0"
                   />
                 );
               })}

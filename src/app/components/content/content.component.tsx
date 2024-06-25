@@ -12,14 +12,14 @@ const ContentWrapper = styled.div`
 
   &::before {
     content: "";
-    background-image: url("/backgrounds/lightning/lightning.png"),
+    background-image: url("/backgrounds/lightning/lightning-left-to-right.png"),
       url("/backgrounds/clouds/cloud-2.png"),
       url("/backgrounds/clouds/cloud-4.png"),
       url("/backgrounds/clouds/cloud-3.png"),
       url("/backgrounds/clouds/cloud-1.png"),
-      url("/backgrounds/lightning/lightning.png");
+      url("/backgrounds/lightning/lightning-right-to-left.png");
     background-size: 40%, 50%, 50%, 50%, 50%, 50%;
-    background-position: top left, 10% 50%, 80% 50%, 100% 10%, 0% 85%, 0% 75%;
+    background-position: top left, 10% 50%, 80% 50%, 100% 10%, 0% 85%, 110% 75%;
     background-repeat: no-repeat, no-repeat;
     position: absolute;
     transform-origin: top left;

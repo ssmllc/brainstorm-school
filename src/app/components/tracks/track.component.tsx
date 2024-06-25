@@ -29,8 +29,30 @@ const Anchor = styled(Link)<anchorProps>`
 `;
 
 interface trackProps {
-  poster: string;
+  poster?: string;
+  $sm_padding?: string;
+  $md_padding?: string;
+  $padding?: string;
+  $xl_padding?: string;
 }
+
+const TrackWrapper = styled.div<trackProps>`
+  position: absolute;
+  bottom: 15px;
+  padding: ${({ $sm_padding }) => ($sm_padding ? $sm_padding : "0 20px")};
+
+  @media (min-width: 768px) {
+    padding: ${({ $md_padding }) => ($md_padding ? $md_padding : "0 20px")};
+  }
+
+  @media (min-width: 1024px) {
+    padding: ${({ $padding }) => ($padding ? $padding : "0 20px")};
+  }
+
+  @media (min-width: 1400px) {
+    padding: ${({ $xl_padding }) => ($xl_padding ? $xl_padding : "0 20px")};
+  }
+`;
 
 const Track = styled.div<trackProps>`
   background: var(--black) url(${(props) => props.poster}) top center no-repeat;
@@ -121,9 +143,13 @@ interface Props {
   photo?: string;
   name?: string;
   sm_width?: string;
+  sm_padding?: string;
   md_width?: string;
+  md_padding?: string;
   width?: string;
+  padding?: string;
   xl_width?: string;
+  xl_padding?: string;
   children?: string | ReactNode | JSX.Element | JSX.Element[];
 }
 
@@ -137,9 +163,13 @@ const AnchorCard = ({
   photo,
   name,
   sm_width,
+  sm_padding,
   md_width,
+  md_padding,
   width,
+  padding,
   xl_width,
+  xl_padding,
 }: Props) => {
   const baseLocation = base ? base : "";
   const pathLocation = path ? path : "";
@@ -154,12 +184,11 @@ const AnchorCard = ({
       $xl_width={xl_width}
     >
       <Track poster={poster}>
-        <div
-          style={{
-            position: "absolute",
-            bottom: "15px",
-            padding: "0 20px",
-          }}
+        <TrackWrapper
+          $sm_padding={sm_padding}
+          $md_padding={md_padding}
+          $padding={padding}
+          $xl_padding={xl_padding}
         >
           {children && children}
 
@@ -174,7 +203,7 @@ const AnchorCard = ({
 
           <Label>{label}</Label>
           <Name>{name}</Name>
-        </div>
+        </TrackWrapper>
       </Track>
     </Anchor>
   );
