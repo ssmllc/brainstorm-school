@@ -42,53 +42,48 @@ const SimilarCourses = ({ header }: Props) => {
       >
         <CardImageDetail
           base="/courses"
-          slug="concept-art-games-and-film"
-          path="introduction-to-character-design"
-          preview="/banner/banner-18.jpg"
-          courseTrack="Concept Art Games & Film"
-          courseName="Introduction to Character Design"
-          courseCode="CH"
-          courseTime="Fri 10am-1pm (PST)"
-          courseDuration="10-week Course"
-          width="33%"
-        />
-
-        <CardImageDetail
-          base="/courses"
           slug="foundation"
           path="rhythm-and-structure"
-          preview="/banner/banner-19.jpg"
+          preview="https://cdn.sanity.io/images/y8rjsgga/production/a4fa0fdb61694f50527cad4073baeaec359dc958-800x396.jpg?w=500"
           courseTrack="Foundation"
           courseName="Rhythm & Structure"
           courseCode="FIG RS"
-          courseTime="Fri 10am-1pm (PST)"
-          courseDuration="10-week Course"
+          courseTime="Wednesday 2am-5pm (PST)"
+          courseDuration="10 - week Course"
+          courseDifficulty="Beginner"
+          coursePrice="$600.00"
+          width="33%"
+        />
+
+        <CardImageDetail
+          base="/courses"
+          slug="flash"
+          path="stylized-character-design"
+          preview="https://cdn.sanity.io/images/y8rjsgga/production/c4f32c61805a41b426e14fd39ed13ae2384b2713-1822x1406.jpg?w=500"
+          courseTrack="Flash"
+          courseName="Stylized Character Design"
+          courseCode="CH Flash"
+          courseTime="Thursday 7:30pm-9:30pm (PST)"
+          courseDuration="5 - week Course"
+          courseDifficulty="Intermediate"
+          coursePrice="$155.99"
           width="33%"
         />
 
         <CardImageDetail
           base="/courses"
           slug="2d-3d-concept-design"
-          path="introduction-to-zbrush"
-          preview="/banner/banner-21.jpg"
+          path="advance-blender-and-unreal-design"
+          preview="https://cdn.sanity.io/images/y8rjsgga/production/17a7586ffc8113162f3382073952dadaccbf09bb-1920x1032.jpg?w=500"
           courseTrack="2D - 3D Concept Design"
-          courseName="Introduction to ZBrush"
-          courseCode="ZB1"
-          courseTime="Fri 10am-1pm (PST)"
-          courseDuration="10-week Course"
+          courseName="Advance Blender & Unreal Design"
+          courseCode="ADV BUD"
+          courseTime="Sunday 7pm-10pm (PST)"
+          courseDuration="10 - week Course"
+          courseDifficulty="Advanced"
+          coursePrice="$625.00"
           width="33%"
         />
-        {/* <CardImageDetail
-          base="/courses"
-          slug="2d-3d-concept-design"
-          path="introduction-to-zbrush"
-          preview="/banner/banner-21.jpg"
-          courseTrack="2D - 3D Concept Design"
-          courseName="Introduction to ZBrush"
-          courseCode="ZB1"
-          courseTime="Fri 10am-1pm (PST)"
-          courseDuration="10-week Course"
-        /> */}
       </FlexBox>
 
       <FlexBox
