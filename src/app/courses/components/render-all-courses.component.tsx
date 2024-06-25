@@ -26,7 +26,7 @@ const RenderAllCourses = ({ selectedCourses, width }: Props) => {
     } else {
       setCourseList(selectedCourses);
     }
-  }, [levelOfExpertise]);
+  }, [levelOfExpertise, selectedCourses]);
 
   useEffect(() => {
     if (dayOfTheWeek !== "All") {
@@ -40,7 +40,7 @@ const RenderAllCourses = ({ selectedCourses, width }: Props) => {
     } else {
       setCourseList(selectedCourses);
     }
-  }, [dayOfTheWeek]);
+  }, [dayOfTheWeek, selectedCourses]);
 
   useEffect(() => {
     if (priceOrder !== "All") {
@@ -67,7 +67,7 @@ const RenderAllCourses = ({ selectedCourses, width }: Props) => {
     } else {
       setCourseList(selectedCourses);
     }
-  }, [priceOrder]);
+  }, [priceOrder, selectedCourses]);
 
   return (
     <FlexBox
