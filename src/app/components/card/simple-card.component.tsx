@@ -181,7 +181,6 @@ interface Props {
 }
 
 const CardLayout = ({ results }: Props) => {
-  console.log("results from course details", results);
   const {
     name,
     imageUrl,
@@ -198,8 +197,6 @@ const CardLayout = ({ results }: Props) => {
     : [];
 
   const { title, profession, headshot } = instructors ? instructors[0] : [];
-
-  // console.log("instructors", instructors);
 
   const formatOpen = new Date(open).toDateString();
   const formatStart = new Date(start).toDateString();

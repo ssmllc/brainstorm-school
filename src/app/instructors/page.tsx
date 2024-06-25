@@ -38,8 +38,6 @@ export default async function Instructors() {
     result.splice(idx, 1);
   }
 
-  // console.log("find it here =>", featuredInstructors);
-
   return (
     <>
       <MediaBanner

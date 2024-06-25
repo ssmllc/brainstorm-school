@@ -169,7 +169,7 @@ const ImageGallery = ({ header }: Props) => {
         } else {
           currentPosition++;
         }
-        console.log("next", currentPosition);
+        // console.log("next", currentPosition);
 
         // CurrentPosition 2
         if (currentPosition === 2) {
@@ -427,7 +427,7 @@ const ImageGallery = ({ header }: Props) => {
           currentPosition--;
         }
 
-        console.log("prev", currentPosition);
+        // console.log("prev", currentPosition);
 
         if (currentPosition === 1) {
           featuredWorkSlides.map((slide: HTMLElement) => {

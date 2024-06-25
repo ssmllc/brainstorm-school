@@ -28,7 +28,7 @@ const fetchData = async () => {
 
 export default async function Mentorship() {
   const result = await fetchData();
-  console.log("result", result);
+
   return (
     <>
       <MediaBanner

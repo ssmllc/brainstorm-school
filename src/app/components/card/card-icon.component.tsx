@@ -16,7 +16,7 @@ interface cardIconProps {
 }
 
 const Icon = styled.div<cardIconProps>`
-  background: var(--white) ${({ image }) => `url(${image})`};
+  background: ${({ image }) => `url(${image})`} top center no-repeat;
   background-size: cover;
   border-radius: ${({ borderradius }) =>
     borderradius ? borderradius : "100%"};
@@ -36,7 +36,7 @@ const Icon = styled.div<cardIconProps>`
     width: ${({ width }) => (width ? width : "65px")};
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1400px) {
     height: ${({ height }) => (height ? height : "65px")};
     margin: ${({ $xl_margin }) => $xl_margin};
     width: ${({ width }) => (width ? width : "65px")};

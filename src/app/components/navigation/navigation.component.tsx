@@ -388,12 +388,6 @@ const Navigation = () => {
             >
               Open Canvas
             </AccordionItem>
-            {/* <AccordionItem
-              onClick={() => setActive(false)}
-              href="/workshops/brainstorm-connection"
-            >
-              Brainstorm Connection
-            </AccordionItem> */}
           </Accordion>
 
           <MainMenuItem onClick={() => setActive(false)} href="/mentorship">
@@ -499,11 +493,6 @@ const Navigation = () => {
             <DropdownMenuItem>
               <MenuItem href="/workshops/open-canvas">Open Canvas</MenuItem>
             </DropdownMenuItem>
-            {/* <DropdownMenuItem>
-              <MenuItem href="/workshops/brainstorm-connection">
-                Brainstorm Connection
-              </MenuItem>
-            </DropdownMenuItem> */}
           </DropdownMenu>
         </Dropdown>
 
@@ -514,6 +503,9 @@ const Navigation = () => {
         <Dropdown>
           <MenuItem href="/about">About</MenuItem>
           <DropdownMenu className="bs-dropdown-menu">
+            <DropdownMenuItem>
+              <MenuItem href="/about">About us</MenuItem>
+            </DropdownMenuItem>
             <DropdownMenuItem>
               <MenuItem href="/about/compliance-line">Compliance Line</MenuItem>
             </DropdownMenuItem>
@@ -550,12 +542,6 @@ const Navigation = () => {
         <li>
           <MenuItem href="/blog">Blog</MenuItem>
         </li>
-
-        {/* <li>
-          <MenuItem href="" onClick={toggleSearch}>
-            <IconSearch width="14px" height="14px" />
-          </MenuItem>
-        </li> */}
 
         <li>
           <CallToAction href="/courses">Register</CallToAction>

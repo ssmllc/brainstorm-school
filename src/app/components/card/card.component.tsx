@@ -143,6 +143,9 @@ interface Props {
   cta?: string;
   base?: string;
   path?: string;
+  code?: string;
+  time?: string;
+  duration?: string;
 }
 
 const ImageDetailCard = ({
@@ -158,6 +161,9 @@ const ImageDetailCard = ({
   cta,
   base,
   path,
+  code,
+  time,
+  duration,
 }: Props) => {
   return (
     <Card className="course-card" variant={variant}>
@@ -171,24 +177,25 @@ const ImageDetailCard = ({
               <span>
                 <IconCap height="24px" width="24px" />
               </span>
-              FIG RS
+              {code}
             </Tag>
 
             <Tag>
               <span>
                 <IconTime width="24px" height="24px" />
               </span>
-              Fri 10am - 1pm (PST)
+              {time}
             </Tag>
 
             <Tag>
               <span>
                 <IconDuration width="24px" height="24px" />
               </span>
-              10 Week Course
+              {duration}
             </Tag>
           </Details>
         )}
+
         {info && cta && (
           <>
             <Info>{info}</Info>
@@ -206,11 +213,12 @@ const ImageDetailCard = ({
             </a>
           </>
         )}
-        {bio && (
+
+        {bio && slug && (
           <>
             <div
               style={{
-                height: "125px",
+                height: "105px",
                 overflow: "hidden",
                 padding: "10px 0",
               }}
@@ -230,20 +238,6 @@ const ImageDetailCard = ({
             </a>
           </>
         )}
-
-        {/* {cta && (
-          <a
-            href={`/${base}/${path}`}
-            style={{
-              textDecoration: "none",
-              color: "var(--primary)",
-              display: "block",
-              padding: "25px 0",
-            }}
-          >
-            {cta}
-          </a>
-        )} */}
       </Content>
     </Card>
   );

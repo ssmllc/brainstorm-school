@@ -363,7 +363,6 @@ const TracksGroup = ({ results }: Props) => {
                   </TextBlock>
 
                   {courses.courses.map((course: any, index: number) => {
-                    // console.log("looking for difficulty", course?.difficulty);
                     let color: string = "";
 
                     if (course?.difficulty === "Beginner") {

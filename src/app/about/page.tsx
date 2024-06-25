@@ -61,6 +61,7 @@ export default async function About() {
             scale="xl"
             cta="Register Today"
             ctaType="primary"
+            href="/courses"
           />
         </FlexBox>
 
@@ -138,7 +139,7 @@ export default async function About() {
               background="var(--black-60)"
               alignitems="start"
               stacked="true"
-              icon="/instructors/ico-image.png"
+              icon="/icons/ico-courses.png"
               heading="Courses"
               text="Classes are the most popular method of learning. A 10-week course focusing on a specific subject, or 5-8 week hyper-focused bootcamps. Lectures, demonstrations, homework, and feedback are important components that make classrooms an effective learning environment.  Class sizes range from ten to twenty students."
               width="100%"
@@ -150,7 +151,7 @@ export default async function About() {
               background="var(--black-60)"
               alignitems="start"
               stacked="true"
-              icon="/instructors/ico-image.png"
+              icon="/icons/ico-workshops.png"
               heading="Workshops"
               text="Workshops are precisely designed to provide attendees with hands-on experience, experienced advice, and a supportive community—all of which are essential for perfecting your skills and advancing your career in the entertainment industry. In Person Workshop or Online Workshops."
               width="100%"
@@ -162,7 +163,7 @@ export default async function About() {
               background="var(--black-60)"
               alignitems="start"
               stacked="true"
-              icon="/instructors/ico-image.png"
+              icon="/icons/ico-programs.png"
               heading="Programs"
               text="A true mentoring experience! Our team of core mentors will take you through a 12-week intensive curriculum that is completely tailored to you! You will meet with your mentor weekly for private sessions to go over your learning plan and how you are progressing toward your goals.  The most intensive technique to improve your artistic, soft, and professional talents."
               width="100%"
@@ -174,7 +175,7 @@ export default async function About() {
               background="var(--black-60)"
               alignitems="start"
               stacked="true"
-              icon="/instructors/ico-image.png"
+              icon="/icons/ico-community.png"
               heading="Flash Courses"
               text="A five-week cost-effective course designed to give focused information and practices. Classes are live and will only include demonstrations and lectures. No feedback will be given. Students are issued self-study assignments and encouraged to provide peer critique."
               width="100%"

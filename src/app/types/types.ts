@@ -37,6 +37,8 @@ export type Course = {
   section: string;
   time: string;
   duration: string;
+  price: string;
+  difficulty: string;
 };
 
 export type Schedule = {

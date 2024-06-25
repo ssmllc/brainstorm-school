@@ -51,7 +51,7 @@ const FAQStatic = ({ children }: Props) => {
     if (selected === selectedIndex) {
       return setSelected(null);
     }
-    console.log("selectedIndex", selectedIndex);
+
     setSelected(selectedIndex);
   };
   return (

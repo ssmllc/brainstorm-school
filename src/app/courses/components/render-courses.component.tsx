@@ -49,7 +49,8 @@ const RenderCourses = ({ selectedCourses, width }: Props) => {
                 }) => (
                   <>
                     {courses?.map((course: Course) => {
-                      // console.log("courses", courses);
+                      const { schedule, price, difficulty } = course;
+                      console.log("course", course);
                       return (
                         <CardImageDetail
                           key={course._id}
@@ -60,12 +61,10 @@ const RenderCourses = ({ selectedCourses, width }: Props) => {
                           courseTrack={category}
                           courseName={course.name && course.name}
                           courseCode={course.code && course.code}
-                          courseTime={
-                            course?.schedule && course?.schedule[0]?.time
-                          }
-                          courseDuration={
-                            course?.schedule && course?.schedule[0]?.duration
-                          }
+                          courseTime={schedule && schedule[0]?.time}
+                          courseDuration={schedule && schedule[0]?.duration}
+                          coursePrice={price}
+                          courseDifficulty={difficulty}
                           width={width}
                         />
                       );

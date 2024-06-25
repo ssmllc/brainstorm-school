@@ -41,7 +41,6 @@ export default async function Instructors({
   const { title, profession, headshot, imageUrl, bio, courses } =
     selectedInstructor[0];
 
-  console.log("title", title);
   return (
     <>
       <MediaBanner

@@ -27,7 +27,7 @@ const fetchData = async () => {
 
 export default async function Blog() {
   const result = await fetchData();
-  console.log("result", result);
+
   return (
     <>
       <MediaBanner

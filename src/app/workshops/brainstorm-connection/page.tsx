@@ -30,8 +30,6 @@ const fetchData = async () => {
 export default async function Workshops() {
   const result = await fetchData();
 
-  console.log("workshops", result[0].faqs);
-
   return (
     <>
       <MediaBanner

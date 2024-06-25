@@ -62,8 +62,6 @@ export default async function Page({
   const result = await fetchData();
 
   const header = result.filter((course: any) => {
-    // console.log("slug", course.slug.current);
-    // console.log("params.id[0]", params.courseId);
     return course.slug.current === params.courseId[0];
   })[0]["name"];
 

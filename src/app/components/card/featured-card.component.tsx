@@ -24,7 +24,12 @@ const Featured = styled.div<featuredProps>`
 
   @media (min-width: 1024px) {
     max-width: 1125px;
-    margin: ${({ $margin }) => ($margin ? $margin : "75px auto")};
+    margin: ${({ $margin }) => ($margin ? $margin : "50px auto")};
+    width: 80%;
+  }
+
+  @media (min-width: 1400px) {
+    margin: ${({ $margin }) => ($margin ? $margin : "50px auto")};
     width: 80%;
   }
 `;
@@ -43,6 +48,9 @@ interface Props {
   tags?: boolean;
   base?: string;
   path?: string;
+  code?: string;
+  time?: string;
+  duration?: string;
 }
 
 const FeaturedCard = ({
@@ -59,6 +67,9 @@ const FeaturedCard = ({
   base,
   path,
   tags = false,
+  code,
+  time,
+  duration,
 }: Props) => {
   return (
     <Featured $sm_margin={sm_margin} $margin={margin}>
@@ -75,6 +86,9 @@ const FeaturedCard = ({
         cta={cta}
         base={base}
         path={path}
+        code={code}
+        time={time}
+        duration={duration}
       />
     </Featured>
   );

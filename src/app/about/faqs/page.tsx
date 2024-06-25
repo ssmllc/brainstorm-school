@@ -26,7 +26,7 @@ const fetchData = async () => {
 
 export default async function FAQ() {
   const result = await fetchData();
-  console.log("result", result);
+
   return (
     <>
       <MediaBanner

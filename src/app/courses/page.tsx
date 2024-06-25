@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const fetchData = async () => {
   const query =
-    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27course%27%5D+%7C+order%28name+asc%29+%7B%0A++_id%2C%0A++name%2C%0A++category%2C%0A++%22slug%22%3A+slug.current%2C%0A++%22imageUrl%22%3A+preview.asset-%3E+url%2C%0A++difficulty%2C%0A++price%2C%0A++schedule%5B%5D+-%3E+%7B%0A++++registration%2C%0A++++duration%2C%0A++++time%2C%0A++%7D%2C%0A++code%2C%0A++section%2C%0A++_type%0A%7D";
+    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27course%27%5D+%7C+order%28name+asc%29+%7B%0A++_id%2C%0A++name%2C%0A++%22slug%22%3A+slug.current%2C%0A++category%2C%0A++%22slug%22%3A+slug.current%2C%0A++%22imageUrl%22%3A+preview.asset-%3E+url%2C%0A++difficulty%2C%0A++price%2C%0A++schedule%5B%5D+-%3E+%7B%0A++++registration%2C%0A++++duration%2C%0A++++time%2C%0A++%7D%2C%0A++code%2C%0A++duration%2C%0A++description%2C%0A++section%2C%0A++_type%0A%7D";
   // const response = await fetch(query);
   const response = await fetch(query, { cache: "no-store" });
 
@@ -30,6 +30,32 @@ const fetchData = async () => {
 export default async function Courses() {
   const result = await fetchData();
 
+  let featuredCourse: any = [];
+
+  for (let i = 0; i < 1; i++) {
+    let idx = Math.floor(Math.random() * (result.length - 1 - 0 + 1) + 0);
+    featuredCourse.push(result[idx]);
+    result.splice(idx, 1);
+  }
+
+  console.log("featuredCourse", featuredCourse);
+
+  const {
+    name,
+    category,
+    imageUrl,
+    slug,
+    description,
+    code,
+    duration,
+    schedule,
+  } = featuredCourse[0];
+
+  const categorySlug = category
+    .toLocaleLowerCase()
+    .replaceAll(" ", "-")
+    .replaceAll("&", "and");
+  const newPath = `/${categorySlug}/${slug}`;
   return (
     <>
       <MediaBanner
@@ -90,24 +116,21 @@ export default async function Courses() {
         flexdirection="column"
         alignitems="center"
       >
-        <FlexBox
-          margin="25px auto 0"
-          sm_width="80%"
-          md_width="70%"
-          xl_width="80%"
-          width="70%"
-          flexdirection="column"
-        >
-          <Header level="2" text="Featured Course" />
-        </FlexBox>
-
         <FeaturedCard
-          poster="/banner/banner-5.jpg"
-          superheading="Rhythm & Structure"
-          info="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam expedita ad fugiat possimus ab vero nobis facere quam modi, reprehenderit accusamus suscipit maxime porro exercitationem blanditiis eveniet ducimus, vitae in."
-          heading="James Paick"
+          poster={imageUrl}
+          superheading={category}
+          subheading="Featured Course"
+          bio={description}
+          heading={name}
           margin="25px 0"
           sm_margin="25px 0"
+          tags={true}
+          cta="View Course"
+          base="courses"
+          slug={newPath}
+          code={code}
+          time={schedule[0].time}
+          duration={duration}
         />
       </FlexBox>
 

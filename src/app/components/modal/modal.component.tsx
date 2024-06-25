@@ -91,8 +91,6 @@ const Modal = ({
   const modalRef = useRef(null);
 
   useGSAP(() => {
-    // console.log("from modal showIt", gallery.length);
-
     if (gallery?.length > 0) {
       const totalW = gallery.length * cardWidth;
 

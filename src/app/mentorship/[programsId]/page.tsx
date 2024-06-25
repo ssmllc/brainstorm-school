@@ -50,8 +50,6 @@ export default async function MentorshipPrograms({
     return mentorship.slug === params.programsId;
   })[0];
 
-  // console.log("selectedResults", selectedResults);
-
   const { mentorship, programs } = selectedResults;
   const { mentor, description, registration, program_name } = programs[0];
 

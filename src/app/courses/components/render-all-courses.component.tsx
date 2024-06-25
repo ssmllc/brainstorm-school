@@ -26,8 +26,6 @@ const RenderAllCourses = ({ selectedCourses, width }: Props) => {
     } else {
       setCourseList(selectedCourses);
     }
-
-    // console.log("levelOfExpertise", levelOfExpertise);
   }, [levelOfExpertise]);
 
   useEffect(() => {
@@ -42,8 +40,6 @@ const RenderAllCourses = ({ selectedCourses, width }: Props) => {
     } else {
       setCourseList(selectedCourses);
     }
-
-    // console.log("selectedCourses", selectedCourses);
   }, [dayOfTheWeek]);
 
   useEffect(() => {

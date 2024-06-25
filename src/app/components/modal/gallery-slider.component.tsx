@@ -45,11 +45,7 @@ const GallerySlide = ({ results, selectedInstructor }: Props) => {
   const [selectedImage, setSelectedImage] = useState<any>([]);
   const [artist, setArtist] = useState<any>([]);
 
-  console.log("results", results);
-  console.log("selectedInstructor", selectedInstructor);
   const handler = (title: string, imageUrl: string, gallery: any[]) => {
-    // console.log("title", title);
-    // console.log("gallery", gallery);
     setSelectedGallery(gallery);
     setSelectedImage(imageUrl);
     setArtist(title);

@@ -25,7 +25,7 @@ export const BrainstormProvider = ({
         }
 
         const { result } = await response.json();
-        // console.log("result", result);
+
         setCourses(result);
       } catch (error: any) {
         setError(error);

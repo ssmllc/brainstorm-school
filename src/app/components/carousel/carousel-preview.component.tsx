@@ -47,7 +47,6 @@ const CarouselPreview = ({ selectedInstructor, gallery, imageUrl }: Props) => {
           <Carousel sm_height="200px" height="350px">
             {gallery &&
               gallery.map((art: any, index: number) => {
-                console.log("gallery", gallery);
                 return (
                   <CardImage
                     key={index}

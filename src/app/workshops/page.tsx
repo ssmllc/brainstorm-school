@@ -33,7 +33,6 @@ export default async function Workshops() {
   const result = await fetchData();
 
   const { future } = result[0];
-  console.log("future", future);
 
   return (
     <>
@@ -51,8 +50,8 @@ export default async function Workshops() {
       <FlexBox
         flexdirection="column"
         margin="100px auto"
-        sm_margin="100px auto 50px"
-        xl_margin="100px auto 50px"
+        sm_margin="100px auto 0"
+        xl_margin="100px auto 0"
         alignitems="center"
       >
         <FlexBox

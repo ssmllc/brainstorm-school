@@ -68,7 +68,7 @@ const CoursesFAQs = () => {
     if (selected === selectedIndex) {
       return setSelected(null);
     }
-    console.log("selectedIndex", selectedIndex);
+    // console.log("selectedIndex", selectedIndex);
     setSelected(selectedIndex);
   };
   return (
@@ -91,11 +91,7 @@ const CoursesFAQs = () => {
           background="var(--dark-grey)"
           padding="0 20px"
         >
-          <Question
-            font-size="16px"
-            className="faq-question"
-            onClick={() => toggleFAQ(1)}
-          >
+          <Question className="faq-question" onClick={() => toggleFAQ(1)}>
             <h3>What is the cost of the courses?</h3>
             <span>
               <Image
@@ -144,11 +140,7 @@ const CoursesFAQs = () => {
           background="var(--dark-grey)"
           padding="0 20px"
         >
-          <Question
-            font-size="16px"
-            className="faq-question"
-            onClick={() => toggleFAQ(2)}
-          >
+          <Question className="faq-question" onClick={() => toggleFAQ(2)}>
             <h3>What are the registration dates for upcoming courses?</h3>
             <span>
               <Image
@@ -178,11 +170,7 @@ const CoursesFAQs = () => {
           background="var(--dark-grey)"
           padding="0 20px"
         >
-          <Question
-            font-size="16px"
-            className="faq-question"
-            onClick={() => toggleFAQ(3)}
-          >
+          <Question className="faq-question" onClick={() => toggleFAQ(3)}>
             <h3>How long do the courses last?</h3>
             <span>
               <Image
@@ -212,11 +200,7 @@ const CoursesFAQs = () => {
           background="var(--dark-grey)"
           padding="0 20px"
         >
-          <Question
-            font-size="16px"
-            className="faq-question"
-            onClick={() => toggleFAQ(4)}
-          >
+          <Question className="faq-question" onClick={() => toggleFAQ(4)}>
             <h3>How can I get more information about a specific course?</h3>
             <span>
               <Image

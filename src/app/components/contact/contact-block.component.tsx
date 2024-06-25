@@ -124,7 +124,7 @@ const Newsletter = styled.div`
   transition: all 0.25s ease-out;
 
   @media (min-width: 800px) {
-    padding: 60px 25px;
+    padding: 50px 25px;
   }
 
   &:hover {
@@ -236,9 +236,23 @@ const ContactBlock = ({ heading, subheading }: Props) => {
                     id="bs-email"
                     className="bs-required"
                     placeholder="Email Address"
+                    style={{
+                      border: "thin solid var(--white-50)",
+                      marginTop: "20px",
+                      borderRadius: "10px",
+                      background: "transparent",
+                      padding: "10px 10px",
+                    }}
                   />
 
-                  <button type="submit" id="bs-submit">
+                  <button
+                    type="submit"
+                    id="bs-submit"
+                    style={{
+                      padding: "10px 20px",
+                      borderRadius: "20px",
+                    }}
+                  >
                     Join
                   </button>
                 </form>

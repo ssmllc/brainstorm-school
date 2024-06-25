@@ -205,8 +205,6 @@ export default async function BlogDetails({
                   difficulty,
                 } = course;
 
-                console.log("category", category);
-
                 return (
                   <CardImageDetail
                     key={_id}

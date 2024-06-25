@@ -5,12 +5,10 @@ import RegistrationBlock from "@/app/components/registration/registration-block.
 import FAQs from "@/app/components/text-block/faqs.component";
 import DecipherText from "../components/decipher-text.component";
 import FlexBox from "@/app/components/layout/flexbox.component";
-import Header from "@/app/components/text-block/header.component";
-import FeaturedCard from "@/app/components/card/featured-card.component";
 
 const fetchData = async () => {
   const query =
-    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27courses%27%5D+%7B%0A++category%2C%0A++slug+%7B%0A++++current%0A++%7D%2C%0A++details%2C%0A++faqs%5B%5D+-%3E+%7B%0A++++question%2C%0A++++answer%2C%0A++%7D%2C%0A++sections%5B%5D+-%3E+%7B%0A++++section%2C%0A++++category%2C%0A++++slug%2C%0A++++courses%5B%5D+-%3E+%7B%0A++++++_id%2C%0A++++++name%2C%0A++++++section%2C%0A++++++category%2C%0A++++++slug%2C%0A++++++code%2C%0A++++++description%5B0%5D+%7B%0A++++++++children%5B0%5D+%7B%0A++++++++++text%0A++++++++%7D%0A++++++%7D%2C%0A++++++preview+%7B%0A++++++++asset+-%3E+%7B%0A++++++++++url%0A++++++++%7D%2C%0A++++++%7D%2C%0A++++++instructors%5B%5D+-%3E+%7B%0A++++++++title%2C%0A++++++++profession%2C%0A++++++++bio%2C%0A++++++%7D%2C%0A++++++schedule%5B%5D+-%3E+%7B%0A++++++++instructor%5B0%5D+-%3E+%7B%0A++++++++++title%2C%0A++++++++%7D%2C%0A++++++++registration%2C%0A++++++++term%2C%0A++++++++time%2C%0A++++++++duration%2C%0A++++++++start%2C%0A++++++%7D%2C%0A++++%7D%2C%0A++%7D%2C%0A%7D";
+    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27courses%27%5D+%7B%0A++category%2C%0A++slug+%7B%0A++++current%0A++%7D%2C%0A++details%2C%0A++faqs%5B%5D+-%3E+%7B%0A++++question%2C%0A++++answer%2C%0A++%7D%2C%0A++sections%5B%5D+-%3E+%7B%0A++++section%2C%0A++++category%2C%0A++++slug%2C%0A++++courses%5B%5D+-%3E+%7B%0A++++++_id%2C%0A++++++name%2C%0A++++++price%2C%0A++++++difficulty%2C%0A++++++section%2C%0A++++++category%2C%0A++++++slug%2C%0A++++++code%2C%0A++++++description%5B0%5D+%7B%0A++++++++children%5B0%5D+%7B%0A++++++++++text%0A++++++++%7D%0A++++++%7D%2C%0A++++++preview+%7B%0A++++++++asset+-%3E+%7B%0A++++++++++url%0A++++++++%7D%2C%0A++++++%7D%2C%0A++++++instructors%5B%5D+-%3E+%7B%0A++++++++title%2C%0A++++++++profession%2C%0A++++++++bio%2C%0A++++++%7D%2C%0A++++++schedule%5B%5D+-%3E+%7B%0A++++++++instructor%5B0%5D+-%3E+%7B%0A++++++++++title%2C%0A++++++++%7D%2C%0A++++++++registration%2C%0A++++++++term%2C%0A++++++++time%2C%0A++++++++duration%2C%0A++++++++start%2C%0A++++++%7D%2C%0A++++%7D%2C%0A++%7D%2C%0A%7D";
   // const response = await fetch(query);
   const response = await fetch(query, { cache: "no-store" });
 
@@ -31,12 +29,12 @@ export default async function Page({ params }: { params: { id: string } }) {
   );
 
   const selectedResults = result.filter((course: any) => {
-    // console.log("slug", course.slug.current);
-    // console.log("params.id[0]", params.id);
     return course.slug.current === params.id;
   })[0];
 
   const { category } = selectedResults && selectedResults;
+
+  console.log("selectedResults", selectedResults);
 
   return (
     <>
@@ -65,26 +63,6 @@ export default async function Page({ params }: { params: { id: string } }) {
       </FlexBox>
 
       <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
-        <FeaturedCard
-          poster="/banner/banner-5.jpg"
-          superheading="Rhythm & Structure"
-          subheading="Featured Course"
-          info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eligendi, aliquam rem quidem fugit culpa molestiae neque incidunt distinctio. Distinctio tenetur dolorem nihil deleniti eos iure rerum, minus rem reiciendis."
-          heading="Portfolio Development Environments"
-          margin="25px 0"
-        />
-
-        {/* <FeaturedCard
-          poster={featuredInstructors[0].imageUrl}
-          superheading={featuredInstructors[0].profession}
-          subheading="Featured Instructor"
-          heading={featuredInstructors[0].title}
-          margin="25px 0"
-          bio={featuredInstructors[0].bio}
-          slug={featuredInstructors[0].slug}
-          cta="Read More"
-        /> */}
-
         <RenderCourses
           selectedCourses={selectedCourses}
           noheading={true}
