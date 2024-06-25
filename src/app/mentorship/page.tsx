@@ -168,6 +168,7 @@ export default async function Mentorship() {
                   label={program_name}
                   name={mentor}
                   poster={imageUrl}
+                  width="24%"
                   xl_width="24%"
                 />
               );
