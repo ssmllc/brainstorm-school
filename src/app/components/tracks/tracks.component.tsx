@@ -106,7 +106,7 @@ const Track = styled.div<trackProps>`
   background-size: cover;
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  filter: grayscale(0.75);
+  /* filter: grayscale(0.75); */
   min-height: 150px;
   padding: 100px 20px 0 20px;
   position: relative;
@@ -127,7 +127,8 @@ const Track = styled.div<trackProps>`
   }
 
   &[data-track="active"] {
-    filter: grayscale(0);
+    /* filter: grayscale(0); */
+    box-shadow: 0 0 0 1px var(--primary);
   }
 
   &::after {
@@ -147,7 +148,7 @@ const Track = styled.div<trackProps>`
   }
 
   &:hover {
-    filter: grayscale(0);
+    /* filter: grayscale(0); */
     cursor: pointer;
     box-shadow: 0 0 0 1px var(--primary);
   }
@@ -272,7 +273,7 @@ const TracksGroup = ({ results }: Props) => {
             <Anchor href="/course-guide">
               <Track
                 onClick={() => setSelectedContextTrack("3d-concept")}
-                poster="https://cdn.sanity.io/images/y8rjsgga/production/2cdf3da6e469a0057a3184418763683d7abc4869-3885x2193.jpg?w=800"
+                poster="https://cdn.sanity.io/images/y8rjsgga/production/045b94172d3c14adae7092cbf40a2756c817bed9-1125x633.jpg?w=800"
               >
                 <Icon>
                   <Icon3D width="28px" height="28px" />
@@ -284,7 +285,7 @@ const TracksGroup = ({ results }: Props) => {
             <Anchor href="/course-guide">
               <Track
                 onClick={() => setSelectedContextTrack("environmental-design")}
-                poster="https://cdn.sanity.io/images/y8rjsgga/production/f584a3b679d5a97b60570faa81afb6c48312c18e-3059x1928.jpg?w=800"
+                poster="https://cdn.sanity.io/images/y8rjsgga/production/5fab0dcacffa3c467db8c2cbc2b770c162daae2e-1920x839.jpg?w=800"
               >
                 <Icon>
                   <Icon3D width="28px" height="28px" />
@@ -296,7 +297,7 @@ const TracksGroup = ({ results }: Props) => {
             <Anchor href="/course-guide">
               <Track
                 onClick={() => setSelectedContextTrack("character-design")}
-                poster="https://cdn.sanity.io/images/y8rjsgga/production/c54972b56f3240f3ef994675235e58d1b438da38-6189x5500.jpg?w=800"
+                poster="https://cdn.sanity.io/images/y8rjsgga/production/c4f32c61805a41b426e14fd39ed13ae2384b2713-1822x1406.jpg?w=800"
               >
                 <Icon>
                   <Icon3D width="28px" height="28px" />
@@ -308,7 +309,7 @@ const TracksGroup = ({ results }: Props) => {
             <Anchor href="/course-guide">
               <Track
                 onClick={() => setSelectedContextTrack("storyboarding")}
-                poster="https://cdn.sanity.io/images/y8rjsgga/production/ddeab862e800c6bd9432c2fa92906b9c5e5e3f61-6727x3838.png?w=800"
+                poster="https://cdn.sanity.io/images/y8rjsgga/production/893bbf16a0442facfdac4b5cdaf804309252fbc2-1242x711.png?w=800"
               >
                 <Icon>
                   <Icon3D width="28px" height="28px" />
