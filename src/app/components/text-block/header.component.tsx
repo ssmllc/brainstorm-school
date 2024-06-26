@@ -24,7 +24,7 @@ const Header1 = styled.h1<textProps>`
   text-align: ${({ textalign }) => textalign};
   text-transform: capitalize;
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     font-size: 42px;
   }
 `;
@@ -38,6 +38,10 @@ const Header2 = styled.h2<textProps>`
   position: relative;
   text-align: ${({ textalign }) => textalign};
   text-transform: capitalize;
+
+  @media (min-width: 390px) {
+    font-size: 32px;
+  }
 
   @media (min-width: 768px) {
     font-size: 36px;

@@ -78,7 +78,6 @@ const Content = styled.div<cardProps>`
   width: 100%;
 
   @media (min-width: 800px) {
-    min-height: 100%;
     padding: 40px 40px;
     width: 55%;
   }

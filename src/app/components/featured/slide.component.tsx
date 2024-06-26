@@ -15,6 +15,10 @@ const Card = styled.div<cardProps>`
     width: 270px;
   }
 
+  @media (min-width: 390px) {
+    width: 291px;
+  }
+
   @media (min-width: 400px) {
     width: 322px;
   }
