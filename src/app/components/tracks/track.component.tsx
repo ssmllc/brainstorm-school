@@ -39,7 +39,7 @@ interface trackProps {
 const TrackWrapper = styled.div<trackProps>`
   position: absolute;
   bottom: 15px;
-  padding: ${({ $sm_padding }) => ($sm_padding ? $sm_padding : "0 20px")};
+  padding: ${({ $sm_padding }) => ($sm_padding ? $sm_padding : "0 10px")};
 
   @media (min-width: 768px) {
     padding: ${({ $md_padding }) => ($md_padding ? $md_padding : "0 20px")};
@@ -59,7 +59,6 @@ const Track = styled.div<trackProps>`
   background-size: cover;
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  filter: grayscale(0.75);
   min-height: 150px;
   padding: 100px 20px 0 20px;
   position: relative;
@@ -71,13 +70,13 @@ const Track = styled.div<trackProps>`
   }
 
   &[data-track="active"] {
-    filter: grayscale(0);
+    box-shadow: 0 0 0 1px var(--primary);
   }
 
   &::after {
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0) 25%,
+      rgba(0, 0, 0, 0) 0,
       var(--off-black) 100%
     );
     content: "";
@@ -91,8 +90,8 @@ const Track = styled.div<trackProps>`
   }
 
   &:hover {
-    filter: grayscale(0);
     cursor: pointer;
+    box-shadow: 0 0 0 1px var(--primary);
   }
 `;
 
@@ -108,21 +107,31 @@ const Icon = styled.div<iconProps>`
   border: 2px solid var(--white);
   border-radius: 100%;
   display: flex;
-  height: 50px;
+  height: 55px;
   justify-content: center;
   overflow: hidden;
   position: relative;
-  width: 50px;
+  width: 55px;
   z-index: 2;
+
+  @media (min-width: 1024px) {
+    height: 75px;
+    width: 75px;
+  }
 `;
 
 const Label = styled.p`
   color: var(--white);
   font-weight: bold;
-  font-size: 28px;
-  padding: 10px 0;
+  font-size: 24px;
+  padding: 5px 0;
   position: relative;
   z-index: 2;
+
+  @media (min-width: 1024px) {
+    padding: 10px 0;
+    font-size: 28px;
+  }
 `;
 
 const Name = styled.p`

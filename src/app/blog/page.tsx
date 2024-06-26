@@ -3,6 +3,7 @@ import FlexBox from "@/app/components/layout/flexbox.component";
 import Header from "@/app/components/text-block/header.component";
 import AnchorCard from "@/app/components/tracks/track.component";
 import type { Metadata } from "next";
+import Grid from "../components/layout/grid.component";
 
 export const metadata: Metadata = {
   title: "Blogs, News, and Insights | Brainstorm School",
@@ -44,11 +45,13 @@ export default async function Blog() {
       <FlexBox
         flexdirection="column"
         xl_margin="100px auto"
+        sm_margin="50px auto"
         margin="100px auto"
         alignitems="center"
       >
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 60px 0"
           margin="20px 60px 0"
           xl_margin="20px 60px 0"
           sm_width="85%"
@@ -143,13 +146,11 @@ export default async function Blog() {
           width="70%"
           xl_width="80%"
         >
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
-              gap: "20px 20px",
-              width: "100%",
-            }}
+          <Grid
+            sm_columns="repeat(1, 1fr)"
+            md_columns="repeat(2, 1fr)"
+            columns="repeat(4, 1fr)"
+            xl_columns="repeat(4, 1fr)"
           >
             {result &&
               result.map((blog: any, index: number) => {
@@ -168,7 +169,7 @@ export default async function Blog() {
                   />
                 );
               })}
-          </div>
+          </Grid>
         </FlexBox>
       </FlexBox>
     </>

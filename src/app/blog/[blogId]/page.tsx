@@ -190,6 +190,7 @@ export default async function BlogDetails({
             width="80%"
             xl_width="100%"
             alignitems="center"
+            justifycontent="center"
           >
             {related &&
               related.map((course: any) => {
