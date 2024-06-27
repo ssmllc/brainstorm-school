@@ -71,6 +71,12 @@ const Button = styled.button`
   height: 50px;
   width: 50px;
 
+  &:hover {
+    .icon-arrow {
+      fill: var(--primary);
+    }
+  }
+
   @media (min-width: 800px) {
     height: 65px;
     width: 65px;
@@ -114,6 +120,7 @@ interface Props {
   cta?: string;
   textalign?: string;
   width?: string;
+  href?: string[];
   children: string | ReactNode | JSX.Element | JSX.Element[];
 }
 
@@ -123,6 +130,7 @@ const FeaturedSlider = ({
   textalign,
   cta,
   width,
+  href,
 }: Props) => {
   const [variantType, setVariantType] = useState<string>("lg");
   const [slideWidth, setSlideWidth] = useState<number>(0);

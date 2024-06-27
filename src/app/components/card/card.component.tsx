@@ -7,6 +7,7 @@ import DecipherText from "@/app/courses/components/decipher-text.component";
 import { IconTime } from "../icons/icon-time.component";
 import { IconDuration } from "../icons/icon-duration.component";
 import { IconCap } from "../icons/icon-cap.component";
+import ActionButton from "../buttons/action-button.component";
 
 interface cardProps {
   variant: string;
@@ -115,9 +116,12 @@ const Details = styled.ul<cardProps>`
 `;
 
 const Info = styled.p`
+  /* border: thin solid red; */
   color: var(--white);
   font-size: 14px;
   line-height: 1.5;
+  height: 100px;
+  overflow: hidden;
   padding: 20px 0;
 `;
 
@@ -196,10 +200,16 @@ const ImageDetailCard = ({
         )}
 
         {info && cta && (
-          <>
+          <div>
             <Info>{info}</Info>
 
-            <a
+            <ActionButton
+              href={`/${base}/${path}`}
+              type={"tertiary"}
+              label={cta || "Read More"}
+              margin="30px 0 0"
+            />
+            {/* <a
               href={`/${base}/${path}`}
               style={{
                 textDecoration: "none",
@@ -209,22 +219,28 @@ const ImageDetailCard = ({
               }}
             >
               {cta}
-            </a>
-          </>
+            </a> */}
+          </div>
         )}
 
         {bio && slug && (
           <>
             <div
               style={{
-                height: "105px",
+                height: "90px",
                 overflow: "hidden",
                 padding: "10px 0",
               }}
             >
               <DecipherText description={bio} />
             </div>
-            <a
+            <ActionButton
+              href={`/${base}/${slug}`}
+              type={"tertiary"}
+              label={cta || "Read More"}
+              margin="20px 0 0"
+            />
+            {/* <ActionButton
               href={`/${base}/${slug}`}
               style={{
                 textDecoration: "none",
@@ -234,7 +250,7 @@ const ImageDetailCard = ({
               }}
             >
               {cta}
-            </a>
+            </ActionButton> */}
           </>
         )}
       </Content>

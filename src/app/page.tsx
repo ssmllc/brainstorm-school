@@ -69,6 +69,13 @@ const Home = async () => {
         <FeaturedSlider
           heading="The Latest Industry Blogs, News and Insights"
           textalign="center"
+          // cta="Read more"
+          // href={[
+          //   "/blog/developing-backstories-for-characters",
+          //   "/blog/do-i-need-to-be-good-at-drawing-to-succeed-in-game-art",
+          //   "/blog/exploring-career-opportunities-in-concept-art",
+          //   "/blog/how-important-is-a-portfolio-for-getting-a-job-in-game-art",
+          // ]}
         >
           <Slide
             poster="https://cdn.sanity.io/images/y8rjsgga/production/2703ff4f7c50ad0a267007dfa7f7ef4cf2e14b0c-1920x1224.jpg?w=800"
