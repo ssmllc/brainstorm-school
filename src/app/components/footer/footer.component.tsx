@@ -65,7 +65,8 @@ const Menu = styled.menu`
     /* display: grid;
     grid-template-columns: repeat(4, max-content); */
     flex-direction: row;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    width: auto;
   }
 `;
 

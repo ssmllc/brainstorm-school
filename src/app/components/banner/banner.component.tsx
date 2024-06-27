@@ -19,7 +19,7 @@ const BannerWrapper = styled("div")<bannerProps>`
   height: 75vh;
   justify-content: center;
   opacity: 1;
-  padding-top: 25%;
+  padding-top: 10%;
   position: relative;
   width: 100vw;
 
@@ -43,7 +43,7 @@ const BannerWrapper = styled("div")<bannerProps>`
 const Overlay = styled.div`
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0) 25%,
+    rgba(0, 0, 0, 0) 90%,
     var(--off-black) 100%
   );
   align-items: center;
