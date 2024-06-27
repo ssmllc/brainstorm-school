@@ -36,7 +36,15 @@ const Featured = styled.div`
   position: relative;
   width: 75%;
 
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
+    width: 60%;
+  }
+
+  @media (min-width: 1024px) {
+    width: 75%;
+  }
+
+  @media (min-width: 1400px) {
     max-width: 1125px;
     width: 65%;
   }

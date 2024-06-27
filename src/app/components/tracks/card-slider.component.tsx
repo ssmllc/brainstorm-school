@@ -21,7 +21,7 @@ const CardSliderContainer = styled.div`
 `;
 
 const CardSliderControls = styled.div`
-  padding: 0 20px 20px;
+  padding: 0;
   margin: 0 auto;
   width: 80%;
 

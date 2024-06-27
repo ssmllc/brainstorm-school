@@ -32,11 +32,13 @@ const ContentWrapper = styled.div<contentProps>`
     max-width: 1100px;
     width: 70%;
     flex-direction: ${({ $flexdirection }) =>
-      $flexdirection ? $flexdirection : "row"};
+      $flexdirection ? $flexdirection : "column"};
   }
 
   @media (min-width: 1024px) {
     align-items: center;
+    flex-direction: ${({ $flexdirection }) =>
+      $flexdirection ? $flexdirection : "row"};
   }
 
   @media (min-width: 1400px) {

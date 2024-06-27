@@ -31,7 +31,7 @@ const Header1 = styled.h1<textProps>`
 
 const Header2 = styled.h2<textProps>`
   color: var(--white);
-  font-size: 28px;
+  font-size: 32px;
   font-weight: bold;
   line-height: 1.25;
   margin: ${({ margin }) => margin};

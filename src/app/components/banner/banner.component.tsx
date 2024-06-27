@@ -127,10 +127,7 @@ const Banner = ({ header, gallery }: Props) => {
         loop
         preload="auto"
       >
-        <source
-          src="/video/brainstorm-design-solve-learn.mp4"
-          type="video/mp4"
-        />
+        <source src="/video/brainstorm-main-banner.mp4" type="video/mp4" />
       </video>
     </BannerWrapper>
   );

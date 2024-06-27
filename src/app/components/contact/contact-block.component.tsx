@@ -2,6 +2,7 @@
 
 import React from "react";
 import styled from "styled-components";
+import { IconNews } from "../icons/icon-news";
 
 const Content = styled.div`
   /* border: thin dashed red; */
@@ -103,7 +104,7 @@ const HotSpot = styled.a`
   padding: 40px 25px;
   transition: all 0.25s ease-out;
 
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
     padding: 60px 25px;
   }
 
@@ -123,8 +124,12 @@ const Newsletter = styled.div`
   padding: 40px 25px;
   transition: all 0.25s ease-out;
 
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
     padding: 50px 25px;
+  }
+
+  @media (min-width: 768px) {
+    padding: 35px 25px;
   }
 
   &:hover {
@@ -206,22 +211,7 @@ const ContactBlock = ({ heading, subheading }: Props) => {
           <Newsletter>
             <FlexBlock>
               <Icon>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 48 48"
-                  style={{
-                    height: "48px",
-                    width: "48px",
-                    stroke: "#fff",
-                    fill: "transparent",
-                  }}
-                >
-                  <path d="M5.99068,18.36885q-.79149-1.43113-1.45659-2.86621A5.70719,5.70719,0,0,1,5.66776,9.1271a45.01,45.01,0,0,1,5.86371-4.88216,1.52562,1.52562,0,0,1,1.89779.2063L19.42388,12.371a2.11142,2.11142,0,0,1,.12194,2.33423l-2.00638,3.36324a2.99894,2.99894,0,0,0,.46074,3.33439,111.72107,111.72107,0,0,0,8.6025,8.60249,2.99892,2.99892,0,0,0,3.33438.46074l3.36325-2.00638a2.1114,2.1114,0,0,1,2.33422.12193l7.91977,5.99463a1.52559,1.52559,0,0,1,.2063,1.89779,45.0957,45.0957,0,0,1-4.88215,5.86371,5.65712,5.65712,0,0,1-4.10587,1.65568c-3.57006-.06685-12.4828-6.18717-18.52762-12.232a64.121,64.121,0,0,1-8.19241-9.98712" />
-                  <g>
-                    <path d="M24,7A17,17,0,0,1,41,24" />
-                    <path d="M24,1A23,23,0,0,1,47,24" />
-                  </g>
-                </svg>
+                <IconNews width="36px" height="36px" />
               </Icon>
               <Information>
                 <Caption>Sign up for our newsletter</Caption>

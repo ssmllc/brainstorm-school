@@ -25,13 +25,13 @@ const Card = styled.div<cardProps>`
   width: 100%;
   position: relative;
 
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     flex-direction: row;
-  }
+  } */
 
   @media (min-width: 1024px) {
     flex-direction: row;
-    height: 250px;
+    height: 350px;
   }
 
   @media (min-width: 1400px) {
@@ -97,6 +97,14 @@ const Heading = styled.p`
   font-size: 24px;
   font-weight: bold;
   padding: 0;
+
+  @media (min-width: 1024px) {
+    font-size: 21px;
+  }
+
+  @media (min-width: 1400px) {
+    font-size: 24px;
+  }
 `;
 
 const Details = styled.ul<cardProps>`

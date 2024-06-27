@@ -24,11 +24,11 @@ const Card = styled.div<cardProps>`
   }
 
   @media (min-width: 768px) {
-    width: 576px;
+    width: 460px;
   }
 
   @media (min-width: 1024px) {
-    width: 667px;
+    width: 768px;
   }
 
   @media (min-width: 1400px) {

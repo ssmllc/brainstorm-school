@@ -42,6 +42,10 @@ const MenuContainer = styled.div`
   width: 90%;
 
   @media (min-width: 768px) {
+    width: 100%;
+  }
+
+  @media (min-width: 1024px) {
     width: 85%;
   }
 `;
@@ -53,8 +57,15 @@ const Menu = styled.menu`
   margin: 0 auto;
   width: 100%;
 
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
+    margin: 50px auto;
+  }
+
+  @media (min-width: 1024px) {
+    /* display: grid;
+    grid-template-columns: repeat(4, max-content); */
     flex-direction: row;
+    margin: 0 auto;
   }
 `;
 
@@ -83,6 +94,10 @@ const Column = styled.menu`
   flex-grow: 1;
 
   @media (min-width: 768px) {
+    margin: 20px 20px;
+  }
+
+  @media (min-width: 1400px) {
     margin: 50px auto;
   }
 `;
@@ -94,6 +109,11 @@ const Social = styled.menu`
   width: 60%;
 
   @media (min-width: 768px) {
+    flex-wrap: wrap;
+    width: 25%;
+  }
+
+  @media (min-width: 1024px) {
     flex-wrap: wrap;
     width: 75%;
   }
