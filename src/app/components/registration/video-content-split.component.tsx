@@ -145,6 +145,7 @@ const VideoContentSplit = ({
   text,
   cta,
   href,
+  mp4,
 }: {
   flexdirection?: string;
   video?: string;
@@ -153,6 +154,7 @@ const VideoContentSplit = ({
   text?: string;
   cta?: string;
   href?: string;
+  mp4?: string;
 }) => {
   return (
     <Content>
@@ -177,6 +179,14 @@ const VideoContentSplit = ({
                   allow-fullscreen="true"
                 />
               </object>
+            </VideoPlayer>
+          )}
+
+          {mp4 && (
+            <VideoPlayer>
+              <video width="100%" height="100%" controls>
+                <source src={mp4} type="video/mp4" />
+              </video>
             </VideoPlayer>
           )}
 

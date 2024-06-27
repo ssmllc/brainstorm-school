@@ -85,7 +85,8 @@ export default async function About() {
 
           <VideoContentSplit
             flexdirection="row-reverse"
-            video="S6TDzSuykV0?si=q3HmbL3tF3qKJlMp"
+            // video="S6TDzSuykV0?si=q3HmbL3tF3qKJlMp"
+            mp4="/video/brainstorm-design-solve-learn.mp4"
             heading="What we do"
             text="At Brainstorm School, we offer a diverse range of courses tailored to different skill levels and interests. Our offerings include beginner courses for those new to concept art, advanced concept classes for experienced artists looking to refine their skills, and gaming industry courses designed to support career advancement in the gaming sector. All our courses provide opportunities for students to learn, gain experience, and receive feedback and criticism from industry professionals."
             cta="View Courses"
