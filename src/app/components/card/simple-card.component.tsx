@@ -190,6 +190,8 @@ const CardLayout = ({ results }: Props) => {
     tags,
     description,
     format,
+    materials,
+    requirements,
   } = results;
 
   const { duration, registration, open, start, term, time } = schedule
@@ -485,13 +487,7 @@ const CardLayout = ({ results }: Props) => {
               <IconPencilTip width="24px" height="24px" /> Suggested Materials
             </TextBlock>
 
-            <Header
-              level="4"
-              fontSize="15px"
-              text="Traditional drawing supplies, pen & paper, sketchbook. Optional:
-                Computer or Tablet with comparable drawing software such as
-                photoshop, procreate, etc."
-            />
+            <Header level="4" fontSize="15px" text={materials} />
           </Container>
 
           <Container
@@ -509,12 +505,7 @@ const CardLayout = ({ results }: Props) => {
             >
               <IconRequirements width="24px" height="24px" /> Requirements
             </TextBlock>
-            <Header
-              level="4"
-              fontSize="15px"
-              text="Computer with Photoshop and high speed internet. Mic (highly
-                  recommended) and camera (optional)."
-            />
+            <Header level="4" fontSize="15px" text={requirements} />
           </Container>
         </CourseDetails>
       </InstructorWrapper>

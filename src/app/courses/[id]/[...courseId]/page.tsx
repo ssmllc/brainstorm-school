@@ -12,7 +12,7 @@ import InstructorBio from "@/app/components/instructors/instructor.component";
 
 const fetchData = async () => {
   const query =
-    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27course%27%5D+%7B%0A++_id%2C%0A++metatitle%2C%0A++metadescription%2C%0A++name%2C%0A++category%2C%0A++section%2C%0A++slug%2C%0A++code%2C%0A++duration%2C%0A++difficulty%2C%0A++format%2C%0A++time%2C%0A++price%2C%0A++instructors%5B%5D+-%3E+%7B%0A++++title%2C%0A++++profession%2C%0A++++bio%2C%0A++++%22headshot%22%3A+photo.asset-%3Eurl%2C%0A++++gallery%5B%5D+-%3E+%7B%0A++++++_id%2C%0A++++++%22imageUrl%22%3A+portfolio.asset-%3Eurl%0A++++%7D%0A++%7D%2C%0A++schedule%5B%5D+-%3E+%7B%0A++++instructor%5B0%5D+-%3E+%7B%0A++++++title%2C%0A++++%7D%2C%0A++++registration%2C%0A++++term%2C%0A++++time%2C%0A++++duration%2C%0A++++open%2C%0A++++start%2C%0A++%7D%2C%0A++%22imageUrl%22%3A+preview.asset+-%3E+url%2C%0A++description%2C%0A++tags%5B%5D+-%3E+%7B%0A++++title%2C%0A++%7D%0A%7D";
+    "https://y8rjsgga.api.sanity.io/v2022-03-07/data/query/production?query=*%5B_type+%3D%3D+%27course%27%5D+%7B%0A++_id%2C%0A++metatitle%2C%0A++metadescription%2C%0A++name%2C%0A++category%2C%0A++section%2C%0A++slug%2C%0A++code%2C%0A++duration%2C%0A++difficulty%2C%0A++format%2C%0A++time%2C%0A++price%2C%0A++materials%2C%0A++requirements%2C%0A++instructors%5B%5D+-%3E+%7B%0A++++title%2C%0A++++profession%2C%0A++++bio%2C%0A++++%22headshot%22%3A+photo.asset-%3Eurl%2C%0A++++gallery%5B%5D+-%3E+%7B%0A++++++_id%2C%0A++++++%22imageUrl%22%3A+portfolio.asset-%3Eurl%0A++++%7D%0A++%7D%2C%0A++schedule%5B%5D+-%3E+%7B%0A++++instructor%5B0%5D+-%3E+%7B%0A++++++title%2C%0A++++%7D%2C%0A++++registration%2C%0A++++term%2C%0A++++time%2C%0A++++duration%2C%0A++++open%2C%0A++++start%2C%0A++%7D%2C%0A++%22imageUrl%22%3A+preview.asset+-%3E+url%2C%0A++description%2C%0A++tags%5B%5D+-%3E+%7B%0A++++title%2C%0A++%7D%0A%7D";
   const response = await fetch(query, { cache: "no-store" });
   // const response = await fetch(query);
 
@@ -74,6 +74,9 @@ export default async function Page({
 
   console.log("selectedResults", selectedResults);
 
+  const { gallery } = instructors && instructors[0];
+
+  console.log("gallery", gallery);
   return (
     <>
       <MediaBanner
@@ -93,31 +96,32 @@ export default async function Page({
 
       <CardLayout results={selectedResults} />
 
-      <FlexBox margin="0 auto">
-        <FlexBox flexdirection="column">
-          <FlexBox
-            alignitems="center"
-            md_margin="50px auto 0px"
-            margin="50px auto 0"
-            md_width="90%"
-            width="90%"
-            xl_width="85%"
-          >
-            <TextHeaderBlock fontSize="36px" fontWeight="bold">
-              Gallery
-            </TextHeaderBlock>
-          </FlexBox>
+      {gallery.length > 0 && (
+        <FlexBox margin="0 auto">
+          <FlexBox flexdirection="column">
+            <FlexBox
+              alignitems="center"
+              md_margin="50px auto 0px"
+              margin="50px auto 0"
+              md_width="90%"
+              width="90%"
+              xl_width="85%"
+            >
+              <TextHeaderBlock fontSize="36px" fontWeight="bold">
+                Gallery
+              </TextHeaderBlock>
+            </FlexBox>
 
-          <FlexBox
-            alignitems="center"
-            sm_width="80%"
-            md_width="80%"
-            width="80%"
-            xl_width="70%"
-          >
-            <Carousel instructors={instructors}>
-              {instructors &&
-                instructors[0]?.gallery.map((g: any, index: number) => {
+            <FlexBox
+              alignitems="center"
+              sm_width="80%"
+              md_width="80%"
+              width="80%"
+              xl_width="70%"
+            >
+              <Carousel instructors={instructors}>
+                {gallery.map((g: any, index: number) => {
+                  console.log("g", g.imageUrl);
                   return (
                     <CardImage
                       key={index}
@@ -128,10 +132,11 @@ export default async function Page({
                     />
                   );
                 })}
-            </Carousel>
+              </Carousel>
+            </FlexBox>
           </FlexBox>
         </FlexBox>
-      </FlexBox>
+      )}
 
       <FlexBox flexdirection="column">
         <FlexBox

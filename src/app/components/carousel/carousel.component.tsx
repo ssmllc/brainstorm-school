@@ -115,12 +115,11 @@ const Carousel = ({ children, sm_height, height, instructors }: Props) => {
 
   useEffect(() => {
     const slides: any = [].slice.call(document.querySelectorAll(".slide"));
-
     if (slides.length > 0) {
       setSlidesTotal(slides.length);
       const slideCardWidth = slides[0].offsetWidth + 20;
       setSlideCardWidth(slideCardWidth);
-      const slideTotalWidth = slides[0].offsetWidth * (slides.length - 1);
+      const slideTotalWidth = slides[0].offsetWidth * slides.length;
       setSlideWidth(`${slideTotalWidth}px`);
     }
 

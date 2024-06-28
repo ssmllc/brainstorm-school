@@ -45,6 +45,7 @@ const Header = styled.p`
 const SubHeader = styled.p`
   color: var(--white);
   font-size: 24px;
+  text-transform: uppercase;
 
   @media (min-width: 768px) {
     font-size: 28px;

@@ -75,6 +75,8 @@ const RenderAllCourses = ({ selectedCourses, width }: Props) => {
       margin="0 auto"
       alignitems="center"
       sm_width="80%"
+      width="80%"
+      xl_width="80%"
     >
       <CoursesFilter
         setLevelOfExpertise={setLevelOfExpertise}
@@ -89,7 +91,8 @@ const RenderAllCourses = ({ selectedCourses, width }: Props) => {
         sm_width="100%"
         md_width="90%"
         width="100%"
-        xl_width="90%"
+        xl_width="100%"
+        xxl_width="100%"
         xl_margin="50px auto"
       >
         {courseList &&
