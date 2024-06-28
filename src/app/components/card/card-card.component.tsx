@@ -54,7 +54,7 @@ const Container = styled.div<containerProps>`
   }
 
   &:hover {
-    box-shadow: 0 0 0 1px var(--primary);
+    box-shadow: 0 0 0 3px var(--primary);
   }
 `;
 

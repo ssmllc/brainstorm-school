@@ -381,7 +381,7 @@ const TracksGroup = ({ results }: Props) => {
                           .replaceAll(" ", "-")}/${course.slug.current}`}
                       >
                         <Card
-                          background="var(--black)"
+                          background="var(--off-black)"
                           borderradius="10px"
                           stacked="false"
                           icon={course.imageUrl}
