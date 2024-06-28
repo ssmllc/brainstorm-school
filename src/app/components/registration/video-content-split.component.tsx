@@ -46,9 +46,9 @@ const ContentWrapper = styled.div<contentProps>`
     width: 100%;
   }
 
-  @media (min-width: 1900px) {
+  /* @media (min-width: 1900px) {
     max-width: 1100px;
-  }
+  } */
 `;
 
 const Media = styled.div`

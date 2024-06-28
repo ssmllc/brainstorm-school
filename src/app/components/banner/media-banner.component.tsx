@@ -28,7 +28,7 @@ const Banner = styled.div<bannerProps>`
   width: 100vw;
 
   @media (min-width: 768px) {
-    height: 100vh;
+    height: 50vh;
   }
 
   @media (min-width: 1024px) {
@@ -36,7 +36,7 @@ const Banner = styled.div<bannerProps>`
   }
 
   @media (min-width: 1400px) {
-    height: ${({ $hero }) => ($hero === "true" ? "100vh" : "75vh")};
+    height: 75vh;
   }
 
   &::before {
@@ -46,7 +46,8 @@ const Banner = styled.div<bannerProps>`
     content: "";
     display: block;
     height: 100%;
-    filter: ${({ $hero }) => ($hero === "true" ? "blur(5px)" : "blur(0)")};
+    /* filter: ${({ $hero }) =>
+      $hero === "true" ? "blur(5px)" : "blur(0)"}; */
     left: 0;
     position: absolute;
     top: 0;
@@ -56,8 +57,8 @@ const Banner = styled.div<bannerProps>`
 
   &::after {
     background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0) 25%,
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
       var(--off-black) 100%
     );
     content: "";
@@ -279,7 +280,11 @@ const MediaBanner = ({
   }, [background, randomize]);
 
   return (
-    <Banner theme={theme} $hero={hero} $background={randomBanner}>
+    <Banner
+      theme={theme}
+      $hero={hero}
+      $background={randomize ? randomBanner : background}
+    >
       <Content>
         <BannerWrapper>
           <Column $width="50%">
@@ -340,9 +345,7 @@ const MediaBanner = ({
         </BannerWrapper>
 
         <div style={{ width: "100%", height: "100%" }}>
-          {hero === "true" && image && !media && (
-            <Media $image={randomBanner} />
-          )}
+          {/* {hero === "true" && image && !media && <Media $image={image} />} */}
 
           {/* {hero === "true" && media && (
             <Media>

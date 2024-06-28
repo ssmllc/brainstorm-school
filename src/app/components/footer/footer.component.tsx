@@ -62,11 +62,8 @@ const Menu = styled.menu`
   }
 
   @media (min-width: 1024px) {
-    /* display: grid;
-    grid-template-columns: repeat(4, max-content); */
     flex-direction: row;
-    /* margin: 0 auto; */
-    width: auto;
+    flex-wrap: wrap;
   }
 `;
 

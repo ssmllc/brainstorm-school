@@ -69,8 +69,10 @@ export default async function Page({
     return course.slug.current === params.courseId[0];
   })[0];
 
-  const { category, instructors, schedule, code } = selectedResults;
+  const { category, instructors, schedule, code, imageUrl } = selectedResults;
   const { duration, time, registration } = schedule[0];
+
+  console.log("selectedResults", selectedResults);
 
   return (
     <>
@@ -83,8 +85,9 @@ export default async function Page({
         registration={registration}
         hero="true"
         theme="dark"
-        background="/banner/banner-3.jpg"
-        image="/banner/banner-3.jpg"
+        background={imageUrl}
+        image={imageUrl}
+        randomize={false}
         // media="/video/brainstorm-design-solve-learn.mp4"
       />
 

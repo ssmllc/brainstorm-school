@@ -50,20 +50,30 @@ const CoursesFilter = ({
       alignitems="center"
       flexdirection="column"
       sm_width="100%"
-      width="70%"
+      width="95%"
+      md_width="80%"
       xl_width="80%"
-      margin="50px auto 0"
+      xxl_width="80%"
+      margin="50px auto 25px"
       xl_margin="50px auto 0"
       justifycontent="center"
     >
       <FilterSystem>
         <FlexBox
           sm_width="100%"
+          md_width="100%"
           width="100%"
           xl_width="100%"
+          xxl_width="100%"
           alignitems="center"
         >
-          <FlexBox sm_width="100%" width="10%" xl_width="10%">
+          <FlexBox
+            sm_width="100%"
+            md_width="100%"
+            width="10%"
+            xl_width="10%"
+            xxl_width="10%"
+          >
             <Header
               level="6"
               text="Filter by:"

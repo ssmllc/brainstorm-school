@@ -106,7 +106,7 @@ const Home = async () => {
             subheading="Featured Blog"
             heading="Exploring Career Opportunities in Concept Art"
             variantType="sm"
-            info="ver wondered how those awesome-looking gaming and film titles came to be? Well, they didn't materialize out of thin air. They’re the result of work from a lot of creatively-important professionals, including the concept designer. In fact, you can think of the concept designer as the genesis for the idea; without them, the final aesthetic just wouldn't be possible."
+            info="Ever wonder how those awesome-looking gaming and film titles came to be? Well, they didn't materialize out of thin air. They’re the result of work from a lot of creatively-important professionals, including the concept designer. In fact, you can think of the concept designer as the genesis for the idea; without them, the final aesthetic just wouldn't be possible."
             cta="Read more"
             base="blog"
             path="exploring-career-opportunities-in-concept-art"

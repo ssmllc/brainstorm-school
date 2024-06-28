@@ -73,7 +73,7 @@ export default async function Courses() {
         flexdirection="column"
         sm_margin="100px auto"
         xl_margin="100px auto 50px"
-        margin="100px auto 0"
+        margin="50px auto 0"
         alignitems="center"
       >
         <FlexBox
@@ -136,13 +136,22 @@ export default async function Courses() {
 
       <RenderAllCourses selectedCourses={result} width="33.33%" />
 
-      <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
+      <FlexBox
+        flexdirection="column"
+        margin="25px auto"
+        xl_margin="0 auto"
+        md_margin="25px auto"
+        alignitems="center"
+        md_width="100%"
+      >
         <FlexBox
           margin="25px 60px 0"
-          xl_margin="25px 60px 0"
+          xl_margin="0 60px 0"
           sm_width="80%"
+          md_width="80%"
           width="70%"
           xl_width="80%"
+          xxl_width="95%"
           flexdirection="column"
         >
           <CoursesFAQs />

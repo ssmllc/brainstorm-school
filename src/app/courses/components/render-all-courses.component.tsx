@@ -81,11 +81,13 @@ const RenderAllCourses = ({ selectedCourses, width }: Props) => {
         setDayOfTheWeek={setDayOfTheWeek}
         setPrice={setPriceOrder}
       />
+
       <FlexBox
         gap="25px 10px"
         justifycontent="center"
         flexwrap="wrap"
         sm_width="100%"
+        md_width="90%"
         width="100%"
         xl_width="90%"
         xl_margin="50px auto"

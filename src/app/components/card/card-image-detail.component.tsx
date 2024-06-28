@@ -12,6 +12,7 @@ import { IconCap } from "../icons/icon-cap.component";
 
 interface cardProps {
   width?: string;
+  $xl_width?: string;
 }
 
 const Card = styled(Link)<cardProps>`
@@ -29,14 +30,19 @@ const Card = styled(Link)<cardProps>`
     width: 49%;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     max-width: 320px;
     width: ${({ width }) => (width ? width : "25%")};
   }
 
   @media (min-width: 1400px) {
-    max-width: 360px;
+    max-width: 320px;
     width: ${({ width }) => (width ? width : "25%")};
+  }
+
+  @media (min-width: 1900px) {
+    max-width: 360px;
+    width: ${({ $xl_width }) => ($xl_width ? $xl_width : "24%")};
   }
 
   &:hover {
@@ -199,6 +205,7 @@ interface Props {
   courseDuration: string;
   courseDifficulty?: string;
   width?: string;
+  xl_width?: string;
 }
 
 const CardImageDetail = ({
@@ -215,12 +222,14 @@ const CardImageDetail = ({
   courseDuration,
   courseDifficulty,
   width,
+  xl_width,
 }: Props) => {
   return (
     <Card
       href={base ? `${base}/${slug}/${path}` : `${slug}/${path}`}
       className={className ? className : "course-card"}
       width={width}
+      $xl_width={xl_width}
     >
       <Preview image={preview} $tag={courseTrack} />
       <Details>

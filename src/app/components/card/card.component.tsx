@@ -48,7 +48,7 @@ const Poster = styled.div<cardProps>`
   position: relative;
   width: 100%;
 
-  @media (min-width: 800px) {
+  @media (min-width: 1400px) {
     height: 100%;
     padding: 185px 20px 0 20px;
     width: 45%;
@@ -78,7 +78,7 @@ const Content = styled.div<cardProps>`
   position: relative;
   width: 100%;
 
-  @media (min-width: 800px) {
+  @media (min-width: 1400px) {
     padding: 40px 40px;
     width: 55%;
   }
@@ -216,18 +216,8 @@ const ImageDetailCard = ({
               type={"tertiary"}
               label={cta || "Read More"}
               margin="30px 0 0"
+              offsetPadding="10px 20px"
             />
-            {/* <a
-              href={`/${base}/${path}`}
-              style={{
-                textDecoration: "none",
-                color: "var(--primary)",
-                display: "block",
-                padding: "25px 0",
-              }}
-            >
-              {cta}
-            </a> */}
           </div>
         )}
 
@@ -247,18 +237,8 @@ const ImageDetailCard = ({
               type={"tertiary"}
               label={cta || "Read More"}
               margin="20px 0 0"
+              offsetPadding="10px 20px"
             />
-            {/* <ActionButton
-              href={`/${base}/${slug}`}
-              style={{
-                textDecoration: "none",
-                color: "var(--primary)",
-                display: "block",
-                padding: "25px 0",
-              }}
-            >
-              {cta}
-            </ActionButton> */}
           </>
         )}
       </Content>

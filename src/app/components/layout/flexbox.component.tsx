@@ -24,6 +24,7 @@ interface containerProps {
   $sm_width?: string;
   $md_width?: string;
   $xl_width?: string;
+  $xxl_width?: string;
 }
 const Container = styled.div<containerProps>`
   align-items: ${({ $alignitems }) => $alignitems};
@@ -67,6 +68,7 @@ const Container = styled.div<containerProps>`
 
   //xx-large
   @media (min-width: 1900px) {
+    width: ${({ $xxl_width }) => ($xxl_width ? $xxl_width : "100vw")};
   }
 `;
 
@@ -92,6 +94,7 @@ interface Props {
   md_width?: string;
   width?: string;
   xl_width?: string;
+  xxl_width?: string;
 }
 const FlexBox = ({
   alignitems,
@@ -115,6 +118,7 @@ const FlexBox = ({
   sm_width,
   md_width,
   xl_width,
+  xxl_width,
 }: Props) => {
   return (
     <Container
@@ -138,6 +142,7 @@ const FlexBox = ({
       $sm_width={sm_width}
       $md_width={md_width}
       $xl_width={xl_width}
+      $xxl_width={xxl_width}
     >
       {children}
     </Container>

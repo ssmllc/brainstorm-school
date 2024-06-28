@@ -18,7 +18,7 @@ const ContentWrapper = styled.div`
       url("/backgrounds/clouds/cloud-3.png"),
       url("/backgrounds/clouds/cloud-1.png"),
       url("/backgrounds/lightning/lightning-right-to-left.png");
-    background-size: 40%, 60%, 55%, 75%, 75%, 50%;
+    background-size: 40%, 50%, 55%, 75%, 75%, 50%;
     background-position: top left, 0% 30%, 120% 90%, 100% 10%, -50% 100%,
       110% 50%;
     background-repeat: no-repeat, no-repeat;
