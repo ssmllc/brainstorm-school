@@ -55,6 +55,7 @@ type Props = {
   href?: string;
   margin?: string;
   offsetPadding?: string;
+  target?: string;
 };
 
 const ActionButton = ({
@@ -64,6 +65,7 @@ const ActionButton = ({
   margin,
   offsetPadding,
   fontSize,
+  target,
 }: Props) => {
   return (
     <CallToAction
@@ -73,7 +75,7 @@ const ActionButton = ({
       $fontsize={fontSize}
     >
       {href ? (
-        <Anchor type={type} href={href}>
+        <Anchor type={type} href={href} target={target}>
           {label}
         </Anchor>
       ) : (

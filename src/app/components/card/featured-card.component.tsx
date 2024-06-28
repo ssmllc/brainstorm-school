@@ -51,6 +51,7 @@ interface Props {
   code?: string;
   time?: string;
   duration?: string;
+  href?: string;
 }
 
 const FeaturedCard = ({
@@ -70,6 +71,7 @@ const FeaturedCard = ({
   code,
   time,
   duration,
+  href,
 }: Props) => {
   return (
     <Featured $sm_margin={sm_margin} $margin={margin}>
@@ -89,6 +91,7 @@ const FeaturedCard = ({
         code={code}
         time={time}
         duration={duration}
+        href={href}
       />
     </Featured>
   );

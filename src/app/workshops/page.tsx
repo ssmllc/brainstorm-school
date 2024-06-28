@@ -3,9 +3,6 @@ import FlexBox from "@/app/components/layout/flexbox.component";
 import FAQs from "@/app/components/text-block/faqs.component";
 import Header from "@/app/components/text-block/header.component";
 import type { Metadata } from "next";
-import FeaturedSlider from "../components/featured/featured-slider.component";
-import Slide from "../components/featured/slide.component";
-import { ReactNode } from "react";
 import FeaturedCard from "../components/card/featured-card.component";
 
 export const metadata: Metadata = {
@@ -87,8 +84,7 @@ export default async function Workshops() {
               heading={featured.workshopname}
               bio={featured.description}
               cta="Register Today"
-              base="workshops"
-              slug={featured.slug.current}
+              href={featured.registration}
             />
           );
         })}

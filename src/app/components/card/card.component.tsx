@@ -157,6 +157,7 @@ interface Props {
   code?: string;
   time?: string;
   duration?: string;
+  href?: string;
 }
 
 const ImageDetailCard = ({
@@ -175,6 +176,7 @@ const ImageDetailCard = ({
   code,
   time,
   duration,
+  href,
 }: Props) => {
   return (
     <Card className="course-card" variant={variant}>
@@ -238,6 +240,28 @@ const ImageDetailCard = ({
               label={cta || "Read More"}
               margin="20px 0 0"
               offsetPadding="10px 20px"
+            />
+          </>
+        )}
+
+        {bio && href && (
+          <>
+            <div
+              style={{
+                height: "90px",
+                overflow: "hidden",
+                padding: "10px 0",
+              }}
+            >
+              <DecipherText description={bio} />
+            </div>
+            <ActionButton
+              href={href}
+              type={"tertiary"}
+              label={cta || "Read More"}
+              margin="20px 0 0"
+              offsetPadding="10px 20px"
+              target="_blank"
             />
           </>
         )}
