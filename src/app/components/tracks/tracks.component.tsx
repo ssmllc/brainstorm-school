@@ -128,7 +128,7 @@ const Track = styled.div<trackProps>`
 
   &[data-track="active"] {
     /* filter: grayscale(0); */
-    box-shadow: 0 0 0 1px var(--primary);
+    box-shadow: 0 0 0 3px var(--primary);
   }
 
   &::after {
@@ -150,7 +150,7 @@ const Track = styled.div<trackProps>`
   &:hover {
     /* filter: grayscale(0); */
     cursor: pointer;
-    box-shadow: 0 0 0 1px var(--primary);
+    box-shadow: 0 0 0 3px var(--primary);
   }
 `;
 

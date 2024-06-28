@@ -696,7 +696,7 @@ const ImageGallery = ({ header }: Props) => {
         xl_width="70%"
         sm_margin="50px auto"
         margin="50px auto"
-        xl_margin="50px auto"
+        xl_margin="100px auto 50px"
         md_margin="50px auto"
         flexdirection="column"
       >

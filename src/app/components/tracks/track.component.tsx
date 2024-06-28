@@ -70,7 +70,7 @@ const Track = styled.div<trackProps>`
   }
 
   &[data-track="active"] {
-    box-shadow: 0 0 0 1px var(--primary);
+    box-shadow: 0 0 0 3px var(--primary);
   }
 
   &::after {
@@ -91,7 +91,7 @@ const Track = styled.div<trackProps>`
 
   &:hover {
     cursor: pointer;
-    box-shadow: 0 0 0 1px var(--primary);
+    box-shadow: 0 0 0 3px var(--primary);
   }
 `;
 
