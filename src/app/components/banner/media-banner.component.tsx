@@ -35,7 +35,7 @@ const Banner = styled.div<bannerProps>`
     height: ${({ $hero }) => ($hero === "true" ? "100vh" : "75vh")};
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1360px) {
     height: 75vh;
   }
 
@@ -97,6 +97,13 @@ const Content = styled.div`
     width: 65%;
   }
 
+  @media (min-width: 1360px) {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+  }
+
   @media (min-width: 1400px) {
     left: 50%;
     top: 50%;
@@ -124,7 +131,7 @@ const BannerWrapper = styled.div`
     flex-direction: row;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1360px) {
     flex-direction: row;
   }
 `;
@@ -204,7 +211,7 @@ const Media = styled.div<mediaProps>`
     width: 55%;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1360px) {
     height: 400px;
     margin: 50px auto;
     width: 60%;

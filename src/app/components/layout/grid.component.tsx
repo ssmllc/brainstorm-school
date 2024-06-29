@@ -8,6 +8,7 @@ interface containerProps {
   $md_columns?: string;
   $columns?: string;
   $xl_columns?: string;
+  $xxl_columns?: string;
   $sm_rows?: string;
   $md_rows?: string;
   $rows?: string;
@@ -28,8 +29,12 @@ const Container = styled.div<containerProps>`
     grid-template-columns: ${({ $columns }) => $columns};
   }
 
-  @media (min-width: 1900px) {
+  @media (min-width: 1400px) {
     grid-template-columns: ${({ $xl_columns }) => $xl_columns};
+  }
+
+  @media (min-width: 1900px) {
+    grid-template-columns: ${({ $xxl_columns }) => $xxl_columns};
   }
 `;
 
@@ -38,6 +43,7 @@ interface Props {
   md_columns?: string;
   columns?: string;
   xl_columns?: string;
+  xxl_columns?: string;
   sm_rows?: string;
   md_rows?: string;
   rows?: string;
@@ -50,6 +56,7 @@ const Grid = ({
   md_columns,
   columns,
   xl_columns,
+  xxl_columns,
   sm_rows,
   md_rows,
   rows,
@@ -62,6 +69,7 @@ const Grid = ({
       $md_columns={md_columns}
       $columns={columns}
       $xl_columns={xl_columns}
+      $xxl_columns={xxl_columns}
     >
       {children}
     </Container>

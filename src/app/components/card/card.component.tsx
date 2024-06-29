@@ -31,10 +31,10 @@ const Card = styled.div<cardProps>`
 
   @media (min-width: 1024px) {
     flex-direction: row;
-    height: 350px;
+    height: 300px;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1360px) {
     flex-direction: row;
     height: 325px;
   }
@@ -48,7 +48,7 @@ const Poster = styled.div<cardProps>`
   position: relative;
   width: 100%;
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1360px) {
     height: 100%;
     padding: 185px 20px 0 20px;
     width: 45%;
@@ -78,7 +78,7 @@ const Content = styled.div<cardProps>`
   position: relative;
   width: 100%;
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1360px) {
     padding: 40px 40px;
     width: 55%;
   }
@@ -102,7 +102,7 @@ const Heading = styled.p`
     font-size: 21px;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1360px) {
     font-size: 24px;
   }
 `;

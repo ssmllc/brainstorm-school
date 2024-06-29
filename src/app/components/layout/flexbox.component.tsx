@@ -64,7 +64,7 @@ const Container = styled.div<containerProps>`
   }
 
   //x-large
-  @media (min-width: 1400px) {
+  @media (min-width: 1360px) {
     margin: ${({ $xl_margin }) => ($xl_margin ? $xl_margin : "0 auto")};
     width: ${({ $xl_width }) => ($xl_width ? $xl_width : "100vw")};
   }

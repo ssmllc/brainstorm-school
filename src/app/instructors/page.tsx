@@ -54,18 +54,22 @@ export default async function Instructors() {
       <FlexBox
         alignitems="center"
         flexdirection="column"
-        sm_margin="100px auto 50px"
-        margin="100px auto"
+        sm_margin="50px auto 50px"
+        margin="50px auto"
         xl_margin="100px auto"
+        md_width="100%"
       >
         <FlexBox
           flexdirection="column"
           sm_margin="20px 60px 0"
+          md_margin="20px 60px 0"
           margin="20px 60px 0"
           xl_margin="20px 60px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
           xl_width="80%"
+          xxl_width="80%"
         >
           <Header level="1" text="Brainstorm School Instructors" />
 
@@ -77,13 +81,16 @@ export default async function Instructors() {
         </FlexBox>
 
         <FlexBox
+          flexdirection="column"
           sm_margin="20px 60px 0"
+          md_margin="20px 60px 0"
           margin="20px 60px 0"
           xl_margin="20px 60px 0"
           sm_width="80%"
+          md_width="70%"
           width="70%"
           xl_width="80%"
-          flexdirection="column"
+          xxl_width="80%"
         >
           <Header level="2" text="Expert Guidance in Concept Design" />
 
@@ -108,13 +115,20 @@ export default async function Instructors() {
 
         <FlexBox
           sm_margin="20px 25px"
+          md_margin="20px 25px"
           margin="20px 60px 0"
           xl_margin="20px 60px 0"
           sm_width="80%"
-          width="70%"
+          md_width="70%"
+          width="95%"
           xl_width="80%"
+          xxl_width="80%"
         >
-          <Grid sm_columns="repeat(1, 1fr)" columns="repeat(3, 1fr)">
+          <Grid
+            sm_columns="repeat(1, 1fr)"
+            md_columns="repeat(2, 1fr)"
+            columns="repeat(3, 1fr)"
+          >
             {result &&
               result.map((instructor: any) => {
                 return (
