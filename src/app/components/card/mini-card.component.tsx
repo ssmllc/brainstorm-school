@@ -168,7 +168,6 @@ export const MiniCards = ({ width, results }: Props) => {
         {quarters.length > 0 &&
           quarters.map((quarter: any) => {
             const { _id, nextup, term, year, open, start } = quarter;
-            const formatYear = new Date(year).getFullYear();
             const formatOpen = new Date(open).toDateString();
             const formatStart = new Date(start).toDateString();
 
@@ -177,7 +176,7 @@ export const MiniCards = ({ width, results }: Props) => {
                 <Row>
                   <Col>
                     {nextup && <Label>Next up!</Label>}
-                    <HeaderText>{`${term} ${formatYear}`}</HeaderText>
+                    <HeaderText>{`${term} ${year}`}</HeaderText>
                   </Col>
                   <Icon>
                     <IconSchedule height="48" width="48" />

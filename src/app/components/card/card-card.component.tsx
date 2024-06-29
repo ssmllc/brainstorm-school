@@ -90,7 +90,7 @@ const Anchor = styled(Link)`
 
 type Props = {
   stacked: string;
-  icon: string;
+  icon?: string;
   heading: string;
   href?: string;
   alignitems?: string;
@@ -110,6 +110,7 @@ type Props = {
   padding?: string;
   icon_width?: string;
   icon_height?: string;
+  iconName?: string;
   show_icon?: boolean;
 };
 export const Card = ({
@@ -135,23 +136,26 @@ export const Card = ({
   icon_width,
   icon_height,
   show_icon,
+  iconName,
 }: Props) => {
   return (
     <>
       {href ? (
         <Anchor href={href}>
-          {icon && (
-            <CardIcon
-              image={icon}
-              borderradius={borderradius}
-              width={icon_width}
-              height={icon_height}
-              sm_margin={sm_margin}
-              md_margin={md_margin}
-              margin={margin}
-              xl_margin={xl_margin}
-            />
-          )}
+          {icon ||
+            (iconName && (
+              <CardIcon
+                image={icon}
+                iconName={iconName}
+                borderradius={borderradius}
+                width={icon_width}
+                height={icon_height}
+                sm_margin={sm_margin}
+                md_margin={md_margin}
+                margin={margin}
+                xl_margin={xl_margin}
+              />
+            ))}
           {heading && <CardDetails heading={heading} subHeading={subHeading} />}
           {text && <Text>{text}</Text>}
         </Anchor>
@@ -170,6 +174,7 @@ export const Card = ({
           {icon && (
             <CardIcon
               image={icon}
+              iconName={iconName}
               borderradius={borderradius}
               width={icon_width}
               height={icon_height}

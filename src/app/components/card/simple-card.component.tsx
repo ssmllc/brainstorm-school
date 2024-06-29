@@ -471,24 +471,26 @@ const CardLayout = ({ results }: Props) => {
             </Container>
           </Container>
 
-          <Container
-            borderradius="20px"
-            margin="20px 0"
-            padding="20px 20px"
-            sm_padding="20px 20px"
-            width="100%"
-          >
-            <TextBlock
-              padding="10px 0"
-              fontSize="18px"
-              fontWeight="bold"
-              width="auto"
+          {materials && (
+            <Container
+              borderradius="20px"
+              margin="20px 0"
+              padding="20px 20px"
+              sm_padding="20px 20px"
+              width="100%"
             >
-              <IconPencilTip width="24px" height="24px" /> Suggested Materials
-            </TextBlock>
+              <TextBlock
+                padding="10px 0"
+                fontSize="18px"
+                fontWeight="bold"
+                width="auto"
+              >
+                <IconPencilTip width="24px" height="24px" /> Suggested Materials
+              </TextBlock>
 
-            <Header level="4" fontSize="15px" text={materials} />
-          </Container>
+              <Header level="4" fontSize="15px" text={materials} />
+            </Container>
+          )}
 
           <Container
             borderradius="20px"

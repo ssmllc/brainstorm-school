@@ -5,6 +5,7 @@ import { ReactNode } from "react";
 
 interface containerProps {
   $alignitems?: string;
+  $background?: string;
   $border?: string;
   $borderTop?: string;
   $borderRight?: string;
@@ -28,6 +29,8 @@ interface containerProps {
 }
 const Container = styled.div<containerProps>`
   align-items: ${({ $alignitems }) => $alignitems};
+  background: ${({ $background }) => `url(${$background}) 100% 0 no-repeat`};
+  background-size: contain;
   border: ${({ $border }) => $border};
   border-top: ${({ $borderTop }) => $borderTop};
   border-right: ${({ $borderRight }) => $borderRight};
@@ -74,6 +77,7 @@ const Container = styled.div<containerProps>`
 
 interface Props {
   alignitems?: string;
+  background?: string;
   border?: string;
   borderTop?: string;
   borderRight?: string;
@@ -98,6 +102,7 @@ interface Props {
 }
 const FlexBox = ({
   alignitems,
+  background,
   border,
   borderTop,
   borderRight,
@@ -123,6 +128,7 @@ const FlexBox = ({
   return (
     <Container
       $alignitems={alignitems}
+      $background={background}
       $border={border}
       $borderTop={borderTop}
       $borderRight={borderRight}

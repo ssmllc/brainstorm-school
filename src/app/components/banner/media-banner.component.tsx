@@ -264,19 +264,18 @@ const MediaBanner = ({
         return Math.floor(Math.random() * (max - min + 1) + min);
       };
 
-      randomBanner = `/banner/banner-${randomBannerImage(1, 20)}.jpg`;
+      randomBanner = `/banner/banner-${randomBannerImage(1, 45)}.jpg`;
     } else {
       randomBanner = background;
     }
 
     setRandomBanner(randomBanner);
 
-    gsap.to(".banner-wrapper", {
-      ease: "power1.out",
-      delay: 0.1,
-      duration: 1,
-      opacity: 1,
-    });
+    // gsap.to(".banner-wrapper", {
+    //   ease: "power1.out",
+    //   duration: 1,
+    //   opacity: 1,
+    // });
   }, [background, randomize]);
 
   return (

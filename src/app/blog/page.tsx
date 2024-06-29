@@ -43,20 +43,24 @@ export default async function Blog() {
       />
 
       <FlexBox
+        alignitems="center"
         flexdirection="column"
         xl_margin="100px auto"
         sm_margin="50px auto"
         margin="100px auto"
-        alignitems="center"
+        md_width="100%"
       >
         <FlexBox
           flexdirection="column"
           sm_margin="20px 60px 0"
+          md_margin="20px 60px 0"
           margin="20px 60px 0"
           xl_margin="20px 60px 0"
           sm_width="85%"
+          md_width="80%"
           width="70%"
           xl_width="80%"
+          xxl_width="80%"
         >
           <Header
             level="1"
@@ -72,11 +76,14 @@ export default async function Blog() {
 
         <FlexBox
           flexdirection="column"
+          md_margin="20px 60px 0"
           margin="20px 60px 0"
           xl_margin="20px 60px 0"
           sm_width="85%"
+          md_width="80%"
           width="70%"
           xl_width="80%"
+          xxl_width="80%"
         >
           <Header level="2" text="Insights from Industry Experts" />
 
@@ -90,10 +97,13 @@ export default async function Blog() {
         <FlexBox
           flexdirection="column"
           margin="25px 60px 0"
+          md_margin="25px 60px 0"
           xl_margin="25px 60px 0"
           sm_width="85%"
+          md_width="80%"
           width="70%"
           xl_width="80%"
+          xxl_width="80%"
         >
           <Header level="2" text="Practical Tips for Artists" />
 
@@ -107,10 +117,13 @@ export default async function Blog() {
         <FlexBox
           flexdirection="column"
           margin="25px 60px 0"
+          md_margin="25px 60px 0"
           xl_margin="25px 60px 0"
           sm_width="85%"
+          md_width="80%"
           width="70%"
           xl_width="80%"
+          xxl_width="80%"
         >
           <Header level="2" text="Inspiration to Fuel Your Creativity" />
 
@@ -122,12 +135,15 @@ export default async function Blog() {
         </FlexBox>
 
         <FlexBox
+          flexdirection="column"
+          md_margin="25px 60px 0"
           margin="25px 60px 0"
           xl_margin="25px 60px 0"
           sm_width="85%"
+          md_width="80%"
           width="70%"
           xl_width="80%"
-          flexdirection="column"
+          xxl_width="80%"
         >
           <Header level="2" text="Stay Updated with the Latest Trends" />
 
@@ -139,12 +155,15 @@ export default async function Blog() {
         </FlexBox>
 
         <FlexBox
-          margin="20px 60px 0"
+          md_margin="20px 60px 0"
+          margin="50px 60px 0"
           xl_margin="20px 60px 0"
           sm_margin="20px 25px"
           sm_width="85%"
-          width="70%"
+          md_width="80%"
+          width="95%"
           xl_width="80%"
+          xxl_width="80%"
         >
           <Grid
             sm_columns="repeat(1, 1fr)"

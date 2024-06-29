@@ -2,6 +2,10 @@
 
 import React from "react";
 import styled from "styled-components";
+import { IconCourses } from "../icons/icon-courses.component";
+import { IconWorkshops } from "../icons/icon-workshops.component";
+import { IconPrograms } from "../icons/icon-programs.component";
+import { IconCommunity } from "../icons/icon-community.component";
 
 interface cardIconProps {
   image?: string;
@@ -52,6 +56,7 @@ interface Props {
   margin?: string;
   xl_margin?: string;
   width?: string;
+  iconName?: string;
 }
 
 export const CardIcon = ({
@@ -63,7 +68,9 @@ export const CardIcon = ({
   md_margin,
   margin,
   xl_margin,
+  iconName,
 }: Props) => {
+  console.log("iconName", iconName);
   return (
     <Icon
       image={image}
@@ -74,6 +81,17 @@ export const CardIcon = ({
       $md_margin={md_margin}
       $margin={margin}
       $xl_margin={xl_margin}
-    ></Icon>
+    >
+      {iconName === "courses" && <IconCourses height={"48px"} width={"48px"} />}
+      {iconName === "workshops" && (
+        <IconWorkshops height={"48px"} width={"48px"} />
+      )}
+      {iconName === "programs" && (
+        <IconPrograms height={"48px"} width={"48px"} />
+      )}
+      {iconName === "community" && (
+        <IconCommunity height={"48px"} width={"48px"} />
+      )}
+    </Icon>
   );
 };

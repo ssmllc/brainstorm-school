@@ -1,0 +1,90 @@
+import React from "react";
+
+interface Props {
+  height: string;
+  width: string;
+}
+
+export const IconCourses = ({ height, width }: Props) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clipPath="url(#clip0_40_1686)">
+        <path
+          d="M15.6138 7.37305L12.1191 15.212"
+          stroke="white"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M12.1194 15.212L5.9661 16.1257C4.9474 16.2901 4.16624 17.1215 4.06574 18.1494L2.56738 27.9801"
+          stroke="white"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M15.6138 7.37305L19.1084 15.212"
+          stroke="white"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M9.46973 15.5637V6.80197C9.46973 3.29819 12.2198 0.456787 15.6139 0.456787C19.0081 0.456787 21.7627 3.29819 21.7627 6.80197V15.5454"
+          stroke="white"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M19.7801 7.12634C19.7801 10.8311 17.9163 13.8324 15.6139 13.8324C13.3116 13.8324 11.4478 10.8311 11.4478 7.12634"
+          fill="#2B2B2B"
+        />
+        <path
+          d="M19.7801 7.12634C19.7801 10.8311 17.9163 13.8324 15.6139 13.8324C13.3116 13.8324 11.4478 10.8311 11.4478 7.12634"
+          stroke="white"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M19.7802 7.12639C19.2502 7.26801 18.6838 7.34566 18.0991 7.34566C15.7328 7.34566 13.7136 6.10312 12.9233 4.35352"
+          stroke="white"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M19.1084 15.212L25.2617 16.1257C26.2804 16.2901 27.0616 17.1215 27.1621 18.1494L28.6604 27.9801"
+          stroke="white"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M7.65182 18.5056H23.5764C24.2845 18.5056 24.8601 19.0812 24.8601 19.7893V29.4007H6.36816V19.7893C6.36816 19.0812 6.94375 18.5056 7.65182 18.5056Z"
+          fill="#2B2B2B"
+          stroke="white"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M1.37061 29.4008H29.8577"
+          stroke="#2B2B2B"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M1.37061 29.4008H29.8577"
+          stroke="white"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_40_1686">
+          <rect width={width} height={height} fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};

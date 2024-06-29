@@ -1,0 +1,128 @@
+import React from "react";
+
+interface Props {
+  height: string;
+  width: string;
+}
+
+export const IconPrograms = ({ height, width }: Props) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M28.2231 24.7156V1" stroke="#fff" strokeMiterlimit="10" />
+      <path
+        d="M13.8274 1H3.72754V24.7156H13.8274"
+        stroke="white"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M18.5342 24.7156H28.634V1H18.5342"
+        stroke="white"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M16.1807 27.1348C16.1807 25.7999 17.2362 24.7156 18.5341 24.7156"
+        stroke="white"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M16.1806 27.1348C16.1806 25.7999 15.1292 24.7156 13.8271 24.7156"
+        stroke="white"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M16.1807 3.4192C16.1807 2.08433 17.2362 1 18.5341 1"
+        stroke="white"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M16.1806 3.4192C16.1806 2.08433 15.1292 1 13.8271 1"
+        stroke="white"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12.6483 5.65759H7.25537"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12.6483 10.3153H7.25537"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12.6483 14.9772H7.25537"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12.6483 19.6348H7.25537"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M16.1807 3.41919V21.1299"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M31.3571 27.5454H1"
+        stroke="#2B2B2B"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M31.3571 4.25293V27.5454H1V4.25293"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M25.106 5.65759H19.709"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M25.106 10.3153H19.709"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M25.106 14.9772H19.709"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M25.106 19.6348H19.709"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M7.25537 10.3153V14.9771"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M19.709 14.9772V19.6349"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};

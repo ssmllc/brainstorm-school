@@ -23,7 +23,7 @@ const FilterSystem = styled.div`
 const DropdownSelect = styled.select`
   appearance: none;
   background: var(--dark-grey);
-  background-image: url("data:image/svg+xml;charset=utf-8,<svg width='10' height='6' fill='none' xmlns='http:%2F%2Fwww.w3.org/2000/svg'><path d='M1 1l4 4 4-4' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg width='10' height='6' fill='none' xmlns='http:%2F%2Fwww.w3.org/2000/svg'><path d='M1 1l4 4 4-4' stroke='white' stroke-width='2' stroke-linecap='round' strokeLinejoin='round'/></svg>");
   background-repeat: no-repeat;
   background-position: 97% 50%;
   border-radius: 10px;
