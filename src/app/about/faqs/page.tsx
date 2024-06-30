@@ -40,8 +40,20 @@ export default async function FAQ() {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <FlexBox sm_margin="50px 0" margin="50px 0" xl_margin="100px auto 100px">
-        <FlexBox sm_width="80%" width="80%" xl_width="80%">
+      <FlexBox
+        sm_margin="50px 0"
+        md_margin="50px 0"
+        margin="50px 0"
+        xl_margin="100px auto 100px"
+        xxl_margin="100px auto 100px"
+      >
+        <FlexBox
+          sm_width="80%"
+          md_width="70%"
+          width="80%"
+          xl_width="80%"
+          xxl_width="80%"
+        >
           <FAQs results={result} />
         </FlexBox>
       </FlexBox>

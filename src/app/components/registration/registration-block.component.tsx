@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import ActionButton from "../buttons/action-button.component";
@@ -20,7 +19,7 @@ const Content = styled.div<contentProps>`
 
   @media (min-width: 768px) {
     margin: 0 auto;
-    width: 80%;
+    width: 60%;
   }
 
   @media (min-width: 1024px) {
@@ -57,30 +56,6 @@ interface buttonProps {
   type?: string;
 }
 
-const CallToAction = styled.button<buttonProps>`
-  background: ${(props) =>
-    props.type === "primary"
-      ? "var(--primary)"
-      : props.type === "tertiary"
-      ? "transparent"
-      : "var(--primary)"};
-  border-radius: 35px;
-  border: ${(props) =>
-    props.type === "tertiary" ? "3px solid var(--primary)" : 0};
-  color: ${(props) =>
-    props.type === "primary"
-      ? "var(--black)"
-      : props.type === "tertiary"
-      ? "var(--primary)"
-      : "#000"};
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  margin: 35px 0 0;
-  padding: 15px 20px;
-  text-transform: uppercase;
-`;
-
 const RegistrationFAQ = styled.div`
   /* border: thin solid red; */
   margin: 35px auto 0;
@@ -110,16 +85,16 @@ const ContentBlock = styled.div`
   text-align: center;
   width: 80%;
 
-  @media (min-width: 400px) {
-    width: 90%;
+  @media (min-width: 768px) {
+    width: 70%;
   }
 
   @media (min-width: 1024px) {
-    max-width: 600px;
+    max-width: 450px;
     width: 100%;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1360px) {
     max-width: 900px;
     width: 100%;
   }
