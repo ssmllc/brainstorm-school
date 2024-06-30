@@ -42,7 +42,18 @@ export default async function Workshops() {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <FlexBox width="100%" xl_margin="100px auto 0">
+      <FlexBox
+        sm_width="100%"
+        md_width="100%"
+        width="100%"
+        xl_width="100%"
+        xxl_width="100%"
+        sm_margin="50px auto 0"
+        md_margin="50px auto 0"
+        margin="50px auto 0"
+        xl_margin="100px auto 0"
+        xxl_margin="100px auto 0"
+      >
         <VideoContentSplit
           video="ADpWI2n1PZ8?si=BaZHmaTByvvU7-2e"
           heading="Open industry talk, with Stephanie Ma Stine"
@@ -52,22 +63,26 @@ export default async function Workshops() {
       </FlexBox>
 
       <FlexBox
+        alignitems="center"
         flexdirection="column"
         sm_margin="20px auto 50px"
+        md_margin="20px auto 50px"
         margin="20px auto 0"
         xl_margin="20px auto 0"
-        alignitems="center"
+        xxl_margin="20px auto 0"
       >
         <FlexBox
           flexdirection="column"
-          sm_margin="25px 0"
-          md_margin="75px 0"
+          sm_margin="20px 0"
+          md_margin="20px 0"
           margin="20px 0"
           xl_margin="20px 0"
+          xxl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
           xl_width="80%"
+          xxl_width="80%"
         >
           <Header level="1" text="Brainstorm School Open Canvas" />
           <Header
@@ -80,12 +95,15 @@ export default async function Workshops() {
         <FlexBox
           flexdirection="column"
           sm_margin="20px 0"
+          md_margin="20px 0"
           margin="20px 0"
           xl_margin="20px 0"
+          xxl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
           xl_width="80%"
+          xxl_width="80%"
         >
           <Header level="2" text="What is the Open Canvas Workshop?" />
           <Header
@@ -98,12 +116,15 @@ export default async function Workshops() {
         <FlexBox
           flexdirection="column"
           sm_margin="20px 0"
+          md_margin="20px 0"
           margin="20px 0"
           xl_margin="20px 0"
+          xxl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
           xl_width="80%"
+          xxl_width="80%"
         >
           <Header
             level="3"
@@ -132,12 +153,15 @@ export default async function Workshops() {
         <FlexBox
           flexdirection="column"
           sm_margin="20px 0"
+          md_margin="20px 0"
           margin="20px 0"
           xl_margin="20px 0"
+          xxl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
           xl_width="80%"
+          xxl_width="80%"
         >
           <Header level="3" text="Connecting with the Artist Community" />
 
@@ -151,12 +175,15 @@ export default async function Workshops() {
         <FlexBox
           flexdirection="column"
           sm_margin="20px 0"
+          md_margin="20px 0"
           margin="20px 0"
           xl_margin="20px 0"
+          xxl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
           xl_width="80%"
+          xxl_width="80%"
         >
           <Header level="3" text="Online Open Canvas Workshop" />
 
@@ -169,10 +196,15 @@ export default async function Workshops() {
 
         <FlexBox
           sm_margin="0"
+          md_margin="0"
+          margin="0"
+          xl_margin="0"
+          xxl_margin="0"
           sm_width="80%"
           md_width="70%"
           width="70%"
           xl_width="80%"
+          xxl_width="80%"
         >
           <FAQs results={result[0]} />
         </FlexBox>
