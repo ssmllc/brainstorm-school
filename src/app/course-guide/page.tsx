@@ -43,6 +43,7 @@ export default async function Page() {
       />
 
       <FlexBox
+        background="/backgrounds/lightning/lightning-left-to-right.png"
         alignitems="center"
         flexdirection="column"
         sm_margin="100px auto"
