@@ -21,6 +21,7 @@ interface containerProps {
   $sm_margin?: string;
   $md_margin?: string;
   $xl_margin?: string;
+  $xxl_margin?: string;
   $width?: string;
   $sm_width?: string;
   $md_width?: string;
@@ -71,6 +72,7 @@ const Container = styled.div<containerProps>`
 
   //xx-large
   @media (min-width: 1900px) {
+    margin: ${({ $xxl_margin }) => ($xxl_margin ? $xxl_margin : "0 auto")};
     width: ${({ $xxl_width }) => ($xxl_width ? $xxl_width : "100vw")};
   }
 `;
@@ -91,6 +93,7 @@ interface Props {
   sm_margin?: string;
   md_margin?: string;
   xl_margin?: string;
+  xxl_margin?: string;
   margin?: string;
   textalign?: string;
   sm_textalign?: string;
@@ -119,6 +122,7 @@ const FlexBox = ({
   sm_margin,
   md_margin,
   xl_margin,
+  xxl_margin,
   width,
   sm_width,
   md_width,
@@ -144,6 +148,7 @@ const FlexBox = ({
       $sm_margin={sm_margin}
       $md_margin={md_margin}
       $xl_margin={xl_margin}
+      $xxl_margin={xxl_margin}
       $width={width}
       $sm_width={sm_width}
       $md_width={md_width}

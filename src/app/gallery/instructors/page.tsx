@@ -44,17 +44,24 @@ export default async function Gallery() {
       <FlexBox
         alignitems="center"
         flexdirection="column"
-        sm_margin="100px auto 50px"
-        margin="100px auto"
+        sm_margin="50px auto"
+        md_margin="50px auto"
+        margin="50px auto"
+        xl_margin="100px auto"
+        xxl_margin="100px auto"
       >
         <FlexBox
           flexdirection="column"
           sm_margin="20px 0"
+          md_margin="20px 0"
           margin="20px 0"
           xl_margin="100px auto 50px"
+          xxl_margin="100px auto 50px"
           sm_width="80%"
+          md_width="80%"
           width="70%"
           xl_width="80%"
+          xxl_width="80%"
         >
           <Header level="1" text="Instructors Gallery" />
 

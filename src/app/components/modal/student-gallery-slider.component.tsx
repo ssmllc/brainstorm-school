@@ -17,7 +17,11 @@ const Art = styled.div<modalProps>`
   border-radius: 20px;
   position: relative;
   width: ${({ $width }) => $width};
-  height: 350px;
+  height: 250px;
+
+  @media (min-width: 1360px) {
+    height: 350px;
+  }
 `;
 
 interface Props {
@@ -47,11 +51,14 @@ const StudentGallerySlide = ({ results }: Props) => {
   return (
     <FlexBox
       sm_margin="20px 25px"
+      md_margin="20px 25px"
       margin="20px 60px 0"
       xl_margin="20px auto 50px"
       sm_width="80%"
-      width="70%"
+      md_width="70%"
+      width="80%"
       xl_width="80%"
+      xxl_width="80%"
     >
       <Grid sm_columns="repeat(2, 1fr)" columns="repeat(4, 1fr)">
         <Modal

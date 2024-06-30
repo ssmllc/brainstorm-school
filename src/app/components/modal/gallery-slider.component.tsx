@@ -55,11 +55,15 @@ const GallerySlide = ({ results, selectedInstructor }: Props) => {
   return (
     <FlexBox
       sm_margin="20px auto"
+      md_margin="20px auto"
       margin="20px 60px 0"
       xl_margin="20px auto 50px"
+      xxl_margin="20px auto 50px"
       sm_width="80%"
+      md_width="80%"
       width="70%"
       xl_width="80%"
+      xxl_width="80%"
     >
       <Grid sm_columns="repeat(2, 1fr)" columns="repeat(4, 1fr)">
         <Modal

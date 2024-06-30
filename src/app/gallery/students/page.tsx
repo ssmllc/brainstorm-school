@@ -43,15 +43,27 @@ export default async function Gallery() {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
+      <FlexBox
+        alignitems="center"
+        flexdirection="column"
+        sm_margin="50px auto"
+        md_margin="50px auto"
+        margin="50px auto"
+        xl_margin="100px auto"
+        xxl_margin="100px auto"
+      >
         <FlexBox
           flexdirection="column"
-          sm_margin="100px auto 50px"
+          sm_margin="50px auto 50px"
+          md_margin="50px auto 50px"
           margin="20px 0"
           xl_margin="100px auto 50px"
+          xxl_margin="100px auto 50px"
           sm_width="80%"
+          md_width="70%"
           width="70%"
           xl_width="80%"
+          xxl_width="80%"
         >
           <Header level="1" text="Student Gallery" />
 
