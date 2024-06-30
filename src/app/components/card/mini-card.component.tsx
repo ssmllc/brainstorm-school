@@ -119,31 +119,39 @@ export const MiniCards = ({ width, results }: Props) => {
 
   return (
     <FlexBox
+      flexdirection="column"
       sm_width="100%"
       md_width="70%"
       width="100%"
       xl_width="100%"
+      xxl_width="100%"
+      sm_margin="0 auto"
+      md_margin="50px auto"
       margin="0 auto"
       xl_margin="50px auto 0"
-      md_margin="50px auto"
-      flexdirection="column"
+      xxl_margin="50px auto 0"
     >
       <FlexBox
-        width="90%"
-        xl_width="80%"
-        md_width="100%"
+        flexdirection="column"
+        sm_margin="25px auto"
+        md_margin="25px auto"
         margin="25px auto"
         xl_margin="25px auto"
-        flexdirection="column"
+        xxl_margin="25px auto"
+        sm_width="80%"
+        md_width="100%"
+        width="80%"
+        xl_width="80%"
+        xxl_width="80%"
       >
         <TextHeaderBlock fontSize="36px" fontWeight="bold">
           Quarterly Schedule
         </TextHeaderBlock>
 
         <FlexBox
-          sm_width="70%"
+          sm_width="100%"
           md_width="100%"
-          width="70%"
+          width="80%"
           xl_width="70%"
           flexdirection="column"
           margin="20px 0"
@@ -152,7 +160,7 @@ export const MiniCards = ({ width, results }: Props) => {
         >
           <Header
             level="4"
-            fontSize="15px"
+            fontSize="16px"
             text="Creative education courses at Brainstorm School start in the Spring, Summer, and Fall, with registration opening two months prior for prospective students to register."
           />
         </FlexBox>
@@ -163,6 +171,7 @@ export const MiniCards = ({ width, results }: Props) => {
         md_width="100%"
         width="90%"
         xl_width="82%"
+        xxl_width="82%"
         flexwrap="wrap"
       >
         {quarters.length > 0 &&

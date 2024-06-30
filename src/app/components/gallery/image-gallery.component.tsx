@@ -139,12 +139,12 @@ const CarouselWrapper = styled.div`
   position: relative;
   width: 100%;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 800px) {
     max-width: 1200px;
     width: 85%;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1360px) {
     max-width: 1200px;
     width: 75%;
   }

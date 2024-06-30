@@ -50,11 +50,19 @@ export default async function About() {
       <FlexBox
         background="/backgrounds/lightning/lightning-right-to-left.png"
         flexdirection="column"
-        sm_margin="100px auto 50px"
+        sm_margin="50px auto"
+        md_margin="50px auto"
         margin="50px auto"
         xl_margin="100px auto"
+        xxl_margin="100px auto"
       >
-        <FlexBox width="100%" sm_width="100%" xl_width="100%" xxl_width="100%">
+        <FlexBox
+          sm_width="100%"
+          md_width="100%"
+          width="100%"
+          xl_width="100%"
+          xxl_width="100%"
+        >
           <RegistrationBlock
             primary={true}
             heading="We are Brainstorm School!"
@@ -70,8 +78,12 @@ export default async function About() {
           alignitems="center"
           flexdirection="column"
           sm_margin="20px auto"
+          md_margin="20px auto"
           margin="20px auto"
           xl_margin="20px auto"
+          xxl_margin="20px auto"
+          sm_width="100%"
+          md_width="100%"
           width="100%"
           xl_width="100%"
           xxl_width="100%"
@@ -98,12 +110,14 @@ export default async function About() {
             flexdirection="column"
             sm_width="80%"
             md_width="70%"
-            width="90%"
+            width="70%"
             xl_width="82%"
             xxl_width="82%"
             sm_margin="20px 0"
+            md_margin="20px 0"
             margin="20px 0"
             xl_margin="20px 0"
+            xxl_margin="20px 0"
           >
             <Header level="2" text="What should I expect?" />
 
@@ -128,14 +142,15 @@ export default async function About() {
 
           <FlexBox
             flexwrap="wrap"
-            gap="10px"
+            gap="15px 10px"
             sm_margin="0 auto"
             md_margin="0 auto"
             margin="0 auto"
             xl_margin="50px auto 0"
+            xxl_margin="50px auto 0"
             sm_width="80%"
             md_width="70%"
-            width="90%"
+            width="70%"
             xl_width="80%"
             xxl_width="100%"
           >
@@ -194,10 +209,13 @@ export default async function About() {
 
           <FlexBox
             flexdirection="column"
-            sm_width="80%"
-            md_width="70%"
+            sm_margin="0 auto"
+            md_margin="0 auto"
             margin="0 auto"
             xl_margin="0 auto"
+            xxl_margin="0 auto"
+            sm_width="80%"
+            md_width="70%"
             width="90%"
             xl_width="80%"
             xxl_width="80%"

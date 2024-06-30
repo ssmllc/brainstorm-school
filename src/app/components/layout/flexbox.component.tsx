@@ -30,7 +30,8 @@ interface containerProps {
 }
 const Container = styled.div<containerProps>`
   align-items: ${({ $alignitems }) => $alignitems};
-  background: ${({ $background }) => `url(${$background}) 100% 0 no-repeat`};
+  background: ${({ $background }) =>
+    $background ? `url(${$background}) 100% 0 no-repeat` : ""};
   background-size: contain;
   border: ${({ $border }) => $border};
   border-top: ${({ $borderTop }) => $borderTop};

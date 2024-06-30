@@ -29,10 +29,9 @@ const ContentWrapper = styled.div<contentProps>`
   width: 80%;
 
   @media (min-width: 768px) {
+    flex-direction: column;
     max-width: 1100px;
     width: 70%;
-    flex-direction: ${({ $flexdirection }) =>
-      $flexdirection ? $flexdirection : "column"};
   }
 
   @media (min-width: 1024px) {
@@ -57,7 +56,7 @@ const Media = styled.div`
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   width: 100%;
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     width: 50%;
   }
 `;

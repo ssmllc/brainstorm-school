@@ -93,8 +93,7 @@ const Content = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    /* width: 90%; */
-    width: 65%;
+    width: 70%;
   }
 
   @media (min-width: 1360px) {

@@ -18,15 +18,17 @@ const SimilarCourses = ({ header }: Props) => {
   return (
     <Wrapper>
       <FlexBox
-        xl_margin="50px auto"
-        margin="50px auto"
-        sm_margin="25px auto"
-        md_margin="30px auto"
         justifycontent="center"
-        width="100%"
-        xl_width="100%"
+        sm_margin="25px auto"
+        margin="50px auto"
+        md_margin="30px auto"
+        xl_margin="50px auto"
+        xxl_margin="50px auto"
         sm_width="80%"
         md_width="70%"
+        width="100%"
+        xl_width="100%"
+        xxl_width="100%"
       >
         <Header level="2" text={header} />
       </FlexBox>
@@ -34,11 +36,16 @@ const SimilarCourses = ({ header }: Props) => {
       <FlexBox
         flexwrap="wrap"
         justifycontent="center"
+        sm_margin="50px auto"
+        md_margin="50px auto"
         margin="50px auto"
-        xl_width="100%"
+        xl_margin="50px auto"
+        xxl_margin="50px auto"
         sm_width="80%"
-        md_width="75%"
+        md_width="80%"
         width="100%"
+        xl_width="100%"
+        xxl_width="100%"
       >
         <CardImageDetail
           base="/courses"

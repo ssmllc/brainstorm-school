@@ -31,11 +31,11 @@ const Card = styled(Link)<cardProps>`
   }
 
   @media (min-width: 1024px) {
-    max-width: 320px;
+    max-width: 300px;
     width: ${({ width }) => (width ? width : "25%")};
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1360px) {
     max-width: 320px;
     width: ${({ width }) => (width ? width : "25%")};
   }
