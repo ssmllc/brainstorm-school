@@ -50,7 +50,7 @@ const RenderCourses = ({ selectedCourses, width }: Props) => {
                   <>
                     {courses?.map((course: Course) => {
                       const { schedule, price, difficulty } = course;
-                      console.log("course", course);
+
                       return (
                         <CardImageDetail
                           key={course._id}

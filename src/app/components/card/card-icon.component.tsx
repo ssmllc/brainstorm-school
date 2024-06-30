@@ -70,7 +70,6 @@ export const CardIcon = ({
   xl_margin,
   iconName,
 }: Props) => {
-  console.log("iconName", iconName);
   return (
     <Icon
       image={image}

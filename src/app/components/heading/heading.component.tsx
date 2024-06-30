@@ -33,8 +33,8 @@ const Header = styled.p`
     font-size: 48px;
   }
 
-  @media (min-width: 1400px) {
-    font-size: 48px;
+  @media (min-width: 1360px) {
+    font-size: 64px;
   }
 
   @media (min-width: 1900px) {
@@ -45,14 +45,15 @@ const Header = styled.p`
 const SubHeader = styled.p`
   color: var(--white);
   font-size: 24px;
+  letter-spacing: 2px;
   text-transform: uppercase;
 
   @media (min-width: 768px) {
     font-size: 28px;
   }
 
-  @media (min-width: 1440px) {
-    font-size: 36px;
+  @media (min-width: 1360px) {
+    font-size: 32px;
   }
 `;
 

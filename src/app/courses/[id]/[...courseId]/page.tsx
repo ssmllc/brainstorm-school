@@ -72,11 +72,8 @@ export default async function Page({
   const { category, instructors, schedule, code, imageUrl } = selectedResults;
   const { duration, time, registration } = schedule[0];
 
-  console.log("selectedResults", selectedResults);
-
   const { gallery } = instructors && instructors[0];
 
-  console.log("gallery", gallery);
   return (
     <>
       <MediaBanner
@@ -121,7 +118,6 @@ export default async function Page({
             >
               <Carousel instructors={instructors}>
                 {gallery.map((g: any, index: number) => {
-                  console.log("g", g.imageUrl);
                   return (
                     <CardImage
                       key={index}

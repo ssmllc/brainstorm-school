@@ -34,8 +34,6 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   const { category } = selectedResults && selectedResults;
 
-  console.log("selectedResults", selectedResults);
-
   return (
     <>
       <MediaBanner

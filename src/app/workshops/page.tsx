@@ -45,18 +45,21 @@ export default async function Workshops() {
       />
 
       <FlexBox
-        flexdirection="column"
-        margin="100px auto"
-        sm_margin="100px auto 0"
-        xl_margin="100px auto 0"
         alignitems="center"
+        flexdirection="column"
+        sm_margin="50px auto 0"
+        md_margin="50px auto 0"
+        margin="50px auto"
+        xl_margin="100px auto 0"
+        xxl_margin="100px auto 0"
       >
         <FlexBox
           flexdirection="column"
           margin="20px 0"
-          sm_margin="25px 0"
-          md_margin="75px 0"
+          sm_margin="20px 0"
+          md_margin="20px 0"
           xl_margin="20px 0"
+          xxl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
@@ -90,17 +93,21 @@ export default async function Workshops() {
         })}
 
       <FlexBox
-        flexdirection="column"
-        margin="100px auto"
-        sm_margin="100px auto 50px"
         alignitems="center"
+        flexdirection="column"
+        sm_margin="50px auto 50px"
+        md_margin="50px auto 50px"
+        margin="50px auto"
+        xl_margin="50px auto"
+        xxl_margin="50px auto"
       >
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
+          md_margin="20px 0"
           margin="20px 0"
-          sm_margin="25px 0"
-          md_margin="75px 0"
           xl_margin="20px 0"
+          xxl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
@@ -135,8 +142,11 @@ export default async function Workshops() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
+          md_margin="20px 0"
           margin="20px 0"
-          xl_margin="25px 0"
+          xl_margin="20px 0"
+          xxl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
@@ -156,8 +166,11 @@ export default async function Workshops() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
+          md_margin="20px 0"
           margin="20px 0"
           xl_margin="20px 0"
+          xxl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
@@ -175,8 +188,11 @@ export default async function Workshops() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
+          md_margin="20px 0"
           margin="20px 0"
           xl_margin="20px 0"
+          xxl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
@@ -194,11 +210,14 @@ export default async function Workshops() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
+          md_margin="20px 0"
           margin="20px 0"
+          xl_margin="20px 0"
+          xxl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
-          xl_margin="20px 0"
           xl_width="80%"
           xxl_width="80%"
         >
@@ -213,8 +232,11 @@ export default async function Workshops() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
+          md_margin="20px 0"
           margin="20px 0"
           xl_margin="20px 0"
+          xxl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
@@ -235,8 +257,11 @@ export default async function Workshops() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
+          md_margin="20px 0"
           margin="20px 0"
           xl_margin="20px 0"
+          xxl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
@@ -256,7 +281,13 @@ export default async function Workshops() {
           />
         </FlexBox>
 
-        <FlexBox sm_width="80%" width="80%" xl_width="80%" xxl_width="80%">
+        <FlexBox
+          sm_width="80%"
+          md_width="70%"
+          width="70%"
+          xl_width="80%"
+          xxl_width="80%"
+        >
           <FAQs results={result[0]} />
         </FlexBox>
       </FlexBox>

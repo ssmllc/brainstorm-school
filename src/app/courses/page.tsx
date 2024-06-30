@@ -38,8 +38,6 @@ export default async function Courses() {
     result.splice(idx, 1);
   }
 
-  console.log("featuredCourse", featuredCourse);
-
   const {
     name,
     category,
