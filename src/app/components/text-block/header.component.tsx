@@ -23,7 +23,7 @@ const Header1 = styled.h1<textProps>`
   font-size: 36px;
   font-weight: bold;
   line-height: 1.25;
-  margin: ${({ margin }) => margin};
+  margin: ${({ $margin }) => $margin};
   position: relative;
   text-align: ${({ textalign }) => textalign};
   text-transform: capitalize;
@@ -194,7 +194,7 @@ const Header = ({
           color={color}
           fontSize={fontSize}
           fontWeight={fontWeight}
-          margin={margin}
+          $margin={margin}
         >
           {text}
         </Header5>
@@ -204,7 +204,7 @@ const Header = ({
           color={color}
           fontSize={fontSize}
           fontWeight={fontWeight}
-          margin={margin}
+          $margin={margin}
         >
           {text}
         </Header6>
