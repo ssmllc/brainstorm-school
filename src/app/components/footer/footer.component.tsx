@@ -11,6 +11,7 @@ import RegistrationBlock from "../registration/registration-block.component";
 import IconIG from "../icons/icon-ig.component";
 import IconYouTube from "../icons/icon-youtube.component";
 import IconFB from "../icons/icon-fb.component";
+import IconStudioSupermassive from "../icons/icon-ssm.component";
 
 const Content = styled.div`
   background: #222;
@@ -26,12 +27,13 @@ const Copyright = styled.div`
 `;
 
 const Credits = styled.div`
+  align-items: center;
   border-top: thin solid #3b3b3b;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 25px 0;
+  padding: 10px 0;
   width: 80%;
 
   @media (min-width: 1024px) {
@@ -291,9 +293,15 @@ const Footer = () => {
           <Link
             href="https://www.studiosupermassive.com"
             target="_blank"
-            style={{ color: "var(--white)", padding: "10px 0" }}
+            style={{
+              color: "var(--white)",
+              padding: "10px 0",
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+            }}
           >
-            Design By : Studio SUPERMASSIVE
+            Designed By : <IconStudioSupermassive height="48px" width="48px" />
           </Link>
         </Credits>
       </Copyright>
