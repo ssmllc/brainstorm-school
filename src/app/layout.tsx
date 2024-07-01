@@ -11,6 +11,9 @@ import { GoogleTagManager } from "@next/third-parties/google";
 export const metadata: Metadata = {
   title: "Brainstorm School",
   description: "Online concept art school",
+  verification: {
+    google: "8obhQZrkNuHks8Vifvtftf_GKRqlxo0TdqH__wQfXrs",
+  },
 };
 
 export default function RootLayout({
@@ -24,10 +27,6 @@ export default function RootLayout({
 
       <Head>
         <link rel="stylesheet" href="https://use.typekit.net/fkd7pzs.css" />
-        <meta
-          name="google-site-verification"
-          content="8obhQZrkNuHks8Vifvtftf_GKRqlxo0TdqH__wQfXrs"
-        />
       </Head>
       <body>
         <BrainstormProvider>
