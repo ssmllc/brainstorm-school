@@ -28,10 +28,15 @@ const Copyright = styled.div`
 const Credits = styled.div`
   border-top: thin solid #3b3b3b;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin: 0 auto;
   padding: 25px 0;
   width: 80%;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
 `;
 
 const MenuContainer = styled.div`
@@ -280,13 +285,15 @@ const Footer = () => {
 
       <Copyright>
         <Credits>
-          <p>&copy; 2024 Brainstorm Online - All rights reserved</p>
+          <p style={{ padding: "10px 0" }}>
+            &copy; 2024 Brainstorm School - All rights reserved
+          </p>
           <Link
             href="https://www.studiosupermassive.com"
             target="_blank"
-            style={{ color: "var(--white)" }}
+            style={{ color: "var(--white)", padding: "10px 0" }}
           >
-            Designed By : Studio Supermassive LLC
+            Design By : Studio SUPERMASSIVE
           </Link>
         </Credits>
       </Copyright>
