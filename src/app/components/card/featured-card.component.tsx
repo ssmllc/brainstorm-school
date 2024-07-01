@@ -25,7 +25,7 @@ const Featured = styled.div<featuredProps>`
   @media (min-width: 1024px) {
     max-width: 1125px;
     margin: ${({ $margin }) => ($margin ? $margin : "50px auto")};
-    width: 95%;
+    width: 90%;
   }
 
   @media (min-width: 1100px) {

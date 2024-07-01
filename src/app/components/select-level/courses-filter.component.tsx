@@ -16,7 +16,7 @@ const FilterSystem = styled.div`
   width: 100%;
 
   @media (min-width: 1024px) {
-    padding: 10px 20px 40px;
+    padding: 10px 20px 0;
   }
 `;
 

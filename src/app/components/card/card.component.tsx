@@ -52,7 +52,7 @@ const Poster = styled.div<cardProps>`
     height: 100px;
   }
 
-  @media (min-width: 1120px) {
+  @media (min-width: 1024px) {
     height: 100%;
     padding: 185px 20px 0 20px;
     width: 60%;
