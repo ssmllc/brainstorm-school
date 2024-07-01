@@ -8,7 +8,11 @@ interface textProps {
   fontSize?: string;
   $sm_fontSize?: string;
   fontWeight?: string;
-  margin?: string;
+  $sm_margin?: string;
+  $md_margin?: string;
+  $margin?: string;
+  $xl_margin?: string;
+  $xxl_margin?: string;
   textalign?: string;
   $texttransform?: string;
   href?: string;
@@ -34,7 +38,7 @@ const Header2 = styled.h2<textProps>`
   font-size: 32px;
   font-weight: bold;
   line-height: 1.25;
-  margin: ${({ margin }) => margin};
+  margin: ${({ $sm_margin }) => ($sm_margin ? $sm_margin : "50px 0")};
   position: relative;
   text-align: center;
   text-transform: capitalize;
@@ -45,10 +49,22 @@ const Header2 = styled.h2<textProps>`
 
   @media (min-width: 768px) {
     font-size: 36px;
+    margin: ${({ $md_margin }) => ($md_margin ? $md_margin : "50px 0")};
   }
 
   @media (min-width: 1024px) {
     text-align: ${({ textalign }) => (textalign ? textalign : "left")};
+    margin: ${({ $margin }) => ($margin ? $margin : "50px 0")};
+  }
+
+  @media (min-width: 1360px) {
+    text-align: ${({ textalign }) => (textalign ? textalign : "left")};
+    margin: ${({ $xl_margin }) => ($xl_margin ? $xl_margin : "50px 0")};
+  }
+
+  @media (min-width: 1900px) {
+    text-align: ${({ textalign }) => (textalign ? textalign : "left")};
+    margin: ${({ $xxl_margin }) => ($xxl_margin ? $xxl_margin : "50px 0")};
   }
 `;
 
@@ -57,7 +73,7 @@ const Header3 = styled.h3<textProps>`
   font-size: 28px;
   font-weight: bold;
   line-height: 1.25;
-  margin: ${({ margin }) => margin};
+  margin: ${({ $margin }) => $margin};
   position: relative;
   text-align: ${({ textalign }) => textalign};
   text-transform: capitalize;
@@ -84,7 +100,7 @@ const Header5 = styled(Link)<textProps>`
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "24px")};
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "normal")};
   display: inline;
-  margin: ${({ margin }) => margin};
+  margin: ${({ $margin }) => $margin};
   position: relative;
   text-align: ${({ textalign }) => textalign};
   text-decoration: underline;
@@ -95,7 +111,7 @@ const Header6 = styled("span")<textProps>`
   color: var(--white);
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "24px")};
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "normal")};
-  margin: ${({ margin }) => margin};
+  margin: ${({ $margin }) => $margin};
   position: relative;
   text-align: ${({ textalign }) => textalign};
   line-height: 1.5;
@@ -108,7 +124,11 @@ interface Props {
   fontSize?: string;
   sm_fontSize?: string;
   fontWeight?: string;
+  sm_margin?: string;
+  md_margin?: string;
   margin?: string;
+  xl_margin?: string;
+  xxl_margin?: string;
   href?: string;
   textalign?: string;
   texttransform?: string;
@@ -121,7 +141,11 @@ const Header = ({
   fontSize,
   sm_fontSize,
   fontWeight,
+  sm_margin,
+  md_margin,
   margin,
+  xl_margin,
+  xxl_margin,
   href,
   textalign,
   texttransform,
@@ -129,17 +153,25 @@ const Header = ({
   return (
     <>
       {level === "1" && (
-        <Header1 color={color} margin={margin} textalign={textalign}>
+        <Header1 color={color} $margin={margin} textalign={textalign}>
           {text}
         </Header1>
       )}
       {level === "2" && (
-        <Header2 color={color} margin={margin} textalign={textalign}>
+        <Header2
+          color={color}
+          $sm_margin={sm_margin}
+          $md_margin={md_margin}
+          $margin={margin}
+          $xl_margin={margin}
+          $xxl_margin={margin}
+          textalign={textalign}
+        >
           {text}
         </Header2>
       )}
       {level === "3" && (
-        <Header3 color={color} margin={margin} textalign={textalign}>
+        <Header3 color={color} $margin={margin} textalign={textalign}>
           {text}
         </Header3>
       )}
@@ -149,7 +181,7 @@ const Header = ({
           fontSize={fontSize}
           fontWeight={fontWeight}
           $sm_fontSize={sm_fontSize}
-          margin={margin}
+          $margin={margin}
           textalign={textalign}
           $texttransform={texttransform}
         >
