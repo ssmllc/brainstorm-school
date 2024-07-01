@@ -23,8 +23,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleAnalytics gaId="G-9GXR5HG16C" />
       <Head>
-        <GoogleAnalytics gaId="G-9GXR5HG16C" />
         <link rel="stylesheet" href="https://use.typekit.net/fkd7pzs.css" />
       </Head>
       <body>
