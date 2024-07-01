@@ -78,7 +78,7 @@ const Tracks = styled.div`
     flex-wrap: nowrap;
     gap: 20px;
     max-width: 1150px;
-    width: 100%;
+    width: 90%;
   }
 
   @media (min-width: 1360px) {

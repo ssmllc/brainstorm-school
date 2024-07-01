@@ -163,8 +163,8 @@ const Header = ({
           $sm_margin={sm_margin}
           $md_margin={md_margin}
           $margin={margin}
-          $xl_margin={margin}
-          $xxl_margin={margin}
+          $xl_margin={xl_margin}
+          $xxl_margin={xxl_margin}
           textalign={textalign}
         >
           {text}

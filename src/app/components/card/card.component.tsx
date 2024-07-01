@@ -43,15 +43,25 @@ const Card = styled.div<cardProps>`
 const Poster = styled.div<cardProps>`
   background: url(${({ image }) => image}) top center no-repeat;
   background-size: cover;
-  height: ${({ variant }) => (variant === "sm" ? "100px" : "100%")};
+  height: 100%;
   padding: 185px 20px 20px 20px;
   position: relative;
   width: 100%;
 
+  @media (min-width: 768px) {
+    height: 100px;
+  }
+
+  @media (min-width: 1120px) {
+    height: 100%;
+    padding: 185px 20px 0 20px;
+    width: 60%;
+  }
+
   @media (min-width: 1360px) {
     height: 100%;
     padding: 185px 20px 0 20px;
-    width: 45%;
+    width: 40%;
   }
 
   &:before {
@@ -80,7 +90,7 @@ const Content = styled.div<cardProps>`
 
   @media (min-width: 1360px) {
     padding: 40px 40px;
-    width: 55%;
+    width: 60%;
   }
 `;
 

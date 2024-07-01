@@ -44,8 +44,8 @@ const Featured = styled.div`
     width: 75%;
   }
 
-  @media (min-width: 1400px) {
-    max-width: 1125px;
+  @media (min-width: 1360px) {
+    max-width: 1080px;
     width: 65%;
   }
 `;
@@ -217,7 +217,12 @@ const FeaturedSlider = ({
           width="60%"
           xl_width="60%"
         >
-          <Header level="2" text={heading} textalign={textalign} />
+          <Header
+            level="2"
+            text={heading}
+            textalign={textalign}
+            md_margin="25px 0 0"
+          />
         </FlexBox>
       )}
 

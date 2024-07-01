@@ -60,12 +60,12 @@ const Block = styled.div`
   &.no-hot-spot {
     padding: 30px 20px;
 
-    @media (min-width: 800px) {
+    @media (min-width: 1360px) {
       padding: 40px 40px;
     }
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1360px) {
     width: 33.33%;
   }
 `;

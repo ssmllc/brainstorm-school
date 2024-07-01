@@ -116,6 +116,7 @@ const CardGroup = ({
           level="2"
           text="Learn from todays top instructors"
           textalign="center"
+          md_margin="25px 0 0"
         />
       </FlexBox>
       <Group>

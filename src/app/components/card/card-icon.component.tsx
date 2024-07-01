@@ -34,6 +34,12 @@ const Icon = styled.div<cardIconProps>`
     width: 100px;
   }
 
+  @media (min-width: 800px) {
+    height: 85px;
+    margin: ${({ $md_margin }) => $md_margin};
+    width: 100px;
+  }
+
   @media (min-width: 1024px) {
     height: 100px;
     margin: ${({ $margin }) => $margin};

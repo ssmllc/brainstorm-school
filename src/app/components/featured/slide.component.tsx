@@ -27,12 +27,20 @@ const Card = styled.div<cardProps>`
     width: 460px;
   }
 
+  @media (min-width: 768px) {
+    width: 500px;
+  }
+
   @media (min-width: 1024px) {
     width: 768px;
   }
 
-  @media (min-width: 1400px) {
-    width: ${({ width }) => (width ? width : "1125px")};
+  @media (min-width: 1120px) {
+    width: 885px;
+  }
+
+  @media (min-width: 1360px) {
+    width: 1080px;
   }
 `;
 

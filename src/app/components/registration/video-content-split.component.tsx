@@ -38,6 +38,7 @@ const ContentWrapper = styled.div<contentProps>`
     align-items: center;
     flex-direction: ${({ $flexdirection }) =>
       $flexdirection ? $flexdirection : "row"};
+    width: 90%;
   }
 
   @media (min-width: 1400px) {

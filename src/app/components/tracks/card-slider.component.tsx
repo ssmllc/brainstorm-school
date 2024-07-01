@@ -25,6 +25,12 @@ const CardSliderControls = styled.div`
   margin: 0 auto;
   width: 80%;
 
+  @media (min-width: 800px) {
+    height: 100%;
+    margin: 0;
+    padding: 150px 0 0;
+  }
+
   @media (min-width: 1024px) {
     height: 100%;
     margin: 0;
@@ -32,7 +38,7 @@ const CardSliderControls = styled.div`
     width: 25%;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1360px) {
     height: 100%;
     margin: 0;
     padding: 150px 50px 0;
@@ -67,7 +73,7 @@ const CardSliderCards = styled.div`
     z-index: 10;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1360px) {
     width: 75%;
   }
 `;
