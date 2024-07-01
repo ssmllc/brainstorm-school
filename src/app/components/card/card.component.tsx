@@ -43,7 +43,7 @@ const Card = styled.div<cardProps>`
 const Poster = styled.div<cardProps>`
   background: url(${({ image }) => image}) top center no-repeat;
   background-size: cover;
-  height: 100%;
+  height: 100px;
   padding: 185px 20px 20px 20px;
   position: relative;
   width: 100%;
