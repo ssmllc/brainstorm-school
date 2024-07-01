@@ -7,6 +7,7 @@ import Navigation from "./components/navigation/navigation.component";
 import Footer from "./components/footer/footer.component";
 import { TracksProvider } from "./context/tracks-context-provider";
 import Head from "next/head";
+import { GoogleTagManager } from "@next/third-parties/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,6 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="G-9GXR5HG16C" />
+
       <Head>
         <link rel="stylesheet" href="https://use.typekit.net/fkd7pzs.css" />
       </Head>
