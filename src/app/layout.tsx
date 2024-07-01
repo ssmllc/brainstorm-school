@@ -23,9 +23,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleTagManager gtmId="G-9GXR5HG16C" />
-
       <Head>
+        <GoogleTagManager gtmId="G-9GXR5HG16C" />
         <link rel="stylesheet" href="https://use.typekit.net/fkd7pzs.css" />
       </Head>
       <body>
