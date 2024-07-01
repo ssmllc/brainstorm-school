@@ -19,8 +19,6 @@ export default async function ComplianceLine() {
         hero="false"
         theme="dark"
         background="/banner/banner-31.jpg"
-        image="/banner/media-banner.png"
-        media="/video/brainstorm-design-solve-learn.mp4"
       />
 
       <FlexBox

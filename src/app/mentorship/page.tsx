@@ -38,8 +38,6 @@ export default async function Mentorship() {
         hero="false"
         theme="dark"
         background="/banner/banner-19.jpg"
-        image="/banner/media-banner.png"
-        media="/video/brainstorm-design-solve-learn.mp4"
       />
 
       <FlexBox

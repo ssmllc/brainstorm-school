@@ -39,9 +39,7 @@ export default async function Workshops() {
         subHeader="Start Learning"
         hero="false"
         theme="dark"
-        background="/banner/banner-1.jpg"
-        image="/banner/media-banner.png"
-        media="/video/brainstorm-design-solve-learn.mp4"
+        background="/banner/banner-22.jpg"
       />
 
       <FlexBox

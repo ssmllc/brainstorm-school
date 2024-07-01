@@ -37,13 +37,12 @@ export default async function Page({ params }: { params: { id: string } }) {
   return (
     <>
       <MediaBanner
+        label="Courses"
         header={category}
         subHeader="2024"
         hero="false"
         theme="dark"
         background="/banner/banner-39.jpg"
-        image="/banner/media-banner.png"
-        media="/video/brainstorm-design-solve-learn.mp4"
       />
 
       <FlexBox

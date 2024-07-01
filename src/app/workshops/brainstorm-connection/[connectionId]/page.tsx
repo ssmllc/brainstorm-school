@@ -35,9 +35,7 @@ export default async function Workshops() {
         label="Open Canvas"
         hero="true"
         theme="dark"
-        background="/banner/banner-19.jpg"
-        image="/banner/media-banner.png"
-        media="/video/brainstorm-design-solve-learn.mp4"
+        background="/banner/banner-9.jpg"
       />
 
       <h1>Brainstorm Connection</h1>

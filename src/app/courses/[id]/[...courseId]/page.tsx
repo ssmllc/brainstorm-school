@@ -88,7 +88,6 @@ export default async function Page({
         background={imageUrl}
         image={imageUrl}
         randomize={false}
-        // media="/video/brainstorm-design-solve-learn.mp4"
       />
 
       <CardLayout results={selectedResults} />
