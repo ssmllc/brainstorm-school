@@ -273,7 +273,8 @@ const CardLayout = ({ results }: Props) => {
               />
               <Header
                 level="4"
-                text={formatOpen}
+                // text={formatOpen}
+                text="Mon July 15 2024"
                 fontSize="16px"
                 sm_fontSize="14px"
               />
