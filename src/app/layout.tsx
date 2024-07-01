@@ -24,6 +24,10 @@ export default function RootLayout({
 
       <Head>
         <link rel="stylesheet" href="https://use.typekit.net/fkd7pzs.css" />
+        <meta
+          name="google-site-verification"
+          content="8obhQZrkNuHks8Vifvtftf_GKRqlxo0TdqH__wQfXrs"
+        />
       </Head>
       <body>
         <BrainstormProvider>
