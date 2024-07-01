@@ -240,6 +240,7 @@ const CardLayout = ({ results }: Props) => {
                     margin="0"
                     offsetPadding="15px 15px"
                     fontSize="10px"
+                    target="_blank"
                   />
                 )}
               </TextBlock>

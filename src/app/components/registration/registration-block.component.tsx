@@ -133,6 +133,7 @@ const RegistrationBlock = ({
   cta,
   ctaType,
   faq,
+  target,
 }: {
   primary: boolean;
   href?: string;
@@ -142,6 +143,7 @@ const RegistrationBlock = ({
   cta?: string;
   ctaType: "primary" | "secondary" | "tertiary";
   faq?: boolean;
+  target?: string;
 }) => {
   return (
     <Content $faq={faq}>
@@ -154,7 +156,14 @@ const RegistrationBlock = ({
           <Heading scale={scale}>{heading}</Heading>
         )}
         {text && <p className="sub-heading">{text}</p>}
-        {cta && <ActionButton href={href} type={ctaType} label={cta} />}
+        {cta && (
+          <ActionButton
+            href={href}
+            type={ctaType}
+            label={cta}
+            target={target ? target : "_top"}
+          />
+        )}
         {faq && (
           <RegistrationFAQ>
             <p className="faq-text">

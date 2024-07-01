@@ -106,6 +106,7 @@ const InstructorBio = ({
         scale="xl"
         cta="Register Today"
         ctaType="primary"
+        target="_blank"
       />
     </Instructor>
   );

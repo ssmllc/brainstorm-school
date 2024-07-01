@@ -343,6 +343,7 @@ const MediaBanner = ({
                   label="Register Today"
                   margin="0"
                   offsetPadding="15px 15px"
+                  target="_blank"
                 />
               </Column>
             )}

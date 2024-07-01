@@ -108,6 +108,7 @@ export default async function MentorshipPrograms({
         cta="Register today"
         href={registration}
         faq={true}
+        target="_blank"
       />
 
       <SimilarCourses header="View Similar Courses" />
