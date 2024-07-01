@@ -6,7 +6,7 @@ import Navigation from "./components/navigation/navigation.component";
 import Footer from "./components/footer/footer.component";
 import { TracksProvider } from "./context/tracks-context-provider";
 import Head from "next/head";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Brainstorm School",
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <GoogleTagManager gtmId="G-9GXR5HG16C" />
+        <GoogleAnalytics gaId="G-9GXR5HG16C" />
         <link rel="stylesheet" href="https://use.typekit.net/fkd7pzs.css" />
       </Head>
       <body>
