@@ -74,13 +74,14 @@ const Tracks = styled.div`
   }
 
   @media (min-width: 1024px) {
-    justify-content: center;
-    gap: 10px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
     max-width: 1150px;
-    width: 90%;
+    width: 100%;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1360px) {
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 20px;
@@ -93,7 +94,7 @@ const Tracks = styled.div`
     flex-wrap: nowrap;
     gap: 20px;
     max-width: 1150px;
-    width: 65%;
+    width: 100%;
   }
 `;
 
@@ -119,7 +120,14 @@ const Track = styled.div<trackProps>`
     width: 100%;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1024px) {
+    padding: 125px 20px 0 20px;
+    min-height: 280px;
+    min-width: 180px;
+    width: 100%;
+  }
+
+  @media (min-width: 1360px) {
     min-height: 350px;
     padding: 185px 20px 0 20px;
     min-width: 250px;
@@ -231,13 +239,17 @@ const TracksGroup = ({ results }: Props) => {
   return (
     <TracksContainer>
       <FlexBox
-        sm_width="80%"
-        md_width="100%"
-        width="60%"
-        xl_width="60%"
         justifycontent="center"
+        sm_margin="0 auto"
+        md_margin="0 auto"
         margin="0 auto"
         xl_margin="0 auto"
+        xxl_margin="0 auto"
+        sm_width="80%"
+        md_width="60%"
+        width="60%"
+        xl_width="60%"
+        xxl_width="60%"
       >
         <Header
           level="2"
@@ -322,11 +334,13 @@ const TracksGroup = ({ results }: Props) => {
       </Tracks>
 
       <FlexBox
-        xl_width="100%"
-        width="100%"
-        sm_width="100%"
-        flexdirection="column"
         alignitems="center"
+        flexdirection="column"
+        sm_width="100%"
+        md_width="75%"
+        width="100%"
+        xl_width="100%"
+        xxl_width="100%"
       >
         {currentTrack.length > 0 && (
           <TextBlock
@@ -344,12 +358,17 @@ const TracksGroup = ({ results }: Props) => {
         <FlexBox
           flexwrap="wrap"
           gap="20px 10px"
+          justifycontent="space-between"
+          sm_margin="0 auto"
+          md_margin="0 auto"
           margin="0 auto"
           xl_margin="0 auto"
+          xxl_margin="0 auto"
+          sm_width="100%"
+          md_width="100%"
           width="100%"
           xl_width="100%"
-          sm_width="100%"
-          justifycontent="space-between"
+          xxl_width="100%"
         >
           {currentTrack.length > 0 &&
             currentTrack?.map((track: any) =>

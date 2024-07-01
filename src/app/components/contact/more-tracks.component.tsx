@@ -34,8 +34,13 @@ const ContentBlock = styled.div`
   margin: 0 auto;
   width: 100%;
 
+  @media (min-width: 768px) {
+    width: 75%;
+  }
+
   @media (min-width: 800px) {
     flex-direction: row;
+    width: 100%;
   }
 `;
 
@@ -92,6 +97,14 @@ const Heading = styled.p`
 const Caption = styled.p`
   color: var(--white);
   font-size: 32px;
+
+  @media (min-width: 800px) {
+    font-size: 24px;
+  }
+
+  @media (min-width: 1360px) {
+    font-size: 32px;
+  }
 `;
 
 const MoreTracks = () => {

@@ -51,6 +51,9 @@ const Container = styled.div<containerProps>`
 
   //medium
   @media (min-width: 768px) {
+    background: ${({ $background }) =>
+      $background ? `url(${$background}) 0 0 no-repeat` : ""};
+    background-size: 50%;
     align-items: ${({ $alignitems }) => $alignitems};
     flex-direction: ${({ $flexdirection }) =>
       $flexdirection ? $flexdirection : "row"};
@@ -61,6 +64,9 @@ const Container = styled.div<containerProps>`
 
   //large
   @media (min-width: 1024px) {
+    background: ${({ $background }) =>
+      $background ? `url(${$background}) 100% 0 no-repeat` : ""};
+    background-size: contain;
     margin: ${({ $margin }) => ($margin ? $margin : "0 auto")};
     width: ${({ $width }) => ($width ? $width : "100vw")};
   }

@@ -46,20 +46,30 @@ export default async function Page() {
         background="/backgrounds/lightning/lightning-left-to-right.png"
         alignitems="center"
         flexdirection="column"
-        sm_margin="100px auto"
+        sm_margin="50px auto"
+        md_margin="50px auto"
         margin="100px auto"
         xl_margin="100px auto"
+        xxl_margin="100px auto"
+        sm_width="100%"
+        md_width="100%"
         width="100%"
         xl_width="100%"
+        xxl_width="100%"
       >
         <FlexBox
           flexdirection="column"
+          justifycontent="center"
+          sm_width="70%"
+          md_width="60%"
           width="35%"
           xl_width="35%"
-          sm_width="70%"
-          margin="0 auto"
+          xxl_width="35%"
+          sm_margin="20px auto"
+          md_margin="20px auto"
+          margin="20px auto"
           xl_margin="0 auto"
-          justifycontent="center"
+          xxl_margin="0 auto"
         >
           <Header level="1" text="Course Guide" textalign="center" />
           <Header
@@ -73,11 +83,16 @@ export default async function Page() {
 
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
+          md_margin="20px 0"
           margin="20px 0"
           xl_margin="20px 0"
+          xxl_margin="20px 0"
           sm_width="80%"
+          md_width="80%"
           width="80%"
           xl_width="80%"
+          xxl_width="80%"
         >
           <TracksGroup results={result} />
 
