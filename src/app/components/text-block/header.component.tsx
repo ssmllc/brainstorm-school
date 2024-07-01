@@ -83,7 +83,7 @@ const Header4 = styled.p<textProps>`
   color: var(--white);
   font-size: ${({ $sm_fontSize }) => ($sm_fontSize ? $sm_fontSize : "18px")};
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "normal")};
-  margin: 5px 10px;
+  margin: 5px 0;
   position: relative;
   text-align: ${({ textalign }) => textalign};
   text-transform: ${({ $texttransform }) =>
