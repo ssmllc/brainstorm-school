@@ -489,23 +489,25 @@ const CardLayout = ({ results }: Props) => {
             </Container>
           )}
 
-          <Container
-            borderradius="20px"
-            margin="20px 0"
-            padding="20px 20px"
-            sm_padding="20px 20px"
-            width="100%"
-          >
-            <TextBlock
-              padding="10px 0"
-              fontSize="18px"
-              fontWeight="bold"
-              width="auto"
+          {requirements && (
+            <Container
+              borderradius="20px"
+              margin="20px 0"
+              padding="20px 20px"
+              sm_padding="20px 20px"
+              width="100%"
             >
-              <IconRequirements width="24px" height="24px" /> Requirements
-            </TextBlock>
-            <Header level="4" fontSize="15px" text={requirements} />
-          </Container>
+              <TextBlock
+                padding="10px 0"
+                fontSize="18px"
+                fontWeight="bold"
+                width="auto"
+              >
+                <IconRequirements width="24px" height="24px" /> Requirements
+              </TextBlock>
+              <Header level="4" fontSize="15px" text={requirements} />
+            </Container>
+          )}
         </CourseDetails>
       </InstructorWrapper>
     </Wrapper>
