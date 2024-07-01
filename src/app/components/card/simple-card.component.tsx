@@ -30,10 +30,10 @@ const Preview = styled("div")<previewProps>`
   background-size: cover;
   border-radius: 20px;
   box-shadow: ${({ boxshadow }) => boxshadow};
-  height: ${({ $sm_height }) => ($sm_height ? $sm_height : "300px")};
+  height: 290px;
   overflow: hidden;
   margin: 20px 0;
-  width: ${({ width }) => (width ? width : "100%")};
+  width: 310px;
 
   @media (min-width: 768px) {
     height: ${({ height }) => (height ? height : "300px")};
@@ -121,17 +121,13 @@ const Wrapper = styled("div")`
   max-width: 1200px;
   width: 80%;
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     flex-direction: row;
     padding: 40px 0;
     width: 80%;
   }
 
-  @media (min-width: 1024px) {
-    width: 85%;
-  }
-
-  @media (min-width: 1400px) {
+  @media (min-width: 1360px) {
     flex-direction: row;
     padding: 40px 0;
     justify-content: space-between;
@@ -152,7 +148,7 @@ const CardWrapper = styled("div")`
 const InstructorWrapper = styled("div")`
   width: 100%;
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     width: 40%;
   }
 `;
@@ -170,7 +166,7 @@ const CourseDetails = styled("div")`
     width: 100%;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1360px) {
     padding: 20px 20px;
     width: 80%;
   }
@@ -264,6 +260,7 @@ const CardLayout = ({ results }: Props) => {
               flexdirection="column"
               padding="10px 20px"
               sm_padding="0 20px"
+              md_padding="0 20px"
               width="100%"
               borderright="thin solid var(--medium-grey)"
             >
@@ -278,7 +275,6 @@ const CardLayout = ({ results }: Props) => {
                 text={formatOpen}
                 fontSize="16px"
                 sm_fontSize="14px"
-                margin="10px 0"
               />
             </Container>
 
@@ -300,7 +296,6 @@ const CardLayout = ({ results }: Props) => {
                 text={formatStart}
                 fontSize="16px"
                 sm_fontSize="14px"
-                margin="10px 0"
               />
             </Container>
           </Container>

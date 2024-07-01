@@ -71,12 +71,18 @@ const RenderAllCourses = ({ selectedCourses, width }: Props) => {
 
   return (
     <FlexBox
-      flexdirection="column"
-      margin="0 auto"
       alignitems="center"
+      flexdirection="column"
+      sm_margin="20px auto"
+      md_margin="20px auto"
+      margin="20px auto"
+      xl_margin="50px auto"
+      xxl_margin="50px auto"
       sm_width="80%"
-      width="80%"
+      md_width="100%"
+      width="90%"
       xl_width="80%"
+      xxl_width="80%"
     >
       <CoursesFilter
         setLevelOfExpertise={setLevelOfExpertise}

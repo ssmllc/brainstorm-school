@@ -98,11 +98,16 @@ export default async function Page({
           <FlexBox flexdirection="column">
             <FlexBox
               alignitems="center"
+              sm_margin="50px auto 0px"
               md_margin="50px auto 0px"
               margin="50px auto 0"
-              md_width="90%"
-              width="90%"
+              xl_margin="50px auto 0"
+              xxl_margin="50px auto 0"
+              sm_width="80%"
+              md_width="80%"
+              width="80%"
               xl_width="85%"
+              xxl_width="85%"
             >
               <TextHeaderBlock fontSize="36px" fontWeight="bold">
                 Gallery
@@ -114,7 +119,8 @@ export default async function Page({
               sm_width="80%"
               md_width="80%"
               width="80%"
-              xl_width="70%"
+              xl_width="85%"
+              xxl_width="85%"
             >
               <Carousel instructors={instructors}>
                 {gallery.map((g: any, index: number) => {
@@ -137,11 +143,16 @@ export default async function Page({
       <FlexBox flexdirection="column">
         <FlexBox
           alignitems="center"
-          md_width="90%"
+          sm_width="80%"
+          md_width="80%"
+          width="80%"
+          xl_width="85%"
+          xxl_width="85%"
+          sm_margin="50px auto 0px"
           md_margin="50px auto 0px"
           margin="25px auto 0"
-          width="90%"
-          xl_width="85%"
+          xl_margin="25px auto 0"
+          xxl_margin="25px auto 0"
         >
           <TextHeaderBlock fontSize="36px" fontWeight="bold">
             Meet Your Instructor

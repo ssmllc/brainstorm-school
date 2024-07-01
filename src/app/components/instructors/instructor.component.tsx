@@ -61,7 +61,13 @@ const InstructorBio = ({
   return (
     <Instructor>
       <InstructorWrapper>
-        <FlexBox sm_width="100%" md_width="100%" width="30%" xl_width="30%">
+        <FlexBox
+          sm_width="100%"
+          md_width="100%"
+          width="40%"
+          xl_width="30%"
+          xxl_width="30%"
+        >
           <Card
             background="0"
             boxshadow="none"
@@ -77,12 +83,17 @@ const InstructorBio = ({
         </FlexBox>
 
         <FlexBox
+          flexdirection="column"
           sm_width="100%"
           md_width="100%"
-          width="70%"
+          width="60%"
           xl_width="70%"
+          xxl_width="70%"
           sm_margin="20px 0"
-          flexdirection="column"
+          md_margin="20px 0"
+          margin="20px 0"
+          xl_margin="20px 0"
+          xxl_margin="20px 0"
         >
           <DecipherText description={bio} margin="0" />
         </FlexBox>

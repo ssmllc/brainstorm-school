@@ -19,8 +19,11 @@ interface sectionProps {
   flexgrow?: string;
   margin?: string;
   maxwidth?: string;
-  $padding?: string;
   $sm_padding?: string;
+  $md_padding?: string;
+  $padding?: string;
+  $xl_padding?: string;
+  $xxl_padding?: string;
   overflow?: string;
   position?: string;
   width?: string;
@@ -71,10 +74,10 @@ const Section = styled.div<sectionProps>`
   flex-wrap: ${({ flexwrap }) => (flexwrap ? flexwrap : "nowrap")};
   justify-content: ${({ justifycontent }) =>
     justifycontent ? justifycontent : "start"};
-  margin: ${({ margin }) => (margin ? margin : "0")};
+  margin: 0;
   max-width: ${({ maxwidth }) => maxwidth};
   overflow: ${({ overflow }) => overflow};
-  padding: ${({ $sm_padding }) => ($sm_padding ? $sm_padding : "0")};
+  padding: 0;
   position: ${({ position }) => (position ? position : "relative")};
   width: ${({ width }) => (width ? width : "100vw")};
   flex-grow: ${({ flexgrow }) => flexgrow};
@@ -109,8 +112,11 @@ interface Props {
   margin?: string;
   maxwidth?: string;
   overflow?: string;
-  padding?: string;
   sm_padding?: string;
+  md_padding?: string;
+  padding?: string;
+  xl_padding?: string;
+  xxl_padding?: string;
   position?: string;
   width?: string;
 }
@@ -134,8 +140,11 @@ export const FlexContainer = ({
   margin,
   maxwidth,
   overflow,
-  padding,
   sm_padding,
+  md_padding,
+  padding,
+  xl_padding,
+  xxl_padding,
   position,
   width,
 }: Props) => {
@@ -157,8 +166,11 @@ export const FlexContainer = ({
       $sm_height={sm_height}
       margin={margin}
       overflow={overflow}
-      $padding={padding}
       $sm_padding={sm_padding}
+      $md_padding={md_padding}
+      $padding={padding}
+      $xl_padding={xl_padding}
+      $xxl_padding={xxl_padding}
       position={position}
       width={width}
       maxwidth={maxwidth}
@@ -187,8 +199,11 @@ const Container = ({
   margin,
   maxwidth,
   overflow,
-  padding,
   sm_padding,
+  md_padding,
+  padding,
+  xl_padding,
+  xxl_padding,
   position,
   width,
 }: Props) => {
@@ -211,8 +226,11 @@ const Container = ({
       margin={margin}
       maxwidth={maxwidth}
       overflow={overflow}
-      $padding={padding}
       $sm_padding={sm_padding}
+      $md_padding={md_padding}
+      $padding={padding}
+      $xl_padding={xl_padding}
+      $xxl_padding={xxl_padding}
       position={position}
       width={width}
     >

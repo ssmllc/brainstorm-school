@@ -112,7 +112,7 @@ const Content = styled.div`
 
   @media (min-width: 1900px) {
     left: 50%;
-    max-width: 1450px;
+    max-width: 1400px;
     top: 50%;
     transform: translate(-50%, -50%);
   }

@@ -46,21 +46,41 @@ export default async function Page({ params }: { params: { id: string } }) {
         media="/video/brainstorm-design-solve-learn.mp4"
       />
 
-      <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
+      <FlexBox
+        alignitems="center"
+        flexdirection="column"
+        sm_margin="50px auto 0"
+        md_margin="50px auto 0"
+        margin="50px auto 0"
+        xl_margin="50px auto 0"
+        xxl_margin="50px auto 0"
+      >
         <FlexBox
           flexdirection="column"
-          sm_margin="100px auto 50px"
+          sm_margin="50px auto 50px"
+          md_margin="50px auto 50px"
           margin="20px 0"
-          xl_margin="100px 0 50px"
+          xl_margin="50px 0 50px"
+          xxl_margin="50px 0 50px"
           sm_width="80%"
+          md_width="80%"
           width="70%"
           xl_width="80%"
+          xxl_width="80%"
         >
           <DecipherText results={selectedResults} />
         </FlexBox>
       </FlexBox>
 
-      <FlexBox flexdirection="column" margin="100px auto" alignitems="center">
+      <FlexBox
+        alignitems="center"
+        flexdirection="column"
+        sm_margin="50px auto"
+        md_margin="50px auto"
+        margin="20px auto"
+        xl_margin="20px auto"
+        xxl_margin="20px auto"
+      >
         <RenderCourses
           selectedCourses={selectedCourses}
           noheading={true}
@@ -68,13 +88,17 @@ export default async function Page({ params }: { params: { id: string } }) {
         />
 
         <FlexBox
+          flexdirection="column"
           sm_margin="25px 60px 0"
+          md_margin="25px 60px 0"
           margin="25px 60px 0"
           xl_margin="25px 60px 0"
+          xxl_margin="25px 60px 0"
           sm_width="85%"
-          width="70%"
-          xl_width="80%"
-          flexdirection="column"
+          md_width="80%"
+          width="80%"
+          xl_width="90%"
+          xxl_width="90%"
         >
           <FAQs results={selectedResults} />
         </FlexBox>
@@ -85,6 +109,7 @@ export default async function Page({ params }: { params: { id: string } }) {
           scale="xl"
           cta="View All Courses"
           ctaType="primary"
+          href="/courses"
         />
       </FlexBox>
     </>

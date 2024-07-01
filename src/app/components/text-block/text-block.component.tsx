@@ -28,7 +28,7 @@ const Text = styled.div<textProps>`
   width: ${({ width }) => (width ? width : "100%")};
 
   @media (min-width: 768px) {
-    font-size: 16px;
+    font-size: 24px;
   }
 
   @media (min-width: 800px) {

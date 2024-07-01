@@ -68,20 +68,26 @@ export default async function Courses() {
       />
 
       <FlexBox
-        flexdirection="column"
-        sm_margin="100px auto"
-        xl_margin="100px auto 50px"
-        margin="50px auto 0"
         alignitems="center"
+        flexdirection="column"
+        sm_margin="50px auto"
+        md_margin="50px auto"
+        margin="50px auto 0"
+        xl_margin="100px auto 50px"
+        xxl_margin="100px auto 50px"
       >
         <FlexBox
           flexdirection="column"
+          sm_margin="20px 0"
+          md_margin="20px 0"
           margin="20px 0"
           xl_margin="20px 0"
+          xxl_margin="20px 0"
           sm_width="80%"
           md_width="70%"
           width="70%"
           xl_width="80%"
+          xxl_width="80%"
         >
           <Header
             level="1"
@@ -109,10 +115,14 @@ export default async function Courses() {
       </FlexBox>
 
       <FlexBox
+        alignitems="center"
+        flexdirection="column"
         sm_width="100%"
         sm_margin="0 auto"
-        flexdirection="column"
-        alignitems="center"
+        md_margin="0 auto"
+        margin="0 auto"
+        xl_margin="20px auto"
+        xxl_margin="20px auto"
       >
         <FeaturedCard
           poster={imageUrl}
@@ -136,21 +146,30 @@ export default async function Courses() {
 
       <FlexBox
         flexdirection="column"
-        margin="25px auto"
-        xl_margin="0 auto"
-        md_margin="25px auto"
         alignitems="center"
+        sm_margin="20px auto"
+        md_margin="20px auto"
+        margin="20px auto"
+        xl_margin="0 auto"
+        xxl_margin="0 auto"
+        sm_width="100%"
         md_width="100%"
+        width="100%"
+        xl_width="100%"
+        xxl_width="100%"
       >
         <FlexBox
+          flexdirection="column"
+          sm_margin="25px 60px 0"
+          md_margin="25px 60px 0"
           margin="25px 60px 0"
           xl_margin="0 60px 0"
+          xxl_margin="0 60px 0"
           sm_width="80%"
           md_width="80%"
-          width="70%"
+          width="80%"
           xl_width="80%"
           xxl_width="95%"
-          flexdirection="column"
         >
           <CoursesFAQs />
         </FlexBox>

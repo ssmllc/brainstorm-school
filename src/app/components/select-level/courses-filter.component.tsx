@@ -16,7 +16,7 @@ const FilterSystem = styled.div`
   width: 100%;
 
   @media (min-width: 1024px) {
-    padding: 10px 20px;
+    padding: 10px 20px 40px;
   }
 `;
 
@@ -54,18 +54,21 @@ const CoursesFilter = ({
       md_width="80%"
       xl_width="80%"
       xxl_width="80%"
-      margin="50px auto 25px"
-      xl_margin="50px auto 0"
+      sm_margin="20px auto"
+      md_margin="20px auto"
+      margin="20px auto 25px"
+      xl_margin="20px auto 0"
+      xxl_margin="20px auto 0"
       justifycontent="center"
     >
       <FilterSystem>
         <FlexBox
+          alignitems="center"
           sm_width="100%"
           md_width="100%"
           width="100%"
           xl_width="100%"
           xxl_width="100%"
-          alignitems="center"
         >
           <FlexBox
             sm_width="100%"

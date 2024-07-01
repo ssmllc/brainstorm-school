@@ -36,7 +36,7 @@ const Header2 = styled.h2<textProps>`
   line-height: 1.25;
   margin: ${({ margin }) => margin};
   position: relative;
-  text-align: ${({ textalign }) => textalign};
+  text-align: center;
   text-transform: capitalize;
 
   @media (min-width: 390px) {
@@ -45,6 +45,10 @@ const Header2 = styled.h2<textProps>`
 
   @media (min-width: 768px) {
     font-size: 36px;
+  }
+
+  @media (min-width: 1024px) {
+    text-align: ${({ textalign }) => (textalign ? textalign : "left")};
   }
 `;
 
@@ -63,7 +67,7 @@ const Header4 = styled.p<textProps>`
   color: var(--white);
   font-size: ${({ $sm_fontSize }) => ($sm_fontSize ? $sm_fontSize : "18px")};
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "normal")};
-  margin: 5px 0;
+  margin: 5px 10px;
   position: relative;
   text-align: ${({ textalign }) => textalign};
   text-transform: ${({ $texttransform }) =>
@@ -72,7 +76,6 @@ const Header4 = styled.p<textProps>`
 
   @media (min-width: 768px) {
     font-size: ${({ fontSize }) => (fontSize ? fontSize : "24px")};
-    margin: ${({ margin }) => margin};
   }
 `;
 

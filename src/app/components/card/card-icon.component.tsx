@@ -29,18 +29,18 @@ const Icon = styled.div<cardIconProps>`
   width: ${({ width }) => (width ? width : "65px")};
 
   @media (min-width: 768px) {
-    height: ${({ height }) => (height ? height : "75px")};
+    height: 100px;
     margin: ${({ $md_margin }) => $md_margin};
-    width: ${({ width }) => (width ? width : "75px")};
+    width: 100px;
   }
 
   @media (min-width: 1024px) {
-    height: ${({ height }) => (height ? height : "65px")};
+    height: 100px;
     margin: ${({ $margin }) => $margin};
-    width: ${({ width }) => (width ? width : "65px")};
+    width: 130px;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1360px) {
     height: ${({ height }) => (height ? height : "65px")};
     margin: ${({ $xl_margin }) => $xl_margin};
     width: ${({ width }) => (width ? width : "65px")};

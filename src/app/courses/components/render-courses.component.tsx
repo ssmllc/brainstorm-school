@@ -33,20 +33,29 @@ const RenderCourses = ({ selectedCourses, width }: Props) => {
               justifycontent="center"
               flexwrap="wrap"
               sm_width="80%"
-              width="100%"
-              xl_width="100%"
+              md_width="80%"
+              width="0%"
+              xl_width="80%"
+              xxl_width="100%"
+              sm_margin="50px auto"
+              md_margin="50px auto"
+              margin="50px auto"
               xl_margin="50px auto"
+              xxl_margin="50px auto"
             >
               {sections?.map(
-                ({
-                  category,
-                  courses,
-                  _id,
-                }: {
-                  category: string;
-                  _id: any;
-                  courses: Course[];
-                }) => (
+                (
+                  {
+                    category,
+                    courses,
+                    _id,
+                  }: {
+                    category: string;
+                    _id: any;
+                    courses: Course[];
+                  },
+                  index: number
+                ) => (
                   <>
                     {courses?.map((course: Course) => {
                       const { schedule, price, difficulty } = course;
