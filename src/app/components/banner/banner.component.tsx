@@ -126,6 +126,7 @@ const Banner = ({ header, gallery }: Props) => {
         autoPlay
         loop
         preload="auto"
+        playsInline
       >
         <source src="/video/brainstorm-main-banner.mp4" type="video/mp4" />
       </video>
