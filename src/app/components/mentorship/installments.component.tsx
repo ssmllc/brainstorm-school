@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import RegistrationBlock from "../registration/registration-block.component";
 import FlexBox from "../layout/flexbox.component";
+import Header from "../text-block/header.component";
 
 const DropdownSelect = styled.select`
   appearance: none;
@@ -66,7 +67,7 @@ const InstallmentSelect = ({
           }}
         >
           <option defaultChecked value="full">
-            Select Payment Option
+            Installment Plan Available
           </option>
           <option value="full">One Time Payment</option>
           <option value="installments">Two Installment Plan</option>
